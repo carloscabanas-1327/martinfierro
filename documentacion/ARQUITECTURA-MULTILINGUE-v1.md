@@ -1,42 +1,39 @@
-# MARTINFIERRO.ORG — Arquitectura multilingüe v1 (implementación inicial)
-Fecha: 2026-10-29
-Estado: infraestructura inicial, no traducciones completas.
+# MARTINFIERRO.ORG — Arquitectura multilingüe v1.1
+Fecha: 29 de octubre de 2026
+Estado: base técnica y catálogo preliminar de siete idiomas. No son siete traducciones completas.
 
-## Principios
-- Corpus español original inalterable; no traducir automáticamente ni presentar adaptaciones como traducciones históricas.
-- La raíz / y las rutas históricas /leer/, /temas/, /buscar/ permanecen activas. No se ejecuta una migración destructiva.
-- /es/ es la entrada editorial española a la futura arquitectura por idiomas. La migración de las páginas internas a /es/ queda pendiente de un mapa de redirecciones y comprobación de indexación.
-- /en/, /pt/, /fr/, /it/ y /de/ son páginas introductorias reales, pero **no** contienen traducciones del poema ni artículos completos localizados. Se marcan noindex,follow hasta que exista contenido sustancial revisado.
-- No se añaden hreflang entre páginas que no son traducciones equivalentes. Se incorporarán cuando las versiones tengan contenido equivalente real.
-- Cada página tiene canonical propio, lang correcto, title, description, Open Graph básico y JSON-LD WebPage/CollectionPage; no declarar Book, Person ni Article sin datos y contenido específico.
-- No crear sitemaps ficticios ni anunciar una edición traducida antes de disponer de ella.
-- Cada imagen futura requiere nombre descriptivo en minúsculas y guiones, alt factual, créditos y licencias. El nombre del archivo no sustituye la calidad editorial.
+## Siete rutas documentales priorizadas
+- /es/ — Español: texto original de José Hernández (1872 y 1879).
+- /en/ — Inglés: Walter Owen, antecedente aportado; edición y derechos pendientes de cotejo.
+- /it/ — Italiano: Folco Testena, antecedente aportado; edición y derechos pendientes de cotejo.
+- /pt/ — Portugués: Carlos Nejar y otros; edición y derechos pendientes de cotejo.
+- /fr/ — Francés: Paul Verdevoye, 1955, antecedente aportado; edición y derechos pendientes de cotejo.
+- /la/ — Latín: Raúl Lavalle, referencia académica atribuida a UNLP, falta localizar registro concreto y edición.
+- /pms/ — Piamontés: Francisco Tosco, 1976, antecedente aportado; falta cotejar catálogo, edición e integridad.
 
-## Locales iniciales
-es: español (base)
-en: inglés (prioridad internacional)
-pt: portugués
-fr: francés
-it: italiano
-de: alemán
+Estos datos proceden de la investigación bibliográfica comunicada por la Dirección humana. Su incorporación como ficha no constituye validación bibliográfica independiente ni declaración de dominio público.
 
-## Idiomas candidatos a investigar y activar cuando exista contenido
-ca catalán; gl gallego; eu euskera; nl neerlandés; pl polaco; ro rumano; hu húngaro; el griego; ru ruso; sl esloveno; zh chino; ja japonés; ar árabe; ko coreano; tr turco; uk ucraniano; sv sueco; fi finés; he hebreo; hi hindi.
+## Alemán y segunda etapa
+- /de/ existía desde la etapa anterior; se conserva como página reservada con noindex para no romper rutas, pero se excluye del selector de las siete ediciones priorizadas. No se afirma una traducción concreta.
+- Otros idiomas candidatos: ru, pl, ro, el, sl, hu, nl, ca, gl, eu, zh, ja, ar. No crear páginas que afirmen traducciones verificadas sin respaldo documental.
 
-## Rutas objetivo, no implementadas aún
-/es/leer/ida/1/
-/en/read/part-one/canto-1/
-/pt/ler/ida/canto-1/
-Las rutas de canto traducido solo se crearán cuando haya texto, traducción y derechos verificados.
+## Reglas editoriales y SEO
+1. Corpus español íntegro e inalterado; /leer/ y demás URLs originales se mantienen hasta auditar una eventual migración a /es/.
+2. /es/ funciona como acceso al original y es indexable. Las seis fichas internacionales iniciales están marcadas noindex,follow: no tienen aún contenido suficiente y verificado.
+3. Cada página tiene título, descripción, canonical, lang, Open Graph y JSON-LD CollectionPage desde Base.astro.
+4. No implementar hreflang recíproco entre páginas que todavía no son equivalentes traducidas.
+5. Ninguna ficha preliminar autoriza reproducir traducciones; la verificación debe incluir integridad, autor/traductor, edición, derechos por jurisdicción, y permisos de imágenes.
+6. Una traducción no debe afirmarse completa hasta verificar ambas partes, cantos y versos, sin presuponer alineación uno a uno.
+7. Cada imagen requiere nombre SEO descriptivo y fiel, ALT y registro de derechos. La investigación de búsquedas se realizará por idioma y mercado.
+8. No se publican textos de terceros sin auditoría jurídica y documental.
 
-## Próximos controles obligatorios
-1. Ejecutar build de Astro y revisar enlaces, robots, canonical, HTML lang, JSON-LD y metas.
-2. Verificar Cloudflare Pages y dominio principal.
-3. Investigar Keyword Planner por idioma y país; priorizar consultas reales.
-4. Obtener traducciones con procedencia y matriz de derechos por jurisdicción.
-5. Publicar contenido sustancial y original por idioma; quitar noindex al superar control editorial.
-6. Implementar sitemap y hreflang recíproco para equivalencias reales.
-7. Antes de migrar URLs existentes: auditar Search Console, mapear 301, probar anclas de versos y comprobar que no haya cadenas de redirección.
+## Próximos controles
+- Compilar Astro y verificar despliegue Cloudflare, navegación, canonical, robots y JSON-LD.
+- Localizar referencias bibliográficas exactas de latín y piamontés.
+- Investigar traducciones y derechos en los mercados relevantes.
+- Enriquecer cada ficha con bibliografía verificable, no solo nombres.
+- Publicar contenido sustancial por idioma antes de habilitar indexación y hreflang.
+- Diseñar mapa 301 antes de trasladar rutas actuales a /es/.
 
-## Responsabilidad
-Este documento registra implementación técnica inicial, no aprueba automáticamente traducciones, licencias ni decisiones de cambio de URLs existentes.
+## Control humano
+La Dirección aprueba los contenidos y reformas normativas. Este documento registra una implementación inicial, no la autorización de reproducir traducciones.
