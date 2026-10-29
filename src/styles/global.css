@@ -37,3 +37,24 @@ main{min-height:68vh;padding-top:40px;padding-bottom:70px}h1,h2,h3{font-family:G
 .magazine-hero-copy:before{content:'';position:absolute;top:18px;left:19px;width:47px;height:47px;border-top:1px solid #c49c61;border-left:1px solid #c49c61;opacity:.8}
 .magazine-editions .edition-card:nth-child(1){background:linear-gradient(130deg,#fffefb,#f4efe4)}
 .magazine-editions .edition-card:nth-child(2){background:linear-gradient(130deg,#fffefb,#eef2ef)}
+
+
+/* SISTEMA EDITORIAL: portada y páginas de categorías */
+.editorial-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin:25px 0}
+.directory-feature{display:flex;flex-direction:column;align-items:start;gap:12px;min-width:0;padding:28px 25px;background:linear-gradient(145deg,#fcfaf2,#f0ece0);border-top:5px solid #c79538;border-inline:1px solid #dcd4c4;border-bottom:1px solid #dcd4c4;color:#18362a;text-decoration:none}
+.directory-feature:nth-child(2){background:linear-gradient(145deg,#f9faf5,#e9eee6);border-top-color:#315e68}
+.directory-feature:nth-child(3){background:linear-gradient(145deg,#fbf7f3,#f1e7df);border-top-color:#843c3f}
+.directory-feature:hover{box-shadow:0 6px 20px #21352815;transform:translateY(-2px)}
+.directory-feature h2,.directory-feature h3{font-size:clamp(1.35rem,2.3vw,1.9rem);margin:0}
+.directory-feature p{margin:0 0 9px;color:#56645a;font-size:.94rem;flex:1}
+.directory-mark{font-size:.7rem;letter-spacing:.14em;color:#825b36;font-weight:800}
+.section-intro{padding:10px 0 25px;border-bottom:1px solid #d5d2c7;margin-bottom:25px}.section-intro h1{max-width:19ch}
+.editorial-two-col{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(260px,.85fr);gap:26px;align-items:start}
+.editorial-paper{background:#fff;border:1px solid #dedbd1;padding:clamp(20px,3vw,38px);border-top:4px solid #ba965e}
+.editorial-paper h2{font-size:1.6rem}.editorial-paper h3{font-size:1.22rem}.editorial-paper p{line-height:1.8}
+.editorial-aside{background:#e9eee6;padding:24px;border-top:4px solid #315e68}.editorial-aside h2{font-size:1.55rem}.editorial-aside h3{font-size:1.13rem}.editorial-aside p{font-size:.91rem}
+.editorial-source{border-top:1px solid #b9c9bb;margin-top:24px;padding-top:16px}
+.timeline{margin:20px 0;padding-left:25px}.timeline li{padding:10px 0 10px 10px;border-left:2px solid #d2b57d;margin-left:5px}
+.site-header nav{gap:clamp(9px,1.5vw,22px)}.site-header nav a{font-size:.9rem}
+@media(max-width:900px){.editorial-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.editorial-two-col{grid-template-columns:1fr}}
+@media(max-width:600px){.editorial-directory{grid-template-columns:1fr}.directory-feature{padding:22px}.editorial-paper{padding:22px}}
