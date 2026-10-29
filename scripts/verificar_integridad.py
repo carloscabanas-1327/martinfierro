@@ -64,6 +64,10 @@ def probar():
                 continue
             bloque=[]
             for linea in lineas[i+1:]:
+                if linea.strip().isdigit():
+                    posible=int(linea.strip())
+                    if primero<=posible<=ultimo or (parte=='vuelta' and posible==538):
+                        break
                 if not linea.strip():
                     if bloque: break
                     continue
