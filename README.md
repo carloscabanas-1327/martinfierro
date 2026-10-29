@@ -16,7 +16,9 @@ La numeración continua de las estrofas (1 a 1193) es la utilizada por esta edic
 
 ## Edición y documentación
 
+- [Acta de certificación técnica, alcance y límites](CERTIFICACION-TECNICA-2026-10-29.md)
 - [Informe técnico verificable](datos/auditoria/verificacion-tecnica.json)
+- [Cotejo automatizado contra edición BCN 2022](datos/auditoria/cotejo-bcn-2022.json)
 - [Enmiendas respaldadas por ediciones externas](fuentes/enmiendas-documentadas.json)
 - [Auditoría histórica inicial, ya superada en sus diferencias de conteo](AUDITORIA-2026-10-29.md)
 - [Texto original Gutenberg, La ida](fuentes/gutenberg-14765-original.txt)
@@ -44,4 +46,4 @@ python scripts/verificar_integridad.py
 
 Para el sitio MARTINFIERRO.ORG, el siguiente módulo será Astro con despliegue Cloudflare Pages. Los datos estructurados permanecerán separados de su presentación.
 
-**Alcance de la verificación:** secuencia 1–1193, 46 cantos, 7210 versos, identificadores únicos, correspondencia estrofa por estrofa con la transcripción fuente, dos emendaciones respaldadas por fuentes secundarias, TXT/JSON sincronizados y huellas SHA-256. Una certificación filológica independiente exige un cotejo completo por edición y revisión externa.
+**Alcance de la verificación:** secuencia 1–1193, 46 cantos, 7210 versos, identificadores únicos, correspondencia estrofa por estrofa con la transcripción fuente, dos emendaciones respaldadas por fuentes secundarias, TXT/JSON sincronizados y huellas SHA-256. El contraste con Biblioteca del Congreso encontró coincidencia ≥90% en 7155 de 7210 líneas (99,24%); 55 diferencias se preservan como casos para revisar por variantes editoriales o extracción. Una certificación filológica independiente exige un cotejo completo por edición y revisión externa.
