@@ -1,0 +1,145 @@
+[
+  {
+    "parte": "ida",
+    "libro_gutenberg": 14765,
+    "referencia_externa": {
+      "cantos": 13,
+      "versos": 2316
+    },
+    "corpus": {
+      "cantos": 13,
+      "estrofas": 395,
+      "versos": 2316
+    },
+    "diferencia_versos": 0,
+    "numeros_estrofa_ausentes": [],
+    "numeros_estrofa_duplicados": [],
+    "orden_numeracion_incorrecto": false,
+    "identificadores_duplicados": [],
+    "versos_sin_coincidencia_literal_en_fuente": 1,
+    "ejemplos_versos_sin_coincidencia_literal": [
+      {
+        "parte": "ida",
+        "canto": 10,
+        "estrofa": 295,
+        "id": "mf-ida-e0295-v05",
+        "linea": 5,
+        "texto": "Si este mundo es un infierno"
+      }
+    ],
+    "estrofas_de_longitud_inusual": [],
+    "pistas_en_original_para_estrofas_ausentes": {},
+    "distribucion_estrofas_por_canto": {
+      "1": 19,
+      "2": 29,
+      "3": 55,
+      "4": 30,
+      "5": 22,
+      "6": 32,
+      "7": 34,
+      "8": 20,
+      "9": 49,
+      "10": 33,
+      "11": 23,
+      "12": 20,
+      "13": 29
+    },
+    "numeros_detectables_en_fuente": 395,
+    "aprobado": false,
+    "nota": "Sin cotejo filológico independiente; faltantes de registros no prueban versos ausentes en fuente."
+  },
+  {
+    "parte": "vuelta",
+    "libro_gutenberg": 15066,
+    "referencia_externa": {
+      "cantos": 33,
+      "versos": 4894
+    },
+    "corpus": {
+      "cantos": 33,
+      "estrofas": 798,
+      "versos": 4894
+    },
+    "diferencia_versos": 0,
+    "numeros_estrofa_ausentes": [],
+    "numeros_estrofa_duplicados": [],
+    "orden_numeracion_incorrecto": false,
+    "identificadores_duplicados": [],
+    "versos_sin_coincidencia_literal_en_fuente": 1,
+    "ejemplos_versos_sin_coincidencia_literal": [
+      {
+        "parte": "vuelta",
+        "canto": 1,
+        "estrofa": 421,
+        "id": "mf-vuelta-e0421-v03",
+        "linea": 3,
+        "texto": "escúchenme cuando canto"
+      }
+    ],
+    "estrofas_de_longitud_inusual": [
+      {
+        "numero": 619,
+        "cantidad": 7
+      },
+      {
+        "numero": 620,
+        "cantidad": 7
+      },
+      {
+        "numero": 655,
+        "cantidad": 150
+      },
+      {
+        "numero": 855,
+        "cantidad": 38
+      },
+      {
+        "numero": 1038,
+        "cantidad": 30
+      },
+      {
+        "numero": 1143,
+        "cantidad": 72
+      }
+    ],
+    "pistas_en_original_para_estrofas_ausentes": {},
+    "distribucion_estrofas_por_canto": {
+      "1": 27,
+      "2": 28,
+      "3": 24,
+      "4": 22,
+      "5": 28,
+      "6": 26,
+      "7": 14,
+      "8": 17,
+      "9": 42,
+      "10": 31,
+      "11": 1,
+      "12": 63,
+      "13": 12,
+      "14": 24,
+      "15": 23,
+      "16": 13,
+      "17": 25,
+      "18": 13,
+      "19": 26,
+      "20": 1,
+      "21": 24,
+      "22": 22,
+      "23": 20,
+      "24": 10,
+      "25": 21,
+      "26": 11,
+      "27": 34,
+      "28": 40,
+      "29": 1,
+      "30": 104,
+      "31": 1,
+      "32": 31,
+      "33": 19
+    },
+    "numeros_detectables_en_fuente": 797,
+    "aprobado": false,
+    "nota": "Sin cotejo filológico independiente; faltantes de registros no prueban versos ausentes en fuente."
+  }
+]

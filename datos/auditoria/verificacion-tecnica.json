@@ -1,0 +1,35 @@
+{
+  "estado": "INTEGRIDAD_TECNICA_VERIFICADA",
+  "certificacion_filologica_independiente": false,
+  "versos_totales": 7210,
+  "partes": [
+    {
+      "parte": "ida",
+      "cantos": 13,
+      "estrofas": 395,
+      "versos": 2316,
+      "enmiendas_verificadas": [
+        {
+          "verso": "mf-ida-e0295-v05",
+          "texto": "Si este mundo es un infierno"
+        }
+      ],
+      "sha256_texto_versos": "0b27c0326532fe7cf9925dff0ef908b21be44e2ea726b537f4183253a96c2ce2",
+      "pruebas_tecnicas": "SUPERADAS"
+    },
+    {
+      "parte": "vuelta",
+      "cantos": 33,
+      "estrofas": 798,
+      "versos": 4894,
+      "enmiendas_verificadas": [
+        {
+          "verso": "mf-vuelta-e0421-v03",
+          "texto": "escúchenme cuando canto"
+        }
+      ],
+      "sha256_texto_versos": "42d47c6c9a6b5060970d08ce16020196a8a364abcdc0a403ac703a836d53045a",
+      "pruebas_tecnicas": "SUPERADAS"
+    }
+  ]
+}

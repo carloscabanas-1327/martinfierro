@@ -1,0 +1,539 @@
+{
+  "generado_utc": "2026-10-29T03:58:58.645265+00:00",
+  "ediciones": [
+    {
+      "parte": "ida",
+      "gutenberg": 14765,
+      "url": "https://www.gutenberg.org/cache/epub/14765/pg14765.txt",
+      "sha256": "5c5e06392f16923b673787c9d2befec093daadf7d0c1e72329543af54d24df26",
+      "estrofas_detectadas": 395,
+      "versos_detectados": 2316,
+      "cantos_detectados": 13,
+      "numeros_faltantes": [],
+      "anomalias_versificacion": [
+        {
+          "estrofa": 188,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 189,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 190,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 191,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 192,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 193,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 194,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 195,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 196,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 197,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 198,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 199,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 200,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 201,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 202,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 203,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 204,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 205,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 206,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 207,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 208,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 209,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 210,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 211,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 212,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 213,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 214,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 215,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 216,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 217,
+          "versos_detectados": 10
+        },
+        {
+          "estrofa": 218,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 219,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 220,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 221,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 222,
+          "versos_detectados": 8
+        },
+        {
+          "estrofa": 223,
+          "versos_detectados": 8
+        },
+        {
+          "estrofa": 224,
+          "versos_detectados": 8
+        },
+        {
+          "estrofa": 264,
+          "versos_detectados": 8
+        }
+      ],
+      "estado": "REQUIERE_REVISION_FILOLÓGICA"
+    },
+    {
+      "parte": "vuelta",
+      "gutenberg": 15066,
+      "url": "https://www.gutenberg.org/cache/epub/15066/pg15066.txt",
+      "sha256": "9f28e02fd61ef9587239302ec25dd01c19bffe0b0145a29b8787fd45f9485f03",
+      "estrofas_detectadas": 798,
+      "versos_detectados": 4894,
+      "cantos_detectados": 33,
+      "numeros_faltantes": [],
+      "anomalias_versificacion": [
+        {
+          "estrofa": 619,
+          "versos_detectados": 7
+        },
+        {
+          "estrofa": 620,
+          "versos_detectados": 7
+        },
+        {
+          "estrofa": 655,
+          "versos_detectados": 150
+        },
+        {
+          "estrofa": 849,
+          "versos_detectados": 8
+        },
+        {
+          "estrofa": 855,
+          "versos_detectados": 38
+        },
+        {
+          "estrofa": 964,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 965,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 966,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 967,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 968,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 969,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 970,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 971,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 972,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 973,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 974,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 975,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 976,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 977,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 978,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 979,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 980,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 981,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 982,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 983,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 984,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 985,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 986,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 987,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 988,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 989,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 990,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 991,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 992,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 993,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 994,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 995,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 996,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 997,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 998,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 999,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1000,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1001,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1002,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1003,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1004,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1005,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1006,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1007,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1008,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1009,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1010,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1011,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1012,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1013,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1014,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1015,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1016,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1017,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1018,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1019,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1021,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1022,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1023,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1024,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1025,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1026,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1027,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1028,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1029,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1030,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1031,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1032,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1033,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1034,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1035,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1036,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1037,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1038,
+          "versos_detectados": 30
+        },
+        {
+          "estrofa": 1104,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1105,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1107,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1108,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1110,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1111,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1113,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1114,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1115,
+          "versos_detectados": 4
+        },
+        {
+          "estrofa": 1143,
+          "versos_detectados": 72
+        }
+      ],
+      "estado": "REQUIERE_REVISION_FILOLÓGICA"
+    }
+  ]
+}
