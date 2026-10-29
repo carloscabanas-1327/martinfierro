@@ -12,7 +12,7 @@ import {temas} from '../data/temas';
 </section>
 <section class="section" aria-labelledby="partes"><h2 id="partes">La obra completa</h2>
 <div class="cards">
-{(Object.keys(partes) as Array<keyof typeof partes>).map(parte=><a class="card" href={`/leer/${parte}/`}>
+{['ida','vuelta'].map(parte=><a class="card" href={`/leer/${parte}/`}>
  <div class="eyebrow">{partes[parte].anio} · {partes[parte].cantos.length} cantos</div>
  <h3>{partes[parte].nombre}</h3><p>{numeroDeVersos(parte).toLocaleString('es-AR')} versos · {partes[parte].descripcion}. Elegí un canto o comenzá desde el principio.</p>
 </a>)}
