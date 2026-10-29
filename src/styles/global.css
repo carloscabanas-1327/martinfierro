@@ -27,3 +27,13 @@ main{min-height:68vh;padding-top:40px;padding-bottom:70px}h1,h2,h3{font-family:G
 @media(max-width:950px){.magazine-hero{grid-template-columns:1fr}.magazine-hero-image{height:350px;min-height:0}.magazine-hero-copy{padding:35px}.magazine-quick{grid-template-columns:repeat(2,minmax(0,1fr))}.magazine-quick a:nth-child(2){border-right:0}.magazine-quick a:nth-child(-n+2){border-bottom:1px solid #d5d2c8}.magazine-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.magazine-kicker span:last-child{display:none}.magazine-hero h1{font-size:2.45rem}.magazine-hero-image{height:255px}.magazine-quick a{padding:16px 10px;gap:7px;font-size:.86rem}.quick-icon{font-size:1.12rem}.magazine-editions,.magazine-topic-grid,.magazine-project{grid-template-columns:1fr}.edition-card{grid-template-columns:60px 1fr;padding:21px;gap:12px}.edition-number{font-size:3.7rem}.magazine-heading{align-items:start;flex-direction:column;gap:8px}.magazine-quotation{padding:26px 22px}.magazine-section{padding:32px 0}.topic-art{height:130px}}
 @media(prefers-reduced-motion:reduce){.magazine-home *, .magazine-home *:before{transition:none!important}}
+
+/* Viñetas originales de la revista */
+.magazine-topic .topic-art{height:auto;aspect-ratio:8/5;background:#ece1cb}
+.magazine-topic .topic-art img{width:100%;height:100%;object-fit:cover;display:block}
+.magazine-topic .topic-art:after{display:none}
+.magazine-hero{box-shadow:0 8px 32px #5d563b12}
+.magazine-hero-copy{position:relative}
+.magazine-hero-copy:before{content:'';position:absolute;top:18px;left:19px;width:47px;height:47px;border-top:1px solid #c49c61;border-left:1px solid #c49c61;opacity:.8}
+.magazine-editions .edition-card:nth-child(1){background:linear-gradient(130deg,#fffefb,#f4efe4)}
+.magazine-editions .edition-card:nth-child(2){background:linear-gradient(130deg,#fffefb,#eef2ef)}
