@@ -33,14 +33,18 @@ def construir(nombre,numero,primera):
     lineas=cuerpo.splitlines()
     ultimo=395 if nombre=='ida' else 1193
     indices=[]
-    siguiente=primera
+    numeros=[]
+    previo=primera-1
     for i,s in enumerate(lineas):
-        if siguiente>ultimo:break
-        if s.strip()==str(siguiente):
-            indices.append(i)
-            siguiente+=1
-    if siguiente!=ultimo+1:
-        raise RuntimeError(f'Numeración incompleta: esperado {siguiente}, rango {primera}-{ultimo}, encontrados {len(indices)}')
+        if s.strip().isdigit():
+            n=int(s.strip())
+            if previo<n<=ultimo:
+                indices.append(i)
+                numeros.append(n)
+                previo=n
+                if n==ultimo:break
+    if not numeros or numeros[0]!=primera or numeros[-1]!=ultimo:
+        raise RuntimeError('No se localizaron extremos de numeración')
     estrofas=[];cantos=[];canto=0
     encabezado=0
     for pos,indice in enumerate(indices):
@@ -61,7 +65,7 @@ def construir(nombre,numero,primera):
                 if versos:break
                 continue
             versos.append(s)
-        estrofas.append({'numero':primera+pos,'canto':canto,'versos':versos})
+        estrofas.append({'numero':numeros[pos],'canto':canto,'versos':versos})
         encabezado=indice+1+len(versos)
     problemas=[{'estrofa':e['numero'],'versos_detectados':len(e['versos'])} for e in estrofas if len(e['versos'])!=6]
     destino=ROOT/'obra'/nombre
@@ -78,7 +82,7 @@ def construir(nombre,numero,primera):
     guardar(destino/'cantos.json',json.dumps(cantos,ensure_ascii=False,indent=2)+'\\n')
     cuerpo_html='\\n'.join(f'<section class="estrofa" id="{e["id"]}"><h3>Estrofa {e["numero"]}</h3>'+''.join(f'<div id="{v["id"]}"><a href="#{v["id"]}">¶</a> {html.escape(v["texto"])}</div>' for v in e['versos'])+'</section>' for e in estrofas)
     guardar(destino/'poema.html','<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Martín Fierro — '+nombre+'</title><style>body{max-width:740px;margin:3rem auto;padding:1rem;font:1.1rem/1.65 Georgia,serif}.estrofa{margin:2rem 0}.estrofa h3{font:0.8rem sans-serif;color:#666}.estrofa a{opacity:.35;text-decoration:none}</style><h1>Martín Fierro — '+nombre+'</h1>'+cuerpo_html+'</html>')
-    return versos,{'parte':nombre,'gutenberg':numero,'url':url,'sha256':checksum,'estrofas_detectadas':len(estrofas),'versos_detectados':len(versos),'cantos_detectados':len(cantos),'anomalias_versificacion':problemas,'estado':'REQUIERE_REVISION_FILOLÓGICA'}
+    return versos,{'parte':nombre,'gutenberg':numero,'url':url,'sha256':checksum,'estrofas_detectadas':len(estrofas),'versos_detectados':len(versos),'cantos_detectados':len(cantos),'numeros_faltantes':sorted(set(range(primera,ultimo+1))-set(numeros)),'anomalias_versificacion':problemas,'estado':'REQUIERE_REVISION_FILOLÓGICA'}
 
 def main():
     versos=[];reporte=[]
