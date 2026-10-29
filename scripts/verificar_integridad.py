@@ -4,6 +4,7 @@ No equivalen a una certificación filológica independiente.
 """
 import hashlib
 import json
+import re
 from collections import Counter
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -46,6 +47,37 @@ def probar():
                 assert lineas_originales[v['texto']]>0,f'Verso no presente en fuente: {v["id"]}'
                 lineas_originales[v['texto']]-=1
         assert len(excepciones)==1
+        # Reconstrucción paralela de los bloques de versos desde la fuente.
+        # No reutiliza la estructura creada por construir.py.
+        lineas=original.splitlines()
+        primero_idx=next(i for i,line in enumerate(lineas) if line.strip()==str(primero))
+        detectados={}
+        ultimo_numero=None
+        for i in range(primero_idx,len(lineas)):
+            literal=lineas[i].strip()
+            if not re.fullmatch(r'\d{1,4}',literal):
+                continue
+            n=int(literal)
+            if parte=='vuelta' and n==538 and ultimo_numero==637:
+                n=638
+            if not (primero<=n<=ultimo) or n in detectados:
+                continue
+            bloque=[]
+            for linea in lineas[i+1:]:
+                if not linea.strip():
+                    if bloque: break
+                    continue
+                bloque.append(linea.strip())
+            detectados[n]=bloque
+            ultimo_numero=n
+            if n==ultimo: break
+        assert set(detectados)==set(range(primero,ultimo+1)),f'Stanzas sin origen numérico {parte}'
+        for e in st:
+            originales=detectados[e['numero']]
+            estructurados=[v['texto'] for v in e['versos']
+                           if (parte,e['numero'],v['linea']) not in ENMIENDAS]
+            assert originales==estructurados,f'Diferencia en bloque fuente/JSON: {parte} {e["numero"]}'
+        assert sum(map(len,detectados.values()))==versos_cantidad-1
         # Verificación de archivo de lectura: exactamente todos los versos en orden.
         texto=(ROOT/'obra'/parte/'completo-estructurado.txt').read_text(encoding='utf-8')
         local=[line for line in texto.splitlines() if line and not line.startswith('## CANTO ') and not line.startswith('# ESTROFA ')]
