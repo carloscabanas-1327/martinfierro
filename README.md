@@ -47,3 +47,15 @@ python scripts/verificar_integridad.py
 Para el sitio MARTINFIERRO.ORG, el siguiente módulo será Astro con despliegue Cloudflare Pages. Los datos estructurados permanecerán separados de su presentación.
 
 **Alcance de la verificación:** secuencia 1–1193, 46 cantos, 7210 versos, identificadores únicos, correspondencia estrofa por estrofa con la transcripción fuente, dos emendaciones respaldadas por fuentes secundarias, TXT/JSON sincronizados y huellas SHA-256. El contraste con Biblioteca del Congreso encontró coincidencia ≥90% en 7155 de 7210 líneas (99,24%); 55 diferencias se preservan como casos para revisar por variantes editoriales o extracción. Una certificación filológica independiente exige un cotejo completo por edición y revisión externa.
+
+## Portal web Astro (octubre 2026)
+
+La primera versión del sitio ya está integrada en `main`. Se construye con `npm install` seguido de `npm run build`, y genera páginas estáticas en `dist/`.
+
+Rutas principales: `/` (portada), `/leer/` (dos partes), `/leer/ida/1/` a `/leer/ida/13/`, `/leer/vuelta/1/` a `/leer/vuelta/33/`, `/buscar/` (búsqueda de versos), `/temas/` (selecciones editoriales), `/acerca/` (fuentes y alcance de la integridad).
+
+El buscador utiliza `/indice-versos.json` generado desde `datos/versos.json`, sin base de datos ni servidor de búsqueda. Los enlaces a cada verso son estables: `/leer/ida/1/#mf-ida-e0001-v01`.
+
+**Cloudflare Pages:** repositorio `carloscabanas-1327/martinfierro`, rama `main`, preset `Astro`, comando `npm run build`, directorio `dist`, raíz del repositorio. No es necesario definir variables de entorno. La primera publicación depende de confirmar la configuración en la cuenta Cloudflare.
+
+La navegación temática es orientativa y podrá enriquecerse tras la revisión editorial. La edición digital base y sus informes de integridad no se modificaron durante el desarrollo del portal.
