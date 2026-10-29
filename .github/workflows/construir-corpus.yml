@@ -1,4 +1,4 @@
-name: Generar corpus documental (preliminar)
+name: Generar y auditar corpus documental
 on:
   workflow_dispatch:
   push:
@@ -44,10 +44,10 @@ jobs:
             git commit -m "data: corpus técnico validado (7210 versos, 46 cantos) [skip ci]"
             git push origin HEAD:main
           fi
-      - name: Publicar paquete para revisión (no modifica main)
+      - name: Conservar paquete verificado y auditorías
         uses: actions/upload-artifact@v4
         with:
-          name: martin-fierro-corpus-PRELIMINAR
+          name: martin-fierro-corpus-validado-tecnicamente
           path: |
             obra/
             datos/
