@@ -1,0 +1,32 @@
+---
+interface Props {title:string; description?:string}
+const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.'}=Astro.props;
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="es-AR">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1"/>
+ <meta name="description" content={description}/>
+ <meta name="theme-color" content="#18362a"/>
+ <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()}/>
+ <title>{title} | Martín Fierro</title>
+</head>
+<body>
+ <a class="skip" href="#contenido">Saltar al contenido</a>
+ <header class="site-header">
+  <div class="container header-content">
+   <a class="brand" href="/" aria-label="Martín Fierro — inicio"><span class="brand-mark">MF</span><span>Martín Fierro<small>Biblioteca digital</small></span></a>
+   <nav aria-label="Navegación principal">
+    <a href="/leer/">Leer la obra</a><a href="/buscar/">Buscar</a><a href="/temas/">Temas</a><a href="/acerca/">Fuentes</a>
+   </nav>
+  </div>
+ </header>
+ <main id="contenido" class="container"><slot/></main>
+ <footer class="site-footer">
+  <div class="container"><p><strong>Martín Fierro</strong> · José Hernández · 1872 y 1879</p>
+  <p>Edición digital estructurada, basada en Project Gutenberg, con enmiendas documentadas. <a href="/acerca/">Fuentes, variantes y estado de verificación</a>.</p></div>
+ </footer>
+</body>
+</html>
