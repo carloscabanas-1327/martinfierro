@@ -22,6 +22,13 @@ def descargar(numero):
         raise RuntimeError('Fuente inesperada o incompleta: '+url)
     return url,contenido,hashlib.sha256(raw).hexdigest()
 
+def romano_de_numero(n):
+    vals=[(50,'L'),(40,'XL'),(10,'X'),(9,'IX'),(5,'V'),(4,'IV'),(1,'I')]
+    salida=''
+    for valor,letra in vals:
+        while n>=valor: salida+=letra;n-=valor
+    return salida
+
 def construir(nombre,numero,primera):
     url,original,checksum=descargar(numero)
     guardar(ROOT/'fuentes'/f'gutenberg-{numero}-original.txt',original)
@@ -32,30 +39,37 @@ def construir(nombre,numero,primera):
     guardar(ROOT/'obra'/nombre/'completo.txt',cuerpo+'\n')
     lineas=cuerpo.splitlines()
     ultimo=395 if nombre=='ida' else 1193
-    indices=[]
-    numeros=[]
-    previo=primera-1
-    for i,s in enumerate(lineas):
-        if s.strip().isdigit():
-            n=int(s.strip())
-            if previo<n<=ultimo:
-                indices.append(i)
-                numeros.append(n)
-                previo=n
-                if n==ultimo:break
+    # La fuente de Gutenberg numera las estrofas en líneas solas; la Ida presenta
+    # 362-363 antes de 359-361. No se debe omitir ni reordenar texto sin registrarlo.
+    candidatas=[]
+    for i,linea in enumerate(lineas):
+        if re.fullmatch(r'\s*\d{1,4}\s*',linea):
+            numero_est=int(linea.strip())
+            if primera<=numero_est<=ultimo:
+                candidatas.append((i,numero_est))
+    # Ubicar comienzo real: encabezado I antes de 1; para Vuelta, comienzo 396.
+    comienzo=next(i for i,n in candidatas if n==primera)
+    candidatas=[(i,n) for i,n in candidatas if i>=comienzo]
+    indices=[];numeros=[];vistos=set()
+    for i,n in candidatas:
+        if n in vistos: continue
+        vistos.add(n);indices.append(i);numeros.append(n)
+        if n==ultimo:break
     if not numeros or numeros[0]!=primera or numeros[-1]!=ultimo:
         raise RuntimeError('No se localizaron extremos de numeración')
     estrofas=[];cantos=[];canto=0
-    encabezado=0
+    encabezado=comienzo
     for pos,indice in enumerate(indices):
-        segmento_previo=lineas[encabezado:indice]
-        titulos=[s.strip() for s in segmento_previo if re.fullmatch(r'[IVXLCDM]+(?:\s*-\s*.+)?',s.strip())]
+        previo=lineas[encabezado:indice]
+        titulos=[m.group(1) for line in previo if (m:=re.match(r'^\s*([IVXLCDM]+)\s*[.\-]\s*\S',line))]
         if titulos:
-            canto+=1
-            cantos.append({'numero':canto,'titulo':titulos[-1]})
+            romano=titulos[-1]
+            esperado=(canto+1)
+            if romano != romano_de_numero(esperado):
+                raise RuntimeError(f'Encabezado inesperado: {romano}; esperado {esperado} en {nombre}')
+            canto+=1;cantos.append({'numero':canto,'titulo':romano})
         if canto==0:
-            canto=1
-            cantos.append({'numero':1,'titulo':'I (sin título detectado)'})
+            canto=1;cantos.append({'numero':1,'titulo':'I'})
         limite=indices[pos+1] if pos+1<len(indices) else len(lineas)
         bloque=lineas[indice+1:limite]
         versos=[]
@@ -67,6 +81,8 @@ def construir(nombre,numero,primera):
             versos.append(s)
         estrofas.append({'numero':numeros[pos],'canto':canto,'versos':versos})
         encabezado=indice+1+len(versos)
+    estrofas.sort(key=lambda e:e['numero'])
+    faltantes=sorted(set(range(primera,ultimo+1))-set(numeros))
     problemas=[{'estrofa':e['numero'],'versos_detectados':len(e['versos'])} for e in estrofas if len(e['versos'])!=6]
     destino=ROOT/'obra'/nombre
     versos=[]
@@ -82,7 +98,7 @@ def construir(nombre,numero,primera):
     guardar(destino/'cantos.json',json.dumps(cantos,ensure_ascii=False,indent=2)+'\n')
     cuerpo_html='\n'.join(f'<section class="estrofa" id="{e["id"]}"><h3>Estrofa {e["numero"]}</h3>'+''.join(f'<div id="{v["id"]}"><a href="#{v["id"]}">¶</a> {html.escape(v["texto"])}</div>' for v in e['versos'])+'</section>' for e in estrofas)
     guardar(destino/'poema.html','<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Martín Fierro — '+nombre+'</title><style>body{max-width:740px;margin:3rem auto;padding:1rem;font:1.1rem/1.65 Georgia,serif}.estrofa{margin:2rem 0}.estrofa h3{font:0.8rem sans-serif;color:#666}.estrofa a{opacity:.35;text-decoration:none}</style><h1>Martín Fierro — '+nombre+'</h1>'+cuerpo_html+'</html>')
-    return versos,{'parte':nombre,'gutenberg':numero,'url':url,'sha256':checksum,'estrofas_detectadas':len(estrofas),'versos_detectados':len(versos),'cantos_detectados':len(cantos),'numeros_faltantes':sorted(set(range(primera,ultimo+1))-set(numeros)),'anomalias_versificacion':problemas,'estado':'REQUIERE_REVISION_FILOLÓGICA'}
+    return versos,{'parte':nombre,'gutenberg':numero,'url':url,'sha256':checksum,'estrofas_detectadas':len(estrofas),'versos_detectados':len(versos),'cantos_detectados':len(cantos),'numeros_faltantes':faltantes,'anomalias_versificacion':problemas,'estado':'REQUIERE_REVISION_FILOLÓGICA'}
 
 def main():
     versos=[];reporte=[]
