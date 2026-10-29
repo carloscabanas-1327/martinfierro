@@ -36,7 +36,7 @@ def construir(nombre,numero,primera):
     siguiente=primera
     for i,s in enumerate(lineas):
         if siguiente>ultimo:break
-        if s.strip()==str(siguiente) and (i==0 or not lineas[i-1].strip()):
+        if s.strip()==str(siguiente):
             indices.append(i)
             siguiente+=1
     if siguiente!=ultimo+1:
