@@ -6,7 +6,7 @@ const etiquetas:Record<string,string>={
  'vida-gaucha':'Campo y costumbres','frontera':'Historia y frontera','justicia-y-autoridad':'Sociedad y poder',
  'amistad-y-lealtad':'Vínculos humanos','familia-y-regreso':'Memoria y regreso','consejos-y-sabiduria':'Versos y enseñanzas'
 };
-const numeros=['01','02','03','04','05','06'];
+const imagenesTemas=['vida-gaucha','frontera','justicia-y-autoridad','amistad-y-lealtad','familia-y-regreso','consejos-y-sabiduria'];
 ---
 <Base title="Biblioteca y revista cultural" description="Martín Fierro completo: 46 cantos, 7.210 versos, buscador y guías para explorar la obra de José Hernández y el mundo gauchesco.">
 <div class="magazine-home">
@@ -36,7 +36,7 @@ const numeros=['01','02','03','04','05','06'];
   <div class="magazine-heading"><div><p class="magazine-label">LA BIBLIOTECA</p><h2 id="obra-completa">La obra completa</h2></div><p>Dos libros, una historia que sigue resonando.</p></div>
   <div class="magazine-editions">
    {(['ida','vuelta'] as const).map((parte,idx)=><a class="edition-card" href={`/leer/${parte}/`}>
-    <div class="edition-number" aria-hidden="true">{idx===0?'I':'II'}</div>
+    <div class={`edition-number edition-number-${idx+1}`} aria-hidden="true">{idx===0?'I':'II'}</div>
     <div><p class="magazine-label">{partes[parte].anio} · {partes[parte].cantos.length} CANTOS</p><h3>{partes[parte].nombre}</h3><p>{numeroDeVersos(parte).toLocaleString('es-AR')} versos. Elegí un canto o comenzá por el primero.</p><span class="text-link">Explorar los cantos <span aria-hidden="true">→</span></span></div>
    </a>)}
   </div>
@@ -46,7 +46,7 @@ const numeros=['01','02','03','04','05','06'];
   <div class="magazine-heading"><div><p class="magazine-label">EL UNIVERSO DEL POEMA</p><h2 id="universo-fierro">Explorar sus grandes temas</h2></div><a href="/temas/">Ver todos los temas <span aria-hidden="true">→</span></a></div>
   <div class="magazine-topic-grid">
    {temas.map((tema,idx)=><a href={`/temas/${tema.slug}/`} class="magazine-topic">
-    <div class={`topic-art topic-art-${idx+1}`} aria-hidden="true"><span>{numeros[idx]}</span><i></i></div>
+    <div class="topic-art"><img src={`/media/tema-${imagenesTemas[idx]}.svg`} width="480" height="300" loading="lazy" alt="" decoding="async" /></div>
     <div class="magazine-topic-body"><span class="magazine-label">{etiquetas[tema.slug] ?? 'Guía de lectura'}</span><h3>{tema.titulo}</h3><p>{tema.descripcion}</p><span class="text-link">Descubrir pasajes →</span></div>
    </a>)}
   </div>
