@@ -1,0 +1,143 @@
+MARTINFIERRO.ORG — DIRECTORIO GENERAL DEL SITIO
+Versión: 1.0 — PROPUESTA DE ORGANIZACIÓN
+Fecha: 29 de octubre de 2026
+Destino: Fuentes del proyecto y repositorio GitHub
+Estado: Propuesta pendiente de aprobación humana como directiva vigente
+
+0. NATURALEZA, ALCANCE Y JERARQUÍA
+MARTINFIERRO.ORG se organiza como biblioteca literaria de la obra de José Hernández, revista cultural argentina, archivo de investigación y sistema de producción multimedia. Este directorio define las áreas y subsecciones; no afirma que todas las páginas estén publicadas.
+
+El presente documento se subordina a la Directiva Maestra de Arquitectura Digital y a las directivas Editorial y Visual y de Portada de Revista. La Dirección humana conserva la autoridad para aprobar cambios normativos y publicaciones. El texto original del poema, las fuentes conservadas y sus identificadores no se modifican por crear secciones nuevas.
+
+Leyenda de estado:
+[ACTUAL] Área existente con funcionalidades publicadas; puede incluir ampliaciones pendientes.
+[PARCIAL] Área con algunas funcionalidades publicadas y otras futuras.
+[PREVISTO] Área propuesta, no equivale a una página publicada ni autorizada.
+
+1. ORGANIGRAMA GENERAL — OCHO ÁREAS
+01 — PORTADA [ACTUAL]
+02 — LA OBRA DE MARTÍN FIERRO [ACTUAL]
+03 — JOSÉ HERNÁNDEZ: VIDA Y LEGADO [PREVISTO]
+04 — EXÉGESIS Y ANÁLISIS LITERARIO [PREVISTO]
+05 — BIBLIOTECA CRÍTICA Y OBRAS DERIVADAS [PREVISTO]
+06 — REVISTA CULTURAL [PREVISTO]
+07 — MULTIMEDIA [PREVISTO]
+08 — ARCHIVO DOCUMENTAL Y EL PROYECTO [PARCIAL]
+
+2. DIRECTORIO JERÁRQUICO
+
+01 — PORTADA [ACTUAL]
+01.01 — Destacado principal ilustrado [ACTUAL]
+01.02 — Accesos a La ida y La vuelta [ACTUAL]
+01.03 — Buscador de versos [ACTUAL]
+01.04 — Temas destacados [ACTUAL]
+01.05 — Verso destacado [ACTUAL]
+01.06 — Destacados de revista y audiovisuales [PREVISTO]
+
+02 — LA OBRA DE MARTÍN FIERRO [ACTUAL]
+02.01 — El gaucho Martín Fierro (1872): 13 cantos [ACTUAL]
+02.02 — La vuelta de Martín Fierro (1879): 33 cantos [ACTUAL]
+02.03 — Buscador de 7.210 versos [ACTUAL]
+02.04 — Índices por canto y estrofa [ACTUAL]
+02.05 — Temas y pasajes seleccionados [ACTUAL]
+02.06 — Ediciones comparadas y variantes [PREVISTO]
+
+03 — JOSÉ HERNÁNDEZ: VIDA Y LEGADO [PREVISTO]
+03.01 — Biografía completa
+03.02 — Cronología de su vida (1834–1886)
+03.03 — Familia y genealogía
+03.04 — Partida bautismal, actas y documentos
+03.05 — Periodismo, política y actividad pública
+03.06 — Correspondencia, fotografías y retratos
+03.07 — Museos, casas y lugares históricos
+03.08 — Bibliografía y fuentes biográficas
+
+04 — EXÉGESIS Y ANÁLISIS LITERARIO [PREVISTO]
+04.01 — Introducción a la interpretación del poema
+04.02 — Exégesis de La ida: 13 cantos
+04.03 — Exégesis de La vuelta: 33 cantos
+04.04 — Comentarios por estrofa y verso
+04.05 — Personajes y relaciones
+04.06 — Símbolos, metáforas y motivos literarios
+04.07 — Lenguaje gauchesco y glosario
+04.08 — Contexto histórico frente a ficción literaria
+04.09 — Interpretaciones contrapuestas
+
+05 — BIBLIOTECA CRÍTICA Y OBRAS DERIVADAS [PREVISTO]
+05.01 — Estudios y ensayos sobre Martín Fierro
+05.02 — Leopoldo Lugones y El payador
+05.03 — Jorge Luis Borges y sus interpretaciones
+05.04 — Ezequiel Martínez Estrada
+05.05 — Otros investigadores y estudios académicos
+05.06 — Cuentos, novelas y obras inspiradas en el poema
+05.07 — Traducciones y recepción internacional
+05.08 — Adaptaciones teatrales, musicales y cinematográficas
+
+06 — REVISTA CULTURAL [PREVISTO]
+06.01 — Historia argentina del siglo XIX
+06.02 — El gaucho y la vida rural
+06.03 — La frontera y la sociedad de la época
+06.04 — Tradiciones, costumbres y lenguaje
+06.05 — Arte, pintura e ilustración gauchesca
+06.06 — Efemérides literarias e históricas
+06.07 — Museos, exposiciones y actividades culturales
+06.08 — Entrevistas, artículos y dossiers especiales
+
+07 — MULTIMEDIA [PREVISTO]
+07.01 — Lectura narrada y audiolibro
+07.02 — Documentales y videos largos
+07.03 — Videos de análisis por canto
+07.04 — YouTube Shorts, Reels y TikTok
+07.05 — Podcasts y entrevistas
+07.06 — Galería de imágenes e ilustraciones
+07.07 — Material educativo y visualizaciones
+
+08 — ARCHIVO DOCUMENTAL Y EL PROYECTO [PARCIAL]
+08.01 — Fuentes y procedencia de la obra [ACTUAL]
+08.02 — Transcripciones originales conservadas [ACTUAL EN REPOSITORIO]
+08.03 — Auditorías e integridad textual [ACTUAL EN REPOSITORIO]
+08.04 — Primeras ediciones y facsímiles autorizados [PREVISTO]
+08.05 — Bibliografía y catálogo documental [PREVISTO]
+08.06 — Derechos, permisos y créditos [PARCIAL]
+08.07 — Metodología editorial e histórica [PARCIAL]
+08.08 — Repositorio y versiones del proyecto [ACTUAL]
+
+3. RELACIÓN ENTRE LOS CONTENIDOS
+Cada verso y estrofa de la obra debe conservar un identificador permanente. Los artículos y fichas pueden relacionarse con ese identificador mediante referencias explícitas:
+- Exégesis del pasaje.
+- Personajes relacionados.
+- Contexto histórico.
+- Estudios literarios.
+- Documentos y fuentes.
+- Grabaciones, audios y videos.
+
+Estas relaciones son editoriales y no alteran la fuente literaria. Todo artículo, documento o audiovisual debe mantener un registro reutilizable de fuentes, permisos, versión, fecha y vínculos con el corpus en un reservorio documental abierto y portable.
+
+4. MENÚ PÚBLICO PREVISTO — SEIS ACCESOS
+La arquitectura interna de ocho áreas no obliga a mostrar ocho enlaces en la cabecera. El menú futuro propone:
+A. LEER — La ida, La vuelta, buscador.
+B. EXPLORAR — Temas, personajes, glosario, exégesis.
+C. JOSÉ HERNÁNDEZ — Biografía, documentos, museos.
+D. BIBLIOTECA — Estudios críticos, obras relacionadas, fuentes.
+E. REVISTA — Artículos, historia, cultura, efemérides.
+F. MULTIMEDIA — Videos, audiolibros, podcasts, galería.
+
+No activar enlaces a páginas inexistentes. Hasta la publicación de las áreas previstas, mantener la navegación funcional actual.
+
+5. ORDEN DE DESARROLLO RECOMENDADO
+1) Biografía documental de José Hernández, cronología, lugares y documentos.
+2) Exégesis del Canto I como modelo extensible a los 46 cantos.
+3) Biblioteca crítica inicial (Lugones, Borges, Martínez Estrada), con bibliografía y derechos verificados.
+4) Museos y lugares históricos, imágenes licenciadas, mapas y fuentes.
+5) Revista cultural con artículos derivados y aprobados.
+6) Producción audiovisual a partir de investigaciones versionadas y trazables.
+
+6. BASE TECNOLÓGICA Y CONTROL
+Código y documentos: GitHub. Generador del sitio: Astro. Publicación estática: Cloudflare Pages. El ordenador personal no es requisito operativo. La documentación, fuentes, guiones, metadatos y corpus se conservan separados de la presentación visual, en formatos reutilizables.
+
+La creación o aprobación de este directorio no constituye autorización para publicar de inmediato las secciones previstas. Cualquier ampliación del sitio debe conservar íntegro el corpus y superar las pruebas técnicas y editoriales aplicables. No se agregará publicidad entre versos o estrofas. La ubicación de futuros anuncios y enlaces de afiliados queda pendiente de decisión expresa.
+
+7. ESTADO Y CONTROL DE VERSIONES
+Versión: 1.0 PROPUESTA. Directorio derivado del organigrama conversado el 29/10/2026. Las rutas URL de las nuevas áreas no se establecen como definitivas en este documento; deben definirse al implementarlas. El directorio se mantendrá idéntico en Fuentes y en el repositorio al momento de su incorporación.
+
+FIN DEL DIRECTORIO GENERAL
