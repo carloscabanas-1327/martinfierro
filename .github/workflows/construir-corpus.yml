@@ -1,6 +1,11 @@
 name: Generar corpus documental (preliminar)
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/construir.py'
+      - '.github/workflows/construir-corpus.yml'
 permissions:
   contents: read
 jobs:
