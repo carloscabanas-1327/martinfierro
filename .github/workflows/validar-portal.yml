@@ -1,0 +1,54 @@
+name: Validar portal Astro
+on:
+  push:
+    branches:
+      - desarrollo/portal-astro-lectura
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'astro.config.mjs'
+      - 'tsconfig.json'
+      - '.github/workflows/validar-portal.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Compilar el portal completo
+        run: npm run build
+      - name: Comprobar páginas e índice
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('dist')
+          assert (root/'index.html').is_file()
+          assert (root/'buscar/index.html').is_file()
+          assert (root/'temas/index.html').is_file()
+          assert (root/'leer/ida/1/index.html').is_file()
+          assert (root/'leer/vuelta/33/index.html').is_file()
+          index=json.loads((root/'indice-versos.json').read_text(encoding='utf-8'))
+          assert len(index)==7210, len(index)
+          assert sum(1 for v in index if v['parte']=='ida')==2316
+          assert sum(1 for v in index if v['parte']=='vuelta')==4894
+          cantos=list(root.glob('leer/*/[0-9]*/index.html'))
+          assert len(cantos)==46,len(cantos)
+          for v in index:
+            html=root/f"leer/{v['parte']}/{v['canto']}/index.html"
+            assert html.exists()
+          print('OK: 46 cantos, 7210 versos y rutas HTML construidas')
+          PY
+      - name: Guardar versión de prueba
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-astro-completo-preview
+          path: dist/
+          retention-days: 14

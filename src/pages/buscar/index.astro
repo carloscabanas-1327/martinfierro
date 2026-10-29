@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Buscar en Martín Fierro"><p class="eyebrow">Buscador de la obra</p><h1>Buscar versos</h1><p class="lead">Encontrá palabras o frases en los 7.210 versos de las dos partes. La búsqueda ignora diferencias entre mayúsculas y minúsculas y puede ignorar tildes.</p>
+<div class="search-control"><input id="consulta" type="search" aria-label="Palabras o frase a buscar" placeholder="Ej.: los hermanos sean unidos" autocomplete="off"/><select id="parte" aria-label="Filtrar por parte"><option value="ambas">Ambas partes</option><option value="ida">La ida</option><option value="vuelta">La vuelta</option></select></div>
+<p id="estado" role="status" aria-live="polite">Escribí dos o más caracteres para buscar.</p><div id="resultados" aria-label="Resultados de búsqueda"></div>
+<noscript>Para buscar en el poema es necesario activar JavaScript. La lectura completa por cantos está disponible sin JavaScript.</noscript>
+<script>
+type Registro={id:string;texto:string;parte:'ida'|'vuelta';canto:number;estrofa:number;linea:number};
+const input=document.querySelector<HTMLInputElement>('#consulta')!;
+const filtro=document.querySelector<HTMLSelectElement>('#parte')!;
+const estado=document.querySelector<HTMLElement>('#estado')!;
+const resultados=document.querySelector<HTMLElement>('#resultados')!;
+let datos:Registro[]|null=null;let generacion=0;
+const normalizar=(s:string)=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es').trim();
+const enlace=(v:Registro)=>`/leer/${v.parte}/${v.canto}/#${v.id}`;
+function dibujar(){
+ const q=normalizar(input.value);
+ resultados.replaceChildren();
+ if(q.length<2){estado.textContent='Escribí dos o más caracteres para buscar.';return;}
+ if(!datos){estado.textContent='Cargando índice...';return;}
+ const encontrados=datos.filter(v=>(filtro.value==='ambas'||filtro.value===v.parte)&&normalizar(v.texto).includes(q));
+ estado.textContent=`${encontrados.length.toLocaleString('es-AR')} versos encontrados. Se muestran los primeros 150.`;
+ for(const v of encontrados.slice(0,150)){
+  const row=document.createElement('article');row.className='result';
+  const a=document.createElement('a');a.href=enlace(v);a.textContent=`${v.parte==='ida'?'La ida':'La vuelta'} · Canto ${v.canto} · Estrofa ${v.estrofa}, verso ${v.linea}`;
+  const p=document.createElement('p');p.textContent=v.texto;
+  row.append(a,p);resultados.append(row);
+ }
+}
+async function buscar(){
+ if(normalizar(input.value).length<2){dibujar();return;}
+ const actual=++generacion;
+ if(!datos){
+  try{const res=await fetch('/indice-versos.json');if(!res.ok)throw new Error('Sin índice');datos=await res.json() as Registro[];}
+  catch{estado.textContent='No se pudo cargar el índice. Volvé a intentar.';return;}
+ }
+ if(actual===generacion)dibujar();
+}
+input.addEventListener('input',buscar);filtro.addEventListener('change',buscar);
+const url=new URL(location.href);const inicial=url.searchParams.get('q');if(inicial){input.value=inicial;buscar();}
+</script>
+</Base>
