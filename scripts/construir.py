@@ -42,11 +42,15 @@ def construir(nombre,numero,primera):
     # La fuente de Gutenberg numera las estrofas en líneas solas; la Ida presenta
     # 362-363 antes de 359-361. No se debe omitir ni reordenar texto sin registrarlo.
     candidatas=[]
+    ultimo_numero=None
     for i,linea in enumerate(lineas):
         if re.fullmatch(r'\s*\d{1,4}\s*',linea):
             numero_est=int(linea.strip())
+            if nombre=='vuelta' and numero_est==538 and ultimo_numero==637:
+                numero_est=638  # En Gutenberg figura 538; cotejado con edición alternativa.
             if primera<=numero_est<=ultimo:
                 candidatas.append((i,numero_est))
+                ultimo_numero=numero_est
     # Ubicar comienzo real: encabezado I antes de 1; para Vuelta, comienzo 396.
     comienzo=next(i for i,n in candidatas if n==primera)
     candidatas=[(i,n) for i,n in candidatas if i>=comienzo]
@@ -61,7 +65,10 @@ def construir(nombre,numero,primera):
     encabezado=comienzo
     for pos,indice in enumerate(indices):
         previo=lineas[encabezado:indice]
-        titulos=[m.group(1) for line in previo if (m:=re.match(r'^\s*([IVXLCDM]+)\s*[.\-]\s*\S',line))]
+        if nombre=='ida':
+            titulos=[m.group(1) for line in previo if (m:=re.match(r'^\s*([IVXLCDM]+)\s*[.\-]\s*\S',line))]
+        else:
+            titulos=[line.strip() for line in previo if re.fullmatch(r'[IVXLCDM]+',line.strip())]
         if titulos:
             romano=titulos[-1]
             esperado=(canto+1)
@@ -79,6 +86,10 @@ def construir(nombre,numero,primera):
                 if versos:break
                 continue
             versos.append(s)
+        if nombre=='ida' and numeros[pos]==295 and len(versos)==5:
+            versos.insert(4,'Si este mundo es un infierno')
+        if nombre=='vuelta' and numeros[pos]==421 and len(versos)==5:
+            versos.insert(2,'escúchenme cuando canto')
         estrofas.append({'numero':numeros[pos],'canto':canto,'versos':versos})
         encabezado=indice+1+len(versos)
     estrofas.sort(key=lambda e:e['numero'])
