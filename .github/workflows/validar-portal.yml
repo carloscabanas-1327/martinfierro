@@ -2,6 +2,7 @@ name: Validar portal Astro
 on:
   push:
     branches:
+      - main
       - desarrollo/portal-astro-lectura
     paths:
       - 'src/**'
