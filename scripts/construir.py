@@ -105,6 +105,15 @@ def construir(nombre,numero,primera):
         grupo=[e for e in estrofas if e['canto']==c['numero']]
         if grupo:
             guardar(destino/'cantos'/f'{c["numero"]:02d}.txt',f'CANTO {c["titulo"]}\n\n'+'\n\n'.join(str(e['numero'])+'\n'+'\n'.join(v['texto'] for v in e['versos']) for e in grupo)+'\n')
+    archivo_lectura=[]
+    for e in estrofas:
+        if not archivo_lectura or e['canto']!=estrofas[0]['canto'] and e['canto'] != previo_canto:
+            archivo_lectura.append('## CANTO '+str(e['canto']))
+        archivo_lectura.append('# ESTROFA '+str(e['numero']))
+        archivo_lectura.extend(v['texto'] for v in e['versos'])
+        archivo_lectura.append('')
+        previo_canto=e['canto']
+    guardar(destino/'completo-estructurado.txt','\n'.join(archivo_lectura)+'\n')
     guardar(destino/'estrofas.json',json.dumps(estrofas,ensure_ascii=False,indent=2)+'\n')
     guardar(destino/'cantos.json',json.dumps(cantos,ensure_ascii=False,indent=2)+'\n')
     cuerpo_html='\n'.join(f'<section class="estrofa" id="{e["id"]}"><h3>Estrofa {e["numero"]}</h3>'+''.join(f'<div id="{v["id"]}"><a href="#{v["id"]}">¶</a> {html.escape(v["texto"])}</div>' for v in e['versos'])+'</section>' for e in estrofas)
