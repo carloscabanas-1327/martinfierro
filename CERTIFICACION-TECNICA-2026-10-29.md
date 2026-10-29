@@ -51,6 +51,20 @@ Fuentes y alcance de cada intervención: [enmiendas-documentadas.json](fuentes/e
 - No se completó un cotejo filológico independiente de los 7210 versos frente a un facsímil original o una edición crítica autorizada. Diferencias entre primeras ediciones, segundas ediciones y reimpresiones no deben resolverse automáticamente.
 - Para usar la denominación «edición crítica certificada por especialistas», se necesita dictamen externo y comparación bibliográfica sistemática.
 
+## Cotejo independiente automatizado de los 7.210 versos
+
+Se comparó cada verso de nuestra edición con la publicación **Martín Fierro**, Biblioteca del Congreso de la Nación, 2022 (264 páginas; `https://digitales.bcn.gob.ar/files/textos/publicacion-martin-fierro.pdf`). Esta edición toma una impresión de 1878 para la Ida y de 1879 para la Vuelta. Los comparadores eliminan tildes y puntuación y admiten semejanza textual; no verifican equivalencia filológica por sí solos.
+
+| Parte | Coincidencia exacta normalizada | Similitud ≥90% | Similitud 75–90% | Similitud <75% |
+|---|---:|---:|---:|---:|
+| Ida (2316) | 2036 | 255 | 16 | 9 |
+| Vuelta (4894) | 4450 | 414 | 11 | 19 |
+| **Total (7210)** | **6486** | **669** | **27** | **28** |
+
+**7155/7210 versos (99,24%)** presentan coincidencia literal normalizada o semejanza de al menos 90% con alguna línea extraída de la edición BCN. **55** requieren revisión de variantes editoriales, errores de extracción o diferencias textuales; no deben borrarse ni corregirse para forzar coincidencias. Los 28 registros con similitud inferior a 75% están listados expresamente en el reporte.
+
+Archivo público reproducible: [cotejo-bcn-2022.json](datos/auditoria/cotejo-bcn-2022.json). Código: [cotejar_bcn.py](scripts/cotejar_bcn.py). Se trata de un cotejo automatizado de presencia, **no de un alineamiento secuencial completo** ni de un dictamen académico. La referencia BCN y Gutenberg utilizan ediciones distintas, por lo que una diferencia no demuestra un error.
+
 ## Versionado y protección
 
 El corpus fue incorporado a GitHub `main` tras pasar pruebas técnicas; toda edición posterior deberá regenerar y superar los controles. Recomendada aprobación humana para cambios de texto base y respaldo en almacenamiento independiente antes del despliegue productivo.
