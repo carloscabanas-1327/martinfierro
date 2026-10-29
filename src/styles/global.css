@@ -64,3 +64,56 @@ main{min-height:68vh;padding-top:40px;padding-bottom:70px}h1,h2,h3{font-family:G
 .language-picker a{display:inline-block;padding:7px 12px;border:1px solid #ccd6ca;border-radius:999px;background:#f8faf6;text-decoration:none;color:var(--ink);font-size:.92rem}
 .language-picker a[aria-current="page"]{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
 .language-picker a:hover{border-color:#8a6a3c}
+
+
+/* Portada editorial internacional basada en la maqueta aprobada */
+body:has(.international-home){background:#f6f2eb;color:#27211e}
+body:has(.international-home) .site-header{background:#f9f6f1;color:#1d2630;border-bottom:1px solid #e8e0d6}
+body:has(.international-home) .site-header .brand,body:has(.international-home) .site-header nav a{color:#1b2631}
+body:has(.international-home) .site-header .brand small{color:#55504b}
+body:has(.international-home) .site-header .brand-mark{border-color:#bda47c}
+body:has(.international-home) main.container{width:100%;max-width:none;padding:0 0 50px}
+.international-home{font-family:Georgia,'Times New Roman',serif}
+.international-hero{position:relative;min-height:465px;background:linear-gradient(90deg,rgba(13,23,30,.93) 0%,rgba(22,30,32,.74) 43%,rgba(30,31,32,.12) 100%),url('/media/pampa-gaucho-editorial.svg') center 47%/cover no-repeat;color:#fff;display:flex;align-items:center}
+.international-hero-overlay{width:min(1400px,calc(100% - 6vw));margin:auto;padding:50px 0 35px}
+.international-kicker{font:700 .72rem system-ui,sans-serif;letter-spacing:.19em;text-transform:uppercase;color:#ead1a7}
+.international-hero h1{font-size:clamp(4rem,7.1vw,7rem);font-weight:600;letter-spacing:-.045em;line-height:.99;margin:25px 0 16px;color:white}
+.international-hero h1 span{display:block;letter-spacing:-.025em;font-size:clamp(1.65rem,3.5vw,3.5rem);font-weight:400;margin-top:11px}
+.international-hero p:not(.international-kicker):not(.international-image-note){max-width:610px;font-size:clamp(1.1rem,1.65vw,1.5rem);line-height:1.45;color:#fff1df}
+.international-actions{display:flex;gap:16px;flex-wrap:wrap;margin:26px 0}
+.international-button{display:inline-flex;gap:25px;align-items:center;background:#ba8944;color:white;padding:13px 23px;border:1px solid #ba8944;text-decoration:none;border-radius:3px;font-size:1rem}
+.international-button-outline{background:rgba(0,0,0,.17);border-color:#fff}
+.international-image-note{font: .69rem system-ui,sans-serif;color:#eee3d4;opacity:.9;max-width:630px}
+.international-languages{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;padding:16px 28px;background:#ece5d9;border-bottom:1px solid #e1d3be;font-family:system-ui,sans-serif}
+.international-languages-label{font-weight:700;color:#484139;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-right:12px}
+.international-languages a{display:inline-flex;gap:6px;align-items:center;padding:6px 12px;color:#423b31;text-decoration:none;border:1px solid #ccbaa3;border-radius:30px;background:#faf7f0;font-size:.82rem}
+.international-languages a:hover{border-color:#aa773b;background:white}
+.international-sections{width:min(1480px,calc(100% - 6vw));margin:28px auto;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px}
+.international-section{color:#241e1c;text-decoration:none;background:#faf8f4;border:1px solid #eee6da;min-width:0}
+.international-section-image{height:145px;overflow:hidden;background:#d6cab7}
+.international-section-image img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.22) saturate(.78);transition:transform .2s}
+.international-section:hover img{transform:scale(1.045)}
+.international-section-text{padding:12px 15px 20px;position:relative;min-height:166px}
+.international-section-text h2{font-size:clamp(1rem,1.35vw,1.3rem);margin:0 0 8px;color:#30221e}
+.international-section-text p{font-size:.91rem;line-height:1.47;color:#554c46;margin:0 0 10px}
+.international-section-text>span{position:absolute;bottom:9px;right:14px;font-size:1.2rem}
+.international-feature{display:grid;grid-template-columns:1.1fr 1fr 1fr;align-items:center;min-height:300px;background:#e8ddcc}
+.international-verse,.international-message{padding:clamp(22px,3.5vw,54px)}
+.international-eyebrow{font:700 .73rem system-ui,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:#79634d}
+.international-verse blockquote{margin:17px 0;font-size:clamp(1.4rem,2.3vw,2.5rem);font-style:italic;line-height:1.25;color:#362422}
+.international-verse>p:last-child{color:#665950;font: .76rem system-ui,sans-serif;letter-spacing:.08em}
+.international-rule{display:block;width:65px;height:2px;background:#7d4838;margin:22px 0}
+.international-etching{align-self:stretch;min-height:285px;background:url('/media/pampa-gaucho-editorial.svg') center /cover no-repeat;filter:grayscale(1) sepia(.43) contrast(.85);mask-image:linear-gradient(90deg,transparent,black 12%,black 85%,transparent)}
+.international-message h2{font-size:clamp(1.6rem,2.5vw,2.7rem);color:#34231c;margin:0 0 15px}
+.international-message p{color:#594e45;font-size:1.12rem;line-height:1.5}
+.international-message a{color:#382921;text-decoration:none;border-bottom:1px solid #382921;padding-bottom:8px}
+.international-editions{max-width:1200px;margin:48px auto;padding:0 25px}
+.international-editions h2{font-size:2.2rem;color:#382720}
+.international-editions>div{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.international-editions>div>a{display:flex;flex-direction:column;gap:10px;text-decoration:none;background:#fffaf3;border:1px solid #e1d1b9;padding:25px;color:#42352d}
+.international-editions>div>a>strong{font-size:1.5rem}
+.international-editions>div>a>span{font: .78rem system-ui,sans-serif}
+.international-legal{max-width:1100px;margin:0 auto;padding:20px;color:#665f56;font:.8rem/1.5 system-ui,sans-serif}
+@media(max-width:1100px){.international-sections{grid-template-columns:repeat(3,1fr)}.international-section-image{height:170px}}
+@media(max-width:700px){.international-hero{min-height:470px}.international-hero-overlay{width:calc(100% - 36px)}.international-hero h1{font-size:3.65rem}.international-sections{grid-template-columns:repeat(2,1fr);width:calc(100% - 22px);gap:9px}.international-feature{grid-template-columns:1fr}.international-etching{min-height:230px}.international-section-text{min-height:200px}.international-editions>div{grid-template-columns:1fr}}
+@media(max-width:420px){.international-sections{grid-template-columns:1fr}.international-section-image{height:190px}.international-section-text{min-height:0}.international-languages{justify-content:flex-start}}
