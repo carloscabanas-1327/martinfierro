@@ -1,10 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
+import {idiomas} from '../../data/idiomas';
 ---
-<Base title="Deutsche Ausgabe" description="Entdecken Sie José Hernández und Martín Fierro, ein bedeutendes Werk der argentinischen Gaucho-Literatur. Der spanische Originaltext ist verfügbar; eine deutsche Übersetzung ist hier noch nicht veröffentlicht." lang="de" pageType="CollectionPage" noindex={true}>
+<Base title="Deutsch: bibliografische Recherche läuft" description="Die deutsche Übersetzung von Martín Fierro ist noch bibliografisch zu prüfen. Das spanische Original ist verfügbar." lang="de" pageType="CollectionPage" noindex={true}>
  <div class="breadcrumbs"><a href="/">Martín Fierro</a><span>Deutsch</span></div>
- <section class="section-intro"><p class="eyebrow">MARTINFIERRO.ORG · Deutsch</p><h1>Deutsche Ausgabe</h1><p class="lead">Entdecken Sie José Hernández und Martín Fierro, ein bedeutendes Werk der argentinischen Gaucho-Literatur. Der spanische Originaltext ist verfügbar; eine deutsche Übersetzung ist hier noch nicht veröffentlicht.</p></section>
- <nav aria-label="Language / Idioma" class="language-picker"><a href="/es/"  lang="es">Español</a><a href="/en/"  lang="en">English</a><a href="/pt/"  lang="pt">Português</a><a href="/fr/"  lang="fr">Français</a><a href="/it/"  lang="it">Italiano</a><a href="/de/" aria-current="page" lang="de">Deutsch</a></nav>
- <div class="editorial-directory"><a class="directory-feature" href="/leer/"><span class="directory-mark">1872 · 1879</span><h2>Spanisches Original lesen</h2><p>El gaucho Martín Fierro · La vuelta de Martín Fierro</p></a><a class="directory-feature" href="/temas/"><span class="directory-mark">46 CANTOS</span><h2>Themen entdecken (Spanisch)</h2><p>Topics and reading paths · Contenidos en español</p></a><a class="directory-feature" href="/jose-hernandez/"><span class="directory-mark">1834 — 1886</span><h2>Biografie von José Hernández (Spanisch)</h2><p>José Hernández · Research and documentary sources in Spanish</p></a></div>
- <p class="notice">This language edition is an introductory landing page. Linked reading and research content is currently in Spanish. No full translated poem is claimed.</p>
+ <section class="section-intro"><p class="eyebrow">Bibliografische Recherche</p><h1>Deutsch: Ausgabe in Vorbereitung</h1><p class="lead">Eine konkrete deutsche Übersetzung ist noch nicht anhand einer Ausgabe überprüft. Deshalb wird hier weder eine vollständige Übersetzung noch ein freier Nutzungsstatus behauptet.</p></section>
+ <nav class="language-picker" aria-label="Andere Sprachen">{idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo}>{i.nombre}</a>)}</nav>
+ <div class="editorial-paper"><h2>Spanisches Original</h2><p>Die beiden Teile von José Hernández können im spanischen Original gelesen werden.</p><p><a href="/leer/">Original lesen</a></p></div>
 </Base>
