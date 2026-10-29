@@ -25,11 +25,11 @@ def descargar(numero):
 def construir(nombre,numero,primera):
     url,original,checksum=descargar(numero)
     guardar(ROOT/'fuentes'/f'gutenberg-{numero}-original.txt',original)
-    a=re.search(r'\\*\\*\\* START OF THE PROJECT GUTENBERG EBOOK[^\\n]*\\*\\*',original,re.I)
-    b=re.search(r'\\*\\*\\* END OF THE PROJECT GUTENBERG EBOOK',original,re.I)
+    a=re.search(r'\*\*\* START OF THE PROJECT GUTENBERG EBOOK[^\n]*\*\*',original,re.I)
+    b=re.search(r'\*\*\* END OF THE PROJECT GUTENBERG EBOOK',original,re.I)
     if not a or not b:raise RuntimeError('Marcadores Gutenberg ausentes')
     cuerpo=original[a.end():b.start()].strip()
-    guardar(ROOT/'obra'/nombre/'completo.txt',cuerpo+'\\n')
+    guardar(ROOT/'obra'/nombre/'completo.txt',cuerpo+'\n')
     lineas=cuerpo.splitlines()
     ultimo=395 if nombre=='ida' else 1193
     indices=[]
@@ -49,7 +49,7 @@ def construir(nombre,numero,primera):
     encabezado=0
     for pos,indice in enumerate(indices):
         segmento_previo=lineas[encabezado:indice]
-        titulos=[s.strip() for s in segmento_previo if re.fullmatch(r'[IVXLCDM]+(?:\\s*-\\s*.+)?',s.strip())]
+        titulos=[s.strip() for s in segmento_previo if re.fullmatch(r'[IVXLCDM]+(?:\s*-\s*.+)?',s.strip())]
         if titulos:
             canto+=1
             cantos.append({'numero':canto,'titulo':titulos[-1]})
@@ -77,10 +77,10 @@ def construir(nombre,numero,primera):
     for c in cantos:
         grupo=[e for e in estrofas if e['canto']==c['numero']]
         if grupo:
-            guardar(destino/'cantos'/f'{c["numero"]:02d}.txt',f'CANTO {c["titulo"]}\\n\\n'+'\\n\\n'.join(str(e['numero'])+'\\n'+'\\n'.join(v['texto'] for v in e['versos']) for e in grupo)+'\\n')
-    guardar(destino/'estrofas.json',json.dumps(estrofas,ensure_ascii=False,indent=2)+'\\n')
-    guardar(destino/'cantos.json',json.dumps(cantos,ensure_ascii=False,indent=2)+'\\n')
-    cuerpo_html='\\n'.join(f'<section class="estrofa" id="{e["id"]}"><h3>Estrofa {e["numero"]}</h3>'+''.join(f'<div id="{v["id"]}"><a href="#{v["id"]}">¶</a> {html.escape(v["texto"])}</div>' for v in e['versos'])+'</section>' for e in estrofas)
+            guardar(destino/'cantos'/f'{c["numero"]:02d}.txt',f'CANTO {c["titulo"]}\n\n'+'\n\n'.join(str(e['numero'])+'\n'+'\n'.join(v['texto'] for v in e['versos']) for e in grupo)+'\n')
+    guardar(destino/'estrofas.json',json.dumps(estrofas,ensure_ascii=False,indent=2)+'\n')
+    guardar(destino/'cantos.json',json.dumps(cantos,ensure_ascii=False,indent=2)+'\n')
+    cuerpo_html='\n'.join(f'<section class="estrofa" id="{e["id"]}"><h3>Estrofa {e["numero"]}</h3>'+''.join(f'<div id="{v["id"]}"><a href="#{v["id"]}">¶</a> {html.escape(v["texto"])}</div>' for v in e['versos'])+'</section>' for e in estrofas)
     guardar(destino/'poema.html','<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Martín Fierro — '+nombre+'</title><style>body{max-width:740px;margin:3rem auto;padding:1rem;font:1.1rem/1.65 Georgia,serif}.estrofa{margin:2rem 0}.estrofa h3{font:0.8rem sans-serif;color:#666}.estrofa a{opacity:.35;text-decoration:none}</style><h1>Martín Fierro — '+nombre+'</h1>'+cuerpo_html+'</html>')
     return versos,{'parte':nombre,'gutenberg':numero,'url':url,'sha256':checksum,'estrofas_detectadas':len(estrofas),'versos_detectados':len(versos),'cantos_detectados':len(cantos),'numeros_faltantes':sorted(set(range(primera,ultimo+1))-set(numeros)),'anomalias_versificacion':problemas,'estado':'REQUIERE_REVISION_FILOLÓGICA'}
 
