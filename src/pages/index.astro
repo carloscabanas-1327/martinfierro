@@ -2,24 +2,61 @@
 import Base from '../layouts/Base.astro';
 import {partes,numeroDeVersos} from '../lib/corpus';
 import {temas} from '../data/temas';
+const etiquetas:Record<string,string>={
+ 'vida-gaucha':'Campo y costumbres','frontera':'Historia y frontera','justicia-y-autoridad':'Sociedad y poder',
+ 'amistad-y-lealtad':'Vínculos humanos','familia-y-regreso':'Memoria y regreso','consejos-y-sabiduria':'Versos y enseñanzas'
+};
+const imagenesTemas=['vida-gaucha','frontera','justicia-y-autoridad','amistad-y-lealtad','familia-y-regreso','consejos-y-sabiduria'];
 ---
-<Base title="Leé la obra completa" description="Martín Fierro de José Hernández completo. Lectura por cantos, búsqueda de versos e índices temáticos.">
-<section class="hero">
- <p class="eyebrow">José Hernández · Argentina · 1872–1879</p>
- <h1>Martín Fierro, verso por verso.</h1>
- <p class="lead">Las dos partes de la obra, organizadas para leer con calma, explorar por canto y encontrar pasajes sin perder el hilo de la historia.</p>
- <div class="actions"><a class="btn" href="/leer/ida/1/">Comenzar la lectura</a><a class="btn secondary" href="/buscar/">Buscar en los 7.210 versos</a></div>
-</section>
-<section class="section" aria-labelledby="partes"><h2 id="partes">La obra completa</h2>
-<div class="cards">
-{['ida','vuelta'].map(parte=><a class="card" href={`/leer/${parte}/`}>
- <div class="eyebrow">{partes[parte].anio} · {partes[parte].cantos.length} cantos</div>
- <h3>{partes[parte].nombre}</h3><p>{numeroDeVersos(parte).toLocaleString('es-AR')} versos · {partes[parte].descripcion}. Elegí un canto o comenzá desde el principio.</p>
-</a>)}
-</div></section>
-<section class="section" aria-labelledby="explorar"><h2 id="explorar">Explorar por temas</h2>
-<div class="cards">{temas.slice(0,3).map(t=><a class="card" href={`/temas/${t.slug}/`}><h3>{t.titulo}</h3><p>{t.descripcion}</p></a>)}</div>
-<p><a href="/temas/">Ver todos los temas</a></p>
-</section>
-<div class="notice">El texto se basa en transcripciones históricas conservadas en el repositorio. Las correcciones documentadas y los límites de la verificación se explican en <a href="/acerca/">Fuentes y edición</a>.</div>
+<Base title="Biblioteca y revista cultural" description="Martín Fierro completo: 46 cantos, 7.210 versos, buscador y guías para explorar la obra de José Hernández y el mundo gauchesco.">
+<div class="magazine-home">
+ <div class="magazine-kicker"><span>UNA OBRA, MUCHAS HISTORIAS</span><span>JOSÉ HERNÁNDEZ · 1872 — 1879</span></div>
+ <section class="magazine-hero" aria-labelledby="portada-titulo">
+  <div class="magazine-hero-copy">
+   <p class="magazine-label">Biblioteca · Literatura · Cultura argentina</p>
+   <h1 id="portada-titulo">Martín Fierro, <em>verso por verso</em> y más allá del poema.</h1>
+   <p class="magazine-intro">Leé la obra completa, encontrá sus versos y explorá el mundo gauchesco a través de sus historias, temas y personajes.</p>
+   <div class="actions"><a class="btn" href="/leer/ida/1/">Comenzar la lectura</a><a class="btn secondary" href="/buscar/">Buscar en la obra</a></div>
+   <p class="magazine-hero-foot">Edición digital estructurada · Acceso gratuito a la obra</p>
+  </div>
+  <figure class="magazine-hero-image">
+   <img src="/media/pampa-gaucho-editorial.svg" width="1200" height="760" alt="Ilustración editorial original de un gaucho a caballo, con horizonte de la pampa y sol dorado" fetchpriority="high" decoding="async" />
+   <figcaption>La pampa · Ilustración editorial original del proyecto, no documento histórico</figcaption>
+  </figure>
+ </section>
+
+ <nav class="magazine-quick" aria-label="Accesos principales">
+  <a href="/leer/ida/"><span class="quick-icon" aria-hidden="true">I</span><span>La ida<small>1872 · 13 cantos</small></span></a>
+  <a href="/leer/vuelta/"><span class="quick-icon" aria-hidden="true">II</span><span>La vuelta<small>1879 · 33 cantos</small></span></a>
+  <a href="/buscar/"><span class="quick-icon" aria-hidden="true">⌕</span><span>Buscar versos<small>Encontrá un pasaje</small></span></a>
+  <a href="/temas/"><span class="quick-icon" aria-hidden="true">✦</span><span>Explorar temas<small>Guías de lectura</small></span></a>
+ </nav>
+
+ <section class="magazine-section" aria-labelledby="obra-completa">
+  <div class="magazine-heading"><div><p class="magazine-label">LA BIBLIOTECA</p><h2 id="obra-completa">La obra completa</h2></div><p>Dos libros, una historia que sigue resonando.</p></div>
+  <div class="magazine-editions">
+   {(['ida','vuelta'] as const).map((parte,idx)=><a class="edition-card" href={`/leer/${parte}/`}>
+    <div class={`edition-number edition-number-${idx+1}`} aria-hidden="true">{idx===0?'I':'II'}</div>
+    <div><p class="magazine-label">{partes[parte].anio} · {partes[parte].cantos.length} CANTOS</p><h3>{partes[parte].nombre}</h3><p>{numeroDeVersos(parte).toLocaleString('es-AR')} versos. Elegí un canto o comenzá por el primero.</p><span class="text-link">Explorar los cantos <span aria-hidden="true">→</span></span></div>
+   </a>)}
+  </div>
+ </section>
+
+ <section class="magazine-section" aria-labelledby="universo-fierro">
+  <div class="magazine-heading"><div><p class="magazine-label">EL UNIVERSO DEL POEMA</p><h2 id="universo-fierro">Explorar sus grandes temas</h2></div><a href="/temas/">Ver todos los temas <span aria-hidden="true">→</span></a></div>
+  <div class="magazine-topic-grid">
+   {temas.map((tema,idx)=><a href={`/temas/${tema.slug}/`} class="magazine-topic">
+    <div class="topic-art"><img src={`/media/tema-${imagenesTemas[idx]}.svg`} width="480" height="300" loading="lazy" alt="" decoding="async" /></div>
+    <div class="magazine-topic-body"><span class="magazine-label">{etiquetas[tema.slug] ?? 'Guía de lectura'}</span><h3>{tema.titulo}</h3><p>{tema.descripcion}</p><span class="text-link">Descubrir pasajes →</span></div>
+   </a>)}
+  </div>
+  <p class="magazine-note">Estas guías reúnen pasajes seleccionados por criterio editorial; no forman parte de la clasificación original de José Hernández.</p>
+ </section>
+
+ <aside class="magazine-quotation" aria-label="Verso destacado">
+  <div><p class="magazine-label">UN VERSO, UNA HISTORIA</p><blockquote>“Aquí me pongo a cantar”</blockquote><p>El gaucho Martín Fierro · La ida · Canto I</p></div>
+  <a href="/leer/ida/1/">Leer desde el comienzo <span aria-hidden="true">→</span></a>
+ </aside>
+ <section class="magazine-section magazine-project" aria-labelledby="sobre-edicion"><div><p class="magazine-label">SOBRE ESTA EDICIÓN</p><h2 id="sobre-edicion">El poema, sus fuentes y su historia editorial</h2><p>Conservamos las transcripciones de origen y documentamos las intervenciones realizadas. La verificación técnica no equivale a una certificación filológica independiente.</p><a class="text-link" href="/acerca/">Conocé las fuentes y el método →</a></div><div class="magazine-stat"><strong>46</strong><span>cantos para recorrer</span><strong>7.210</strong><span>versos para buscar y leer</span></div></section>
+</div>
 </Base>

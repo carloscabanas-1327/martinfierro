@@ -4,12 +4,16 @@ on:
     branches:
       - main
       - desarrollo/portal-astro-lectura
+      - 'diseno/**'
     paths:
       - 'src/**'
       - 'package.json'
       - 'astro.config.mjs'
       - 'tsconfig.json'
       - '.github/workflows/validar-portal.yml'
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 permissions:
   contents: read
