@@ -1,0 +1,65 @@
+{
+  "politica": "Se preserva el archivo Gutenberg original. El JSON y TXT estructurados constituyen una edición derivada con enmiendas explícitas para errores de la transcripción fuente. No representa certificación filológica independiente.",
+  "edicion_base": {
+    "ida": {
+      "gutenberg": 14765,
+      "url": "https://www.gutenberg.org/ebooks/14765"
+    },
+    "vuelta": {
+      "gutenberg": 15066,
+      "url": "https://www.gutenberg.org/ebooks/15066"
+    }
+  },
+  "enmiendas": [
+    {
+      "tipo": "verso_faltante",
+      "parte": "ida",
+      "estrofa": 295,
+      "posicion": 5,
+      "texto_restaurado": "Si este mundo es un infierno",
+      "fuentes": [
+        "https://digitales.bcn.gob.ar/files/textos/publicacion-martin-fierro.pdf",
+        "https://es.wikisource.org/wiki/El_Gaucho_Mart%C3%ADn_Fierro_%281894%29/X"
+      ],
+      "notas": "Gutenberg contiene 5 versos en esta estrofa; las ediciones comparadas muestran seis."
+    },
+    {
+      "tipo": "verso_faltante",
+      "parte": "vuelta",
+      "estrofa": 421,
+      "posicion": 3,
+      "texto_restaurado": "escúchenme cuando canto",
+      "fuentes": [
+        "https://www.cervantesvirtual.com/obra-visor/la-vuelta-de-martin-fierro--0/html/ff29e6a8-82b1-11df-acc7-002185ce6064_2.html",
+        "https://digitales.bcn.gob.ar/files/textos/publicacion-martin-fierro.pdf"
+      ],
+      "notas": "Gutenberg contiene 5 versos; ediciones comparadas muestran el tercero."
+    },
+    {
+      "tipo": "numero_erroneo",
+      "parte": "vuelta",
+      "rotulo_original": "538",
+      "rotulo_normalizado": "638",
+      "estrofa": 638,
+      "fuentes": [
+        "https://www.herbogeminis.com/revista/IMG/pdf/jose_hernandez_martin_fierro_ida_y_vuelta.pdf",
+        "https://cortazar.com.ar/wp-content/uploads/2024/09/Hernandez-Jose-Martin-Fierro-II.pdf"
+      ],
+      "notas": "En Gutenberg el rótulo 538 aparece entre 637 y 639; la edición de contraste numera 638."
+    },
+    {
+      "tipo": "orden_erroneo_en_fuente",
+      "parte": "ida",
+      "rotulos": [
+        359,
+        360,
+        361,
+        362,
+        363
+      ],
+      "fuente": "https://www.gutenberg.org/cache/epub/14765/pg14765.txt",
+      "notas": "Gutenberg coloca 362 y 363 antes de 359-361. El corpus reordena por número; el archivo original conserva el orden de origen."
+    }
+  ],
+  "alcance": "Los hashes acreditan estabilidad. No existe aún cotejo independiente verso por verso de los 7210."
+}
