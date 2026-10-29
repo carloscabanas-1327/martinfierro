@@ -58,3 +58,9 @@ main{min-height:68vh;padding-top:40px;padding-bottom:70px}h1,h2,h3{font-family:G
 .site-header nav{gap:clamp(9px,1.5vw,22px)}.site-header nav a{font-size:.9rem}
 @media(max-width:900px){.editorial-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.editorial-two-col{grid-template-columns:1fr}}
 @media(max-width:600px){.editorial-directory{grid-template-columns:1fr}.directory-feature{padding:22px}.editorial-paper{padding:22px}}
+
+/* Selector internacional: accesible, compacto y adaptable */
+.language-picker{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 30px;padding:14px 0;border-block:1px solid var(--line)}
+.language-picker a{display:inline-block;padding:7px 12px;border:1px solid #ccd6ca;border-radius:999px;background:#f8faf6;text-decoration:none;color:var(--ink);font-size:.92rem}
+.language-picker a[aria-current="page"]{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:700}
+.language-picker a:hover{border-color:#8a6a3c}
