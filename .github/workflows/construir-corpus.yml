@@ -1,0 +1,26 @@
+name: Generar corpus documental (preliminar)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Ejecutar generador
+        run: python scripts/construir.py
+      - name: Verificar JSON sintácticamente
+        run: python -m json.tool datos/versos.json > /dev/null
+      - name: Publicar paquete para revisión (no modifica main)
+        uses: actions/upload-artifact@v4
+        with:
+          name: martin-fierro-corpus-PRELIMINAR
+          path: |
+            obra/
+            datos/
+            fuentes/
+          retention-days: 30
