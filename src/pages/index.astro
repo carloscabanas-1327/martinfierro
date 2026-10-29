@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import {partes,numeroDeVersos} from '../lib/corpus';
+import {temas} from '../data/temas';
+---
+<Base title="Leé la obra completa" description="Martín Fierro de José Hernández completo. Lectura por cantos, búsqueda de versos e índices temáticos.">
+<section class="hero">
+ <p class="eyebrow">José Hernández · Argentina · 1872–1879</p>
+ <h1>Martín Fierro, verso por verso.</h1>
+ <p class="lead">Las dos partes de la obra, organizadas para leer con calma, explorar por canto y encontrar pasajes sin perder el hilo de la historia.</p>
+ <div class="actions"><a class="btn" href="/leer/ida/1/">Comenzar la lectura</a><a class="btn secondary" href="/buscar/">Buscar en los 7.210 versos</a></div>
+</section>
+<section class="section" aria-labelledby="partes"><h2 id="partes">La obra completa</h2>
+<div class="cards">
+{(Object.keys(partes) as Array<keyof typeof partes>).map(parte=><a class="card" href={`/leer/${parte}/`}>
+ <div class="eyebrow">{partes[parte].anio} · {partes[parte].cantos.length} cantos</div>
+ <h3>{partes[parte].nombre}</h3><p>{numeroDeVersos(parte).toLocaleString('es-AR')} versos · {partes[parte].descripcion}. Elegí un canto o comenzá desde el principio.</p>
+</a>)}
+</div></section>
+<section class="section" aria-labelledby="explorar"><h2 id="explorar">Explorar por temas</h2>
+<div class="cards">{temas.slice(0,3).map(t=><a class="card" href={`/temas/${t.slug}/`}><h3>{t.titulo}</h3><p>{t.descripcion}</p></a>)}</div>
+<p><a href="/temas/">Ver todos los temas</a></p>
+</section>
+<div class="notice">El texto se basa en transcripciones históricas conservadas en el repositorio. Las correcciones documentadas y los límites de la verificación se explican en <a href="/acerca/">Fuentes y edición</a>.</div>
+</Base>
