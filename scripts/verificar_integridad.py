@@ -76,7 +76,9 @@ def probar():
             originales=detectados[e['numero']]
             estructurados=[v['texto'] for v in e['versos']
                            if (parte,e['numero'],v['linea']) not in ENMIENDAS]
-            assert originales==estructurados,f'Diferencia en bloque fuente/JSON: {parte} {e["numero"]}'
+            if originales!=estructurados:
+                print('DIFERENCIA',parte,e['numero'],'ORIGINAL',repr(originales[:20]),'ESTRUCTURADO',repr(estructurados[:20]))
+                raise AssertionError(f'Diferencia en bloque fuente/JSON: {parte} {e["numero"]}')
         assert sum(map(len,detectados.values()))==versos_cantidad-1
         # Verificación de archivo de lectura: exactamente todos los versos en orden.
         texto=(ROOT/'obra'/parte/'completo-estructurado.txt').read_text(encoding='utf-8')
