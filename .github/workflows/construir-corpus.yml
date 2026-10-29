@@ -10,7 +10,7 @@ on:
       - 'scripts/verificar_integridad.py'
       - '.github/workflows/construir-corpus.yml'
 permissions:
-  contents: read
+  contents: write
 jobs:
   generar:
     runs-on: ubuntu-latest
@@ -29,6 +29,16 @@ jobs:
         run: python scripts/auditar.py
       - name: Verificar integridad técnica (obligatorio)
         run: python scripts/verificar_integridad.py
+      - name: Incorporar corpus verificado a main
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add obra/ datos/ fuentes/gutenberg-14765-original.txt fuentes/gutenberg-15066-original.txt fuentes/informe-generacion.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: corpus técnico validado (7210 versos, 46 cantos) [skip ci]"
+            git push origin HEAD:main
+          fi
       - name: Publicar paquete para revisión (no modifica main)
         uses: actions/upload-artifact@v4
         with:
