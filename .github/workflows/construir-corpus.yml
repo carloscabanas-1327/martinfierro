@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/construir.py'
+      - 'scripts/auditar.py'
       - '.github/workflows/construir-corpus.yml'
 permissions:
   contents: read
@@ -20,6 +21,8 @@ jobs:
         run: python scripts/construir.py
       - name: Verificar JSON sintácticamente
         run: python -m json.tool datos/versos.json > /dev/null
+      - name: Auditar numeración y cotejar fuente
+        run: python scripts/auditar.py
       - name: Publicar paquete para revisión (no modifica main)
         uses: actions/upload-artifact@v4
         with:
