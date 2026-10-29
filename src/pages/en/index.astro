@@ -1,10 +1,28 @@
 ---
 import Base from '../../layouts/Base.astro';
+import {idiomas} from '../../data/idiomas';
+const ficha=idiomas.find(i=>i.codigo==='en')!;
 ---
-<Base title="English edition" description="Discover José Hernández and Martín Fierro, the landmark Argentine gaucho poem. The original Spanish text is available; a verified English translation is not yet published." lang="en" pageType="CollectionPage" noindex={true}>
- <div class="breadcrumbs"><a href="/">Martín Fierro</a><span>English</span></div>
- <section class="section-intro"><p class="eyebrow">MARTINFIERRO.ORG · English</p><h1>English edition</h1><p class="lead">Discover José Hernández and Martín Fierro, the landmark Argentine gaucho poem. The original Spanish text is available; a verified English translation is not yet published.</p></section>
- <nav aria-label="Language / Idioma" class="language-picker"><a href="/es/"  lang="es">Español</a><a href="/en/" aria-current="page" lang="en">English</a><a href="/pt/"  lang="pt">Português</a><a href="/fr/"  lang="fr">Français</a><a href="/it/"  lang="it">Italiano</a><a href="/de/"  lang="de">Deutsch</a></nav>
- <div class="editorial-directory"><a class="directory-feature" href="/leer/"><span class="directory-mark">1872 · 1879</span><h2>Read the Spanish original</h2><p>El gaucho Martín Fierro · La vuelta de Martín Fierro</p></a><a class="directory-feature" href="/temas/"><span class="directory-mark">46 CANTOS</span><h2>Explore the themes (Spanish)</h2><p>Topics and reading paths · Contenidos en español</p></a><a class="directory-feature" href="/jose-hernandez/"><span class="directory-mark">1834 — 1886</span><h2>José Hernández biography (Spanish)</h2><p>José Hernández · Research and documentary sources in Spanish</p></a></div>
- <p class="notice">This language edition is an introductory landing page. Linked reading and research content is currently in Spanish. No full translated poem is claimed.</p>
+<Base title={ficha.titulo} description={ficha.intro} lang="en" pageType="CollectionPage" noindex={ficha.estado !== 'original'}>
+  <div class="breadcrumbs"><a href="/">Martín Fierro</a><span>{ficha.nombre}</span></div>
+  <section class="section-intro">
+    <p class="eyebrow">MARTINFIERRO.ORG · {ficha.nombre}</p>
+    <h1>{ficha.titulo}</h1>
+    <p class="lead">{ficha.intro}</p>
+  </section>
+  <nav class="language-picker" aria-label="Idiomas · Languages">
+    {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo} aria-current={i.codigo === ficha.codigo ? 'page' : undefined}>{i.nombre}</a>)}
+  </nav>
+  <section class="editorial-paper" aria-labelledby="traduccion-documentada">
+    <p class="eyebrow">{ficha.estado==='original'?'Texto original · 1872 y 1879':'Catálogo documental · Verificación pendiente'}</p>
+    <h2 id="traduccion-documentada">{ficha.traduccion}</h2>
+    <p>{ficha.nota}</p>
+    {ficha.estado!=='original' && <p><strong>Nota editorial:</strong> la referencia procede del inventario preliminar del proyecto; no implica que exista una edición íntegra localizada, ni que sea de dominio público o esté autorizada para reproducirse.</p>}
+  </section>
+  <div class="editorial-directory">
+    <a class="directory-feature" href="/leer/ida/"><span class="directory-mark">1872 · ORIGINAL</span><h2>El gaucho Martín Fierro</h2><p>13 cantos · texto original en español</p><span class="text-link">Leer →</span></a>
+    <a class="directory-feature" href="/leer/vuelta/"><span class="directory-mark">1879 · ORIGINAL</span><h2>La vuelta de Martín Fierro</h2><p>33 cantos · texto original en español</p><span class="text-link">Leer →</span></a>
+    <a class="directory-feature" href="/archivo/"><span class="directory-mark">FUENTES</span><h2>Archivo documental</h2><p>Procedencia del corpus, metodología y recursos de investigación en español</p><span class="text-link">Consultar →</span></a>
+  </div>
+  <p class="notice">Las fichas internacionales son páginas documentales iniciales, no traducciones publicadas. Los enlaces a la obra llevan a la edición original española.</p>
 </Base>
