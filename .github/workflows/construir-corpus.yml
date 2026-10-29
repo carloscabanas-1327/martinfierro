@@ -8,6 +8,7 @@ on:
       - 'scripts/auditar.py'
       - 'scripts/diagnostico_fuente.py'
       - 'scripts/verificar_integridad.py'
+      - 'scripts/cotejar_bcn.py'
       - '.github/workflows/construir-corpus.yml'
 permissions:
   contents: write
@@ -29,6 +30,10 @@ jobs:
         run: python scripts/auditar.py
       - name: Verificar integridad técnica (obligatorio)
         run: python scripts/verificar_integridad.py
+      - name: Preparar cotejo independiente con edición BCN
+        run: python -m pip install --quiet pymupdf rapidfuzz
+      - name: Cotejar todos los versos frente a edición BCN
+        run: python scripts/cotejar_bcn.py
       - name: Incorporar corpus verificado a main
         if: github.ref == 'refs/heads/main'
         run: |
