@@ -1,0 +1,16 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {partes,estrofasDeCanto,enlaceCanto} from '../../../lib/corpus';
+export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).map(parte=>({params:{parte},props:{parte}}));}
+const {parte}=Astro.props as {parte:keyof typeof partes};
+const libro=partes[parte];
+---
+<Base title={`Índice de ${libro.nombre}`}>
+ <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span><a href="/leer/">Leer</a></span><span>{libro.nombre}</span></nav>
+ <p class="eyebrow">{libro.anio} · {libro.cantos.length} cantos</p>
+ <h1>{libro.nombre}</h1><p class="lead">Elegí un canto para leerlo, o comenzá por el primero. Los enlaces a las estrofas y versos son permanentes.</p>
+ <p><a class="btn" href={enlaceCanto(parte,1)}>Comenzar</a></p>
+ <section class="section"><h2>Índice de cantos</h2><div class="cards">
+ {libro.cantos.map(c=><a class="card" href={enlaceCanto(parte,c.numero)}><p class="eyebrow">Canto {c.numero}</p><h3>{c.titulo===String(c.numero)?`Canto ${c.numero}`:c.titulo}</h3><p>Leer el canto</p></a>)}
+ </div></section>
+ </Base>
