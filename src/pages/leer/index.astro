@@ -1,0 +1,9 @@
+---
+import Base from '../../layouts/Base.astro';
+import {partes,numeroDeVersos} from '../../lib/corpus';
+---
+<Base title="Índice de lectura">
+ <p class="eyebrow">Índice general</p><h1>Leé Martín Fierro</h1>
+ <p class="lead">La obra está dividida en dos libros. Cada parte incluye un índice completo de cantos y navegación entre ellos.</p>
+ <div class="cards">{(Object.keys(partes) as Array<keyof typeof partes>).map(parte=><a class="card" href={`/leer/${parte}/`}><p class="eyebrow">{partes[parte].anio}</p><h2>{partes[parte].nombre}</h2><p>{partes[parte].cantos.length} cantos · {numeroDeVersos(parte).toLocaleString('es-AR')} versos</p></a>)}</div>
+ </Base>
