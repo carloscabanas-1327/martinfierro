@@ -1,0 +1,360 @@
+{
+  "referencia": "https://digitales.bcn.gob.ar/files/textos/publicacion-martin-fierro.pdf",
+  "fuente_descripcion": "Biblioteca del Congreso de la Nación, edición 2022; Ida 1878, Vuelta 1879",
+  "lineas_edicion_segunda": 7376,
+  "paginas": 264,
+  "partes": [
+    {
+      "parte": "ida",
+      "versos": 2316,
+      "exactos_normalizados": 2036,
+      "semejanza_90_mas": 255,
+      "semejanza_75_90": 16,
+      "menos_de_75": 9,
+      "casos_revision": [
+        {
+          "id": "mf-ida-e0033-v01",
+          "texto": "Y verlos al cair la tarde",
+          "coincidencia": "y verlos al cair la noche",
+          "semejanza": 84.0
+        },
+        {
+          "id": "mf-ida-e0039-v01",
+          "texto": "Pues vivía la mamajuana",
+          "coincidencia": "pues siempre la mamajuana",
+          "semejanza": 79.2
+        },
+        {
+          "id": "mf-ida-e0039-v02",
+          "texto": "siempre bajo la carreta,",
+          "coincidencia": "vivia bajo la carreta",
+          "semejanza": 77.3
+        },
+        {
+          "id": "mf-ida-e0051-v02",
+          "texto": "era, en habiendo más gente,",
+          "coincidencia": "era cuando habia mas gente",
+          "semejanza": 78.4
+        },
+        {
+          "id": "mf-ida-e0055-v05",
+          "texto": "también tuvo que juir",
+          "coincidencia": "tuvo tambien que juir",
+          "semejanza": 76.2
+        },
+        {
+          "id": "mf-ida-e0062-v03",
+          "texto": "jergas, ponchos, todo cuanto había",
+          "coincidencia": "jergas poncho cuanto habia",
+          "semejanza": 89.7
+        },
+        {
+          "id": "mf-ida-e0108-v05",
+          "texto": "ya me tenían medio loco",
+          "coincidencia": "ya nos tenian medio loco",
+          "semejanza": 89.4
+        },
+        {
+          "id": "mf-ida-e0114-v05",
+          "texto": "que pronto con el pulpero",
+          "coincidencia": "que ahi no mas con el pulpero",
+          "semejanza": 77.8
+        },
+        {
+          "id": "mf-ida-e0116-v05",
+          "texto": "algunos creiban que estaba",
+          "coincidencia": "a veces creiba que estaba",
+          "semejanza": 78.4
+        },
+        {
+          "id": "mf-ida-e0136-v02",
+          "texto": "los milicos son los piones,",
+          "coincidencia": "los milicos se hacen piones",
+          "semejanza": 79.2
+        },
+        {
+          "id": "mf-ida-e0198-v03",
+          "texto": "y me puse a champurriar",
+          "coincidencia": "y me puse a talariar",
+          "semejanza": 79.1
+        },
+        {
+          "id": "mf-ida-e0254-v06",
+          "texto": "que su delito y las fieras.",
+          "coincidencia": "que su soleda y las fieras",
+          "semejanza": 80.8
+        },
+        {
+          "id": "mf-ida-e0272-v05",
+          "texto": "pero ya empezó a aflojar",
+          "coincidencia": "ya empezo a aflojar",
+          "semejanza": 88.4
+        },
+        {
+          "id": "mf-ida-e0314-v06",
+          "texto": "un palazo le asenté.",
+          "coincidencia": "un planaso le asente",
+          "semejanza": 87.2
+        },
+        {
+          "id": "mf-ida-e0375-v03",
+          "texto": "y que los tratan de",
+          "coincidencia": "y que los tratan de hermanos",
+          "semejanza": 80.9
+        },
+        {
+          "id": "mf-ida-e0386-v03",
+          "texto": "y sentársele a un bagual",
+          "coincidencia": "o sentarsele en un bagual",
+          "semejanza": 89.8
+        },
+        {
+          "id": "mf-ida-e0078-v01",
+          "texto": "Y un sargento chamuscao",
+          "coincidencia": "el sargento llama al cabo",
+          "semejanza": 62.5
+        },
+        {
+          "id": "mf-ida-e0111-v01",
+          "texto": "Afigúrese cualquiera",
+          "coincidencia": "ansi le pasa a cualquiera",
+          "semejanza": 66.7
+        },
+        {
+          "id": "mf-ida-e0112-v06",
+          "texto": "pa atormentar a la gente.",
+          "coincidencia": "para aburrir a la gente",
+          "semejanza": 72.3
+        },
+        {
+          "id": "mf-ida-e0134-v05",
+          "texto": "hacérmeles cimarrón",
+          "coincidencia": "que era medio cimarron",
+          "semejanza": 63.4
+        },
+        {
+          "id": "mf-ida-e0161-v03",
+          "texto": "que esa ganza venga o vaya,",
+          "coincidencia": "que el menistro venga o vaya",
+          "semejanza": 74.1
+        },
+        {
+          "id": "mf-ida-e0166-v01",
+          "texto": "Me parece el campo orégano",
+          "coincidencia": "me parece que lo veo",
+          "semejanza": 69.6
+        },
+        {
+          "id": "mf-ida-e0205-v02",
+          "texto": "diciéndoles: caballeros,",
+          "coincidencia": "diciendo con aparato",
+          "semejanza": 66.7
+        },
+        {
+          "id": "mf-ida-e0285-v01",
+          "texto": "Dejamos amotonaos",
+          "coincidencia": "como dejamos nosotros",
+          "semejanza": 63.2
+        },
+        {
+          "id": "mf-ida-e0337-v06",
+          "texto": "tocando tablas.",
+          "coincidencia": "no tengo cuando acabar",
+          "semejanza": 61.1
+        }
+      ],
+      "estado": "COTEJO_ASISTIDO_PENDIENTE_REVISION"
+    },
+    {
+      "parte": "vuelta",
+      "versos": 4894,
+      "exactos_normalizados": 4450,
+      "semejanza_90_mas": 414,
+      "semejanza_75_90": 11,
+      "menos_de_75": 19,
+      "casos_revision": [
+        {
+          "id": "mf-vuelta-e0492-v01",
+          "texto": "Se cruzan en el desierto",
+          "coincidencia": "se cruzan por el desierto",
+          "semejanza": 89.8
+        },
+        {
+          "id": "mf-vuelta-e0527-v03",
+          "texto": "el nos salvó...¡Ah, Cristo!,",
+          "coincidencia": "el nos salvo pero ah cristo",
+          "semejanza": 89.8
+        },
+        {
+          "id": "mf-vuelta-e0578-v02",
+          "texto": "azotándola seguía;",
+          "coincidencia": "y la mortanda seguia",
+          "semejanza": 75.7
+        },
+        {
+          "id": "mf-vuelta-e0586-v03",
+          "texto": "aprovechó esa distancia",
+          "coincidencia": "aprovecho esa ganancia",
+          "semejanza": 84.4
+        },
+        {
+          "id": "mf-vuelta-e0604-v04",
+          "texto": "le diste en esa ocación",
+          "coincidencia": "diste en esa ocasion",
+          "semejanza": 88.4
+        },
+        {
+          "id": "mf-vuelta-e0655-v36",
+          "texto": "hacen los diez como yo cuento.",
+          "coincidencia": "hacen los diez que yo cuento",
+          "semejanza": 87.7
+        },
+        {
+          "id": "mf-vuelta-e0655-v144",
+          "texto": "-eso juera de lo menos-,",
+          "coincidencia": "eso fuera lo de menos",
+          "semejanza": 81.0
+        },
+        {
+          "id": "mf-vuelta-e0733-v04",
+          "texto": "metido no sé en qué enriedos,",
+          "coincidencia": "metido en no se que enriedos",
+          "semejanza": 89.3
+        },
+        {
+          "id": "mf-vuelta-e0804-v06",
+          "texto": "le estan lanzando al finao!\".",
+          "coincidencia": "le estan resando al finao",
+          "semejanza": 86.3
+        },
+        {
+          "id": "mf-vuelta-e0819-v02",
+          "texto": "\"¿dónde estarás padeciendo?",
+          "coincidencia": "donde andaras padeciendo",
+          "semejanza": 87.5
+        },
+        {
+          "id": "mf-vuelta-e0926-v04",
+          "texto": "ya no es fácil que se ablande,",
+          "coincidencia": "ya no es facil de que ablande",
+          "semejanza": 89.7
+        },
+        {
+          "id": "mf-vuelta-e0432-v03",
+          "texto": "estaban irresolutos;",
+          "coincidencia": "estan muertos o cautivos",
+          "semejanza": 60.5
+        },
+        {
+          "id": "mf-vuelta-e0462-v02",
+          "texto": "ninguna conversación:",
+          "coincidencia": "tuita la conversacion",
+          "semejanza": 73.2
+        },
+        {
+          "id": "mf-vuelta-e0517-v02",
+          "texto": "permanece sosegao;",
+          "coincidencia": "para tenerlo seguro",
+          "semejanza": 55.6
+        },
+        {
+          "id": "mf-vuelta-e0529-v06",
+          "texto": "que los diezmó.",
+          "coincidencia": "que vivoras dije yo",
+          "semejanza": 66.7
+        },
+        {
+          "id": "mf-vuelta-e0530-v03",
+          "texto": "gritaban alborotados:",
+          "coincidencia": "armaron tanto alboroto",
+          "semejanza": 61.9
+        },
+        {
+          "id": "mf-vuelta-e0580-v05",
+          "texto": "cometió tranquilamente",
+          "coincidencia": "como tirano la manda",
+          "semejanza": 61.9
+        },
+        {
+          "id": "mf-vuelta-e0598-v05",
+          "texto": "haciéndomelas silbar",
+          "coincidencia": "haciendo temblar la tierra",
+          "semejanza": 65.2
+        },
+        {
+          "id": "mf-vuelta-e0621-v06",
+          "texto": "sollozando dolorida.",
+          "coincidencia": "sollozando me lo dijo",
+          "semejanza": 70.0
+        },
+        {
+          "id": "mf-vuelta-e0654-v03",
+          "texto": "permítanmé descansar:",
+          "coincidencia": "no se podia descansar",
+          "semejanza": 63.4
+        },
+        {
+          "id": "mf-vuelta-e0777-v04",
+          "texto": "educándome seguía,",
+          "coincidencia": "diciendome que queria",
+          "semejanza": 63.2
+        },
+        {
+          "id": "mf-vuelta-e0781-v05",
+          "texto": "tabernáculo, senor,",
+          "coincidencia": "tabernaculo que bruto",
+          "semejanza": 73.7
+        },
+        {
+          "id": "mf-vuelta-e0817-v04",
+          "texto": "misericordia infinita,",
+          "coincidencia": "a la majesta infinita",
+          "semejanza": 57.1
+        },
+        {
+          "id": "mf-vuelta-e0855-v17",
+          "texto": "Asiguran algunos",
+          "coincidencia": "y cuando sin trapo alguno",
+          "semejanza": 58.5
+        },
+        {
+          "id": "mf-vuelta-e0946-v03",
+          "texto": "redamaban cariñosas",
+          "coincidencia": "me llamaban picardia",
+          "semejanza": 66.7
+        },
+        {
+          "id": "mf-vuelta-e0950-v02",
+          "texto": "permanecían suplicantes,",
+          "coincidencia": "por su hermana conteste",
+          "semejanza": 56.5
+        },
+        {
+          "id": "mf-vuelta-e1003-v02",
+          "texto": "causen desesperación,",
+          "coincidencia": "que en esta despedicion",
+          "semejanza": 65.1
+        },
+        {
+          "id": "mf-vuelta-e1143-v16",
+          "texto": "infinitas menudencias",
+          "coincidencia": "donde infinitas miserias",
+          "semejanza": 66.7
+        },
+        {
+          "id": "mf-vuelta-e1143-v63",
+          "texto": "resolvieron separarse",
+          "coincidencia": "nos pusieron separaos",
+          "semejanza": 66.7
+        },
+        {
+          "id": "mf-vuelta-e1188-v01",
+          "texto": "Permítanme descansar,",
+          "coincidencia": "no se podia descansar",
+          "semejanza": 63.4
+        }
+      ],
+      "estado": "COTEJO_ASISTIDO_PENDIENTE_REVISION"
+    }
+  ]
+}
