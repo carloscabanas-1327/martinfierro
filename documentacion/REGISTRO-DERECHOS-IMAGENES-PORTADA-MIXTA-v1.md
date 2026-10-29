@@ -23,3 +23,17 @@ No se incorporan obras de Florencio Molina Campos ni imágenes externas de proce
 - Revisar contraste, orden de foco, tamaño del texto y accesibilidad.
 - Comprobar que `/leer/`, `/buscar/`, `/temas/` y `/acerca/` siguen disponibles.
 - Obtener aprobación humana de la portada de producción según directivas del proyecto.
+
+## Viñetas editoriales originales añadidas
+Se incorporan los siguientes archivos vectoriales SVG de diseño nuevo, creados expresamente para esta portada mediante instrucciones gráficas y formas geométricas, sin copiar pinturas o fotografías ajenas:
+- `public/media/tema-vida-gaucha.svg`
+- `public/media/tema-frontera.svg`
+- `public/media/tema-justicia-y-autoridad.svg`
+- `public/media/tema-amistad-y-lealtad.svg`
+- `public/media/tema-familia-y-regreso.svg`
+- `public/media/tema-consejos-y-sabiduria.svg`
+
+Las seis imágenes son interpretaciones editoriales contemporáneas y no fuentes históricas. Su atributo ALT es vacío porque ilustran tarjetas cuyo texto ya identifica inequívocamente el tema; se evita duplicar la descripción para lectores de pantalla.
+
+## Monetización futura sin bloques vacíos
+`src/data/monetizacion.ts` contiene un registro tipado, inicialmente vacío y desactivado. No instala AdSense, no inserta publicidad, no reserva espacios visuales y no recopila datos de publicidad. Ubicaciones, dimensiones y proveedores se definirán con aprobación humana posterior. Se deberá indicar contenido comercial y cumplir las normas de Google y de los programas de afiliados.
