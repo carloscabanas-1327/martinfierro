@@ -7,6 +7,7 @@ on:
       - 'scripts/construir.py'
       - 'scripts/auditar.py'
       - 'scripts/diagnostico_fuente.py'
+      - 'scripts/verificar_integridad.py'
       - '.github/workflows/construir-corpus.yml'
 permissions:
   contents: read
@@ -26,6 +27,8 @@ jobs:
         run: python scripts/diagnostico_fuente.py
       - name: Auditar numeración y cotejar fuente
         run: python scripts/auditar.py
+      - name: Verificar integridad técnica (obligatorio)
+        run: python scripts/verificar_integridad.py
       - name: Publicar paquete para revisión (no modifica main)
         uses: actions/upload-artifact@v4
         with:
