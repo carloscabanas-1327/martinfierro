@@ -1,8 +1,9 @@
 ---
-interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean}
-const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false}=Astro.props;
+interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'}
+const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none'}=Astro.props;
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
 const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
+import AdSlot from '../components/AdSlot.astro';
 import '../styles/global.css';
 import '../styles/editorial-shell.css';
 ---
@@ -28,6 +29,8 @@ import '../styles/editorial-shell.css';
  <title>{title} | Martín Fierro</title>
 </head>
 <body>
+ <!-- Reserva n.º 1: inmediatamente después de abrir BODY; permanece oculta. -->
+ {adKind !== 'none' && <AdSlot id={`${adKind}-01-body`} kind={adKind} />}
  <a class="skip" href="#contenido">Saltar al contenido</a>
  <header class="site-header">
   <div class="editorial-topline"><div class="container"><span>ARGENTINA · LITERATURA · CULTURA</span><span>JOSÉ HERNÁNDEZ · 1872—1879</span></div></div>

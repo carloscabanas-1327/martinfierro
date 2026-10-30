@@ -1,0 +1,58 @@
+[
+  {
+    "id": "hero-gaucho-pampa",
+    "path": "/media/fotografias-v3/hero-gaucho-pampa.webp",
+    "dimensions": "1586x992",
+    "bytes": 208720,
+    "tipo": "Recreación digital; no fotografía histórica"
+  },
+  {
+    "id": "la-ida",
+    "path": "/media/fotografias-v3/la-ida.webp",
+    "dimensions": "1586x992",
+    "bytes": 229810,
+    "tipo": "Recreación digital; no fotografía histórica"
+  },
+  {
+    "id": "la-vuelta",
+    "path": "/media/fotografias-v3/la-vuelta.webp",
+    "dimensions": "1586x992",
+    "bytes": 240510,
+    "tipo": "Recreación digital; no fotografía histórica"
+  },
+  {
+    "id": "jose-hernandez-recreacion",
+    "path": "/media/fotografias-v3/jose-hernandez-recreacion.webp",
+    "dimensions": "1586x992",
+    "bytes": 163010,
+    "tipo": "Recreación digital; no fotografía histórica"
+  },
+  {
+    "id": "exegesis",
+    "path": "/media/fotografias-v3/exegesis.webp",
+    "dimensions": "1586x992",
+    "bytes": 136718,
+    "tipo": "Recreación digital; no fotografía histórica"
+  },
+  {
+    "id": "biblioteca-critica",
+    "path": "/media/fotografias-v3/biblioteca-critica.webp",
+    "dimensions": "1586x992",
+    "bytes": 176476,
+    "tipo": "Recreación digital; no fotografía histórica"
+  },
+  {
+    "id": "revista-cultural",
+    "path": "/media/fotografias-v3/revista-cultural.webp",
+    "dimensions": "1586x992",
+    "bytes": 185896,
+    "tipo": "Recreación digital; no fotografía histórica"
+  },
+  {
+    "id": "archivo-documental-recreacion",
+    "path": "/media/fotografias-v3/archivo-documental-recreacion.webp",
+    "dimensions": "1586x992",
+    "bytes": 149752,
+    "tipo": "Recreación digital; no fotografía histórica"
+  }
+]

@@ -1,6 +1,9 @@
 ---
+import AdSlot from '../../components/AdSlot.astro';
 import Base from '../../layouts/Base.astro';import {temas} from '../../data/temas';
 ---
-<Base title="Explorar por temas"><p class="eyebrow">Guía de lectura</p><h1>Explorar por temas</h1><p class="lead">Recorridos editoriales iniciales para descubrir pasajes y situaciones del poema. No son etiquetas originales de José Hernández.</p>
-<div class="cards">{temas.map(t=><a class="card" href={`/temas/${t.slug}/`}><h2>{t.titulo}</h2><p>{t.descripcion}</p></a>)}</div>
+<Base title="Explorar por temas" adKind="category"><p class="eyebrow">Guía de lectura</p><h1>Explorar por temas</h1><p class="lead">Recorridos editoriales iniciales para descubrir pasajes y situaciones del poema. No son etiquetas originales de José Hernández.</p>
+<AdSlot id="category-02" kind="category" /><div class="cards">{temas.map(t=><a class="card" href={`/temas/${t.slug}/`}><h2>{t.titulo}</h2><p>{t.descripcion}</p></a>)}</div>
+<AdSlot id="category-03" kind="category" />
+<AdSlot id="category-04" kind="category" />
 </Base>
