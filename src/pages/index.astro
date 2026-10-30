@@ -4,12 +4,12 @@ import Base from '../layouts/Base.astro';
 import { idiomas } from '../data/idiomas';
 import '../styles/revista-v2.css';
 const rutas = [
- {numero:'01',titulo:'La obra',sub:'El poema íntegro',url:'/leer/',imagen:'/media/tema-familia-y-regreso.svg',alt:'Ilustración editorial de la vida gauchesca'},
- {numero:'02',titulo:'José Hernández',sub:'El autor y su época',url:'/jose-hernandez/',imagen:'/media/tema-vida-gaucha.svg',alt:'Paisaje rural recreado artísticamente'},
- {numero:'03',titulo:'Exégesis',sub:'Claves de lectura',url:'/exegesis/',imagen:'/media/tema-justicia-y-autoridad.svg',alt:'Ilustración sobre justicia y autoridad'},
- {numero:'04',titulo:'Biblioteca crítica',sub:'Estudios y ediciones',url:'/biblioteca-critica/',imagen:'/media/tema-consejos-y-sabiduria.svg',alt:'Escena gauchesca ilustrada'},
- {numero:'05',titulo:'Revista cultural',sub:'Historia y literatura',url:'/revista/',imagen:'/media/tema-frontera.svg',alt:'Recreación artística de la frontera'},
- {numero:'06',titulo:'Archivo',sub:'Fuentes documentales',url:'/archivo/',imagen:'/media/tema-amistad-y-lealtad.svg',alt:'Ilustración editorial de personajes del poema'}
+ {numero:'01',titulo:'La obra',sub:'El poema íntegro',url:'/leer/',imagen:'/media/fotografias-v3/la-ida.webp',alt:'Recreación digital de la vida gauchesca en la pampa'},
+ {numero:'02',titulo:'José Hernández',sub:'El autor y su época',url:'/jose-hernandez/',imagen:'/media/fotografias-v3/jose-hernandez-recreacion.webp',alt:'Recreación digital de una escena vinculada al escritor'},
+ {numero:'03',titulo:'Exégesis',sub:'Claves de lectura',url:'/exegesis/',imagen:'/media/fotografias-v3/exegesis.webp',alt:'Escena de lectura e investigación literaria recreada digitalmente'},
+ {numero:'04',titulo:'Biblioteca crítica',sub:'Estudios y ediciones',url:'/biblioteca-critica/',imagen:'/media/fotografias-v3/biblioteca-critica.webp',alt:'Libros y estudios literarios en una recreación digital'},
+ {numero:'05',titulo:'Revista cultural',sub:'Historia y literatura',url:'/revista/',imagen:'/media/fotografias-v3/revista-cultural.webp',alt:'Escena recreada de la vida rural argentina'},
+ {numero:'06',titulo:'Archivo',sub:'Fuentes documentales',url:'/archivo/',imagen:'/media/fotografias-v3/archivo-documental-recreacion.webp',alt:'Recreación digital de un archivo de investigación'}
 ];
 ---
 <Base title="Portada — Biblioteca y revista cultural" description="Martín Fierro: obra completa de José Hernández, 46 cantos, 7.210 versos, historia, archivo y revista cultural argentina." adKind="category">
@@ -17,8 +17,8 @@ const rutas = [
   <div class="mf-editionline"><span>EDICIÓN CULTURAL · ARGENTINA</span><span>JOSÉ HERNÁNDEZ · 1872 / 1879</span><a href="/acerca/">ACERCA DE ESTA EDICIÓN ↗</a></div>
   <section class="mf-lead" aria-labelledby="mf-headline">
     <div class="mf-lead-art">
-      <img src="/media/pampa-gaucho-editorial.svg" width="1440" height="850" alt="Ilustración artística de un gaucho a caballo en la pampa, no documento histórico" fetchpriority="high"/>
-      <p>ILUSTRACIÓN EDITORIAL · RECREACIÓN ARTÍSTICA</p>
+      <img src="/media/fotografias-v3/hero-gaucho-pampa.webp" width="1440" height="850" alt="Recreación digital fotorrealista de un gaucho a caballo en la pampa al atardecer" fetchpriority="high"/>
+      <p>RECREACIÓN DIGITAL · NO ES UNA FOTOGRAFÍA HISTÓRICA</p>
     </div>
     <div class="mf-lead-copy">
       <span class="mf-kicker">LA GRAN OBRA DE LA LITERATURA GAUCHESCA</span>
@@ -33,14 +33,14 @@ const rutas = [
   <section class="mf-storyline" aria-labelledby="mf-story-title">
     <div class="mf-section-header"><span class="mf-section-number">01 / BIBLIOTECA</span><h2 id="mf-story-title">La obra, de principio a fin</h2><a href="/leer/">Ver índice completo ↗</a></div>
     <div class="mf-story-grid">
-      <a class="mf-feature-story" href="/leer/ida/"><div class="mf-story-img"><img loading="lazy" src="/media/tema-familia-y-regreso.svg" alt="Recreación artística de una escena de la pampa" width="900" height="550"/></div><div class="mf-story-copy"><span class="mf-kicker">PRIMERA PARTE · 1872 · 13 CANTOS</span><h3>El gaucho Martín Fierro</h3><p>El comienzo de la historia. Accedé a cada canto y a sus versos identificados.</p><span class="mf-textlink">Explorar La ida ↗</span></div></a>
-      <a class="mf-side-story" href="/leer/vuelta/"><div class="mf-story-img"><img loading="lazy" src="/media/tema-consejos-y-sabiduria.svg" alt="Ilustración editorial de consejos y sabiduría gauchesca" width="650" height="430"/></div><div class="mf-story-copy"><span class="mf-kicker">SEGUNDA PARTE · 1879 · 33 CANTOS</span><h3>La vuelta de Martín Fierro</h3><p>El regreso, los encuentros y los consejos. La segunda parte íntegra.</p><span class="mf-textlink">Explorar La vuelta ↗</span></div></a>
+      <a class="mf-feature-story" href="/leer/ida/"><div class="mf-story-img"><img loading="lazy" src="/media/fotografias-v3/la-ida.webp" alt="Recreación digital de una partida del mundo gauchesco" width="900" height="550"/></div><div class="mf-story-copy"><span class="mf-kicker">PRIMERA PARTE · 1872 · 13 CANTOS</span><h3>El gaucho Martín Fierro</h3><p>El comienzo de la historia. Accedé a cada canto y a sus versos identificados.</p><span class="mf-textlink">Explorar La ida ↗</span></div></a>
+      <a class="mf-side-story" href="/leer/vuelta/"><div class="mf-story-img"><img loading="lazy" src="/media/fotografias-v3/la-vuelta.webp" alt="Recreación digital del regreso de un gaucho a su hogar" width="650" height="430"/></div><div class="mf-story-copy"><span class="mf-kicker">SEGUNDA PARTE · 1879 · 33 CANTOS</span><h3>La vuelta de Martín Fierro</h3><p>El regreso, los encuentros y los consejos. La segunda parte íntegra.</p><span class="mf-textlink">Explorar La vuelta ↗</span></div></a>
       <div class="mf-quote"><span class="mf-kicker">DEL CANTO I</span><blockquote>«Aquí me pongo a cantar<br/>al compás de la vigüela…»</blockquote><p>Las palabras originales, con el contexto y la navegación de la edición digital.</p><a href="/leer/ida/1/">Leer el primer canto ↗</a></div>
     </div>
   </section>
   <section class="mf-explore" aria-labelledby="mf-explore-title"><div class="mf-section-header"><span class="mf-section-number">02 / EXPLORAR</span><h2 id="mf-explore-title">Una cultura, muchas miradas</h2><span class="mf-header-note">RECORRIDOS DOCUMENTALES</span></div><div class="mf-explore-grid">{rutas.map(r=><a href={r.url} class="mf-route"><div class="mf-route-image"><img src={r.imagen} alt={r.alt} width="480" height="300" loading="lazy"/></div><div class="mf-route-text"><span>{r.numero} / {r.sub}</span><h3>{r.titulo}</h3><b aria-hidden="true">↗</b></div></a>)}</div></section>
   <section class="mf-bottom"><div><span class="mf-kicker">PATRIMONIO DOCUMENTAL ABIERTO</span><h2>Una biblioteca para leer. Un archivo para investigar.</h2><p>La revista y la biblioteca conviven sin alterar el texto original: cada canto mantiene su lugar y cada fuente puede consultarse.</p><a href="/archivo/">Conocer el archivo ↗</a></div><div class="mf-bottom-figures"><div><strong>1872</strong><span>El gaucho Martín Fierro</span></div><div><strong>1879</strong><span>La vuelta de Martín Fierro</span></div></div></section>
-  <p class="mf-disclaimer">Las ilustraciones de esta portada son recreaciones artísticas, no documentos históricos. Las secciones enlazan a páginas del proyecto; las traducciones internacionales no se presentan como textos íntegros publicados. <a href="/acerca/">Consultar fuentes y método editorial.</a></p>
+  <p class="mf-disclaimer">Las imágenes fotorrealistas de esta portada son recreaciones digitales, no fotografías ni documentos históricos. Las secciones enlazan a páginas del proyecto; las traducciones internacionales no se presentan como textos íntegros publicados. <a href="/acerca/">Consultar fuentes y método editorial.</a></p>
 </div>
 <AdSlot id="category-03" kind="category" />
 <AdSlot id="category-04" kind="category" />
