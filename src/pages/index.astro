@@ -1,57 +1,43 @@
 ---
 import Base from '../layouts/Base.astro';
-import {idiomas} from '../data/idiomas';
-const secciones=[
-{titulo:'La obra',detalle:'Los 46 cantos completos, verso a verso, con notas y contexto histórico.',url:'/leer/',imagen:'/media/tema-familia-y-regreso.svg',alt:'Ilustración original de la vida gauchesca'},
-{titulo:'José Hernández',detalle:'Biografía, vida, obra y su tiempo.',url:'/jose-hernandez/',imagen:'/media/tema-vida-gaucha.svg',alt:'Ilustración editorial del paisaje rural argentino, no retrato histórico'},
-{titulo:'Exégesis',detalle:'Análisis, personajes, significado y lecturas críticas.',url:'/exegesis/',imagen:'/media/tema-justicia-y-autoridad.svg',alt:'Ilustración original inspirada en los temas del poema'},
-{titulo:'Biblioteca crítica',detalle:'Estudios, ensayos, ediciones y referencias académicas.',url:'/biblioteca-critica/',imagen:'/media/tema-consejos-y-sabiduria.svg',alt:'Ilustración editorial de escenas del mundo gauchesco'},
-{titulo:'Revista cultural',detalle:'Literatura, historia, arte y cultura gauchesca hoy.',url:'/revista/',imagen:'/media/tema-frontera.svg',alt:'Ilustración del paisaje histórico de la frontera'},
-{titulo:'Archivo documental',detalle:'Documentos, ediciones históricas, fuentes y bibliografía.',url:'/archivo/',imagen:'/media/tema-amistad-y-lealtad.svg',alt:'Ilustración editorial de personajes del poema'}
+import { idiomas } from '../data/idiomas';
+import '../styles/revista-v2.css';
+const rutas = [
+ {numero:'01',titulo:'La obra',sub:'El poema íntegro',url:'/leer/',imagen:'/media/tema-familia-y-regreso.svg',alt:'Ilustración editorial de la vida gauchesca'},
+ {numero:'02',titulo:'José Hernández',sub:'El autor y su época',url:'/jose-hernandez/',imagen:'/media/tema-vida-gaucha.svg',alt:'Paisaje rural recreado artísticamente'},
+ {numero:'03',titulo:'Exégesis',sub:'Claves de lectura',url:'/exegesis/',imagen:'/media/tema-justicia-y-autoridad.svg',alt:'Ilustración sobre justicia y autoridad'},
+ {numero:'04',titulo:'Biblioteca crítica',sub:'Estudios y ediciones',url:'/biblioteca-critica/',imagen:'/media/tema-consejos-y-sabiduria.svg',alt:'Escena gauchesca ilustrada'},
+ {numero:'05',titulo:'Revista cultural',sub:'Historia y literatura',url:'/revista/',imagen:'/media/tema-frontera.svg',alt:'Recreación artística de la frontera'},
+ {numero:'06',titulo:'Archivo',sub:'Fuentes documentales',url:'/archivo/',imagen:'/media/tema-amistad-y-lealtad.svg',alt:'Ilustración editorial de personajes del poema'}
 ];
 ---
-<Base title="Martín Fierro — biblioteca y revista cultural internacional" description="Leé Martín Fierro completo: 46 cantos y 7.210 versos de José Hernández. Biblioteca, análisis, archivo documental y ediciones internacionales.">
-<div class="international-home">
-  <section class="international-hero" aria-labelledby="portada-titulo">
-    <div class="international-hero-overlay">
-      <p class="international-kicker">Biblioteca y revista cultural · Argentina · 1872–1879</p>
-      <h1 id="portada-titulo">Martín Fierro <span>una obra, un pueblo, un horizonte</span></h1>
-      <p>La obra de José Hernández, su tiempo y su legado<br /> en una biblioteca digital abierta al mundo.</p>
-      <div class="international-actions">
-        <a class="international-button" href="/leer/ida/1/">Leer Martín Fierro <span aria-hidden="true">→</span></a>
-        <a class="international-button international-button-outline" href="/acerca/">Conocer el proyecto</a>
-      </div>
-      <p class="international-image-note">Ilustración digital original del proyecto · Recreación artística, no documento histórico</p>
+<Base title="Portada — Biblioteca y revista cultural" description="Martín Fierro: obra completa de José Hernández, 46 cantos, 7.210 versos, historia, archivo y revista cultural argentina.">
+<div class="mf-revista">
+  <div class="mf-editionline"><span>EDICIÓN CULTURAL · ARGENTINA</span><span>JOSÉ HERNÁNDEZ · 1872 / 1879</span><a href="/acerca/">ACERCA DE ESTA EDICIÓN ↗</a></div>
+  <section class="mf-lead" aria-labelledby="mf-headline">
+    <div class="mf-lead-art">
+      <img src="/media/pampa-gaucho-editorial.svg" width="1440" height="850" alt="Ilustración artística de un gaucho a caballo en la pampa, no documento histórico" fetchpriority="high"/>
+      <p>ILUSTRACIÓN EDITORIAL · RECREACIÓN ARTÍSTICA</p>
+    </div>
+    <div class="mf-lead-copy">
+      <span class="mf-kicker">LA GRAN OBRA DE LA LITERATURA GAUCHESCA</span>
+      <h1 id="mf-headline">El mundo de <em>Martín Fierro</em>, más allá del poema.</h1>
+      <p class="mf-deck">Una obra, un pueblo, un horizonte. Leé el texto completo, descubrí su tiempo y explorá el legado cultural de José Hernández.</p>
+      <div class="mf-lead-actions"><a class="mf-primary" href="/leer/ida/1/">Empezar a leer <span aria-hidden="true">↗</span></a><a class="mf-secondary" href="/buscar/">Buscar en los versos <span aria-hidden="true">↗</span></a></div>
+      <div class="mf-lead-metrics"><span><strong>46</strong> cantos</span><span><strong>7.210</strong> versos</span><span><strong>2</strong> partes</span></div>
     </div>
   </section>
-  <nav class="international-languages" aria-label="Elegir idioma">
-    <span class="international-languages-label">Ediciones y traducciones</span>
-    {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo}>{i.nombre} <span aria-hidden="true">↗</span></a>)}
-  </nav>
-  <section class="international-sections" aria-label="Explorar la biblioteca y la revista">
-    {secciones.map(s=><a class="international-section" href={s.url}>
-      <div class="international-section-image"><img src={s.imagen} loading="lazy" width="480" height="300" alt={s.alt}/></div>
-      <div class="international-section-text"><h2>{s.titulo}</h2><p>{s.detalle}</p><span aria-hidden="true">→</span></div>
-    </a>)}
-  </section>
-  <section class="international-feature" aria-label="Primeros versos">
-    <div class="international-verse">
-      <p class="international-eyebrow">Martín Fierro · Canto I</p>
-      <blockquote>“Aquí me pongo a cantar<br /> al compás de la vigüela…”</blockquote>
-      <span class="international-rule"></span>
-      <p>El gaucho Martín Fierro, 1872</p>
-    </div>
-    <div class="international-etching" role="img" aria-label="Ilustración original de un gaucho a caballo en la pampa"></div>
-    <div class="international-message">
-      <h2>Una obra universal</h2>
-      <p>Martín Fierro es mucho más que un poema. Es la voz de un pueblo, un testimonio de su tiempo y una obra que sigue interpelando al mundo.</p>
-      <a href="/leer/">Explorar la obra <span aria-hidden="true">→</span></a>
+  <nav class="mf-languages" aria-label="Ediciones por idioma"><span>EDICIONES INTERNACIONALES</span><div>{idiomas.map(i => <a href={`/${i.codigo}/`} lang={i.codigo}>{i.nombre}</a>)}</div></nav>
+  <section class="mf-storyline" aria-labelledby="mf-story-title">
+    <div class="mf-section-header"><span class="mf-section-number">01 / BIBLIOTECA</span><h2 id="mf-story-title">La obra, de principio a fin</h2><a href="/leer/">Ver índice completo ↗</a></div>
+    <div class="mf-story-grid">
+      <a class="mf-feature-story" href="/leer/ida/"><div class="mf-story-img"><img loading="lazy" src="/media/tema-familia-y-regreso.svg" alt="Recreación artística de una escena de la pampa" width="900" height="550"/></div><div class="mf-story-copy"><span class="mf-kicker">PRIMERA PARTE · 1872 · 13 CANTOS</span><h3>El gaucho Martín Fierro</h3><p>El comienzo de la historia. Accedé a cada canto y a sus versos identificados.</p><span class="mf-textlink">Explorar La ida ↗</span></div></a>
+      <a class="mf-side-story" href="/leer/vuelta/"><div class="mf-story-img"><img loading="lazy" src="/media/tema-consejos-y-sabiduria.svg" alt="Ilustración editorial de consejos y sabiduría gauchesca" width="650" height="430"/></div><div class="mf-story-copy"><span class="mf-kicker">SEGUNDA PARTE · 1879 · 33 CANTOS</span><h3>La vuelta de Martín Fierro</h3><p>El regreso, los encuentros y los consejos. La segunda parte íntegra.</p><span class="mf-textlink">Explorar La vuelta ↗</span></div></a>
+      <div class="mf-quote"><span class="mf-kicker">DEL CANTO I</span><blockquote>«Aquí me pongo a cantar<br/>al compás de la vigüela…»</blockquote><p>Las palabras originales, con el contexto y la navegación de la edición digital.</p><a href="/leer/ida/1/">Leer el primer canto ↗</a></div>
     </div>
   </section>
-  <section class="international-editions">
-    <header><p class="international-eyebrow">Texto original · Acceso libre</p><h2>Dos partes, una historia</h2></header>
-    <div><a href="/leer/ida/"><span>1872 · 13 cantos</span><strong>El gaucho Martín Fierro</strong><span>Explorar los cantos →</span></a><a href="/leer/vuelta/"><span>1879 · 33 cantos</span><strong>La vuelta de Martín Fierro</strong><span>Explorar los cantos →</span></a></div>
-  </section>
-  <p class="international-legal">La edición original está disponible en español. Las fichas internacionales identifican traducciones investigadas, pero no afirman la publicación de textos completos en otros idiomas. <a href="/acerca/">Fuentes y criterios editoriales</a>.</p>
+  <section class="mf-explore" aria-labelledby="mf-explore-title"><div class="mf-section-header"><span class="mf-section-number">02 / EXPLORAR</span><h2 id="mf-explore-title">Una cultura, muchas miradas</h2><span class="mf-header-note">RECORRIDOS DOCUMENTALES</span></div><div class="mf-explore-grid">{rutas.map(r=><a href={r.url} class="mf-route"><div class="mf-route-image"><img src={r.imagen} alt={r.alt} width="480" height="300" loading="lazy"/></div><div class="mf-route-text"><span>{r.numero} / {r.sub}</span><h3>{r.titulo}</h3><b aria-hidden="true">↗</b></div></a>)}</div></section>
+  <section class="mf-bottom"><div><span class="mf-kicker">PATRIMONIO DOCUMENTAL ABIERTO</span><h2>Una biblioteca para leer. Un archivo para investigar.</h2><p>La revista y la biblioteca conviven sin alterar el texto original: cada canto mantiene su lugar y cada fuente puede consultarse.</p><a href="/archivo/">Conocer el archivo ↗</a></div><div class="mf-bottom-figures"><div><strong>1872</strong><span>El gaucho Martín Fierro</span></div><div><strong>1879</strong><span>La vuelta de Martín Fierro</span></div></div></section>
+  <p class="mf-disclaimer">Las ilustraciones de esta portada son recreaciones artísticas, no documentos históricos. Las secciones enlazan a páginas del proyecto; las traducciones internacionales no se presentan como textos íntegros publicados. <a href="/acerca/">Consultar fuentes y método editorial.</a></p>
 </div>
 </Base>
