@@ -2,7 +2,7 @@
 interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean}
 const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false}=Astro.props;
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
-const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:'https://martinfierro.org/'} };
+const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
 import '../styles/global.css';
 ---
 <!doctype html>
