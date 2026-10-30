@@ -1,0 +1,10 @@
+---
+interface Props { id: string; kind?: 'article' | 'category' | 'transition'; }
+const { id, kind = 'article' } = Astro.props;
+---
+<!-- Reserva publicitaria sin espacio visible ni scripts de terceros.
+     La activación futura requiere consentimiento, configuración y revisión editorial. -->
+<div class="mf-ad-slot" data-ad-slot={id} data-ad-kind={kind} hidden aria-hidden="true"></div>
+<style>
+  .mf-ad-slot[hidden] { display: none !important; }
+</style>
