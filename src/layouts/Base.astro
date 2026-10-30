@@ -4,6 +4,7 @@ const {title,description='Leé Martín Fierro completo: las dos partes, sus cant
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
 const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
 import '../styles/global.css';
+import '../styles/editorial-shell.css';
 ---
 <!doctype html>
 <html lang={lang}>
@@ -11,7 +12,7 @@ import '../styles/global.css';
  <meta charset="UTF-8"/>
  <meta name="viewport" content="width=device-width, initial-scale=1"/>
  <meta name="description" content={description}/>
- <meta name="theme-color" content="#18362a"/>
+ <meta name="theme-color" content="#f7f2e8"/>
  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2"/>
  <link rel="shortcut icon" href="/favicon.svg?v=2"/>
  <link rel="canonical" href={canonical}/>
@@ -29,17 +30,26 @@ import '../styles/global.css';
 <body>
  <a class="skip" href="#contenido">Saltar al contenido</a>
  <header class="site-header">
-  <div class="container header-content">
-   <a class="brand" href="/" aria-label="Martín Fierro — inicio"><span class="brand-mark">MF</span><span>Martín Fierro<small>Biblioteca y revista cultural</small></span></a>
-   <nav aria-label="Navegación principal">
-    <a href="/leer/">Leer</a><a href="/temas/">Explorar</a><a href="/jose-hernandez/">José Hernández</a><a href="/exegesis/">Exégesis</a><a href="/revista/">Revista</a><a href="/archivo/">Archivo</a><a href="/es/" aria-label="Idiomas y ediciones internacionales">Idiomas</a>
-   </nav>
+  <div class="editorial-topline"><div class="container"><span>ARGENTINA · LITERATURA · CULTURA</span><span>JOSÉ HERNÁNDEZ · 1872—1879</span></div></div>
+  <div class="container editorial-masthead">
+   <a class="brand" href="/" aria-label="Martín Fierro — inicio"><span>Martín Fierro<small>Biblioteca documental & revista cultural</small></span></a>
+   <a class="editorial-read" href="/leer/ida/1/">LEER LA OBRA <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="editorial-nav-wrap">
+   <div class="container">
+    <nav class="editorial-nav" aria-label="Navegación principal">
+     <a href="/leer/">La obra</a><a href="/temas/">Explorar</a><a href="/jose-hernandez/">José Hernández</a><a href="/exegesis/">Exégesis</a><a href="/biblioteca-critica/">Biblioteca crítica</a><a href="/revista/">Revista</a><a href="/archivo/">Archivo</a><a href="/buscar/">Buscar <span aria-hidden="true">⌕</span></a>
+    </nav>
+   </div>
   </div>
  </header>
  <main id="contenido" class="container"><slot/></main>
- <footer class="site-footer">
-  <div class="container"><p><strong>Martín Fierro</strong> · José Hernández · 1872 y 1879</p>
-  <p>Edición digital estructurada, basada en Project Gutenberg, con enmiendas documentadas. <a href="/acerca/">Fuentes, variantes y estado de verificación</a>.</p></div>
+ <footer class="site-footer editorial-footer">
+  <div class="container editorial-footer-grid">
+   <div><a href="/" class="editorial-footer-brand">Martín Fierro</a><p>Biblioteca documental y revista cultural argentina.</p><p>José Hernández · 1872 y 1879.</p></div>
+   <nav aria-label="Navegación del pie"><strong>Explorá</strong><a href="/leer/">La obra</a><a href="/revista/">Revista</a><a href="/archivo/">Archivo</a><a href="/buscar/">Buscar versos</a></nav>
+   <div><strong>Fuentes y método</strong><p>Edición digital estructurada basada en Project Gutenberg, con enmiendas documentadas.</p><a href="/acerca/">Procedencia, variantes e integridad ↗</a></div>
+  </div>
  </footer>
 </body>
 </html>
