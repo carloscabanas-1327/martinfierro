@@ -115,3 +115,25 @@ main.container:not(:has(.mf-revista)){
  .site-footer.editorial-footer>.container{width:calc(100% - 32px)}
  main.container:not(:has(.mf-revista)){width:calc(100% - 32px)}
 }
+
+
+/* Retrato documental: tratamiento editorial, sin estética de ficha CMS. */
+.mf-historic-portrait{
+  display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);
+  align-items:end;gap:clamp(18px,4vw,54px);
+  width:min(840px,100%);margin:12px 0 42px;
+  padding:20px 0;border-block:1px solid #c8b9a6;
+}
+.mf-historic-portrait img{
+  width:100%;height:auto;aspect-ratio:496/699;object-fit:contain;
+  filter:grayscale(100%);display:block;
+}
+.mf-historic-portrait figcaption{
+  color:#605347;font:400 clamp(.82rem,1vw,.98rem)/1.65 Georgia,serif;
+  border-left:2px solid #ae6347;padding-left:18px;
+}
+.mf-historic-portrait a{color:#884b33;text-underline-offset:3px}
+@media(max-width:580px){
+ .mf-historic-portrait{grid-template-columns:minmax(0,1fr);max-width:360px;gap:14px}
+ .mf-historic-portrait img{max-width:260px}
+}
