@@ -1,4 +1,5 @@
 ---
+import AdSlot from '../components/AdSlot.astro';
 import Base from '../layouts/Base.astro';
 import { idiomas } from '../data/idiomas';
 import '../styles/revista-v2.css';
@@ -11,7 +12,7 @@ const rutas = [
  {numero:'06',titulo:'Archivo',sub:'Fuentes documentales',url:'/archivo/',imagen:'/media/tema-amistad-y-lealtad.svg',alt:'Ilustración editorial de personajes del poema'}
 ];
 ---
-<Base title="Portada — Biblioteca y revista cultural" description="Martín Fierro: obra completa de José Hernández, 46 cantos, 7.210 versos, historia, archivo y revista cultural argentina.">
+<Base title="Portada — Biblioteca y revista cultural" description="Martín Fierro: obra completa de José Hernández, 46 cantos, 7.210 versos, historia, archivo y revista cultural argentina." adKind="category">
 <div class="mf-revista">
   <div class="mf-editionline"><span>EDICIÓN CULTURAL · ARGENTINA</span><span>JOSÉ HERNÁNDEZ · 1872 / 1879</span><a href="/acerca/">ACERCA DE ESTA EDICIÓN ↗</a></div>
   <section class="mf-lead" aria-labelledby="mf-headline">
@@ -27,6 +28,7 @@ const rutas = [
       <div class="mf-lead-metrics"><span><strong>46</strong> cantos</span><span><strong>7.210</strong> versos</span><span><strong>2</strong> partes</span></div>
     </div>
   </section>
+<AdSlot id="category-02" kind="category" />
   <nav class="mf-languages" aria-label="Ediciones por idioma"><span>EDICIONES INTERNACIONALES</span><div>{idiomas.map(i => <a href={`/${i.codigo}/`} lang={i.codigo}>{i.nombre}</a>)}</div></nav>
   <section class="mf-storyline" aria-labelledby="mf-story-title">
     <div class="mf-section-header"><span class="mf-section-number">01 / BIBLIOTECA</span><h2 id="mf-story-title">La obra, de principio a fin</h2><a href="/leer/">Ver índice completo ↗</a></div>
@@ -40,4 +42,6 @@ const rutas = [
   <section class="mf-bottom"><div><span class="mf-kicker">PATRIMONIO DOCUMENTAL ABIERTO</span><h2>Una biblioteca para leer. Un archivo para investigar.</h2><p>La revista y la biblioteca conviven sin alterar el texto original: cada canto mantiene su lugar y cada fuente puede consultarse.</p><a href="/archivo/">Conocer el archivo ↗</a></div><div class="mf-bottom-figures"><div><strong>1872</strong><span>El gaucho Martín Fierro</span></div><div><strong>1879</strong><span>La vuelta de Martín Fierro</span></div></div></section>
   <p class="mf-disclaimer">Las ilustraciones de esta portada son recreaciones artísticas, no documentos históricos. Las secciones enlazan a páginas del proyecto; las traducciones internacionales no se presentan como textos íntegros publicados. <a href="/acerca/">Consultar fuentes y método editorial.</a></p>
 </div>
+<AdSlot id="category-03" kind="category" />
+<AdSlot id="category-04" kind="category" />
 </Base>
