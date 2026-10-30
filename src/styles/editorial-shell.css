@@ -83,3 +83,35 @@ h1,h2,h3,blockquote{overflow-wrap:break-word}
  .site-header .brand{font-size:2rem}
  .site-header nav.editorial-nav a{font-size:.71rem}
 }
+
+
+/* CONTENEDORES DE REVISTA v3.2: alinear cabecera, navegación, página y pie. */
+:root{--mf-shell-width:1480px;--mf-reading-width:1416px}
+body .site-header,
+body .site-footer.editorial-footer{
+  width:min(var(--mf-shell-width),calc(100% - 32px));
+  margin-inline:auto;
+}
+.site-header .editorial-topline>.container,
+.site-header .editorial-nav-wrap>.container,
+.site-header .editorial-masthead,
+.site-footer.editorial-footer>.container{
+  width:min(var(--mf-reading-width),calc(100% - 52px));
+  max-width:100%;
+  margin-inline:auto;
+}
+.site-header .editorial-topline,
+.site-header .editorial-nav-wrap{
+  max-width:100%;
+}
+main.container:not(:has(.mf-revista)){
+  width:min(var(--mf-reading-width),calc(100% - 84px));
+}
+@media(max-width:720px){
+ body .site-header,body .site-footer.editorial-footer{width:100%}
+ .site-header .editorial-topline>.container,
+ .site-header .editorial-nav-wrap>.container,
+ .site-header .editorial-masthead,
+ .site-footer.editorial-footer>.container{width:calc(100% - 32px)}
+ main.container:not(:has(.mf-revista)){width:calc(100% - 32px)}
+}
