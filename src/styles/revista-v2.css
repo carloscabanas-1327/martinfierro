@@ -67,3 +67,54 @@ body:has(.mf-revista) .site-footer{background:#e8dfd1;border-color:var(--mf-bord
 @media(max-width:1050px){.mf-lead{grid-template-columns:1fr 1fr}.mf-lead-art{min-height:470px}.mf-story-grid{grid-template-columns:1.2fr 1fr}.mf-quote{grid-column:1/-1}.mf-quote blockquote{max-width:45ch}.mf-languages{align-items:flex-start;flex-direction:column}.mf-explore-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.mf-editionline{padding:10px 17px}.mf-editionline span:nth-child(2){display:none}.mf-lead{display:flex;flex-direction:column}.mf-lead-art{min-height:310px}.mf-lead-copy{padding:33px 22px}.mf-lead h1{font-size:clamp(3rem,11vw,5rem)}.mf-lead-metrics{gap:14px}.mf-storyline,.mf-explore,.mf-bottom{padding:45px 18px}.mf-story-grid,.mf-explore-grid,.mf-bottom{grid-template-columns:1fr}.mf-story-img{aspect-ratio:1.7}.mf-quote{grid-column:auto}.mf-languages{padding:20px}.mf-bottom-figures{grid-template-columns:1fr 1fr}.mf-bottom-figures strong{font-size:3.5rem}.mf-section-header{align-items:start;flex-direction:column}.mf-section-header h2{font-size:2.4rem}}
 @media(prefers-reduced-motion:reduce){.mf-revista img{transition:none!important}}
+
+
+/* CONTENEDORES DE PORTADA v3.2 — franjas y secciones dentro de la misma caja editorial. */
+body:has(.mf-revista) main.container{
+  width:min(var(--mf-shell-width,1480px),calc(100% - 32px));
+  max-width:100%;
+  margin-inline:auto;
+  padding:0;
+}
+.mf-revista{width:100%;max-width:100%;overflow:clip}
+.mf-editionline,
+.mf-lead,
+.mf-languages,
+.mf-storyline,
+.mf-explore,
+.mf-bottom,
+.mf-disclaimer{
+  max-width:var(--mf-reading-width,1416px);
+  margin-inline:auto;
+}
+.mf-editionline{width:100%;padding-inline:26px}
+.mf-lead{width:100%;min-width:0}
+.mf-lead>*{min-width:0}
+.mf-lead-copy{min-width:0}
+.mf-languages{
+  width:100%;
+  padding:18px 26px;
+}
+.mf-story-grid{grid-template-columns:minmax(0,1.36fr) minmax(0,.82fr) minmax(0,.64fr)}
+.mf-story-grid>*,.mf-explore-grid>*,.mf-bottom>*{min-width:0}
+.mf-route-image img{filter:none}
+.mf-section-header h2{min-width:0}
+@media(max-width:1050px){
+ .mf-story-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+}
+@media(max-width:850px){
+ .mf-lead{grid-template-columns:1fr}
+ .mf-lead-art{min-height:390px}
+ .mf-lead-copy{padding:clamp(24px,5vw,50px)}
+ .mf-lead h1{font-size:clamp(2.7rem,7.6vw,5.1rem);max-width:17ch}
+}
+@media(max-width:720px){
+ body:has(.mf-revista) main.container{width:100%}
+ .mf-editionline{padding-inline:16px}
+ .mf-lead{display:flex;flex-direction:column}
+ .mf-lead-art{min-height:320px}
+ .mf-lead-copy{padding:32px 20px}
+ .mf-lead h1{font-size:clamp(2.6rem,10vw,4.7rem)}
+ .mf-languages{padding:18px 20px}
+ .mf-story-grid{grid-template-columns:minmax(0,1fr)}
+}
