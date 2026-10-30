@@ -5,7 +5,7 @@ import { idiomas } from '../data/idiomas';
 import '../styles/revista-v2.css';
 const rutas = [
  {numero:'01',titulo:'La obra',sub:'El poema íntegro',url:'/leer/',imagen:'/media/fotografias-v3/la-ida.webp',alt:'Recreación digital de la vida gauchesca en la pampa'},
- {numero:'02',titulo:'José Hernández',sub:'El autor y su época',url:'/jose-hernandez/',imagen:'/media/fotografias-v3/jose-hernandez-recreacion.webp',alt:'Recreación digital de una escena vinculada al escritor'},
+ {numero:'02',titulo:'José Hernández',sub:'El autor y su época',url:'/jose-hernandez/',imagen:'https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg',alt:'Fotografía histórica original de José Hernández, hacia 1875'},
  {numero:'03',titulo:'Exégesis',sub:'Claves de lectura',url:'/exegesis/',imagen:'/media/fotografias-v3/exegesis.webp',alt:'Escena de lectura e investigación literaria recreada digitalmente'},
  {numero:'04',titulo:'Biblioteca crítica',sub:'Estudios y ediciones',url:'/biblioteca-critica/',imagen:'/media/fotografias-v3/biblioteca-critica.webp',alt:'Libros y estudios literarios en una recreación digital'},
  {numero:'05',titulo:'Revista cultural',sub:'Historia y literatura',url:'/revista/',imagen:'/media/fotografias-v3/revista-cultural.webp',alt:'Escena recreada de la vida rural argentina'},
@@ -40,7 +40,7 @@ const rutas = [
   </section>
   <section class="mf-explore" aria-labelledby="mf-explore-title"><div class="mf-section-header"><span class="mf-section-number">02 / EXPLORAR</span><h2 id="mf-explore-title">Una cultura, muchas miradas</h2><span class="mf-header-note">RECORRIDOS DOCUMENTALES</span></div><div class="mf-explore-grid">{rutas.map(r=><a href={r.url} class="mf-route"><div class="mf-route-image"><img src={r.imagen} alt={r.alt} width="480" height="300" loading="lazy"/></div><div class="mf-route-text"><span>{r.numero} / {r.sub}</span><h3>{r.titulo}</h3><b aria-hidden="true">↗</b></div></a>)}</div></section>
   <section class="mf-bottom"><div><span class="mf-kicker">PATRIMONIO DOCUMENTAL ABIERTO</span><h2>Una biblioteca para leer. Un archivo para investigar.</h2><p>La revista y la biblioteca conviven sin alterar el texto original: cada canto mantiene su lugar y cada fuente puede consultarse.</p><a href="/archivo/">Conocer el archivo ↗</a></div><div class="mf-bottom-figures"><div><strong>1872</strong><span>El gaucho Martín Fierro</span></div><div><strong>1879</strong><span>La vuelta de Martín Fierro</span></div></div></section>
-  <p class="mf-disclaimer">Las imágenes fotorrealistas de esta portada son recreaciones digitales, no fotografías ni documentos históricos. Las secciones enlazan a páginas del proyecto; las traducciones internacionales no se presentan como textos íntegros publicados. <a href="/acerca/">Consultar fuentes y método editorial.</a></p>
+  <p class="mf-disclaimer">Salvo el retrato histórico de José Hernández, las imágenes fotorrealistas de esta portada son recreaciones digitales, no fotografías ni documentos históricos. Las secciones enlazan a páginas del proyecto; las traducciones internacionales no se presentan como textos íntegros publicados. Retrato de José Hernández (hacia 1875): fuente Biblioteca Virtual Miguel de Cervantes, vía Wikimedia Commons, dominio público. <a href="https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Hern%C3%A1ndez.jpg" rel="noopener noreferrer">Ficha y procedencia de la fotografía.</a> <a href="/acerca/">Consultar fuentes y método editorial.</a></p>
 </div>
 <AdSlot id="category-03" kind="category" />
 <AdSlot id="category-04" kind="category" />
