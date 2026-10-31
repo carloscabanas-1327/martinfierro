@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import EditorialSection from '../../components/EditorialSection.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import {personajes} from '../../data/personajes';
+import {estrofasDeCanto} from '../../lib/corpus';
+import '../../styles/personajes-editorial.css';
+const fichas=personajes.map(p=>{
+ const estrofa=estrofasDeCanto(p.estrofa.parte,p.estrofa.canto).find(e=>e.numero===p.estrofa.numero);
+ return {...p,estrofa,fragmento:estrofa?.versos.slice(0,6)??[],recorte:(estrofa?.versos.length??0)>6};
+});
+const enlaces=(p:{parte:'ida'|'vuelta';canto:number})=>`/leer/${p.parte}/${p.canto}/`;
+---
+<Base title="Personajes principales de Martín Fierro: quién es quién en La ida y La vuelta" description="Guía de 11 personajes de Martín Fierro, Cruz, sus hijos, Vizcacha, Picardía, la cautiva, el Moreno y el juez; perfiles, relaciones y versos originales por canto." adKind="article">
+<EditorialSection kind="article" image="/media/fotografias-v3/exegesis.webp" label="PERSONAJES PRINCIPALES · GUÍA DE LECTURA">
+<nav class="breadcrumbs" aria-label="Ubicación"><a href="/">Inicio</a><span>Personajes</span></nav>
+<section class="section-intro"><p class="eyebrow">JOSÉ HERNÁNDEZ · 1872 / 1879</p><h1>Personajes principales de Martín Fierro: quién es quién</h1><p class="lead">Un mapa de las personas que dan forma a <em>El gaucho Martín Fierro</em> y <em>La vuelta de Martín Fierro</em>. Quiénes son, qué relación tienen con Fierro y por qué importan en el relato. Cada ficha conduce a los cantos originales para comprobar sus palabras.</p></section>
+<div class="mf-personajes-alert"><strong>Identidad literaria, no biografía histórica:</strong> los personajes pertenecen a la obra de José Hernández. Se distinguen figuras sin nombre propio, narradores distintos, el hombre muerto en la pulpería y el Moreno que canta en La vuelta. Los comentarios son interpretaciones de esta edición; el poema se conserva intacto.</div>
+<nav class="mf-personajes-nav" aria-label="Ir a un personaje">{fichas.map(p=><a href={`#${p.id}`}>{p.nombre}</a>)}</nav>
+<section class="mf-personajes-ensayo"><p class="eyebrow">CLAVES PARA NO CONFUNDIR LOS PERSONAJES</p><h2>Un protagonista, varias voces</h2><p>En la primera parte, Fierro domina la narración, aunque Cruz adquiere voz y relata su propia historia. En la segunda, además de Fierro, intervienen sus dos hijos, Picardía y el Moreno de la payada. Esa pluralidad es esencial: cada personaje cuenta su experiencia y tiene intereses distintos. No toda opinión expresada en el poema corresponde al autor ni al protagonista.</p><p>También existen personajes que no reciben nombre propio: la esposa de Fierro, los dos hijos y la cautiva. No les inventamos nombres ni biografías. En particular, el Moreno que participa en la payada de <em>La vuelta</em> no debe confundirse con el hombre muerto en la pelea de la pulpería de <em>La ida</em>.</p></section>
+<AdSlot id="article-02" kind="article"/>
+<section class="mf-personajes-grid" aria-label="Fichas de los personajes">
+{fichas.map((p,i)=><article class="mf-personaje" id={p.id}>
+<div class="mf-personaje-top"><span class="mf-personaje-number">{String(i+1).padStart(2,'0')}</span><div><p class="eyebrow">{p.tipo} · {p.parte}</p><h2>{p.nombre}</h2></div></div>
+<h3>Quién es y qué hace</h3><p>{p.resumen}</p>
+<div class="mf-personaje-quote"><p class="eyebrow">PASO ORIGINAL · {p.estrofa.parte==='ida'?'LA IDA':'LA VUELTA'} · CANTO {p.estrofa.canto} · ESTROFA {p.estrofa.numero}</p>
+{p.estrofa && <blockquote>{p.fragmento.map(v=><span>{v.texto}</span>)}</blockquote>}
+<p class="mf-personaje-caption">Versos del corpus documental {p.recorte?'(fragmento inicial de una estrofa extensa)':''}. <a href={`/leer/${p.estrofa.parte}/${p.estrofa.canto}/#${p.estrofa.id}`}>Comprobar en el lector →</a></p></div>
+<h3>Cómo leerlo</h3><p>{p.interpretacion}</p>
+<div class="mf-personaje-referencias"><strong>Cantos para conocerlo:</strong><div>{p.referencias.map(q=><a href={enlaces(q)}>{q.parte==='ida'?'La ida':'La vuelta'} · {q.canto}</a>)}</div></div>
+</article>)}
+</section>
+<AdSlot id="article-03" kind="article"/>
+<section class="mf-personajes-ensayo" id="relaciones"><p class="eyebrow">RELACIONES CLAVES</p><h2>Cómo se conectan las historias</h2><p>Fierro y Cruz se unen frente a la persecución y atraviesan juntos la frontera. Más tarde, la muerte de Cruz deja un recuerdo doloroso; Picardía introduce la historia de su hijo. La esposa y los hijos de Fierro encarnan las consecuencias familiares de la desaparición del padre. Don Vizcacha aparece en el relato del hijo menor y funciona como contrapunto de los consejos paternos.</p><p>El hombre afrodescendiente muerto por Fierro en <em>La ida</em> y el Moreno de la payada en <em>La vuelta</em> forman parte de una misma memoria de violencia. La intervención del nuevo cantor abre preguntas sobre los agravios que el protagonista preferiría dejar atrás. Es importante no fusionar estas dos figuras en una sola ficha.</p><p>Los funcionarios y las autoridades rurales tienen una función decisiva en la crítica social del poema, pero no deben identificarse con personas históricas determinadas sin fuentes independientes.</p></section>
+<section class="mf-personajes-ensayo"><p class="eyebrow">FUENTES Y PROCEDENCIA</p><h2>Cómo comprobamos las fichas</h2><p><strong>Fuente primaria:</strong> <em>El gaucho Martín Fierro</em> (1872) y <em>La vuelta de Martín Fierro</em> (1879), en el corpus estructurado del proyecto. Los fragmentos se leen directamente del archivo de estrofas, sin modernización ni alteración.</p><p><strong>Fuentes de consulta:</strong> <a href="https://bcn.gob.ar/literatura-y-narrativa/publicacion-martin-fierro" target="_blank" rel="noopener noreferrer">Biblioteca del Congreso de la Nación, edición y estudio ↗</a>; <a href="/biblioteca-critica/">Biblioteca crítica de MARTINFIERRO.ORG ↗</a>; <a href="/exegesis/la-vuelta/">Exégesis de los 33 cantos de La vuelta ↗</a>; <a href="/acerca/">integridad y procedencia de la transcripción ↗</a>.</p><p><strong>Alcance:</strong> esta es una selección razonada de personajes centrales y figuras relevantes, no un diccionario exhaustivo de cada persona mencionada. Los retratos, nombres y filiaciones que el poema no establece expresamente no se inventan.</p></section>
+<nav class="mf-personajes-final"><a href="/leer/">Leer el poema completo →</a><a href="/exegesis/">Explorar la exégesis →</a></nav>
+<AdSlot id="article-04" kind="article"/><AdSlot id="article-05" kind="article"/>
+</EditorialSection>
+</Base>
