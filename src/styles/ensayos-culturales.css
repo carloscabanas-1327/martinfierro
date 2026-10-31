@@ -39,3 +39,18 @@
 .mf-mate-taxonomy .mf-mate-source{font:.81rem/1.6 system-ui,sans-serif;margin:18px 0 0}
 .mf-mate-botanical-sources{border-top:1px solid #d2bca1;margin-top:25px;padding-top:16px;font:.84rem/1.8 system-ui,sans-serif;color:#5c4636}
 @media(max-width:770px){.mf-mate-botanical-layout{grid-template-columns:1fr}.mf-mate-taxonomy dl>div{grid-template-columns:40% 60%}}
+
+/* Guía visual para lectores extranjeros: fotografía editorial propia y glosario de 12 conceptos. */
+.mf-cultura-glosario{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,24px)}
+.mf-cultura-glosario .mf-cultura-card{padding:0;overflow:hidden;display:flex;flex-direction:column;background:#f7eddf}
+.mf-cultura-card-photo{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:#d9c7b2}
+.mf-cultura-card-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.mf-cultura-card-photo figcaption{position:absolute;bottom:0;left:0;right:0;padding:5px 8px;background:rgba(24,20,16,.74);color:#fff8ef;font:500 .63rem/1.25 system-ui,sans-serif}
+.mf-cultura-card-fallback{display:flex;justify-content:center;align-items:center;flex-direction:column;gap:8px;padding:19px;background:linear-gradient(135deg,#c6ae91,#ede0cf);text-align:center;color:#4b3528}
+.mf-cultura-card-fallback span{font:600 1.45rem/1.2 Georgia,serif}
+.mf-cultura-card-fallback small{font:.75rem/1.4 system-ui,sans-serif}
+.mf-cultura-card-content{padding:clamp(15px,1.9vw,24px);display:flex;flex-direction:column;flex:1}
+.mf-cultura-card-content h3{margin:0 0 8px}
+.mf-cultura-card-content p{margin:0 0 10px}
+@media(max-width:950px){.mf-cultura-glosario{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.mf-cultura-glosario{grid-template-columns:1fr}.mf-cultura-card-photo{aspect-ratio:3/2}}
