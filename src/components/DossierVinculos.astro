@@ -1,0 +1,46 @@
+---
+import {estrofasDeCanto} from '../lib/corpus';
+interface Props {tema:'amistad-y-lealtad'|'familia-y-regreso'|'consejos-y-sabiduria'}
+const {tema}=Astro.props;
+const contenidos={
+ 'amistad-y-lealtad':{
+  titulo:'Cruz: una amistad que se prueba en las decisiones',
+  enfoque:[
+   'La amistad entre Fierro y Cruz no nace como pacto abstracto. Cruz abandona su posición de autoridad en un enfrentamiento que considera desigual y termina compartiendo el destino de un hombre perseguido. Este gesto tiene un costo político y personal, no solo un valor sentimental.',
+   'En La vuelta, la memoria del compañero se transforma por su enfermedad y su muerte. La pérdida impide reducir el vínculo a una aventura heroica: Fierro debe seguir viviendo con la ausencia de Cruz y recordar también el destino de su hijo.',
+   'La fraternidad entre personajes no significa que las acciones violentas narradas por el poema queden justificadas. En esta lectura distinguimos solidaridad, lealtad, necesidad y responsabilidad moral.'
+  ],
+  lecturas:[{parte:'ida' as const,canto:13,numero:367,comentario:'La imagen de ser astillas del mismo palo une a dos hombres marginados. Su decisión de abandonar el espacio conocido es también un acto de desesperación.'},{parte:'vuelta' as const,canto:7,numero:551,comentario:'La muerte de Cruz reorganiza el relato: el amigo deja de ser un aliado presente y se convierte en una memoria dolorosa que condiciona lo que viene.'}],
+  fuente:'Universidad Nacional de La Plata · Estudio académico sobre vínculos y valores en Martín Fierro',url:'https://sedici.unlp.edu.ar/bitstream/handle/10915/1640/Documento_completo.pdf?sequence=1'
+ },
+ 'familia-y-regreso':{
+  titulo:'Reencontrarse no significa recuperar el pasado',
+  enfoque:[
+   'La pérdida del hogar inicia la desgracia de Fierro. La vida familiar anterior se evoca a través de la mujer, los hijos, la hacienda y el rancho; cuando retorna, el protagonista encuentra una realidad irrecuperable y debe escuchar los relatos de quienes padecieron su ausencia.',
+   'La segunda parte no se limita a narrar un regreso triunfal. Las historias de los hijos y el hijo de Cruz multiplican las perspectivas del sufrimiento. También expone las convenciones de género de la voz narrativa: el texto diferencia la expresión pública y privada de las emociones, lo cual requiere lectura crítica.',
+   'El reencuentro lleva al padre a transmitir consejos, pero no repara de manera automática el daño. Los hijos traen historias y juicios propios; no son simples destinatarios pasivos de la voz paterna.'
+  ],
+  lecturas:[{parte:'ida' as const,canto:3,numero:49,comentario:'La tapera condensa lo que queda de un hogar destruido. El punto de vista es retrospectivo: Fierro recuerda después de haber perdido.'},{parte:'vuelta' as const,canto:32,numero:1144,comentario:'El padre transforma la experiencia en consejo y define su vínculo con los hijos como una relación que también aspira a la amistad.'}],
+  fuente:'Biblioteca Nacional de Maestros · Módulo de literatura argentina, lectura de La vuelta y sus hijos',url:'https://www.bnm.me.gov.ar/giga1/documentos/EL004340.pdf'
+ },
+ 'consejos-y-sabiduria':{
+  titulo:'Un legado de experiencia, pero no una verdad infalible',
+  enfoque:[
+   'Los consejos forman una secuencia narrativa: tienen lugar después de experiencias de injusticia, violencia, pérdida y aprendizaje. Leer sus estrofas como frases sueltas impide reconocer las tensiones entre lo que Fierro recomienda y algunas de sus acciones anteriores.',
+   'La voz del personaje presenta la amistad y la prudencia como valores, pero también reconoce su propia falibilidad. La escuela de la experiencia puede producir sabiduría y, al mismo tiempo, no evitar todos los errores.',
+   'La transmisión de un saber moral fue objeto de lecturas diferentes: ediciones escolares y críticas destacaron la función didáctica del canto XXXII. Las comparaciones deben preservar las variantes textuales y la procedencia de cada edición.'
+  ],
+  lecturas:[{parte:'vuelta' as const,canto:32,numero:1144,comentario:'La primera máxima define al padre como amigo e introduce una ética de la prudencia. Su valor proviene de la trama que la precede.'},{parte:'vuelta' as const,canto:32,numero:1145,comentario:'El personaje admite que puede equivocarse. Esta confesión previene una lectura dogmática de todas sus enseñanzas.'},{parte:'vuelta' as const,canto:33,numero:1175,comentario:'La despedida y el secreto final muestran que la obra no convierte las enseñanzas en un cierre sin ambigüedades.'}],
+  fuente:'Universidad Católica Argentina · El camino sapiencial del Martín Fierro',url:'https://repositorio.uca.edu.ar/bitstream/123456789/7014/3/camino-sapiencial-martin-fierro.pdf'
+ }
+} as const;
+const d=contenidos[tema];
+---
+<section class="mf-vinculos-dossier" aria-labelledby="mf-vinculos-heading">
+<p class="eyebrow">DOSSIER CRÍTICO · TEXTO Y DOCUMENTOS</p>
+<h2 id="mf-vinculos-heading">{d.titulo}</h2>
+<div class="mf-vinculos-argumentos">{d.enfoque.map((p,i)=><p><strong>{i+1}.</strong> {p}</p>)}</div>
+<h3>Leer las estrofas originales y su contexto</h3>
+<div class="mf-vinculos-pasajes">{d.lecturas.map(p=>{const e=estrofasDeCanto(p.parte,p.canto).find(e=>e.numero===p.numero);return <article><p class="eyebrow">{p.parte==='ida'?'EL GAUCHO MARTÍN FIERRO · 1872':'LA VUELTA DE MARTÍN FIERRO · 1879'} · CANTO {p.canto} · ESTROFA {p.numero}</p>{e&&<blockquote>{e.versos.map(v=><span>{v.texto}</span>)}</blockquote>}<p>{p.comentario}</p>{e&&<a href={`/leer/${p.parte}/${p.canto}/#${e.id}`}>Ver estrofa original y leer canto completo →</a>}</article>})}</div>
+<div class="mf-vinculos-fuentes"><h3>Fuente para ampliar y límites de la interpretación</h3><p>Los versos se incorporan desde el corpus estructurado, sin modificar el texto. Los comentarios son interpretación editorial actual, no expresiones textuales del estudio académico.</p><a href={d.url} target="_blank" rel="noopener noreferrer">{d.fuente} ↗</a><p>La fuente académica proporciona contexto crítico y deberá contrastarse con otras investigaciones y con las ediciones históricas del poema antes de presentar conclusiones filológicas definitivas.</p></div>
+</section>
