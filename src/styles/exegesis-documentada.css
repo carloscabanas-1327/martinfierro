@@ -1,0 +1,12 @@
+.mf-exegesis-note{margin:20px auto 30px;max-width:980px;padding:19px 23px;border-left:4px solid #96583c;background:#efe2cf;font:.94rem/1.7 system-ui,sans-serif;color:#554338}
+.mf-exegesis-index{max-width:980px;margin:20px auto 46px;display:flex;gap:12px;flex-wrap:wrap}.mf-exegesis-index a{padding:10px 14px;background:#fff8ed;border:1px solid #decbba;color:#82412d;min-height:44px;display:inline-flex;align-items:center;font:700 .82rem/1.4 system-ui,sans-serif}
+.mf-exegesis-intro,.mf-exegesis-pasajes,.mf-exegesis-critica,.mf-exegesis-fuentes{max-width:980px;margin:50px auto}
+.mf-exegesis-intro h2,.mf-exegesis-pasajes h2,.mf-exegesis-critica h2,.mf-exegesis-fuentes h2{font:600 clamp(1.9rem,3vw,2.7rem)/1.18 Georgia,serif;color:#372821;margin:12px 0 24px}
+.mf-exegesis-intro>p:not(.eyebrow),.mf-exegesis-critica>p,.mf-exegesis-fuentes>p{font:1.09rem/1.83 Georgia,serif;color:#4d3e33}
+.mf-exegesis-pasaje{padding:clamp(22px,3vw,35px);background:#fffaf1;border:1px solid #dfcbbb;margin:20px 0}
+.mf-exegesis-pasaje-head{display:flex;gap:22px;align-items:start}.mf-exegesis-pasaje-head>span{font:800 1.5rem/1 system-ui,sans-serif;color:#a97b60}.mf-exegesis-pasaje h3{font:600 clamp(1.45rem,2.3vw,2rem)/1.2 Georgia,serif;margin:5px 0 22px;color:#3b291f}.mf-exegesis-pasaje h4{font:700 1.02rem/1.3 system-ui,sans-serif;margin:23px 0 9px;color:#713e2c}
+.mf-exegesis-pasaje figure{margin:0;padding:25px;background:#eee0cd;border-left:4px solid #975a40}.mf-exegesis-pasaje blockquote{margin:0;font:1.17rem/1.72 Georgia,serif;color:#362920}.mf-exegesis-pasaje blockquote span{display:block}.mf-exegesis-pasaje figcaption{margin-top:15px;font:.8rem/1.55 system-ui,sans-serif;color:#785c4b}
+.mf-exegesis-pasaje>p{font:1.08rem/1.77 Georgia,serif;color:#4f4035}.mf-exegesis-pasaje>a{min-height:44px;display:inline-flex;align-items:center;color:#86432c;font:700 .84rem/1.5 system-ui,sans-serif;text-underline-offset:3px}
+.mf-exegesis-critica,.mf-exegesis-fuentes{background:#f2e6d6;padding:clamp(20px,3vw,38px);border-top:4px solid #a46d52}
+.mf-exegesis-fuentes{background:#fffaf1}.mf-exegesis-critica a,.mf-exegesis-fuentes a{color:#82412c;text-underline-offset:3px}
+@media(max-width:620px){.mf-exegesis-pasaje{padding:21px 16px}.mf-exegesis-pasaje figure{padding:20px 14px}.mf-exegesis-pasaje blockquote{font-size:1.04rem}.mf-exegesis-index{gap:7px}}
