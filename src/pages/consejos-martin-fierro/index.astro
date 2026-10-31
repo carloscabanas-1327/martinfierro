@@ -6,10 +6,10 @@ const estrofas=estrofasDeCanto('vuelta',32);
 const nVersos=estrofas.reduce((n,e)=>n+e.versos.length,0);
 // Notas de lectura en el cierre de ciertas estrofas, separadas del texto documental.
 const notas:Record<number,{titulo:string;explicacion:string}>={
- 1144:{titulo:'«naides»',explicacion:'«Naides» equivale a «nadie». Fierro aconseja actuar con prudencia porque no siempre podemos reconocer a quien nos quiere perjudicar.'},
- 1146:{titulo:'«cencia», «ducho» y «gúenas»',explicacion:'«Cencia» es ciencia; «ducho» significa hábil o experimentado; «gúenas» equivale a buenas. El consejo distingue entre acumular saber y aprender aquello que sirve para vivir mejor.'},
- 1170:{titulo:'«revolutis»',explicacion:'Aquí se refiere a un alboroto o conflicto. Fierro aconseja no mostrarse altanero, incluso cuando uno tenga razón.'},
- 1172:{titulo:'«jundamento»',explicacion:'Equivale a «fundamento». En estos versos recomienda cantar con sentimiento y tratar asuntos que tengan sentido, en vez de hablar por hablar.'}
+ 1144:{titulo:'«naides»',explicacion:'«Naides» equivale a «nadie». Es una forma popular representada en la lengua del poema.'},
+ 1146:{titulo:'«cencia», «ducho» y «gúenas»',explicacion:'«Cencia» significa «ciencia»; «ducho», hábil o experimentado; y «gúenas», «buenas». Son grafías y voces que reflejan el habla representada en la poesía gauchesca.'},
+ 1170:{titulo:'«revolutis»',explicacion:'En este contexto significa alboroto, confusión o revuelo.'},
+ 1172:{titulo:'«jundamento»',explicacion:'Equivale a «fundamento». En el contexto del canto, se refiere a asuntos con sentido o importancia.'}
 };
 const pasajes=[
  {id:'mf-vuelta-e1144',label:'El consejo de un padre · inicio'},
@@ -71,15 +71,14 @@ const structuredData={
     </script>
   </nav>
   <h2 class="mf-consejos-text-heading" id="texto-completo-canto-xxxii">Texto completo de los consejos — Canto XXXII</h2>
-  <p class="mf-consejos-reading-hint">En algunas estrofas encontrarás una discreta <strong>nota de lectura</strong> después de los versos, para aclarar el lenguaje gauchesco sin interrumpir el poema.</p>
+  <p class="mf-consejos-reading-hint">En algunas estrofas encontrarás una discreta <strong>aclaración de vocabulario</strong> al terminar los versos. Se abre aquí mismo, sin salir de la lectura.</p>
   <div class="mf-consejos-layout">
    <div class="mf-consejos-verses" aria-label="Consejos completos de Martín Fierro">
     {estrofas.map(e=><section class="mf-consejos-stanza" id={e.id} aria-label={`Estrofa ${e.numero}`}>
      <span class="mf-consejos-stanza-number">Estrofa {e.numero}</span>
      {e.versos.map(v=><p class="mf-consejos-verse">{v.texto}</p>)}
-     <a class="mf-consejos-stanza-label" href={`/leer/vuelta/32/#${e.id}`}>Ver esta estrofa en la edición original ↗</a>
      {notas[e.numero] && <details class="mf-consejos-stanza-note">
-      <summary><span class="mf-note-label">Nota de lectura</span><span class="mf-note-title">{notas[e.numero].titulo}</span></summary>
+      <summary><span class="mf-note-label">Vocabulario gauchesco</span><span class="mf-note-title">{notas[e.numero].titulo}</span></summary>
       <p>{notas[e.numero].explicacion}</p>
       <small>Explicación editorial en español actual; no forma parte del poema.</small>
      </details>}
