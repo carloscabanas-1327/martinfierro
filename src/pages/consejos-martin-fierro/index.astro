@@ -4,21 +4,13 @@ import {estrofasDeCanto} from '../../lib/corpus';
 import '../../styles/consejos-especial.css';
 const estrofas=estrofasDeCanto('vuelta',32);
 const nVersos=estrofas.reduce((n,e)=>n+e.versos.length,0);
-// Glosas del especial: el texto del corpus no se modifica.
-// El algoritmo solo divide visualmente las palabras marcadas.
-const glosas:Record<string,{equiv:string;contexto:string}>={
- 'naides':{equiv:'nadie',contexto:'Forma popular usada en el poema; aquí recuerda que nadie conoce todos los peligros.'},
- 'cencia':{equiv:'ciencia',contexto:'Grafía que representa el habla gauchesca; Fierro contrasta el saber acumulado con aprender cosas buenas.'},
- 'ducho':{equiv:'hábil o experimentado',contexto:'«Sin ser muy ducho»: aunque no se considere un gran conocedor.'},
- 'gúenas':{equiv:'buenas',contexto:'En este verso, se valora aprender cosas buenas y provechosas, no solo aprender mucho.'},
- 'revolutis':{equiv:'alboroto o confusión',contexto:'Se refiere a una situación agitada o conflictiva.'},
- 'jundamento':{equiv:'fundamento',contexto:'Cantar «en cosas de jundamento» es cantar asuntos con sentido o importancia.'}
+// Notas de lectura en el cierre de ciertas estrofas, separadas del texto documental.
+const notas:Record<number,{titulo:string;explicacion:string}>={
+ 1144:{titulo:'«naides»',explicacion:'«Naides» equivale a «nadie». Fierro aconseja actuar con prudencia porque no siempre podemos reconocer a quien nos quiere perjudicar.'},
+ 1146:{titulo:'«cencia», «ducho» y «gúenas»',explicacion:'«Cencia» es ciencia; «ducho» significa hábil o experimentado; «gúenas» equivale a buenas. El consejo distingue entre acumular saber y aprender aquello que sirve para vivir mejor.'},
+ 1170:{titulo:'«revolutis»',explicacion:'Aquí se refiere a un alboroto o conflicto. Fierro aconseja no mostrarse altanero, incluso cuando uno tenga razón.'},
+ 1172:{titulo:'«jundamento»',explicacion:'Equivale a «fundamento». En estos versos recomienda cantar con sentimiento y tratar asuntos que tengan sentido, en vez de hablar por hablar.'}
 };
-function segmentos(texto:string){
- const trozos=texto.split(/(naides|cencia|ducho|gúenas|revolutis|jundamento)/gi);
- return trozos.map(t=>({texto:t,glosa:glosas[t.toLocaleLowerCase('es-AR')] ?? null}));
-}
-
 const pasajes=[
  {id:'mf-vuelta-e1144',label:'El consejo de un padre · inicio'},
  {id:'mf-vuelta-e1150',label:'La amistad y la honradez'},
@@ -79,24 +71,17 @@ const structuredData={
     </script>
   </nav>
   <h2 class="mf-consejos-text-heading" id="texto-completo-canto-xxxii">Texto completo de los consejos — Canto XXXII</h2>
-  <p class="mf-consejos-word-hint"><span aria-hidden="true">ⓘ</span> Algunas palabras del poema están subrayadas: tocalas para leer su significado en español actual sin abandonar la estrofa.</p>
+  <p class="mf-consejos-reading-hint">En algunas estrofas encontrarás una discreta <strong>nota de lectura</strong> después de los versos, para aclarar el lenguaje gauchesco sin interrumpir el poema.</p>
   <div class="mf-consejos-layout">
    <div class="mf-consejos-verses" aria-label="Consejos completos de Martín Fierro">
     {estrofas.map(e=><section class="mf-consejos-stanza" id={e.id} aria-label={`Estrofa ${e.numero}`}>
      <a class="mf-consejos-stanza-label" href={`/leer/vuelta/32/#${e.id}`}>Estrofa {e.numero} · Ver en el lector ↗</a>
-     {e.versos.map(v=><p class="mf-consejos-verse">
-      {segmentos(v.texto).map((seg,i)=>seg.glosa
-       ? <span class="mf-inline-gloss" data-gloss>
-          <button type="button" class="mf-gloss-trigger" aria-expanded="false" aria-label={`Explicar «${seg.texto}»`} aria-controls={`glosa-${v.id}-${i}`}>{seg.texto}<span aria-hidden="true" class="mf-gloss-mark">?</span></button>
-          <span class="mf-gloss-content" id={`glosa-${v.id}-${i}`} hidden role="note">
-           <strong>{seg.texto} = {seg.glosa.equiv}</strong>
-           <span>{seg.glosa.contexto}</span>
-           <small>Glosa editorial · El verso original no se altera.</small>
-          </span>
-         </span>
-       : <span>{seg.texto}</span>)}
-      <a class="mf-consejos-verse-anchor" href={`/leer/vuelta/32/#${v.id}`} aria-label={`Abrir verso ${v.linea} de la estrofa ${e.numero} en el lector original`} title="Ver verso en edición documental">↗</a>
-     </p>)}
+     {e.versos.map(v=><p class="mf-consejos-verse"><a href={`/leer/vuelta/32/#${v.id}`} title={`Ver verso ${v.linea} de estrofa ${e.numero} en el canto original`}>{v.texto}</a></p>)}
+     {notas[e.numero] && <details class="mf-consejos-stanza-note">
+      <summary><span class="mf-note-label">Nota de lectura</span><span class="mf-note-title">{notas[e.numero].titulo}</span></summary>
+      <p>{notas[e.numero].explicacion}</p>
+      <small>Explicación editorial en español actual; no forma parte del poema.</small>
+     </details>}
     </section>)}
    </div>
    <aside class="mf-consejos-side" aria-label="Contexto y navegación">
