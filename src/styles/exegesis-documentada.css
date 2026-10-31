@@ -10,3 +10,5 @@
 .mf-exegesis-critica,.mf-exegesis-fuentes{background:#f2e6d6;padding:clamp(20px,3vw,38px);border-top:4px solid #a46d52}
 .mf-exegesis-fuentes{background:#fffaf1}.mf-exegesis-critica a,.mf-exegesis-fuentes a{color:#82412c;text-underline-offset:3px}
 @media(max-width:620px){.mf-exegesis-pasaje{padding:21px 16px}.mf-exegesis-pasaje figure{padding:20px 14px}.mf-exegesis-pasaje blockquote{font-size:1.04rem}.mf-exegesis-index{gap:7px}}
+
+.mf-exegesis-collection{max-width:980px;margin:30px auto;padding:25px 30px;border-top:4px solid #905037;background:#f1e5d4}.mf-exegesis-collection h2{font:600 clamp(1.6rem,2.7vw,2.3rem)/1.2 Georgia,serif;color:#3c2a22;margin:10px 0 16px}.mf-exegesis-collection p:not(.eyebrow){font:1.04rem/1.7 Georgia,serif;color:#503f32}.mf-exegesis-collection a{display:inline-flex;align-items:center;min-height:44px;color:#873d29;font:700 .92rem/1.4 system-ui,sans-serif;text-underline-offset:3px}
