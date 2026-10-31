@@ -1,0 +1,48 @@
+name: Importar portada documental de 1872 (ejecución puntual)
+on:
+  push:
+    branches:
+      - fix/archivo-ejemplar-corregido-imagen-local-20261031
+    paths:
+      - .github/workflows/importar-portada-1872.yml
+permissions:
+  contents: write
+jobs:
+  importar:
+    if: github.ref == 'refs/heads/fix/archivo-ejemplar-corregido-imagen-local-20261031'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Descargar fuente patrimonial y verificar integridad
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 4 --connect-timeout 20 --max-time 150 --user-agent 'MARTINFIERRO-Archive/1.0 (heritage reproduction)' \
+            'https://upload.wikimedia.org/wikipedia/commons/1/1c/El_gaucho_Martin_Fierro_-_Jose_Hernandez.pdf' -o /tmp/ejemplar-1872.pdf
+          echo 'c9616d282fb15fd60334c2e94447bae8c82f9f63  /tmp/ejemplar-1872.pdf' | sha1sum -c -
+      - name: Preparar copia WebP de la portada real
+        run: |
+          python -m pip install --disable-pip-version-check --quiet pymupdf Pillow
+          python - <<'PY'
+          import fitz
+          from pathlib import Path
+          from PIL import Image
+          pdf=fitz.open('/tmp/ejemplar-1872.pdf')
+          assert len(pdf)==84, f'Número de páginas inesperado: {len(pdf)}'
+          pix=pdf[0].get_pixmap(matrix=fitz.Matrix(1.1,1.1),alpha=False)
+          p=Path('public/media/archivo/ejemplar-corregido-martin-fierro-1872-portada.webp')
+          p.parent.mkdir(parents=True,exist_ok=True)
+          im=Image.frombytes('RGB',(pix.width,pix.height),pix.samples)
+          im.save(p,'WEBP',quality=82,method=6)
+          print(p, p.stat().st_size,'bytes', im.size)
+          assert p.stat().st_size > 10000
+          PY
+      - name: Confirmar imagen y subir únicamente el recurso
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/media/archivo/ejemplar-corregido-martin-fierro-1872-portada.webp
+          git diff --cached --quiet && { echo 'No hay imagen nueva'; exit 1; }
+          git commit -m 'Incorporar portada facsimilar de 1872 desde fuente verificada en dominio público'
+          git push
