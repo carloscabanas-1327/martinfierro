@@ -6,7 +6,9 @@ import {temas} from '../../data/temas';
 import {partes,enlaceCanto,estrofasDeCanto} from '../../lib/corpus';
 import '../../styles/temas-editorial.css';
 import VidaGauchaDossier from '../../components/VidaGauchaDossier.astro';
+import FronteraJusticiaDossier from '../../components/FronteraJusticiaDossier.astro';
 import '../../styles/vida-gaucha-dossier.css';
+import '../../styles/investigacion-temas.css';
 export function getStaticPaths(){return temas.map(t=>({params:{slug:t.slug},props:{tema:t}}));}
 const {tema}=Astro.props as {tema:typeof temas[number]};
 const estiloImagen=`--sprite-x:${tema.imagenIndice%3*50}%;--sprite-y:${Math.floor(tema.imagenIndice/3)*100}%`;
@@ -51,6 +53,7 @@ const estiloImagen=`--sprite-x:${tema.imagenIndice%3*50}%;--sprite-y:${Math.floo
   {'destacado' in tema && tema.destacado && <p class="mf-tema-feature"><strong>Lectura especial:</strong> <a href={tema.destacado.url}>{tema.destacado.titulo} →</a></p>}
  </section>
  {tema.slug === 'vida-gaucha' && <VidaGauchaDossier />}
+ {(tema.slug === 'frontera' || tema.slug === 'justicia-y-autoridad') && <FronteraJusticiaDossier tema={tema.slug} />}
  <section class="mf-tema-fuentes" aria-labelledby="mf-tema-fuentes">
   <h2 id="mf-tema-fuentes">Fuentes y alcance de la interpretación</h2>
   <p>La lectura principal corresponde a los cantos indicados de <em>El gaucho Martín Fierro</em> (1872) o <em>La vuelta de Martín Fierro</em> (1879). Para ampliar el marco histórico y crítico consultamos recursos públicos de instituciones culturales y académicas. Las observaciones anteriores son síntesis editoriales, no citas de esos estudios.</p>
