@@ -47,3 +47,15 @@ main.container:has(.mf-reader-page){width:min(1480px,calc(100% - 32px));max-widt
  .mf-reader-page .verse{line-height:1.74}
 }
 @media(prefers-reduced-motion:reduce){.mf-reader-page *{scroll-behavior:auto!important}}
+
+/* Glosario táctil opcional: la anotación visual no forma parte del poema. */
+.mf-reader-page .mf-glossary-term{display:inline;font:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;border-bottom:1px dotted #9a6a4c;border-radius:0;padding:0;margin:0;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:rgba(153,95,57,.18)}
+.mf-reader-page .mf-glossary-term:focus-visible{outline:2px solid #a86140;outline-offset:3px}
+.mf-reader-page .mf-glossary-term[aria-expanded="true"]{background:#fae7c7;border-bottom-style:solid}
+.mf-glossary-hint{font:italic .84rem/1.5 Georgia,serif;color:#776657;margin:13px 0 23px}
+.mf-glossary-popup[hidden]{display:none!important}
+.mf-glossary-popup{position:fixed;z-index:9999;width:min(310px,calc(100vw - 24px));max-height:min(50vh,310px);overflow-y:auto;box-sizing:border-box;padding:19px 43px 18px 19px;background:#fffcf5;border:1px solid #c3a589;border-top:3px solid #91553d;box-shadow:0 10px 35px rgba(32,19,10,.25);border-radius:9px;color:#30251e}
+.mf-glossary-head{display:block;font:700 1.18rem/1.4 Georgia,serif;margin-bottom:8px}
+.mf-glossary-description{font:1rem/1.55 Georgia,serif;margin:0;color:#4c3e34}
+.mf-glossary-close{position:absolute;right:7px;top:6px;width:36px;height:36px;border:none;background:transparent;color:#60493a;cursor:pointer;font:1.7rem/1 system-ui,sans-serif}
+@media(max-width:600px){.mf-glossary-popup{width:auto;box-shadow:0 3px 30px rgba(20,12,5,.28)}}
