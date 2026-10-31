@@ -1,0 +1,23 @@
+/* Biblioteca documental: lectura contrastiva y material original identificable. */
+.mf-bc-dossier{max-width:1020px;margin:65px auto;padding:clamp(20px,3.5vw,42px);background:#fffaf2;border:1px solid #dec8b2;color:#3e3027}
+.mf-bc-dossier>h2{font:600 clamp(2rem,3.1vw,3rem)/1.16 Georgia,serif;letter-spacing:-.02em;color:#32251f;margin:14px 0 22px}
+.mf-bc-dossier-lead{font:1.23rem/1.7 Georgia,serif;color:#564337;max-width:840px}
+.mf-bc-dossier article{margin:34px 0 0;border-top:1px solid #dfcbb6;padding-top:24px}
+.mf-bc-dossier article h3{font:600 clamp(1.45rem,2.3vw,2.1rem)/1.22 Georgia,serif;color:#412b24;margin:0 0 16px}
+.mf-bc-dossier article p,.mf-bc-dossier>p:not(.eyebrow){font:1.07rem/1.77 Georgia,serif;color:#534337}
+.mf-bc-dossier a{color:#82422e;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.mf-bc-compare{margin:34px 0 0;overflow-x:auto}
+.mf-bc-compare table{width:100%;border-collapse:collapse;font:.88rem/1.57 system-ui,sans-serif;min-width:580px}
+.mf-bc-compare th,.mf-bc-compare td{text-align:left;vertical-align:top;border:1px solid #ddcbb9;padding:13px}
+.mf-bc-compare th{background:#e9d7c3;color:#4d352a}
+.mf-bc-primary{background:#efe3d2}
+.mf-bc-real-cover{max-width:360px;margin:28px auto}
+.mf-bc-real-cover img{width:100%;height:auto;max-height:490px;object-fit:contain;display:block;background:#ddc5aa;padding:9px}
+.mf-bc-real-cover figcaption{font:.8rem/1.64 system-ui,sans-serif;color:#685243;padding-top:14px}
+.mf-bc-doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px;margin-top:26px}
+.mf-bc-doc-grid article{margin:0;padding:22px;border:1px solid #d7bfa8;background:#fffaf3}
+.mf-bc-doc-grid article h3{font-size:1.36rem}
+.mf-bc-doc-grid article p:not(.eyebrow){font-size:.99rem;line-height:1.68}
+.mf-bc-doc-grid article>a{display:inline-flex;min-height:44px;align-items:center;font:750 .82rem/1.55 system-ui,sans-serif}
+.mf-bc-dossier .mf-bc-legal{font:.84rem/1.67 system-ui,sans-serif!important;border-top:1px solid #d6bda3;margin-top:34px;padding-top:22px}
+@media(max-width:690px){.mf-bc-doc-grid{grid-template-columns:1fr}.mf-bc-dossier{margin:37px auto;padding:21px 16px}.mf-bc-dossier-lead{font-size:1.1rem}.mf-bc-dossier article p,.mf-bc-dossier>p:not(.eyebrow){font-size:1.02rem}}
