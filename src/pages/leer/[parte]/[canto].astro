@@ -17,7 +17,7 @@ const definiciones: Record<string,string> = {
  'matrero':'En el contexto gauchesco, quien vive fugitivo o al margen de la autoridad.',
  'boliche':'Pequeño comercio o despacho de bebidas en el ámbito rural.',
 };
-const expresionGlosario=/\\b(vigüela|naides|pingo|facón|pulpería|tapera|matrero|boliche)\\b/giu;
+const expresionGlosario=/\b(vigüela|naides|pingo|facón|pulpería|tapera|matrero|boliche)\b/giu;
 function fragmentosGlosario(texto:string){
  return texto.split(expresionGlosario).filter(Boolean).map(fragmento=>({
   texto:fragmento,
