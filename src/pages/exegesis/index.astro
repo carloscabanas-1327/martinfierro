@@ -2,22 +2,55 @@
 import AdSlot from '../../components/AdSlot.astro';
 import EditorialSection from '../../components/EditorialSection.astro';
 import Base from '../../layouts/Base.astro';
+import {estrofasDeCanto} from '../../lib/corpus';
+import '../../styles/exegesis-documentada.css';
+const pasajes=[
+ {parte:'ida' as const,canto:1,numero:1,titulo:'El canto como consuelo',analisis:'La primera acción del narrador es cantar. No se trata simplemente de una introducción ornamental: antes de contar su historia, declara que el canto permite enfrentar una pena. La comparación con un ave solitaria une soledad y expresión. La forma popular de escribir ciertas palabras forma parte de la voz construida por el poema, no de una transcripción neutral de habla real.'},
+ {parte:'ida' as const,canto:1,numero:2,titulo:'Memoria y relato',analisis:'El cantor pide ayuda para recordar y ordenar su historia. La memoria no aparece como inventario automático de hechos, sino como una actividad que debe aclararse. Conviene distinguir al gaucho que narra, a José Hernández que escribe y al lector que interpreta: no son una sola voz.'},
+ {parte:'ida' as const,canto:2,numero:20,titulo:'La experiencia del sufrimiento',analisis:'El narrador se presenta como un hombre marcado por el padecimiento y advierte contra la altivez. Esta generalización procede de su historia personal y predispone a escuchar los hechos posteriores. La desgracia no implica que todas las acciones del personaje deban justificarse.'},
+ {parte:'ida' as const,canto:3,numero:49,titulo:'La frontera como ruptura',analisis:'En seis versos se pasa del hogar a su ausencia. La obligación de marchar a la frontera se representa como origen de la separación de hijos, hacienda y mujer. La imagen de la tapera concentra el daño. Es una denuncia desde el personaje, no una historia exhaustiva de todos los destinos fronterizos.'},
+ {parte:'ida' as const,canto:3,numero:50,titulo:'El hogar recordado',analisis:'La imagen del rancho como nido muestra lo que Fierro valora después de perderlo. No conviene confundir esta evocación con una descripción completa de la vida laboral o familiar de los distintos grupos sociales de la campaña.'},
+ {parte:'ida' as const,canto:9,numero:243,titulo:'La persecución y sus contradicciones',analisis:'La figura del gaucho perseguido aparece mediante comparaciones animales y un tono proverbial. La lectura puede reconocer la crítica a las instituciones sin convertir a Fierro en figura moralmente irreprochable: el poema también relata actos violentos del protagonista.'},
+ {parte:'ida' as const,canto:13,numero:367,titulo:'La decisión de cruzar la frontera',analisis:'El vínculo con Cruz y la decisión de dirigirse hacia territorio indígena forman parte de un desenlace de exclusión. El vocabulario y los prejuicios de la época requieren lectura contextual; la visión de Fierro no sustituye fuentes sobre la sociedad ranquel y otras comunidades.'}
+].map(p=>({...p,estrofa:estrofasDeCanto(p.parte,p.canto).find(e=>e.numero===p.numero)}));
 ---
-<Base title="Exégesis y análisis de Martín Fierro" description="Primer acceso al estudio literario del poema, sus temas, estrofas y contexto, sin alterar el texto original." adKind="article">
-<EditorialSection kind="article" image="/media/fotografias-v3/exegesis.webp" label="EXÉGESIS · LECTURAS DEL POEMA">
-<div class="breadcrumbs"><a href="/">Inicio</a><span>Exégesis</span></div>
-<section class="section-intro"><p class="eyebrow">Interpretación literaria</p><h1>Exégesis de Martín Fierro</h1><p class="lead">Leer el poema y pensar lo que dice, cómo lo dice y desde qué circunstancias históricas se construye su voz. La interpretación editorial se mantiene siempre separada del texto de Hernández.</p></section>
-<AdSlot id="article-02" kind="article" />
-<section class="editorial-paper">
- <p class="eyebrow">Punto de partida · La ida · Canto I</p>
- <h2>«Aquí me pongo a cantar»</h2>
- <p>El primer verso presenta un acto de enunciación: el narrador se dispone a cantar y establece un vínculo directo con quienes lo escuchan. La voz del gaucho, la forma poética y la memoria del canto oral son claves para abordar este inicio.</p>
- <p>Este comentario es una <strong>lectura introductoria</strong>, no una explicación única ni definitiva. La exégesis completa, con fuentes críticas contrastadas y referencias estrofa por estrofa, se desarrollará progresivamente.</p>
- <p><a class="btn" href="/leer/ida/1/">Leer el Canto I original</a></p>
-</section>
-<section class="section"><AdSlot id="article-03" kind="article" />
-<h2>Recorridos de análisis ya disponibles</h2><div class="cards"><a class="card" href="/temas/justicia-y-autoridad/"><h3>Justicia y autoridad</h3><p>El conflicto con el poder y las instituciones en pasajes del poema.</p></a><a class="card" href="/temas/frontera/"><h3>La frontera</h3><p>El servicio y las experiencias del gaucho en el ámbito fronterizo.</p></a><a class="card" href="/temas/consejos-y-sabiduria/"><h3>Consejos y sabiduría</h3><p>Las enseñanzas y reflexiones de los cantos finales.</p></a></div></section>
-<AdSlot id="article-04" kind="article" />
-<AdSlot id="article-05" kind="article" />
+<Base title="Exégesis de Martín Fierro: análisis documentado de cantos y estrofas" description="Estudio de la voz narrativa, memoria, frontera, injusticia y lenguaje gauchesco a través de siete estrofas originales de José Hernández, sin modificar el poema." adKind="article">
+<EditorialSection kind="article" image="/media/fotografias-v3/exegesis.webp" label="EXÉGESIS · ESTUDIO LITERARIO DOCUMENTADO">
+ <div class="breadcrumbs"><a href="/">Inicio</a><span>Exégesis</span></div>
+ <section class="section-intro"><p class="eyebrow">Lectura crítica · Texto, forma y contexto</p><h1>Leer a Martín Fierro: de la voz del cantor a la frontera</h1><p class="lead">Una lectura de cerca del poema: qué dicen sus versos, cómo construyen la voz del protagonista y qué preguntas históricas abren. Este estudio cita estrofas precisas de la edición del sitio y distingue el texto de Hernández de las interpretaciones editoriales.</p></section>
+ <div class="mf-exegesis-note"><strong>Método:</strong> los versos que aparecen a continuación se obtienen del corpus estructurado de MARTINFIERRO.ORG, sin modernización. Los comentarios son interpretaciones actuales: no se atribuyen a José Hernández. El número de estrofa y el enlace permiten verificar cada lectura en el canto completo.</div>
+ <nav class="mf-exegesis-index" aria-label="Índice de la investigación"><a href="#exegesis-voz">La voz del cantor</a><a href="#exegesis-pasajes">Siete lecturas con texto original</a><a href="#exegesis-critica">Contexto y debates</a><a href="#exegesis-fuentes">Fuentes</a></nav>
+ <section class="mf-exegesis-intro" id="exegesis-voz">
+  <p class="eyebrow">PRIMER PROBLEMA · QUIÉN HABLA</p><h2>El autor no es el narrador</h2>
+  <p>Hernández compone una ficción poética cuya voz central es Martín Fierro. El relato adopta una lengua literaria gauchesca, organiza recuerdos y transforma una experiencia individual en una queja de alcance social. El escritor, el personaje que habla y los lectores que interpretan deben distinguirse: atribuir cualquier juicio del protagonista a una declaración directa del autor simplificaría una obra rica en tensiones.</p>
+  <p>En la primera estrofa, el canto se presenta como alivio ante la pena. En la segunda, aparece la necesidad de aclarar la memoria. La obra comienza, entonces, con una doble operación: <strong>cantar para soportar</strong> y <strong>recordar para contar</strong>. Esa construcción importa tanto como los acontecimientos narrados.</p>
+  <p>El poema se publicó en dos partes, en 1872 y 1879. No corresponde suponer que el tono de denuncia de la primera pueda trasladarse sin matices a las enseñanzas y reencuentros de la segunda. Esta primera investigación se centra deliberadamente en escenas fundamentales de <em>La ida</em>; la lectura sistemática de <em>La vuelta</em> queda identificada como una etapa pendiente.</p>
+ </section>
+ <AdSlot id="article-02" kind="article"/>
+ <section class="mf-exegesis-pasajes" id="exegesis-pasajes">
+  <p class="eyebrow">LECTURA COMPROBABLE</p><h2>Siete estrofas, siete problemas del poema</h2>
+  {pasajes.map((p,i)=><article class="mf-exegesis-pasaje">
+   <div class="mf-exegesis-pasaje-head"><span>{String(i+1).padStart(2,'0')}</span><div><p class="eyebrow">EL GAUCHO MARTÍN FIERRO · 1872 · CANTO {p.canto} · ESTROFA {p.numero}</p><h3>{p.titulo}</h3></div></div>
+   {p.estrofa && <figure><blockquote>{p.estrofa.versos.map(v=><span>{v.texto}</span>)}</blockquote><figcaption>José Hernández. Canto {p.canto}, estrofa {p.numero}, corpus documental de la edición.</figcaption></figure>}
+   <h4>Claves de interpretación</h4><p>{p.analisis}</p>
+   {p.estrofa && <a href={`/leer/ida/${p.canto}/#${p.estrofa.id}`}>Ver estrofa y canto íntegro en el lector →</a>}
+  </article>)}
+ </section>
+ <AdSlot id="article-03" kind="article"/>
+ <section class="mf-exegesis-critica" id="exegesis-critica">
+  <p class="eyebrow">HISTORIA LITERARIA Y LÍMITES DE LA FUENTE</p><h2>¿Denuncia social o construcción de un héroe?</h2>
+  <p>En la experiencia del narrador, el trabajo rural y el hogar se contraponen al reclutamiento, la vida de frontera y la persecución. La denuncia de los abusos es un componente central de la obra; eso no implica absolver los actos de violencia del propio Fierro ni convertir su visión de los pueblos indígenas en un informe imparcial. Las escenas deben estudiarse en su contexto histórico.</p>
+  <p>Las lecturas posteriores también difieren. Leopoldo Lugones propuso una valoración épica y nacional del poema en <em>El payador</em> (1916); Ezequiel Martínez Estrada examinó sus contradicciones sociales en <em>Muerte y transfiguración de Martín Fierro</em> (1948); Jorge Luis Borges transformó motivos del poema en ficciones propias. Son aproximaciones críticas o artísticas posteriores, no reemplazos del texto original.</p>
+  <p>Para examinar la sociedad ranquel frente a la perspectiva de Fierro, la expedición de Lucio V. Mansilla de 1870 aporta otra fuente escrita, igualmente situada y mediada por su autor. Nuestro <a href="/temas/vida-gaucha/">dossier Vida gaucha</a> muestra su portada auténtica y enlaza los dos tomos escaneados.</p>
+  <p><a href="/biblioteca-critica/">Estudiar el debate Lugones–Martínez Estrada–Borges en Biblioteca crítica →</a></p>
+ </section>
+ <section class="mf-exegesis-fuentes" id="exegesis-fuentes">
+  <p class="eyebrow">FUENTES Y ESTADO DEL TRABAJO</p><h2>Qué está documentado y qué sigue pendiente</h2>
+  <p><strong>Fuente primaria:</strong> <em>El gaucho Martín Fierro</em> (1872), edición estructurada en estrofas y versos del sitio. Su procedencia se describe en <a href="/acerca/">Fuentes e integridad documental</a>, incluidas las variantes que permanecen abiertas. El corpus tiene auditoría técnica, pero no certificación filológica externa.</p>
+  <p><strong>Lecturas de contexto:</strong> <a href="https://bcn.gob.ar/literatura-y-narrativa/publicacion-martin-fierro" target="_blank" rel="noopener noreferrer">Biblioteca del Congreso de la Nación: edición y estudio del poema ↗</a>; <a href="https://bn.gob.ar/micrositios/libros/literatura/el-payador" target="_blank" rel="noopener noreferrer">Biblioteca Nacional: <em>El payador</em> y manuscrito facsimilar ↗</a>; <a href="https://commons.wikimedia.org/wiki/File:El_gaucho_Martin_Fierro_-_Jose_Hernandez.pdf" target="_blank" rel="noopener noreferrer">Academia Argentina de Letras: ejemplar histórico de 1872 ↗</a>.</p>
+  <p><strong>Pendiente:</strong> una exégesis integral y revisada de los 46 cantos, referencias por verso a ediciones críticas externas y contraste filológico de los pasajes aún discutidos. No se presenta este avance como si fuera el estudio completo.</p>
+ </section>
+ <AdSlot id="article-04" kind="article"/>
+ <AdSlot id="article-05" kind="article"/>
 </EditorialSection>
 </Base>
