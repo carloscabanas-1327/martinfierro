@@ -1,0 +1,51 @@
+/* MARTINFIERRO.ORG / sistema cultural propio
+   Unifica portada de sección, artículos, índices y transiciones sin tocar el poema.
+   Alinea y jerarquiza el texto, evita estética predeterminada de CMS. */
+main.container:has(.mf-section-page){width:min(1480px,calc(100% - 32px));max-width:100%;padding:0 0 28px}
+.mf-section-page{color:#29221c;min-width:0}
+.mf-section-hero{position:relative;isolation:isolate;height:clamp(245px,23vw,350px);overflow:hidden;background:#cfb79a}
+.mf-section-hero img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%}
+.mf-section-hero-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,17,13,.78),rgba(26,17,13,.13) 60%);z-index:1}
+.mf-section-hero-label{position:absolute;z-index:2;bottom:44px;left:clamp(22px,5vw,78px);right:20px;margin:0;color:#fff9ef;font:800 .72rem/1.5 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 2px 5px #26160e}
+.mf-section-paper{width:min(1230px,calc(100% - 38px));margin:-12px auto 0;position:relative;z-index:3;background:#f9f4e9;border:1px solid #dfcdb9;box-shadow:0 13px 34px rgba(54,31,18,.085);padding:clamp(22px,4vw,62px) clamp(22px,4.6vw,66px) clamp(30px,5vw,70px);min-width:0}
+.mf-section-paper>.breadcrumbs{justify-content:center;margin:0 auto 26px}
+.mf-section-paper>.eyebrow,.mf-section-paper>.section-intro>.eyebrow{text-align:center;color:#904632;font-size:.77rem;letter-spacing:.16em}
+.mf-section-paper>h1,.mf-section-paper>.section-intro>h1{
+ font-size:clamp(2.35rem,4.15vw,4.6rem)!important;line-height:1.1;letter-spacing:-.038em;
+ max-width:22ch!important;margin:12px auto 20px!important;text-align:center;
+ color:#29211b;text-wrap:balance;
+}
+.mf-section-paper>.lead,.mf-section-paper>.section-intro>.lead{
+ margin:0 auto 38px;max-width:72ch;color:#57473d;text-align:center;
+ font:400 clamp(1.13rem,1.5vw,1.38rem)/1.65 Georgia,serif;
+}
+.mf-section-paper>.section-intro{max-width:950px;margin:0 auto 30px;padding:0 0 28px;border-bottom:1px solid #cfbda9}
+.mf-section-paper .cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px}
+.mf-section-paper .card,.mf-section-paper .directory-feature,.mf-section-paper .editorial-paper{
+ background:#fffaf1;color:#2a211c;border:1px solid #dbc7b2;border-top:3px solid #a2583f;border-radius:0;box-shadow:none;
+ padding:clamp(18px,2vw,28px);
+}
+.mf-section-paper .card:hover,.mf-section-paper .directory-feature:hover{background:#f6eadb;transform:none}
+.mf-section-paper .card h2,.mf-section-paper .card h3,.mf-section-paper .directory-feature h2,.mf-section-paper .editorial-paper h2{color:#2a211c;line-height:1.17}
+.mf-section-paper .card p,.mf-section-paper .directory-feature p,.mf-section-paper .editorial-paper p{color:#4f4237;line-height:1.65}
+.mf-section-paper .editorial-directory,.mf-section-paper .magazine-topic-grid,.mf-section-paper .editorial-two-col{min-width:0;gap:clamp(16px,2.4vw,28px)}
+.mf-section-paper .editorial-directory>*,.mf-section-paper .magazine-topic-grid>*,.mf-section-paper .editorial-two-col>*{min-width:0}
+.mf-section-paper .section>h2{font-size:clamp(1.8rem,3vw,2.8rem);text-align:center;margin:24px auto}
+.mf-section-paper .notice{max-width:920px;margin:28px auto;background:#f0e1cc;color:#514034;border-left:4px solid #99523a;padding:18px 24px}
+.mf-section-photo-credit{width:min(1230px,calc(100% - 38px));margin:10px auto 40px;text-align:right;font:.76rem/1.5 system-ui,sans-serif;color:#75675c}
+.mf-section-paper .search-control{max-width:850px;margin:26px auto}
+.mf-section-paper #estado,.mf-section-paper #resultados{max-width:850px;margin-left:auto;margin-right:auto}
+@media(max-width:860px){
+ .mf-section-paper .editorial-two-col{grid-template-columns:minmax(0,1fr)}
+ .mf-section-paper .magazine-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+ main.container:has(.mf-section-page){width:100%}
+ .mf-section-hero{height:225px}
+ .mf-section-hero-label{bottom:40px;font-size:.68rem}
+ .mf-section-paper{width:calc(100% - 22px);padding:26px 17px 40px;margin-top:-10px}
+ .mf-section-paper>h1,.mf-section-paper>.section-intro>h1{font-size:clamp(2.1rem,8vw,3.15rem)!important}
+ .mf-section-paper>.lead,.mf-section-paper>.section-intro>.lead{font-size:1.13rem}
+ .mf-section-paper .magazine-topic-grid{grid-template-columns:minmax(0,1fr)}
+ .mf-section-photo-credit{width:calc(100% - 28px);text-align:left}
+}
