@@ -3,18 +3,55 @@ import AdSlot from '../../components/AdSlot.astro';
 import EditorialSection from '../../components/EditorialSection.astro';
 import Base from '../../layouts/Base.astro';
 import {temas} from '../../data/temas';
+import '../../styles/revista-ilustrada.css';
+const principales=[
+ {label:'AUTOR Y ÉPOCA',title:'José Hernández y su tiempo',description:'Una aproximación documental a la vida del autor, su periodismo y los acontecimientos que rodearon la creación del poema.',href:'/jose-hernandez/',image:'https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg',alt:'Retrato fotográfico histórico de José Hernández, hacia 1875',historical:true},
+ {label:'CLAVES DE LECTURA',title:'Cómo leer Martín Fierro hoy',description:'La voz del gaucho, los conflictos y las preguntas que atraviesan el poema. Primera lectura introductoria y vínculos a sus versos.',href:'/exegesis/',image:'/media/fotografias-v3/exegesis.webp',alt:'Recreación digital de una escena de lectura y estudio literario'},
+ {label:'BIBLIOTECA CRÍTICA',title:'Los libros que dialogan con Martín Fierro',description:'Lugones, Martínez Estrada y Borges: una selección inicial de obras fundamentales de su recepción literaria.',href:'/biblioteca-critica/',image:'/media/fotografias-v3/biblioteca-critica.webp',alt:'Recreación digital de libros antiguos en una biblioteca'}
+];
+const panoramas=[
+ {label:'VIDA RURAL',title:'Ranchos, trabajo y vida cotidiana',description:'Una selección de pasajes que evoca tareas, costumbres y formas de vida de la campaña.',href:'/temas/vida-gaucha/',image:'/media/fotografias-v3/revista-cultural.webp',alt:'Recreación digital de la vida rural pampeana'},
+ {label:'CAMPAÑA Y FRONTERA',title:'La pampa abierta: distancias y frontera',description:'El paisaje, la marcha y la experiencia fronteriza a través de cantos seleccionados.',href:'/temas/frontera/',image:'/media/fotografias-v3/la-ida.webp',alt:'Recreación digital de una escena gauchesca en la pampa'},
+ {label:'JUSTICIA Y AUTORIDAD',title:'El gaucho frente al poder',description:'Instituciones, conflicto y desigualdad en pasajes de la primera parte.',href:'/temas/justicia-y-autoridad/',image:'/media/fotografias-v3/hero-gaucho-pampa.webp',alt:'Recreación digital de un gaucho a caballo ante el horizonte'},
+ {label:'AMISTAD Y LEALTAD',title:'Encuentros y lealtades en el poema',description:'Los lazos personales, la ayuda mutua y las decisiones de sus personajes.',href:'/temas/amistad-y-lealtad/',image:'/media/fotografias-v3/la-vuelta.webp',alt:'Recreación digital de una escena de regreso del mundo gaucho'},
+ {label:'FAMILIA Y REGRESO',title:'Pérdida, familia y reencuentro',description:'La memoria familiar y el regreso en una selección de cantos de la segunda parte.',href:'/temas/familia-y-regreso/',image:'/media/fotografias-v3/la-vuelta.webp',alt:'Recreación digital vinculada al regreso de Martín Fierro'},
+ {label:'CONSEJOS Y SABIDURÍA',title:'La experiencia hecha palabra',description:'Las enseñanzas, las advertencias y la transmisión oral en los cantos finales.',href:'/temas/consejos-y-sabiduria/',image:'/media/fotografias-v3/archivo-documental-recreacion.webp',alt:'Recreación digital de papeles y libros de época'}
+];
 ---
-<Base title="Revista cultural" description="Puerta de entrada a los contenidos culturales sobre Martín Fierro, José Hernández, la vida gaucha y su recepción literaria." adKind="category">
-<EditorialSection kind="category" image="/media/fotografias-v3/revista-cultural.webp" label="REVISTA · HISTORIA Y CULTURA">
-<div class="breadcrumbs"><a href="/">Inicio</a><span>Revista</span></div>
-<section class="section-intro"><p class="eyebrow">Literatura · Historia · Tradición</p><h1>Revista cultural</h1><p class="lead">Un espacio editorial para comprender la obra, sus protagonistas y su época. Estas son las secciones iniciales con información disponible; las futuras investigaciones se incorporarán cuando hayan sido revisadas.</p></section>
+<Base title="Revista cultural" description="Martín Fierro como revista cultural ilustrada: José Hernández, historia rural, crítica literaria y recorridos documentales." adKind="category">
+<EditorialSection kind="category" image="/media/fotografias-v3/revista-cultural.webp" label="REVISTA · LITERATURA, HISTORIA Y CULTURA">
+<nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span>Revista</span></nav>
+<section class="section-intro">
+ <p class="eyebrow">Una revista para descubrir el mundo del poema</p>
+ <h1>La cultura que rodea a Martín Fierro</h1>
+ <p class="lead">Paisajes, palabras, historia y vida de campaña: una puerta ilustrada a los contenidos publicados y a recorridos del poema. Cada imagen ambienta; las fotografías históricas se distinguen de las recreaciones.</p>
+</section>
 <AdSlot id="category-02" kind="category" />
-<div class="editorial-directory">
- <a class="directory-feature" href="/jose-hernandez/"><span class="eyebrow">Biografía documental</span><h2>José Hernández: vida y legado</h2><p>Primer recorrido por su vida, sus publicaciones y los museos vinculados con su memoria.</p><span class="text-link">Abrir biografía →</span></a>
- <a class="directory-feature" href="/exegesis/"><span class="eyebrow">Análisis de la obra</span><h2>Exégesis del poema</h2><p>Cómo leer y estudiar el comienzo de Martín Fierro, con vínculos al texto original.</p><span class="text-link">Explorar la lectura →</span></a>
- <a class="directory-feature" href="/biblioteca-critica/"><span class="eyebrow">Libros y autores</span><h2>Biblioteca crítica</h2><p>Una primera selección de obras y escritores que dialogan con la creación de Hernández.</p><span class="text-link">Conocer las obras →</span></a>
-</div>
-<section class="section"><h2>Recorridos temáticos</h2><div class="cards">{temas.map(t=><a class="card" href={`/temas/${t.slug}/`}><h3>{t.titulo}</h3><p>{t.descripcion}</p></a>)}</div></section>
+<section class="mf-magazine-block" aria-labelledby="mf-revista-destacados">
+ <div class="mf-magazine-heading"><p>01 / LECTURAS Y DOCUMENTOS</p><h2 id="mf-revista-destacados">Historias para empezar a explorar</h2></div>
+ <div class="mf-magazine-featured">
+ {principales.map(item=><a href={item.href} class:list={['mf-magazine-story',{'mf-magazine-story--portrait':item.historical}]}>
+  <div class="mf-magazine-story-photo"><img src={item.image} alt={item.alt} loading="lazy" decoding="async" width="720" height="470"/></div>
+  <div class="mf-magazine-story-copy">
+   <span>{item.label}</span><h3>{item.title}</h3><p>{item.description}</p><b>Explorar el contenido <span aria-hidden="true">↗</span></b>
+  </div>
+ </a>)}
+ </div>
+</section>
+<section class="mf-magazine-block" aria-labelledby="mf-revista-temas">
+ <div class="mf-magazine-heading"><p>02 / EL UNIVERSO GAUCHESCO</p><h2 id="mf-revista-temas">Paisajes, encuentros y experiencias</h2><p class="mf-magazine-intro">Estos recorridos conducen a selecciones de cantos existentes. Son guías temáticas, no artículos de investigación concluidos.</p></div>
+ <div class="mf-magazine-grid">
+ {panoramas.map(item=><a href={item.href} class="mf-magazine-story">
+  <div class="mf-magazine-story-photo"><img src={item.image} alt={item.alt} loading="lazy" decoding="async" width="620" height="410"/></div>
+  <div class="mf-magazine-story-copy"><span>{item.label}</span><h3>{item.title}</h3><p>{item.description}</p><b>Leer los pasajes <span aria-hidden="true">↗</span></b></div>
+ </a>)}
+ </div>
+</section>
+<section class="mf-magazine-coming" aria-labelledby="mf-revista-proximo">
+ <p class="eyebrow">AGENDA EDITORIAL</p><h2 id="mf-revista-proximo">Próximas investigaciones ilustradas</h2>
+ <p>Las pulperías y la sociabilidad rural, los fogones, la oralidad, los aperos y los oficios de la campaña integran nuestra agenda. Sus artículos e imágenes específicos se incorporarán cuando estén documentados y publicados; no los presentamos como notas terminadas.</p>
+ <a href="/archivo/">Conocer nuestro archivo documental ↗</a>
+</section>
 <AdSlot id="category-03" kind="category" />
 <AdSlot id="category-04" kind="category" />
 </EditorialSection>
