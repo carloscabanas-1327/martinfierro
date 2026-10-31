@@ -1,0 +1,30 @@
+MARTINFIERRO.ORG — NORMA DE EXCELENCIA EN CONTENIDO, FUENTES Y NAVEGACIÓN
+Código: MF-EXCELENCIA-LECTOR-SEO-001. Fecha: 31-10-2026. Versión 1.0.
+Complemento de las directivas maestras, visual, lector y revista. No sustituye ninguna.
+PRINCIPIO: «Buscamos la excelencia en el contenido, en las fuentes y en la navegación para el lector/visitante». Calidad documental, utilidad humana, navegación y accesibilidad tienen prioridad por encima de tácticas de posicionamiento.
+
+1. DIFERENCIAR TEXTOS
+El poema de José Hernández se conserva intacto en el corpus fuente, con sus grafías, estrofas e IDs. Los textos de apoyo se declaran comentario editorial, nunca parte de la obra original. No interrumpir el poema con anuncios, glosas o acordeones que oculten estrofas.
+
+2. SEO Y DATOS ESTRUCTURADOS
+Para páginas especiales crear títulos únicos descriptivos con la intención principal de búsqueda, descripción fiel al contenido y canonical. H1 único descriptivo y H2 para las partes del documento. Usar datos estructurados Schema.org adecuados al material real, sin inventar fechas, acreditaciones ni prometer resultados enriquecidos de Google. El tipo CreativeWork identifica el canto, autor y libro; el artículo editorial, si existe y se justifica, se distingue del original. Verificar con fuentes oficiales de Google Search Central.
+Nunca inventar datos de Keyword Planner.
+
+3. NAVEGACIÓN MÓVIL Y ACCESIBILIDAD
+Ofrecer navegación discreta por pasajes significativos y anclas reales, manteniendo todas las estrofas visibles y accesibles desde el HTML. El orden de lectura y de teclado debe ser lógico. Controles táctiles cómodos (objetivo 44-48px, sin confundirlo con mínimos normativos). Tipografía de poesía en torno a 17-20px o equivalente adaptativo y altura de línea holgada. Comprobar contraste, foco visible y respuesta en anchos 320px, 375px, 768px y escritorio. Evitar overflow.
+
+4. GLOSARIOS EN CONTEXTO
+Elegir solo palabras realmente presentes en el canto transcrito, cotejando su grafía y contexto. Mantener significados orientativos separados del verso, vinculados a sus estrofas y con fuentes lexicográficas verificables cuando se afirmen definiciones normativas. Distinguir claramente explicaciones editoriales de citas a diccionarios. No alterar la grafía del poema por accesibilidad o SEO.
+
+5. CONCLUSIONES EDITORIALES
+En páginas temáticas especiales, ofrecer tres párrafos originales útiles tras el texto principal y antes de créditos: contexto, interpretación sustentada y orientación al lector. Vincular afirmaciones interpretativas a estrofas concretas. Integrar long-tail y sinónimos solo naturalmente; no repetir por densidad ni inventar consultas. No extender esta estructura por defecto a los 46 cantos de la edición primaria.
+
+6. ENLACES Y FUENTES
+Usar enlaces descriptivos (canto XXXII, canto XXXIII, contexto anterior). En imágenes nuevas declarar explícitamente recreación digital contemporánea; para retratos auténticos documentar procedencia. No convertir recreaciones en pruebas históricas. Cuando se incluyan definiciones de diccionario, enlazar fuentes comprobables. Evitar fuentes no verificadas y conclusiones ajenas al texto.
+
+7. PRUEBA PILOTO
+Primera aplicación en /consejos-martin-fierro/ (La vuelta de Martín Fierro, canto XXXII; 31 estrofas). Implementar title y meta, CreativeWork JSON-LD, H2 de texto completo, select por pasajes del mismo canto, glosario pequeño en details, ALT conciso, enlaces interpretativos a estrofas, targets táctiles generosos y comentario final claramente separado. No modificar corpus.
+
+8. VALIDACIÓN Y PUBLICACIÓN
+Revisar código fuente, existencia real de destinos de ancla, test de compilación Astro/CI, integridad del corpus, accesibilidad básica, versión móvil y enlaces internos. PR en GitHub; despliegue Cloudflare debe distinguirse de merge CI. La verificación visual requiere inspección real.
+FIN — MF-EXCELENCIA-LECTOR-SEO-001.
