@@ -136,3 +136,89 @@ body:has(.mf-revista) main.container{
   filter:grayscale(100%);
   transform:none !important;
 }
+
+
+/* Revista cultural propia — jerarquía legible, contraste comprobable y tarjetas editoriales.
+   Estas reglas se aplican solo a la revista, no al lector del poema. */
+.mf-revista .mf-section-header{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:end;
+  gap:12px 26px;
+}
+.mf-revista .mf-section-header h2{
+  grid-column:1/-1;
+  grid-row:1;
+  font-size:clamp(2.15rem,3.5vw,3.65rem);
+  line-height:1.12;
+  color:#201b18;
+}
+.mf-revista .mf-section-number,
+.mf-revista .mf-header-note{
+  color:#823620;
+  letter-spacing:.115em;
+  font-weight:850;
+  font-size:clamp(.73rem,.9vw,.84rem);
+}
+.mf-revista .mf-section-header .mf-section-number{grid-column:1;grid-row:2}
+.mf-revista .mf-section-header .mf-header-note,
+.mf-revista .mf-section-header>a{grid-column:2;grid-row:2}
+.mf-revista .mf-explore-grid{align-items:stretch}
+.mf-revista .mf-route{
+  display:flex;
+  flex-direction:column;
+  background:#fffaf1;
+  border:1px solid #cdbba7;
+  border-top:0;
+  padding:0;
+  color:#241e19;
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+.mf-revista .mf-route:hover{
+  border-color:#8c5940;
+  box-shadow:0 9px 24px rgba(55,35,20,.10);
+}
+.mf-revista .mf-route-image{
+  width:100%;
+  background:#e5ded4;
+}
+.mf-revista .mf-route-text{
+  padding:18px 20px 24px;
+  min-height:126px;
+  background:#fffaf1;
+  flex:1;
+}
+.mf-revista .mf-route-text span{
+  display:block;
+  color:#80351f;
+  font-weight:850;
+  font-size:.74rem;
+  letter-spacing:.09em;
+  line-height:1.5;
+}
+.mf-revista .mf-route-text h3{
+  color:#211a17;
+  line-height:1.15;
+  overflow-wrap:normal;
+  font-size:clamp(1.5rem,2vw,2.25rem);
+}
+.mf-revista .mf-route-text b{
+  right:18px;bottom:20px;color:#873e29;
+}
+.mf-revista .mf-route--historical .mf-route-image{
+  background:#dedbd5;
+}
+.mf-revista .mf-route--historical .mf-route-image img{
+  object-fit:contain;
+  object-position:center center;
+}
+@media(max-width:720px){
+  .mf-revista .mf-section-header{grid-template-columns:1fr;gap:10px}
+  .mf-revista .mf-section-header h2,
+  .mf-revista .mf-section-header .mf-section-number,
+  .mf-revista .mf-section-header .mf-header-note,
+  .mf-revista .mf-section-header>a{
+    grid-column:1;grid-row:auto;
+  }
+  .mf-revista .mf-route-text{min-height:0}
+}
