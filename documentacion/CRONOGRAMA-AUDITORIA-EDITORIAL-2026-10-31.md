@@ -10,7 +10,8 @@
 - [x] **EXEG-01 (PR #40):** sustituir la introducción superficial por siete lecturas documentadas de estrofas íntegras, con referencias al corpus, voz narrativa, frontera, memoria, injusticia y bibliografía institucional.
 - [ ] **ARCH-03:** auditoría exhaustiva de enlaces externos mediante solicitudes GET reales y su comportamiento desde navegador; registrar respuestas, accesibilidad y alternativas oficiales.
 - [ ] **ARCH-04:** sumar nuevas piezas primarias con signatura, custodia, fecha, licencia y reproducción permitida. Prioridad: prensa de Hernández, cartas, ediciones de 1879.
-- [ ] **EXEG-02:** ampliar el análisis al arco de *La vuelta* y extender gradualmente el estudio a los 46 cantos, con referencias por estrofa y problemas de recepción.
+- [x] **EXEG-02-VUELTA (PR #49):** estudio literario y contextual de los **33 cantos de La vuelta**, cada uno con cita extraída del corpus y enlace al canto completo; estudio autónomo en `/exegesis/la-vuelta/`. **No implica comentario de cada verso ni certificación filológica.**
+- [ ] **EXEG-02-IDA:** ampliar el análisis integral de los 13 cantos de La ida y completar la revisión verso por verso y bibliografía crítica de ambas partes.
 
 ## Avances documentales de esta ronda (sin declarar cerrados los hitos extensos)
 
@@ -22,6 +23,9 @@
 - [x] **TEXT-01A (PR #44):** clasificar el conjunto de alertas (27 de coincidencia 75–90 %, 28 menores de 75 %) y advertir sobre problemas de alineación; los dictámenes individuales siguen pendientes.
 
 ## Etapa 2 — Desarrollo de secciones insuficientes
+
+- [x] **EXEG-02B (PR #49):** interpretar cada canto de La vuelta con foco en voces narrativas, el desierto, Cruz, la cautiva, Vizcacha, Picardía, el Moreno, la payada y las máximas del cierre; cotejar presencia de 33 cantos en el corpus. Las citas no modifican los textos fuente.
+
 
 - [x] **HERN-00 (PR #41):** ampliar biografía de Hernández con diez hitos comentados, periodismo, política, trayectoria editorial y cuatro documentos patrimoniales accesibles.
 - [x] **REV-00 (PR #41):** publicar un artículo independiente sobre pulperías y reorganizar Revista para destacar artículos reales, además de las guías temáticas.
@@ -37,7 +41,7 @@
 
 - [x] **CULT-02A (PR #46):** preparar la lógica de doce tarjetas con imágenes WebP, nombres SEO, textos ALT, crédito de recreación digital y respaldo sin enlace roto, responsive. **Pendiente aparte:** subir los doce binarios para ver las fotografías publicadas.
 - [x] **TEMAS-02B (PR #46):** ampliar Amistad y lealtad, Familia y regreso, Consejos y sabiduría con interpretación diferenciada, estrofas exactas del corpus y referencias académicas enlazadas. Requieren todavía revisión filológica externa.
-- [ ] **CULT-02B:** cargar los doce WebP en `public/media/cultura-gauchesca/` y `mate-pava-yerba.webp` en `public/media/fotografias-v3/`; comprobar HTTP 200, diseño en PC/móvil y sustituir los dos recortes de menor resolución por maestros.
+- [ ] **CULT-02B:** los doce WebP y `mate-pava-yerba.webp` **ya están subidos a las carpetas correctas de `main` y sus nombres y cantidades fueron comprobados**. Quedan pendientes la comprobación HTTP 200 en Cloudflare, el diseño en PC/móvil y sustituir los dos recortes de menor resolución por maestros.
 
 ## Etapa 3 — Integridad de la edición y metodología
 
