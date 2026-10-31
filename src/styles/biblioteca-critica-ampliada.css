@@ -1,0 +1,40 @@
+/* Biblioteca crítica documental: imágenes tipográficas editoriales, no facsímiles ficticios. */
+.mf-bc-principio{max-width:940px;margin:14px auto 30px;padding:19px 24px;background:#efe2d0;border-left:4px solid #8d4b37;color:#564436;font:.94rem/1.65 system-ui,sans-serif}
+.mf-bc-index{max-width:1030px;margin:10px auto 42px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.mf-bc-index a{padding:11px 13px;min-height:44px;display:inline-flex;align-items:center;color:#70432e;background:#f1e5d6;border:1px solid #dfc8af;font:700 .79rem/1.4 system-ui,sans-serif;text-decoration:none}
+.mf-bc-section,.mf-bc-discussion,.mf-bc-documents,.mf-bc-method{max-width:1060px;margin:46px auto}
+.mf-bc-section>h2,.mf-bc-discussion>h2,.mf-bc-documents>h2,.mf-bc-method>h2{font:600 clamp(1.8rem,3vw,2.7rem)/1.18 Georgia,serif;color:#39291f;margin:12px 0 19px}
+.mf-bc-section>p:not(.eyebrow),.mf-bc-documents>p,.mf-bc-method>p{font:1.06rem/1.76 Georgia,serif;color:#5b473a}
+.mf-bc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:30px}
+.mf-bc-item{border:1px solid #d9c6b4;background:#fffaf3;min-width:0;display:grid;grid-template-columns:minmax(120px,.7fr) 1.3fr}
+.mf-bc-cover{padding:19px 14px 18px;min-height:315px;display:flex;flex-direction:column;justify-content:space-between;color:#ffebd3;background:#604431;overflow-wrap:anywhere}
+.mf-bc-cover--sepia{background:#876748}.mf-bc-cover--tierra{background:#80553b}.mf-bc-cover--oliva{background:#4d5743}.mf-bc-cover--azul{background:#304652}.mf-bc-cover--granate{background:#622d32}.mf-bc-cover--grafito{background:#393b42}
+.mf-bc-cover-no,.mf-bc-cover-foot{font:700 .65rem/1.4 system-ui,sans-serif;letter-spacing:.1em;opacity:.9}
+.mf-bc-cover strong{display:block;font:600 clamp(1.18rem,2vw,1.75rem)/1.15 Georgia,serif;margin:30px 0 12px}
+.mf-bc-cover small{display:block;font:italic .9rem/1.35 Georgia,serif}
+.mf-bc-body{padding:22px 20px;min-width:0;display:flex;flex-direction:column}
+.mf-bc-body>.eyebrow{font-size:.65rem}
+.mf-bc-body h3{font:600 1.5rem/1.15 Georgia,serif;color:#382820;margin:8px 0}
+.mf-bc-body p{font:1rem/1.68 Georgia,serif;color:#594739}
+.mf-bc-body .mf-bc-author{font:.83rem/1.5 system-ui,sans-serif;color:#854e35;font-weight:800;margin:1px 0 10px}
+.mf-bc-question{margin:10px 0 15px;padding:13px 14px;background:#efe2d0;border-left:3px solid #956248;display:grid;gap:5px}
+.mf-bc-question strong{font:700 .74rem/1.5 system-ui,sans-serif;color:#7b4430}
+.mf-bc-question span{font:italic .96rem/1.5 Georgia,serif}
+.mf-bc-body .mf-bc-type{font:.74rem/1.4 system-ui,sans-serif;color:#735b48;border-top:1px solid #dbc6b2;padding-top:13px;margin-top:auto}
+.mf-bc-body>a{min-height:44px;display:inline-flex;align-items:center;padding:6px 0;color:#82422e;font:700 .8rem/1.5 system-ui,sans-serif;text-underline-offset:3px}
+.mf-bc-discussion{padding:clamp(20px,3vw,38px);background:#f0e4d5}
+.mf-bc-debates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.mf-bc-debates article{background:#fffaf2;padding:20px;border-top:3px solid #925039}
+.mf-bc-debates h3{font:600 1.45rem/1.25 Georgia,serif;color:#473025}
+.mf-bc-debates p{font:1rem/1.73 Georgia,serif;color:#5a473a}
+.mf-bc-research{display:grid;gap:12px;margin:24px 0}
+.mf-bc-research>a{display:grid;gap:7px;background:#fffaf2;padding:20px 26px;border-left:4px solid #8c4b37;color:#463227;text-decoration:none}
+.mf-bc-research>a:hover{background:#f1e3d0}
+.mf-bc-research span{font:800 .68rem/1.3 system-ui,sans-serif;color:#95593d;letter-spacing:.1em}
+.mf-bc-research strong{font:600 1.35rem/1.3 Georgia,serif}
+.mf-bc-research small{font:.84rem/1.5 system-ui,sans-serif;color:#785b49}
+.mf-bc-method{background:#f4eadc;padding:25px 30px;border-top:3px solid #987254}
+.mf-bc-method a{color:#82422e;text-underline-offset:3px}
+.mf-bc-section :is(a):focus-visible,.mf-bc-index a:focus-visible,.mf-bc-research a:focus-visible{outline:3px solid #a75d3a;outline-offset:3px}
+@media(max-width:1020px){.mf-bc-grid{grid-template-columns:1fr}}
+@media(max-width:690px){.mf-bc-item{grid-template-columns:minmax(0,1fr)}.mf-bc-cover{min-height:220px;gap:10px}.mf-bc-cover strong{margin:8px 0;font-size:1.65rem}.mf-bc-debates{grid-template-columns:1fr}.mf-bc-body{padding:22px}.mf-bc-method{padding:20px}.mf-bc-grid{gap:18px}}
