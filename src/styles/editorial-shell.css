@@ -137,3 +137,122 @@ main.container:not(:has(.mf-revista)){
  .mf-historic-portrait{grid-template-columns:minmax(0,1fr);max-width:360px;gap:14px}
  .mf-historic-portrait img{max-width:260px}
 }
+
+
+/* MF · Pie institucional definitivo v4 — identidad propia, contraste legible. */
+body .site-footer.editorial-footer {
+ background:#292521;
+ color:#f4e9d7;
+ border-top:5px solid #9a4c36;
+ padding:clamp(36px,5vw,66px) 0 0;
+}
+.site-footer.editorial-footer .editorial-footer-grid{
+ display:grid;
+ grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,.82fr));
+ gap:clamp(24px,3.4vw,54px);
+ align-items:start;
+}
+.site-footer.editorial-footer .editorial-footer-identity{min-width:0}
+.site-footer.editorial-footer .editorial-footer-brand{
+ font:600 clamp(2.3rem,3.5vw,3.25rem)/1.07 Georgia,serif;
+ color:#fff5e8;
+ text-decoration:none;
+ display:inline-block;
+}
+.site-footer.editorial-footer .editorial-footer-identity p{
+ color:#e6d5c3;
+ font-size:.91rem;
+ line-height:1.75;
+ margin:16px 0 0;
+ max-width:36ch;
+}
+.site-footer.editorial-footer .editorial-footer-links{
+ display:flex;
+ flex-direction:column;
+ align-items:flex-start;
+ gap:12px;
+ min-width:0;
+}
+.site-footer.editorial-footer .editorial-footer-links strong{
+ color:#f0b68d;
+ font:800 .77rem/1.35 system-ui,sans-serif;
+ letter-spacing:.13em;
+ text-transform:uppercase;
+ margin-bottom:10px;
+}
+.site-footer.editorial-footer .editorial-footer-links a{
+ color:#fff3e4;
+ font:500 .94rem/1.55 system-ui,sans-serif;
+ text-decoration:none;
+ border-bottom:1px solid transparent;
+}
+.site-footer.editorial-footer .editorial-footer-links a:hover{
+ border-color:#f0b68d;
+ color:#fff;
+}
+.site-footer.editorial-footer .editorial-footer-credits{
+ border-top:1px solid #705b4a;
+ margin-top:clamp(28px,4vw,52px);
+ padding-top:20px;
+ padding-bottom:23px;
+ display:flex;
+ justify-content:space-between;
+ align-items:baseline;
+ gap:8px 22px;
+ flex-wrap:wrap;
+}
+.site-footer.editorial-footer .editorial-footer-credits p{
+ margin:0;
+ color:#e9d6c2;
+ font:500 .77rem/1.55 system-ui,sans-serif;
+}
+.site-footer.editorial-footer .editorial-footer-credits a{
+ color:#f9e2cd;
+ text-underline-offset:3px;
+}
+.mf-legal-page{
+ width:min(850px,100%);
+ margin:0 auto;
+ padding:0 0 clamp(38px,5vw,72px);
+ color:#30261e;
+}
+.mf-legal-page h1{
+ max-width:none!important;
+ font-size:clamp(2.45rem,5vw,4.7rem)!important;
+ margin-bottom:24px;
+}
+.mf-legal-page h2{
+ border-top:1px solid #c8b7a4;
+ padding-top:22px;
+ margin:35px 0 14px;
+ font-size:clamp(1.45rem,2.3vw,2.15rem);
+ color:#35261f;
+}
+.mf-legal-page p{
+ max-width:78ch;
+ font-size:1.06rem;
+ line-height:1.8;
+}
+.mf-legal-page .lead{font-size:clamp(1.2rem,1.75vw,1.5rem)}
+.mf-legal-page a{color:#853b26;text-decoration-thickness:1px;text-underline-offset:3px}
+.mf-legal-page .breadcrumbs{margin-bottom:25px}
+@media(max-width:1060px){
+ .site-footer.editorial-footer .editorial-footer-grid{
+   grid-template-columns:repeat(3,minmax(0,1fr));
+ }
+ .site-footer.editorial-footer .editorial-footer-identity{grid-column:1/-1}
+ .site-footer.editorial-footer .editorial-footer-identity p{max-width:65ch}
+}
+@media(max-width:650px){
+ .site-footer.editorial-footer .editorial-footer-grid{
+   grid-template-columns:repeat(2,minmax(0,1fr));
+   gap:34px 20px;
+ }
+ .site-footer.editorial-footer .editorial-footer-identity{grid-column:1/-1}
+ .site-footer.editorial-footer .editorial-footer-credits{flex-direction:column;align-items:flex-start}
+ .mf-legal-page p{font-size:1rem}
+}
+@media(max-width:360px){
+ .site-footer.editorial-footer .editorial-footer-grid{grid-template-columns:1fr}
+ .site-footer.editorial-footer .editorial-footer-identity{grid-column:1}
+}
