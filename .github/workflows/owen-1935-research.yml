@@ -1,0 +1,51 @@
+name: Recuperar y auditar facsimil Owen 1935
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  download-and-extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Install PDF tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends poppler-utils
+      - name: Download PDF with retries
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          curl --fail --location --retry 5 --retry-delay 3 --connect-timeout 20 --max-time 300 \
+            --user-agent 'MartinFierroResearch/1.0 (bibliographic archival research)' \
+            'https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Gaucho_Martin_Fierro_-_Jose_Hernandez.pdf' \
+            --output work/owen-1935.pdf
+          test "$(stat -c%s work/owen-1935.pdf)" -gt 1000000
+          head -c 5 work/owen-1935.pdf | grep -q '%PDF-'
+      - name: Integrity and text extraction
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum work/owen-1935.pdf > work/SHA256SUMS.txt
+          pdfinfo work/owen-1935.pdf > work/pdfinfo.txt
+          pdftotext -layout -enc UTF-8 work/owen-1935.pdf work/owen-1935-raw.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, json
+          info=Path("work/pdfinfo.txt").read_text(errors="replace")
+          match=re.search(r"^Pages:\s*(\d+)",info,re.M)
+          pages=int(match.group(1)) if match else None
+          text=Path("work/owen-1935-raw.txt").read_text(errors="replace")
+          report={"pages":pages,"expected_pages":351,"characters":len(text),"form_feed_page_breaks":text.count("\f"),"status":"raw OCR, not proofread","reproduction_rights":"not cleared"}
+          Path("work/report.json").write_text(json.dumps(report,indent=2)+"\n")
+          if pages != 351: raise SystemExit(f"Unexpected page count: {pages}")
+          if len(text.strip()) < 1000: raise SystemExit("Text layer insufficient; OCR needed")
+          PY
+      - name: Upload private-to-workflow artifacts (not repository)
+        uses: actions/upload-artifact@v4
+        with:
+          name: owen-1935-research-unreviewed
+          path: work/
+          retention-days: 7
+          if-no-files-found: error
