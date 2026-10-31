@@ -67,3 +67,20 @@ main.container:has(.mf-consejos){width:min(1480px,calc(100% - 32px));padding:0 0
  .mf-consejos-glossary{padding:22px 17px;margin-top:38px}
  .mf-consejos-verse{font-size:clamp(1.07rem,4.65vw,1.22rem);line-height:1.78}
 }
+
+/* Glosas en línea: mejora progresiva, sin reemplazar los versos del corpus. */
+.mf-consejos-word-hint{max-width:850px;margin:0 auto 22px;padding:12px 17px;border-left:3px solid #a25b3d;background:#f1e5d2;color:#594533;font: .92rem/1.55 system-ui,sans-serif}
+.mf-consejos-word-hint span{font-size:1.15rem;margin-right:7px;color:#8b452e}
+.mf-consejos-verse{position:relative;padding-right:23px}
+.mf-inline-gloss{position:relative;display:inline}
+.mf-gloss-trigger{display:inline;appearance:none;border:0;background:transparent;padding:0;margin:0;font:inherit;color:#643b24;text-decoration:underline;text-decoration-style:dotted;text-decoration-thickness:2px;text-underline-offset:3px;cursor:pointer;text-align:inherit}
+.mf-gloss-trigger:hover,.mf-gloss-trigger[aria-expanded="true"]{color:#9b4d31;background:#f2ddc4}
+.mf-gloss-mark{display:inline-block;vertical-align:super;margin-left:1px;font:700 .63rem/1 system-ui,sans-serif;text-decoration:none;color:#884b33}
+.mf-gloss-content:not([hidden]){position:absolute;display:block;z-index:8;top:calc(100% + 9px);left:0;width:min(300px,calc(100vw - 75px));max-width:300px;background:#2b261f;color:#fff3e5;border:1px solid #a57854;box-shadow:0 10px 24px rgba(22,13,8,.26);padding:14px 16px;border-radius:4px;font: .92rem/1.5 system-ui,sans-serif;text-align:left;white-space:normal}
+.mf-gloss-content strong,.mf-gloss-content>span,.mf-gloss-content small{display:block}
+.mf-gloss-content strong{color:#ffdfb7;margin-bottom:6px}
+.mf-gloss-content small{font-size:.73rem;color:#d9c2aa;margin-top:8px}
+.mf-consejos-verse-anchor{display:inline-block;vertical-align:baseline;margin-left:8px;min-width:18px;text-decoration:none!important;font:.81rem/1.4 system-ui,sans-serif;color:#8d634d!important;opacity:.55}
+.mf-consejos-verse-anchor:hover,.mf-consejos-verse-anchor:focus-visible{opacity:1}
+.mf-consejos :is(.mf-gloss-trigger,.mf-consejos-verse-anchor):focus-visible{outline:3px solid #ac603c;outline-offset:3px}
+@media(max-width:600px){.mf-gloss-content:not([hidden]){width:min(265px,calc(100vw - 70px));padding:13px}.mf-consejos-verse-anchor{opacity:.8}.mf-consejos-word-hint{font-size:.88rem}}
