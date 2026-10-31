@@ -1,0 +1,28 @@
+/* Artículos originales de historia y cultura: papel claro, documentos identificados y lectura móvil. */
+.mf-essay{max-width:970px;margin:45px auto;padding:clamp(17px,3.2vw,30px);background:#fffaf2;border-top:3px solid #9c684b}
+.mf-essay h2{font:600 clamp(1.8rem,3vw,2.9rem)/1.18 Georgia,serif;color:#38271f;margin:10px 0 22px}
+.mf-essay>p:not(.eyebrow),.mf-essay>ol{font:1.08rem/1.8 Georgia,serif;color:#544337}
+.mf-essay a,.mf-essay-alert a{color:#88452f;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+.mf-essay-alert{max-width:970px;margin:23px auto;background:#f0e2cd;border-left:4px solid #a06944;color:#514033;padding:20px 25px;font:.91rem/1.7 system-ui,sans-serif}
+.mf-essay-doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}
+.mf-essay-doc-grid>article{background:#f4e8d9;padding:24px;border:1px solid #dbc4ac;display:flex;flex-direction:column;min-width:0}
+.mf-essay-doc-grid h3{font:600 1.42rem/1.23 Georgia,serif;color:#463029;margin:7px 0 15px}
+.mf-essay-doc-grid p:not(.eyebrow){font:1rem/1.7 Georgia,serif;color:#514137}
+.mf-essay-doc-grid a{margin-top:auto;min-height:44px;display:inline-flex;align-items:center;font:700 .81rem/1.6 system-ui,sans-serif}
+.mf-essay-timeline{list-style:none;padding:0;margin:20px 0}
+.mf-essay-timeline li{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:18px 0;border-top:1px solid #decab7}
+.mf-essay-timeline li>span{font:800 .82rem/1.6 system-ui,sans-serif;color:#8d4e37}
+.mf-essay-timeline h3{font:600 1.4rem/1.2 Georgia,serif;margin:0 0 8px}
+.mf-essay-timeline p{font:1rem/1.65 Georgia,serif;margin:0;color:#514137}
+.mf-essay-hero{max-width:970px;margin:24px auto}
+.mf-essay-hero img{width:100%;height:auto;max-height:480px;object-fit:cover}
+.mf-essay-hero figcaption{font:.76rem/1.5 system-ui,sans-serif;text-align:right;color:#756251;margin:9px 0}
+.mf-essay-jump{max-width:970px;margin:20px auto 38px;display:flex;flex-wrap:wrap;gap:10px}
+.mf-essay-jump a{color:#78432d;background:#f2e7d7;min-height:44px;padding:10px 14px;display:inline-flex;align-items:center;text-decoration:none;font:700 .8rem/1.3 system-ui,sans-serif;border:1px solid #d8c0a5}
+.mf-essay-steps{padding-left:26px}.mf-essay-steps li{margin:10px 0}
+.mf-essay-en{font:.81rem/1.5 system-ui,sans-serif!important;color:#88553a!important;font-style:italic}
+.mf-essay-verse{margin:24px auto;background:#eee0ca;padding:23px;border-left:4px solid #955c3e}
+.mf-essay-verse blockquote{font:1.15rem/1.72 Georgia,serif;margin:0}
+.mf-essay-verse blockquote span{display:block}
+.mf-essay-verse figcaption{font:.78rem/1.6 system-ui,sans-serif;color:#695545;margin-top:15px}
+@media(max-width:720px){.mf-essay-doc-grid{grid-template-columns:1fr}.mf-essay-timeline li{grid-template-columns:1fr;gap:5px}.mf-essay{padding:20px 15px}.mf-essay-verse{padding:18px 12px}.mf-essay-verse blockquote{font-size:1.02rem}}
