@@ -4,11 +4,34 @@ import {estrofasDeCanto} from '../../lib/corpus';
 import '../../styles/consejos-especial.css';
 const estrofas=estrofasDeCanto('vuelta',32);
 const nVersos=estrofas.reduce((n,e)=>n+e.versos.length,0);
+const pasajes=[
+ {id:'mf-vuelta-e1144',label:'El consejo de un padre · inicio'},
+ {id:'mf-vuelta-e1150',label:'La amistad y la honradez'},
+ {id:'mf-vuelta-e1153',label:'Trabajo y esfuerzo'},
+ {id:'mf-vuelta-e1160',label:'Los hermanos sean unidos'},
+ {id:'mf-vuelta-e1161',label:'Respeto a los mayores'},
+ {id:'mf-vuelta-e1167',label:'Rechazo de la violencia'},
+ {id:'mf-vuelta-e1174',label:'El último consejo'}
+];
+const canonical=new URL('/consejos-martin-fierro/',Astro.site).toString();
+const structuredData={
+ '@context':'https://schema.org',
+ '@type':'CreativeWork',
+ '@id':canonical+'#obra',
+ name:'Consejos de Martín Fierro a sus hijos — Canto XXXII',
+ url:canonical,
+ inLanguage:'es-AR',
+ author:{'@type':'Person',name:'José Hernández'},
+ isPartOf:{'@type':'Book',name:'La vuelta de Martín Fierro',datePublished:'1879',author:{'@type':'Person',name:'José Hernández'}},
+ image:new URL('/media/fotografias-v3/consejos-fogon-hijos.webp',Astro.site).toString(),
+ description:'Texto íntegro del canto XXXII de La vuelta de Martín Fierro, con 31 estrofas, introducción, comentarios y ayuda de lectura.'
+};
 ---
-<Base title="Consejos de Martín Fierro a sus hijos" description="Leé los consejos de Martín Fierro a sus hijos: las 31 estrofas del canto XXXII de La vuelta de Martín Fierro (1879), con enlaces al texto original.">
+<Base title="Consejos de Martín Fierro a sus hijos: texto completo y significado" description="Leé los consejos de Martín Fierro a sus hijos: canto XXXII íntegro, sus 31 estrofas, significado, valores, glosario gauchesco y enlaces a los versos.">
 <article class="mf-consejos">
+ <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g,'\\u003c')}/>
  <header class="mf-consejos-hero">
-  <img src="/media/fotografias-v3/consejos-fogon-hijos.webp" alt="Recreación digital de Martín Fierro dando consejos a sus dos hijos y al hijo de Cruz, jóvenes con barba incipiente, reunidos junto a un fogón y tomando mate" width="1280" height="853" fetchpriority="high" decoding="async"/>
+  <img src="/media/fotografias-v3/consejos-fogon-hijos.webp" alt="Recreación digital de Martín Fierro aconsejando a tres jóvenes junto al fogón" width="1280" height="853" fetchpriority="high" decoding="async"/>
   <div class="mf-consejos-shade" aria-hidden="true"></div>
   <div class="mf-consejos-hero-copy">
    <p>UNA LECTURA ESPECIAL · LA VUELTA · 1879</p>
@@ -24,6 +47,23 @@ const nVersos=estrofas.reduce((n,e)=>n+e.versos.length,0);
    <p>Después del reencuentro y antes de separarse, Martín Fierro habla a sus hijos y al hijo de Cruz. En el canto XXXII les transmite consejos nacidos de su experiencia. Esta página presenta todas sus estrofas, sin adaptar el lenguaje del poema ni modificar la transcripción documental.</p>
    <p class="mf-consejos-meta">{estrofas.length} estrofas · {nVersos} versos · <a href="/leer/vuelta/31/">Contexto: canto XXXI</a> · <a href="/leer/vuelta/32/">Lector original del canto XXXII</a></p>
   </div>
+  <nav class="mf-consejos-jumps" aria-label="Ir a pasajes destacados del canto XXXII">
+    <p class="mf-consejos-jumps-title">Encontrá un consejo sin interrumpir la lectura</p>
+    <label for="mf-consejos-pasaje">Ir directamente a un pasaje</label>
+    <select id="mf-consejos-pasaje" aria-label="Elegir pasaje del canto" data-pasaje>
+      <option value="">Seleccioná un tema…</option>
+      {pasajes.map(p=><option value={p.id}>{p.label}</option>)}
+    </select>
+    <noscript><p>Accesos directos: {pasajes.map(p=><a href={`#${p.id}`}>{p.label}</a>)}</p></noscript>
+    <script>
+      const selector=document.querySelector<HTMLSelectElement>('[data-pasaje]');
+      selector?.addEventListener('change',()=>{
+        const id=selector.value;
+        if(id){const target=document.getElementById(id);if(target){history.replaceState(null,'',`#${id}`);target.scrollIntoView({block:'start',behavior:'instant'});}}
+      });
+    </script>
+  </nav>
+  <h2 class="mf-consejos-text-heading" id="texto-completo-canto-xxxii">Texto completo de los consejos — Canto XXXII</h2>
   <div class="mf-consejos-layout">
    <div class="mf-consejos-verses" aria-label="Consejos completos de Martín Fierro">
     {estrofas.map(e=><section class="mf-consejos-stanza" id={e.id} aria-label={`Estrofa ${e.numero}`}>
@@ -34,19 +74,32 @@ const nVersos=estrofas.reduce((n,e)=>n+e.versos.length,0);
    <aside class="mf-consejos-side" aria-label="Contexto y navegación">
     <p class="eyebrow">LA OBRA ORIGINAL</p><h3>Consejos, no adaptación</h3>
     <p>Estos versos corresponden al canto XXXII de <em>La vuelta de Martín Fierro</em> (1879). El texto se lee aquí desde la misma fuente estructurada utilizada por la biblioteca.</p>
-    <a href="/leer/vuelta/32/">Leer el canto original →</a>
-    <a href="/leer/vuelta/33/">Continuar con el canto XXXIII →</a>
+    <a href="/leer/vuelta/32/">Leer el canto XXXII en el lector original →</a>
+    <a href="/leer/vuelta/33/">Leer el canto XXXIII: desenlace de La vuelta →</a>
     <a href="/temas/consejos-y-sabiduria/">Explorar consejos y sabiduría →</a>
    </aside>
   </div>
+  <section class="mf-consejos-glossary" aria-labelledby="mf-glosario-titulo">
+   <p class="eyebrow">AYUDA DE LECTURA · LENGUAJE GAUCHESCO</p>
+   <h2 id="mf-glosario-titulo">Palabras de los consejos que hoy pueden resultar difíciles</h2>
+   <p>En el texto original aparecen voces y grafías propias de la transcripción de la poesía gauchesca. Estas explicaciones son orientativas: no sustituyen el contexto ni modifican las palabras de José Hernández.</p>
+   <div class="mf-consejos-definitions">
+    <details><summary>«naides»</summary><p>Variante popular de «nadie». Aparece desde el primer consejo. <a href="#mf-vuelta-e1144">Ir a la estrofa inicial</a>.</p></details>
+    <details><summary>«ducho»</summary><p>Hábil o experimentado en algo. Fierro dice «sin ser muy ducho» al hablar de lo que vale la pena aprender. <a href="#mf-vuelta-e1146">Ir a esa estrofa</a>.</p></details>
+    <details><summary>«cencia»</summary><p>Forma representada en el poema por «ciencia», en un pasaje sobre los saberes y la experiencia. <a href="#mf-vuelta-e1146">Ir a esa estrofa</a>.</p></details>
+    <details><summary>«revolutis»</summary><p>Alboroto o situación de confusión, según su uso en este consejo. <a href="#mf-vuelta-e1170">Ir a esa estrofa</a>.</p></details>
+    <details><summary>«jundamento»</summary><p>Forma popular por «fundamento»; aparece cuando Fierro recomienda cantar asuntos que tengan sentido o importancia. <a href="#mf-vuelta-e1172">Ir a esa estrofa</a>.</p></details>
+   </div>
+   <p class="mf-consejos-glossary-note">Referencia para contextualizar estas voces: <a href="https://dle.rae.es/ducho" rel="noopener noreferrer">Diccionario de la lengua española (RAE y ASALE), «ducho»</a>. Las demás glosas son aclaraciones editoriales de lectura basadas en el pasaje, no citas textuales de una fuente lexicográfica.</p>
+  </section>
   <section class="mf-consejos-commentary" aria-labelledby="mf-consejos-explicacion">
    <p class="eyebrow">CONTEXTO Y LECTURA · COMENTARIO EDITORIAL</p>
    <h2 id="mf-consejos-explicacion">¿Qué enseñan los consejos de Martín Fierro a sus hijos?</h2>
    <p><strong>Los consejos de Martín Fierro a sus hijos</strong> constituyen uno de los pasajes más recordados de <em>La vuelta de Martín Fierro</em>, publicada por José Hernández en 1879. En el canto XXXII, el protagonista comparte las enseñanzas que obtuvo de una vida marcada por las dificultades, las pérdidas y la experiencia. Sus palabras abordan la prudencia, la amistad, el trabajo, la honradez y el respeto por los demás. No se presentan como lecciones de un hombre perfecto, sino como advertencias de alguien que reconoce sus propios errores y desea evitarles sufrimientos a sus hijos.</p>
-   <p>Entre las <strong>enseñanzas más conocidas de Martín Fierro</strong> sobresale su llamado a la unión entre hermanos, junto con sus reflexiones sobre la dignidad del trabajo, la solidaridad con los amigos, el cuidado de los ancianos y la necesidad de actuar con juicio. También aconseja evitar la violencia, el robo y los excesos. Leídos en conjunto, los versos permiten comprender cómo José Hernández construye una voz que transmite valores familiares y normas de convivencia desde la experiencia del gaucho. Cada consejo conserva, además, las particularidades lingüísticas y expresivas de la poesía gauchesca.</p>
+   <p>Entre las <strong>enseñanzas más conocidas de Martín Fierro</strong> sobresale su <a href="#mf-vuelta-e1160">llamado a la unión entre hermanos</a>, junto con sus reflexiones sobre <a href="#mf-vuelta-e1153">la dignidad del trabajo</a>, <a href="#mf-vuelta-e1150">la solidaridad con los amigos</a>, <a href="#mf-vuelta-e1161">el cuidado de los ancianos</a> y la necesidad de actuar con juicio. También aconseja <a href="#mf-vuelta-e1167">evitar la violencia</a>, el robo y los excesos. Leídos en conjunto, los versos permiten comprender cómo José Hernández construye una voz que transmite valores familiares y normas de convivencia desde la experiencia del gaucho. Cada consejo conserva, además, las particularidades lingüísticas y expresivas de la poesía gauchesca.</p>
    <p>Quienes buscan <strong>los consejos de Martín Fierro completos</strong>, las frases que dirige a sus hijos o el significado del canto 32 pueden encontrarlos en esta edición íntegra del poema. Las 31 estrofas se reproducen sin modernizar sus palabras y con enlaces al lector documental original. Esta presentación permite leer los consejos en su contexto, distinguir el texto de José Hernández de los comentarios editoriales y descubrir por qué sus reflexiones sobre la familia, la conducta personal y la convivencia siguen despertando interés entre los lectores actuales.</p>
   </section>
-  <div class="mf-consejos-outro"><p>La transcripción es la misma que utiliza nuestro lector documental; cada estrofa remite a su ubicación original. La imagen de cabecera es una recreación digital contemporánea, no una fotografía de época.</p><a href="/leer/vuelta/32/">Volver al canto XXXII ↗</a></div>
+  <div class="mf-consejos-outro"><p>La transcripción es la misma que utiliza nuestro lector documental; cada estrofa remite a su ubicación original. La imagen de cabecera es una recreación digital contemporánea, no una fotografía de época.</p><a href="/leer/vuelta/32/">Consultar el texto en el lector original del canto XXXII ↗</a></div>
  </div>
 </article>
 </Base>
