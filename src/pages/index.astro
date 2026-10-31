@@ -3,6 +3,7 @@ import AdSlot from '../components/AdSlot.astro';
 import Base from '../layouts/Base.astro';
 import { idiomas } from '../data/idiomas';
 import '../styles/revista-v2.css';
+const simbolosIdioma:Record<string,string>={es:'🇦🇷',en:'🇬🇧',it:'🇮🇹',pt:'🇧🇷',fr:'🇫🇷',la:'LAT',pms:'PMT'};
 const rutas = [
  {numero:'01',titulo:'La obra',sub:'El poema íntegro',url:'/leer/',imagen:'/media/fotografias-v3/la-ida.webp',alt:'Recreación digital de la vida gauchesca en la pampa'},
  {numero:'02',titulo:'José Hernández',sub:'El autor y su época',url:'/jose-hernandez/',imagen:'https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg',alt:'Fotografía histórica original de José Hernández, hacia 1875'},
@@ -25,25 +26,11 @@ const rutas = [
       <h1 id="mf-headline">El mundo de <em>Martín Fierro</em>, más allá del poema.</h1>
       <p class="mf-deck">Una obra, un pueblo, un horizonte. Leé el texto completo, descubrí su tiempo y explorá el legado cultural de José Hernández.</p>
       <div class="mf-lead-actions"><a class="mf-primary" href="/leer/ida/1/">Empezar a leer <span aria-hidden="true">↗</span></a><a class="mf-secondary" href="/buscar/">Buscar en los versos <span aria-hidden="true">↗</span></a><a class="mf-secondary mf-advice-link" href="/consejos-martin-fierro/">Consejos a sus hijos <span aria-hidden="true">↗</span></a></div>
+      <a class="mf-language-toplink" href="#idiomas" aria-label="Ir a Martín Fierro en otros idiomas, al final de esta página">Martín Fierro en otros idiomas <span aria-hidden="true">↓</span></a>
       <div class="mf-lead-metrics"><span><strong>46</strong> cantos</span><span><strong>7.210</strong> versos</span><span><strong>2</strong> partes</span></div>
     </div>
   </section>
 <AdSlot id="category-02" kind="category" />
-  <section class="mf-languages" aria-labelledby="mf-lang-title">
-    <div class="mf-languages-intro">
-      <p class="mf-languages-kicker">MARTÍN FIERRO EN EL MUNDO</p>
-      <h2 id="mf-lang-title">Explorá la obra en otros idiomas</h2>
-      <p>Accedé al original español y a las fichas de traducciones históricas. Estas fichas reúnen información bibliográfica: <strong>todavía no contienen traducciones íntegras verificadas</strong>.</p>
-    </div>
-    <nav class="mf-languages-list" aria-label="Elegir idioma y consultar su edición">
-      {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo} class:list={['mf-language-option',{'mf-language-original':i.estado==='original'}]}>
-        <strong>{i.nombre}</strong>
-        <small>{i.estado==='original'?'Texto original · leer completo':'Traducción histórica · ficha en investigación'}</small>
-        <span aria-hidden="true">↗</span>
-      </a>)}
-    </nav>
-    <p class="mf-languages-note">También existen referencias a otros idiomas pendientes de comprobación; no publicamos enlaces a traducciones inexistentes.</p>
-  </section>
   <section class="mf-storyline" aria-labelledby="mf-story-title">
     <div class="mf-section-header"><span class="mf-section-number">01 / BIBLIOTECA</span><h2 id="mf-story-title">La obra, de principio a fin</h2><a href="/leer/">Ver índice completo ↗</a></div>
     <div class="mf-story-grid">
@@ -60,6 +47,19 @@ const rutas = [
   </section>
   <section class="mf-explore" aria-labelledby="mf-explore-title"><div class="mf-section-header"><span class="mf-section-number">02 / EXPLORAR</span><h2 id="mf-explore-title">Una cultura, muchas miradas</h2><span class="mf-header-note">RECORRIDOS DOCUMENTALES</span></div><div class="mf-explore-grid">{rutas.map(r=><a href={r.url} class:list={["mf-route", {"mf-route--historical": r.numero === "02"}]}><div class="mf-route-image"><img src={r.imagen} alt={r.alt} width="480" height="300" loading="lazy"/></div><div class="mf-route-text"><span>{r.numero} / {r.sub}</span><h3>{r.titulo}</h3><b aria-hidden="true">↗</b></div></a>)}</div></section>
   <section class="mf-bottom"><div><span class="mf-kicker">PATRIMONIO DOCUMENTAL ABIERTO</span><h2>Una biblioteca para leer. Un archivo para investigar.</h2><p>La revista y la biblioteca conviven sin alterar el texto original: cada canto mantiene su lugar y cada fuente puede consultarse.</p><a href="/archivo/">Conocer el archivo ↗</a></div><div class="mf-bottom-figures"><div><strong>1872</strong><span>El gaucho Martín Fierro</span></div><div><strong>1879</strong><span>La vuelta de Martín Fierro</span></div></div></section>
+  <section class="mf-languages-compact" id="idiomas" aria-labelledby="mf-languages-bottom-title">
+    <div class="mf-languages-compact-heading">
+      <h2 id="mf-languages-bottom-title">Martín Fierro en otros idiomas</h2>
+      <p>Español: obra completa. Los demás enlaces ofrecen fichas de traducciones históricas, todavía sin texto íntegro publicado.</p>
+    </div>
+    <nav class="mf-language-flags" aria-label="Páginas de Martín Fierro por idioma">
+      {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo} title={i.estado==='original'?'Obra original en español':'Ficha bibliográfica en investigación, no traducción íntegra'}>
+        <span class="mf-lang-symbol" aria-hidden="true">{simbolosIdioma[i.codigo] ?? '🌐'}</span>
+        <span>{i.nombre}</span>
+      </a>)}
+    </nav>
+    <p class="mf-languages-compact-note">Las banderas son referencias visuales, no indicaciones de exclusividad nacional de cada idioma. LAT = latín; PMT = piamontés.</p>
+  </section>
   <p class="mf-disclaimer">Salvo el retrato histórico de José Hernández, las imágenes fotorrealistas de esta portada son recreaciones digitales, no fotografías ni documentos históricos. Las secciones enlazan a páginas del proyecto; las traducciones internacionales no se presentan como textos íntegros publicados. Retrato de José Hernández (hacia 1875): fuente Biblioteca Virtual Miguel de Cervantes, vía Wikimedia Commons, dominio público. <a href="https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Hern%C3%A1ndez.jpg" rel="noopener noreferrer">Ficha y procedencia de la fotografía.</a> <a href="/acerca/">Consultar fuentes y método editorial.</a></p>
 </div>
 <AdSlot id="category-03" kind="category" />
