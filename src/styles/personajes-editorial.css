@@ -7,3 +7,5 @@
 .mf-personaje-referencias{border-top:1px solid #d9bfa5;padding-top:15px;margin-top:20px;font:.83rem/1.4 system-ui,sans-serif}.mf-personaje-referencias>div{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.mf-personaje-referencias a{display:inline-flex;align-items:center;min-height:40px;background:#f0e2d0;border:1px solid #d2b599;padding:8px 10px;text-decoration:none}.mf-personaje-referencias a:hover{text-decoration:underline}
 .mf-personajes-final{max-width:1050px;margin:25px auto;display:flex;flex-wrap:wrap;gap:14px}.mf-personajes-final a{background:#f1e1cc;padding:14px 19px;color:#78422c;font:700 .88rem/1.4 system-ui,sans-serif}
 @media(max-width:760px){.mf-personajes-grid{grid-template-columns:1fr}.mf-personaje{padding:22px 17px}}
+
+.mf-personaje-foto{margin:0 0 20px}.mf-personaje-foto img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:#e9dfc8}.mf-personaje-foto figcaption{padding:8px 0;font:.73rem/1.5 system-ui,sans-serif;color:#685346}

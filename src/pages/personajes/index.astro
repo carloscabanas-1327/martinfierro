@@ -10,6 +10,17 @@ const fichas=personajes.map(p=>{
  return {...p,estrofa,fragmento:estrofa?.versos.slice(0,6)??[],recorte:(estrofa?.versos.length??0)>6};
 });
 const enlaces=(p:{parte:'ida'|'vuelta';canto:number})=>`/leer/${p.parte}/${p.canto}/`;
+const fotosPersonajes:Record<string,string>={
+ 'sargento-cruz':'sargento-cruz.webp',
+ 'esposa-fierro':'esposa-de-fierro.webp',
+ 'primer-hijo':'hijo-mayor-de-fierro.webp',
+ 'segundo-hijo':'hijo-segundo-de-fierro.webp',
+ 'don-vizcacha':'viejo-vizcacha.webp',
+ 'picardia':'picardia.webp',
+ 'la-cautiva':'la-cautiva.webp',
+ 'el-moreno':'el-moreno.webp',
+ 'moreno-muerto':'negro-del-baile.webp'
+};
 ---
 <Base title="Personajes principales de Martín Fierro: quién es quién en La ida y La vuelta" description="Guía de 11 personajes de Martín Fierro, Cruz, sus hijos, Vizcacha, Picardía, la cautiva, el Moreno y el juez; perfiles, relaciones y versos originales por canto." adKind="article">
 <EditorialSection kind="article" image="/media/fotografias-v3/exegesis.webp" label="PERSONAJES PRINCIPALES · GUÍA DE LECTURA">
@@ -22,6 +33,7 @@ const enlaces=(p:{parte:'ida'|'vuelta';canto:number})=>`/leer/${p.parte}/${p.can
 <section class="mf-personajes-grid" aria-label="Fichas de los personajes">
 {fichas.map((p,i)=><article class="mf-personaje" id={p.id}>
 <div class="mf-personaje-top"><span class="mf-personaje-number">{String(i+1).padStart(2,'0')}</span><div><p class="eyebrow">{p.tipo} · {p.parte}</p><h2>{p.nombre}</h2></div></div>
+{fotosPersonajes[p.id] && <figure class="mf-personaje-foto"><img src={`/media/fotografias-v3/${fotosPersonajes[p.id]}`} alt={`Recreación digital del personaje literario ${p.nombre}`} width="1024" height="680" loading="lazy" decoding="async"/><figcaption>Recreación digital de personaje literario; no es un retrato histórico.</figcaption></figure>}
 <h3>Quién es y qué hace</h3><p>{p.resumen}</p>
 <div class="mf-personaje-quote"><p class="eyebrow">PASO ORIGINAL · {p.estrofa.parte==='ida'?'LA IDA':'LA VUELTA'} · CANTO {p.estrofa.canto} · ESTROFA {p.estrofa.numero}</p>
 {p.estrofa && <blockquote>{p.fragmento.map(v=><span>{v.texto}</span>)}</blockquote>}
