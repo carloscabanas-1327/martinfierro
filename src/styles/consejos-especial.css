@@ -21,8 +21,6 @@ main.container:has(.mf-consejos){width:min(1480px,calc(100% - 32px));padding:0 0
 .mf-consejos-stanza:target{background:#fff0d4}
 .mf-consejos-stanza-label{display:inline-block;margin:0 0 13px;font:800 .7rem/1.5 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;text-decoration:none}
 .mf-consejos-verse{margin:0!important;max-width:100%;font:clamp(1.09rem,1.24vw,1.23rem)/1.75 Georgia,serif;color:#30251d}
-.mf-consejos-verse a{text-decoration:none;color:inherit}
-.mf-consejos-verse a:hover{background:#f6e7cd}
 .mf-consejos-side{position:sticky;top:22px;background:#eee0cc;border-top:4px solid #a2593e;padding:24px 19px}
 .mf-consejos-side h3{font:600 1.5rem/1.2 Georgia,serif;color:#34251d;margin:10px 0}
 .mf-consejos-side p:not(.eyebrow){font:1rem/1.7 Georgia,serif;color:#544234}
@@ -82,3 +80,7 @@ main.container:has(.mf-consejos){width:min(1480px,calc(100% - 32px));padding:0 0
 .mf-consejos-stanza-note summary:hover{color:#9b4c31}
 .mf-consejos-stanza-note summary:focus-visible{outline:3px solid #ac603c;outline-offset:3px}
 @media(max-width:600px){.mf-consejos-stanza-note summary{min-height:48px}.mf-consejos-stanza-note .mf-note-title{font-size:.83rem}.mf-consejos-reading-hint{text-align:left;padding:0 8px}}
+
+/* Edición especial: un único acceso documental al final de cada estrofa. */
+.mf-consejos-stanza-number{display:block;margin:0 0 14px;font:800 .7rem/1.5 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:#87432f}
+.mf-consejos-stanza>.mf-consejos-stanza-label{margin:15px 0 0;display:inline-flex;align-items:center;min-height:44px;padding:7px 0;font-size:.75rem;letter-spacing:.015em;text-transform:none}
