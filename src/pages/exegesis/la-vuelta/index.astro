@@ -1,0 +1,44 @@
+---
+import Base from '../../../layouts/Base.astro';
+import EditorialSection from '../../../components/EditorialSection.astro';
+import AdSlot from '../../../components/AdSlot.astro';
+import {estrofasDeCanto} from '../../../lib/corpus';
+import {lecturasVuelta} from '../../../data/exegesis-vuelta';
+import '../../../styles/exegesis-vuelta.css';
+const grupos=[
+ {id:'regreso-desierto',titulo:'El regreso y el desierto',sub:'Cantos I–XI',desde:1,hasta:11,descripcion:'La voz que vuelve, la enfermedad de Cruz, la cautiva y la búsqueda de los pagos.'},
+ {id:'historias-hijos',titulo:'Las historias de los hijos',sub:'Cantos XII–XIX',desde:12,hasta:19,descripcion:'La injusticia, la orfandad, el tutor Vizcacha y las consecuencias del desarraigo.'},
+ {id:'picardia',titulo:'La experiencia de Picardía',sub:'Cantos XX–XXVIII',desde:20,hasta:28,descripcion:'Un nuevo narrador describe la supervivencia, el juego, las elecciones y el servicio en la frontera.'},
+ {id:'payada-desenlace',titulo:'La payada, los consejos y el final',sub:'Cantos XXIX–XXXIII',desde:29,hasta:33,descripcion:'El Moreno, las preguntas de la payada, las enseñanzas del padre y la despedida.'}
+];
+const fichas=lecturasVuelta.map(p=>{
+ const estrofas=estrofasDeCanto('vuelta',p.canto);
+ const e=estrofas[0];
+ return {...p,estrofas:estrofas.length,estrofa:e,fragmento:e?.versos.slice(0,6)??[],esFragmento:(e?.versos.length??0)>6,versosTotales:estrofas.reduce((n,s)=>n+s.versos.length,0)};
+});
+---
+<Base title="Exégesis de La vuelta de Martín Fierro: análisis de los 33 cantos" description="Lectura crítica completa, canto por canto, de La vuelta de Martín Fierro (1879): 33 análisis con pasajes originales, narradores, duelo, Picardía, payada, consejos y fuentes." adKind="article">
+<EditorialSection kind="article" image="/media/fotografias-v3/exegesis.webp" label="EXÉGESIS · LA VUELTA DE MARTÍN FIERRO · 1879">
+<nav class="breadcrumbs" aria-label="Ubicación"><a href="/">Inicio</a><a href="/exegesis/">Exégesis</a><span>La vuelta</span></nav>
+<section class="section-intro"><p class="eyebrow">JOSÉ HERNÁNDEZ · 1879 · ANÁLISIS LITERARIO DE LA SEGUNDA PARTE</p><h1>La vuelta de Martín Fierro: exégesis de sus 33 cantos</h1><p class="lead">Un recorrido completo, canto por canto, por el regreso, los destinos de los hijos, la historia de Picardía, el contrapunto con el Moreno y los consejos finales. Cada lectura diferencia los versos de Hernández de la interpretación editorial y conserva un enlace al texto original íntegro.</p></section>
+<div class="mf-vuelta-warning"><strong>Rigor documental.</strong> Los títulos de los análisis son editoriales: los cantos originales se identifican con números romanos. Los fragmentos se extraen sin cambios del corpus del proyecto. Este recorrido cubre los 33 cantos, pero no pretende sustituir una edición crítica certificada ni resolver las variantes textuales pendientes.</div>
+<div class="mf-vuelta-metrics"><span><strong>33</strong> cantos examinados</span><span><strong>1879</strong> publicación original</span><span><strong>4</strong> grandes movimientos narrativos</span></div>
+<nav class="mf-vuelta-navigation" aria-label="Navegación por partes del estudio"><a href="#regreso-desierto">Regreso y desierto · I–XI</a><a href="#historias-hijos">Historias de los hijos · XII–XIX</a><a href="#picardia">Picardía · XX–XXVIII</a><a href="#payada-desenlace">Payada y desenlace · XXIX–XXXIII</a><a href="#fuentes-vuelta">Fuentes y método</a></nav>
+<section class="mf-vuelta-essay"><p class="eyebrow">CÓMO LEER ESTA SEGUNDA PARTE</p><h2>Un solo poema, muchas voces</h2><p><em>La vuelta de Martín Fierro</em> retoma la voz del gaucho, pero amplía su mundo narrativo. Después de la vida con Cruz y de la cautiva, el relato incorpora a los hijos, a Picardía y al Moreno. Ese cambio impide interpretar todas las afirmaciones del poema como si fueran pronunciadas por el mismo personaje o constituyeran opiniones directas de Hernández.</p><p>La primera parte había privilegiado la denuncia del reclutamiento y la pérdida; la segunda combina esa memoria con nuevos episodios, humor, crítica de autoridades, enseñanza moral y una conclusión deliberadamente abierta. Las observaciones sobre personas indígenas o afroargentinas responden a voces y convenciones de su época; requieren lectura crítica y comparación con documentación histórica de esas comunidades.</p></section>
+<AdSlot id="article-02" kind="article"/>
+{grupos.map((grupo,gi)=><section class="mf-vuelta-group" id={grupo.id} aria-labelledby={`mf-vuelta-grupo-${gi}`}>
+ <div class="mf-vuelta-group-heading"><p class="eyebrow">{grupo.sub}</p><h2 id={`mf-vuelta-grupo-${gi}`}>{grupo.titulo}</h2><p>{grupo.descripcion}</p></div>
+ <div class="mf-vuelta-cantos">{fichas.filter(f=>f.canto>=grupo.desde && f.canto<=grupo.hasta).map(f=><article class="mf-vuelta-canto" id={`canto-${f.canto}`}>
+  <div class="mf-vuelta-canto-header"><p class="eyebrow">LA VUELTA · 1879 · CANTO {f.canto} · {f.estrofas} {f.estrofas===1?'ESTROFA':'ESTROFAS'}</p><h3>{f.titulo}</h3></div>
+  <p class="mf-vuelta-analisis">{f.analisis}</p><figure class="mf-vuelta-quote"><blockquote>{f.fragmento.map(v=><span>{v.texto}</span>)}</blockquote><figcaption>José Hernández, <em>La vuelta de Martín Fierro</em>, canto {f.canto}, estrofa {f.estrofa.numero}{f.esFragmento?' (primeros seis versos de una estrofa extensa)':''}. Texto reproducido desde el corpus del sitio.</figcaption></figure>
+  <h4>Contexto y problemas de interpretación</h4><p>{f.contexto}</p>
+  <a href={`/leer/vuelta/${f.canto}/#${f.estrofa.id}`}>Leer el canto {f.canto} íntegro y comprobar el pasaje →</a>
+ </article>)}</div>
+ {gi===1&&<AdSlot id="article-03" kind="article"/>}
+</section>)}
+<section class="mf-vuelta-conclusion"><p class="eyebrow">LECTURA DEL CONJUNTO</p><h2>Por qué el final no cancela las contradicciones del principio</h2><p>Fierro no regresa al hogar intacto que recordaba. Los hijos exhiben sus propios daños, Picardía evidencia que la injusticia adopta otras formas, y la aparición del Moreno convierte la memoria de una muerte en una pregunta dirigida al protagonista. Los consejos del canto XXXII son importantes precisamente porque llegan después de esas historias y porque el mismo personaje admite que la experiencia también puede equivocarse.</p><p>El secreto y la separación final no autorizan una única explicación cerrada. La obra termina desplazando a sus personajes, mientras invita al lector a conservar su historia. La tensión entre denuncia, violencia, pertenencia y prudencia constituye una de sus mayores riquezas literarias.</p></section>
+<section class="mf-vuelta-sources" id="fuentes-vuelta"><p class="eyebrow">PROCEDENCIA Y LÍMITES</p><h2>Fuentes primarias y consulta bibliográfica</h2><p><strong>Texto:</strong> corpus estructurado de <em>La vuelta de Martín Fierro</em> utilizado por el <a href="/leer/vuelta/">lector del sitio</a>. La trazabilidad y las discrepancias detectadas en el cotejo se documentan en <a href="/acerca/">Fuentes e integridad</a>. Las citas de esta página se cargan directamente del mismo archivo JSON; no se reescriben en la investigación.</p><p><strong>Otra edición histórica consultable:</strong> <a href="https://www.cervantesvirtual.com/obra/la-vuelta-de-martin-fierro--0/" target="_blank" rel="noopener noreferrer">Biblioteca Virtual Miguel de Cervantes, edición digital basada en la segunda edición de Buenos Aires, Librería del Plata, 1879 ↗</a>. No se confunde esa segunda edición con una reproducción de la primera.</p><p><strong>Marco literario:</strong> <a href="https://bcn.gob.ar/literatura-y-narrativa/publicacion-martin-fierro" target="_blank" rel="noopener noreferrer">Biblioteca del Congreso de la Nación, edición y estudio ↗</a>; <a href="/biblioteca-critica/">biblioteca crítica del proyecto ↗</a>; <a href="/temas/vida-gaucha/">dossier de frontera y vida gaucha ↗</a>.</p><p><strong>Alcance:</strong> se ofrece un análisis original de los 33 cantos y una cita inicial comprobable por canto. No es comentario verso a verso, ni cotejo filológico exhaustivo con facsímiles. Tampoco debe tratarse como testimonio histórico objetivo toda afirmación de las voces narrativas.</p></section>
+<nav class="mf-vuelta-bottom"><a href="/exegesis/">← Volver a Exégesis general</a><a href="/leer/vuelta/">Abrir los 33 cantos en el lector →</a></nav>
+<AdSlot id="article-04" kind="article"/><AdSlot id="article-05" kind="article"/>
+</EditorialSection>
+</Base>
