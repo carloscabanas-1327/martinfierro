@@ -1,0 +1,21 @@
+---
+import '../styles/section-editorial.css';
+interface Props {
+  kind?:'article'|'category'|'transition'|'utility';
+  image?:string;
+  imageAlt?:string;
+  label?:string;
+}
+const {kind='category',image='/media/fotografias-v3/revista-cultural.webp',imageAlt='Escena recreada digitalmente del mundo cultural rioplatense',label='MARTÍN FIERRO · REVISTA CULTURAL'}=Astro.props;
+---
+<div class={`mf-section-page mf-section-page--${kind}`}>
+ <div class="mf-section-hero" aria-label="Ambientación visual de la sección">
+  <img src={image} width="1600" height="950" loading="eager" decoding="async" alt={imageAlt} />
+  <div class="mf-section-hero-shade" aria-hidden="true"></div>
+  <p class="mf-section-hero-label">{label}</p>
+ </div>
+ <div class="mf-section-paper">
+  <slot />
+ </div>
+ <p class="mf-section-photo-credit">Imagen de ambientación: recreación digital contemporánea, no fotografía histórica.</p>
+</div>
