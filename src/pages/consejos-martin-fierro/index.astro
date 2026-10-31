@@ -14,7 +14,6 @@ const glosas:Record<string,{equiv:string;contexto:string}>={
  'revolutis':{equiv:'alboroto o confusión',contexto:'Se refiere a una situación agitada o conflictiva.'},
  'jundamento':{equiv:'fundamento',contexto:'Cantar «en cosas de jundamento» es cantar asuntos con sentido o importancia.'}
 };
-const palabraMarcada=/\\b(naides|cencia|ducho|gúenas|revolutis|jundamento)\\b/gi;
 function segmentos(texto:string){
  const trozos=texto.split(/(naides|cencia|ducho|gúenas|revolutis|jundamento)/gi);
  return trozos.map(t=>({texto:t,glosa:glosas[t.toLocaleLowerCase('es-AR')] ?? null}));
