@@ -1,0 +1,32 @@
+/* MF — Revista ilustrada. Tarjetas de portada editoriales, no template CMS. */
+.mf-section-paper .mf-magazine-block{margin:38px 0 58px;min-width:0}
+.mf-magazine-heading{border-top:1px solid #cbb8a2;padding-top:24px;margin:0 0 25px}
+.mf-magazine-heading>p:first-child{font:800 .73rem/1.5 system-ui,sans-serif;letter-spacing:.17em;color:#98472f;margin:0 0 10px}
+.mf-magazine-heading h2{font:600 clamp(1.75rem,3.2vw,3rem)/1.15 Georgia,serif;color:#282019;margin:0 0 14px;max-width:24ch}
+.mf-magazine-intro{font:1.07rem/1.7 Georgia,serif;color:#645142;max-width:75ch}
+.mf-magazine-featured{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;min-width:0}
+.mf-magazine-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;min-width:0}
+.mf-section-paper a.mf-magazine-story{display:flex;flex-direction:column;min-width:0;background:#fffaf1;text-decoration:none;color:#28211a;border:1px solid #d9c6b1;transition:transform .18s ease,box-shadow .18s ease;box-shadow:0 4px 15px rgba(51,32,18,.04)}
+.mf-section-paper a.mf-magazine-story:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(51,32,18,.12)}
+.mf-magazine-story-photo{aspect-ratio:1.5;overflow:hidden;background:#d3b99a;position:relative}
+.mf-magazine-story-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease}
+.mf-magazine-story:hover .mf-magazine-story-photo img{transform:scale(1.025)}
+.mf-magazine-story--portrait .mf-magazine-story-photo{background:#ddcfb9}
+.mf-magazine-story--portrait .mf-magazine-story-photo img{object-fit:contain;filter:grayscale(100%)}
+.mf-magazine-story-copy{padding:24px 23px 26px;display:flex;flex-direction:column;align-items:flex-start;flex:1;gap:10px}
+.mf-magazine-story-copy>span{font:800 .69rem/1.45 system-ui,sans-serif;letter-spacing:.14em;color:#955139;text-transform:uppercase}
+.mf-magazine-story-copy h3{font:600 clamp(1.35rem,1.8vw,1.82rem)/1.16 Georgia,serif;color:#2d221a;margin:0;text-wrap:balance}
+.mf-magazine-story-copy p{font:1rem/1.65 Georgia,serif;color:#554638;margin:0 0 8px}
+.mf-magazine-story-copy b{margin-top:auto;font:750 .82rem/1.55 system-ui,sans-serif;color:#87472f;border-bottom:1px solid #b17b63}
+.mf-magazine-coming{background:#eee1cd;border-left:4px solid #a2583c;padding:clamp(21px,3vw,34px);margin:45px 0}
+.mf-magazine-coming h2{font:600 clamp(1.6rem,2.6vw,2.35rem)/1.2 Georgia,serif;color:#30231b;margin:10px 0}
+.mf-magazine-coming>p:not(.eyebrow){font:1.05rem/1.7 Georgia,serif;color:#514336;max-width:80ch}
+.mf-magazine-coming a{color:#85452e;font-weight:700;text-underline-offset:3px}
+@media(max-width:1040px){.mf-magazine-featured,.mf-magazine-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){
+ .mf-magazine-featured,.mf-magazine-grid{grid-template-columns:minmax(0,1fr);gap:21px}
+ .mf-magazine-story-photo{aspect-ratio:1.65}
+ .mf-magazine-story-copy{padding:19px 19px 23px}
+ .mf-magazine-heading h2{font-size:clamp(1.7rem,7vw,2.4rem)}
+}
+@media(prefers-reduced-motion:reduce){.mf-magazine-story,.mf-magazine-story img{transition:none!important}}
