@@ -1,0 +1,107 @@
+---
+/* Dossier de contexto: documentos históricos auténticos y lectura editorial diferenciados. */
+import {estrofasDeCanto} from '../lib/corpus';
+const estrofaRancho=estrofasDeCanto('ida',3).find(e=>e.numero===50);
+const estrofaFrontera=estrofasDeCanto('ida',3).find(e=>e.numero===49);
+const documentos=[
+ {ano:'1870 · ORIGINAL ESCANEADO',autor:'Lucio V. Mansilla',titulo:'Una excursión a los indios ranqueles',descripcion:'Relato de la expedición diplomática desde Fuerte Sarmiento hacia Leubucó. Mansilla registra parlamentos, visitas, conversaciones, costumbres, tensiones políticas y formas de organización ranquel; su narración es una mirada militar argentina, no una voz indígena sin mediaciones.',url:'https://library.si.edu/digital-library/book/unaexcursinlosin01mans',archivo:'https://commons.wikimedia.org/wiki/File:Una_excursion_a_los_indios_ranqueles_-_Lucio_V._Mansilla_-_1_(page_1_crop).jpg',consulta:'Facsímil escaneado del tomo I · Smithsonian Libraries and Archives'},
+ {ano:'1870 · ORIGINAL ESCANEADO',autor:'Lucio V. Mansilla',titulo:'Una excursión a los indios ranqueles · Tomo II',descripcion:'La continuidad del viaje y sus debates con interlocutores ranqueles permite leer el libro como crónica de contactos y negociaciones, no únicamente como aventura personal. El Smithsonian conserva el segundo volumen escaneado.',url:'https://library.si.edu/digital-library/book/unaexcursinlosin02mans',archivo:'https://www.cervantesvirtual.com/obra/una-excursion-a-los-indios-ranqueles-tomo-segundo--0/',consulta:'Tomo II escaneado · Smithsonian / lectura transcrita en Cervantes'},
+ {ano:'1872 · EDICIÓN DOCUMENTADA',autor:'Hilario Ascasubi',titulo:'Santos Vega o Los mellizos de la Flor',descripcion:'La poesía gauchesca anterior o contemporánea de Hernández recrea lenguas, prácticas y conflictos rurales. Ascasubi cuenta un mundo de campañas, personajes y enfrentamientos con recursos narrativos distintos a los de Fierro.',url:'https://www.cervantesvirtual.com/obra/santos-vega-o-los-mellizos-de-la-flor-rasgos-dramaticos-de-la-vida-del-gaucho-en-las-campanas-y-praderas-de-la-republica-argentina-1778-a-1808--0/',archivo:'https://www.cervantesvirtual.com/obra/santos-vega-o-los-mellizos-de-la-flor-rasgos-dramaticos-de-la-vida-del-gaucho-en-las-campanas-y-praderas-de-la-republica-argentina-1778-a-1808-878045/',consulta:'Lectura en HTML de la edición de París (1872) y facsímil de una edición posterior (1893)'},
+ {ano:'1845 · EDICIÓN FACSIMILAR DE 1868',autor:'Domingo F. Sarmiento',titulo:'Facundo: civilización y barbarie',descripcion:'El ensayo ofrece una interpretación política del territorio y de los tipos rurales. Su clasificación y sus juicios sobre el gaucho son discutibles y no equivalen a las posiciones de Hernández o Mansilla; la comparación permite ver proyectos de país diferentes.',url:'https://www.cervantesvirtual.com/obra/facundo-o-civilizacion-i-barbarie-en-las-pampas-arjentinas-1868--0/',archivo:'https://www.cervantesvirtual.com/portales/domingo_faustino_sarmiento/su_obra_bibliografia/',consulta:'Facsímil de la edición de Nueva York (1868), basado en la obra publicada en 1845'},
+ {ano:'1871 · PUBLICACIÓN PÓSTUMA',autor:'Esteban Echeverría',titulo:'El matadero',descripcion:'Narración de violencia política y representación literaria de sujetos populares que no debe confundirse con una crónica objetiva de la campaña. Escrita décadas antes y publicada en 1871, sirve para contrastar registros y puntos de vista sobre poder y violencia.',url:'https://www.cervantesvirtual.com/obra/el-matadero-1871/',archivo:'https://www.cervantesvirtual.com/portales/esteban_echeverria/obra/el-matadero-1871/',consulta:'Texto histórico completo en HTML · Biblioteca Virtual Miguel de Cervantes'}
+];
+---
+<section class="mf-dossier" aria-labelledby="vida-dossier">
+ <nav class="mf-dossier-index" aria-label="Apartados del dossier">
+  <span>EN ESTA INVESTIGACIÓN</span>
+  <a href="#vida-dossier">El gaucho y la campaña</a>
+  <a href="#gaucho-ranquel">La frontera y los ranqueles</a>
+  <a href="#mansilla-original">Ver el original de Mansilla</a>
+  <a href="#biblioteca-epoca">Biblioteca del siglo XIX</a>
+  <a href="#comparar-miradas">Comparar autores</a>
+ </nav>
+ <div class="mf-dossier-heading">
+  <p class="eyebrow">DOSSIER DOCUMENTAL · HISTORIA Y LITERATURA</p>
+  <h2 id="vida-dossier">La vida del gaucho: trabajo, frontera y encuentro con los pueblos indígenas</h2>
+  <p class="mf-dossier-lead">¿Cómo se vivía en la campaña bonaerense y pampeana del siglo XIX? ¿Qué cambiaba al cruzar la línea de fortines? ¿Qué se puede aprender al leer juntos a <em>José Hernández</em>, <em>Lucio V. Mansilla</em>, <em>Hilario Ascasubi</em> y <em>Domingo F. Sarmiento</em>? Este recorrido distingue la experiencia representada en la ficción de las observaciones, ideas políticas y documentos de su tiempo.</p>
+ </div>
+ <section class="mf-dossier-essay">
+  <h3>El rancho, el caballo y el trabajo: una vida menos simple de lo que parece</h3>
+  <p>El gaucho no constituye una categoría social única e invariable. En las campañas rioplatenses convivían trabajadores temporarios, peones sujetos a distintos vínculos laborales, pequeños productores, familias, soldados, troperos, comerciantes y personas desplazadas. Las actividades de cría y arreo de ganado, la destreza ecuestre, el vínculo con las pulperías y las redes de parentesco forman parte de un universo compartido, pero las condiciones concretas variaban con la región, el período y la posición económica.</p>
+  <p>Hernández escribe desde el punto de vista de un gaucho perseguido. Al recordar su rancho y a sus hijos, Fierro construye un contraste entre una vida anterior relativamente estable y su posterior destierro. Esa evocación tiene fuerza narrativa precisamente porque ya se ha perdido lo que describe. No es adecuado leerla como prueba de que toda la campaña del siglo XIX fuera armónica o de que todas las familias vivieran como el protagonista.</p>
+  <div class="mf-dossier-verses" aria-label="Dos estrofas documentales del poema">
+   {estrofaRancho && <figure><blockquote>{estrofaRancho.versos.map(v=><span>{v.texto}</span>)}</blockquote><figcaption>José Hernández · <em>El gaucho Martín Fierro</em>, canto III, estrofa {estrofaRancho.numero}. <a href={`/leer/ida/3/#${estrofaRancho.id}`}>Leer en el canto original ↗</a></figcaption></figure>}
+   {estrofaFrontera && <figure><blockquote>{estrofaFrontera.versos.map(v=><span>{v.texto}</span>)}</blockquote><figcaption>José Hernández · <em>El gaucho Martín Fierro</em>, canto III, estrofa {estrofaFrontera.numero}. <a href={`/leer/ida/3/#${estrofaFrontera.id}`}>Leer en el canto original ↗</a></figcaption></figure>}
+  </div>
+  <p>Estas estrofas se cargan directamente desde el corpus del proyecto; no fueron modernizadas para este artículo. En ellas la frontera aparece como causa de una ruptura concreta: la separación familiar y la pérdida de un hogar. Su importancia reside tanto en lo que narran como en la perspectiva desde la que se narra.</p>
+ </section>
+ <section class="mf-dossier-essay" id="gaucho-ranquel">
+  <p class="eyebrow">FRONTERA · CONTACTOS · CONFLICTOS</p>
+  <h3>La vida del gaucho frente a las comunidades indígenas</h3>
+  <p>La llamada «frontera» no era solamente una raya fija entre dos mundos separados. En la pampa del siglo XIX hubo circulación de personas, animales y mercancías, acuerdos diplomáticos, intercambios, parentescos, disputas territoriales, malones, expediciones militares y cautiverios. Los encuentros podían combinar comercio y colaboración con miedo y violencia. Reducir ese espacio a «gauchos contra indios» hace desaparecer experiencias y actores fundamentales.</p>
+  <p>La palabra <em>indio</em> se conserva cuando forma parte del título de una obra antigua o cuando se comenta el vocabulario de época. Para hablar de los grupos históricos y actuales, preferimos nombrar sus comunidades: en el libro de Mansilla, los <strong>ranqueles</strong> o <strong>rankülche</strong>, con sus autoridades y sus relaciones políticas propias. No eran un bloque anónimo ni intercambiable con todos los pueblos indígenas del territorio argentino.</p>
+  <p>En <em>Martín Fierro</em>, la experiencia del protagonista —primero en el servicio de frontera y después del otro lado de ella— da lugar a escenas de violencia y estereotipos sobre quienes encuentra. Son elementos esenciales para estudiar el poema, pero no constituyen una historia completa de los pueblos indígenas ni una descripción desapasionada de sus formas de vida. Conviene comparar esa voz con otras fuentes, especialmente con testimonios que registren conversaciones y relaciones políticas más detalladas.</p>
+  <div class="mf-dossier-comparison">
+   <div><strong>Desde Fierro</strong><p>Precariedad del soldado, desarraigo, enfrentamientos y temor, en el marco de una voz poética que reclama justicia para el gaucho.</p></div>
+   <div><strong>Desde Mansilla</strong><p>Negociaciones de paz, entrevistas con líderes ranqueles, rituales, parlamentos y observaciones de un visitante militar; un relato valioso, aunque también condicionado por sus prejuicios.</p></div>
+  </div>
+  <h3>La excursión de Mansilla: de los fortines al parlamento</h3>
+  <p>En marzo de 1870, Lucio V. Mansilla salió del Fuerte Sarmiento rumbo a Leubucó para reunirse con autoridades ranqueles y negociar la paz. Su itinerario, relatado poco después por entregas en <em>La Tribuna</em> desde mayo de ese año, muestra un escenario más complejo que una sucesión de combates: incluye protocolos para recibir visitas, debates, regalos, acuerdos en discusión y un contacto diplomático atravesado por desconfianzas. La Biblioteca del Congreso documenta el inicio de la expedición y el contexto del libro.</p>
+  <p>Su crónica no es «la voz de los ranqueles» sin filtro. Mansilla escribe desde su educación, su función militar y sus expectativas políticas; selecciona escenas y reproduce diálogos según su propia memoria y estilo. Precisamente por eso el libro permite dos lecturas simultáneas: conocer informaciones de época acerca de la sociedad ranquel y analizar cómo un funcionario argentino la representó. La lectura de los dos tomos evita confundir un fragmento llamativo con el sentido de toda la obra.</p>
+  <p class="mf-dossier-source-inline"><a href="https://bcn.gob.ar/recomendaciones-de-libros-de-la-bcn/viajes" target="_blank" rel="noopener noreferrer">Fuente contextual: Biblioteca del Congreso de la Nación, reseña de <em>Una excursión a los indios ranqueles</em> ↗</a></p>
+ </section>
+ <section class="mf-dossier-primary" id="mansilla-original" aria-labelledby="mansilla-titulo">
+  <p class="eyebrow">EL DOCUMENTO A LA VISTA · 1870</p>
+  <h3 id="mansilla-titulo">La primera edición de <em>Una excursión a los indios ranqueles</em></h3>
+  <p>Lo que sigue no es una ilustración creada para esta página: es la <strong>primera página auténtica del tomo I de la edición de 1870</strong>, procedente de la colección de la Academia Argentina de Letras y difundida por Wikimedia Argentina en Wikimedia Commons. La imagen está optimizada para nuestra página; su contenido no ha sido reinterpretado ni recreado.</p>
+  <figure class="mf-dossier-cover">
+   <a href="https://commons.wikimedia.org/wiki/File:Una_excursion_a_los_indios_ranqueles_-_Lucio_V._Mansilla_-_1_(page_1_crop).jpg" target="_blank" rel="noopener noreferrer" aria-label="Ver reproducción original de la primera página de Mansilla y sus derechos">
+    <img src="/media/documentos/mansilla-ranqueles-1870-tomo-1-portada.webp" alt="Facsímil auténtico de la portada del tomo primero de Una excursión a los indios ranqueles, Lucio V. Mansilla, Buenos Aires, 1870" width="760" height="1150" loading="lazy" decoding="async"/>
+   </a>
+   <figcaption><strong>Documento histórico, 1870.</strong> Academia Argentina de Letras; copia digital difundida en Wikimedia Commons. Obra y reproducción identificadas como dominio público (Public Domain Mark 1.0). <a href="https://commons.wikimedia.org/wiki/File:Una_excursion_a_los_indios_ranqueles_-_Lucio_V._Mansilla_-_1_(page_1_crop).jpg" target="_blank" rel="noopener noreferrer">Procedencia y derechos ↗</a></figcaption>
+  </figure>
+  <p>Para leer la obra completa disponés de dos formatos complementarios: las páginas originales escaneadas, con su tipografía y disposición histórica, o una transcripción digital en HTML que puede ampliarse y buscarse con mayor facilidad.</p>
+  <div class="mf-dossier-actions">
+   <a href="https://library.si.edu/digital-library/book/unaexcursinlosin01mans" target="_blank" rel="noopener noreferrer">Tomo I · Leer escaneo histórico ↗</a>
+   <a href="https://library.si.edu/digital-library/book/unaexcursinlosin02mans" target="_blank" rel="noopener noreferrer">Tomo II · Leer escaneo histórico ↗</a>
+   <a href="https://www.cervantesvirtual.com/obra/una-excursion-a-los-indios-ranqueles-tomo-primero--0/" target="_blank" rel="noopener noreferrer">Tomo I · Leer texto en HTML ↗</a>
+   <a href="https://www.cervantesvirtual.com/obra/una-excursion-a-los-indios-ranqueles-tomo-segundo--0/" target="_blank" rel="noopener noreferrer">Tomo II · Leer texto en HTML ↗</a>
+  </div>
+  <details class="mf-dossier-facsimile">
+   <summary>Leer el tomo I escaneado aquí, sin salir de Martín Fierro</summary>
+   <p>El visor externo es proporcionado por Internet Archive, institución que aloja la copia digital consultable por el Smithsonian. Puede requerir conexión con ese servicio o no mostrarse en ciertos navegadores; en ese caso utilizá el enlace a Smithsonian de arriba.</p>
+   <iframe title="Facsímil del tomo primero de Una excursión a los indios ranqueles, Lucio V. Mansilla, 1870" src="https://archive.org/embed/unaexcursinlosin01mans/page/n5/mode/1up" loading="lazy" referrerpolicy="no-referrer" allowfullscreen></iframe>
+  </details>
+  <p class="mf-dossier-rights"><strong>Crédito y derechos:</strong> la primera edición de 1870 es una obra de dominio público. La imagen de portada procede de un registro identificado como <em>Public Domain Mark 1.0</em>. La Biblioteca Virtual Miguel de Cervantes aporta transcripciones digitales que enlazamos, no reproducimos íntegramente; sus ediciones y sitios conservan sus propias condiciones de uso. MARTINFIERRO.ORG no es propietario de los ejemplares históricos ni atribuye a esta página sus digitalizaciones.</p>
+ </section>
+ <section class="mf-dossier-reading" id="biblioteca-epoca">
+  <p class="eyebrow">BIBLIOTECA COMPARADA · SIGLO XIX</p>
+  <h3>Otros autores que escribieron sobre la vida rural y sus conflictos</h3>
+  <p>No todos miraron al gaucho ni a los pueblos indígenas del mismo modo. Estas fuentes reales permiten comparar géneros, períodos y posiciones, sin que una reemplace a otra.</p>
+  <div class="mf-dossier-books">
+   {documentos.map((d,i)=><article class="mf-dossier-book">
+    <div class="mf-dossier-book-head"><span>{String(i+1).padStart(2,'0')}</span><p class="eyebrow">{d.ano}</p></div>
+    <h4>{d.titulo}</h4><p class="mf-dossier-book-author">{d.autor}</p><p>{d.descripcion}</p>
+    <p class="mf-dossier-book-detail">{d.consulta}</p>
+    <a href={d.url} target="_blank" rel="noopener noreferrer">Consultar la obra original o su facsímil ↗</a>
+    <a href={d.archivo} target="_blank" rel="noopener noreferrer" class="mf-dossier-secondary-link">Ver procedencia y edición alternativa ↗</a>
+   </article>)}
+  </div>
+ </section>
+ <section class="mf-dossier-essay" id="comparar-miradas">
+  <p class="eyebrow">LECTURA CRÍTICA COMPARADA</p>
+  <h3>Cuatro miradas, cuatro preguntas diferentes</h3>
+  <p><strong>Hernández</strong> pone en primer plano a un personaje rural que pierde su hogar y denuncia la arbitrariedad de la autoridad; su crítica aparece articulada como poema narrativo en primera persona. <strong>Mansilla</strong> se presenta como viajero y militar, conversa con dirigentes ranqueles y reconstruye las condiciones de la negociación política, pero su posición de poder y su escritura literaria moldean el testimonio. <strong>Ascasubi</strong> participa de una tradición poética gauchesca que construye personajes y escenas rurales con finalidad literaria y política. <strong>Sarmiento</strong> interpreta el territorio, el caudillismo y las costumbres desde una tesis sobre civilización, instituciones y organización nacional.</p>
+  <p>Esta comparación impide caer en dos simplificaciones: tomar la denuncia del gaucho como descripción completa de toda la frontera o aceptar las categorías de los autores del siglo XIX como explicaciones definitivas de los pueblos originarios. La investigación histórica contemporánea requiere además archivos militares y civiles, correspondencia de autoridades indígenas, cartografía, registros comerciales, historia oral y estudios producidos con las propias comunidades.</p>
+  <div class="mf-dossier-questions">
+   <h4>Preguntas para continuar investigando</h4>
+   <ol>
+    <li>¿Qué aspectos de la vida del gaucho se presentan como recuerdos idealizados y cuáles pueden contrastarse con documentos laborales o militares?</li>
+    <li>¿En qué pasajes de Mansilla aparecen los ranqueles como interlocutores políticos y no solo como adversarios?</li>
+    <li>¿Cómo cambian las palabras «frontera», «orden» y «civilización» de un autor a otro?</li>
+    <li>¿Qué historias faltan cuando solo leemos a escritores y funcionarios no indígenas?</li>
+   </ol>
+  </div>
+  <p class="mf-dossier-source-inline"><a href="https://p3.usal.edu.ar/index.php/gramma/article/view/1972" target="_blank" rel="noopener noreferrer">Para profundizar: Marga Clavell, «La otra justicia en Una excursión a los indios ranqueles», revista <em>Gramma</em> ↗</a></p>
+ </section>
+</section>
