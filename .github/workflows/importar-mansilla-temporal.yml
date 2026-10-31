@@ -1,0 +1,53 @@
+name: Importar facsimil Mansilla 1870 (ejecucion puntual)
+on:
+  push:
+    branches:
+      - feat/vida-gaucha-archivo-mansilla-20261031
+    paths:
+      - .github/workflows/importar-mansilla-temporal.yml
+permissions:
+  contents: write
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar portada original de Wikimedia Commons
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --quiet --disable-pip-version-check Pillow requests
+          python - <<'PY'
+          import requests, io
+          from PIL import Image
+          from pathlib import Path
+          title="File:Una excursion a los indios ranqueles - Lucio V. Mansilla - 1 (page 1 crop).jpg"
+          session=requests.Session()
+          session.headers.update({"User-Agent":"MARTINFIERRO-ORG-Patrimonio/1.0 (reproduccion editorial; contacto via sitio)"})
+          r=session.get('https://commons.wikimedia.org/w/api.php',params={"action":"query","format":"json","prop":"imageinfo","iiprop":"url|mime|size","titles":title},timeout=40)
+          r.raise_for_status()
+          pages=r.json()["query"]["pages"]
+          item=next(iter(pages.values()))
+          info=item["imageinfo"][0]
+          assert info["mime"]=="image/jpeg",info
+          data=session.get(info["url"],timeout=65)
+          data.raise_for_status()
+          assert len(data.content)>20000
+          image=Image.open(io.BytesIO(data.content))
+          assert image.width>1000 and image.height>1200, image.size
+          im=image.convert('RGB');im.thumbnail((760,1150))
+          out=Path('public/media/documentos/mansilla-ranqueles-1870-tomo-1-portada.webp')
+          out.parent.mkdir(parents=True,exist_ok=True)
+          im.save(out,'WEBP',quality=85,method=6)
+          print("FUENTE:",info["url"],"DIMENSIONES:",image.size,"ARCHIVO WEBP:",out.stat().st_size)
+          assert out.stat().st_size>12000
+          PY
+      - name: Guardar solo la imagen verificada
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/media/documentos/mansilla-ranqueles-1870-tomo-1-portada.webp
+          git diff --cached --quiet && { echo 'No hay imagen nueva'; exit 1; }
+          git commit -m 'Incorporar portada facsimilar real de Mansilla (1870) bajo licencia de dominio publico'
+          git push
