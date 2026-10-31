@@ -4,6 +4,22 @@ import {estrofasDeCanto} from '../../lib/corpus';
 import '../../styles/consejos-especial.css';
 const estrofas=estrofasDeCanto('vuelta',32);
 const nVersos=estrofas.reduce((n,e)=>n+e.versos.length,0);
+// Glosas del especial: el texto del corpus no se modifica.
+// El algoritmo solo divide visualmente las palabras marcadas.
+const glosas:Record<string,{equiv:string;contexto:string}>={
+ 'naides':{equiv:'nadie',contexto:'Forma popular usada en el poema; aquí recuerda que nadie conoce todos los peligros.'},
+ 'cencia':{equiv:'ciencia',contexto:'Grafía que representa el habla gauchesca; Fierro contrasta el saber acumulado con aprender cosas buenas.'},
+ 'ducho':{equiv:'hábil o experimentado',contexto:'«Sin ser muy ducho»: aunque no se considere un gran conocedor.'},
+ 'gúenas':{equiv:'buenas',contexto:'En este verso, se valora aprender cosas buenas y provechosas, no solo aprender mucho.'},
+ 'revolutis':{equiv:'alboroto o confusión',contexto:'Se refiere a una situación agitada o conflictiva.'},
+ 'jundamento':{equiv:'fundamento',contexto:'Cantar «en cosas de jundamento» es cantar asuntos con sentido o importancia.'}
+};
+const palabraMarcada=/\\b(naides|cencia|ducho|gúenas|revolutis|jundamento)\\b/gi;
+function segmentos(texto:string){
+ const trozos=texto.split(/(naides|cencia|ducho|gúenas|revolutis|jundamento)/gi);
+ return trozos.map(t=>({texto:t,glosa:glosas[t.toLocaleLowerCase('es-AR')] ?? null}));
+}
+
 const pasajes=[
  {id:'mf-vuelta-e1144',label:'El consejo de un padre · inicio'},
  {id:'mf-vuelta-e1150',label:'La amistad y la honradez'},
@@ -64,11 +80,24 @@ const structuredData={
     </script>
   </nav>
   <h2 class="mf-consejos-text-heading" id="texto-completo-canto-xxxii">Texto completo de los consejos — Canto XXXII</h2>
+  <p class="mf-consejos-word-hint"><span aria-hidden="true">ⓘ</span> Algunas palabras del poema están subrayadas: tocalas para leer su significado en español actual sin abandonar la estrofa.</p>
   <div class="mf-consejos-layout">
    <div class="mf-consejos-verses" aria-label="Consejos completos de Martín Fierro">
     {estrofas.map(e=><section class="mf-consejos-stanza" id={e.id} aria-label={`Estrofa ${e.numero}`}>
      <a class="mf-consejos-stanza-label" href={`/leer/vuelta/32/#${e.id}`}>Estrofa {e.numero} · Ver en el lector ↗</a>
-     {e.versos.map(v=><p class="mf-consejos-verse"><a href={`/leer/vuelta/32/#${v.id}`} title={`Ver verso ${v.linea} de estrofa ${e.numero} en el canto original`}>{v.texto}</a></p>)}
+     {e.versos.map(v=><p class="mf-consejos-verse">
+      {segmentos(v.texto).map((seg,i)=>seg.glosa
+       ? <span class="mf-inline-gloss" data-gloss>
+          <button type="button" class="mf-gloss-trigger" aria-expanded="false" aria-label={`Explicar «${seg.texto}»`} aria-controls={`glosa-${v.id}-${i}`}>{seg.texto}<span aria-hidden="true" class="mf-gloss-mark">?</span></button>
+          <span class="mf-gloss-content" id={`glosa-${v.id}-${i}`} hidden role="note">
+           <strong>{seg.texto} = {seg.glosa.equiv}</strong>
+           <span>{seg.glosa.contexto}</span>
+           <small>Glosa editorial · El verso original no se altera.</small>
+          </span>
+         </span>
+       : <span>{seg.texto}</span>)}
+      <a class="mf-consejos-verse-anchor" href={`/leer/vuelta/32/#${v.id}`} aria-label={`Abrir verso ${v.linea} de la estrofa ${e.numero} en el lector original`} title="Ver verso en edición documental">↗</a>
+     </p>)}
     </section>)}
    </div>
    <aside class="mf-consejos-side" aria-label="Contexto y navegación">
@@ -88,6 +117,7 @@ const structuredData={
     <details><summary>«ducho»</summary><p>Hábil o experimentado en algo. Fierro dice «sin ser muy ducho» al hablar de lo que vale la pena aprender. <a href="#mf-vuelta-e1146">Ir a esa estrofa</a>.</p></details>
     <details><summary>«cencia»</summary><p>Forma representada en el poema por «ciencia», en un pasaje sobre los saberes y la experiencia. <a href="#mf-vuelta-e1146">Ir a esa estrofa</a>.</p></details>
     <details><summary>«revolutis»</summary><p>Alboroto o situación de confusión, según su uso en este consejo. <a href="#mf-vuelta-e1170">Ir a esa estrofa</a>.</p></details>
+    <details><summary>«gúenas»</summary><p>Forma popular de «buenas». Fierro recomienda aprender cosas valiosas y útiles, además de acumular saberes. <a href="#mf-vuelta-e1146">Ir a esa estrofa</a>.</p></details>
     <details><summary>«jundamento»</summary><p>Forma popular por «fundamento»; aparece cuando Fierro recomienda cantar asuntos que tengan sentido o importancia. <a href="#mf-vuelta-e1172">Ir a esa estrofa</a>.</p></details>
    </div>
    <p class="mf-consejos-glossary-note">Referencia para contextualizar estas voces: <a href="https://dle.rae.es/ducho" rel="noopener noreferrer">Diccionario de la lengua española (RAE y ASALE), «ducho»</a>. Las demás glosas son aclaraciones editoriales de lectura basadas en el pasaje, no citas textuales de una fuente lexicográfica.</p>
