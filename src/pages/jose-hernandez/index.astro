@@ -1,8 +1,10 @@
 ---
 import AdSlot from '../../components/AdSlot.astro';
+import EditorialSection from '../../components/EditorialSection.astro';
 import Base from '../../layouts/Base.astro';
 ---
 <Base title="José Hernández: biografía y legado" description="Vida y trayectoria de José Hernández: nacimiento, periodismo, obra, legado y museos. Biografía documental en desarrollo." adKind="article">
+<EditorialSection kind="article" image="/media/fotografias-v3/revista-cultural.webp" label="JOSÉ HERNÁNDEZ · BIOGRAFÍA DOCUMENTAL">
  <div class="breadcrumbs"><a href="/">Inicio</a><span>José Hernández</span></div>
  <section class="section-intro"><p class="eyebrow">Biografía · Historia · Documentos</p><h1>José Hernández: la vida detrás del poema</h1><p class="lead">Un recorrido por la vida del escritor, periodista y protagonista de los debates políticos de su época. Aquí distinguimos los hechos documentados de las interpretaciones posteriores.</p></section>
 <AdSlot id="article-02" kind="article" />
@@ -35,4 +37,5 @@ import Base from '../../layouts/Base.astro';
  <AdSlot id="article-04" kind="article" /></aside>
  </div>
 <AdSlot id="article-05" kind="article" />
+</EditorialSection>
 </Base>
