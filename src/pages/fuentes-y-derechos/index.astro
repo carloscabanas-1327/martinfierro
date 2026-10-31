@@ -1,21 +1,21 @@
 ---
-import Base from '../../layouts/Base.astro';
+import Base from '../../layouts/StaticEditorial.astro';
 ---
-<Base title="Fuentes y derechos de autor" description="Procedencia del texto de Martín Fierro, imágenes históricas, recreaciones digitales y derechos de terceros.">
+<Base title="Fuentes y derechos de autor" description="Procedencia del texto de Martín Fierro, imágenes históricas, recreaciones digitales y derechos de terceros." sections={[{"title":"El poema de José Hernández","id":"el-poema-de-jose-hernandez"},{"title":"Fotografía histórica","id":"fotografia-historica"},{"title":"Recreaciones digitales","id":"recreaciones-digitales"},{"title":"Ensayos, imágenes y fuentes de terceros","id":"ensayos-imagenes-y-fuentes-de-terceros"},{"title":"Correcciones documentales","id":"correcciones-documentales"}]}>
   <article class="mf-legal-page">
     <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span>Fuentes y derechos de autor</span></nav>
     <p class="eyebrow">Créditos documentales</p>
     <h1>Fuentes y derechos de autor</h1>
     <p class="lead">Respetar la procedencia es parte del trabajo editorial: el original literario, sus transcripciones, la fotografía histórica y las imágenes recreadas no son la misma clase de documento.</p>
-    <h2>El poema de José Hernández</h2>
+    <h2 id="el-poema-de-jose-hernandez">El poema de José Hernández</h2>
     <p><em>El gaucho Martín Fierro</em> (1872) y <em>La vuelta de Martín Fierro</em> (1879) son obras en dominio público. La edición digital utiliza como base transcripciones de Project Gutenberg, con intervenciones registradas en el <a href="/acerca/">informe de fuentes e integridad</a>.</p>
-    <h2>Fotografía histórica</h2>
+    <h2 id="fotografia-historica">Fotografía histórica</h2>
     <p>El retrato histórico de José Hernández mostrado en la revista se atribuye a fotógrafo desconocido y se referencia mediante <a href="https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Hern%C3%A1ndez.jpg" rel="noopener noreferrer">su ficha patrimonial en Wikimedia Commons</a>, donde se documenta su procedencia y situación de derechos.</p>
-    <h2>Recreaciones digitales</h2>
+    <h2 id="recreaciones-digitales">Recreaciones digitales</h2>
     <p>Las escenas fotorrealistas de gauchos, ranchos, estudios y paisajes realizadas para el sitio son recreaciones digitales modernas; no deben confundirse con fotografías tomadas en el siglo XIX. Se las identifica como tales.</p>
-    <h2>Ensayos, imágenes y fuentes de terceros</h2>
+    <h2 id="ensayos-imagenes-y-fuentes-de-terceros">Ensayos, imágenes y fuentes de terceros</h2>
     <p>La inclusión de referencias, citas breves o enlaces no transfiere los derechos de sus titulares. Cada recurso ajeno debe evaluarse según su propia procedencia, licencia y restricciones de reutilización. No se atribuye dominio público por el mero hecho de que una imagen sea antigua o circule por internet.</p>
-    <h2>Correcciones documentales</h2>
+    <h2 id="correcciones-documentales">Correcciones documentales</h2>
     <p>Para la transcripción base, las variantes identificadas y el alcance de la auditoría, consultá el <a href="https://github.com/carloscabanas-1327/martinfierro" rel="noopener noreferrer">repositorio documental</a> y la página <a href="/acerca/">Fuentes e integridad</a>.</p>
   </article>
 </Base>

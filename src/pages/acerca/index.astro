@@ -1,10 +1,12 @@
 ---
-import Base from '../../layouts/Base.astro';
+import Base from '../../layouts/StaticEditorial.astro';
 ---
-<Base title="Fuentes e integridad"><p class="eyebrow">Acerca de esta edición</p><h1>Fuentes e integridad documental</h1>
+<Base title="Fuentes e integridad" sections={[{"title":"Procedencia","id":"procedencia"},{"title":"Correcciones documentadas","id":"correcciones-documentadas"},{"title":"Alcance de la revisión","id":"alcance-de-la-revision"}]}>
+<article class="mf-legal-page"><p class="eyebrow">Acerca de esta edición</p><h1>Fuentes e integridad documental</h1>
 <p class="lead">MARTINFIERRO.ORG ofrece un corpus digital estructurado de las dos partes de la obra de José Hernández, con enlaces a cantos, estrofas y versos individuales.</p>
-<h2>Procedencia</h2><p>La transcripción base proviene de Project Gutenberg: <a href="https://www.gutenberg.org/ebooks/14765">El gaucho Martín Fierro (14765)</a> y <a href="https://www.gutenberg.org/ebooks/15066">La vuelta de Martín Fierro (15066)</a>. Los archivos originales se conservan sin alteración.</p>
-<h2>Correcciones documentadas</h2><p>La edición digital restaura dos versos ausentes en la transcripción utilizada, normaliza un número de estrofa y recupera una secuencia desordenada. Todas las intervenciones están registradas públicamente en <a href="https://github.com/carloscabanas-1327/martinfierro/blob/main/fuentes/enmiendas-documentadas.json">el manifiesto de enmiendas</a>.</p>
-<h2>Alcance de la revisión</h2><p>Se han verificado técnicamente 7.210 versos, 46 cantos y la correspondencia de los registros con los archivos fuente, incluidas las enmiendas declaradas. La comparación automática con una edición de la Biblioteca del Congreso de la Nación detectó 55 coincidencias inferiores al umbral del 90 % que requieren estudio editorial: diferencias de edición, extracción o transcripción. No se afirma una certificación filológica externa.</p>
+<h2 id="procedencia">Procedencia</h2><p>La transcripción base proviene de Project Gutenberg: <a href="https://www.gutenberg.org/ebooks/14765">El gaucho Martín Fierro (14765)</a> y <a href="https://www.gutenberg.org/ebooks/15066">La vuelta de Martín Fierro (15066)</a>. Los archivos originales se conservan sin alteración.</p>
+<h2 id="correcciones-documentadas">Correcciones documentadas</h2><p>La edición digital restaura dos versos ausentes en la transcripción utilizada, normaliza un número de estrofa y recupera una secuencia desordenada. Todas las intervenciones están registradas públicamente en <a href="https://github.com/carloscabanas-1327/martinfierro/blob/main/fuentes/enmiendas-documentadas.json">el manifiesto de enmiendas</a>.</p>
+<h2 id="alcance-de-la-revision">Alcance de la revisión</h2><p>Se han verificado técnicamente 7.210 versos, 46 cantos y la correspondencia de los registros con los archivos fuente, incluidas las enmiendas declaradas. La comparación automática con una edición de la Biblioteca del Congreso de la Nación detectó 55 coincidencias inferiores al umbral del 90 % que requieren estudio editorial: diferencias de edición, extracción o transcripción. No se afirma una certificación filológica externa.</p>
 <p><a href="https://github.com/carloscabanas-1327/martinfierro/blob/main/CERTIFICACION-TECNICA-2026-10-29.md">Consultar el acta de integridad técnica</a> · <a href="https://github.com/carloscabanas-1327/martinfierro">Ver repositorio y código fuente</a>.</p>
+</article>
 </Base>
