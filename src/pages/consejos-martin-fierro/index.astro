@@ -75,8 +75,9 @@ const structuredData={
   <div class="mf-consejos-layout">
    <div class="mf-consejos-verses" aria-label="Consejos completos de Martín Fierro">
     {estrofas.map(e=><section class="mf-consejos-stanza" id={e.id} aria-label={`Estrofa ${e.numero}`}>
-     <a class="mf-consejos-stanza-label" href={`/leer/vuelta/32/#${e.id}`}>Estrofa {e.numero} · Ver en el lector ↗</a>
-     {e.versos.map(v=><p class="mf-consejos-verse"><a href={`/leer/vuelta/32/#${v.id}`} title={`Ver verso ${v.linea} de estrofa ${e.numero} en el canto original`}>{v.texto}</a></p>)}
+     <span class="mf-consejos-stanza-number">Estrofa {e.numero}</span>
+     {e.versos.map(v=><p class="mf-consejos-verse">{v.texto}</p>)}
+     <a class="mf-consejos-stanza-label" href={`/leer/vuelta/32/#${e.id}`}>Ver esta estrofa en la edición original ↗</a>
      {notas[e.numero] && <details class="mf-consejos-stanza-note">
       <summary><span class="mf-note-label">Nota de lectura</span><span class="mf-note-title">{notas[e.numero].titulo}</span></summary>
       <p>{notas[e.numero].explicacion}</p>
