@@ -33,6 +33,12 @@
 - [ ] **HERN-01:** continuar biografía documental de Hernández: identificación de actas originales, catálogo completo de prensa y discursos, correspondencia fechada, familia y permisos de reproducción. La síntesis y cuatro fuentes fueron implementadas en HERN-00.
 - [ ] **REV-01:** continuar serie de artículos independientes y documentados (oficios, fortineras, cultura material, música y vida cotidiana). El primer artículo de pulperías ya está en REV-00.
 
+## Nueva ronda: fotografías SEO y tres guías críticas
+
+- [x] **CULT-02A (PR #46):** preparar la lógica de doce tarjetas con imágenes WebP, nombres SEO, textos ALT, crédito de recreación digital y respaldo sin enlace roto, responsive. **Pendiente aparte:** subir los doce binarios para ver las fotografías publicadas.
+- [x] **TEMAS-02B (PR #46):** ampliar Amistad y lealtad, Familia y regreso, Consejos y sabiduría con interpretación diferenciada, estrofas exactas del corpus y referencias académicas enlazadas. Requieren todavía revisión filológica externa.
+- [ ] **CULT-02B:** cargar los doce WebP en `public/media/cultura-gauchesca/` y `mate-pava-yerba.webp` en `public/media/fotografias-v3/`; comprobar HTTP 200, diseño en PC/móvil y sustituir los dos recortes de menor resolución por maestros.
+
 ## Etapa 3 — Integridad de la edición y metodología
 
 - [ ] **TEXT-01:** investigar los 55 casos con coincidencia inferior al 90 % frente a la edición comparada; clasificar variantes y justificar cada resolución sin alterar los fuentes Gutenberg originales.
@@ -48,6 +54,6 @@
 4. Prueba de construcción Astro concluida y cambios fusionados con trazabilidad.
 5. Prueba de acceso público y de enlaces externos anotada explícitamente, sin confundirla con la prueba de compilación.
 
-**Observación:** ARCH-01/02 y EXEG-01 fueron implementados en PR #40. La marcación de completados presupone su integración y validación, que deben comprobarse antes del cierre de esta misma PR.
+**Observación:** ARCH-01/02 y EXEG-01 se integraron en PR #40 con Astro validado. Las tareas de fotos y temas requieren integración del PR indicado para contabilizarse como cerradas.
 
 **Nota de etapa 2:** HERN-00, REV-00 y CULT-01 abarcan implementación editorial y compilación. Siguen pendientes una auditoría integral de enlaces de salida, reproducciones adicionales de fuentes primarias y verificación visual del despliegue.
