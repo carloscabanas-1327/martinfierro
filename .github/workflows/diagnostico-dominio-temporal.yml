@@ -31,4 +31,11 @@ jobs:
           dig +time=3 +tries=1 @1.1.1.1 martinfierro.org SOA +noall +answer +comments | head -22
           echo '=== DNSSEC ==='
           dig +time=3 +tries=1 @1.1.1.1 martinfierro.org DS +noall +answer +comments | head -20
+          echo '=== GET CHECK ==='
+          for host in martinfierro.org www.martinfierro.org martinfierro.pages.dev; do
+            echo "==== GET ${host} ===="
+            curl --max-time 18 --connect-timeout 8 --silent --show-error -L -o /tmp/website-get.html -D /tmp/website-get.headers -w 'HTTP=%{http_code} URL=%{url_effective} SSL=%{ssl_verify_result} TYPE=%{content_type} SIZE=%{size_download}\n' "https://${host}/"
+            head -15 /tmp/website-get.headers
+            head -c 500 /tmp/website-get.html; echo
+          done
           echo '=== RUN COMPLETE ==='
