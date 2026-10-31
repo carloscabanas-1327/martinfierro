@@ -50,7 +50,7 @@ const rutas = [
   <section class="mf-languages-compact" id="idiomas" aria-labelledby="mf-languages-bottom-title">
     <div class="mf-languages-compact-heading">
       <h2 id="mf-languages-bottom-title">Martín Fierro en otros idiomas</h2>
-      <p>Español: obra completa. Los demás enlaces ofrecen fichas de traducciones históricas, todavía sin texto íntegro publicado.</p>
+      <p>La obra original se lee en español. Hay un facsímil inglés consultable y estudios sobre traducciones italiana y francesa; ningún texto traducido está integrado a nuestro lector.</p>
     </div>
     <nav class="mf-language-flags" aria-label="Páginas de Martín Fierro por idioma">
       {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo} title={i.estado==='original'?'Obra original en español':'Ficha bibliográfica en investigación, no traducción íntegra'}>
@@ -58,6 +58,7 @@ const rutas = [
         <span>{i.nombre}</span>
       </a>)}
     </nav>
+    <p class="mf-languages-compact-note"><a href="/traducciones/">Consultar traducciones y fuentes documentales ↗</a></p>
     <p class="mf-languages-compact-note">Las banderas son referencias visuales, no indicaciones de exclusividad nacional de cada idioma. LAT = latín; PMT = piamontés.</p>
   </section>
   <p class="mf-disclaimer">Salvo el retrato histórico de José Hernández, las imágenes fotorrealistas de esta portada son recreaciones digitales, no fotografías ni documentos históricos. Las secciones enlazan a páginas del proyecto; las traducciones internacionales no se presentan como textos íntegros publicados. Retrato de José Hernández (hacia 1875): fuente Biblioteca Virtual Miguel de Cervantes, vía Wikimedia Commons, dominio público. <a href="https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Hern%C3%A1ndez.jpg" rel="noopener noreferrer">Ficha y procedencia de la fotografía.</a> <a href="/acerca/">Consultar fuentes y método editorial.</a></p>
