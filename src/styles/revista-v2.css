@@ -248,3 +248,20 @@ body:has(.mf-revista) main.container{
  .mf-advice-copy p{font-size:1rem}
 }
 @media(prefers-reduced-motion:reduce){.mf-advice-photo img{transition:none}}
+
+/* Navegación internacional de portada: las fichas preliminares no se confunden con traducciones completas. */
+.mf-languages{display:block;background:#292722;color:#f6ebd9;padding:40px max(26px,calc((100vw - 1416px)/2));}
+.mf-languages-intro{max-width:850px;margin-bottom:24px}
+.mf-languages-kicker{font:.76rem/1.4 system-ui,sans-serif!important;font-weight:800!important;letter-spacing:.12em;color:#e2c6a2!important;margin:0 0 10px}
+.mf-languages-intro h2{font-family:var(--mf-serif),Georgia,serif;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.14;color:#fff5e7;margin:0 0 13px}
+.mf-languages-intro>p:not(.mf-languages-kicker){font:1rem/1.7 system-ui,sans-serif;color:#eee0ce;margin:0}
+.mf-languages-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.mf-languages-list .mf-language-option{position:relative;display:flex;flex-direction:column;justify-content:center;min-height:116px;padding:18px 30px 18px 18px;background:#413b33;border:1px solid #766451;color:#fff8ec;text-decoration:none;line-height:1.35}
+.mf-languages-list .mf-language-option:hover,.mf-languages-list .mf-language-option:focus-visible{background:#584a3a;border-color:#e6b781}
+.mf-language-option strong{font:700 1.11rem/1.3 system-ui,sans-serif}
+.mf-language-option small{font:.75rem/1.48 system-ui,sans-serif;color:#e3d0b8;margin-top:6px}
+.mf-language-option>span{position:absolute;right:14px;top:17px;color:#ebcba4}
+.mf-languages-list .mf-language-original{background:#6f412d;border-color:#c08d68}
+.mf-languages-note{font:.83rem/1.6 system-ui,sans-serif;color:#dfcdb9;margin:17px 0 0;max-width:900px}
+@media(max-width:900px){.mf-languages-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.mf-languages{padding:28px 17px}.mf-languages-list{grid-template-columns:1fr 1fr;gap:9px}.mf-languages-list .mf-language-option{padding:13px 20px 13px 12px;min-height:105px}.mf-language-option strong{font-size:.96rem}.mf-language-option small{font-size:.68rem}.mf-language-option>span{right:8px;top:10px}}
