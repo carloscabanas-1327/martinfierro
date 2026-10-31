@@ -1,0 +1,38 @@
+/* Directorio editorial clásico; sin tarjetas genéricas. */
+.mf-directorio{--dir-ink:#30251e;--dir-line:#cdbfac;--dir-rust:#9e4934;max-width:1190px;margin:0 auto 65px;color:var(--dir-ink)}
+.mf-directorio-header{padding:24px 0 35px;border-bottom:4px double var(--dir-ink)}
+.mf-directorio-kicker{font:.78rem system-ui,sans-serif;letter-spacing:.19em;font-weight:800;color:var(--dir-rust)}
+.mf-directorio-header h1{font:600 clamp(2.9rem,6.4vw,6.2rem)/1.04 Georgia,serif;letter-spacing:-.05em;max-width:none!important;margin:10px 0 22px}
+.mf-directorio-header>p:not(.mf-directorio-kicker){font:1.15rem/1.65 Georgia,serif;max-width:74ch;color:#5a4d41}
+.mf-directorio-stats{display:flex;gap:13px 32px;flex-wrap:wrap;padding-top:20px;font:.81rem system-ui,sans-serif;color:#655549}
+.mf-directorio-stats strong{font:1.8rem Georgia,serif;color:#a34d36;margin-right:5px}
+.mf-directorio-atajos{margin:30px 0 40px;border:1px solid var(--dir-line);padding:24px 27px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px 26px;background:#eee5d7}
+.mf-directorio-atajos strong{grid-column:1/-1;font:.7rem system-ui,sans-serif;letter-spacing:.14em;color:#985038}
+.mf-directorio-atajos a,.mf-directorio a{overflow-wrap:anywhere}
+.mf-directorio-atajos a{font:.91rem/1.6 system-ui,sans-serif;text-decoration:none;color:#47352c}
+.mf-directorio-atajos a:hover,.mf-directorio-lista a:hover,.mf-directorio-partes a:hover{color:#a34d36;text-decoration:underline}
+.mf-directorio-lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(28px,5vw,80px);row-gap:48px}
+.mf-directorio-grupo,.mf-directorio-cantos{scroll-margin-top:22px;min-width:0}
+.mf-directorio-grupo>header,.mf-directorio-cantos>header{border-top:3px solid #332a24;padding:15px 0;display:flex;align-items:flex-start;gap:17px}
+.mf-directorio-numero{font:italic 2rem Georgia,serif;color:#a85239;min-width:2ch}
+.mf-directorio-grupo h2,.mf-directorio-cantos h2{font:600 clamp(1.5rem,2.4vw,2.25rem)/1.18 Georgia,serif;margin:0 0 5px!important}
+.mf-directorio-grupo header p,.mf-directorio-cantos header p{font:.86rem/1.45 system-ui,sans-serif;color:#766658;margin:0}
+.mf-directorio-grupo ul{list-style:none;margin:10px 0 0;padding:0}
+.mf-directorio-grupo li{display:flex;gap:15px;border-bottom:1px solid var(--dir-line);padding:10px 3px}
+.mf-directorio-grupo li>span{color:#a0503a;font:.73rem system-ui,sans-serif;padding-top:4px;flex:none}
+.mf-directorio-grupo li a{font:1.05rem/1.4 Georgia,serif;color:#3b3027;text-decoration:none}
+.mf-directorio-cantos{margin-top:65px}
+.mf-directorio-partes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(25px,5vw,70px);padding-top:15px}
+.mf-directorio-parte h3{font:600 clamp(1.5rem,2.2vw,2.1rem)/1.15 Georgia,serif;margin:0 0 25px}
+.mf-directorio-parte h3 a{color:#3b2b25;text-decoration:none}
+.mf-directorio-parte h3 small{display:block;color:#976049;font:700 .74rem system-ui,sans-serif;letter-spacing:.09em;margin-top:10px}
+.mf-directorio-parte ol{list-style:none;margin:0;padding:0;columns:1}
+.mf-directorio-parte li{break-inside:avoid;border-bottom:1px solid var(--dir-line);padding:10px 0}
+.mf-directorio-parte li a{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;text-decoration:none;color:#3d3229}
+.mf-directorio-parte li a>span{font:1.04rem Georgia,serif}
+.mf-directorio-parte li a>small{font:.8rem system-ui,sans-serif;color:#766659}
+.mf-directorio-nota{margin:52px 0 20px;background:#e9dfd0;border-left:3px solid #a45038;padding:22px;font:.9rem/1.65 system-ui,sans-serif;color:#564a40}
+.mf-directorio-arriba a{color:#8a412f;text-underline-offset:4px;font-weight:700}
+.mf-directorio a:focus-visible{outline:3px solid #ac6048;outline-offset:3px}
+@media(max-width:800px){.mf-directorio-atajos{grid-template-columns:repeat(2,minmax(0,1fr))}.mf-directorio-lista{grid-template-columns:1fr;row-gap:34px}}
+@media(max-width:600px){.mf-directorio-header h1{font-size:clamp(2.4rem,10vw,4rem)}.mf-directorio-atajos{grid-template-columns:1fr;padding:20px}.mf-directorio-partes{grid-template-columns:1fr}.mf-directorio-stats{gap:9px 20px}}

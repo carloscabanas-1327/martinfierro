@@ -1,0 +1,82 @@
+---
+import Base from '../../layouts/Base.astro';
+import { partes, enlaceCanto } from '../../lib/corpus';
+import { temas } from '../../data/temas';
+import '../../styles/indice-general.css';
+const grupos=[
+ {id:'lectura',numero:'01',titulo:'La obra completa',nota:'Accesos al poema y a sus dos partes',enlaces:[
+  {titulo:'Biblioteca del poema · índice de lectura',url:'/leer/'},
+  {titulo:'El gaucho Martín Fierro · La ida (1872)',url:'/leer/ida/'},
+  {titulo:'La vuelta de Martín Fierro (1879)',url:'/leer/vuelta/'},
+  {titulo:'Consejos de Martín Fierro a sus hijos',url:'/consejos-martin-fierro/'},
+  {titulo:'Buscar palabras y versos',url:'/buscar/'}
+ ]},
+ {id:'temas',numero:'02',titulo:'Temas y guías de lectura',nota:'Seis recorridos interpretativos, distintos de los títulos originales',enlaces:[
+  {titulo:'Todos los temas del poema',url:'/temas/'},
+  ...temas.map(t=>({titulo:t.titulo,url:`/temas/${t.slug}/`}))
+ ]},
+ {id:'revista',numero:'03',titulo:'Revista cultural y artículos',nota:'Investigaciones y artículos accesibles en el sitio',enlaces:[
+  {titulo:'Portada de la revista cultural',url:'/revista/'},
+  {titulo:'La pulpería: almacén, encuentro y canto',url:'/revista/pulperias-y-sociabilidad/'},
+  {titulo:'¿Qué es el mate? Cultura y tradiciones gauchescas',url:'/cultura-gauchesca/'},
+  {titulo:'José Hernández y su tiempo',url:'/jose-hernandez/'},
+  {titulo:'Exégesis: cómo leer Martín Fierro',url:'/exegesis/'}
+ ]},
+ {id:'documentos',numero:'04',titulo:'Historia, fuentes y bibliotecas',nota:'Materiales documentales y contexto histórico',enlaces:[
+  {titulo:'Archivo documental e histórico',url:'/archivo/'},
+  {titulo:'Biblioteca crítica y estudios',url:'/biblioteca-critica/'},
+  {titulo:'Biografía de José Hernández',url:'/jose-hernandez/'},
+  {titulo:'Fuentes e integridad de la edición',url:'/acerca/'},
+  {titulo:'Fuentes y derechos de autor',url:'/fuentes-y-derechos/'}
+ ]},
+ {id:'ediciones',numero:'05',titulo:'Proyecto y ediciones internacionales',nota:'Presentación y recursos de navegación',enlaces:[
+  {titulo:'Portada principal',url:'/'},
+  {titulo:'Acerca del proyecto',url:'/proyecto/'},
+  {titulo:'Edición en español',url:'/es/'},
+  {titulo:'Contacto',url:'/contacto/'}
+ ]},
+ {id:'legales',numero:'06',titulo:'Legales, transparencia y contacto',nota:'Información institucional y normativa',enlaces:[
+  {titulo:'Política de privacidad',url:'/privacidad/'},
+  {titulo:'Términos de uso',url:'/terminos/'},
+  {titulo:'Publicidad y afiliados',url:'/publicidad-y-afiliados/'},
+  {titulo:'Derechos de autor y atribuciones',url:'/fuentes-y-derechos/'},
+  {titulo:'Contacto',url:'/contacto/'}
+ ]}
+];
+const partesIndice=[{clave:'ida',nombre:'El gaucho Martín Fierro · La ida',anio:1872},{clave:'vuelta',nombre:'La vuelta de Martín Fierro',anio:1879}] as const;
+const totalCantos=partesIndice.reduce((n,p)=>n+partes[p.clave].cantos.length,0);
+const totalEnlaces=grupos.reduce((n,g)=>n+g.enlaces.length,0)+totalCantos;
+---
+<Base title="Índice general del sitio — Directorio de contenidos" description="Directorio completo de Martín Fierro: categorías, artículos culturales, seis guías temáticas, documentos, enlaces legales y los 46 cantos de la obra.">
+<article class="mf-directorio">
+  <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span>Índice general</span></nav>
+  <header class="mf-directorio-header">
+    <p class="mf-directorio-kicker">DIRECTORIO EDITORIAL · MARTINFIERRO.ORG</p>
+    <h1>Índice general del sitio</h1>
+    <p>Un directorio completo, al estilo de los antiguos índices de Internet: categorías, subcategorías, artículos, documentos y cada uno de los cantos. Sin tarjetas interminables ni páginas escondidas.</p>
+    <div class="mf-directorio-stats"><span><strong>06</strong> grandes grupos</span><span><strong>{totalCantos}</strong> cantos</span><span><strong>{totalEnlaces}</strong> accesos organizados</span></div>
+  </header>
+  <nav class="mf-directorio-atajos" aria-label="Saltar a un grupo del directorio">
+    <strong>IR DIRECTAMENTE A</strong>
+    {grupos.map(g=><a href={`#${g.id}`}>{g.numero}. {g.titulo}</a>)}
+    <a href="#cantos">07. Los 46 cantos</a>
+  </nav>
+  <div class="mf-directorio-lista">
+    {grupos.map(g=><section class="mf-directorio-grupo" id={g.id} aria-labelledby={`titulo-${g.id}`}>
+      <header><span class="mf-directorio-numero">{g.numero}</span><div><h2 id={`titulo-${g.id}`}>{g.titulo}</h2><p>{g.nota}</p></div></header>
+      <ul>{g.enlaces.map((e,i)=><li><span>{String(i+1).padStart(2,'0')}</span><a href={e.url}>{e.titulo}</a></li>)}</ul>
+    </section>)}
+  </div>
+  <section id="cantos" class="mf-directorio-cantos" aria-labelledby="mf-directorio-cantos-titulo">
+    <header><span class="mf-directorio-numero">07</span><div><h2 id="mf-directorio-cantos-titulo">Índice completo de los 46 cantos</h2><p>Cada enlace abre directamente el canto correspondiente en el lector de la obra.</p></div></header>
+    <div class="mf-directorio-partes">
+      {partesIndice.map(p=><div class="mf-directorio-parte">
+        <h3><a href={`/leer/${p.clave}/`}>{p.nombre}</a> <small>{p.anio} · {partes[p.clave].cantos.length} cantos</small></h3>
+        <ol>{partes[p.clave].cantos.map(c=><li><a href={enlaceCanto(p.clave,c.numero)}><span>Canto {String(c.numero).padStart(2,'0')}</span>{c.titulo && c.titulo !== `Canto ${c.numero}` && <small>{c.titulo}</small>}</a></li>)}</ol>
+      </div>)}
+    </div>
+  </section>
+  <aside class="mf-directorio-nota"><strong>Sobre este índice.</strong> Este directorio reúne enlaces a páginas y recorridos del proyecto. No confunde los seis temas interpretativos con las divisiones originales del poema. Las futuras investigaciones se agregarán cuando tengan una página publicada y un enlace verificable.</aside>
+  <p class="mf-directorio-arriba"><a href="#contenido">↑ Volver al comienzo del directorio</a></p>
+</article>
+</Base>
