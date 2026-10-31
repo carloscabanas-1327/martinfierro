@@ -9,8 +9,7 @@ const rutas = [
  {numero:'03',titulo:'Exégesis',sub:'Claves de lectura',url:'/exegesis/',imagen:'/media/fotografias-v3/exegesis.webp',alt:'Escena de lectura e investigación literaria recreada digitalmente'},
  {numero:'04',titulo:'Biblioteca crítica',sub:'Estudios y ediciones',url:'/biblioteca-critica/',imagen:'/media/fotografias-v3/biblioteca-critica.webp',alt:'Libros y estudios literarios en una recreación digital'},
  {numero:'05',titulo:'Revista cultural',sub:'Historia y literatura',url:'/revista/',imagen:'/media/fotografias-v3/revista-cultural.webp',alt:'Escena recreada de la vida rural argentina'},
- {numero:'06',titulo:'Archivo',sub:'Fuentes documentales',url:'/archivo/',imagen:'/media/fotografias-v3/archivo-documental-recreacion.webp',alt:'Recreación digital de un archivo de investigación'},
- {numero:'07',titulo:'Consejos de Martín Fierro',sub:'A sus hijos · Canto XXXII',url:'/consejos-martin-fierro/',imagen:'/media/fotografias-v3/la-vuelta.webp',alt:'Recreación digital de La vuelta de Martín Fierro'}
+ {numero:'06',titulo:'Archivo',sub:'Fuentes documentales',url:'/archivo/',imagen:'/media/fotografias-v3/archivo-documental-recreacion.webp',alt:'Recreación digital de un archivo de investigación'}
 ];
 ---
 <Base title="Portada — Biblioteca y revista cultural" description="Martín Fierro: obra completa de José Hernández, 46 cantos, 7.210 versos, historia, archivo y revista cultural argentina." adKind="category">
@@ -36,7 +35,13 @@ const rutas = [
     <div class="mf-story-grid">
       <a class="mf-feature-story" href="/leer/ida/"><div class="mf-story-img"><img loading="lazy" src="/media/fotografias-v3/la-ida.webp" alt="Recreación digital de una partida del mundo gauchesco" width="900" height="550"/></div><div class="mf-story-copy"><span class="mf-kicker">PRIMERA PARTE · 1872 · 13 CANTOS</span><h3>El gaucho Martín Fierro</h3><p>El comienzo de la historia. Accedé a cada canto y a sus versos identificados.</p><span class="mf-textlink">Explorar La ida ↗</span></div></a>
       <a class="mf-side-story" href="/leer/vuelta/"><div class="mf-story-img"><img loading="lazy" src="/media/fotografias-v3/la-vuelta.webp" alt="Recreación digital del regreso de un gaucho a su hogar" width="650" height="430"/></div><div class="mf-story-copy"><span class="mf-kicker">SEGUNDA PARTE · 1879 · 33 CANTOS</span><h3>La vuelta de Martín Fierro</h3><p>El regreso, los encuentros y los consejos. La segunda parte íntegra.</p><span class="mf-textlink">Explorar La vuelta ↗</span></div></a>
-      <div class="mf-quote"><span class="mf-kicker">DEL CANTO I</span><blockquote>«Aquí me pongo a cantar<br/>al compás de la vigüela…»</blockquote><p>Las palabras originales, con el contexto y la navegación de la edición digital.</p><a href="/leer/ida/1/">Leer el primer canto ↗</a></div>
+      <div class="mf-story-aside">
+        <div class="mf-quote"><span class="mf-kicker">DEL CANTO I</span><blockquote>«Aquí me pongo a cantar<br/>al compás de la vigüela…»</blockquote><p>Las palabras originales, con el contexto y la navegación de la edición digital.</p><a href="/leer/ida/1/">Leer el primer canto ↗</a></div>
+        <a class="mf-advice-story" href="/consejos-martin-fierro/" aria-label="Leer Consejos de Martín Fierro a sus hijos, canto XXXII">
+          <div class="mf-advice-photo"><img src="/media/fotografias-v3/consejos-fogon-hijos.webp" width="1280" height="853" alt="Recreación digital de Martín Fierro, sus dos hijos jóvenes y el hijo de Cruz, con barba incipiente, escuchando sus consejos junto a un fogón y un mate" loading="lazy" decoding="async"/></div>
+          <div class="mf-advice-copy"><span class="mf-kicker">LA VUELTA · CANTO XXXII · 1879</span><h3>Consejos de Martín Fierro a sus hijos</h3><p>Las palabras de un padre nacidas de la experiencia.</p><span class="mf-textlink">Leer los consejos ↗</span></div>
+        </a>
+      </div>
     </div>
   </section>
   <section class="mf-explore" aria-labelledby="mf-explore-title"><div class="mf-section-header"><span class="mf-section-number">02 / EXPLORAR</span><h2 id="mf-explore-title">Una cultura, muchas miradas</h2><span class="mf-header-note">RECORRIDOS DOCUMENTALES</span></div><div class="mf-explore-grid">{rutas.map(r=><a href={r.url} class:list={["mf-route", {"mf-route--historical": r.numero === "02"}]}><div class="mf-route-image"><img src={r.imagen} alt={r.alt} width="480" height="300" loading="lazy"/></div><div class="mf-route-text"><span>{r.numero} / {r.sub}</span><h3>{r.titulo}</h3><b aria-hidden="true">↗</b></div></a>)}</div></section>
