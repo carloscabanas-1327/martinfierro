@@ -118,3 +118,21 @@ body:has(.mf-revista) main.container{
  .mf-languages{padding:18px 20px}
  .mf-story-grid{grid-template-columns:minmax(0,1fr)}
 }
+
+
+/* Retrato histórico José Hernández — mostrar rostro y cabeza completos sin recortar.
+   La foto auténtica es vertical, mientras las tarjetas de revista son apaisadas. */
+.mf-route--historical .mf-route-image{
+  background:#d9d6d0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.mf-route--historical .mf-route-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+  filter:grayscale(100%);
+  transform:none !important;
+}
