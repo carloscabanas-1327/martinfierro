@@ -1,0 +1,42 @@
+---
+import Base from './Base.astro';
+import '../styles/static-editorial.css';
+
+interface Props {
+  title:string;
+  description?:string;
+  sections?:Array<{title:string;id:string}>;
+  image?:string;
+  imageAlt?:string;
+}
+const {title,description,sections=[],image,imageAlt} = Astro.props;
+const imageByPath:Record<string,string>={
+ '/proyecto/':'/media/fotografias-v3/hero-gaucho-pampa.webp',
+ '/contacto/':'/media/fotografias-v3/revista-cultural.webp',
+ '/privacidad/':'/media/fotografias-v3/archivo-documental-recreacion.webp',
+ '/terminos/':'/media/fotografias-v3/biblioteca-critica.webp',
+ '/fuentes-y-derechos/':'/media/fotografias-v3/archivo-documental-recreacion.webp',
+ '/publicidad-y-afiliados/':'/media/fotografias-v3/exegesis.webp',
+ '/acerca/':'/media/fotografias-v3/biblioteca-critica.webp'
+};
+const heroImage=image || imageByPath[Astro.url.pathname] || '/media/fotografias-v3/revista-cultural.webp';
+---
+<Base title={title} description={description}>
+  <div class="mf-static-editorial">
+    <div class="mf-static-hero" role="img" aria-label={imageAlt || 'Recreación visual digital de la cultura y los archivos relacionados con Martín Fierro'}>
+      <img src={heroImage} alt="" width="1600" height="900" loading="eager" decoding="async" />
+      <div class="mf-static-hero-overlay" aria-hidden="true"></div>
+      <span class="mf-static-hero-label">MARTÍN FIERRO <span>·</span> BIBLIOTECA Y REVISTA CULTURAL</span>
+    </div>
+    <div class="mf-static-panel">
+      {sections.length > 0 && <aside class="mf-static-index" aria-label="Índice de esta página">
+        <p>EN ESTA PÁGINA</p>
+        <nav aria-label="Secciones del documento">
+          {sections.map((s,i)=><a href={`#${s.id}`}><span>{String(i+1).padStart(2,'0')}</span>{s.title}</a>)}
+        </nav>
+      </aside>}
+      <div class="mf-static-reading"><slot /></div>
+    </div>
+    <p class="mf-static-image-credit">Imagen de ambientación: recreación digital contemporánea; no es una fotografía histórica.</p>
+  </div>
+</Base>
