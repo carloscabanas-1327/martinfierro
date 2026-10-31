@@ -29,7 +29,21 @@ const rutas = [
     </div>
   </section>
 <AdSlot id="category-02" kind="category" />
-  <nav class="mf-languages" aria-label="Ediciones por idioma"><span>EDICIONES INTERNACIONALES</span><div>{idiomas.map(i => <a href={`/${i.codigo}/`} lang={i.codigo}>{i.nombre}</a>)}</div></nav>
+  <section class="mf-languages" aria-labelledby="mf-lang-title">
+    <div class="mf-languages-intro">
+      <p class="mf-languages-kicker">MARTÍN FIERRO EN EL MUNDO</p>
+      <h2 id="mf-lang-title">Explorá la obra en otros idiomas</h2>
+      <p>Accedé al original español y a las fichas de traducciones históricas. Estas fichas reúnen información bibliográfica: <strong>todavía no contienen traducciones íntegras verificadas</strong>.</p>
+    </div>
+    <nav class="mf-languages-list" aria-label="Elegir idioma y consultar su edición">
+      {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo} class:list={['mf-language-option',{'mf-language-original':i.estado==='original'}]}>
+        <strong>{i.nombre}</strong>
+        <small>{i.estado==='original'?'Texto original · leer completo':'Traducción histórica · ficha en investigación'}</small>
+        <span aria-hidden="true">↗</span>
+      </a>)}
+    </nav>
+    <p class="mf-languages-note">También existen referencias a otros idiomas pendientes de comprobación; no publicamos enlaces a traducciones inexistentes.</p>
+  </section>
   <section class="mf-storyline" aria-labelledby="mf-story-title">
     <div class="mf-section-header"><span class="mf-section-number">01 / BIBLIOTECA</span><h2 id="mf-story-title">La obra, de principio a fin</h2><a href="/leer/">Ver índice completo ↗</a></div>
     <div class="mf-story-grid">
