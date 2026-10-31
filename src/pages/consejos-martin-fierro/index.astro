@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import {estrofasDeCanto} from '../../lib/corpus';
+import '../../styles/consejos-especial.css';
+const estrofas=estrofasDeCanto('vuelta',32);
+const nVersos=estrofas.reduce((n,e)=>n+e.versos.length,0);
+---
+<Base title="Consejos de Martín Fierro a sus hijos" description="Leé los consejos de Martín Fierro a sus hijos: las 31 estrofas del canto XXXII de La vuelta de Martín Fierro (1879), con enlaces al texto original.">
+<article class="mf-consejos">
+ <header class="mf-consejos-hero">
+  <img src="/media/fotografias-v3/la-vuelta.webp" alt="Recreación digital del paisaje gauchesco que ambienta La vuelta de Martín Fierro" width="1600" height="960" fetchpriority="high" decoding="async"/>
+  <div class="mf-consejos-shade" aria-hidden="true"></div>
+  <div class="mf-consejos-hero-copy">
+   <p>UNA LECTURA ESPECIAL · LA VUELTA · 1879</p>
+   <h1>Consejos de Martín Fierro a sus hijos</h1>
+   <span>La experiencia de un padre, expresada en los versos de José Hernández</span>
+  </div>
+ </header>
+ <div class="mf-consejos-frame">
+  <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span><a href="/leer/vuelta/">La vuelta</a></span><span>Consejos a sus hijos</span></nav>
+  <div class="mf-consejos-intro">
+   <p class="eyebrow">CANTO XXXII · EDICIÓN ÍNTEGRA</p>
+   <h2>Las palabras que deja un padre</h2>
+   <p>Después del reencuentro y antes de separarse, Martín Fierro habla a sus hijos y al hijo de Cruz. En el canto XXXII les transmite consejos nacidos de su experiencia. Esta página presenta todas sus estrofas, sin adaptar el lenguaje del poema ni modificar la transcripción documental.</p>
+   <p class="mf-consejos-meta">{estrofas.length} estrofas · {nVersos} versos · <a href="/leer/vuelta/31/">Contexto: canto XXXI</a> · <a href="/leer/vuelta/32/">Lector original del canto XXXII</a></p>
+  </div>
+  <div class="mf-consejos-layout">
+   <div class="mf-consejos-verses" aria-label="Consejos completos de Martín Fierro">
+    {estrofas.map(e=><section class="mf-consejos-stanza" id={e.id} aria-label={`Estrofa ${e.numero}`}>
+     <a class="mf-consejos-stanza-label" href={`/leer/vuelta/32/#${e.id}`}>Estrofa {e.numero} · Ver en el lector ↗</a>
+     {e.versos.map(v=><p class="mf-consejos-verse"><a href={`/leer/vuelta/32/#${v.id}`} title={`Ver verso ${v.linea} de estrofa ${e.numero} en el canto original`}>{v.texto}</a></p>)}
+    </section>)}
+   </div>
+   <aside class="mf-consejos-side" aria-label="Contexto y navegación">
+    <p class="eyebrow">LA OBRA ORIGINAL</p><h3>Consejos, no adaptación</h3>
+    <p>Estos versos corresponden al canto XXXII de <em>La vuelta de Martín Fierro</em> (1879). El texto se lee aquí desde la misma fuente estructurada utilizada por la biblioteca.</p>
+    <a href="/leer/vuelta/32/">Leer el canto original →</a>
+    <a href="/leer/vuelta/33/">Continuar con el canto XXXIII →</a>
+    <a href="/temas/consejos-y-sabiduria/">Explorar consejos y sabiduría →</a>
+   </aside>
+  </div>
+  <div class="mf-consejos-outro"><p>La transcripción es la misma que utiliza nuestro lector documental; cada estrofa remite a su ubicación original. La imagen de cabecera es una recreación digital contemporánea, no una fotografía de época.</p><a href="/leer/vuelta/32/">Volver al canto XXXII ↗</a></div>
+ </div>
+</article>
+</Base>
