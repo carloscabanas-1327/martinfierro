@@ -32,3 +32,15 @@
 /* Crédito y declaración patrimonial del facsímil reproducido localmente. */
 .mf-archive-rights{max-width:930px;margin:14px auto 42px;padding:18px 22px;background:#f3eadc;border-left:3px solid #96674d;font:.87rem/1.7 system-ui,sans-serif;color:#554739}
 .mf-archive-rights a{color:#86442f;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+
+/* Manuscrito de Carolina: el repositorio restringe la reproducción, por eso la portada es una ficha accesible y el PDF se consulta en origen. */
+.mf-archive-document-fallback{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px 18px;gap:10px;color:#4b3028;background:linear-gradient(155deg,#f4e6d0,#dbc4a4)}
+.mf-archive-document-fallback strong{font:600 1.4rem/1.25 Georgia,serif}.mf-archive-document-fallback small{font:.8rem/1.5 system-ui,sans-serif}.mf-archive-document-fallback>span:last-child{font:700 .79rem/1.5 system-ui,sans-serif;text-decoration:underline}
+.mf-archive-document-icon{font-size:3rem;line-height:1}
+.mf-archive-primary-letter{max-width:960px;margin:20px auto 38px;padding:clamp(19px,3vw,34px);background:#f4eadb;border-top:4px solid #966044}
+.mf-archive-primary-letter h3{font:600 clamp(1.6rem,2.8vw,2.4rem)/1.2 Georgia,serif;color:#34251c}
+.mf-archive-primary-letter p{font:1.03rem/1.7 Georgia,serif;color:#514034}
+.mf-archive-primary-letter a{color:#86452e;text-underline-offset:3px}
+.mf-archive-primary-letter details{border:1px solid #cdb59c;padding:15px;background:#fffaf1}
+.mf-archive-primary-letter summary{min-height:44px;cursor:pointer;font:700 .91rem/1.5 system-ui,sans-serif;color:#693a2a}
+.mf-archive-primary-letter iframe{width:100%;height:min(76vh,730px);border:0;background:white;margin:15px 0}
