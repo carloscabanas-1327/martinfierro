@@ -1,0 +1,52 @@
+/* Dossier documental sobre vida rural: lectura en profundidad, acceso a originales. */
+.mf-dossier{max-width:1010px;margin:56px auto 26px;color:#3a2d23}
+.mf-dossier-index{padding:15px 18px;background:#f2e6d5;border:1px solid #deccba;display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:44px}
+.mf-dossier-index span{font:800 .69rem/1.4 system-ui,sans-serif;color:#895039;letter-spacing:.08em;margin-right:6px}
+.mf-dossier-index a{font:600 .79rem/1.4 system-ui,sans-serif;color:#76503d;border-bottom:1px solid #cba68f;padding:8px 0}
+.mf-dossier-heading{max-width:850px;margin:0 auto 42px;text-align:center}
+.mf-dossier-heading h2{font:600 clamp(2rem,4vw,3.35rem)/1.12 Georgia,serif;color:#362820;letter-spacing:-.03em}
+.mf-dossier-lead{font:1.25rem/1.7 Georgia,serif;color:#554134;text-align:left;margin:20px auto}
+.mf-dossier-essay,.mf-dossier-reading,.mf-dossier-primary{margin:50px auto;max-width:880px}
+.mf-dossier-essay h3,.mf-dossier-reading h3,.mf-dossier-primary h3{font:600 clamp(1.65rem,2.8vw,2.55rem)/1.2 Georgia,serif;margin:30px 0 22px;color:#3f2c21}
+.mf-dossier-essay p,.mf-dossier-reading>p,.mf-dossier-primary>p{font:1.08rem/1.82 Georgia,serif;color:#4c3d34;margin:18px 0}
+.mf-dossier-verses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:30px 0}
+.mf-dossier-verses figure{margin:0;padding:24px;background:#efe2cf;border-left:4px solid #8f4c35}
+.mf-dossier-verses blockquote{margin:0;color:#3c2d25;font:1.12rem/1.62 Georgia,serif}
+.mf-dossier-verses blockquote span{display:block;white-space:pre-wrap}
+.mf-dossier-verses figcaption{margin-top:16px;font:.78rem/1.55 system-ui,sans-serif;color:#745a49}
+.mf-dossier a:not(.mf-dossier-books a){color:#87462f;text-underline-offset:4px}
+.mf-dossier-comparison{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0;padding:0}
+.mf-dossier-comparison>div{background:#fffaf0;padding:24px;border-top:3px solid #9c5841}
+.mf-dossier-comparison strong{font:700 1.15rem/1.4 Georgia,serif;color:#502e20}
+.mf-dossier-comparison p{font-size:1.01rem;margin:12px 0 0}
+.mf-dossier-primary{background:#f0e4d4;border-top:4px solid #91503b;padding:clamp(18px,4vw,40px);max-width:1010px}
+.mf-dossier-primary h3{max-width:800px}
+.mf-dossier-cover{max-width:470px;margin:28px auto}
+.mf-dossier-cover>a{display:block;background:#e2d0bb;padding:10px;box-shadow:0 10px 24px #5938211a}
+.mf-dossier-cover img{display:block;width:100%;height:auto;object-fit:contain;max-height:610px}
+.mf-dossier-cover figcaption{font:.79rem/1.65 system-ui,sans-serif;color:#675243;margin-top:15px}
+.mf-dossier-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:26px auto}
+.mf-dossier-actions a{display:flex;align-items:center;min-height:52px;padding:12px 16px;background:#473226;color:#f9f0e7!important;font:700 .85rem/1.45 system-ui,sans-serif;text-decoration:none}
+.mf-dossier-actions a:hover{background:#754632}
+.mf-dossier-facsimile{border:1px solid #cfb8a3;background:#fff9f0;padding:15px 19px}
+.mf-dossier-facsimile summary{cursor:pointer;font:700 .91rem/1.5 system-ui,sans-serif;min-height:44px;color:#75452e}
+.mf-dossier-facsimile p{font:.88rem/1.6 system-ui,sans-serif;color:#6e5c4e}
+.mf-dossier-facsimile iframe{display:block;border:0;width:100%;height:clamp(400px,66vw,680px);background:white}
+.mf-dossier-rights{border-top:1px solid #d0baa4;margin-top:30px!important;padding-top:18px;font:.82rem/1.65 system-ui,sans-serif!important;color:#695647!important}
+.mf-dossier-books{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:26px}
+.mf-dossier-book{min-width:0;padding:24px;background:#fffaf1;border:1px solid #dec7b2;display:flex;flex-direction:column}
+.mf-dossier-book-head{display:flex;align-items:center;gap:12px}
+.mf-dossier-book-head>span{font:800 1.15rem/1.4 system-ui,sans-serif;color:#ad816c}
+.mf-dossier-book-head .eyebrow{margin:0;font-size:.68rem}
+.mf-dossier-book h4{font:600 1.55rem/1.2 Georgia,serif;color:#3c2c23;margin:18px 0 7px}
+.mf-dossier-book .mf-dossier-book-author{font:700 .82rem/1.5 system-ui,sans-serif;color:#985b40;margin:0 0 12px}
+.mf-dossier-book>p:not(.mf-dossier-book-author){font:1rem/1.7 Georgia,serif;color:#584638}
+.mf-dossier-book .mf-dossier-book-detail{margin-top:auto;padding-top:14px;border-top:1px solid #e1cfbd;font:.78rem/1.55 system-ui,sans-serif!important}
+.mf-dossier-book>a{display:inline-flex;min-height:42px;padding:6px 0;align-items:center;font:700 .82rem/1.5 system-ui,sans-serif;color:#81422d;text-underline-offset:3px}
+.mf-dossier-book>a.mf-dossier-secondary-link{font-weight:500;font-size:.77rem}
+.mf-dossier-questions{background:#f4e8d8;padding:26px 30px;margin:28px 0}
+.mf-dossier-questions h4{font:600 1.45rem Georgia,serif;margin:0 0 18px}
+.mf-dossier-questions li{font:1rem/1.65 Georgia,serif;padding:5px 0}
+.mf-dossier-source-inline{font:.87rem/1.7 system-ui,sans-serif!important;padding-top:13px;border-top:1px solid #d6c5b4}
+.mf-dossier :is(a,summary):focus-visible{outline:3px solid #a75c3f;outline-offset:4px}
+@media(max-width:750px){.mf-dossier{margin-top:38px}.mf-dossier-verses,.mf-dossier-comparison,.mf-dossier-books,.mf-dossier-actions{grid-template-columns:1fr}.mf-dossier-primary{padding:19px 14px}.mf-dossier-essay p,.mf-dossier-reading>p,.mf-dossier-primary>p{font-size:1.03rem}.mf-dossier-heading h2{font-size:2rem}.mf-dossier-index{gap:7px}.mf-dossier-cover img{max-height:520px}.mf-dossier-facsimile iframe{height:510px}}
