@@ -1,0 +1,49 @@
+/* Lector literario — presentación independiente del corpus, v1.0 */
+main.container:has(.mf-reader-page){width:min(1480px,calc(100% - 32px));max-width:100%;padding:0 0 56px}
+.mf-reader-page{--reader-ink:#30251e;--reader-paper:#fbf7f0;color:var(--reader-ink)}
+.mf-reader-hero{height:clamp(215px,24vw,345px);position:relative;overflow:hidden;background:#c7ae87}
+.mf-reader-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 52%;display:block}
+.mf-reader-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(27,18,13,.73),rgba(27,18,13,.05) 75%);pointer-events:none}
+.mf-reader-hero-label{position:absolute;z-index:1;bottom:26px;left:clamp(20px,5vw,72px);right:20px;color:#fff9f0;font:800 .75rem/1.5 system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase;text-shadow:0 1px 5px #211810}
+.mf-reader-frame{position:relative;width:min(1230px,calc(100% - 32px));margin:0 auto;padding:clamp(26px,4.2vw,58px) clamp(18px,4.5vw,68px) clamp(32px,5vw,70px);background:#f7f1e7;border:1px solid #dccbb5;border-top:0;box-shadow:0 16px 36px rgba(46,27,12,.06)}
+.mf-reader-page .breadcrumbs{justify-content:center;gap:9px;margin:0 auto 30px;color:#745d4d}
+.mf-reader-page .reader-header{max-width:760px;margin:0 auto 40px;padding:0 0 28px;text-align:center;border-bottom:1px solid #c3ae98}
+.mf-reader-page .reader-header .eyebrow{font-size:.77rem;letter-spacing:.16em;color:#965037}
+.mf-reader-page .reader-header h1{font:600 clamp(2.9rem,5.2vw,5rem)/1.06 Georgia,serif;letter-spacing:-.035em;color:#261e19;margin:12px 0 16px;max-width:none}
+.mf-reader-page .reader-header .lead{max-width:100%;font:italic clamp(1.14rem,1.6vw,1.4rem)/1.5 Georgia,serif;color:#675348;margin:0 auto 10px}
+.mf-reader-page .reader-header .meta{font-size:.85rem;color:#756657;letter-spacing:.04em}
+.mf-reader-page .reader-layout{display:grid;grid-template-columns:minmax(0,680px) minmax(190px,225px);justify-content:center;align-items:start;gap:clamp(22px,4.3vw,62px);width:100%;margin:auto}
+.mf-reader-page .reader-layout>*,.mf-reader-page .verse-text{min-width:0}
+.mf-reader-page .verse-text{font:400 clamp(1.09rem,1.26vw,1.23rem)/1.8 Georgia,'Times New Roman',serif;color:#30251f;margin:0 auto;width:100%;max-width:680px}
+.mf-reader-page .stanza{margin:0 0 29px;padding:18px clamp(16px,2.4vw,30px) 20px;background:var(--reader-paper);border-left:3px solid #ab7655;box-shadow:0 3px 12px rgba(38,27,15,.035);scroll-margin-top:26px}
+.mf-reader-page .stanza-label{font:750 .72rem/1.5 system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;margin:0 0 12px;color:#89513b}
+.mf-reader-page .stanza-label a{color:inherit;text-decoration:none}
+.mf-reader-page .verse{font:inherit;line-height:1.72;margin:0;white-space:normal;overflow-wrap:normal}
+.mf-reader-page .verse a{color:inherit;text-decoration:none}
+.mf-reader-page .verse a:hover,.mf-reader-page .verse:target{background:#f4e6cc}
+.mf-reader-page .stanza:target{background:#fff3d9;outline:3px solid #f0ddaf}
+.mf-reader-page .reader-nav{position:sticky;top:22px;background:#ece0ce;border:0;border-top:4px solid #9e573e;border-radius:0;padding:22px 19px;box-shadow:0 6px 20px rgba(39,27,18,.08);width:100%}
+.mf-reader-page .reader-nav strong{display:block;font:700 1.02rem Georgia,serif;color:#30231c;margin-bottom:13px}
+.mf-reader-page .reader-nav a{display:block;font:.88rem/1.45 system-ui,sans-serif;color:#78452f;text-decoration:none;margin:6px 0;padding:4px 0}
+.mf-reader-page .reader-nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.mf-reader-page .pager{border-color:#cfbca6;margin-top:30px;padding-top:25px;flex-wrap:wrap;gap:16px}
+.mf-reader-page .pager a{color:#854530;font:700 .94rem/1.5 system-ui,sans-serif}
+.mf-reader-image-credit{margin:12px auto 0;max-width:1230px;text-align:right;padding:0 18px;color:#786759;font:.76rem/1.5 system-ui,sans-serif}
+@media(max-width:920px){
+ .mf-reader-page .reader-layout{grid-template-columns:minmax(0,1fr);max-width:710px}
+ .mf-reader-page .reader-nav{position:static;margin-top:5px}
+ .mf-reader-page .reader-header{max-width:710px}
+}
+@media(max-width:600px){
+ main.container:has(.mf-reader-page){width:100%;padding:0 0 30px}
+ .mf-reader-hero{height:205px}
+ .mf-reader-hero-label{bottom:20px;font-size:.67rem}
+ .mf-reader-frame{width:calc(100% - 18px);padding:25px 14px 34px}
+ .mf-reader-page .reader-header{margin-bottom:25px;padding:0 6px 20px}
+ .mf-reader-page .reader-header h1{font-size:clamp(2.5rem,10vw,3.5rem)}
+ .mf-reader-page .reader-layout{gap:22px}
+ .mf-reader-page .verse-text{font-size:1.08rem;line-height:1.74}
+ .mf-reader-page .stanza{padding:16px 14px 18px;margin-bottom:19px}
+ .mf-reader-page .verse{line-height:1.74}
+}
+@media(prefers-reduced-motion:reduce){.mf-reader-page *{scroll-behavior:auto!important}}
