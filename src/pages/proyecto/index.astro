@@ -1,17 +1,17 @@
 ---
-import Base from '../../layouts/Base.astro';
+import Base from '../../layouts/StaticEditorial.astro';
 ---
-<Base title="Acerca del proyecto" description="Qué es MARTINFIERRO.ORG: biblioteca documental y revista literaria, histórica y cultural argentina.">
+<Base title="Acerca del proyecto" description="Qué es MARTINFIERRO.ORG: biblioteca documental y revista literaria, histórica y cultural argentina." sections={[{"title":"La biblioteca documental","id":"la-biblioteca-documental"},{"title":"La revista cultural","id":"la-revista-cultural"},{"title":"Nuestro método","id":"nuestro-metodo"}]}>
   <article class="mf-legal-page">
     <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span>Acerca del proyecto</span></nav>
     <p class="eyebrow">Identidad editorial</p>
     <h1>Una biblioteca para leer. Una revista para comprender.</h1>
     <p class="lead">MARTINFIERRO.ORG es un proyecto editorial digital independiente dedicado a <em>Martín Fierro</em>, a José Hernández y a las múltiples lecturas históricas y culturales de su obra.</p>
-    <h2>La biblioteca documental</h2>
+    <h2 id="la-biblioteca-documental">La biblioteca documental</h2>
     <p>La obra se organiza en sus dos partes, cantos, estrofas y versos identificados. La navegación editorial y las investigaciones permanecen separadas de la transcripción del poema.</p>
-    <h2>La revista cultural</h2>
+    <h2 id="la-revista-cultural">La revista cultural</h2>
     <p>La revista abre recorridos por la literatura gauchesca, el siglo XIX rioplatense, la vida rural, la crítica y la recepción cultural. Diferenciamos expresamente los hechos documentados, las interpretaciones y las recreaciones digitales.</p>
-    <h2>Nuestro método</h2>
+    <h2 id="nuestro-metodo">Nuestro método</h2>
     <p>La procedencia del texto y las intervenciones registradas pueden consultarse en <a href="/acerca/">Fuentes e integridad documental</a>. El código y el material documental versionado están vinculados al <a href="https://github.com/carloscabanas-1327/martinfierro" rel="noopener noreferrer">repositorio del proyecto</a>.</p>
     <p>El uso de fotografías históricas y recreaciones digitales se identifica de manera diferenciada. Este sitio no representa a una institución pública ni a un organismo oficial.</p>
   </article>
