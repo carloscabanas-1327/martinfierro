@@ -25,7 +25,7 @@ const piezas=[
   <div class="mf-archive-grid">
    {piezas.map(p=><article class="mf-archive-card">
     <a href={p.url} rel="noopener noreferrer" target="_blank" class="mf-archive-image-link" aria-label={`Abrir documento de la ficha: ${p.titulo}`}>
-     <img src={p.img} alt={p.alt} loading="lazy" decoding="async" referrerpolicy="no-referrer"/><span class="mf-archive-image-caption" aria-hidden="true">Ver documento ↗</span>
+     <img src={p.img} alt={p.alt} loading="lazy" decoding="async" referrerpolicy="no-referrer"/><span class="mf-archive-image-caption" aria-hidden="true">Abrir fuente ↗</span>
     </a>
     <div class="mf-archive-card-body">
      <p class="mf-archive-kicker">{p.fecha}</p>
