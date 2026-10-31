@@ -2,19 +2,67 @@
 import AdSlot from '../../components/AdSlot.astro';
 import EditorialSection from '../../components/EditorialSection.astro';
 import Base from '../../layouts/Base.astro';
+import '../../styles/biblioteca-critica-ampliada.css';
+const obras=[
+ {grupo:'ANTECEDENTES · SIGLO XIX',fecha:'1821–1822',autor:'Bartolomé Hidalgo',titulo:'Diálogos patrióticos',clase:'Obra literaria original · edición digital',texto:'Los intercambios entre Jacinto Chano y Ramón Contreras anticipan formas de conversación, representación del habla y discusión política que serán centrales en la gauchesca posterior. No son testimonios orales literales de peones reales, sino composiciones de autor.',lectura:'https://www.cervantesvirtual.com/obra-visor/dialogos--1/html/ff9c0bfc-82b1-11df-acc7-002185ce6064_2.html',fuente:'Biblioteca Virtual Miguel de Cervantes · lectura de los Diálogos',pregunta:'¿Qué cambia cuando el gaucho habla con otro gaucho y no solo cuenta su propia historia?',tono:'sepia'},
+ {grupo:'ANTECEDENTES · SIGLO XIX',fecha:'1872',autor:'Hilario Ascasubi',titulo:'Santos Vega o Los mellizos de la Flor',clase:'Poema narrativo · tradición gauchesca',texto:'Una extensa recreación poética de las campañas rioplatenses; pone de relieve la diversidad de voces, formas y conflictos en la literatura gauchesca. Su autor no ofrece la misma perspectiva política ni el mismo proyecto literario que Hernández.',lectura:'https://www.cervantesvirtual.com/portales/literatura_gauchesca/introduccion/',fuente:'Biblioteca Virtual Miguel de Cervantes · estudio de la tradición gauchesca',pregunta:'¿Cómo construyen Ascasubi y Hernández a sus personajes populares?',tono:'tierra'},
+ {grupo:'FRONTERA · SIGLO XIX',fecha:'1870',autor:'Lucio V. Mansilla',titulo:'Una excursión a los indios ranqueles',clase:'Crónica de viaje · dos tomos',texto:'Un militar argentino relata su visita a Leubucó y sus conversaciones con autoridades ranqueles. Es una fuente extraordinaria para comparar contactos, negociaciones y prejuicios de la frontera; no equivale a una voz indígena directa ni libre de mediación.',lectura:'https://library.si.edu/digital-library/book/unaexcursinlosin01mans',fuente:'Smithsonian Libraries · facsímil histórico del tomo I',pregunta:'¿Qué revela el encuentro diplomático que un relato de combate no permite ver?',tono:'oliva',interior:'/temas/vida-gaucha/#mansilla-original'},
+ {grupo:'RELECTURAS · SIGLO XX',fecha:'1916',autor:'Leopoldo Lugones',titulo:'El payador',clase:'Ensayo de interpretación nacional',texto:'Tras sus conferencias de 1913, Lugones presentó a Martín Fierro como poema épico y emblema de la nacionalidad. Su tesis tuvo enorme influencia, pero debe leerse dentro de los debates culturales y políticos de su momento, no como verdad definitiva sobre Hernández.',lectura:'https://fierro.bn.gov.ar/micrositios/libros/literatura/el-payador',fuente:'Biblioteca Nacional Mariano Moreno · reedición con manuscrito facsimilar y ensayos',pregunta:'¿Quién decide qué obra representa a una nación, y con qué argumentos?',tono:'azul'},
+ {grupo:'RELECTURAS · SIGLO XX',fecha:'1948',autor:'Ezequiel Martínez Estrada',titulo:'Muerte y transfiguración de Martín Fierro',clase:'Ensayo crítico · obra protegida',texto:'En lugar de una celebración sin fisuras del héroe gaucho, Martínez Estrada interroga conflictos, violencias y tensiones profundas de la sociedad argentina. Ofrecemos la referencia y un estudio institucional; no reproducimos ilegalmente el libro completo.',lectura:'https://www.bn.gov.ar/noticias/14-de-septiembre-de-1895-nace-ezequiel-martinez-estrada',fuente:'Biblioteca Nacional · semblanza del autor y contexto del libro',pregunta:'¿Qué ocurre si el poema se lee como síntoma de un problema histórico?',tono:'granate'},
+ {grupo:'REESCRITURAS · SIGLO XX',fecha:'1944 y 1953',autor:'Jorge Luis Borges',titulo:'Biografía de Tadeo Isidoro Cruz y El fin',clase:'Cuentos · obras protegidas',texto:'Borges retoma personajes y momentos de Hernández para narrar otras elecciones y desenlaces. Son obras literarias autónomas, no continuaciones autorizadas del argumento original ni documentos históricos. No incluimos sus textos completos por derechos.',lectura:'https://www.cervantesvirtual.com/portales/jorge_luis_borges/',fuente:'Biblioteca Virtual Miguel de Cervantes · portal de Jorge Luis Borges',pregunta:'¿Qué significado nuevo adquieren Cruz y Fierro en cada reescritura?',tono:'grafito'}
+];
 ---
-<Base title="Biblioteca crítica y obras relacionadas" description="Recepción literaria de Martín Fierro: Leopoldo Lugones, Jorge Luis Borges, Ezequiel Martínez Estrada y más." adKind="category">
-<EditorialSection kind="category" image="/media/fotografias-v3/biblioteca-critica.webp" label="BIBLIOTECA CRÍTICA · ENSAYOS Y ESTUDIOS">
-<div class="breadcrumbs"><a href="/">Inicio</a><span>Biblioteca crítica</span></div>
-<section class="section-intro"><p class="eyebrow">Libros · Ensayos · Recepción</p><h1>La obra que otros escritores volvieron a leer</h1><p class="lead"><em>Martín Fierro</em> generó debates, interpretaciones y nuevas obras literarias. Esta biblioteca reúne referencias fundamentales y distinguirá siempre el estudio crítico de las recreaciones artísticas.</p></section>
-<AdSlot id="category-02" kind="category" />
-<div class="magazine-topic-grid">
- <article class="editorial-paper"><p class="eyebrow">Ensayo · 1916</p><h2>Leopoldo Lugones</h2><h3><em>El payador</em></h3><p>Un ensayo central para estudiar la valoración de la poesía gauchesca y la construcción del poema como emblema nacional.</p><p class="meta">Ficha bibliográfica y análisis detallado en investigación.</p></article>
- <article class="editorial-paper"><p class="eyebrow">Ensayo · 1948</p><h2>Ezequiel Martínez Estrada</h2><h3><em>Muerte y transfiguración de Martín Fierro</em></h3><p>Un estudio extenso que interroga el poema, sus personajes y las tensiones sociales que representa.</p><p class="meta">Ficha bibliográfica y análisis detallado en investigación.</p></article>
- <article class="editorial-paper"><p class="eyebrow">Cuentos y crítica</p><h2>Jorge Luis Borges</h2><h3><em>El fin</em> y <em>Biografía de Tadeo Isidoro Cruz (1829–1874)</em></h3><p>Dos narraciones que dialogan con personajes y situaciones del universo literario de Hernández.</p><p class="meta">Los textos de terceros se citan y analizan respetando sus derechos.</p></article>
-</div>
-<div class="notice"><strong>Estado editorial:</strong> catálogo introductorio de obras identificadas, no una biblioteca de textos completos ni una crítica académica concluida.</div>
-<AdSlot id="category-03" kind="category" />
-<AdSlot id="category-04" kind="category" />
+<Base title="Biblioteca crítica de Martín Fierro: autores, obras y estudios" description="Obras y estudios sobre Martín Fierro: Hidalgo, Ascasubi, Mansilla, Lugones, Martínez Estrada y Borges, con fuentes patrimoniales, lectura y contexto." adKind="category">
+<EditorialSection kind="category" image="/media/fotografias-v3/biblioteca-critica.webp" label="BIBLIOTECA CRÍTICA · AUTORES · DOCUMENTOS">
+ <div class="breadcrumbs"><a href="/">Inicio</a><span>Biblioteca crítica</span></div>
+ <section class="section-intro">
+  <p class="eyebrow">La tradición · Las controversias · Las relecturas</p>
+  <h1>La biblioteca que rodea a Martín Fierro</h1>
+  <p class="lead">No existe una sola interpretación del poema. Antes de Hernández hubo otras voces gauchescas; después, grandes escritores discutieron su significado. Esta biblioteca reúne obras, ensayos y documentos con acceso verificable, diferenciando los textos del siglo XIX de los libros modernos protegidos por derechos.</p>
+ </section>
+ <div class="mf-bc-principio"><strong>Biblioteca documental, no depósito de copias sin permiso.</strong> Cuando existe una edición histórica consultable ofrecemos el enlace a su institución. Cuando una obra sigue protegida por derechos, presentamos su ficha, su contexto crítico y recursos legales para estudiarla. Las tapas tipográficas son diseños editoriales contemporáneos: no se hacen pasar por portadas originales.</div>
+ <AdSlot id="category-02" kind="category"/>
+ <nav class="mf-bc-index" aria-label="Accesos de la biblioteca">
+  <a href="#obra-critica">Obras y ensayos</a><a href="#interpretar">Tres debates fundamentales</a><a href="#documentos">Documentos que se pueden leer</a><a href="/temas/vida-gaucha/#mansilla-original">Vida gaucha: Mansilla original ↗</a>
+ </nav>
+ <section class="mf-bc-section" id="obra-critica">
+  <p class="eyebrow">SEIS AUTORES · DOS SIGLOS</p>
+  <h2>Autores para leer a Hernández desde distintas perspectivas</h2>
+  <p>Las fichas están ordenadas por su relación histórica con el poema: antecedentes literarios, testimonios sobre la frontera y reinterpretaciones de los siglos XX. El enlace de cada una informa si abre una obra, un facsímil o una investigación contextual.</p>
+  <div class="mf-bc-grid">
+   {obras.map((o,i)=><article class="mf-bc-item">
+    <div class={`mf-bc-cover mf-bc-cover--${o.tono}`} aria-label="Diseño tipográfico editorial, no portada histórica">
+     <span class="mf-bc-cover-no">{String(i+1).padStart(2,'0')} · MARTÍN FIERRO / BIBLIOTECA</span>
+     <div><strong>{o.titulo}</strong><small>{o.autor}</small></div><span class="mf-bc-cover-foot">{o.fecha}</span>
+    </div>
+    <div class="mf-bc-body"><p class="eyebrow">{o.grupo} · {o.fecha}</p><h3>{o.titulo}</h3><p class="mf-bc-author">{o.autor}</p><p>{o.texto}</p>
+    <div class="mf-bc-question"><strong>Para leer críticamente</strong><span>{o.pregunta}</span></div>
+    <p class="mf-bc-type">{o.clase}</p>
+    <a href={o.lectura} target="_blank" rel="noopener noreferrer">{o.fuente} ↗</a>
+    {'interior' in o && o.interior && <a href={o.interior}>Ver documento y análisis en nuestro sitio →</a>}
+    </div>
+   </article>)}
+  </div>
+ </section>
+ <section class="mf-bc-discussion" id="interpretar">
+  <p class="eyebrow">TRES DEBATES PARA LEER EL POEMA</p><h2>¿Héroe nacional, crítica social o literatura en transformación?</h2>
+  <div class="mf-bc-debates">
+   <article><h3>El héroe nacional</h3><p>Lugones jerarquiza el poema en el marco de una interpretación épica de la nación. Esa perspectiva explica su importancia cultural, pero puede dejar en segundo plano la violencia concreta que atraviesa la vida de Fierro.</p></article>
+   <article><h3>La injusticia y la sociedad</h3><p>Martínez Estrada explora contradicciones que impiden leer la experiencia gaucha como una leyenda pacífica. Una interpretación social tampoco debe borrar las decisiones personales del protagonista.</p></article>
+   <article><h3>El destino y la reescritura</h3><p>Borges vuelve sobre las decisiones de Cruz y el final posible de Fierro. Al comparar una ficción posterior con el poema de Hernández, conviene distinguir homenaje, discusión y nueva creación.</p></article>
+  </div>
+ </section>
+ <section class="mf-bc-documents" id="documentos">
+  <p class="eyebrow">ORIGINALES Y EDICIONES CONSULTABLES</p><h2>Documentos para abrir y leer</h2>
+  <p><strong>Primero el documento:</strong> estas tres entradas permiten pasar de la interpretación a libros o textos de instituciones culturales. Se indican expresamente su formato y procedencia.</p>
+  <div class="mf-bc-research">
+   <a href="https://fierro.bn.gov.ar/micrositios/libros/literatura/el-payador" target="_blank" rel="noopener noreferrer"><span>1916 · LUGONES</span><strong><em>El payador</em> y la reproducción facsimilar de su manuscrito</strong><small>Biblioteca Nacional · reedición de 2009 con estudios preliminares y material patrimonial ↗</small></a>
+   <a href="https://www.cervantesvirtual.com/obra-visor/dialogos--1/html/ff9c0bfc-82b1-11df-acc7-002185ce6064_2.html" target="_blank" rel="noopener noreferrer"><span>1821–1822 · HIDALGO</span><strong>Diálogos de Chano y Contreras</strong><small>Texto digital completo · Biblioteca Virtual Miguel de Cervantes ↗</small></a>
+   <a href="https://library.si.edu/digital-library/book/unaexcursinlosin01mans" target="_blank" rel="noopener noreferrer"><span>1870 · MANSILLA</span><strong>Una excursión a los indios ranqueles · tomo I</strong><small>Ejemplar histórico digitalizado · Smithsonian Libraries and Archives ↗</small></a>
+  </div>
+ </section>
+ <section class="mf-bc-method" aria-label="Método y derechos"><h2>Fuentes, fechas y derechos</h2><p>Los años corresponden a la edición o composición indicada en cada ficha; algunas ediciones digitalizadas son posteriores. Los textos explicativos son comentarios propios y no sustituyen a los originales. En los libros del siglo XX se respetan los derechos de autor y las condiciones de acceso de cada biblioteca.</p><p>Para las investigaciones sobre frontera y vida cotidiana, continuá en <a href="/temas/vida-gaucha/">Vida gaucha: la campaña, los fortines y los ranqueles</a>. Para el texto íntegro de Hernández, ingresá al <a href="/leer/">lector documental</a>.</p></section>
+ <AdSlot id="category-03" kind="category"/>
+ <AdSlot id="category-04" kind="category"/>
 </EditorialSection>
 </Base>
