@@ -6,7 +6,7 @@ body:has(.mf-revista) .site-header .brand,body:has(.mf-revista) .site-header nav
 body:has(.mf-revista) .site-header .brand small{color:#75665a}
 body:has(.mf-revista) .site-header .brand-mark{border-radius:0;border-color:#b85e45;color:#a74c34}
 body:has(.mf-revista) main.container{width:100%;max-width:none;padding:0;min-height:0}
-body:has(.mf-revista) .site-footer{background:#e8dfd1;border-color:var(--mf-border)}
+/* El footer usa exclusivamente su identidad oscura global. No sobreescribir su fondo desde la portada. */
 .mf-revista{font-family:system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
 .mf-revista h1,.mf-revista h2,.mf-revista h3,.mf-revista blockquote{font-family:var(--mf-serif);color:var(--mf-ink)}
 .mf-revista a{color:inherit}
