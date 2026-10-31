@@ -3,6 +3,7 @@ import AdSlot from '../components/AdSlot.astro';
 import Base from '../layouts/Base.astro';
 import { idiomas } from '../data/idiomas';
 import '../styles/revista-v2.css';
+const simbolosIdioma:Record<string,string>={es:'🇦🇷',en:'🇬🇧',it:'🇮🇹',pt:'🇧🇷',fr:'🇫🇷',la:'LAT',pms:'PMT'};
 const rutas = [
  {numero:'01',titulo:'La obra',sub:'El poema íntegro',url:'/leer/',imagen:'/media/fotografias-v3/la-ida.webp',alt:'Recreación digital de la vida gauchesca en la pampa'},
  {numero:'02',titulo:'José Hernández',sub:'El autor y su época',url:'/jose-hernandez/',imagen:'https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg',alt:'Fotografía histórica original de José Hernández, hacia 1875'},
@@ -53,7 +54,7 @@ const rutas = [
     </div>
     <nav class="mf-language-flags" aria-label="Páginas de Martín Fierro por idioma">
       {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo} title={i.estado==='original'?'Obra original en español':'Ficha bibliográfica en investigación, no traducción íntegra'}>
-        <span class="mf-lang-symbol" aria-hidden="true">{({es:'🇦🇷',en:'🇬🇧',it:'🇮🇹',pt:'🇧🇷',fr:'🇫🇷',la:'LAT',pms:'PMT'} as Record<string,string>)[i.codigo] || '🌐'}</span>
+        <span class="mf-lang-symbol" aria-hidden="true">{simbolosIdioma[i.codigo] ?? '🌐'}</span>
         <span>{i.nombre}</span>
       </a>)}
     </nav>
