@@ -40,3 +40,30 @@ main.container:has(.mf-consejos){width:min(1480px,calc(100% - 32px));padding:0 0
 .mf-consejos-commentary>p:last-child{margin-bottom:0}
 .mf-consejos-commentary strong{font-weight:700;color:#35251b}
 @media(max-width:600px){.mf-consejos-commentary{margin-top:40px;padding:25px 18px}.mf-consejos-commentary h2{font-size:1.95rem}.mf-consejos-commentary>p:not(.eyebrow){font-size:1.06rem;line-height:1.75}}
+
+/* Mejora móvil, navegación accesible y ayudas de lectura: jamás ocultar versos. */
+.mf-consejos-jumps{max-width:850px;margin:0 auto 33px;padding:20px clamp(16px,3vw,30px);background:#ead9bf;border:1px solid #ccb397}
+.mf-consejos-jumps-title{font:700 1.15rem/1.35 Georgia,serif;color:#34241c;margin:0 0 12px}
+.mf-consejos-jumps label{display:block;font:700 .86rem/1.4 system-ui,sans-serif;color:#5a4232;margin-bottom:9px}
+.mf-consejos-jumps select{width:100%;min-height:48px;padding:12px 15px;border:1px solid #80523a;border-radius:3px;background:#fffaf3;color:#32251c;font:1rem/1.4 system-ui,sans-serif}
+.mf-consejos-jumps noscript a{display:inline-block;margin:4px 12px 6px 0}
+.mf-consejos-text-heading{max-width:850px;margin:30px auto 22px;font:600 clamp(1.8rem,3vw,2.5rem)/1.18 Georgia,serif;color:#32251c;text-align:center}
+.mf-consejos-stanza{scroll-margin-top:30px}
+.mf-consejos-stanza-label{min-height:44px;display:inline-flex;align-items:center;padding:6px 6px 6px 0}
+.mf-consejos-side a{min-height:44px;display:flex;align-items:center;padding:10px 0}
+.mf-consejos-glossary{max-width:850px;margin:52px auto 0;padding:clamp(22px,4vw,42px);background:#fffaf2;border:1px solid #d9c3a7;border-top:4px solid #95543b}
+.mf-consejos-glossary h2{font:600 clamp(1.8rem,3vw,2.55rem)/1.17 Georgia,serif;color:#32241c;margin:10px 0 17px}
+.mf-consejos-glossary>p:not(.eyebrow){font:1.04rem/1.72 Georgia,serif;color:#514034}
+.mf-consejos-definitions{margin:23px 0;display:grid;gap:10px}
+.mf-consejos-definitions details{border:1px solid #d9c7b3;background:#f8efdf;padding:0 16px}
+.mf-consejos-definitions summary{cursor:pointer;font:700 1.1rem/1.45 Georgia,serif;color:#433023;min-height:48px;display:list-item;padding:12px 0}
+.mf-consejos-definitions details p{font:1rem/1.65 Georgia,serif;color:#594536;padding:0 0 15px;margin:0}
+.mf-consejos-glossary .mf-consejos-glossary-note{font:.84rem/1.65 system-ui,sans-serif;color:#685649;border-top:1px solid #ddcbb8;padding-top:15px}
+.mf-consejos-commentary a{color:#823e2b;text-decoration:underline;text-underline-offset:3px}
+.mf-consejos :is(a,select,summary):focus-visible{outline:3px solid #a25334;outline-offset:3px}
+@media(max-width:600px){
+ .mf-consejos-jumps{padding:18px 14px;margin-bottom:26px}
+ .mf-consejos-text-heading{font-size:1.8rem}
+ .mf-consejos-glossary{padding:22px 17px;margin-top:38px}
+ .mf-consejos-verse{font-size:clamp(1.07rem,4.65vw,1.22rem);line-height:1.78}
+}
