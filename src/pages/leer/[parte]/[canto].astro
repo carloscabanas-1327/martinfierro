@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import '../../../styles/reader-editorial.css';
 import {partes,estrofasDeCanto,enlaceCanto} from '../../../lib/corpus';
 export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).flatMap(parte=>partes[parte].cantos.map(c=>({params:{parte,canto:String(c.numero)},props:{parte,canto:c.numero}})));}
 const {parte,canto}=Astro.props as {parte:keyof typeof partes;canto:number};
@@ -8,15 +9,41 @@ const siguiente=canto<libro.cantos.length?enlaceCanto(parte,canto+1):parte==='id
 const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('ida',partes.ida.cantos.length):null;
 ---
 <Base title={`Canto ${canto} — ${libro.nombre}`} description={`Leé el canto ${canto} de ${libro.nombre}, de José Hernández, estrofa por estrofa.`}>
-<nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span><a href="/leer/">Leer</a></span><span><a href={`/leer/${parte}/`}>{libro.nombre}</a></span><span>Canto {canto}</span></nav>
-<header class="reader-header"><p class="eyebrow">{libro.descripcion} · {libro.anio}</p><h1>Canto {canto}</h1><p class="lead">{libro.cantos[canto-1]?.titulo ?? ''}</p><p class="meta">{estrofas.length} estrofas · {estrofas.reduce((n,e)=>n+e.versos.length,0)} versos</p></header>
-<div class="reader-layout"><article class="verse-text" aria-label={`Texto del canto ${canto}`}>
-{estrofas.map(e=><section class="stanza" id={e.id} aria-label={`Estrofa ${e.numero}`}>
- <div class="stanza-label"><a href={`#${e.id}`} title={`Enlace a estrofa ${e.numero}`}>Estrofa {e.numero}</a></div>
- {e.versos.map(v=><p class="verse" id={v.id}><a href={`#${v.id}`} title={`Enlace al verso ${e.numero}.${v.linea}`}>{v.texto}</a></p>)}
-</section>)}
-<div class="pager"><span>{anterior&&<a href={anterior}>← Canto anterior</a>}</span><span>{siguiente&&<a href={siguiente}>Canto siguiente →</a>}</span></div>
-</article>
-<aside class="reader-nav" aria-label="Navegación de lectura"><strong>Seguir leyendo</strong><a href={`/leer/${parte}/`}>Índice de esta parte</a>{anterior&&<a href={anterior}>← Canto anterior</a>}{siguiente&&<a href={siguiente}>Canto siguiente →</a>}<a href="/buscar/">Buscar en la obra</a></aside>
+<div class="mf-reader-page">
+ <div class="mf-reader-hero">
+  <img src={parte==='ida'?'/media/fotografias-v3/la-ida.webp':'/media/fotografias-v3/la-vuelta.webp'} alt="" width="1600" height="1000" decoding="async" fetchpriority="high"/>
+  <div class="mf-reader-hero-label">{libro.nombre} · {libro.anio} · Edición literaria</div>
+ </div>
+ <div class="mf-reader-frame">
+  <nav class="breadcrumbs" aria-label="Ruta de navegación">
+   <a href="/">Inicio</a><span><a href="/leer/">Leer</a></span><span><a href={`/leer/${parte}/`}>{libro.nombre}</a></span><span>Canto {canto}</span>
+  </nav>
+  <header class="reader-header">
+   <p class="eyebrow">{libro.descripcion} · {libro.anio}</p>
+   <h1>Canto {canto}</h1>
+   <p class="lead">{libro.cantos[canto-1]?.titulo ?? ''}</p>
+   <p class="meta">{estrofas.length} estrofas · {estrofas.reduce((n,e)=>n+e.versos.length,0)} versos</p>
+  </header>
+  <div class="reader-layout">
+   <article class="verse-text" aria-label={`Texto del canto ${canto}`}>
+    {estrofas.map(e=><section class="stanza" id={e.id} aria-label={`Estrofa ${e.numero}`}>
+     <div class="stanza-label"><a href={`#${e.id}`} title={`Enlace a estrofa ${e.numero}`}>Estrofa {e.numero}</a></div>
+     {e.versos.map(v=><p class="verse" id={v.id}><a href={`#${v.id}`} title={`Enlace al verso ${e.numero}.${v.linea}`}>{v.texto}</a></p>)}
+    </section>)}
+    <nav class="pager" aria-label="Cantos contiguos">
+     <span>{anterior&&<a href={anterior}>← Canto anterior</a>}</span>
+     <span>{siguiente&&<a href={siguiente}>Canto siguiente →</a>}</span>
+    </nav>
+   </article>
+   <aside class="reader-nav" aria-label="Navegación de lectura">
+    <strong>Seguir leyendo</strong>
+    <a href={`/leer/${parte}/`}>Índice de esta parte</a>
+    {anterior&&<a href={anterior}>← Canto anterior</a>}
+    {siguiente&&<a href={siguiente}>Canto siguiente →</a>}
+    <a href="/buscar/">Buscar en la obra</a>
+   </aside>
+  </div>
+ </div>
+ <p class="mf-reader-image-credit">Imagen de ambientación: recreación digital contemporánea, no fotografía histórica. El texto del poema permanece íntegro.</p>
 </div>
 </Base>
