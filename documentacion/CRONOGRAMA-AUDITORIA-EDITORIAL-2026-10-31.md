@@ -14,10 +14,15 @@
 
 ## Etapa 2 — Desarrollo de secciones insuficientes
 
+- [x] **HERN-00 (PR #41):** ampliar biografía de Hernández con diez hitos comentados, periodismo, política, trayectoria editorial y cuatro documentos patrimoniales accesibles.
+- [x] **REV-00 (PR #41):** publicar un artículo independiente sobre pulperías y reorganizar Revista para destacar artículos reales, además de las guías temáticas.
+- [x] **CULT-01 (PR #41):** publicar una guía específica para lectores extranjeros sobre mate, bombilla, cebar, pulpería, fogón, payada, vestimenta, aperos y tradiciones del Río de la Plata, con fuentes oficiales y términos en inglés.
+
+
 - [ ] **TEMAS-01:** agregar investigaciones, imágenes patrimoniales y fuentes originales a *La frontera*.
 - [ ] **TEMAS-02:** extender *Justicia y autoridad*, *Amistad y lealtad*, *Familia y regreso* y *Consejos y sabiduría* con documentación real; no repetir automáticamente el mismo esquema de tarjetas.
-- [ ] **HERN-01:** biografía documental de Hernández: correspondencia, cronología, periodismo, política, familias, documentos civiles auténticos, distinción de instituciones.
-- [ ] **REV-01:** publicar artículos independientes y documentados (pulpería, oficios, fortineras, cultura material, música, vida cotidiana) antes de anunciar una revista plenamente desarrollada.
+- [ ] **HERN-01:** continuar biografía documental de Hernández: identificación de actas originales, catálogo completo de prensa y discursos, correspondencia fechada, familia y permisos de reproducción. La síntesis y cuatro fuentes fueron implementadas en HERN-00.
+- [ ] **REV-01:** continuar serie de artículos independientes y documentados (oficios, fortineras, cultura material, música y vida cotidiana). El primer artículo de pulperías ya está en REV-00.
 
 ## Etapa 3 — Integridad de la edición y metodología
 
@@ -35,3 +40,5 @@
 5. Prueba de acceso público y de enlaces externos anotada explícitamente, sin confundirla con la prueba de compilación.
 
 **Observación:** ARCH-01/02 y EXEG-01 fueron implementados en PR #40. La marcación de completados presupone su integración y validación, que deben comprobarse antes del cierre de esta misma PR.
+
+**Nota de etapa 2:** HERN-00, REV-00 y CULT-01 abarcan implementación editorial y compilación. Siguen pendientes una auditoría integral de enlaces de salida, reproducciones adicionales de fuentes primarias y verificación visual del despliegue.
