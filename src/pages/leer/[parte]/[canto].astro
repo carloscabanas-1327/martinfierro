@@ -6,6 +6,24 @@ export function getStaticPaths(){return (Object.keys(partes) as Array<keyof type
 const {parte,canto}=Astro.props as {parte:keyof typeof partes;canto:number};
 const libro=partes[parte];const estrofas=estrofasDeCanto(parte,canto);
 const siguiente=canto<libro.cantos.length?enlaceCanto(parte,canto+1):parte==='ida'?enlaceCanto('vuelta',1):null;
+// Glosario de lectura opcional: la fuente documental jamás se modifica.
+const definiciones: Record<string,string> = {
+ 'vigüela':'Forma popular de «vihuela». En el poema, instrumento de cuerdas con que el gaucho acompaña su canto.',
+ 'naides':'Forma popular de «nadie», característica del habla representada en el poema.',
+ 'pingo':'Caballo; voz coloquial muy frecuente en el ámbito rural rioplatense.',
+ 'facón':'Cuchillo grande, tradicionalmente usado por los gauchos.',
+ 'pulpería':'Comercio y lugar de reunión de la campaña, donde se vendían provisiones y bebidas.',
+ 'tapera':'Casa o rancho abandonado o en ruinas.',
+ 'matrero':'En el contexto gauchesco, quien vive fugitivo o al margen de la autoridad.',
+ 'boliche':'Pequeño comercio o despacho de bebidas en el ámbito rural.',
+};
+const expresionGlosario=/\\b(vigüela|naides|pingo|facón|pulpería|tapera|matrero|boliche)\\b/giu;
+function fragmentosGlosario(texto:string){
+ return texto.split(expresionGlosario).filter(Boolean).map(fragmento=>({
+  texto:fragmento,
+  definicion:definiciones[fragmento.toLocaleLowerCase('es-AR')] ?? null
+ }));
+}
 const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('ida',partes.ida.cantos.length):null;
 ---
 <Base title={`Canto ${canto} — ${libro.nombre}`} description={`Leé el canto ${canto} de ${libro.nombre}, de José Hernández, estrofa por estrofa.`}>
@@ -28,8 +46,13 @@ const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('
    <article class="verse-text" aria-label={`Texto del canto ${canto}`}>
     {estrofas.map(e=><section class="stanza" id={e.id} aria-label={`Estrofa ${e.numero}`}>
      <div class="stanza-label"><a href={`#${e.id}`} title={`Enlace a estrofa ${e.numero}`}>Estrofa {e.numero}</a></div>
-     {e.versos.map(v=><p class="verse" id={v.id}><a href={`#${v.id}`} title={`Enlace al verso ${e.numero}.${v.linea}`}>{v.texto}</a></p>)}
+     {e.versos.map(v=><p class="verse" id={v.id}>
+      {fragmentosGlosario(v.texto).map(fragmento=>fragmento.definicion
+       ? <button type="button" class="mf-glossary-term" data-glossary-term={fragmento.texto} data-glossary-definition={fragmento.definicion} aria-haspopup="dialog" aria-expanded="false" title={`Ver significado de ${fragmento.texto}`}>{fragmento.texto}</button>
+       : <a href={`#${v.id}`} title={`Enlace al verso ${e.numero}.${v.linea}`}>{fragmento.texto}</a>)}
+     </p>)}
     </section>)}
+    <p class="mf-glossary-hint">Las palabras con subrayado tenue ofrecen una aclaración breve al tocarlas. El poema se reproduce sin alterar su texto.</p>
     <nav class="pager" aria-label="Cantos contiguos">
      <span>{anterior&&<a href={anterior}>← Canto anterior</a>}</span>
      <span>{siguiente&&<a href={siguiente}>Canto siguiente →</a>}</span>
@@ -44,6 +67,56 @@ const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('
    </aside>
   </div>
  </div>
+ <div class="mf-glossary-popup" id="mf-glossary-popup" role="dialog" aria-modal="false" aria-label="Aclaración del vocabulario" hidden>
+  <button type="button" class="mf-glossary-close" aria-label="Cerrar aclaración">×</button>
+  <strong class="mf-glossary-head"></strong>
+  <p class="mf-glossary-description"></p>
+ </div>
+ <script>
+  const popup=document.getElementById('mf-glossary-popup');
+  if(popup){
+   const title=popup.querySelector('.mf-glossary-head');
+   const description=popup.querySelector('.mf-glossary-description');
+   const close=popup.querySelector('.mf-glossary-close');
+   let active:HTMLButtonElement|null=null;
+   const hide=()=>{
+    popup.hidden=true;
+    active?.setAttribute('aria-expanded','false');
+    active=null;
+   };
+   const show=(button:HTMLButtonElement)=>{
+    if(active===button&&!popup.hidden){hide();return;}
+    if(active)active.setAttribute('aria-expanded','false');
+    active=button;
+    if(title)title.textContent=button.dataset.glossaryTerm||'Aclaración';
+    if(description)description.textContent=button.dataset.glossaryDefinition||'';
+    button.setAttribute('aria-expanded','true');
+    popup.hidden=false;
+    const bounds=button.getBoundingClientRect();
+    const width=popup.getBoundingClientRect().width;
+    const mobile=window.matchMedia('(max-width:600px)').matches;
+    if(mobile){popup.style.left='12px';popup.style.right='12px';popup.style.top='auto';popup.style.bottom='max(14px, env(safe-area-inset-bottom))';}
+    else{
+     popup.style.right='auto';popup.style.bottom='auto';
+     popup.style.left=Math.max(12,Math.min(bounds.left,window.innerWidth-width-12))+'px';
+     const height=popup.getBoundingClientRect().height;
+     popup.style.top=(bounds.bottom+height+12<window.innerHeight?bounds.bottom+8:Math.max(12,bounds.top-height-8))+'px';
+    }
+   };
+   document.addEventListener('click',event=>{
+    const target=event.target;
+    if(!(target instanceof Element))return;
+    const term=target.closest<HTMLButtonElement>('.mf-reader-page .mf-glossary-term');
+    if(term){event.preventDefault();show(term);return;}
+    if(target.closest('.mf-glossary-close')){hide();return;}
+    if(!popup.contains(target))hide();
+   });
+   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!popup.hidden){hide();active?.focus();}});
+   window.addEventListener('scroll',hide,{passive:true});
+   window.addEventListener('resize',hide);
+   close?.addEventListener('click',hide);
+  }
+ </script>
  <p class="mf-reader-image-credit">Imagen de ambientación: recreación digital contemporánea, no fotografía histórica. El texto del poema permanece íntegro.</p>
 </div>
 </Base>
