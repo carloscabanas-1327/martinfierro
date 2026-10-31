@@ -1,0 +1,42 @@
+MARTINFIERRO.ORG — ANEXO EDITORIAL: ESPECIALES, IMÁGENES Y LONG-TAIL
+Código MF-ANEXO-ESPECIALES-001 · Versión 1.0 · 31 de octubre de 2026
+Alcance: portada principal, especiales temáticos y sus cierres editoriales.
+Complementa Directiva Maestra, Directiva de Identidad Visual Editorial v2.0, Directiva Visual Fotográfica v3.0, Directiva del Lector y Directiva de Revista Ilustrada. No sustituye ninguna.
+
+1. PORTADA: UBICACIÓN DEL ESPECIAL CONSEJOS
+En la sección «La obra, de principio a fin», disponer exactamente en este orden semántico:
+01 El gaucho Martín Fierro; 02 La vuelta de Martín Fierro; 03 «Aquí me pongo a cantar»; 04 Consejos de Martín Fierro a sus hijos.
+En escritorio se preservan las dos tarjetas de las partes principales y en la tercera columna se apilan la cita del Canto I y la tarjeta especial de Consejos, debajo.
+En móvil, el orden de lectura HTML/DOM debe mantener a Consejos como cuarta entrada. No resolverlo solo con CSS order.
+La tarjeta enlaza a /consejos-martin-fierro/. Evitar duplicarla en la grilla de «Una cultura, muchas miradas».
+
+2. IMAGEN ESPECIAL APROBADA
+Arte aprobado por responsable humano: Martín Fierro como gaucho mayor con barba, dando consejos frente a un fogón a tres varones jóvenes, dos hijos propios y el hijo de Cruz; los jóvenes muestran barba incipiente y apariencia de adolescentes mayores o adultos jóvenes. Mate, vestimenta gauchesca verosímil, árbol y pampa. No incluir hijas, niños pequeños ni elementos anacrónicos ostensibles.
+Archivo: public/media/fotografias-v3/consejos-fogon-hijos.webp (WebP optimizado).
+Se trata de una recreación digital contemporánea, nunca documento histórico. Incluir ALT descriptivo y crédito editorial. Usar en la tarjeta del inicio y en la cabecera del especial.
+
+3. IDENTIDAD Y DISEÑO
+Conservar estilo editorial cinematográfico, color cálido y sobriedad documental; jerarquía tipográfica de revista cultural argentina. Asegurar compatibilidad con escritorio, tablet y móvil, sin recortes destructivos ni desbordamientos.
+La imagen de los consejos es contextual, no interrumpe estrofas.
+
+4. CANTO DE ORIGEN
+Consejos: La vuelta de Martín Fierro (1879), canto XXXII, 31 estrofas. El canto XXXI introduce el momento en que Fierro habla a sus hijos y al hijo de Cruz. El texto se obtiene del corpus original, nunca de una copia manual, sin modificar versos, IDs ni puntuación.
+La página especial puede ofrecer navegación independiente y enlaces al canto original.
+
+5. CIERRE EDITORIAL DE PÁGINAS TEMÁTICAS
+En especiales y apartados temáticos con versos citados o reproducidos, insertar después del último verso y antes del cierre legal/navegacional una sección interpretativa claramente etiquetada «Comentario editorial».
+Como pauta inicial, redactar tres párrafos originales, informativos y útiles:
+Párrafo 1: contexto de la escena, obra, autor, época y sentido del pasaje.
+Párrafo 2: ideas y enseñanzas del texto, detalles verificables y relevancia para quien lee.
+Párrafo 3: orientación al lector y referencia a contenido íntegro, enlaces y búsquedas relacionadas.
+Incluir expresiones long-tail y derivadas solo donde resulte natural y verdadero; no repetir frases por densidad, introducir preguntas inventadas ni prometer resultados SEO.
+Esta pauta NO se aplica automáticamente a los 46 cantos del lector documental ni al corpus sin mediación editorial.
+Cualquier alusión a Keyword Planner distinguirá hipótesis de métricas verificadas; no inventar volúmenes ni competencia.
+
+6. VALIDACIÓN Y VERSIONADO
+Revisar enlaces y semántica, validar el HTML y la compilación Astro con GitHub Actions, fusionar cambios mediante PR. Conservar los activos visuales y directivas en GitHub con procedencia clara. El despliegue en Cloudflare se informa como verificado solo tras inspección.
+
+7. FUENTES DEL PROYECTO
+Es recomendable subir una copia de este único anexo como Fuente del proyecto ChatGPT para que las decisiones futuras se mantengan en el contexto documental. El archivo en GitHub es la versión técnica trazable; agregarlo a Fuentes no ocurre automáticamente.
+
+FIN · MF-ANEXO-ESPECIALES-001
