@@ -26,3 +26,16 @@
 .mf-essay-verse blockquote span{display:block}
 .mf-essay-verse figcaption{font:.78rem/1.6 system-ui,sans-serif;color:#695545;margin-top:15px}
 @media(max-width:720px){.mf-essay-doc-grid{grid-template-columns:1fr}.mf-essay-timeline li{grid-template-columns:1fr;gap:5px}.mf-essay{padding:20px 15px}.mf-essay-verse{padding:18px 12px}.mf-essay-verse blockquote{font-size:1.02rem}}
+
+/* Ficha botánica documental de la yerba mate: fotografía real y taxonomía. */
+.mf-mate-botanical-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:22px;margin:24px 0 28px;align-items:start}
+.mf-mate-plant-photo{margin:0;padding:0;background:#f3e9dc;border:1px solid #d8c9b5}
+.mf-mate-plant-photo img{display:block;width:100%;height:auto;object-fit:contain}
+.mf-mate-plant-photo figcaption{padding:13px 16px;font:.79rem/1.55 system-ui,sans-serif;color:#554537}
+.mf-mate-taxonomy{padding:19px 22px;background:#eee2d1;border:1px solid #d4bda7}
+.mf-mate-taxonomy h3,.mf-mate-botanical>h3{font:600 clamp(1.3rem,2vw,1.75rem)/1.3 Georgia,serif;color:#3b2a20;margin:12px 0 18px}
+.mf-mate-taxonomy dl{margin:0}.mf-mate-taxonomy dl>div{display:grid;grid-template-columns:43% 57%;gap:10px;padding:9px 0;border-top:1px solid #d1b9a0}
+.mf-mate-taxonomy dt{font:700 .76rem/1.5 system-ui,sans-serif;color:#72513c}.mf-mate-taxonomy dd{margin:0;font:.89rem/1.52 Georgia,serif;color:#49382d}
+.mf-mate-taxonomy .mf-mate-source{font:.81rem/1.6 system-ui,sans-serif;margin:18px 0 0}
+.mf-mate-botanical-sources{border-top:1px solid #d2bca1;margin-top:25px;padding-top:16px;font:.84rem/1.8 system-ui,sans-serif;color:#5c4636}
+@media(max-width:770px){.mf-mate-botanical-layout{grid-template-columns:1fr}.mf-mate-taxonomy dl>div{grid-template-columns:40% 60%}}
