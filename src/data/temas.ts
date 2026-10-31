@@ -68,7 +68,7 @@ export const temas=[
  },
  {
  slug:'consejos-y-sabiduria',titulo:'Consejos y sabiduría',descripcion:'Las enseñanzas del padre, sus límites y el sentido de la experiencia.',
- imagenIndice:5,imagenAlt:'Un padre gaucho conversa con dos jóvenes alrededor del fogón, recreación digital',
+ imagenIndice:5,imagenAlt:'Guitarra criolla y mate: símbolos de la palabra cantada y de la transmisión oral de saberes, recreación artística',
  introduccion:'Los consejos de Martín Fierro a sus hijos ocupan el canto XXXII de La vuelta. Allí el protagonista expresa reglas de conducta nacidas de lo vivido: trabajo, amistad, prudencia, solidaridad y cuidado entre hermanos. El lector puede escuchar esas palabras sin convertir al personaje en un maestro infalible.',
  contexto:'La voz de los consejos tiene un valor literario propio: combina sentencias memorables con expresiones gauchescas que conservamos tal como aparecen en el corpus. La página especial ofrece las 31 estrofas del canto y aclaraciones contextuales, claramente separadas de la escritura de Hernández.',
  claves:[
