@@ -1,12 +1,35 @@
 ---
 import AdSlot from '../../components/AdSlot.astro';
 import EditorialSection from '../../components/EditorialSection.astro';
-import Base from '../../layouts/Base.astro';import {temas} from '../../data/temas';
+import Base from '../../layouts/Base.astro';
+import {temas} from '../../data/temas';
+import '../../styles/temas-editorial.css';
 ---
-<Base title="Explorar por temas" adKind="category">
-<EditorialSection kind="category" image="/media/fotografias-v3/revista-cultural.webp" label="GUÍA TEMÁTICA · LITERATURA GAUCHESCA"><p class="eyebrow">Guía de lectura</p><h1>Explorar por temas</h1><p class="lead">Recorridos editoriales iniciales para descubrir pasajes y situaciones del poema. No son etiquetas originales de José Hernández.</p>
-<AdSlot id="category-02" kind="category" /><div class="cards">{temas.map(t=><a class="card" href={`/temas/${t.slug}/`}><h2>{t.titulo}</h2><p>{t.descripcion}</p></a>)}</div>
-<AdSlot id="category-03" kind="category" />
-<AdSlot id="category-04" kind="category" />
+<Base title="Temas del Martín Fierro: guía de lectura y análisis" description="Seis recorridos ilustrados para comprender la vida gaucha, la frontera, la justicia, la amistad, la familia y los consejos de Martín Fierro. Con pasajes originales y fuentes." adKind="category">
+<EditorialSection kind="category" image="/media/fotografias-v3/revista-cultural.webp" label="TEMAS DEL POEMA · GUÍAS DE LECTURA">
+ <div class="breadcrumbs"><a href="/">Inicio</a><span>Temas</span></div>
+ <section class="section-intro mf-temas-intro">
+  <p class="eyebrow">Lecturas guiadas · 1872 y 1879</p>
+  <h1>Los grandes temas del Martín Fierro</h1>
+  <p class="lead">La experiencia del gaucho en seis recorridos: el trabajo y el hogar, la frontera y los abusos, la amistad, la familia y las enseñanzas que quedan después del sufrimiento. Cada guía explica su contexto, propone preguntas y conduce a pasajes íntegros del poema.</p>
+ </section>
+ <div class="mf-temas-note"><strong>Cómo leer estas guías.</strong> Son interpretaciones editoriales, no divisiones originales de José Hernández. Los versos se conservan intactos en el lector documental; las imágenes son recreaciones digitales contemporáneas, no fotografías del siglo XIX.</div>
+ <AdSlot id="category-02" kind="category"/>
+ <section class="mf-temas-listado" aria-label="Seis recorridos temáticos">
+  <div class="mf-temas-grid">
+  {temas.map((t,i)=><article class="mf-temas-card">
+   <a class="mf-temas-thumb" href={`/temas/${t.slug}/`} style={`--sprite-x:${t.imagenIndice%3*50}%;--sprite-y:${Math.floor(t.imagenIndice/3)*100}%`} aria-label={`Abrir guía: ${t.titulo}`}><span class="sr-only">{t.imagenAlt}</span></a>
+   <div class="mf-temas-card-body">
+    <p class="mf-temas-kicker">RECORRIDO {String(i+1).padStart(2,'0')} · {t.pasajes.length} CANTOS</p>
+    <h2><a href={`/temas/${t.slug}/`}>{t.titulo}</a></h2>
+    <p>{t.descripcion}</p>
+    <a class="mf-temas-read" href={`/temas/${t.slug}/`}>Explorar tema y pasajes →</a>
+   </div>
+  </article>)}
+  </div>
+ </section>
+ <section class="mf-temas-principios" aria-labelledby="mf-temas-fuentes"><p class="eyebrow">CRITERIO EDITORIAL</p><h2 id="mf-temas-fuentes">Leer el poema, comprender la época</h2><p>José Hernández publicó <em>El gaucho Martín Fierro</em> en 1872 y <em>La vuelta de Martín Fierro</em> en 1879. Los dos libros permiten seguir la transformación de la experiencia del protagonista, pero no dicen exactamente lo mismo ni deben reducirse a una lista de máximas. Combinamos lectura atenta del texto con bibliografía histórica y estudios institucionales.</p><p>Para situar la obra recomendamos la <a href="https://bcn.gob.ar/biblioteca-digital/martin-fierro" target="_blank" rel="noopener noreferrer">edición de la Biblioteca del Congreso y su estudio de la frontera ↗</a> y la <a href="https://www.bn.gov.ar/noticias/10-de-noviembre-de-1834-nace-jose-hernandez" target="_blank" rel="noopener noreferrer">semblanza documental de Hernández de la Biblioteca Nacional ↗</a>.</p></section>
+ <AdSlot id="category-03" kind="category"/>
+ <AdSlot id="category-04" kind="category"/>
 </EditorialSection>
 </Base>

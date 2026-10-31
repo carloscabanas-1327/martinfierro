@@ -1,0 +1,44 @@
+/* Temas de Martín Fierro · ilustraciones originales y lectura editorial trazable.
+   Sprite con seis escenas dibujadas digitalmente; ninguna pretende ser imagen histórica. */
+.mf-temas-intro{margin-bottom:24px!important}
+.mf-temas-note{max-width:960px;padding:16px 22px;margin:14px auto 34px;border-left:4px solid #a06140;background:#ede0cb;color:#58483b;font:.94rem/1.7 system-ui,sans-serif}
+.mf-temas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,24px);margin:20px 0 44px}
+.mf-temas-card{min-width:0;background:#fffaf2;border:1px solid #dac5b1;display:flex;flex-direction:column;box-shadow:0 4px 16px rgba(42,26,15,.05)}
+.mf-temas-thumb,.mf-tema-figure-image{display:block;background-image:url('/media/temas/escenas-tematicas.webp');background-repeat:no-repeat;background-size:300% 200%;background-position:var(--sprite-x) var(--sprite-y);background-color:#c8a986}
+.mf-temas-thumb{aspect-ratio:2.36/1;width:100%;outline-offset:3px}
+.mf-temas-card-body{padding:clamp(19px,2vw,27px);flex:1;display:flex;flex-direction:column}
+.mf-temas-kicker{font:800 .68rem/1.5 system-ui,sans-serif;letter-spacing:.11em;color:#98513a;margin:0 0 10px}
+.mf-temas-card h2{font:600 clamp(1.55rem,2.3vw,2.15rem)/1.13 Georgia,serif;margin:0 0 14px}
+.mf-temas-card h2 a{color:#4a2421;text-decoration:none}
+.mf-temas-card h2 a:hover{text-decoration:underline;text-underline-offset:4px}
+.mf-temas-card-body>p:not(.mf-temas-kicker){font:1.02rem/1.65 Georgia,serif;color:#524136;margin:0 0 23px}
+.mf-temas-read{display:inline-flex;margin-top:auto;min-height:44px;align-items:center;color:#8b402d;font:700 .89rem/1.4 system-ui,sans-serif;text-decoration:underline;text-underline-offset:4px}
+.mf-temas-principios,.mf-tema-fuentes{max-width:970px;margin:42px auto;padding:clamp(22px,4vw,40px);background:#f1e5d6;border-top:4px solid #a15b42}
+.mf-temas-principios h2,.mf-tema-contexto h2,.mf-tema-claves h2,.mf-tema-pasajes h2,.mf-tema-fuentes h2{font:600 clamp(1.8rem,2.9vw,2.8rem)/1.2 Georgia,serif;color:#34261d;margin:12px 0 20px}
+.mf-temas-principios p,.mf-tema-contexto p,.mf-tema-pasajes>p,.mf-tema-fuentes>p{font:1.07rem/1.75 Georgia,serif;color:#4e4035}
+.mf-temas-principios a,.mf-tema-fuentes a{color:#82422e;text-decoration:underline;text-underline-offset:4px}
+.mf-tema-detail-intro{margin-bottom:24px!important}
+.mf-tema-figure{max-width:970px;margin:20px auto 20px}
+.mf-tema-figure-image{height:clamp(230px,32vw,370px);width:100%}
+.mf-tema-figure figcaption{text-align:right;font:.76rem/1.5 system-ui,sans-serif;color:#806a59;margin:9px 0}
+.mf-tema-contexto,.mf-tema-claves,.mf-tema-pasajes{max-width:970px;margin:48px auto}
+.mf-tema-claves-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mf-tema-clave{background:#fffaf2;border-top:3px solid #9f563d;padding:25px 20px}
+.mf-tema-clave>span{font:800 .75rem/1.4 system-ui,sans-serif;color:#a9674b}
+.mf-tema-clave h3{font:600 1.45rem/1.2 Georgia,serif;color:#382a21;margin:13px 0}
+.mf-tema-clave p{font:1rem/1.68 Georgia,serif;color:#57463a;margin-bottom:0}
+.mf-tema-pasajes-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.mf-tema-pasaje{background:#fffaf1;padding:clamp(19px,2.8vw,28px);border:1px solid #ddc9b3}
+.mf-tema-pasaje h3{font:600 1.5rem/1.18 Georgia,serif;color:#392920;margin:0 0 14px}
+.mf-tema-pasaje>p:not(.mf-temas-kicker){font:1.01rem/1.68 Georgia,serif;color:#574537;margin:0 0 16px}
+.mf-tema-pasaje .mf-tema-pasaje-count{font:.82rem/1.5 system-ui,sans-serif!important;color:#735948!important}
+.mf-tema-pasaje>a{display:inline-flex;min-height:44px;align-items:center;color:#86422d;font:750 .9rem/1.45 system-ui,sans-serif;text-underline-offset:4px}
+.mf-tema-feature{padding:20px 24px;background:#e9d9c4;border-left:4px solid #a45a3c}
+.mf-tema-fuentes{background:#f8f0e4}
+.mf-tema-fuentes>a{display:block;margin:14px 0;padding:8px 0;min-height:44px;font:.93rem/1.6 system-ui,sans-serif}
+.mf-tema-fuentes .mf-tema-fuentes-nota{font:.87rem/1.7 system-ui,sans-serif;color:#725d4c;border-top:1px solid #d2bdaa;padding-top:20px}
+.mf-tema-volver{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;max-width:970px;margin:40px auto}
+.mf-tema-volver a{display:inline-flex;align-items:center;min-height:44px;color:#83412d;font:750 .88rem/1.4 system-ui,sans-serif}
+.mf-temas-listado .sr-only{position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden;white-space:nowrap}
+@media(max-width:940px){.mf-temas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mf-tema-claves-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.mf-temas-grid,.mf-tema-pasajes-grid{grid-template-columns:1fr}.mf-temas-card h2{font-size:1.95rem}.mf-tema-figure-image{height:250px}.mf-temas-principios,.mf-tema-fuentes{padding:24px 18px}.mf-tema-volver{flex-direction:column;gap:6px}}
