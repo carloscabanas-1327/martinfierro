@@ -12,6 +12,15 @@
 - [ ] **ARCH-04:** sumar nuevas piezas primarias con signatura, custodia, fecha, licencia y reproducción permitida. Prioridad: prensa de Hernández, cartas, ediciones de 1879.
 - [ ] **EXEG-02:** ampliar el análisis al arco de *La vuelta* y extender gradualmente el estudio a los 46 cantos, con referencias por estrofa y problemas de recepción.
 
+## Avances documentales de esta ronda (sin declarar cerrados los hitos extensos)
+
+- [x] **EXEG-02A (PR #44):** añadir siete lecturas de La vuelta, con identificación precisa de estrofas; quedan pendientes los cantos no estudiados.
+- [x] **TEMAS-01A (PR #44):** incorporar dossier con fuentes académicas y versos de La frontera.
+- [x] **TEMAS-02A (PR #44):** incorporar dossier documental a Justicia y autoridad; las otras tres guías siguen pendientes.
+- [x] **ARCH-03A (PR #44):** registrar primera ronda de comprobación y sus límites; la auditoría exhaustiva sigue abierta.
+- [x] **ARCH-04A (PR #44):** agregar registros institucionales de otras obras históricas de Hernández, diferenciando 1882 y la edición digitalizada de 1884; no equivale aún a ampliar la colección de manuscritos reproducidos.
+- [x] **TEXT-01A (PR #44):** clasificar el conjunto de alertas (27 de coincidencia 75–90 %, 28 menores de 75 %) y advertir sobre problemas de alineación; los dictámenes individuales siguen pendientes.
+
 ## Etapa 2 — Desarrollo de secciones insuficientes
 
 - [x] **HERN-00 (PR #41):** ampliar biografía de Hernández con diez hitos comentados, periodismo, política, trayectoria editorial y cuatro documentos patrimoniales accesibles.
