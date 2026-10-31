@@ -1,0 +1,53 @@
+MARTINFIERRO.ORG — DIRECTIVA EDITORIAL DE REVISTA ILUSTRADA
+Versión 1.0 — 31 de octubre de 2026
+Código: MF-REVISTA-ILUSTRADA-001
+Ámbito: /revista/ y futuras portadas editoriales ilustradas
+
+1. FINALIDAD
+La Revista debe ser una publicación cultural ilustrada sobre José Hernández, Martín Fierro y su mundo histórico. Cada entrada publicada dispondrá de imagen destacada, rótulo, título, bajada y enlace verificable, manteniendo coherencia con el resto del sitio y evitando la estética de plantilla CMS.
+
+2. JERARQUÍA DOCUMENTAL
+Esta norma complementa la Directiva Maestra de Arquitectura, la Directiva Visual Fotográfica v3.0 y la Directiva del Lector y Páginas Estáticas v1.0. La integridad del poema tiene prioridad absoluta. Las fotografías documentales se diferencian de las recreaciones digitales.
+
+3. ESTRUCTURA
+La portada de /revista/ presenta: hero visual; introducción centrada; tres accesos a contenidos existentes; grilla de recorridos temáticos ya disponibles; agenda editorial separada; reservas publicitarias ocultas; pie institucional y créditos.
+
+4. CONTENIDOS REALES VS. AGENDA
+No se publicarán enlaces aparentes a notas inexistentes. Los recorridos temáticos deben llamarse recorridos y enlazar a selecciones reales del poema. Los artículos futuros tendrán URL y contenido propio antes de aparecer como tarjetas de nota publicada.
+
+5. INVENTARIO EDITORIAL DE DOCE ENFOQUES
+01. Abrir la Revista: Leer Martín Fierro más allá del poema — fotografía de ambientación editorial.
+02. Historia y sociedad: Pulperías, encuentros y vida de campaña — pulpería cálida (artículo pendiente).
+03. Vida rural: Ranchos, corrales y trabajo cotidiano — rancho, animales y campaña (recorrido temático disponible).
+04. Campaña y frontera: La pampa abierta — cabalgata sobria (recorrido disponible).
+05. Autor y época: José Hernández y su tiempo — retrato histórico auténtico (contenido disponible).
+06. Claves de lectura: Cómo leer Martín Fierro hoy — mesa de estudio y libros (contenido disponible).
+07. Biblioteca crítica: Estudios y miradas — libros y estantes (contenido disponible).
+08. Archivo: Fuentes, documentos y ediciones — mesa de documentos (contenido disponible).
+09. Lengua y oralidad: Giros, refranes y canto — gaucho con guitarra, reunión (investigación pendiente).
+10. Cultura material: Costumbres, símbolos y aperos — objetos de campo (investigación pendiente).
+11. Fogones y relatos: Memoria compartida — fogón de campaña (investigación pendiente).
+12. Recepción y legado: La vigencia cultural del poema — libro y horizonte (investigación pendiente).
+
+6. DIVERSIDAD FOTOGRÁFICA
+Combinar pulperías, ranchos, corrales, cabalgatas, paisajes, libros, guitarra, retratos, objetos, fogones y archivos. Alternar escenas coloridas y sobrias. No repetir una imagen en tarjetas contiguas cuando exista una alternativa adecuada. No usar una recreación digital como prueba histórica ni un rostro artificial como retrato de persona histórica.
+
+7. PRODUCCIÓN DE NUEVAS IMÁGENES
+Las imágenes pendientes deben ser originales, horizontales, de estética fotográfica cinematográfica y ambientación rural rioplatense históricamente plausible. Crear los WebP optimizados; documentar autoría, carácter de recreación y destino. No enlazar imágenes externas no autorizadas ni inventar licencias. Los retratos documentales deberán mantener su acreditación histórica.
+
+8. ESTRUCTURA DE TARJETAS
+Imagen horizontal 3:2 aproximadamente, rótulo discreto, título serif, bajada breve, CTA claro; enlaces HTML reales. La imagen no debe recortar elementos importantes; el retrato histórico usa object-fit contain. Colores cálidos, marfil y terracota, contraste alto. No usar tarjetas de texto desprovistas de imagen en la portada de Revista.
+
+9. RESPONSIVE Y ACCESIBILIDAD
+Grilla tres columnas en pantallas grandes, dos en intermedias, una en móvil, sin desbordes. Texto legible, ALT descriptivo, enfoque de teclado visible y respeto a movimiento reducido. No introducir imágenes detrás del texto del poema.
+
+10. PUBLICIDAD
+Reservar cuatro posiciones de categoría, invisibles e inactivas hasta autorización. No insertar publicidad entre los versos ni simular anuncios activos.
+
+11. PUBLICACIÓN Y CONTROL
+Toda modificación se efectúa mediante GitHub y Astro con PR y validación de compilación. Comprobar enlaces a páginas existentes, etiquetas de recreación, límites de las fotografías, dimensiones responsive, integración con pie de créditos y ausencia de cambios al corpus. No asegurar despliegue público de Cloudflare sin confirmarlo.
+
+ESTADO INICIAL
+La portada de Revista se reestructura con tarjetas ilustradas enlazadas a las secciones y recorridos existentes. Las imágenes específicas nuevas de pulpería, fogón, aperos y oralidad deben producirse y subirse antes de introducir notas individuales sobre esos temas.
+
+FIN — MF-REVISTA-ILUSTRADA-001
