@@ -2,19 +2,60 @@
 import AdSlot from '../../components/AdSlot.astro';
 import EditorialSection from '../../components/EditorialSection.astro';
 import Base from '../../layouts/Base.astro';
+import '../../styles/archivo-patrimonial.css';
+const piezas=[
+ {fecha:'HACIA 1872 · MANUSCRITO',titulo:'La libreta escrita por José Hernández',detalle:'El Museo Histórico Nacional conserva una libreta manuscrita de trabajo para El gaucho Martín Fierro. Una fotografía institucional permite acercarse a la escritura del poeta y a las huellas materiales de su proceso creativo.',img:'https://www.argentina.gob.ar/sites/default/files/img_1483_2.jpg',alt:'Libreta abierta con páginas manuscritas atribuidas a José Hernández, conservada por el Museo Histórico Nacional',fuente:'Museo Histórico Nacional · Ministerio de Cultura de la Nación',url:'https://www.argentina.gob.ar/noticias/maraton-de-lectura-del-martin-fierro-en-el-museo-historico-nacional',tipo:'Fotografía documental publicada en 2022'},
+ {fecha:'ABRIL DE 1865 · CARTA ORIGINAL',titulo:'Una carta a Carolina, su esposa',detalle:'Desde Nogoyá, José Hernández escribió una carta personal a Carolina González del Solar. El repositorio patrimonial conserva una digitalización del documento original, con una escritura íntima muy distinta de la voz del poema.',img:'https://repositorio.bpm.parquedelconocimiento.com/bitstream/handle/bpm/386/HERNANDEZ-CartaEsposa-1865-OPT.pdf.jpg?isAllowed=y&sequence=3',alt:'Vista de una carta manuscrita de José Hernández a Carolina González del Solar, fechada en 1865',fuente:'Biblioteca Pública de las Misiones · Fondo SADE',url:'https://repositorio.bpm.parquedelconocimiento.com/handle/bpm/386',tipo:'Manuscrito de 1865 · digitalización institucional'},
+ {fecha:'1872 · PRIMERA EDICIÓN',titulo:'Un ejemplar con correcciones manuscritas',detalle:'La Academia Argentina de Letras difundió una copia digital de El gaucho Martín Fierro, edición de 1872, descrita como ejemplar corregido a mano por Hernández. El facsímil permite observar el libro como documento histórico y examinar sus páginas.',img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/El_gaucho_Martin_Fierro_-_Jose_Hernandez.pdf/page1-916px-El_gaucho_Martin_Fierro_-_Jose_Hernandez.pdf.jpg',alt:'Portada escaneada de un ejemplar histórico de El gaucho Martín Fierro de 1872',fuente:'Academia Argentina de Letras · Wikimedia Commons',url:'https://commons.wikimedia.org/wiki/File:El_gaucho_Martin_Fierro_-_Jose_Hernandez.pdf',tipo:'Facsímil de ejemplar histórico · dominio público'},
+ {fecha:'1879 · PRIMERA EDICIÓN',titulo:'La vuelta de Martín Fierro y sus grabados',detalle:'La portada original anuncia una edición adornada con diez láminas. En La vuelta, Hernández incorporó ilustraciones de Carlos Clérice: un cambio decisivo en la historia visual y editorial del poema.',img:'https://upload.wikimedia.org/wikipedia/commons/5/53/La_vuelta_de_Mart%C3%ADn_Fierro_cover_-_1879.jpg',alt:'Portada original de la primera edición de La vuelta de Martín Fierro publicada en 1879',fuente:'Ejemplar histórico · Wikimedia Commons',url:'https://commons.wikimedia.org/wiki/File:La_vuelta_de_Mart%C3%ADn_Fierro_cover_-_1879.jpg',tipo:'Impreso original de 1879 · dominio público'}
+];
 ---
-<Base title="Archivo documental y fuentes" description="Fuentes, procedencia, integridad y método editorial del portal Martín Fierro." adKind="category">
-<EditorialSection kind="category" image="/media/fotografias-v3/archivo-documental-recreacion.webp" label="ARCHIVO · FUENTES DOCUMENTALES">
-<div class="breadcrumbs"><a href="/">Inicio</a><span>Archivo documental</span></div>
-<section class="section-intro"><p class="eyebrow">Procedencia · Edición · Integridad</p><h1>Archivo documental</h1><p class="lead">El texto literario y la investigación editorial requieren fuentes identificables, trazabilidad y una distinción clara entre transcripción, corrección y comentario.</p></section>
-<AdSlot id="category-02" kind="category" />
-<div class="editorial-directory">
- <a class="directory-feature" href="/acerca/"><p class="eyebrow">Edición</p><h2>Fuentes del poema</h2><p>Transcripciones históricas, intervenciones documentadas y límites de la verificación técnica.</p><span class="text-link">Consultar el método →</span></a>
- <a class="directory-feature" href="/jose-hernandez/"><p class="eyebrow">Biografía</p><h2>Documentos sobre José Hernández</h2><p>Pistas documentales, fuentes institucionales y recursos sobre su vida y sus lugares.</p><span class="text-link">Explorar fuentes biográficas →</span></a>
- <a class="directory-feature" href="/biblioteca-critica/"><p class="eyebrow">Bibliografía</p><h2>Obras relacionadas</h2><p>Referencias de crítica literaria y textos que dialogan con Martín Fierro.</p><span class="text-link">Ver biblioteca →</span></a>
-</div>
-<div class="notice">La comprobación de 7.210 versos es técnica; no implica una certificación filológica independiente. Los originales del corpus se conservan separados de esta revista.</div>
-<AdSlot id="category-03" kind="category" />
-<AdSlot id="category-04" kind="category" />
+<Base title="Archivo histórico de Martín Fierro: manuscritos, cartas y primeras ediciones" description="Documentos reales de José Hernández: libreta manuscrita de Martín Fierro, cartas de 1865 y 1882, primera edición de 1872 y La vuelta de 1879." adKind="category">
+<EditorialSection kind="category" image="/media/fotografias-v3/archivo-documental-recreacion.webp" label="ARCHIVO · DOCUMENTOS ORIGINALES · SIGLO XIX">
+ <div class="breadcrumbs"><a href="/">Inicio</a><span>Archivo histórico</span></div>
+ <section class="section-intro">
+  <p class="eyebrow">Manuscritos · Correspondencia · Primeras ediciones</p>
+  <h1>Archivo histórico de Martín Fierro</h1>
+  <p class="lead">Antes de ser un clásico, <em>Martín Fierro</em> fue letra manuscrita, folleto y libro. Reunimos imágenes de documentos auténticos, con fechas, instituciones custodias y enlaces a sus fuentes, para acercarte a la historia material de José Hernández y su obra.</p>
+ </section>
+ <div class="mf-archive-trust"><strong>Documentos auténticos, no recreaciones:</strong> las imágenes de las fichas siguientes proceden de publicaciones institucionales y reproducciones históricas identificadas. El paisaje de la cabecera es una recreación editorial y no constituye evidencia histórica.</div>
+ <AdSlot id="category-02" kind="category" />
+ <section aria-labelledby="archivo-piezas" class="mf-archive-section">
+  <div class="mf-archive-heading"><p class="eyebrow">PIEZAS DOCUMENTALES</p><h2 id="archivo-piezas">Mirar la letra, el papel y la historia</h2><p>Seleccionamos piezas verificables. Cada ficha distingue la naturaleza del documento original, la reproducción consultable y la institución que la presenta.</p></div>
+  <div class="mf-archive-grid">
+   {piezas.map(p=><article class="mf-archive-card">
+    <a href={p.url} rel="noopener noreferrer" target="_blank" class="mf-archive-image-link" aria-label={`Consultar documento y fuente: ${p.titulo}`}>
+     <img src={p.img} alt={p.alt} loading="lazy" decoding="async" referrerpolicy="no-referrer"/>
+    </a>
+    <div class="mf-archive-card-body">
+     <p class="mf-archive-kicker">{p.fecha}</p>
+     <h3>{p.titulo}</h3>
+     <p>{p.detalle}</p>
+     <p class="mf-archive-provenance"><strong>Procedencia:</strong> {p.fuente}<span>{p.tipo}</span></p>
+     <a class="mf-archive-source" href={p.url} rel="noopener noreferrer" target="_blank">Examinar documento y procedencia ↗</a>
+    </div>
+   </article>)}
+  </div>
+ </section>
+ <section class="mf-archive-letter" aria-labelledby="carta-1882">
+  <p class="eyebrow">PIEZA DE CORRESPONDENCIA · 17 DE NOVIEMBRE DE 1882</p>
+  <h2 id="carta-1882">Una carta de Hernández a José Victorica</h2>
+  <p>El Museo de Arte Popular José Hernández documentó el hallazgo de una carta autógrafa enviada desde La Plata a José Victorica. La investigadora Laura Hernández explicó su descubrimiento y autenticación; la publicación patrimonial ofrece la transcripción y material gráfico de la pieza.</p>
+  <p>Es un documento valioso para conocer al escritor fuera del poema: no solo su figura literaria, sino también su correspondencia y sus asuntos cotidianos. Para examinar la reproducción y su contexto, consultá la investigación del museo, en la sección «Una carta de José Hernández en el Museo» (páginas impresas 24–27).</p>
+  <a class="mf-archive-source" href="https://buenosaires.gob.ar/sites/default/files/2023-04/180%20an%CC%83os%20de%20Jose%CC%81%20Herna%CC%81ndez.pdf" target="_blank" rel="noopener noreferrer">Abrir estudio y carta conservados por el Museo de Arte Popular ↗</a>
+ </section>
+ <section class="mf-archive-context" aria-labelledby="archivo-investigar">
+  <p class="eyebrow">COLECCIONES Y ESTUDIOS</p>
+  <h2 id="archivo-investigar">Dónde seguir investigando</h2>
+  <p>La Biblioteca Popular de Azul reunió primeras ediciones, ejemplares corregidos y materiales sobre la difusión del poema. El Museo de Arte Popular José Hernández estudió la historia de las ediciones ilustradas, mientras la Biblioteca del Congreso publicó una edición de ambas partes acompañada de materiales históricos y un estudio crítico.</p>
+  <div class="mf-archive-references">
+   <a href="https://www.bn.gov.ar/resources/conferences/pdfs/parada-rodriguez-martinfierro.pdf" target="_blank" rel="noopener noreferrer">Biblioteca Nacional · Colección martinfierrista de Azul ↗</a>
+   <a href="https://buenosaires.gob.ar/sites/default/files/2023-04/Las%20ediciones%20ilustradas%20del%20Mart%C3%ADn%20Fierro.pdf" target="_blank" rel="noopener noreferrer">Museo de Arte Popular · Ediciones ilustradas ↗</a>
+   <a href="https://bcn.gob.ar/literatura-y-narrativa/publicacion-martin-fierro" target="_blank" rel="noopener noreferrer">Biblioteca del Congreso · Edición de Martín Fierro ↗</a>
+  </div>
+ </section>
+ <div class="notice"><strong>Nota de integridad:</strong> no atribuimos originales al sitio MARTINFIERRO.ORG: los documentos pertenecen a sus respectivas colecciones y repositorios. Una fotografía de un manuscrito no equivale a tener su original. La comprobación técnica de nuestro corpus de 7.210 versos tampoco constituye certificación filológica independiente. Las imágenes institucionales se atribuyen a sus entidades; los derechos de reproducción deben respetarse.</div>
+ <AdSlot id="category-03" kind="category"/>
+ <AdSlot id="category-04" kind="category"/>
 </EditorialSection>
 </Base>
