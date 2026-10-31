@@ -43,6 +43,11 @@
 - [x] **TEMAS-02B (PR #46):** ampliar Amistad y lealtad, Familia y regreso, Consejos y sabiduría con interpretación diferenciada, estrofas exactas del corpus y referencias académicas enlazadas. Requieren todavía revisión filológica externa.
 - [ ] **CULT-02B:** los doce WebP y `mate-pava-yerba.webp` **ya están subidos a las carpetas correctas de `main` y sus nombres y cantidades fueron comprobados**. Quedan pendientes la comprobación HTTP 200 en Cloudflare, el diseño en PC/móvil y sustituir los dos recortes de menor resolución por maestros.
 
+## Nueva sección independiente: personajes principales
+
+- [x] **PERS-01 (PR por validar):** crear `/personajes/`, con once fichas sobre figuras centrales y personajes relevantes de ambas partes. Diferenciar protagonistas y narradores, dos hijos, esposa y cautiva sin nombre propio, el Moreno cantor y el hombre muerto en La ida. Incluir citas del corpus, acceso por canto, advertencias de interpretación, accesos desde portada y Exégesis. Se cierra únicamente después de compilación e integración en `main`.
+- [ ] **PERS-02:** estudiar documentación crítica especializada sobre cada personaje y sumar un mapa de relaciones cuando pueda justificarse con citas precisas. No atribuir retratos fotográficos a seres ficticios.
+
 ## Etapa 3 — Integridad de la edición y metodología
 
 - [ ] **TEXT-01:** investigar los 55 casos con coincidencia inferior al 90 % frente a la edición comparada; clasificar variantes y justificar cada resolución sin alterar los fuentes Gutenberg originales.
