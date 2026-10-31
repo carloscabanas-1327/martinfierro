@@ -1,9 +1,17 @@
 ---
+import AdSlot from '../../components/AdSlot.astro';
+import EditorialSection from '../../components/EditorialSection.astro';
 import Base from '../../layouts/Base.astro';
 import {partes,numeroDeVersos} from '../../lib/corpus';
 ---
-<Base title="Índice de lectura">
+<Base title="Índice de lectura" adKind="category">
+<EditorialSection kind="category" image="/media/fotografias-v3/la-ida.webp" label="LA OBRA · BIBLIOTECA DOCUMENTAL">
  <p class="eyebrow">Índice general</p><h1>Leé Martín Fierro</h1>
  <p class="lead">La obra está dividida en dos libros. Cada parte incluye un índice completo de cantos y navegación entre ellos.</p>
  <div class="cards">{['ida','vuelta'].map(parte=><a class="card" href={`/leer/${parte}/`}><p class="eyebrow">{partes[parte].anio}</p><h2>{partes[parte].nombre}</h2><p>{partes[parte].cantos.length} cantos · {numeroDeVersos(parte).toLocaleString('es-AR')} versos</p></a>)}</div>
- </Base>
+ 
+<AdSlot id="category-02" kind="category"/>
+<AdSlot id="category-03" kind="category"/>
+<AdSlot id="category-04" kind="category"/>
+</EditorialSection>
+</Base>
