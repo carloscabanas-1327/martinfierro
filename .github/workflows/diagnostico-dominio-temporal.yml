@@ -1,0 +1,34 @@
+name: Diagnostico externo de dominio (temporal)
+on:
+  push:
+    branches:
+      - diag/dominio-cloudflare-20261031
+    paths:
+      - .github/workflows/diagnostico-dominio-temporal.yml
+permissions:
+  contents: read
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pruebas DNS, HTTPS y certificado sin modificar Cloudflare
+        shell: bash
+        run: |
+          set +e
+          for host in martinfierro.org www.martinfierro.org martinfierro.pages.dev; do
+            echo "==== HOST ${host} ===="
+            for rec in NS A AAAA CNAME CAA; do
+              echo "--- DNS ${rec} 1.1.1.1 ---"
+              dig +time=3 +tries=1 @1.1.1.1 ${host} ${rec} +noall +answer +comments | head -18
+              echo "--- DNS ${rec} 8.8.8.8 ---"
+              dig +time=3 +tries=1 @8.8.8.8 ${host} ${rec} +noall +answer +comments | head -18
+            done
+            echo "--- HTTP STATUS / REDIRECT ---"
+            curl -IL --connect-timeout 6 --max-time 16 --retry 0 --silent --show-error --write-out 'HTTP FINAL=%{http_code} URL FINAL=%{url_effective} REMOTE_IP=%{remote_ip} SSL_VERIFY=%{ssl_verify_result}\n' https://${host}/ | head -24
+            echo
+          done
+          echo '=== ZONE DELEGATION ==='
+          dig +time=3 +tries=1 @1.1.1.1 martinfierro.org SOA +noall +answer +comments | head -22
+          echo '=== DNSSEC ==='
+          dig +time=3 +tries=1 @1.1.1.1 martinfierro.org DS +noall +answer +comments | head -20
+          echo '=== RUN COMPLETE ==='
