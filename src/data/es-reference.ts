@@ -20,6 +20,7 @@ export const documentosES:DocumentoES[]=[
 {titulo:'Día de la Tradición',url:'/revista/dia-de-la-tradicion-10-de-noviembre/',descripcion:'José Hernández y la conmemoración cultural.',categoria:'Revista'},
 {titulo:'Cultura gauchesca',url:'/cultura-gauchesca/',descripcion:'Costumbres, objetos y tradiciones del mundo rural.',categoria:'Historia'},
 {titulo:'Archivo histórico',url:'/archivo/',descripcion:'Documentos, ediciones y fuentes originales.',categoria:'Investigación'},
+{titulo:'Viejo Vizcacha y Martín Fierro: consejos comparados',url:'/biblioteca/vizcacha-y-fierro-consejos/',descripcion:'Análisis de seis comparaciones entre los cantos XV y XXXII de La vuelta.',categoria:'Biblioteca popular'},
 {titulo:'Biblioteca popular',url:'/biblioteca/',descripcion:'Guías, estudios, personajes y recursos culturales publicados.',categoria:'Investigación'},
 {titulo:'Biblioteca crítica',url:'/biblioteca-critica/',descripcion:'Investigaciones, estudios y bibliografía.',categoria:'Investigación'},
 {titulo:'Índice general',url:'/indice-general/',descripcion:'Directorio de páginas, temas y cantos.',categoria:'Herramientas'},
