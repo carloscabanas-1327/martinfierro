@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import EditorialSection from '../../components/EditorialSection.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import {personajes} from '../../data/personajes';
+import {personajeSeo,enlacePersonaje} from '../../data/personajes-seo';
 import {estrofasDeCanto} from '../../lib/corpus';
 import '../../styles/personajes-editorial.css';
 const fichas=personajes.map(p=>{
@@ -10,7 +11,7 @@ const fichas=personajes.map(p=>{
  return {...p,estrofaTexto:estrofa,fragmento:estrofa?.versos.slice(0,6)??[],recorte:(estrofa?.versos.length??0)>6};
 });
 const enlaces=(p:{parte:'ida'|'vuelta';canto:number})=>`/leer/${p.parte}/${p.canto}/`;
-const fotosPersonajes:Record<string,string>={
+const fotosPersonajesOriginales:Record<string,string>={
  'martin-fierro':'martin-fierro.webp',
  'juez-paz':'juez-de-paz.webp',
  'sargento-cruz':'sargento-cruz.webp',
@@ -34,8 +35,9 @@ const fotosPersonajes:Record<string,string>={
 <AdSlot id="article-02" kind="article"/>
 <section class="mf-personajes-grid" aria-label="Fichas de los personajes">
 {fichas.map((p,i)=><article class="mf-personaje" id={p.id}>
-<div class="mf-personaje-top"><span class="mf-personaje-number">{String(i+1).padStart(2,'0')}</span><div><p class="eyebrow">{p.tipo} · {p.parte}</p><h2>{p.nombre}</h2></div></div>
-{fotosPersonajes[p.id] && <figure class="mf-personaje-foto"><img src={`/media/fotografias-v3/${fotosPersonajes[p.id]}`} alt={`Recreación digital del personaje literario ${p.nombre}`} width="1024" height="680" loading="lazy" decoding="async"/><figcaption>Recreación digital de personaje literario; no es un retrato histórico.</figcaption></figure>}
+<div class="mf-personaje-top"><span class="mf-personaje-number">{String(i+1).padStart(2,'0')}</span><div><p class="eyebrow">{p.tipo} · {p.parte}</p><h2><a href={enlacePersonaje(p.id)}>{p.nombre}</a></h2></div></div>
+{personajeSeo[p.id] && <figure class="mf-personaje-foto"><img src={`/media/fotografias-v3/${personajeSeo[p.id].imagen}`} alt={`Recreación digital del personaje literario ${p.nombre}`} width="1024" height="680" loading="lazy" decoding="async"/><figcaption>Recreación digital de personaje literario; no es un retrato histórico.</figcaption></figure>}
+<p><a href={enlacePersonaje(p.id)}>Leer la ficha individual, análisis y preguntas de estudio →</a></p>
 <h3>Quién es y qué hace</h3><p>{p.resumen}</p>
 <div class="mf-personaje-quote"><p class="eyebrow">PASO ORIGINAL · {p.estrofa.parte==='ida'?'LA IDA':'LA VUELTA'} · CANTO {p.estrofa.canto} · ESTROFA {p.estrofa.numero}</p>
 {p.estrofaTexto && <blockquote>{p.fragmento.map(v=><span>{v.texto}</span>)}</blockquote>}
