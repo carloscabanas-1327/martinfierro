@@ -2,11 +2,13 @@
 import Base from '../../layouts/Base.astro';
 import {personajes} from '../../data/personajes';
 import {personajeSeo,enlacePersonaje} from '../../data/personajes-seo';
+import {perfilesProfundos} from '../../data/personajes-estudio-profundo';
 import {estrofasDeCanto,enlaceCanto} from '../../lib/corpus';
 export function getStaticPaths(){return personajes.map(p=>({params:{slug:personajeSeo[p.id].slug},props:{id:p.id}}));}
 const {id}=Astro.props as {id:string};
 const p=personajes.find(x=>x.id===id)!;
 const seo=personajeSeo[p.id];
+const estudio=perfilesProfundos[p.id];
 const fuente=estrofasDeCanto(p.estrofa.parte,p.estrofa.canto).find(e=>e.numero===p.estrofa.numero);
 const otros=personajes.filter(x=>x.id!==p.id&&x.referencias.some(r=>p.referencias.some(q=>q.parte===r.parte&&q.canto===r.canto))).slice(0,4);
 ---
@@ -15,11 +17,12 @@ const otros=personajes.filter(x=>x.id!==p.id&&x.referencias.some(r=>p.referencia
 <nav class="migajas" aria-label="Ubicación"><a href="/">Inicio</a> / <a href="/estudiantes/">Para estudiantes</a> / <a href="/personajes/">Personajes</a> / {p.nombre}</nav>
 <header><p class="eyebrow">GUÍA DE ESTUDIO · PERSONAJES DE MARTÍN FIERRO</p><h1>{seo.titulo}</h1><p class="lead">{p.resumen}</p><p class="meta">{p.tipo} · {p.parte}</p></header>
 <figure><img src={`/media/fotografias-v3/${seo.imagen}`} alt={`Ilustración editorial del personaje ${p.nombre} de Martín Fierro`} width="1024" height="680" loading="eager" fetchpriority="high"/><figcaption>Recreación editorial contemporánea del personaje literario; no es una fotografía histórica.</figcaption></figure>
-<section><h2>¿Quién es {p.nombre}?</h2><p>{p.resumen}</p></section>
-<section><h2>Características e interpretación literaria</h2><p>{p.interpretacion}</p><p>La caracterización se basa en el relato literario; las opiniones del personaje o del narrador no deben confundirse automáticamente con las del autor, José Hernández.</p></section>
+<section><h2>{estudio.h2}</h2><p>{estudio.historia}</p></section>
+<section><h2>Características e interpretación literaria</h2><p>{p.interpretacion}</p><p>{estudio.lectura}</p><p>La caracterización se basa en el relato literario; las opiniones del personaje o del narrador no deben confundirse automáticamente con las del autor, José Hernández.</p></section>
 <section><h2>Estrofa original para estudiar</h2>{fuente?<figure class="estrofa"><figcaption>{p.estrofa.parte==='ida'?'La ida':'La vuelta'} · canto {p.estrofa.canto} · estrofa {fuente.numero}</figcaption><blockquote>{fuente.versos.map(v=><span>{v.texto}</span>)}</blockquote><a href={`${enlaceCanto(p.estrofa.parte,p.estrofa.canto)}#${fuente.id}`}>Comprobar los versos en el lector original →</a></figure>:<p>Consultá el canto correspondiente en el lector documental.</p>}</section>
 <section><h2>¿En qué cantos aparece o se recuerda?</h2><ul class="cantos">{p.referencias.map(r=><li><a href={`/estudiantes/${r.parte}/${r.canto}/`}>{r.parte==='ida'?'La ida':'La vuelta'}, canto {r.canto}: guía para estudiantes</a> · <a href={enlaceCanto(r.parte,r.canto)}>poema original</a></li>)}</ul></section>
-<section><h2>Preguntas para estudiantes</h2><ol><li>¿Qué acciones y experiencias definen a {p.nombre} en los cantos citados?</li><li>¿Quién cuenta su historia? ¿Qué diferencia existe entre lo narrado y lo que podemos comprobar del personaje?</li><li>¿Cómo se relaciona su historia con las tensiones sociales o familiares del poema?</li><li>¿Qué verso permite sostener tu interpretación? Citá el canto y la estrofa.</li></ol></section>
+<section><h2>Vocabulario y conceptos para comprender su historia</h2><p>{estudio.vocab}</p><p>Las palabras se explican en su contexto literario. Para revisar su uso exacto, consultá el <a href="/buscar/">buscador de versos</a> y el <a href="/biblioteca/glosario-gauchesco/">glosario gauchesco</a> cuando esté disponible.</p></section>
+<section><h2>Preguntas para estudiantes sobre {p.nombre}</h2><ol>{estudio.preguntas.map(q=><li>{q}</li>)}<li>Elegí una estrofa original y justificá tu interpretación con sus versos, sin confundir la voz del personaje con la del autor.</li></ol></section>
 {otros.length>0&&<section><h2>Otros personajes relacionados</h2><div class="relacionados">{otros.map(q=><a href={enlacePersonaje(q.id)}>{q.nombre} →</a>)}</div></section>}
 <footer><p><a href="/personajes/">Ver los once personajes</a> · <a href="/estudiantes/">Volver a las guías por canto</a> · <a href="/biblioteca/">Biblioteca popular</a></p></footer>
 </article>
