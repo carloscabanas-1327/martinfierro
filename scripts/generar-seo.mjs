@@ -35,5 +35,5 @@ if(errors.length){console.error('Invalid canonical or page language',errors.slic
 locations.sort((a,b)=>a.localeCompare(b,'en'));
 const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+locations.map(u=>`  <url><loc>${esc(u)}</loc></url>`).join('\n')+'\n</urlset>\n';
 await writeFile(path.join(root,'sitemap.xml'),sitemap,'utf8');
-await writeFile(path.join(root,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://martinfierro.org/sitemap.xml\n','utf8');
+await writeFile(path.join(root,'robots.txt'),'User-agent: *\nDisallow: /\n','utf8');
 console.log(`SEO OK: ${locations.length} indexable URLs, canonical and language verified; sitemap.xml and robots.txt generated.`);
