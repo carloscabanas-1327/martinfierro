@@ -29,7 +29,7 @@ for(const width of widths){
 const page=await browser.newPage({viewport:{width:720,height:900}});
 await page.goto('http://127.0.0.1:4322/',{waitUntil:'networkidle'});
 await page.evaluate(()=>document.documentElement.style.zoom='200%');
-const zoom=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth+1,viewport:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth}));
+const zoom=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth+1,viewport:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth,offenders:[...document.querySelectorAll('body *')].map(el=>({tag:el.tagName,cls:el.className?.toString().slice(0,85),text:el.textContent?.trim().slice(0,40),right:Math.round(el.getBoundingClientRect().right),left:Math.round(el.getBoundingClientRect().left)})).filter(v=>v.right>document.documentElement.clientWidth+1).slice(0,30)}));
 await page.screenshot({path:'auditoria-responsive/zoom-200.png',fullPage:true});
 await page.close();await browser.close();
 writeFileSync('auditoria-responsive/reporte.json',JSON.stringify({reports,zoom},null,2));
