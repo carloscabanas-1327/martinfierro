@@ -18,8 +18,8 @@ export const englishSections:ReferenceItem[]=[
   },
   {
     "title": "Literary Analysis",
-    "url": "/en/library/themes-and-analysis/",
-    "description": "Themes and historical interpretation",
+    "url": "/en/exegesis/",
+    "description": "Close reading, narrative voices and critical interpretation",
     "kind": "section",
     "lang": "en"
   },
@@ -81,6 +81,8 @@ export const englishSections:ReferenceItem[]=[
   }
 ];
 export const englishArticles:ReferenceItem[]=[
+  {title:"English Literary Exegesis",url:"/en/exegesis/",description:"Close reading of original Spanish stanzas and literary voices",kind:"critical analysis",lang:"en"},
+  {title:"La vuelta: 33 Critical Canto Readings",url:"/en/exegesis/la-vuelta/",description:"Thirty-three English exegesis entries organized in four narrative movements",kind:"critical analysis",lang:"en"},
   {
     "title": "Introduction",
     "url": "/en/what-is-martin-fierro/",
