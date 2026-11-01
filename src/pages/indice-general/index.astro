@@ -241,7 +241,7 @@ if(new Set(rutas).size!==rutas.length) throw new Error("Enlaces duplicados en el
   <header class="mf-directorio-header">
     <p class="mf-directorio-kicker">DIRECTORIO EDITORIAL · MARTINFIERRO.ORG</p>
     <h1>Índice general del sitio</h1>
-    <p>Directorio explicado de todas las secciones del portal, sus artículos y los cantos originales. El buscador permite filtrar títulos y descripciones, sin depender de servicios externos.</p>
+    <p>Listado temático completo de enlaces del sitio: obra, guías, revista, historia, idiomas, documentación y cada uno de los cantos originales.</p>
     <div class="mf-directorio-stats"><span><strong>06</strong> grandes grupos</span><span><strong>{totalCantos}</strong> cantos</span><span><strong>{totalEnlaces}</strong> accesos organizados</span></div>
   </header>
   <div class="mf-directorio-busqueda"><label for="mf-buscar-directorio">Buscar páginas y cantos de este índice</label><input type="search" id="mf-buscar-directorio" placeholder="Ej.: Carolina, frontera, canto 12, portugués" autocomplete="off"/><p id="mf-buscar-estado" role="status" aria-live="polite">Se muestran todos los accesos.</p></div>
@@ -253,7 +253,7 @@ if(new Set(rutas).size!==rutas.length) throw new Error("Enlaces duplicados en el
   <div class="mf-directorio-lista">
     {grupos.map(g=><section class="mf-directorio-grupo" id={g.id} aria-labelledby={`titulo-${g.id}`}>
       <header><span class="mf-directorio-numero">{g.numero}</span><div><h2 id={`titulo-${g.id}`}>{g.titulo}</h2><p>{g.nota}</p></div></header>
-      <ul>{g.enlaces.map((e,i)=><li data-indice-item data-indice-text={`${e.titulo} ${e.descripcion}`}><span>{String(i+1).padStart(2,'0')}</span><div><a href={e.url}>{e.titulo}</a><p class="mf-directorio-descripcion">{e.descripcion}</p></div></li>)}</ul>
+      <ul>{g.enlaces.map((e,i)=><li data-indice-item data-indice-text={`${e.titulo} ${e.descripcion}`}><span>{String(i+1).padStart(2,'0')}</span><div><a href={e.url}>{e.titulo}</a></div></li>)}</ul>
     </section>)}
   </div>
   <section id="cantos" class="mf-directorio-cantos" aria-labelledby="mf-directorio-cantos-titulo">
@@ -265,22 +265,7 @@ if(new Set(rutas).size!==rutas.length) throw new Error("Enlaces duplicados en el
       </div>)}
     </div>
   </section>
-<script is:inline>
-(()=>{
-const input=document.getElementById("mf-buscar-directorio");
-const estado=document.getElementById("mf-buscar-estado");
-if(!input || !estado)return;
-const items=Array.from(document.querySelectorAll("[data-indice-item]"));
-const norm=(v)=>v.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
-input.addEventListener("input",()=>{
-const parts=norm(input.value.trim()).split(/\s+/).filter(Boolean);
-let found=0;
-for(const li of items){const t=norm(li.getAttribute("data-indice-text")||"");const ok=parts.every(x=>t.includes(x));li.hidden=!ok;if(ok)found++;}
-for(const section of document.querySelectorAll(".mf-directorio-grupo,.mf-directorio-parte")){section.hidden=parts.length>0&&!section.querySelector("[data-indice-item]:not([hidden])");}
-estado.textContent=parts.length?`${found} resultados encontrados.`:"Se muestran todos los accesos.";
-});
-})();
-</script>
+<script is:inline src="/js/indice-general.js"></script>
   <aside class="mf-directorio-nota"><strong>Sobre este índice.</strong> Este directorio reúne enlaces a páginas y recorridos del proyecto. No confunde los seis temas interpretativos con las divisiones originales del poema. Las futuras investigaciones se agregarán cuando tengan una página publicada y un enlace verificable.</aside>
   <p class="mf-directorio-arriba"><a href="#contenido">↑ Volver al comienzo del directorio</a></p>
 </article>
