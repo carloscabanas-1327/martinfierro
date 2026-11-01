@@ -1,9 +1,17 @@
 ---
-interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'}
-const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none'}=Astro.props;
+interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; image?:string; modified?:string; adKind?:'article'|'category'|'transition'|'none'}
+const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,image,modified,adKind='none'}=Astro.props;
+const brandSuffix=title.toLocaleLowerCase('es').includes('martín fierro')?'':' | Martín Fierro';
+const fullTitle=title+brandSuffix;
+const imageUrl=new URL(image||'/media/fotografias-v3/hero-gaucho-pampa.webp',Astro.site).toString();
+const editorial=lang.toLowerCase().startsWith('es')&&(['Article','LearningResource','NewsArticle'].includes(pageType));
+const authorOrg={'@type':'Organization',name:'Edición MARTINFIERRO.ORG',url:new URL('/proyecto/',Astro.site).toString()};
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
 const english=lang.toLowerCase().startsWith('en');
-const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
+const ruta=Astro.url.pathname.split('/').filter(Boolean);
+const crumbs=[{ '@type':'ListItem',position:1,name:'Inicio',item:new URL('/',Astro.site).toString()},...ruta.map((part,i)=>({ '@type':'ListItem',position:i+2,name:part.replaceAll('-',' '),item:new URL('/'+ruta.slice(0,i+1).join('/')+'/',Astro.site).toString()}))];
+const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()}, ...(editorial?{headline:title,author:authorOrg,publisher:authorOrg}:{}), ...(modified?{dateModified:modified}:{}), ...(editorial?{image:imageUrl}: {}), ...(pageType==='LearningResource'?{educationalLevel:'Educación secundaria',learningResourceType:'Guía de lectura'}:{}) };
+const schemaGraph={'@context':'https://schema.org','@graph':[jsonLd,...(ruta.length?[{'@type':'BreadcrumbList',itemListElement:crumbs}]:[])]};
 import AdSlot from '../components/AdSlot.astro';
 import '../styles/global.css';
 import '../styles/editorial-shell.css';
@@ -18,16 +26,17 @@ import '../styles/editorial-shell.css';
  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=20261030-original-2"/>
  <link rel="shortcut icon" href="/favicon.ico?v=20261030-original-2"/>
  <link rel="canonical" href={canonical}/>
- {noindex && <meta name="robots" content="noindex,follow"/>}
- <meta property="og:type" content="website"/>
+ <meta property="og:type" content={editorial?"article":"website"}/>
  <meta property="og:site_name" content="Martín Fierro"/>
- <meta property="og:title" content={`${title} | Martín Fierro`}/>
+ <meta property="og:title" content={fullTitle}/>
  <meta property="og:description" content={description}/>
  <meta property="og:url" content={canonical}/>
+ <meta property="og:image" content={imageUrl}/>
  <meta property="og:locale" content={lang.replace("-", "_")}/>
- <meta name="twitter:card" content="summary"/>
- <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}/>
- <title>{title} | Martín Fierro</title>
+ <meta name="twitter:card" content="summary_large_image"/>
+ <meta name="robots" content={noindex?"noindex,follow":"index,follow,max-image-preview:large"}/>
+ <script type="application/ld+json" set:html={JSON.stringify(schemaGraph)}/>
+ <title>{fullTitle}</title>
 </head>
 <body>
  <!-- Reserva n.º 1: inmediatamente después de abrir BODY; permanece oculta. -->
