@@ -1,8 +1,8 @@
 ---
-import Base from '../../../layouts/Base.astro';
-import {personajes} from '../../../data/personajes';
-import {personajeSeo,enlacePersonaje} from '../../../data/personajes-seo';
-import {estrofasDeCanto,enlaceCanto} from '../../../lib/corpus';
+import Base from '../../layouts/Base.astro';
+import {personajes} from '../../data/personajes';
+import {personajeSeo,enlacePersonaje} from '../../data/personajes-seo';
+import {estrofasDeCanto,enlaceCanto} from '../../lib/corpus';
 export function getStaticPaths(){return personajes.map(p=>({params:{slug:personajeSeo[p.id].slug},props:{id:p.id}}));}
 const {id}=Astro.props as {id:string};
 const p=personajes.find(x=>x.id===id)!;
