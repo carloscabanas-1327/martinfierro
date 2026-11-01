@@ -1,36 +1,43 @@
 ---
 import Base from '../../layouts/Base.astro';
-import {idiomas} from '../../data/idiomas';
-const ficha=idiomas.find(i=>i.codigo==='en')!;
+const items=[
+ {n:'01',title:'Read the original poem',summary:'Two parts, 46 cantos, and 7,210 verses in José Hernández’s original Spanish. Explore the full text with canto-by-canto navigation.',href:'/leer/',image:'/media/fotografias-v3/la-ida.webp',alt:'Digital recreation of a gaucho in the Argentine countryside'},
+ {n:'02',title:'Meet José Hernández',summary:'A writer, journalist, and political figure whose life and times shaped one of Argentina’s most influential literary works.',href:'/jose-hernandez/',image:'https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg',alt:'Historical photograph of Argentine writer José Hernández'},
+ {n:'03',title:'Discover gaucho life',summary:'The gauchos were skilled horsemen of the South American plains. Explore their work, traditions, and place in nineteenth-century society.',href:'/revista/quienes-eran-los-gauchos/',image:'/media/fotografias-v3/revista-cultural.webp',alt:'Digital recreation of nineteenth-century Argentine rural life'},
+ {n:'04',title:'Explore the historical archive',summary:'Early editions, letters, manuscripts, and documentary sources reveal how Martín Fierro was written, published, and remembered.',href:'/archivo/',image:'/media/fotografias-v3/archivo-documental-recreacion.webp',alt:'Editorial reconstruction of a historical document archive'}
+];
 ---
-<Base title={ficha.titulo} description={ficha.intro} lang="en" pageType="CollectionPage" noindex={ficha.estado !== 'original'}>
-  <div class="breadcrumbs"><a href="/">Martín Fierro</a><span>{ficha.nombre}</span></div>
-  <section class="section-intro">
-    <p class="eyebrow">MARTINFIERRO.ORG · {ficha.nombre}</p>
-    <h1>{ficha.titulo}</h1>
-    <p class="lead">{ficha.intro}</p>
+<Base lang="en-US" noindex={true} pageType="CollectionPage" title="Martín Fierro in English — Argentina’s Gaucho Epic" description="Discover Martín Fierro, Argentina’s famous gaucho poem by José Hernández. Explore its story, historical context, author, original Spanish text, and English translation sources.">
+<div class="en-portal">
+  <nav class="en-breadcrumb" aria-label="Breadcrumb"><a href="/">Martín Fierro</a><span aria-hidden="true">/</span><span>English edition</span></nav>
+  <div class="en-edition"><span>THE ENGLISH EDITION</span><span>ARGENTINE LITERATURE · HISTORY · CULTURE</span></div>
+  <section class="en-hero" aria-labelledby="en-title">
+    <div class="en-visual">
+      <img src="/media/fotografias-v3/hero-gaucho-pampa.webp" width="1440" height="850" fetchpriority="high" alt="Digital reconstruction of a gaucho riding across the Argentine pampas at sunset"/>
+      <p>EDITORIAL RECONSTRUCTION · NOT A HISTORICAL PHOTOGRAPH</p>
+    </div>
+    <div class="en-hero-copy">
+      <p class="en-kicker">JOSÉ HERNÁNDEZ · 1872 / 1879</p>
+      <h1 id="en-title">Martín Fierro: <em>the world of Argentina’s gaucho epic.</em></h1>
+      <p class="en-lead">A horseman, an outlaw, a singer—and a voice that helped shape a nation's literary imagination. Discover the poem, the history behind it, and the people who inhabited its world.</p>
+      <div class="en-actions"><a class="en-button" href="/leer/ida/1/" lang="es">Read the original poem <span aria-hidden="true">↗</span></a><a class="en-outline" href="#explore">Explore the story ↓</a></div>
+      <p class="en-language-note">The full poem is currently available in its original Spanish. English-language historical guides and documentation are being developed independently.</p>
+    </div>
   </section>
-  <nav class="language-picker" aria-label="Idiomas · Languages">
-    {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo} aria-current={i.codigo === ficha.codigo ? 'page' : undefined}>{i.nombre}</a>)}
-  </nav>
-  <section class="editorial-paper" aria-labelledby="traduccion-documentada">
-    <p class="eyebrow">{ficha.estado==='original'?'Texto original · 1872 y 1879':'Catálogo documental · Verificación pendiente'}</p>
-    <h2 id="traduccion-documentada">{ficha.traduccion}</h2>
-    <p>{ficha.nota}</p>
-    {ficha.estado!=='original' && <p><strong>Nota editorial:</strong> la referencia procede del inventario preliminar del proyecto; no implica que exista una edición íntegra localizada, ni que sea de dominio público o esté autorizada para reproducirse.</p>}
+  <section class="en-introduction" aria-labelledby="en-intro">
+    <p class="en-kicker">A LITERARY LANDMARK</p>
+    <h2 id="en-intro">Why does <em>Martín Fierro</em> matter?</h2>
+    <div><p>Published in two parts in 1872 and 1879, José Hernández’s narrative poem follows a gaucho whose encounters with military authority, rural life, and violence reveal the tensions of nineteenth-century Argentina.</p><p>Its first-person voice, rhythms, and rural vocabulary made it a defining work of gauchesque literature. Beyond the adventures of one man, the poem raises enduring questions about justice, belonging, and the treatment of people living at society’s margins.</p></div>
   </section>
-  <section class="editorial-paper" aria-labelledby="fonte-internacional">
-    <p class="eyebrow">DOCUMENTARY ACCESS · EN</p>
-    <h2 id="fonte-internacional">Read the historical English edition</h2>
-    <p><strong>Walter Owen · 1935 · digitized facsimile</strong></p>
-    <p>The 351-page PDF is hosted by Wikimedia Commons. This opens the historical edition on an external website; its text has not been transcribed into our reader.</p>
-    <p><a href="https://commons.wikimedia.org/wiki/File:The_Gaucho_Martin_Fierro_-_Jose_Hernandez.pdf" target="_blank" rel="noopener noreferrer">Open the digitized English facsimile ↗</a></p>
-    <p><a href="/traducciones/">See the complete translations catalogue →</a></p>
+  <section id="explore" class="en-section" aria-labelledby="en-explore">
+    <div class="en-section-heading"><p class="en-kicker">EXPLORE THE COLLECTION</p><h2 id="en-explore">Begin with the people, places, and pages.</h2></div>
+    <div class="en-grid">{items.map(item=><article class="en-card"><a href={item.href}><div class="en-image"><img src={item.image} alt={item.alt} loading="lazy" decoding="async"/></div><div class="en-card-copy"><span>{item.n} / THE COLLECTION</span><h3>{item.title}</h3><p>{item.summary}</p><strong>Explore this section <span aria-hidden="true">↗</span></strong>{item.href.startsWith('/revista/') && <small>Source article currently in Spanish</small>}</div></a></article>)}</div>
+    <p class="en-context">Some linked research and reading pages currently open in Spanish. The English edition will grow with original editorial content as it is published.</p>
   </section>
-  <div class="editorial-directory">
-    <a class="directory-feature" href="/leer/ida/"><span class="directory-mark">1872 · ORIGINAL</span><h2>El gaucho Martín Fierro</h2><p>13 cantos · texto original en español</p><span class="text-link">Leer →</span></a>
-    <a class="directory-feature" href="/leer/vuelta/"><span class="directory-mark">1879 · ORIGINAL</span><h2>La vuelta de Martín Fierro</h2><p>33 cantos · texto original en español</p><span class="text-link">Leer →</span></a>
-    <a class="directory-feature" href="/archivo/"><span class="directory-mark">FUENTES</span><h2>Archivo documental</h2><p>Procedencia del corpus, metodología y recursos de investigación en español</p><span class="text-link">Consultar →</span></a>
-  </div>
-  <p class="notice">Las fichas internacionales son páginas documentales iniciales, no traducciones publicadas. Los enlaces a la obra llevan a la edición original española.</p>
+  <section class="en-translation" aria-labelledby="en-translations"><div><p class="en-kicker">THE POEM ACROSS LANGUAGES</p><h2 id="en-translations">An English translation with its own history.</h2><p>Walter Owen’s historical English translation appeared in 1935. A digitized edition can be consulted through Wikimedia Commons. Its text is not reproduced in our reader; translations have their own copyright considerations.</p><div class="en-actions"><a class="en-button" href="https://commons.wikimedia.org/wiki/File:The_Gaucho_Martin_Fierro_-_Jose_Hernandez.pdf" target="_blank" rel="noopener noreferrer">View the historical edition ↗</a><a class="en-outline" href="/traducciones/">Translation sources (Spanish) ↗</a></div></div><img src="/media/archivo/ejemplar-corregido-martin-fierro-1872-portada.webp" alt="Historical cover of the original 1872 Spanish edition of El gaucho Martín Fierro; not the Walter Owen translation" loading="lazy"/></section>
+  <section class="en-final" aria-labelledby="en-final-title"><p class="en-kicker">A DOCUMENTARY CULTURAL LIBRARY</p><h2 id="en-final-title">A poem is only the beginning.</h2><p>Martín Fierro lives at the meeting point of literature, social history, and the cultural memory of Argentina. This independent edition brings sources and stories together while clearly distinguishing historical evidence from modern interpretation.</p><a href="/fuentes-y-derechos/">Sources, attribution, and editorial transparency (Spanish) ↗</a></section>
+</div>
+<style>
+.en-portal{font-family:Georgia,serif;color:#2d261e;margin:10px 0 80px}.en-portal a{color:inherit}.en-breadcrumb{display:flex;gap:12px;font:500 .76rem system-ui,sans-serif;margin:20px 0 22px}.en-breadcrumb a{text-decoration:underline}.en-edition{display:flex;justify-content:space-between;gap:16px;border-top:1px solid #9b8977;border-bottom:1px solid #9b8977;padding:12px 0;letter-spacing:.16em;font:700 .68rem system-ui,sans-serif}.en-hero{display:grid;grid-template-columns:1.13fr .87fr;margin-top:24px;background:#eae0d1;min-height:520px}.en-visual{position:relative;min-height:440px}.en-visual img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.en-visual p{position:absolute;bottom:0;left:0;right:0;padding:12px 18px;color:white;background:#251e18c9;letter-spacing:.08em;font:600 .65rem system-ui,sans-serif;margin:0}.en-hero-copy{padding:clamp(25px,4vw,66px);display:flex;flex-direction:column;justify-content:center}.en-kicker{color:#8b4731;letter-spacing:.15em;font:750 .7rem system-ui,sans-serif;margin:0 0 18px}.en-hero h1{font-size:clamp(2.3rem,4.7vw,4.8rem);line-height:1.05;letter-spacing:-.045em;margin:0 0 24px}.en-hero h1 em{font-weight:400}.en-lead{font-size:clamp(1.08rem,1.6vw,1.3rem);line-height:1.55;margin:0 0 24px}.en-actions{display:flex;flex-wrap:wrap;gap:10px}.en-actions a{font:700 .84rem system-ui,sans-serif;text-decoration:none;padding:14px 17px;display:inline-flex;align-items:center;border:1px solid #392d23}.en-button{background:#392d23;color:#fff!important}.en-outline{background:transparent}.en-language-note{font:400 .75rem/1.55 system-ui,sans-serif;color:#63594e;margin-top:22px}.en-introduction{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;border-block:1px solid #bba995;padding:50px 0;margin-top:45px}.en-introduction h2,.en-section-heading h2,.en-translation h2,.en-final h2{font-size:clamp(2rem,3.5vw,3.3rem);letter-spacing:-.035em;line-height:1.12;margin:0}.en-introduction p:not(.en-kicker){line-height:1.8;margin:0 0 15px;font-size:1.06rem}.en-section{padding:45px 0}.en-section-heading{margin-bottom:24px}.en-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.en-card{border-top:2px solid #382d25;border-bottom:1px solid #d0c0ae;min-width:0}.en-card>a{display:grid;grid-template-columns:39% 61%;text-decoration:none;height:100%}.en-image{min-height:255px;background:#d8c8b7}.en-image img{height:100%;width:100%;object-fit:cover}.en-card-copy{padding:19px 18px}.en-card-copy>span{font:750 .67rem system-ui,sans-serif;letter-spacing:.1em;color:#9a4d34}.en-card h3{font-size:clamp(1.3rem,2vw,1.9rem);line-height:1.12;margin:13px 0}.en-card p{font-size:.94rem;line-height:1.65}.en-card strong{font:750 .77rem system-ui,sans-serif;text-decoration:underline}.en-card small{display:block;margin-top:10px;color:#765e4a;font:400 .72rem system-ui,sans-serif}.en-context{margin-top:20px;color:#5e5143;font:400 .85rem/1.6 system-ui,sans-serif}.en-translation{display:grid;grid-template-columns:1fr 180px;gap:38px;align-items:center;background:#eae0d1;padding:40px;margin:24px 0 45px}.en-translation p:not(.en-kicker),.en-final>p:not(.en-kicker){max-width:70ch;font-size:1.05rem;line-height:1.8}.en-translation img{width:100%;max-height:290px;object-fit:contain}.en-final{padding:35px 0;border-top:2px solid #382d25}.en-final a{font:700 .86rem system-ui,sans-serif}@media(max-width:840px){.en-hero{grid-template-columns:1fr}.en-visual{min-height:310px}.en-introduction{grid-template-columns:1fr}.en-grid{grid-template-columns:1fr}}@media(max-width:550px){.en-edition{font-size:.56rem}.en-card>a{grid-template-columns:1fr}.en-image{height:230px;min-height:0}.en-translation{grid-template-columns:1fr;padding:24px}.en-translation img{max-height:210px}.en-hero-copy{padding:26px}}
+</style>
 </Base>
