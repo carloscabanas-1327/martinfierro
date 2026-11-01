@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import {documentosES} from '../../data/es-reference';
+---
+<Base title="Buscar artículos y documentos de Martín Fierro" description="Buscá artículos, personajes, investigaciones, revista y temas de la edición española.">
+<article class="mf-doc-search">
+ <nav aria-label="Ruta de navegación"><a href="/">Inicio</a> / <a href="/indice-general/">Índice general</a> / Buscar documentos</nav>
+ <header><p class="eyebrow">BIBLIOTECA DOCUMENTAL · EDICIÓN ESPAÑOLA</p><h1>Buscar en la biblioteca</h1><p class="lead">Encontrá artículos, investigaciones, personajes y recorridos temáticos. Para localizar palabras del poema original, usá el <a href="/buscar/">buscador de los 7.210 versos</a>.</p></header>
+ <form id="mf-busqueda-documental" role="search"><label for="mf-consulta-documental">Palabra, personaje o tema</label><div class="mf-controls"><input id="mf-consulta-documental" name="q" type="search" autocomplete="off" placeholder="Por ejemplo: Cruz, pulpería, frontera o Hernández"/><button type="submit">Buscar</button></div></form>
+ <p id="mf-doc-estado" aria-live="polite" role="status">Explorá los documentos disponibles.</p>
+ <div id="mf-documentos" class="mf-documentos">{documentosES.map(d=><article class="mf-documento" data-haystack={`${d.titulo} ${d.descripcion} ${d.categoria}`}><small>{d.categoria}</small><h2><a href={d.url}>{d.titulo}</a></h2><p>{d.descripcion}</p></article>)}</div>
+ <noscript>La lista completa permanece disponible; activá JavaScript para filtrar los documentos.</noscript>
+</article>
+<script>
+const formulario=document.querySelector<HTMLFormElement>('#mf-busqueda-documental')!;
+const input=document.querySelector<HTMLInputElement>('#mf-consulta-documental')!;
+const estado=document.querySelector<HTMLElement>('#mf-doc-estado')!;
+const items=Array.from(document.querySelectorAll<HTMLElement>('.mf-documento'));
+const normalizar=(v:string)=>v.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+function filtrar(){
+ const terms=normalizar(input.value).split(/\s+/).filter(Boolean);let n=0;
+ for(const item of items){const hay=normalizar(item.dataset.haystack||'');const visible=terms.every(t=>hay.includes(t));item.hidden=!visible;if(visible)n++;}
+ estado.textContent=terms.length?`${n} documentos coincidentes.`:`${n} documentos disponibles.`;
+}
+formulario.addEventListener('submit',event=>{event.preventDefault();filtrar();});
+input.addEventListener('input',filtrar);
+const inicial=new URL(location.href).searchParams.get('q');if(inicial)input.value=inicial;
+filtrar();
+</script>
+<style>
+.mf-doc-search{max-width:1050px;margin:auto;padding:0 15px 70px}
+.mf-doc-search>nav{font:.85rem system-ui,sans-serif;margin-bottom:30px}
+.mf-doc-search header{margin:40px 0 25px}.mf-doc-search h1{max-width:none!important}
+.mf-doc-search label{display:block;font-weight:700;margin-bottom:10px}
+.mf-controls{display:flex;gap:9px}.mf-controls input{flex:1;min-width:0;padding:13px;border:1px solid #a98c76;background:#fffaf3;font:1rem system-ui,sans-serif}
+.mf-controls button{background:#a34d36;border:0;color:#fff;padding:13px 20px;font-weight:700;cursor:pointer}
+.mf-documentos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}
+.mf-documento{background:#f0e7da;padding:22px;border-top:3px solid #a34d36}.mf-documento[hidden]{display:none}
+.mf-documento small{font:700 .73rem system-ui,sans-serif;color:#82412c;text-transform:uppercase}
+.mf-documento h2{font:600 1.5rem/1.25 Georgia,serif;margin:9px 0}.mf-documento p{line-height:1.55;color:#53483f}
+.mf-doc-search :focus-visible{outline:3px solid #a34d36;outline-offset:3px}
+@media(max-width:650px){.mf-documentos{grid-template-columns:1fr}.mf-controls{flex-direction:column}.mf-controls button{min-height:44px}}
+</style>
+</Base>
