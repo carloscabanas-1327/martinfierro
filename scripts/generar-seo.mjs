@@ -23,6 +23,20 @@ for(const file of files){
  const urlPath=rel?'/'+rel+'/':'/';
  if(excludes.has(urlPath))continue;
  const html=await readFile(file,'utf8');
+ const spanish=urlPath==='/'||(!urlPath.startsWith('/en/')&&!urlPath.startsWith('/it/')&&!urlPath.startsWith('/pt/'));
+ if(spanish){
+  const title=(html.match(/<title>([^<]*)<\/title>/i)||[])[1]?.replace(/&amp;/g,'&')||'';
+  const desc=(html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)/i)||[])[1]?.replace(/&amp;/g,'&')||'';
+  const blocked=/<meta\s+name=["']robots["'][^>]*noindex/i.test(html);
+  const ogImage=(html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']*)/i)||[])[1];
+  const schemaText=(html.match(/<script\s+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/i)||[])[1];
+  if(!title||title.length>60)errors.push({urlPath,issue:'title',length:title.length});
+  if(!blocked&&(desc.length<140||desc.length>155))errors.push({urlPath,issue:'meta description',length:desc.length});
+  if(!ogImage)errors.push({urlPath,issue:'og:image ausente'});
+  if(!schemaText)errors.push({urlPath,issue:'JSON-LD ausente'});
+  else {try{const parsed=JSON.parse(schemaText);if(!parsed['@graph'])errors.push({urlPath,issue:'schema graph ausente'});}catch{errors.push({urlPath,issue:'JSON-LD inválido'})}}
+ }
+
  if(/^\/estudiantes\/(ida|vuelta)\/canto-/.test(urlPath)){
   const title=(html.match(/<title>([^<]*)<\/title>/i)||[])[1]?.replace(/&amp;/g,'&')||'';
   const description=(html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)/i)||[])[1]?.replace(/&amp;/g,'&')||'';
