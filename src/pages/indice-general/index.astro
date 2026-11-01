@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { partes, enlaceCanto } from '../../lib/corpus';
 import { temas } from '../../data/temas';
 import { personajes } from '../../data/personajes';
+import {urlEstudio} from '../../data/seo-cantos-estudiantes';
 import '../../styles/indice-general.css';
 const grupos=[
   {
@@ -335,7 +336,7 @@ const grupos=[
 ];
 const enlacesEducativos=[
  {titulo:'Para estudiantes · recursos de estudio',url:'/estudiantes/',descripcion:'Análisis de lectura, personajes y actividades para los 46 cantos.'},
- ...(['ida','vuelta'] as const).flatMap(parte=>partes[parte].cantos.map(c=>({titulo:`Ficha para estudiantes · ${parte==='ida'?'La ida':'La vuelta'} · Canto ${c.numero}`,url:`/estudiantes/${parte}/${c.numero}/`,descripcion:'Estrofas originales, personajes y preguntas de lectura.'})))
+ ...(['ida','vuelta'] as const).flatMap(parte=>partes[parte].cantos.map(c=>({titulo:`Ficha para estudiantes · ${parte==='ida'?'La ida':'La vuelta'} · Canto ${c.numero}`,url:urlEstudio(parte,c.numero),descripcion:'Estrofas originales, personajes y preguntas de lectura.'})))
 ];
 const grupoEstudiantes={id:'estudiantes',numero:'07',titulo:'Para estudiantes',nota:'Guías y fichas de lectura de los 46 cantos, con personajes',enlaces:enlacesEducativos};
 grupos.push(grupoEstudiantes);
