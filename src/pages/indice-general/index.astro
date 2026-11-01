@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { partes, enlaceCanto } from '../../lib/corpus';
 import { temas } from '../../data/temas';
 import { personajes } from '../../data/personajes';
+import {enlacePersonaje} from '../../data/personajes-seo';
 import '../../styles/indice-general.css';
 const grupos=[
   {
@@ -108,7 +109,7 @@ const grupos=[
         "url": "/personajes/",
         "descripcion": "Guía ilustrada de personajes y sus papeles en la obra."
       },
-      ...personajes.map(p=>({titulo:p.nombre,url:`/personajes/#${p.id}`,descripcion:`${p.tipo}. ${p.resumen} ${p.interpretacion} ${p.id==='moreno-muerto'?'negro del baile; negro de la pulpería; hombre negro; afroargentino; afrodescendiente':''} ${p.id==='el-moreno'?'moreno de la payada; payador negro; cantor afroargentino':''}`})),
+      ...personajes.map(p=>({titulo:p.nombre,url:enlacePersonaje(p.id),descripcion:`${p.tipo}. ${p.resumen} ${p.interpretacion} ${p.id==='moreno-muerto'?'negro del baile; negro de la pulpería; hombre negro; afroargentino; afrodescendiente':''} ${p.id==='el-moreno'?'moreno de la payada; payador negro; cantor afroargentino':''}`})),
       {
         "titulo": "Exégesis y claves de lectura",
         "url": "/exegesis/",
