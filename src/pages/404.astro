@@ -1,0 +1,43 @@
+---
+// Cloudflare Pages serves the root 404.html for unknown static routes.
+// A tiny inline script selects the correct language when the missing path begins with /en/.
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,follow"/>
+<meta name="theme-color" content="#f7f2e8"/>
+<title>Página no encontrada | Martín Fierro</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f2e8;color:#31281f;font-family:Georgia,serif}header,main,footer{max-width:900px;margin:auto;padding:25px clamp(20px,5vw,55px)}header{border-bottom:2px solid #382e25}header a{font-size:1.5rem;text-decoration:none;color:inherit;font-weight:bold}small{font:700 .72rem system-ui,sans-serif;letter-spacing:.12em;color:#99513a}main{padding-top:9vh;padding-bottom:12vh}h1{font:600 clamp(2.5rem,7vw,5.5rem)/1.07 Georgia,serif;letter-spacing:-.035em;margin:15px 0 24px}p{font-size:1.17rem;line-height:1.7;max-width:65ch}.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.links a{padding:14px 20px;border:1px solid #493a2d;color:#3b2f26;text-decoration:none;font:700 .87rem system-ui,sans-serif}.links a.primary{background:#392d23;color:white}footer{border-top:1px solid #baab98;font:.82rem system-ui,sans-serif;color:#716050}
+</style>
+</head>
+<body>
+<header><a id="brand" href="/">Martín Fierro</a></header>
+<main id="main"><small id="kicker">ERROR 404 · BIBLIOTECA DIGITAL</small><h1 id="heading">Esta página no existe.</h1><p id="description">La dirección que buscás no está disponible. Podés regresar a la portada, consultar el índice general o buscar en los versos.</p><nav class="links" aria-label="Volver a navegar"><a class="primary" id="home" href="/">Volver al inicio</a><a id="secondary" href="/indice-general/">Índice general</a></nav></main>
+<footer id="footer">MARTINFIERRO.ORG · Biblioteca documental y revista cultural argentina.</footer>
+<script is:inline>
+(function(){
+  var en=/^\/en(?:\/|$)/i.test(window.location.pathname);
+  if(!en)return;
+  document.documentElement.lang='en-US';
+  document.title='Page not found | Martín Fierro';
+  var strings={
+    kicker:'404 ERROR · ENGLISH EDITION',
+    heading:'This page could not be found.',
+    description:'The page you requested is not available. Return to the English edition to explore Martín Fierro, its history, and the world of the Argentine gauchos.',
+    home:'Back to the English edition',
+    secondary:'Read the English introduction',
+    footer:'MARTINFIERRO.ORG · Argentine literature, history, and culture.'
+  };
+  Object.keys(strings).forEach(function(id){document.getElementById(id).textContent=strings[id]});
+  document.getElementById('brand').href='/en/';
+  document.getElementById('home').href='/en/';
+  document.getElementById('secondary').href='/en/what-is-martin-fierro/';
+  document.querySelector('nav.links').setAttribute('aria-label','Continue exploring');
+})();
+</script>
+</body>
+</html>
