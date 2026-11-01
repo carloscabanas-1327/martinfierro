@@ -55,7 +55,7 @@ for(const file of files){
  if(urlPath.startsWith('/en/')&&lang!=='en-US')errors.push({urlPath,issue:'English route missing en-US language',lang});
  locations.push(expected);
 }
-if(errors.length){console.error('Invalid canonical or page language',errors.slice(0,20));process.exit(1)}
+if(errors.length){await writeFile(path.join(root,'auditoria-seo-es.json'),JSON.stringify({total:errors.length,errors},null,2),'utf8');console.error('Auditoría SEO española: '+errors.length+' incidencias');console.error(JSON.stringify(errors,null,2));process.exit(1)}
 locations.sort((a,b)=>a.localeCompare(b,'en'));
 const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+locations.map(u=>`  <url><loc>${esc(u)}</loc></url>`).join('\n')+'\n</urlset>\n';
 await writeFile(path.join(root,'sitemap.xml'),sitemap,'utf8');
