@@ -7,6 +7,7 @@ on:
       - 'diseno/**'
     paths:
       - 'src/**'
+      - 'scripts/**'
       - 'package.json'
       - 'astro.config.mjs'
       - 'tsconfig.json'
@@ -51,6 +52,8 @@ jobs:
             assert html.exists()
           print('OK: 46 cantos, 7210 versos y rutas HTML construidas')
           PY
+      - name: Auditar enlaces y cobertura del índice general
+        run: python scripts/auditar-enlaces.py
       - name: Guardar versión de prueba
         uses: actions/upload-artifact@v4
         with:
