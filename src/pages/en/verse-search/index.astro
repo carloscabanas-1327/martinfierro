@@ -1,0 +1,65 @@
+---
+import Base from '../../../layouts/Base.astro';
+---
+<Base lang="en-US" pageType="SearchResultsPage" title="Search All 7,210 Original Martín Fierro Verses" description="Search all 7,210 original Spanish verses of Martín Fierro from an English interface. Find phrases, part, canto and stanza; jump directly to authentic source text.">
+<article class="verse-search">
+<nav class="crumb"><a href="/en/">English edition</a> / <a href="/en/reader/">Reading the original</a> / Verse search</nav>
+<p class="kicker">ENGLISH RESEARCH TOOL · SPANISH PRIMARY TEXT</p>
+<h1>Search all 7,210 original verses</h1>
+<p class="lead">Search words or exact phrases across both parts of <em>Martín Fierro</em>. Results preserve José Hernández's original Spanish and show the part, canto, stanza and verse. This is <strong>not an English translation</strong>.</p>
+<form id="verse-form" role="search">
+<label for="verse-query">Word or phrase from the Spanish poem</label>
+<div class="search-controls"><input id="verse-query" name="q" type="search" placeholder="e.g. los hermanos sean unidos" autocomplete="off" minlength="2"/><select id="verse-part" aria-label="Filter by part"><option value="both">Both parts</option><option value="ida">Part One · 1872</option><option value="vuelta">Part Two · 1879</option></select><button type="submit">Search verses</button></div>
+<label class="toggle"><input id="verse-accents" type="checkbox" checked/> Ignore accent marks</label>
+</form>
+<p id="verse-status" role="status" aria-live="polite">Enter at least two characters to search.</p><div id="verse-results" aria-label="Verse search results"></div>
+<noscript><p>JavaScript is required for verse search. All 46 cantos remain accessible through the <a href="/en/reader/">English reading guide</a>.</p></noscript>
+<p class="note">Search checks each verse individually, without changing its original wording. It does not currently match phrases split across verse boundaries. At most 150 results are displayed at once; the total number of matches is reported.</p>
+</article>
+<script>
+type Verse={id:string;texto:string;parte:'ida'|'vuelta';canto:number;estrofa:number;linea:number};
+const query=document.querySelector<HTMLInputElement>('#verse-query')!;
+const part=document.querySelector<HTMLSelectElement>('#verse-part')!;
+const accents=document.querySelector<HTMLInputElement>('#verse-accents')!;
+const status=document.querySelector<HTMLElement>('#verse-status')!;
+const results=document.querySelector<HTMLElement>('#verse-results')!;
+const form=document.querySelector<HTMLFormElement>('#verse-form')!;
+let records:Verse[]|null=null;
+let loadPromise:Promise<Verse[]>|null=null;
+let generation=0;
+function normalized(s:string){let v=s.toLocaleLowerCase('es');if(accents.checked)v=v.normalize('NFD').replace(/[\u0300-\u036f]/g,'');return v.trim()}
+function render(){
+ const q=normalized(query.value);
+ results.replaceChildren();
+ if(q.length<2){status.textContent='Enter at least two characters to search.';return}
+ if(!records){status.textContent='Loading the original verse index…';return}
+ const matching=records.filter(v=>(part.value==='both'||v.parte===part.value)&&normalized(v.texto).includes(q));
+ status.textContent=`${matching.length.toLocaleString('en-US')} matching ${matching.length===1?'verse':'verses'}. ${matching.length>150?'First 150 shown.':''}`;
+ for(const verse of matching.slice(0,150)){
+  const article=document.createElement('article');article.className='verse-result';
+  const a=document.createElement('a');a.href=`/leer/${verse.parte}/${verse.canto}/#${verse.id}`;a.lang='es';
+  a.textContent=`${verse.parte==='ida'?'Part One (1872)':'Part Two (1879)'} · Canto ${verse.canto} · Stanza ${verse.estrofa}, verse ${verse.linea} · Open original (Spanish)`;
+  const text=document.createElement('p');text.lang='es';text.textContent=verse.texto;
+  article.append(a,text);results.append(article);
+ }
+}
+async function search(){
+ const g=++generation;
+ if(normalized(query.value).length<2){render();return}
+ if(!records){
+  try{
+   loadPromise??=fetch('/indice-versos.json').then(async r=>{if(!r.ok)throw Error('index unavailable');return await r.json() as Verse[]});
+   records=await loadPromise;
+   if(records.length!==7210)throw Error('verse count mismatch');
+  }catch{loadPromise=null;records=null;if(g===generation)status.textContent='The verse index could not be loaded. Please try again.';return}
+ }
+ if(g===generation)render();
+}
+form.addEventListener('submit',e=>{e.preventDefault();void search()});
+query.addEventListener('input',()=>{void search()});
+part.addEventListener('change',()=>{void search()});
+accents.addEventListener('change',()=>{void search()});
+const initial=new URLSearchParams(location.search).get('q');if(initial){query.value=initial;void search()}
+</script>
+<style>.verse-search{max-width:1020px;margin:25px auto 90px;color:#30271e}.verse-search a{color:#83402d;text-underline-offset:4px}.crumb,.kicker{font:.79rem system-ui,sans-serif}.kicker{font-weight:750;letter-spacing:.13em;color:#98523b}.verse-search h1{font:600 clamp(2.5rem,5vw,4.7rem)/1.1 Georgia,serif}.lead{font:1.22rem/1.7 Georgia,serif}.verse-search form{background:#eee3d7;padding:25px;margin:32px 0}.verse-search label{display:block;font:700 .92rem system-ui,sans-serif;margin:0 0 12px}.search-controls{display:flex;flex-wrap:wrap;gap:10px}.search-controls input{flex:2;min-width:200px}.search-controls select{flex:1;min-width:165px}.search-controls input,.search-controls select{padding:14px;border:1px solid #b2a18d;font:1rem system-ui,sans-serif}.search-controls button{padding:12px 18px;border:0;background:#372a20;color:white;font:700 .9rem system-ui,sans-serif;cursor:pointer}.toggle{display:flex!important;align-items:center;gap:9px;margin:16px 0 0!important}.verse-result{border-top:1px solid #c4b19a;padding:18px 0}.verse-result>a{font:700 .86rem/1.5 system-ui,sans-serif}.verse-result p{font:1.15rem/1.65 Georgia,serif}.note{font:.88rem/1.65 system-ui,sans-serif;color:#685747;margin:35px 0}@media(max-width:690px){.verse-search{padding:0 12px}.search-controls{flex-direction:column}.search-controls input,.search-controls select{width:100%}}</style>
+</Base>
