@@ -5,6 +5,13 @@ import {partes,estrofasDeCanto,enlaceCanto} from '../../../lib/corpus';
 export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).flatMap(parte=>partes[parte].cantos.map(c=>({params:{parte,canto:String(c.numero)},props:{parte,canto:c.numero}})));}
 const {parte,canto}=Astro.props as {parte:keyof typeof partes;canto:number};
 const libro=partes[parte];const estrofas=estrofasDeCanto(parte,canto);
+const versoInicial=estrofas[0]?.versos[0]?.texto??'';
+const inicio=`Canto ${canto} de ${libro.nombre}: «${versoInicial}».`;
+const lectura=` Leé el poema original de José Hernández, con estrofas numeradas y enlaces para continuar con la guía de estudio.`;
+let descripcionLector=inicio+lectura;
+if(descripcionLector.length<140)descripcionLector+=' Consultá el texto y sus referencias documentales.';
+if(descripcionLector.length>155)descripcionLector=descripcionLector.slice(0,155).replace(/\s+\S*$/,'').replace(/[,;:.]$/,'')+'.';
+
 const siguiente=canto<libro.cantos.length?enlaceCanto(parte,canto+1):parte==='ida'?enlaceCanto('vuelta',1):null;
 // Glosario de lectura opcional: la fuente documental jamás se modifica.
 const definiciones: Record<string,string> = {
@@ -26,7 +33,7 @@ function fragmentosGlosario(texto:string){
 }
 const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('ida',partes.ida.cantos.length):null;
 ---
-<Base title={`Canto ${canto} — ${libro.nombre}`} description={`Leé el canto ${canto} de ${libro.nombre}, de José Hernández, estrofa por estrofa.`}>
+<Base title={`Canto ${canto} — ${libro.nombre}`} description={descripcionLector}>
 <div class="mf-reader-page">
  <div class="mf-reader-hero">
   <img src={parte==='ida'?'/media/fotografias-v3/la-ida.webp':'/media/fotografias-v3/la-vuelta.webp'} alt="" width="1600" height="1000" decoding="async" fetchpriority="high"/>
