@@ -23,6 +23,16 @@ for(const file of files){
  const urlPath=rel?'/'+rel+'/':'/';
  if(excludes.has(urlPath))continue;
  const html=await readFile(file,'utf8');
+ if(/^\/estudiantes\/(ida|vuelta)\/canto-/.test(urlPath)){
+  const title=(html.match(/<title>([^<]*)<\/title>/i)||[])[1]?.replace(/&amp;/g,'&')||'';
+  const description=(html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)/i)||[])[1]?.replace(/&amp;/g,'&')||'';
+  if(title.length>60||!title)errors.push({urlPath,issue:'title fuera de 60 caracteres',length:title.length});
+  if(description.length<140||description.length>155)errors.push({urlPath,issue:'description fuera de 140-155',length:description.length});
+  if(!html.includes('property="og:image"'))errors.push({urlPath,issue:'sin og:image'});
+  if(!html.includes('property="og:type" content="article"'))errors.push({urlPath,issue:'og:type incorrecto'});
+  if(!html.includes('summary_large_image'))errors.push({urlPath,issue:'twitter card incorrecta'});
+ }
+
  if(/<meta\s+name=["']robots["'][^>]*noindex/i.test(html))continue;
  const canonical=(html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)/i)||[])[1];
  const expected=origin+urlPath;
