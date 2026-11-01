@@ -2,26 +2,53 @@
 import Base from '../../../layouts/Base.astro';
 import {partes,estrofasDeCanto,enlaceCanto} from '../../../lib/corpus';
 import {personajes} from '../../../data/personajes';
-export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).flatMap(parte=>partes[parte].cantos.map(c=>({params:{parte,canto:String(c.numero)},props:{parte,canto:c.numero}})));}
+import {seoCanto,urlEstudio} from '../../../data/seo-cantos-estudiantes';
+import {lecturasIdaEstudiantes} from '../../../data/lecturas-ida-estudiantes';
+import {lecturasVuelta} from '../../../data/exegesis-vuelta';
+import {preguntasVueltaEstudiantes} from '../../../data/preguntas-vuelta-estudiantes';
+import {pruebasCantos} from '../../../data/pruebas-literarias-cantos';
+import {vocabularioCantos} from '../../../data/vocabulario-cantos-estudiantes';
+import {alertasCriticasCantos} from '../../../data/alertas-criticas-cantos';
+export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).flatMap(parte=>partes[parte].cantos.map(c=>({params:{parte,canto:seoCanto(parte,c.numero).slug},props:{parte,canto:c.numero}})));}
 const {parte,canto}=Astro.props as {parte:'ida'|'vuelta';canto:number};
+const seo=seoCanto(parte,canto);
 const libro=partes[parte];const estrofas=estrofasDeCanto(parte,canto);
-const ejemplos=[estrofas[0],estrofas[Math.floor(estrofas.length/2)]].filter((x,i,a)=>x && a.findIndex(y=>y?.id===x.id)===i);
+const idaLectura=parte==='ida'?lecturasIdaEstudiantes.find(x=>x.canto===canto):undefined;
+const vueltaLectura=parte==='vuelta'?lecturasVuelta.find(x=>x.canto===canto):undefined;
+const vueltaPreguntas=parte==='vuelta'?preguntasVueltaEstudiantes.find(x=>x.canto===canto)?.preguntas:undefined;
+if(!idaLectura&&!vueltaLectura)throw new Error(`Falta lectura documentada de ${parte} canto ${canto}`);
+const analisisTitulo=idaLectura?.titulo??vueltaLectura?.titulo??'';
+const hechos=idaLectura?.hechos??vueltaLectura?.analisis??'';
+const interpretacion=idaLectura?.interpretacion??vueltaLectura?.contexto??'';
+const preguntas=idaLectura?.preguntas??vueltaPreguntas??[];
+const voz=parte==='ida'?(canto>=10&&canto<=12?'En este tramo adquiere relieve la voz narrativa de Cruz; debe distinguirse de la de Fierro.':'La voz de Martín Fierro domina el relato; sus juicios expresan su perspectiva, no automáticamente la del autor.'):(canto>=12&&canto<=13?'Aquí adquiere voz propia el hijo mayor de Fierro.':canto>=14&&canto<=19?'El hijo menor cuenta su historia y transmite palabras del tutor; no debemos atribuirle todas sus máximas.':canto>=21&&canto<=28?'Picardía narra experiencias propias y no habla en nombre de Fierro.':canto===30?'Fierro y el Moreno dialogan en contrapunto, con voces y propósitos diferentes.':'La narración alterna canto, memoria y voces de los personajes; comprobá quién habla en cada estrofa.');
+const seleccion=pruebasCantos.find(x=>x.parte===parte&&x.canto===canto);
+if(!seleccion)throw new Error(`Falta selección de estrofas: ${parte} ${canto}`);
+const ejemplos=seleccion.estrofas.map(n=>estrofas.find(e=>e.numero===n)).filter((e):e is NonNullable<typeof e>=>Boolean(e));
+if(ejemplos.length!==seleccion.estrofas.length)throw new Error(`Referencia de estrofa inexistente: ${parte} ${canto}`);
+const entradilla=hechos.length>175?`${hechos.slice(0,172).replace(/\s+\S*$/,'')}…`:hechos;
+const alertaCritica=alertasCriticasCantos.find(x=>x.parte===parte&&x.canto===canto)?.alerta;
+if(!alertaCritica)throw new Error(`Sin control crítico de ${parte}, canto ${canto}`);
+const vocabulario=vocabularioCantos.find(x=>x.parte===parte&&x.canto===canto)?.terminos??[];
 const relacionados=personajes.filter(p=>p.referencias.some(r=>r.parte===parte&&r.canto===canto));
-const siguiente=canto<libro.cantos.length? `/estudiantes/${parte}/${canto+1}/`:parte==='ida'?'/estudiantes/vuelta/1/':null;
-const anterior=canto>1? `/estudiantes/${parte}/${canto-1}/`:parte==='vuelta'?'/estudiantes/ida/13/':null;
+const siguiente=canto<libro.cantos.length? urlEstudio(parte,canto+1):parte==='ida'?urlEstudio('vuelta',1):null;
+const anterior=canto>1? urlEstudio(parte,canto-1):parte==='vuelta'?urlEstudio('ida',13):null;
 ---
-<Base pageType="LearningResource" title={`Guía de estudio: ${libro.nombre}, canto ${canto}`} description={`Ficha de lectura del canto ${canto} de ${libro.nombre}: fragmentos originales, personajes, preguntas para analizar y enlace al poema íntegro.`}>
+<Base pageType="LearningResource" title={seo.titulo} description={`${analisisTitulo}. ${seo.tema}. Análisis de ${libro.nombre}, canto ${canto}, con versos originales y actividades.`}>
 <article class="mf-study">
  <nav class="mf-crumb" aria-label="Ruta de navegación"><a href="/">Inicio</a> / <a href="/estudiantes/">Para estudiantes</a> / <a href={`/leer/${parte}/`}>{libro.nombre}</a> / Canto {canto}</nav>
- <header><p class="eyebrow">GUÍA DE ESTUDIO · {libro.anio}</p><h1>{libro.nombre} — Canto {canto}</h1><p class="lead">{libro.cantos[canto-1]?.titulo}</p><p>Esta ficha proporciona el material de lectura y preguntas para trabajar el canto. No reemplaza la lectura ni ofrece todavía un resumen interpretativo individual verificado.</p><a class="mf-study-primary" href={enlaceCanto(parte,canto)}>Leer el canto íntegro en el poema original →</a></header>
- <section><h2>Pasajes del texto original</h2><p>Estas estrofas se obtienen directamente del corpus documental, sin modificar la redacción. Para interpretarlas es importante leer el canto completo.</p>
+ <header><p class="eyebrow">GUÍA DE ESTUDIO · {libro.anio}</p><h1>{seo.titulo}</h1><p class="lead">{entradilla}</p>{seo.imagen&&<figure class="mf-study-feature"><img src={`/media/fotografias-v3/${seo.imagen}`} alt={`Ilustración editorial para el canto ${canto}: ${seo.tema}`} width="1024" height="680" loading="eager"/><figcaption>Ilustración interpretativa contemporánea; no es documentación histórica.</figcaption></figure>}<p>Guía crítica con hechos narrados, voces, interpretación, pasajes del corpus y preguntas basadas en este canto. Las afirmaciones interpretativas se distinguen del texto de José Hernández.</p><a class="mf-study-primary" href={enlaceCanto(parte,canto)}>Leer el canto íntegro en el poema original →</a></header>
+ <section><h2>{analisisTitulo}</h2><h3>Hechos y desarrollo del canto</h3><p>{hechos}</p><h3>¿Quién habla y desde qué perspectiva?</h3><p>{voz}</p><h3>Interpretación literaria y contexto</h3><p>{interpretacion}</p><h3>Precaución de lectura</h3><p>{alertaCritica}</p><p>Para ampliar este episodio, consultá el texto íntegro y compará las interpretaciones con los pasajes citados.</p></section>
+ <section><h2>Texto original y lectura del canto</h2><p>Las estrofas proceden del corpus documental sin modificaciones. La selección responde a los hechos y a la argumentación del comentario; el sentido definitivo debe contrastarse con el canto completo.</p>
+ <p><strong>Por qué elegimos estos pasajes:</strong> {seleccion.justificacion}</p>
  {ejemplos.map(e=><figure class="mf-study-stanza"><figcaption>Estrofa {e.numero} · <a href={`${enlaceCanto(parte,canto)}#${e.id}`}>Consultar en el lector →</a></figcaption><blockquote>{e.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>)}</section>
+ <section><h2>Vocabulario gauchesco y términos históricos del canto</h2>{vocabulario.length?<dl>{vocabulario.map(t=><div><dt><strong>{t.termino}</strong></dt><dd>{t.explicacion}</dd></div>)}</dl>:<p>No se seleccionaron términos del glosario básico para este canto. Para interpretar expresiones difíciles, utilizá el <a href="/buscar/">buscador de versos</a> y consultá su contexto completo.</p>}<p>Estas notas explican términos localizados en el texto, no sustituyen una edición filológica.</p></section>
  <section><h2>Personajes vinculados a este canto</h2>{relacionados.length?<ul>{relacionados.map(p=><li><a href={`/personajes/#${p.id}`}>{p.nombre}</a> — {p.tipo}</li>)}</ul>:<p>Esta selección de fichas no identifica un protagonista secundario específico para el canto. Consultá las voces del texto y la <a href="/personajes/">guía general de personajes</a>.</p>}<p><a href="/estudiantes/#personajes">Volver a personajes en la biblioteca de estudiantes →</a></p></section>
- <section><h2>Preguntas para analizar la lectura</h2><ol><li>¿Quién habla en este canto? Identificá en qué versos se manifiesta la voz narradora.</li><li>¿Qué hechos narra el texto y cuáles son opiniones o juicios de quien los cuenta? Citá dos versos para justificar tu respuesta.</li><li>¿Qué cambia entre el comienzo y el final del canto? Explicá tu respuesta utilizando una estrofa de cada zona.</li><li>¿Cómo se relaciona este canto con lo leído antes y con el conflicto general de la obra?</li><li>¿Qué palabra o expresión requiere consultar su significado histórico o gauchesco? Buscala en el corpus.</li></ol><p>Las respuestas deben fundamentarse en el texto. Las preguntas son propuestas pedagógicas de esta edición, no explicaciones atribuidas a José Hernández.</p></section>
+ <section><h2>Preguntas específicas para estudiar el canto {canto}</h2><ol>{preguntas.map(q=><li>{q}</li>)}<li>¿Quién habla en este canto? Identificá en qué versos se manifiesta la voz narradora.</li><li>¿Qué hechos narra el texto y cuáles son opiniones o juicios de quien los cuenta? Citá dos versos para justificar tu respuesta.</li><li>Elegí una de las estrofas seleccionadas reproducidas y explicá cómo sostiene —o matiza— el comentario editorial. Indicá número de estrofa y verso.</li></ol><p>Las respuestas deben fundamentarse en el texto. Las preguntas son propuestas pedagógicas de esta edición, no explicaciones atribuidas a José Hernández.</p></section>
  <section><h2>Profundizar</h2><p><a href="/temas/">Temas de lectura</a> · <a href="/exegesis/">Análisis literario</a> · <a href="/buscar/">Buscar versos</a> · <a href="/personajes/">Personajes</a></p></section>
  <nav class="mf-study-pager" aria-label="Continuar estudiando">{anterior&&<a href={anterior}>← Ficha anterior</a>}<a href="/estudiantes/">Los 46 cantos</a>{siguiente&&<a href={siguiente}>Ficha siguiente →</a>}</nav>
 </article>
 <style>
-.mf-study{max-width:870px;margin:0 auto 80px;padding:0 16px}.mf-crumb{font:.84rem system-ui,sans-serif;margin:0 0 30px}.mf-study header{padding:12px 0 25px}.mf-study h1{max-width:none!important}.mf-study h2{font:600 clamp(1.65rem,3vw,2.3rem)/1.2 Georgia,serif}.mf-study a{color:#89472f;text-underline-offset:3px}.mf-study section{margin:35px 0;padding-top:12px;border-top:1px solid #cbbba8}.mf-study p,.mf-study li{line-height:1.7}.mf-study li{margin:9px 0}.mf-study-stanza{background:#f1e8dc;padding:20px;margin:20px 0}.mf-study-stanza figcaption{font:.8rem system-ui,sans-serif}.mf-study-stanza blockquote{border-left:3px solid #ab8067;padding-left:18px;margin:16px 0}.mf-study-stanza blockquote span{display:block;line-height:1.7}.mf-study-primary{display:inline-block;padding:12px 18px;border:1px solid #a3523a;font-weight:700}.mf-study-pager{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;border-top:2px solid #9f5038;padding:20px 0}.mf-study :focus-visible{outline:3px solid #a3523a;outline-offset:3px}
+.mf-study{max-width:870px;margin:0 auto 80px;padding:0 16px}.mf-crumb{font:.84rem system-ui,sans-serif;margin:0 0 30px}.mf-study-feature{margin:20px 0}.mf-study-feature img{display:block;width:100%;height:auto;max-height:520px;object-fit:cover}.mf-study-feature figcaption{font:.8rem system-ui,sans-serif;color:#625850}.mf-study header{padding:12px 0 25px}.mf-study h1{max-width:none!important}.mf-study h2{font:600 clamp(1.65rem,3vw,2.3rem)/1.2 Georgia,serif}.mf-study a{color:#89472f;text-underline-offset:3px}.mf-study section{margin:35px 0;padding-top:12px;border-top:1px solid #cbbba8}.mf-study p,.mf-study li{line-height:1.7}.mf-study li{margin:9px 0}.mf-study-stanza{background:#f1e8dc;padding:20px;margin:20px 0}.mf-study-stanza figcaption{font:.8rem system-ui,sans-serif}.mf-study-stanza blockquote{border-left:3px solid #ab8067;padding-left:18px;margin:16px 0}.mf-study-stanza blockquote span{display:block;line-height:1.7}.mf-study-primary{display:inline-block;padding:12px 18px;border:1px solid #a3523a;font-weight:700}.mf-study-pager{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;border-top:2px solid #9f5038;padding:20px 0}.mf-study :focus-visible{outline:3px solid #a3523a;outline-offset:3px}
 </style>
 </Base>
