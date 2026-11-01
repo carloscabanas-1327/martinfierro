@@ -323,6 +323,12 @@ const grupos=[
     ]
   }
 ];
+const enlacesEducativos=[
+ {titulo:'Para estudiantes · recursos de estudio',url:'/estudiantes/',descripcion:'Análisis de lectura, personajes y actividades para los 46 cantos.'},
+ ...(['ida','vuelta'] as const).flatMap(parte=>partes[parte].cantos.map(c=>({titulo:`Ficha para estudiantes · ${parte==='ida'?'La ida':'La vuelta'} · Canto ${c.numero}`,url:`/estudiantes/${parte}/${c.numero}/`,descripcion:'Estrofas originales, personajes y preguntas de lectura.'})))
+];
+const grupoEstudiantes={id:'estudiantes',numero:'07',titulo:'Para estudiantes',nota:'Guías y fichas de lectura de los 46 cantos, con personajes',enlaces:enlacesEducativos};
+grupos.push(grupoEstudiantes);
 const partesIndice=[{clave:'ida',nombre:'El gaucho Martín Fierro · La ida',anio:1872},{clave:'vuelta',nombre:'La vuelta de Martín Fierro',anio:1879}] as const;
 const totalCantos=partesIndice.reduce((n,p)=>n+partes[p.clave].cantos.length,0);
 const totalEnlaces=grupos.reduce((n,g)=>n+g.enlaces.length,0)+totalCantos;
@@ -336,14 +342,14 @@ if(new Set(rutas).size!==rutas.length) throw new Error("Enlaces duplicados en el
     <p class="mf-directorio-kicker">DIRECTORIO EDITORIAL · MARTINFIERRO.ORG</p>
     <h1>Índice general del sitio</h1>
     <p>Listado temático completo de enlaces del sitio: obra, guías, revista, historia, idiomas, documentación y cada uno de los cantos originales.</p>
-    <div class="mf-directorio-stats"><span><strong>06</strong> grandes grupos</span><span><strong>{totalCantos}</strong> cantos</span><span><strong>{totalEnlaces}</strong> accesos organizados</span></div>
+    <div class="mf-directorio-stats"><span><strong>07</strong> grandes grupos</span><span><strong>{totalCantos}</strong> cantos</span><span><strong>{totalEnlaces}</strong> accesos organizados</span></div>
   </header>
   <p><a href="/buscar-documentos/">Buscar artículos, personajes y documentos ↗</a> · <a href="/buscar/">Buscar palabras del poema ↗</a></p>
   <div class="mf-directorio-busqueda"><label for="mf-buscar-directorio">Buscar páginas y cantos de este índice</label><input type="search" id="mf-buscar-directorio" placeholder="Ej.: Carolina, frontera, canto 12, portugués" autocomplete="off"/><p id="mf-buscar-estado" role="status" aria-live="polite">Escribí para buscar enlaces de este índice.</p><ul id="mf-resultados-directos" class="mf-resultados-directos" aria-label="Resultados de la búsqueda" hidden></ul></div>
   <nav class="mf-directorio-atajos" aria-label="Saltar a un grupo del directorio">
     <strong>IR DIRECTAMENTE A</strong>
     {grupos.map(g=><a href={`#${g.id}`}>{g.numero}. {g.titulo}</a>)}
-    <a href="#cantos">07. Los 46 cantos</a>
+    <a href="#cantos">08. Los 46 cantos</a>
   </nav>
   <div class="mf-directorio-lista">
     {grupos.map(g=><section class="mf-directorio-grupo" id={g.id} aria-labelledby={`titulo-${g.id}`}>
@@ -352,7 +358,7 @@ if(new Set(rutas).size!==rutas.length) throw new Error("Enlaces duplicados en el
     </section>)}
   </div>
   <section id="cantos" class="mf-directorio-cantos" aria-labelledby="mf-directorio-cantos-titulo">
-    <header><span class="mf-directorio-numero">07</span><div><h2 id="mf-directorio-cantos-titulo">Índice completo de los 46 cantos</h2><p>Cada enlace abre directamente el canto correspondiente en el lector de la obra.</p></div></header>
+    <header><span class="mf-directorio-numero">08</span><div><h2 id="mf-directorio-cantos-titulo">Índice completo de los 46 cantos</h2><p>Cada enlace abre directamente el canto correspondiente en el lector de la obra.</p></div></header>
     <div class="mf-directorio-partes">
       {partesIndice.map(p=><div class="mf-directorio-parte">
         <h3><a href={`/leer/${p.clave}/`}>{p.nombre}</a> <small>{p.anio} · {partes[p.clave].cantos.length} cantos</small></h3>
