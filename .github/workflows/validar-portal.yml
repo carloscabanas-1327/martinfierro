@@ -56,6 +56,14 @@ jobs:
         run: node scripts/test-indice-search.mjs
       - name: Auditar enlaces y cobertura del índice general
         run: python scripts/auditar-enlaces.py
+      - name: Auditar grafo de navegación española
+        run: python scripts/auditar-grafo-es.py dist auditoria-grafo-es.json
+      - name: Guardar diagnóstico de enlaces
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-grafo-es
+          path: auditoria-grafo-es.json
+          retention-days: 14
       - name: Guardar versión de prueba
         uses: actions/upload-artifact@v4
         with:
