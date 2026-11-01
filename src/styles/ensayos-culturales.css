@@ -65,3 +65,5 @@
 .mf-hernandez-documento figcaption a{color:#87482d;text-underline-offset:3px}
 .mf-hernandez-documento-aviso{font-size:.9rem!important;color:#675849!important}
 @media(max-width:720px){.mf-hernandez-galeria{grid-template-columns:minmax(0,1fr)}.mf-hernandez-documento iframe,.mf-hernandez-documento img{height:300px}}
+
+.mf-hernandez-indice{display:flex;flex-wrap:wrap;gap:8px;max-width:1050px;margin:22px auto 32px;padding:0 16px}.mf-hernandez-indice a{display:inline-flex;align-items:center;min-height:44px;padding:9px 14px;border:1px solid #d2bca1;background:#faf1e4;color:#74432f;font:600 .85rem/1.35 system-ui,sans-serif;text-decoration:none}.mf-hernandez-indice a:hover,.mf-hernandez-indice a:focus-visible{background:#ebd8bf;text-decoration:underline}.mf-essay[id^="hernandez-"]{scroll-margin-top:75px}
