@@ -33,14 +33,14 @@ export const lecturasVuelta:LecturaCanto[]=[
   },
   {
     "canto": 6,
-    "titulo": "La epidemia y el duelo que se aproxima",
-    "analisis": "El paso del tiempo no trae la liberación; la enfermedad transforma las condiciones de la comunidad y amenaza también a los dos compañeros. La vulnerabilidad corporal rompe cualquier imagen de invencibilidad gaucha. La narración prepara el momento en que Fierro perderá el vínculo central de su exilio.",
+    "titulo": "La enfermedad y la muerte de Cruz",
+    "analisis": "El paso del tiempo no trae la liberación; la enfermedad transforma las condiciones de la comunidad y amenaza también a los dos compañeros. La vulnerabilidad corporal rompe cualquier imagen de invencibilidad gaucha. El canto culmina con la muerte de Cruz, que Fierro relata como un golpe devastador; la pérdida no debe desplazarse al canto siguiente.",
     "contexto": "La representación de una epidemia no basta para identificar con certeza diagnósticos médicos ni sus causas. La dimensión literaria consiste en dramatizar la fragilidad humana."
   },
   {
     "canto": 7,
-    "titulo": "La muerte de Cruz: el compañero convertido en memoria",
-    "analisis": "La muerte de Cruz separa definitivamente los destinos de dos hombres que habían elegido acompañarse. Fierro lo sepulta y queda aislado. La pérdida transforma al compañero de acción en objeto de memoria: el relato abandona por un momento la aventura y se concentra en el duelo.",
+    "titulo": "El entierro de Cruz y la soledad de Fierro",
+    "analisis": "Tras la muerte de Cruz al final del canto anterior, Fierro recuerda al compañero, lo sepulta y queda aislado. La pérdida transforma al compañero de acción en objeto de memoria: el relato abandona por un momento la aventura y se concentra en el duelo.",
     "contexto": "El personaje que ayudó a Fierro en La ida deja una ausencia que influye en la segunda parte, particularmente en la historia posterior del hijo de Cruz."
   },
   {
@@ -64,7 +64,7 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 11,
     "titulo": "El reencuentro y la confesión de responsabilidad",
-    "analisis": "Este canto está compuesto en el corpus por una extensa estrofa narrativa. El regreso permite reencontrar a los hijos y conocer la muerte de la esposa. Fierro recuerda hechos violentos y ensaya justificaciones de sus propias acciones; el lector debe distinguir su explicación retrospectiva de un juicio histórico o moral imparcial.",
+    "analisis": "Este canto está compuesto en el corpus por una extensa estrofa narrativa. Tras anunciarse la presencia de los hijos al final del canto X, el reencuentro permite reconstruir el pasado familiar y conocer la muerte de la esposa. Fierro recuerda hechos violentos y ensaya justificaciones de sus propias acciones; el lector debe distinguir su explicación retrospectiva de un juicio histórico o moral imparcial.",
     "contexto": "La singular extensión de la estrofa requiere citar un fragmento representativo y remitir al canto entero. La noticia de la muerte y la reunión con los hijos introducen relatos de una generación que también sufrió el desarraigo."
   },
   {
