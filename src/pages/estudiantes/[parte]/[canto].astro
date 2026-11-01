@@ -7,6 +7,7 @@ import {lecturasIdaEstudiantes} from '../../../data/lecturas-ida-estudiantes';
 import {lecturasVuelta} from '../../../data/exegesis-vuelta';
 import {preguntasVueltaEstudiantes} from '../../../data/preguntas-vuelta-estudiantes';
 import {pasajesGuias} from '../../../data/pasajes-guias-estudiantes';
+import {vocabularioCantos} from '../../../data/vocabulario-cantos-estudiantes';
 export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).flatMap(parte=>partes[parte].cantos.map(c=>({params:{parte,canto:seoCanto(parte,c.numero).slug},props:{parte,canto:c.numero}})));}
 const {parte,canto}=Astro.props as {parte:'ida'|'vuelta';canto:number};
 const seo=seoCanto(parte,canto);
@@ -25,6 +26,7 @@ if(!seleccion)throw new Error(`Falta selección de estrofas: ${parte} ${canto}`)
 const ejemplos=seleccion.estrofas.map(n=>estrofas.find(e=>e.numero===n)).filter((e):e is NonNullable<typeof e>=>Boolean(e));
 if(ejemplos.length!==seleccion.estrofas.length)throw new Error(`Referencia de estrofa inexistente: ${parte} ${canto}`);
 const entradilla=hechos.length>175?`${hechos.slice(0,172).replace(/\s+\S*$/,'')}…`:hechos;
+const vocabulario=vocabularioCantos.find(x=>x.parte===parte&&x.canto===canto)?.terminos??[];
 const relacionados=personajes.filter(p=>p.referencias.some(r=>r.parte===parte&&r.canto===canto));
 const siguiente=canto<libro.cantos.length? urlEstudio(parte,canto+1):parte==='ida'?urlEstudio('vuelta',1):null;
 const anterior=canto>1? urlEstudio(parte,canto-1):parte==='vuelta'?urlEstudio('ida',13):null;
@@ -36,6 +38,7 @@ const anterior=canto>1? urlEstudio(parte,canto-1):parte==='vuelta'?urlEstudio('i
  <section><h2>{analisisTitulo}</h2><h3>Hechos y desarrollo del canto</h3><p>{hechos}</p><h3>¿Quién habla y desde qué perspectiva?</h3><p>{voz}</p><h3>Interpretación literaria y contexto</h3><p>{interpretacion}</p><p>Para ampliar este episodio, consultá el texto íntegro y compará las interpretaciones con los pasajes citados.</p></section>
  <section><h2>Texto original y lectura del canto</h2><p>Estas estrofas provienen del corpus documental sin modificación. La selección combina momentos narrativos con términos temáticos; no constituye por sí sola prueba suficiente de todas las interpretaciones. Leé el canto íntegro para valorar su contexto.</p>
  {ejemplos.map(e=><figure class="mf-study-stanza"><figcaption>Estrofa {e.numero} · <a href={`${enlaceCanto(parte,canto)}#${e.id}`}>Consultar en el lector →</a></figcaption><blockquote>{e.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>)}</section>
+ <section><h2>Vocabulario gauchesco y términos históricos del canto</h2>{vocabulario.length?<dl>{vocabulario.map(t=><div><dt><strong>{t.termino}</strong></dt><dd>{t.explicacion}</dd></div>)}</dl>:<p>No se seleccionaron términos del glosario básico para este canto. Para interpretar expresiones difíciles, utilizá el <a href="/buscar/">buscador de versos</a> y consultá su contexto completo.</p>}<p>Estas notas explican términos localizados en el texto, no sustituyen una edición filológica.</p></section>
  <section><h2>Personajes vinculados a este canto</h2>{relacionados.length?<ul>{relacionados.map(p=><li><a href={`/personajes/#${p.id}`}>{p.nombre}</a> — {p.tipo}</li>)}</ul>:<p>Esta selección de fichas no identifica un protagonista secundario específico para el canto. Consultá las voces del texto y la <a href="/personajes/">guía general de personajes</a>.</p>}<p><a href="/estudiantes/#personajes">Volver a personajes en la biblioteca de estudiantes →</a></p></section>
  <section><h2>Preguntas específicas para estudiar el canto {canto}</h2><ol>{preguntas.map(q=><li>{q}</li>)}<li>¿Quién habla en este canto? Identificá en qué versos se manifiesta la voz narradora.</li><li>¿Qué hechos narra el texto y cuáles son opiniones o juicios de quien los cuenta? Citá dos versos para justificar tu respuesta.</li><li>Elegí una de las estrofas seleccionadas reproducidas y explicá cómo sostiene —o matiza— el comentario editorial. Indicá número de estrofa y verso.</li></ol><p>Las respuestas deben fundamentarse en el texto. Las preguntas son propuestas pedagógicas de esta edición, no explicaciones atribuidas a José Hernández.</p></section>
  <section><h2>Profundizar</h2><p><a href="/temas/">Temas de lectura</a> · <a href="/exegesis/">Análisis literario</a> · <a href="/buscar/">Buscar versos</a> · <a href="/personajes/">Personajes</a></p></section>
