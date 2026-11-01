@@ -54,3 +54,14 @@
 .mf-cultura-card-content p{margin:0 0 10px}
 @media(max-width:950px){.mf-cultura-glosario{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:580px){.mf-cultura-glosario{grid-template-columns:1fr}.mf-cultura-card-photo{aspect-ratio:3/2}}
+
+/* Galería documental: vistas de instituciones custodias, sin reproducción local */
+.mf-hernandez-galeria{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:24px 0}
+.mf-hernandez-documento{min-width:0;margin:0;background:#fffaf2;border:1px solid #d5c5b1;overflow:hidden}
+.mf-hernandez-documento>a{display:block;background:#eae0d0;min-height:230px}
+.mf-hernandez-documento iframe,.mf-hernandez-documento img{display:block;width:100%;height:330px;max-width:100%;border:0;object-fit:contain}
+.mf-hernandez-documento figcaption{padding:15px 17px;font:0.88rem/1.6 system-ui,sans-serif;color:#4e3c30}
+.mf-hernandez-documento figcaption strong{display:block;margin-bottom:5px}
+.mf-hernandez-documento figcaption a{color:#87482d;text-underline-offset:3px}
+.mf-hernandez-documento-aviso{font-size:.9rem!important;color:#675849!important}
+@media(max-width:720px){.mf-hernandez-galeria{grid-template-columns:minmax(0,1fr)}.mf-hernandez-documento iframe,.mf-hernandez-documento img{height:300px}}
