@@ -8,6 +8,7 @@ import {lecturasVuelta} from '../../../data/exegesis-vuelta';
 import {preguntasVueltaEstudiantes} from '../../../data/preguntas-vuelta-estudiantes';
 import {pasajesGuias} from '../../../data/pasajes-guias-estudiantes';
 import {vocabularioCantos} from '../../../data/vocabulario-cantos-estudiantes';
+import {alertasCriticasCantos} from '../../../data/alertas-criticas-cantos';
 export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).flatMap(parte=>partes[parte].cantos.map(c=>({params:{parte,canto:seoCanto(parte,c.numero).slug},props:{parte,canto:c.numero}})));}
 const {parte,canto}=Astro.props as {parte:'ida'|'vuelta';canto:number};
 const seo=seoCanto(parte,canto);
@@ -26,6 +27,8 @@ if(!seleccion)throw new Error(`Falta selección de estrofas: ${parte} ${canto}`)
 const ejemplos=seleccion.estrofas.map(n=>estrofas.find(e=>e.numero===n)).filter((e):e is NonNullable<typeof e>=>Boolean(e));
 if(ejemplos.length!==seleccion.estrofas.length)throw new Error(`Referencia de estrofa inexistente: ${parte} ${canto}`);
 const entradilla=hechos.length>175?`${hechos.slice(0,172).replace(/\s+\S*$/,'')}…`:hechos;
+const alertaCritica=alertasCriticasCantos.find(x=>x.parte===parte&&x.canto===canto)?.alerta;
+if(!alertaCritica)throw new Error(`Sin control crítico de ${parte}, canto ${canto}`);
 const vocabulario=vocabularioCantos.find(x=>x.parte===parte&&x.canto===canto)?.terminos??[];
 const relacionados=personajes.filter(p=>p.referencias.some(r=>r.parte===parte&&r.canto===canto));
 const siguiente=canto<libro.cantos.length? urlEstudio(parte,canto+1):parte==='ida'?urlEstudio('vuelta',1):null;
@@ -35,7 +38,7 @@ const anterior=canto>1? urlEstudio(parte,canto-1):parte==='vuelta'?urlEstudio('i
 <article class="mf-study">
  <nav class="mf-crumb" aria-label="Ruta de navegación"><a href="/">Inicio</a> / <a href="/estudiantes/">Para estudiantes</a> / <a href={`/leer/${parte}/`}>{libro.nombre}</a> / Canto {canto}</nav>
  <header><p class="eyebrow">GUÍA DE ESTUDIO · {libro.anio}</p><h1>{seo.titulo}</h1><p class="lead">{entradilla}</p>{seo.imagen&&<figure class="mf-study-feature"><img src={`/media/fotografias-v3/${seo.imagen}`} alt={`Ilustración editorial para el canto ${canto}: ${seo.tema}`} width="1024" height="680" loading="eager"/><figcaption>Ilustración interpretativa contemporánea; no es documentación histórica.</figcaption></figure>}<p>Guía crítica con hechos narrados, voces, interpretación, pasajes del corpus y preguntas basadas en este canto. Las afirmaciones interpretativas se distinguen del texto de José Hernández.</p><a class="mf-study-primary" href={enlaceCanto(parte,canto)}>Leer el canto íntegro en el poema original →</a></header>
- <section><h2>{analisisTitulo}</h2><h3>Hechos y desarrollo del canto</h3><p>{hechos}</p><h3>¿Quién habla y desde qué perspectiva?</h3><p>{voz}</p><h3>Interpretación literaria y contexto</h3><p>{interpretacion}</p><p>Para ampliar este episodio, consultá el texto íntegro y compará las interpretaciones con los pasajes citados.</p></section>
+ <section><h2>{analisisTitulo}</h2><h3>Hechos y desarrollo del canto</h3><p>{hechos}</p><h3>¿Quién habla y desde qué perspectiva?</h3><p>{voz}</p><h3>Interpretación literaria y contexto</h3><p>{interpretacion}</p><h3>Precaución de lectura</h3><p>{alertaCritica}</p><p>Para ampliar este episodio, consultá el texto íntegro y compará las interpretaciones con los pasajes citados.</p></section>
  <section><h2>Texto original y lectura del canto</h2><p>Estas estrofas provienen del corpus documental sin modificación. La selección combina momentos narrativos con términos temáticos; no constituye por sí sola prueba suficiente de todas las interpretaciones. Leé el canto íntegro para valorar su contexto.</p>
  {ejemplos.map(e=><figure class="mf-study-stanza"><figcaption>Estrofa {e.numero} · <a href={`${enlaceCanto(parte,canto)}#${e.id}`}>Consultar en el lector →</a></figcaption><blockquote>{e.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>)}</section>
  <section><h2>Vocabulario gauchesco y términos históricos del canto</h2>{vocabulario.length?<dl>{vocabulario.map(t=><div><dt><strong>{t.termino}</strong></dt><dd>{t.explicacion}</dd></div>)}</dl>:<p>No se seleccionaron términos del glosario básico para este canto. Para interpretar expresiones difíciles, utilizá el <a href="/buscar/">buscador de versos</a> y consultá su contexto completo.</p>}<p>Estas notas explican términos localizados en el texto, no sustituyen una edición filológica.</p></section>
