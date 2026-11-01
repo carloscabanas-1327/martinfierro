@@ -45,3 +45,9 @@
 .mf-directorio-busqueda p{font:.83rem/1.5 system-ui,sans-serif;color:#675648;margin:10px 0 0}
 .mf-directorio-descripcion{font:.83rem/1.48 system-ui,sans-serif;color:#726052;margin:5px 0 0}
 .mf-directorio [hidden]{display:none!important}
+
+.mf-resultados-directos{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid #cdbfac;max-height:390px;overflow-y:auto}
+.mf-resultados-directos li{margin:0;padding:0;border-bottom:1px solid #dfcebc}
+.mf-resultados-directos a{display:block;padding:12px 8px;color:#733d2e;font:600 .98rem/1.45 Georgia,serif;text-decoration:none}
+.mf-resultados-directos a:hover,.mf-resultados-directos a:focus-visible{background:#fff9ef;text-decoration:underline}
+.mf-resultados-directos[hidden]{display:none!important}
