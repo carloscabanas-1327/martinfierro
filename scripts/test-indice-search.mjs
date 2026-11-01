@@ -8,7 +8,7 @@ const js=readFileSync('dist/js/indice-general.js','utf8');
 function element(tag='li'){
  return {tag,hidden:false,children:[],textContent:'',href:'',listeners:{},appendChild(e){this.children.push(e)},replaceChildren(){this.children=[]},addEventListener(ev,fn){this.listeners[ev]=fn},getAttribute(n){return this[n]}};
 }
-const input=element('input');
+const input=element('input');input.value='';
 const estado=element('p');
 const resultados=element('ul');
 const makeFila=(title,desc,href)=>{
