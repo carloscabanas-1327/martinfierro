@@ -106,7 +106,7 @@ const grupos=[
         "url": "/personajes/",
         "descripcion": "Guía ilustrada de personajes y sus papeles en la obra."
       },
-      ...personajes.map(p=>({titulo:p.nombre,url:`/personajes/#${p.id}`,descripcion:p.resumen})),
+      ...personajes.map(p=>({titulo:p.nombre,url:`/personajes/#${p.id}`,descripcion:`${p.tipo}. ${p.resumen} ${p.interpretacion} ${p.id==='moreno-muerto'?'negro del baile; negro de la pulpería; hombre negro; afroargentino; afrodescendiente':''} ${p.id==='el-moreno'?'moreno de la payada; payador negro; cantor afroargentino':''}`})),
       {
         "titulo": "Exégesis y claves de lectura",
         "url": "/exegesis/",
