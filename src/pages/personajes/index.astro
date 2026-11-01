@@ -7,7 +7,7 @@ import {estrofasDeCanto} from '../../lib/corpus';
 import '../../styles/personajes-editorial.css';
 const fichas=personajes.map(p=>{
  const estrofa=estrofasDeCanto(p.estrofa.parte,p.estrofa.canto).find(e=>e.numero===p.estrofa.numero);
- return {...p,estrofa,fragmento:estrofa?.versos.slice(0,6)??[],recorte:(estrofa?.versos.length??0)>6};
+ return {...p,estrofaTexto:estrofa,fragmento:estrofa?.versos.slice(0,6)??[],recorte:(estrofa?.versos.length??0)>6};
 });
 const enlaces=(p:{parte:'ida'|'vuelta';canto:number})=>`/leer/${p.parte}/${p.canto}/`;
 const fotosPersonajes:Record<string,string>={
@@ -38,8 +38,8 @@ const fotosPersonajes:Record<string,string>={
 {fotosPersonajes[p.id] && <figure class="mf-personaje-foto"><img src={`/media/fotografias-v3/${fotosPersonajes[p.id]}`} alt={`Recreación digital del personaje literario ${p.nombre}`} width="1024" height="680" loading="lazy" decoding="async"/><figcaption>Recreación digital de personaje literario; no es un retrato histórico.</figcaption></figure>}
 <h3>Quién es y qué hace</h3><p>{p.resumen}</p>
 <div class="mf-personaje-quote"><p class="eyebrow">PASO ORIGINAL · {p.estrofa.parte==='ida'?'LA IDA':'LA VUELTA'} · CANTO {p.estrofa.canto} · ESTROFA {p.estrofa.numero}</p>
-{p.estrofa && <blockquote>{p.fragmento.map(v=><span>{v.texto}</span>)}</blockquote>}
-<p class="mf-personaje-caption">Versos del corpus documental {p.recorte?'(fragmento inicial de una estrofa extensa)':''}. <a href={`/leer/${p.estrofa.parte}/${p.estrofa.canto}/#${p.estrofa.id}`}>Comprobar en el lector →</a></p></div>
+{p.estrofaTexto && <blockquote>{p.fragmento.map(v=><span>{v.texto}</span>)}</blockquote>}
+<p class="mf-personaje-caption">Versos del corpus documental {p.recorte?'(fragmento inicial de una estrofa extensa)':''}. <a href={`/leer/${p.estrofa.parte}/${p.estrofa.canto}/#${p.estrofaTexto?.id ?? ""}`}>Comprobar en el lector →</a></p></div>
 <h3>Cómo leerlo</h3><p>{p.interpretacion}</p>
 <div class="mf-personaje-referencias"><strong>Cantos para conocerlo:</strong><div>{p.referencias.map(q=><a href={enlaces(q)}>{q.parte==='ida'?'La ida':'La vuelta'} · {q.canto}</a>)}</div></div>
 </article>)}
