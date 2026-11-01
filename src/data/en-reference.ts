@@ -81,6 +81,8 @@ export const englishSections:ReferenceItem[]=[
   }
 ];
 export const englishArticles:ReferenceItem[]=[
+  {title:"Read the Original Spanish Poem: English Guide",url:"/en/reader/",description:"Navigate 46 cantos with English introductions and original Spanish source links",kind:"reading guide",lang:"en"},
+  {title:"Search 7,210 Original Spanish Verses",url:"/en/verse-search/",description:"Search every authentic source verse by word or phrase and identify its canto and stanza",kind:"verse search",lang:"en"},
   {title:"Six English Reading Themes",url:"/en/themes/",description:"Gaucho life, frontier, justice, loyalty, family and advice",kind:"theme index",lang:"en"},
   {title:"Critical Library: Writers and Reception",url:"/en/library/critical-library/",description:"Hidalgo, Ascasubi, Mansilla, Lugones, Martínez Estrada and Borges",kind:"critical library",lang:"en"},
   ...[{slug:'gaucho-life',name:'Gaucho Life'},{slug:'the-frontier',name:'The Frontier'},{slug:'justice-and-authority',name:'Justice and Authority'},{slug:'friendship-and-loyalty',name:'Friendship and Loyalty'},{slug:'family-and-return',name:'Family and Return'},{slug:'advice-and-wisdom',name:'Advice and Wisdom'}].map(t=>({title:t.name,url:`/en/themes/${t.slug}/`,description:'English thematic reading with source-based passages and questions',kind:'reading theme',lang:'en' as const})),
