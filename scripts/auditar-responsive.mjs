@@ -26,9 +26,10 @@ for(const width of widths){
  reports.push({width,home:base,searchVisibleResults:count,searchOverflow,errors});
  await page.close();
 }
-const page=await browser.newPage({viewport:{width:720,height:900}});
+// Zoom del navegador al 200 %: 720 px físicos equivalen a ~360 CSS px de viewport.
+const page=await browser.newPage({viewport:{width:360,height:900},deviceScaleFactor:2});
 await page.goto('http://127.0.0.1:4322/',{waitUntil:'networkidle'});
-await page.evaluate(()=>document.documentElement.style.zoom='200%');
+// No usar CSS zoom: altera escala de elementos pero no el viewport de media queries.
 const zoom=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth+1,viewport:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth,offenders:[...document.querySelectorAll('body *')].map(el=>({tag:el.tagName,cls:el.className?.toString().slice(0,85),text:el.textContent?.trim().slice(0,40),right:Math.round(el.getBoundingClientRect().right),left:Math.round(el.getBoundingClientRect().left)})).filter(v=>v.right>document.documentElement.clientWidth+1).slice(0,30)}));
 await page.screenshot({path:'auditoria-responsive/zoom-200.png',fullPage:true});
 await page.close();await browser.close();
