@@ -81,6 +81,9 @@ export const englishSections:ReferenceItem[]=[
   }
 ];
 export const englishArticles:ReferenceItem[]=[
+  {title:"Six English Reading Themes",url:"/en/themes/",description:"Gaucho life, frontier, justice, loyalty, family and advice",kind:"theme index",lang:"en"},
+  {title:"Critical Library: Writers and Reception",url:"/en/library/critical-library/",description:"Hidalgo, Ascasubi, Mansilla, Lugones, Martínez Estrada and Borges",kind:"critical library",lang:"en"},
+  ...[{slug:'gaucho-life',name:'Gaucho Life'},{slug:'the-frontier',name:'The Frontier'},{slug:'justice-and-authority',name:'Justice and Authority'},{slug:'friendship-and-loyalty',name:'Friendship and Loyalty'},{slug:'family-and-return',name:'Family and Return'},{slug:'advice-and-wisdom',name:'Advice and Wisdom'}].map(t=>({title:t.name,url:`/en/themes/${t.slug}/`,description:'English thematic reading with source-based passages and questions',kind:'reading theme',lang:'en' as const})),
   {title:"English Literary Exegesis",url:"/en/exegesis/",description:"Close reading of original Spanish stanzas and literary voices",kind:"critical analysis",lang:"en"},
   {title:"La vuelta: 33 Critical Canto Readings",url:"/en/exegesis/la-vuelta/",description:"Thirty-three English exegesis entries organized in four narrative movements",kind:"critical analysis",lang:"en"},
   {
