@@ -2,6 +2,7 @@
 interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'}
 const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none'}=Astro.props;
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
+const english=lang.toLowerCase().startsWith('en');
 const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
 import AdSlot from '../components/AdSlot.astro';
 import '../styles/global.css';
@@ -31,23 +32,57 @@ import '../styles/editorial-shell.css';
 <body>
  <!-- Reserva n.º 1: inmediatamente después de abrir BODY; permanece oculta. -->
  {adKind !== 'none' && <AdSlot id={`${adKind}-01-body`} kind={adKind} />}
- <a class="skip" href="#contenido">Saltar al contenido</a>
+ <a class="skip" href="#contenido">{english ? "Skip to content" : "Saltar al contenido"}</a>
  <header class="site-header">
-  <div class="editorial-topline"><div class="container"><span>ARGENTINA · LITERATURA · CULTURA</span><span>JOSÉ HERNÁNDEZ · 1872—1879</span></div></div>
+  <div class="editorial-topline"><div class="container"><span>{english ? "ARGENTINA · LITERATURE · CULTURE" : "ARGENTINA · LITERATURA · CULTURA"}</span><span>JOSÉ HERNÁNDEZ · 1872—1879</span></div></div>
   <div class="container editorial-masthead">
-   <a class="brand" href="/" aria-label="Martín Fierro — inicio"><span>Martín Fierro<small>Biblioteca documental & revista cultural</small></span></a>
-   <a class="editorial-read" href="/leer/ida/1/">LEER LA OBRA <span aria-hidden="true">↗</span></a>
+   <a class="brand" href={english ? "/en/" : "/"} aria-label={english ? "Martín Fierro — English edition" : "Martín Fierro — inicio"}><span>Martín Fierro<small>{english ? "Documentary library & cultural magazine" : "Biblioteca documental & revista cultural"}</small></span></a>
+   <a class="editorial-read" href="/leer/ida/1/">{english ? "READ THE POEM" : "LEER LA OBRA"} <span aria-hidden="true">↗</span></a>
   </div>
   <div class="editorial-nav-wrap">
    <div class="container">
-    <nav class="editorial-nav" aria-label="Navegación principal">
-     <a href="/leer/">La obra</a><a href="/temas/">Explorar</a><a href="/jose-hernandez/">José Hernández</a><a href="/exegesis/">Exégesis</a><a href="/biblioteca-critica/">Biblioteca crítica</a><a href="/revista/">Revista</a><a href="/archivo/">Archivo</a><a href="/buscar/">Buscar <span aria-hidden="true">⌕</span></a>
+    <nav class="editorial-nav" aria-label={english ? "Main navigation" : "Navegación principal"}>
+     {english ? <><a href="/en/">English home</a><a href="/leer/">The poem (ES)</a><a href="/jose-hernandez/">José Hernández (ES)</a><a href="/revista/quienes-eran-los-gauchos/">Gaucho culture (ES)</a><a href="/archivo/">Historical archive (ES)</a><a href="/traducciones/">Translations (ES)</a><a href="/">Español</a></> : <><a href="/leer/">La obra</a><a href="/temas/">Explorar</a><a href="/jose-hernandez/">José Hernández</a><a href="/exegesis/">Exégesis</a><a href="/biblioteca-critica/">Biblioteca crítica</a><a href="/revista/">Revista</a><a href="/archivo/">Archivo</a><a href="/buscar/">Buscar <span aria-hidden="true">⌕</span></a></>}
     </nav>
    </div>
   </div>
  </header>
  <main id="contenido" class="container"><slot/></main>
- <footer class="site-footer editorial-footer" aria-label="Pie de página institucional">
+ {english ?  <footer class="site-footer editorial-footer" aria-label="Site information and footer">
+  <div class="container editorial-footer-grid">
+   <div class="editorial-footer-identity">
+    <a href="/en/" class="editorial-footer-brand">Martín Fierro</a>
+    <p>Documentary library · Argentine literature, history, and culture.</p>
+    <p>José Hernández · <em>El gaucho Martín Fierro</em> (1872) · <em>La vuelta de Martín Fierro</em> (1879).</p>
+   </div>
+   <nav class="editorial-footer-links" aria-label="Explore">
+    <strong>Explore</strong>
+    <a href="/en/">English home</a>
+    <a href="/leer/">Original poem (Spanish)</a>
+    <a href="/revista/quienes-eran-los-gauchos/">Who were the gauchos? (Spanish)</a>
+    <a href="/archivo/">Historical archive (Spanish)</a>
+    <a href="/traducciones/">Historical translations (Spanish)</a>
+   </nav>
+   <nav class="editorial-footer-links" aria-label="About this project">
+    <strong>About this project</strong>
+    <a href="/proyecto/">About the project (Spanish)</a>
+    <a href="/contacto/">Contact (Spanish)</a>
+    <a href="/acerca/">Editorial sources and methods (Spanish)</a>
+    <a href="/fuentes-y-derechos/">Sources and rights (Spanish)</a>
+   </nav>
+   <nav class="editorial-footer-links" aria-label="Legal information">
+    <strong>Legal information</strong>
+    <a href="/privacidad/">Privacy policy (Spanish)</a>
+    <a href="/terminos/">Terms of use (Spanish)</a>
+    <a href="/publicidad-y-afiliados/">Advertising and affiliates (Spanish)</a>
+    <a href="/indice-general/">Complete site index (Spanish)</a>
+   </nav>
+  </div>
+  <div class="container editorial-footer-credits">
+   <p>© {new Date().getFullYear()} MARTINFIERRO.ORG · Independent digital edition · With thanks to Professor Robertino Ferro.</p>
+   <p>Original text by José Hernández, in the public domain · <a href="/fuentes-y-derechos/">Credits and provenance (Spanish)</a></p>
+  </div>
+ </footer> :  <footer class="site-footer editorial-footer" aria-label="Pie de página institucional">
   <div class="container editorial-footer-grid">
    <div class="editorial-footer-identity">
     <a href="/" class="editorial-footer-brand">Martín Fierro</a>
@@ -82,6 +117,6 @@ import '../styles/editorial-shell.css';
    <p>© {new Date().getFullYear()} MARTINFIERRO.ORG · Edición digital independiente · Gracias al profesor Robertino Ferro.</p>
    <p>Texto original de José Hernández, de dominio público · <a href="/fuentes-y-derechos/">Créditos y procedencia</a></p>
   </div>
- </footer>
+ </footer>}
 </body>
 </html>
