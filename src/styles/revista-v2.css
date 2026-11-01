@@ -264,3 +264,9 @@ body:has(.mf-revista) main.container{
 .mf-language-flags a:nth-last-child(-n+2) .mf-lang-symbol{font-size:.64rem;letter-spacing:.035em;border-radius:4px;border:1px solid #a6876b;padding:4px 2px;background:#faf3e9;min-height:20px}
 .mf-languages-compact-note{font:.68rem/1.55 system-ui,sans-serif;color:#746252;margin:5px 0 0}
 @media(max-width:650px){.mf-languages-compact{padding:16px 13px}.mf-language-flags{gap:5px 14px}.mf-language-flags a{min-height:40px}.mf-languages-compact-heading p{font-size:.73rem}}
+
+/* Cuatro accesos principales alineados en columna, con una medida uniforme. */
+.mf-lead-actions{display:flex;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:11px;width:min(100%,320px);margin-bottom:0}
+.mf-lead-actions>a,.mf-lead-copy>.mf-language-toplink{box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;width:100%;min-height:48px;padding:12px 16px;margin:0;font:750 .9rem/1.35 system-ui,sans-serif;border-radius:3px}
+.mf-lead-copy>.mf-language-toplink{width:min(100%,320px);margin-top:11px;margin-bottom:22px;gap:16px}
+.mf-lead-actions>a span,.mf-lead-copy>.mf-language-toplink span{margin-left:auto}
