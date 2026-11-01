@@ -56,6 +56,28 @@ jobs:
         run: node scripts/test-indice-search.mjs
       - name: Auditar enlaces y cobertura del índice general
         run: python scripts/auditar-enlaces.py
+      - name: Validar navegación española y grafo de enlaces
+        run: |
+          test -f dist/buscar-documentos/index.html
+          python scripts/auditar-grafo-es.py dist auditoria-grafo-es.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('auditoria-grafo-es.json').read_text())
+          assert not report['unreachable_from_home'],report['unreachable_from_home']
+          assert not report['internal_links_unresolved'],report['internal_links_unresolved']
+          html=Path('dist/index.html').read_text()
+          assert '/buscar-documentos/' in html
+          assert '/indice-general/' in html
+          assert 'Lectura y herramientas' in html
+          print('Navegación ES: destinos, cobertura y buscador documental OK')
+          PY
+      - name: Guardar reporte de navegación
+        uses: actions/upload-artifact@v4
+        with:
+          name: navegacion-es-grafo
+          path: auditoria-grafo-es.json
+          retention-days: 14
       - name: Guardar versión de prueba
         uses: actions/upload-artifact@v4
         with:
