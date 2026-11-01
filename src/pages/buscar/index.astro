@@ -5,42 +5,73 @@ import Base from '../../layouts/Base.astro';
 <Base title="Buscar en Martín Fierro">
 <EditorialSection kind="utility" image="/media/fotografias-v3/archivo-documental-recreacion.webp" label="BUSCAR · ARCHIVO DE VERSOS"><p class="eyebrow">Buscador de la obra</p><h1>Buscar versos</h1><p class="lead">Encontrá palabras o frases en los 7.210 versos de las dos partes. La búsqueda ignora diferencias entre mayúsculas y minúsculas y puede ignorar tildes.</p>
 <div class="search-control"><input id="consulta" type="search" aria-label="Palabras o frase a buscar" placeholder="Ej.: los hermanos sean unidos" autocomplete="off"/><select id="parte" aria-label="Filtrar por parte"><option value="ambas">Ambas partes</option><option value="ida">La ida</option><option value="vuelta">La vuelta</option></select></div>
-<p id="estado" role="status" aria-live="polite">Escribí dos o más caracteres para buscar.</p><div id="resultados" aria-label="Resultados de búsqueda"></div>
+<label class="search-option"><input id="tildes" type="checkbox" checked/> Ignorar diferencias de tildes</label><p id="estado" role="status" aria-live="polite">Escribí dos o más caracteres para buscar.</p><div id="resultados" aria-label="Resultados de búsqueda"></div><nav id="paginas" aria-label="Páginas de resultados"></nav>
 <noscript>Para buscar en el poema es necesario activar JavaScript. La lectura completa por cantos está disponible sin JavaScript.</noscript>
 <script>
 type Registro={id:string;texto:string;parte:'ida'|'vuelta';canto:number;estrofa:number;linea:number};
 const input=document.querySelector<HTMLInputElement>('#consulta')!;
 const filtro=document.querySelector<HTMLSelectElement>('#parte')!;
+const tildes=document.querySelector<HTMLInputElement>('#tildes')!;
 const estado=document.querySelector<HTMLElement>('#estado')!;
 const resultados=document.querySelector<HTMLElement>('#resultados')!;
-let datos:Registro[]|null=null;let generacion=0;
-const normalizar=(s:string)=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es').trim();
-const enlace=(v:Registro)=>`/leer/${v.parte}/${v.canto}/#${v.id}`;
+const paginas=document.querySelector<HTMLElement>('#paginas')!;
+let datos:Registro[]|null=null;
+let carga:Promise<Registro[]>|null=null;
+let generacion=0;
+let pagina=1;
+const tamano=50;
+const normalizar=(s:string)=>{let v=s.toLocaleLowerCase('es');if(tildes.checked)v=v.normalize('NFD').replace(/[\u0300-\u036f]/g,'');return v.trim()};
+const enlace=(v:Registro)=>`/leer/${v.parte}/${v.canto}/#${encodeURIComponent(v.id)}`;
 function dibujar(){
+ resultados.replaceChildren();paginas.replaceChildren();
  const q=normalizar(input.value);
- resultados.replaceChildren();
  if(q.length<2){estado.textContent='Escribí dos o más caracteres para buscar.';return;}
  if(!datos){estado.textContent='Cargando índice...';return;}
- const encontrados=datos.filter(v=>(filtro.value==='ambas'||filtro.value===v.parte)&&normalizar(v.texto).includes(q));
- estado.textContent=`${encontrados.length.toLocaleString('es-AR')} versos encontrados. Se muestran los primeros 150.`;
- for(const v of encontrados.slice(0,150)){
+ const palabras=q.split(/\s+/).filter(Boolean);
+ const encontrados=datos.filter(v=>(filtro.value==='ambas'||filtro.value===v.parte)&&palabras.every(p=>normalizar(v.texto).includes(p)));
+ const totalPaginas=Math.ceil(encontrados.length/tamano);
+ pagina=Math.min(Math.max(pagina,1),Math.max(totalPaginas,1));
+ estado.textContent=`${encontrados.length.toLocaleString('es-AR')} versos encontrados. ${encontrados.length? `Página ${pagina} de ${totalPaginas}.`:'Probá otra búsqueda.'}`;
+ const fragmento=document.createDocumentFragment();
+ for(const v of encontrados.slice((pagina-1)*tamano,pagina*tamano)){
   const row=document.createElement('article');row.className='result';
   const a=document.createElement('a');a.href=enlace(v);a.textContent=`${v.parte==='ida'?'La ida':'La vuelta'} · Canto ${v.canto} · Estrofa ${v.estrofa}, verso ${v.linea}`;
   const p=document.createElement('p');p.textContent=v.texto;
-  row.append(a,p);resultados.append(row);
+  row.append(a,p);fragmento.append(row);
+ }
+ resultados.append(fragmento);
+ if(totalPaginas>1){
+  const agregar=(texto:string,numero:number,deshabilitado=false)=>{
+    const b=document.createElement('button');b.type='button';b.textContent=texto;b.disabled=deshabilitado;
+    b.addEventListener('click',()=>{pagina=numero;dibujar();estado.scrollIntoView({block:'start'});});
+    paginas.append(b);
+  };
+  agregar('← Anterior',pagina-1,pagina===1);
+  const marcador=document.createElement('span');marcador.textContent=` ${pagina} / ${totalPaginas} `;paginas.append(marcador);
+  agregar('Siguiente →',pagina+1,pagina===totalPaginas);
  }
 }
 async function buscar(){
- if(normalizar(input.value).length<2){dibujar();return;}
  const actual=++generacion;
+ if(normalizar(input.value).length<2){dibujar();return;}
  if(!datos){
-  try{const res=await fetch('/indice-versos.json');if(!res.ok)throw new Error('Sin índice');datos=await res.json() as Registro[];}
-  catch{estado.textContent='No se pudo cargar el índice. Volvé a intentar.';return;}
+  try{
+   if(!carga)carga=fetch('/indice-versos.json').then(r=>{if(!r.ok)throw new Error('Sin índice');return r.json() as Promise<Registro[]>});
+   datos=await carga;
+  }catch{carga=null;if(actual===generacion)estado.textContent='No se pudo cargar el índice. Volvé a intentar.';return;}
  }
  if(actual===generacion)dibujar();
 }
-input.addEventListener('input',buscar);filtro.addEventListener('change',buscar);
-const url=new URL(location.href);const inicial=url.searchParams.get('q');if(inicial){input.value=inicial;buscar();}
+function cambio(){pagina=1;void buscar();}
+input.addEventListener('input',cambio);filtro.addEventListener('change',cambio);tildes.addEventListener('change',cambio);
+const inicial=new URL(location.href).searchParams.get('q');if(inicial){input.value=inicial;void buscar();}
 </script>
+<style>
+.search-option{display:flex;align-items:center;gap:.55rem;margin:1rem 0;font:inherit}
+#paginas{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;margin:1.5rem 0}
+#paginas button{border:1px solid #8d6a53;background:#f7f2e8;color:#34251d;padding:.65rem 1rem;cursor:pointer}
+#paginas button:disabled{opacity:.45;cursor:not-allowed}
+#paginas button:focus-visible{outline:3px solid #b65a3a;outline-offset:3px}
+</style>
 </EditorialSection>
 </Base>
