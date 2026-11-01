@@ -3,6 +3,10 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const html=readFileSync('dist/indice-general/index.html','utf8');
 assert.match(html,/id="mf-resultados-directos"/);
+assert.match(html,/El Moreno de la payada/);
+assert.match(html,/negro del baile/);
+assert.match(html,/hombre negro/);
+
 assert.ok(existsSync('dist/js/indice-general.js'));
 const js=readFileSync('dist/js/indice-general.js','utf8');
 function element(tag='li'){
