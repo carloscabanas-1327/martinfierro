@@ -150,17 +150,17 @@ export const seoCantos=[
   {
     "parte": "vuelta",
     "canto": 6,
-    "slug": "canto-6-la-epidemia-y-el-duelo-que-se-aproxima",
-    "titulo": "La epidemia y el duelo que se aproxima — La vuelta, canto 6",
-    "tema": "la epidemia y el duelo que se aproxima",
+    "slug": "canto-6-muerte-del-sargento-cruz",
+    "titulo": "Muerte del Sargento Cruz en Martín Fierro — La vuelta, canto 6",
+    "tema": "enfermedad y muerte de Cruz",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 7,
-    "slug": "canto-7-la-muerte-de-cruz-el-companero-convertido-en-memoria",
-    "titulo": "La muerte de Cruz: el compañero convertido en memoria — La vuelta, canto 7",
-    "tema": "la muerte de cruz: el compañero convertido en memoria",
+    "slug": "canto-7-entierro-de-cruz-y-duelo-de-fierro",
+    "titulo": "Entierro de Cruz y duelo de Martín Fierro — La vuelta, canto 7",
+    "tema": "entierro de Cruz y duelo de Fierro",
     "imagen": null
   },
   {
