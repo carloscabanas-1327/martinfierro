@@ -31,16 +31,16 @@ export const seoCantos=[
     "parte": "ida",
     "canto": 4,
     "slug": "canto-4",
-    "titulo": "El gaucho Martín Fierro, canto 4: lectura y análisis con estrofas originales | Canto 4",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La pobreza durante el servicio — La ida, canto 4",
+    "tema": "la pobreza durante el servicio",
     "imagen": null
   },
   {
     "parte": "ida",
     "canto": 5,
     "slug": "canto-5",
-    "titulo": "El gaucho Martín Fierro, canto 5: lectura y análisis con estrofas originales | Canto 5",
-    "tema": "lectura guiada del canto original",
+    "titulo": "El deseo de fuga y la violencia fronteriza — La ida, canto 5",
+    "tema": "el deseo de fuga y la violencia fronteriza",
     "imagen": null
   },
   {
@@ -63,8 +63,8 @@ export const seoCantos=[
     "parte": "ida",
     "canto": 8,
     "slug": "canto-8",
-    "titulo": "El gaucho Martín Fierro, canto 8: lectura y análisis con estrofas originales | Canto 8",
-    "tema": "lectura guiada del canto original",
+    "titulo": "Otro enfrentamiento y la vida fuera de la ley — La ida, canto 8",
+    "tema": "otro enfrentamiento y la vida fuera de la ley",
     "imagen": null
   },
   {
@@ -79,24 +79,24 @@ export const seoCantos=[
     "parte": "ida",
     "canto": 10,
     "slug": "canto-10",
-    "titulo": "El gaucho Martín Fierro, canto 10: lectura y análisis con estrofas originales | Canto 10",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La historia de Cruz y la pérdida personal — La ida, canto 10",
+    "tema": "la historia de cruz y la pérdida personal",
     "imagen": null
   },
   {
     "parte": "ida",
     "canto": 11,
     "slug": "canto-11",
-    "titulo": "El gaucho Martín Fierro, canto 11: lectura y análisis con estrofas originales | Canto 11",
-    "tema": "lectura guiada del canto original",
+    "titulo": "Cruz interpreta la injusticia del gaucho — La ida, canto 11",
+    "tema": "cruz interpreta la injusticia del gaucho",
     "imagen": null
   },
   {
     "parte": "ida",
     "canto": 12,
     "slug": "canto-12",
-    "titulo": "El gaucho Martín Fierro, canto 12: lectura y análisis con estrofas originales | Canto 12",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La supervivencia y el juicio sobre la autoridad — La ida, canto 12",
+    "tema": "la supervivencia y el juicio sobre la autoridad",
     "imagen": null
   },
   {
@@ -119,48 +119,48 @@ export const seoCantos=[
     "parte": "vuelta",
     "canto": 2,
     "slug": "canto-2",
-    "titulo": "La vuelta de Martín Fierro, canto 2: lectura y análisis con estrofas originales | Canto 2",
-    "tema": "lectura guiada del canto original",
+    "titulo": "Cautiverio, extranjería y puntos de vista — La vuelta, canto 2",
+    "tema": "cautiverio, extranjería y puntos de vista",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 3,
     "slug": "canto-3",
-    "titulo": "La vuelta de Martín Fierro, canto 3: lectura y análisis con estrofas originales | Canto 3",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La supervivencia y la ética del sufrimiento — La vuelta, canto 3",
+    "tema": "la supervivencia y la ética del sufrimiento",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 4,
     "slug": "canto-4",
-    "titulo": "La vuelta de Martín Fierro, canto 4: lectura y análisis con estrofas originales | Canto 4",
-    "tema": "lectura guiada del canto original",
+    "titulo": "El retrato de los otros y los límites del narrador — La vuelta, canto 4",
+    "tema": "el retrato de los otros y los límites del narrador",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 5,
     "slug": "canto-5",
-    "titulo": "La vuelta de Martín Fierro, canto 5: lectura y análisis con estrofas originales | Canto 5",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La invasión y la frontera representada como guerra — La vuelta, canto 5",
+    "tema": "la invasión y la frontera representada como guerra",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 6,
     "slug": "canto-6",
-    "titulo": "La vuelta de Martín Fierro, canto 6: lectura y análisis con estrofas originales | Canto 6",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La epidemia y el duelo que se aproxima — La vuelta, canto 6",
+    "tema": "la epidemia y el duelo que se aproxima",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 7,
     "slug": "canto-7",
-    "titulo": "La vuelta de Martín Fierro, canto 7: lectura y análisis con estrofas originales | Canto 7",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La muerte de Cruz: el compañero convertido en memoria — La vuelta, canto 7",
+    "tema": "la muerte de cruz: el compañero convertido en memoria",
     "imagen": null
   },
   {
@@ -175,24 +175,24 @@ export const seoCantos=[
     "parte": "vuelta",
     "canto": 9,
     "slug": "canto-9",
-    "titulo": "La vuelta de Martín Fierro, canto 9: lectura y análisis con estrofas originales | Canto 9",
-    "tema": "lectura guiada del canto original",
+    "titulo": "El enfrentamiento y el rescate — La vuelta, canto 9",
+    "tema": "el enfrentamiento y el rescate",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 10,
     "slug": "canto-10",
-    "titulo": "La vuelta de Martín Fierro, canto 10: lectura y análisis con estrofas originales | Canto 10",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La huida y los límites de la liberación — La vuelta, canto 10",
+    "tema": "la huida y los límites de la liberación",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 11,
     "slug": "canto-11",
-    "titulo": "La vuelta de Martín Fierro, canto 11: lectura y análisis con estrofas originales | Canto 11",
-    "tema": "lectura guiada del canto original",
+    "titulo": "El reencuentro y la confesión de responsabilidad — La vuelta, canto 11",
+    "tema": "el reencuentro y la confesión de responsabilidad",
     "imagen": null
   },
   {
@@ -207,8 +207,8 @@ export const seoCantos=[
     "parte": "vuelta",
     "canto": 13,
     "slug": "canto-13",
-    "titulo": "La vuelta de Martín Fierro, canto 13: lectura y análisis con estrofas originales | Canto 13",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La dependencia y la pérdida del amparo — La vuelta, canto 13",
+    "tema": "la dependencia y la pérdida del amparo",
     "imagen": null
   },
   {
@@ -231,40 +231,40 @@ export const seoCantos=[
     "parte": "vuelta",
     "canto": 16,
     "slug": "canto-16",
-    "titulo": "La vuelta de Martín Fierro, canto 16: lectura y análisis con estrofas originales | Canto 16",
-    "tema": "lectura guiada del canto original",
+    "titulo": "Enfermedad, muerte y humillación — La vuelta, canto 16",
+    "tema": "enfermedad, muerte y humillación",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 17,
     "slug": "canto-17",
-    "titulo": "La vuelta de Martín Fierro, canto 17: lectura y análisis con estrofas originales | Canto 17",
-    "tema": "lectura guiada del canto original",
+    "titulo": "El velorio y la sátira de los rituales — La vuelta, canto 17",
+    "tema": "el velorio y la sátira de los rituales",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 18,
     "slug": "canto-18",
-    "titulo": "La vuelta de Martín Fierro, canto 18: lectura y análisis con estrofas originales | Canto 18",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La orfandad y la intemperie material — La vuelta, canto 18",
+    "tema": "la orfandad y la intemperie material",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 19,
     "slug": "canto-19",
-    "titulo": "La vuelta de Martín Fierro, canto 19: lectura y análisis con estrofas originales | Canto 19",
-    "tema": "lectura guiada del canto original",
+    "titulo": "El aprendizaje sentimental y sus riesgos — La vuelta, canto 19",
+    "tema": "el aprendizaje sentimental y sus riesgos",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 20,
     "slug": "canto-20",
-    "titulo": "La vuelta de Martín Fierro, canto 20: lectura y análisis con estrofas originales | Canto 20",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La presentación de Picardía y el relevo de narradores — La vuelta, canto 20",
+    "tema": "la presentación de picardía y el relevo de narradores",
     "imagen": null
   },
   {
@@ -279,56 +279,56 @@ export const seoCantos=[
     "parte": "vuelta",
     "canto": 22,
     "slug": "canto-22",
-    "titulo": "La vuelta de Martín Fierro, canto 22: lectura y análisis con estrofas originales | Canto 22",
-    "tema": "lectura guiada del canto original",
+    "titulo": "El juego y la economía del engaño — La vuelta, canto 22",
+    "tema": "el juego y la economía del engaño",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 23,
     "slug": "canto-23",
-    "titulo": "La vuelta de Martín Fierro, canto 23: lectura y análisis con estrofas originales | Canto 23",
-    "tema": "lectura guiada del canto original",
+    "titulo": "Abuso local y poder discrecional — La vuelta, canto 23",
+    "tema": "abuso local y poder discrecional",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 24,
     "slug": "canto-24",
-    "titulo": "La vuelta de Martín Fierro, canto 24: lectura y análisis con estrofas originales | Canto 24",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La elección y la manipulación política — La vuelta, canto 24",
+    "tema": "la elección y la manipulación política",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 25,
     "slug": "canto-25",
-    "titulo": "La vuelta de Martín Fierro, canto 25: lectura y análisis con estrofas originales | Canto 25",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La papeleta y el costo humano de la autoridad — La vuelta, canto 25",
+    "tema": "la papeleta y el costo humano de la autoridad",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 26,
     "slug": "canto-26",
-    "titulo": "La vuelta de Martín Fierro, canto 26: lectura y análisis con estrofas originales | Canto 26",
-    "tema": "lectura guiada del canto original",
+    "titulo": "Cierre autobiográfico: arrepentimiento y cambio — La vuelta, canto 26",
+    "tema": "cierre autobiográfico: arrepentimiento y cambio",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 27,
     "slug": "canto-27",
-    "titulo": "La vuelta de Martín Fierro, canto 27: lectura y análisis con estrofas originales | Canto 27",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La leva y la pobreza del soldado — La vuelta, canto 27",
+    "tema": "la leva y la pobreza del soldado",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 28,
     "slug": "canto-28",
-    "titulo": "La vuelta de Martín Fierro, canto 28: lectura y análisis con estrofas originales | Canto 28",
-    "tema": "lectura guiada del canto original",
+    "titulo": "Las jerarquías y la explotación cotidiana — La vuelta, canto 28",
+    "tema": "las jerarquías y la explotación cotidiana",
     "imagen": null
   },
   {
@@ -343,16 +343,16 @@ export const seoCantos=[
     "parte": "vuelta",
     "canto": 30,
     "slug": "canto-30",
-    "titulo": "La vuelta de Martín Fierro, canto 30: lectura y análisis con estrofas originales | Canto 30",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La payada como examen de saber y de justicia — La vuelta, canto 30",
+    "tema": "la payada como examen de saber y de justicia",
     "imagen": null
   },
   {
     "parte": "vuelta",
     "canto": 31,
     "slug": "canto-31",
-    "titulo": "La vuelta de Martín Fierro, canto 31: lectura y análisis con estrofas originales | Canto 31",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La pausa después del contrapunto — La vuelta, canto 31",
+    "tema": "la pausa después del contrapunto",
     "imagen": null
   },
   {
@@ -367,8 +367,8 @@ export const seoCantos=[
     "parte": "vuelta",
     "canto": 33,
     "slug": "canto-33",
-    "titulo": "La vuelta de Martín Fierro, canto 33: lectura y análisis con estrofas originales | Canto 33",
-    "tema": "lectura guiada del canto original",
+    "titulo": "La separación final y lo que el narrador calla — La vuelta, canto 33",
+    "tema": "la separación final y lo que el narrador calla",
     "imagen": null
   }
 ] as const;
