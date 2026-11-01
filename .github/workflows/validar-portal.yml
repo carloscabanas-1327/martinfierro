@@ -78,6 +78,33 @@ jobs:
           name: navegacion-es-grafo
           path: auditoria-grafo-es.json
           retention-days: 14
+      - name: Auditar enlaces externos (sin bloquear compilación por anti-bots)
+        continue-on-error: true
+        run: python scripts/auditar-externos.py
+      - name: Guardar informe de URL externas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-externos-es
+          path: auditoria-externos.json
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Preparar Chromium para control visual
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Revisar seis anchos y zoom al 200 por ciento
+        run: |
+          python3 -m http.server 4322 --directory dist >/tmp/mf-preview.log 2>&1 &
+          node scripts/auditar-responsive.mjs
+      - name: Guardar capturas y reporte responsive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-responsive-es
+          path: auditoria-responsive/
+          if-no-files-found: ignore
+          retention-days: 14
       - name: Guardar versión de prueba
         uses: actions/upload-artifact@v4
         with:
