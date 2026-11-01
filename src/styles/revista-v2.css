@@ -270,3 +270,46 @@ body:has(.mf-revista) main.container{
 .mf-lead-actions>a,.mf-lead-copy>.mf-language-toplink{box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;width:100%;min-height:48px;padding:12px 16px;margin:0;font:750 .9rem/1.35 system-ui,sans-serif;border-radius:3px}
 .mf-lead-copy>.mf-language-toplink{width:min(100%,320px);margin-top:11px;margin-bottom:22px;gap:16px}
 .mf-lead-actions>a span,.mf-lead-copy>.mf-language-toplink span{margin-left:auto}
+
+
+/* MF-PORTADA-ES-004 — jerarquía editorial, limitada a la portada española.
+   Dos partes equivalentes; dos recorridos secundarios en una fila separada. */
+.mf-revista .mf-lead{margin-bottom:clamp(16px,2.5vw,36px);grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.mf-revista .mf-lead-art img{object-position:54% center}
+.mf-revista .mf-lead-copy{padding:clamp(30px,3.6vw,62px)}
+.mf-revista .mf-lead h1{font-size:clamp(2.8rem,4.1vw,5.1rem);line-height:1.045;overflow-wrap:normal;text-wrap:balance}
+.mf-revista .mf-lead-actions{width:min(100%,340px);gap:10px}
+.mf-revista .mf-lead-copy>.mf-language-toplink{min-height:36px;width:fit-content;max-width:100%;padding:6px 0;margin:12px 0 20px;border:0;background:transparent;font-size:.83rem;text-decoration:underline;text-underline-offset:4px}
+.mf-revista .mf-storyline{padding-top:clamp(42px,5vw,72px);padding-bottom:clamp(48px,6vw,84px)}
+.mf-revista .mf-story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,2.5vw,34px);align-items:start}
+.mf-revista .mf-feature-story,.mf-revista .mf-side-story{min-width:0;align-self:stretch}
+.mf-revista .mf-feature-story .mf-story-img,.mf-revista .mf-side-story .mf-story-img{aspect-ratio:16/9}
+.mf-revista .mf-feature-story .mf-story-copy h3,.mf-revista .mf-side-story .mf-story-copy h3{font-size:clamp(1.75rem,2.5vw,3rem);line-height:1.12;text-wrap:balance}
+.mf-revista .mf-story-grid>.mf-story-aside{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:clamp(20px,2.5vw,34px);margin-top:clamp(12px,2vw,25px);padding-top:clamp(22px,3vw,36px);border-top:1px solid var(--mf-border)}
+.mf-revista .mf-story-aside>.mf-quote{grid-column:auto;border-top:3px solid #ad523b;padding:20px 18px 16px 0}
+.mf-revista .mf-quote blockquote{font-size:clamp(1.45rem,2vw,2.35rem);line-height:1.35;max-width:30ch;margin:16px 0}
+.mf-revista .mf-advice-story{grid-column:auto;display:grid;grid-template-columns:minmax(110px,.42fr) minmax(0,1fr);gap:18px;align-items:start;padding:20px 0 16px;border-top:3px solid #aa533c}
+.mf-revista .mf-advice-photo{margin:0;aspect-ratio:4/3}
+.mf-revista .mf-advice-copy h3{font-size:clamp(1.4rem,1.8vw,2rem)}
+.mf-revista .mf-explore{padding-top:clamp(40px,5vw,68px)}
+@media(max-width:1050px){
+ .mf-revista .mf-lead h1{font-size:clamp(2.45rem,4.2vw,4rem)}
+ .mf-revista .mf-advice-story{grid-template-columns:minmax(95px,.4fr) minmax(0,1fr)}
+}
+@media(max-width:850px){
+ .mf-revista .mf-lead{display:flex;flex-direction:column}
+ .mf-revista .mf-lead-art{min-height:clamp(300px,50vw,460px)}
+ .mf-revista .mf-lead h1{font-size:clamp(2.75rem,7vw,4.5rem);max-width:18ch}
+ .mf-revista .mf-lead-art img{object-position:60% center}
+}
+@media(max-width:720px){
+ .mf-revista .mf-story-grid{grid-template-columns:minmax(0,1fr)}
+ .mf-revista .mf-story-grid>.mf-story-aside{grid-column:1;grid-template-columns:minmax(0,1fr)}
+ .mf-revista .mf-advice-story{grid-template-columns:minmax(100px,.36fr) minmax(0,1fr);gap:14px}
+ .mf-revista .mf-storyline{padding-top:38px;padding-bottom:54px}
+ .mf-revista .mf-lead h1{font-size:clamp(2.55rem,10vw,4.4rem)}
+}
+@media(max-width:390px){
+ .mf-revista .mf-advice-story{grid-template-columns:minmax(0,1fr)}
+ .mf-revista .mf-advice-photo{aspect-ratio:16/9}
+}
