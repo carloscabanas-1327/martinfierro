@@ -1,0 +1,34 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {englishReference} from '../../../data/en-reference';
+---
+<Base lang="en-US" pageType="SearchResultsPage" title="Search Martín Fierro in English — Student Research" description="Search the English library of 46 canto guides, gaucho vocabulary, characters, literary analysis, articles and original Spanish source references.">
+<article class="search-page"><nav class="crumb"><a href="/en/">English edition</a> / <a href="/en/site-index/">Site index</a> / Search</nav><header><p class="eyebrow">ENGLISH STUDENT RESEARCH</p><h1>Search the English collection</h1><p>Search published English guides, topics, character resources and cultural articles. For authentic verse quotations, consult the <a href="/leer/" lang="es">original Spanish poem (Spanish)</a>.</p></header>
+<form id="en-reference-search" role="search"><label for="term">Search for a canto, subject or gaucho word</label><div class="controls"><input name="q" id="term" type="search" placeholder="Try Picardía, payada, Canto 30, frontier…" autocomplete="off"/><button type="submit">Search</button></div></form>
+<p id="result-count" role="status" aria-live="polite">Browse the full English collection below.</p><div id="search-results" class="results">{englishReference.map(x=><article class="result" data-title={x.title} data-description={x.description} data-kind={x.kind} data-url={x.url}><small>{x.kind}{x.lang==='es'?' · original in Spanish':''}</small><h2><a href={x.url}>{x.title}</a></h2><p>{x.description}</p></article>)}</div>
+<noscript><p>Search filtering requires JavaScript, but all reference links above remain visible. You can also use the <a href="/en/site-index/">English site index</a>.</p></noscript>
+</article>
+<script>
+const form=document.querySelector<HTMLFormElement>('#en-reference-search');
+const input=document.querySelector<HTMLInputElement>('#term');
+const cards=Array.from(document.querySelectorAll<HTMLElement>('#search-results .result'));
+const status=document.querySelector<HTMLElement>('#result-count');
+function filter(raw:string){
+ const query=raw.trim().toLocaleLowerCase('en').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+ const words=query.split(/\s+/).filter(Boolean);
+ let count=0;
+ cards.forEach(card=>{
+  const haystack=[card.dataset.title,card.dataset.description,card.dataset.kind,card.dataset.url].join(' ').toLocaleLowerCase('en').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const found=words.every(w=>haystack.includes(w));
+  card.hidden=!found;
+  if(found)count++;
+ });
+ if(status)status.textContent=query?`${count} matching reference ${count===1?'page':'pages'}.`:`Browsing all ${count} reference entries.`;
+ const updated=new URL(location.href);if(raw.trim())updated.searchParams.set('q',raw.trim());else updated.searchParams.delete('q');history.replaceState(null,'',updated);
+}
+form?.addEventListener('submit',e=>{e.preventDefault();filter(input?.value||'')});
+input?.addEventListener('input',()=>filter(input.value));
+const initial=new URLSearchParams(location.search).get('q')||'';if(input)input.value=initial;filter(initial);
+</script>
+<style>.search-page{max-width:1060px;margin:28px auto 90px;color:#31291f}.search-page a{color:#86402e}.crumb{font:.82rem system-ui,sans-serif}.eyebrow{letter-spacing:.13em;font:750 .7rem system-ui,sans-serif;color:#945139}.search-page h1{font:600 clamp(2.4rem,5vw,4.5rem)/1.1 Georgia,serif}.search-page header p{font:1.18rem/1.7 Georgia,serif;max-width:75ch}#en-reference-search{background:#eee3d6;padding:25px;margin:30px 0}label{display:block;font:700 1rem system-ui,sans-serif;margin-bottom:12px}.controls{display:flex;gap:10px}.controls input{min-width:0;flex:1;border:1px solid #aa9581;background:white;padding:14px;font:1rem system-ui,sans-serif}.controls button{background:#3b2d22;color:#fff;border:0;padding:12px 22px;cursor:pointer;font:700 .9rem system-ui,sans-serif}#result-count{font:.94rem system-ui,sans-serif}.results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:25px 0}.result{padding:22px;background:#f2e8db;border-top:2px solid #574337}.result[hidden]{display:none}.result small{font:700 .69rem system-ui,sans-serif;text-transform:uppercase;color:#795743}.result h2{font:600 1.5rem/1.25 Georgia,serif;margin:10px 0}.result p{font:1rem/1.65 Georgia,serif;margin-bottom:0}@media(max-width:650px){.results{grid-template-columns:1fr}.controls{flex-direction:column}.search-page{padding:0 12px}}</style>
+</Base>
