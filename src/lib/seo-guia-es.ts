@@ -2,10 +2,11 @@
 export function seoTitleGuia(titulo:string,parte:'ida'|'vuelta',canto:number){
  const tema=titulo.replace(/\s*(?:\| Canto \d+|— La (?:ida|vuelta), canto \d+)\s*$/i,'').trim();
  const encabezado=`Canto ${canto} (${parte==='ida'?'Ida':'Vuelta'}): `;
- const marca=tema.toLocaleLowerCase('es').includes('martín fierro')?'':' | Martín Fierro';
- const disponible=60-encabezado.length-marca.length;
  let corto=tema;
- if(corto.length>disponible){corto=tema.slice(0,disponible+1).replace(/\s+\S*$/,'').trim();}
+ const conMarca=(valor:string)=>valor.toLocaleLowerCase('es').includes('martín fierro')?'':' | Martín Fierro';
+ while(encabezado.length+corto.length+conMarca(corto).length>60&&corto.includes(' ')){
+  corto=corto.slice(0,corto.lastIndexOf(' ')).trim();
+ }
  return encabezado+corto;
 }
 export function descriptionGuia(tema:string,obra:string,canto:number,hechos:string){
