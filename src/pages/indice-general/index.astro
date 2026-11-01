@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { partes, enlaceCanto } from '../../lib/corpus';
 import { temas } from '../../data/temas';
+import { personajes } from '../../data/personajes';
 import '../../styles/indice-general.css';
 const grupos=[
   {
@@ -105,6 +106,7 @@ const grupos=[
         "url": "/personajes/",
         "descripcion": "Guía ilustrada de personajes y sus papeles en la obra."
       },
+      ...personajes.map(p=>({titulo:p.nombre,url:`/personajes/#${p.id}`,descripcion:p.resumen})),
       {
         "titulo": "Exégesis y claves de lectura",
         "url": "/exegesis/",
