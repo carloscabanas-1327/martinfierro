@@ -256,3 +256,22 @@ body .site-footer.editorial-footer {
  .site-footer.editorial-footer .editorial-footer-grid{grid-template-columns:1fr}
  .site-footer.editorial-footer .editorial-footer-identity{grid-column:1}
 }
+
+
+/* MF-ES-NAV-002: banda de herramientas propia de la edición española.
+   Nunca visible ni heredada por /en/. */
+.site-header .mf-es-utility{
+ display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+ gap:6px clamp(12px,1.8vw,26px);width:min(var(--mf-reading-width,1416px),calc(100% - 52px));
+ margin-inline:auto;padding:12px 4px;border-top:1px solid #dac9b6;
+}
+.site-header .mf-es-utility a{
+ font:650 .77rem/1.5 system-ui,sans-serif;text-decoration:none;
+ color:#654736;padding:5px 2px;white-space:normal;
+}
+.site-header .mf-es-utility a:hover{text-decoration:underline;text-underline-offset:4px;color:#8e432f}
+.site-header .mf-es-utility a:focus-visible{outline:3px solid #cc8066;outline-offset:3px}
+@media(max-width:760px){
+ .site-header .mf-es-utility{width:calc(100% - 30px);justify-content:flex-start;gap:5px 16px;padding-block:9px}
+ .site-header .mf-es-utility a{font-size:.76rem;padding:7px 0}
+}
