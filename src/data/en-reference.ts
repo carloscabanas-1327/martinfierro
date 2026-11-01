@@ -81,6 +81,7 @@ export const englishSections:ReferenceItem[]=[
   }
 ];
 export const englishArticles:ReferenceItem[]=[
+  ...[{slug:'about',name:'About the Project'},{slug:'contact',name:'Contact'},{slug:'editorial-method',name:'Sources and Editorial Integrity'},{slug:'sources-and-rights',name:'Sources, Attribution and Copyright'},{slug:'privacy',name:'Privacy Policy'},{slug:'terms',name:'Terms of Use'},{slug:'advertising-and-affiliates',name:'Advertising and Affiliates'}].map(p=>({title:p.name,url:`/en/${p.slug}/`,description:'English institutional and editorial documentation',kind:'institutional policy',lang:'en' as const})),
   {title:"Read the Original Spanish Poem: English Guide",url:"/en/reader/",description:"Navigate 46 cantos with English introductions and original Spanish source links",kind:"reading guide",lang:"en"},
   {title:"Search 7,210 Original Spanish Verses",url:"/en/verse-search/",description:"Search every authentic source verse by word or phrase and identify its canto and stanza",kind:"verse search",lang:"en"},
   {title:"Six English Reading Themes",url:"/en/themes/",description:"Gaucho life, frontier, justice, loyalty, family and advice",kind:"theme index",lang:"en"},
