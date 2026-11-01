@@ -4,10 +4,12 @@ import EditorialSection from '../../components/EditorialSection.astro';
 import Base from '../../layouts/Base.astro';
 import {temas} from '../../data/temas';
 import '../../styles/revista-ilustrada.css';
-const principales=[
+const investigaciones=[
  {label:'GUÍA INTERNACIONAL · MATE Y CULTURA',title:'¿Qué es el mate? Doce claves del mundo gauchesco',description:'Una guía para extranjeros: yerba, bombilla, pulpería, payada, poncho, caballo y las tradiciones del Río de la Plata, con fuentes institucionales.',href:'/cultura-gauchesca/',image:'/media/fotografias-v3/revista-cultural.webp',alt:'Ilustración editorial contemporánea de la vida rural rioplatense',historical:false},
  {label:'INVESTIGACIÓN HISTÓRICA · PULPERÍAS',title:'La pulpería: almacén, encuentro y canto',description:'Cómo eran los comercios y espacios de sociabilidad rural, con la pulpería La Blanqueada, documentos y pasajes precisos de Martín Fierro.',href:'/revista/pulperias-y-sociabilidad/',image:'/media/fotografias-v3/la-ida.webp',alt:'Ilustración digital de ambientación gauchesca, no fotografía histórica',historical:false},
- {label:'AUTOR Y ÉPOCA',title:'José Hernández y su tiempo',description:'Una aproximación documental a la vida del autor, su periodismo y los acontecimientos que rodearon la creación del poema.',href:'/jose-hernandez/',image:'https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg',alt:'Retrato fotográfico histórico de José Hernández, hacia 1875',historical:true},
+];
+const consultas=[
+{label:'AUTOR Y ÉPOCA',title:'José Hernández y su tiempo',description:'Una aproximación documental a la vida del autor, su periodismo y los acontecimientos que rodearon la creación del poema.',href:'/jose-hernandez/',image:'https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg',alt:'Retrato fotográfico histórico de José Hernández, hacia 1875',historical:true},
  {label:'CLAVES DE LECTURA',title:'Cómo leer Martín Fierro hoy',description:'La voz del gaucho, los conflictos y las preguntas que atraviesan el poema. Primera lectura introductoria y vínculos a sus versos.',href:'/exegesis/',image:'/media/fotografias-v3/exegesis.webp',alt:'Recreación digital de una escena de lectura y estudio literario'},
  {label:'BIBLIOTECA CRÍTICA',title:'Los libros que dialogan con Martín Fierro',description:'Lugones, Martínez Estrada y Borges: una selección inicial de obras fundamentales de su recepción literaria.',href:'/biblioteca-critica/',image:'/media/fotografias-v3/biblioteca-critica.webp',alt:'Recreación digital de libros antiguos en una biblioteca'}
 ];
@@ -26,13 +28,13 @@ const panoramas=[
 <section class="section-intro">
  <p class="eyebrow">Investigaciones, fuentes históricas y cultura rioplatense</p>
  <h1>La cultura que rodea a Martín Fierro</h1>
- <p class="lead">Investigaciones sobre José Hernández, el mundo de la campaña y sus objetos: artículos propios, documentos de época, fuentes institucionales y guías para lectores argentinos y extranjeros. Cada imagen ambienta; las fotografías históricas se distinguen de las recreaciones.</p>
+ <p class="lead">Dos investigaciones publicadas, una biblioteca de consulta y recorridos por el poema. Cada contenido se presenta según su naturaleza: artículo independiente, documento, guía o selección temática. Las fotografías históricas se distinguen de las recreaciones.</p>
 </section>
 <AdSlot id="category-02" kind="category" />
 <section class="mf-magazine-block" aria-labelledby="mf-revista-destacados">
- <div class="mf-magazine-heading"><p>01 / LECTURAS Y DOCUMENTOS</p><h2 id="mf-revista-destacados">Historias para empezar a explorar</h2></div>
+ <div class="mf-magazine-heading"><p>01 / ARTÍCULOS PROPIOS</p><h2 id="mf-revista-destacados">Investigaciones publicadas</h2></div>
  <div class="mf-magazine-featured">
- {principales.map(item=><a href={item.href} class:list={['mf-magazine-story',{'mf-magazine-story--portrait':item.historical}]}>
+ {investigaciones.map(item=><a href={item.href} class:list={['mf-magazine-story',{'mf-magazine-story--portrait':item.historical}]}>
   <div class="mf-magazine-story-photo"><img src={item.image} alt={item.alt} loading="lazy" decoding="async" width="720" height="470"/></div>
   <div class="mf-magazine-story-copy">
    <span>{item.label}</span><h3>{item.title}</h3><p>{item.description}</p><b>Explorar el contenido <span aria-hidden="true">↗</span></b>
@@ -40,8 +42,14 @@ const panoramas=[
  </a>)}
  </div>
 </section>
+<section class="mf-magazine-block" aria-labelledby="mf-revista-consultas">
+ <div class="mf-magazine-heading"><p>02 / BIBLIOTECA DE CONSULTA</p><h2 id="mf-revista-consultas">Documentación para ampliar la lectura</h2><p class="mf-magazine-intro">Estos enlaces llevan a secciones permanentes del portal: no se presentan como nuevas investigaciones publicadas por la Revista.</p></div>
+ <div class="mf-magazine-featured">{consultas.map(item=><a href={item.href} class:list={['mf-magazine-story',{'mf-magazine-story--portrait':item.historical}]}>
+ <div class="mf-magazine-story-photo"><img src={item.image} alt={item.alt} loading="lazy" decoding="async" width="720" height="470"/></div>
+ <div class="mf-magazine-story-copy"><span>{item.label}</span><h3>{item.title}</h3><p>{item.description}</p><b>Consultar sección <span aria-hidden="true">↗</span></b></div></a>)}</div>
+</section>
 <section class="mf-magazine-block" aria-labelledby="mf-revista-temas">
- <div class="mf-magazine-heading"><p>02 / EL UNIVERSO GAUCHESCO</p><h2 id="mf-revista-temas">Paisajes, encuentros y experiencias</h2><p class="mf-magazine-intro">Estos recorridos permiten explorar los cantos y análisis temáticos; se distinguen de las investigaciones independientes de esta revista.</p></div>
+ <div class="mf-magazine-heading"><p>03 / EL UNIVERSO GAUCHESCO</p><h2 id="mf-revista-temas">Paisajes, encuentros y experiencias</h2><p class="mf-magazine-intro">Estos recorridos permiten explorar los cantos y análisis temáticos; se distinguen de las investigaciones independientes de esta revista.</p></div>
  <div class="mf-magazine-grid">
  {panoramas.map(item=><a href={item.href} class="mf-magazine-story">
   <div class="mf-magazine-story-photo"><img src={item.image} alt={item.alt} loading="lazy" decoding="async" width="620" height="410"/></div>
@@ -51,7 +59,7 @@ const panoramas=[
 </section>
 <section class="mf-magazine-coming" aria-labelledby="mf-revista-proximo">
  <p class="eyebrow">AGENDA EDITORIAL</p><h2 id="mf-revista-proximo">Próximas investigaciones ilustradas</h2>
- <p>Ya publicamos un artículo histórico sobre las pulperías y una guía del mate y la cultura gauchesca para visitantes internacionales. Permanecen pendientes investigaciones individuales sobre oficios rurales, fortineras, música, aperos y fuentes producidas por comunidades indígenas; no se presentan como artículos concluidos.</p>
+ <p>La revista cuenta con dos trabajos individuales: la investigación sobre las pulperías y la guía de mate y cultura gauchesca. Siguen pendientes artículos documentales sobre oficios rurales, fortineras, música, aperos y perspectivas de comunidades indígenas. La agenda no enlaza notas inexistentes.</p>
  <a href="/revista/pulperias-y-sociabilidad/">Leer investigación sobre pulperías ↗</a> · <a href="/cultura-gauchesca/">Conocer el mate y la cultura gauchesca ↗</a> · <a href="/archivo/">Consultar archivo histórico ↗</a>
 </section>
 <AdSlot id="category-03" kind="category" />
