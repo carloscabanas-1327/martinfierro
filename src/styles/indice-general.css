@@ -36,3 +36,12 @@
 .mf-directorio a:focus-visible{outline:3px solid #ac6048;outline-offset:3px}
 @media(max-width:800px){.mf-directorio-atajos{grid-template-columns:repeat(2,minmax(0,1fr))}.mf-directorio-lista{grid-template-columns:1fr;row-gap:34px}}
 @media(max-width:600px){.mf-directorio-header h1{font-size:clamp(2.4rem,10vw,4rem)}.mf-directorio-atajos{grid-template-columns:1fr;padding:20px}.mf-directorio-partes{grid-template-columns:1fr}.mf-directorio-stats{gap:9px 20px}}
+
+/* Búsqueda interna y descripciones del directorio */
+.mf-directorio-busqueda{padding:22px 25px;margin:27px 0;background:#f1e7d8;border:1px solid #cdbfac}
+.mf-directorio-busqueda label{display:block;font:750 .95rem/1.4 system-ui,sans-serif;color:#463226;margin-bottom:11px}
+.mf-directorio-busqueda input{display:block;width:100%;box-sizing:border-box;border:1px solid #a18b77;border-radius:4px;background:#fffdf8;color:#2d251e;font:1rem/1.4 system-ui,sans-serif;padding:13px 15px;min-height:48px}
+.mf-directorio-busqueda input:focus-visible{outline:3px solid #a45038;outline-offset:2px}
+.mf-directorio-busqueda p{font:.83rem/1.5 system-ui,sans-serif;color:#675648;margin:10px 0 0}
+.mf-directorio-descripcion{font:.83rem/1.48 system-ui,sans-serif;color:#726052;margin:5px 0 0}
+.mf-directorio [hidden]{display:none!important}
