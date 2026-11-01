@@ -1,0 +1,35 @@
+grupo	keyword	prioridad	estado	ubicacion_editorial
+01_estudiantes	martin fierro actividades para secundaria	alta	candidato_sin_volumen	estudiantes
+01_estudiantes	martin fierro preguntas por canto	alta	candidato_sin_volumen	estudiantes
+01_estudiantes	martin fierro actividades resueltas	alta	candidato_sin_volumen	estudiantes
+01_estudiantes	martin fierro guia de lectura	alta	candidato_sin_volumen	estudiantes
+01_estudiantes	martin fierro evaluacion de lectura	alta	candidato_sin_volumen	estudiantes
+01_estudiantes	martin fierro resumen canto por canto	alta	candidato_sin_volumen	estudiantes
+01_estudiantes	martin fierro actividades docentes	alta	candidato_sin_volumen	estudiantes
+01_estudiantes	dia de la tradicion actividades escolares	alta	candidato_sin_volumen	estudiantes
+02_metrica_y_lenguaje	sextilla hernandiana	alta	candidato_sin_volumen	estudiantes
+02_metrica_y_lenguaje	metrica del martin fierro	alta	candidato_sin_volumen	estudiantes
+02_metrica_y_lenguaje	rima del martin fierro	alta	candidato_sin_volumen	estudiantes
+02_metrica_y_lenguaje	estructura de la estrofa hernandiana	alta	candidato_sin_volumen	estudiantes
+02_metrica_y_lenguaje	vocabulario gauchesco martin fierro	alta	candidato_sin_volumen	estudiantes
+02_metrica_y_lenguaje	arcaismos en el martin fierro	alta	candidato_sin_volumen	estudiantes
+02_metrica_y_lenguaje	oralidad en la literatura gauchesca	alta	candidato_sin_volumen	estudiantes
+02_metrica_y_lenguaje	figuras literarias martin fierro	alta	candidato_sin_volumen	estudiantes
+02_metrica_y_lenguaje	metaforas en el martin fierro	alta	candidato_sin_volumen	estudiantes
+03_personajes_y_cantos	martin fierro la ida y la vuelta diferencias	media	candidato_sin_volumen	revista_biblioteca
+03_personajes_y_cantos	martin fierro personajes secundarios	media	candidato_sin_volumen	revista_biblioteca
+03_personajes_y_cantos	martin fierro el moreno analisis	media	candidato_sin_volumen	revista_biblioteca
+03_personajes_y_cantos	payada martin fierro moreno	media	candidato_sin_volumen	revista_biblioteca
+03_personajes_y_cantos	biografia de tadeo isidoro cruz borges	media	candidato_sin_volumen	revista_biblioteca
+04_historia	papeleta de conchabo martin fierro	media	candidato_sin_volumen	revista_biblioteca
+04_historia	reclutamiento forzoso de gauchos	media	candidato_sin_volumen	revista_biblioteca
+04_historia	vida en los fortines siglo xix	media	candidato_sin_volumen	revista_biblioteca
+04_historia	conquista del desierto martin fierro	media	candidato_sin_volumen	revista_biblioteca
+05_critica_y_cultura	sarmiento vs jose hernandez	media	candidato_sin_volumen	revista_biblioteca
+05_critica_y_cultura	el fin borges analisis	media	candidato_sin_volumen	revista_biblioteca
+05_critica_y_cultura	el payador lugones martin fierro	media	candidato_sin_volumen	revista_biblioteca
+05_critica_y_cultura	ricardo rojas martin fierro	media	candidato_sin_volumen	revista_biblioteca
+05_critica_y_cultura	el mate en el martin fierro	media	candidato_sin_volumen	revista_biblioteca
+05_critica_y_cultura	facon gaucho historia	media	candidato_sin_volumen	revista_biblioteca
+05_critica_y_cultura	ilustraciones martin fierro castagnino	media	candidato_sin_volumen	revista_biblioteca
+05_critica_y_cultura	martin fierro cuento el fin borges	media	candidato_sin_volumen	revista_biblioteca
