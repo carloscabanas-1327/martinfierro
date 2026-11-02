@@ -86,3 +86,12 @@ En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta
 - [Cotejo individual de Vuelta XXIII–XXVI](MF-ES-024-VUELTA-COTEJO-23-26-2026-11-02.md): lectura completa de las estrofas **902–963 (62 estrofas, 372 versos)**, contrastando análisis, contexto, preguntas, personajes, glosario y pruebas de los cuatro cantos.
 - Se precisó la tercera pregunta de Vuelta XXVI: **957 revela que Cruz es el padre de Picardía; 958 recuerda su actuación**, no el descubrimiento. Commit `d0820d1`, verificado mediante lectura posterior del archivo. Cantos XXIII–XXV sin correcciones necesarias tras cotejo.
 - **Estado actualizado: 39/46 guías cotejadas; 7 pendientes (Vuelta XXVII–XXXIII)**. Las cifras anteriores son históricas. Las conclusiones de CI requieren verificación separada; persiste el bloqueo de imágenes de revista. Sin cambios al corpus, `main`, despliegues ni indexación.
+
+### Séptima tanda de La vuelta (XXVII–XXXIII) — cierre del cotejo textual
+
+- [Cotejo individual de Vuelta XXVII–XXXIII](MF-ES-024-VUELTA-COTEJO-27-33-2026-11-02.md): estrofas **964–1193**, 230 estrofas y 1306 versos, con revisión de análisis, preguntas, personajes, glosarios, pruebas y notas.
+- En XXXIII se completó el análisis de la promesa secreta (1175), el cambio de nombres (1176) y la reivindicación de derechos (1182). Corrección en commit `a4951dc`, comprobada mediante lectura posterior. Los cantos XXVII–XXXII no requirieron modificaciones.
+- Informe de esta tanda: commit `b658544`, archivo comprobado por lectura posterior.
+- **Estado acumulado: 46/46 guías cotejadas.** No hay más cantos pendientes de cotejo individual. Este estado no equivale a aprobación editorial integral.
+- En commit `a4951dc`, GitHub Actions **Validar portal Astro** run `41491110017` concluyó **success**, incluyendo compilación, índices, navegación y pruebas responsive. **Auditoría de aprobación editorial (ES)** run `41491110526` concluyó **failure**: falló el paso estricto de imágenes y derechos de revista; la compilación previa de ese mismo job aprobó. Se requiere verificar el CI del último commit documental por separado.
+- No se alteraron los archivos originales del poema, ni `main`, despliegues o indexación.
