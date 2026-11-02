@@ -10,7 +10,8 @@
     "check": "astro check",
     "audit:estudiantes": "node scripts/auditar-estudiantes.mjs",
     "audit:imagenes": "node scripts/auditar-imagenes-revista.mjs",
-    "images:responsive": "node scripts/generar-variantes-imagenes.mjs"
+    "images:responsive": "node scripts/generar-variantes-imagenes.mjs",
+    "audit:aprobacion": "node scripts/auditar-imagenes-revista.mjs --strict"
   },
   "dependencies": {
     "astro": "^5.0.0",
