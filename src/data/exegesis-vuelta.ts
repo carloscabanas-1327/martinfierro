@@ -112,7 +112,7 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 19,
     "titulo": "El aprendizaje sentimental y sus riesgos",
-    "analisis": "La narración del hijo alterna libertad aparente, enfermedad y vínculos afectivos. La comicidad y la exageración recubren una experiencia insegura: el joven busca amparo en circunstancias en las que carece de recursos y protección.",
+    "analisis": "La narración del hijo menor alterna libertad precaria, desengaño amoroso y remedios supersticiosos. Tras apartarse de la viuda por la advertencia del cura (estrofas 848–851), relata que fue enviado a la frontera en un contingente (852–853). La comicidad no borra la vulnerabilidad del joven ni la intervención de las autoridades.",
     "contexto": "El episodio no debe confundirse con un manual de costumbres; la voz narrativa elabora el deseo, la vulnerabilidad y el fracaso mediante recursos burlescos."
   },
   {
@@ -130,7 +130,7 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 22,
     "titulo": "El juego y la economía del engaño",
-    "analisis": "Las partidas y las tretas de Picardía convierten el juego en un espacio de habilidad, azar, pérdida y dependencia. La comicidad no elimina la advertencia acerca del vicio: el cantor reconoce la posibilidad de que la supervivencia derive en explotación.",
+    "analisis": "Picardía describe trampas concretas con un cómplice y el dueño de una fonda (estrofas 882–899), no solamente habilidad o azar. La comicidad no atenúa su juicio retrospectivo: llama robo a aprovecharse del jugador inexperto (900) y declara que abandonó el juego (901).",
     "contexto": "La representación de naipes y apuestas es literatura de costumbres, y no un registro exhaustivo de prácticas económicas de la campaña."
   },
   {
