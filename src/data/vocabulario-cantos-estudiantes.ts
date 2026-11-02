@@ -708,7 +708,7 @@ export const vocabularioCantos=[
     "terminos": [
       {
         "termino": "palenque",
-        "explicacion": "Poste donde se atan caballos; aparece también en sentido figurado."
+        "explicacion": "En la estrofa 758, Vizcacha aconseja hacerse amigo del juez para tener «palenque ande ir a rascarse»: el palenque funciona como metáfora de amparo o respaldo de la autoridad, no como poste al que se ata un caballo."
       },
       {
         "termino": "güeno",
@@ -786,7 +786,7 @@ export const vocabularioCantos=[
     "terminos": [
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; el hijo menor abandona el rancho de Vizcacha en la estrofa 823, sin que el poema indique que fuera de su propiedad."
+        "explicacion": "Vivienda precaria de Vizcacha: el hijo menor se marcha de «aquella cueva» en la estrofa 823; en la 827 el rancho queda como guarida de alimañas. No se dice que fuese propiedad del muchacho."
       },
       {
         "termino": "gaucho",
@@ -820,7 +820,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "mate",
-        "explicacion": "Infusión de yerba mate o recipiente empleado para beberla, según el verso."
+        "explicacion": "En la estrofa 837, el supuesto curandero dice que al hijo menor le hicieron daño «en un mate» y atribuye su mal a un embrujo (838). Es una acusación supersticiosa del personaje, no un maleficio confirmado por el relato."
       },
       {
         "termino": "ansí",
@@ -1016,7 +1016,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "tropa",
-        "explicacion": "Conjunto de soldados o animales, según el pasaje."
+        "explicacion": "En la estrofa 981, «cuando echan tropa» se refiere a la tropa militar en el relato de Picardía sobre soldados maltratados y mal vestidos; aquí no designa ganado."
       },
       {
         "termino": "milicias",
