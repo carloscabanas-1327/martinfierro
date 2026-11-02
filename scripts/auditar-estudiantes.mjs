@@ -27,8 +27,8 @@ for(const row of seo){
  const v=vocab.find(x=>x.parte===row.parte&&x.canto===row.canto)?.terminos;
  if(!v||v.length<3||v.length>6)errors.push('Vocabulario fuera de 3-6: '+id);
  else {
-  const text=corpus[row.parte].filter(x=>x.canto===row.canto).flatMap(x=>x.versos.map(y=>y.texto)).join(' ').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase();
-  for(const term of v){const token=term.termino.normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase();
+  const text=corpus[row.parte].filter(x=>x.canto===row.canto).flatMap(x=>x.versos.map(y=>y.texto)).join(' ').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  for(const term of v){const token=term.termino.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
    if(!new RegExp('(^|[^a-z])'+token+'([^a-z]|$)','i').test(text))errors.push('Término no presente en corpus: '+id+'/'+term.termino);
   }
  }
