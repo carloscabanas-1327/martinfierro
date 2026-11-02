@@ -196,7 +196,7 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 33,
     "titulo": "La separación final y lo que el narrador calla",
-    "analisis": "Los cuatro personajes se dispersan y guardan un secreto. El final evita una restauración idílica del hogar y deja abiertos varios destinos. El canto desplaza la atención hacia la memoria, la circulación del relato y el trabajo ético de recordar.",
+    "analisis": "Los cuatro personajes se dispersan después de hacerse una promesa cuyo contenido el narrador calla (1175); además, acuerdan cambiar sus nombres (1176), decisión que el propio relato vincula ambiguamente con culpas ocultas (1177), sin especificarlas. El final evita una restauración idílica del hogar, reivindica casa, escuela, iglesia y derechos para el gaucho (1182) y desplaza la atención hacia la memoria y el alcance colectivo del canto (1191–1193).",
     "contexto": "Interpretar el secreto como un hecho determinado sería ir más allá del texto. La incertidumbre forma parte de la arquitectura final del poema."
   }
 ];
