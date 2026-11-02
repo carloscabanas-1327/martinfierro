@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run audit:estudiantes && node scripts/generar-tarjetas-og.mjs && astro build && node scripts/generar-seo.mjs",
+    "build": "npm run audit:estudiantes && npm run audit:imagenes && node scripts/generar-tarjetas-og.mjs && astro build && node scripts/generar-seo.mjs",
     "preview": "astro preview",
     "check": "astro check",
-    "audit:estudiantes": "node scripts/auditar-estudiantes.mjs"
+    "audit:estudiantes": "node scripts/auditar-estudiantes.mjs",
+    "audit:imagenes": "node scripts/auditar-imagenes-revista.mjs"
   },
   "dependencies": {
     "astro": "^5.0.0",
