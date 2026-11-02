@@ -80,3 +80,9 @@ En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta
 - Commits de contenido verificados por lectura posterior: `3b4c11d`, `189aeeb`, `50e0747`. El informe de esta tanda quedó guardado en la rama.
 - Control estructural posterior: **46 guías, 1193 estrofas, 7210 versos, 138 preguntas, 225 términos con coincidencia literal, 104 notas y 0 incidencias estructurales**. SHA de corpus conservados: Ida `5d0de1ee6f8ffe088cd2a79360017d95ab9b9e7d`, Vuelta `8034740ca956cf77daf2aa76a2ca5bfbf2199987`. La conclusión de CI se comprueba por separado.
 - **Estado actualizado: 35/46 guías cotejadas; 11 pendientes (Vuelta XXIII–XXXIII).** El dato previo de 31/46 es histórico. No se modificó `main`, no se desplegó ni se alteró indexación.
+
+### Sexta tanda de La vuelta (XXIII–XXVI)
+
+- [Cotejo individual de Vuelta XXIII–XXVI](MF-ES-024-VUELTA-COTEJO-23-26-2026-11-02.md): lectura completa de las estrofas **902–963 (62 estrofas, 372 versos)**, contrastando análisis, contexto, preguntas, personajes, glosario y pruebas de los cuatro cantos.
+- Se precisó la tercera pregunta de Vuelta XXVI: **957 revela que Cruz es el padre de Picardía; 958 recuerda su actuación**, no el descubrimiento. Commit `d0820d1`, verificado mediante lectura posterior del archivo. Cantos XXIII–XXV sin correcciones necesarias tras cotejo.
+- **Estado actualizado: 39/46 guías cotejadas; 7 pendientes (Vuelta XXVII–XXXIII)**. Las cifras anteriores son históricas. Las conclusiones de CI requieren verificación separada; persiste el bloqueo de imágenes de revista. Sin cambios al corpus, `main`, despliegues ni indexación.
