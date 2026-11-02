@@ -147,7 +147,7 @@ export const alertasCriticasCantos=[
   {
     "parte": "vuelta",
     "canto": 17,
-    "alerta": "El velorio no representa todas las prácticas rurales del período."
+    "alerta": "No atribuir al canto XVII un velorio: el canto XVIII (estrofa 824) afirma que a Vizcacha no lo velaron; en XVII se narran recuerdos de los vecinos y un inventario."
   },
   {
     "parte": "vuelta",
