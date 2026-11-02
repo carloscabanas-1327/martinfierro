@@ -31,7 +31,7 @@ Fecha: 2026-11-01. Rama de integración de desarrollo, dependiente del PR #146. 
 
 ### 5. Imágenes y derechos
 - [ ] 5.1 Validar cada origen, autor, licencia, créditos y representación; registrar fuentes.
-- [ ] 5.2 Portadas de revista/exégesis ≥1600px, variantes WebP y responsive, pies y alt coherentes.
+- [ ] 5.2 Portadas de revista/exégesis ≥1536px de ancho (mínimo autorizado el 2026-11-02), variantes WebP y responsive, pies y alt coherentes. No se admite reescalado artificial para fingir resolución original.
 - [ ] 5.3 Quitar duplicaciones engañosas; no usar IA como documentación histórica.
 
 ### 6. Institucional y transparencia
@@ -56,7 +56,7 @@ Cada casilla se marca [x] únicamente al incorporar enlace a **commit, ruta exac
 - **Guías:** `OK: 46 guías con 3 preguntas específicas, 3-6 voces de glosario, personajes y comentarios de 104 pasajes`. El texto original permaneció en 1193 estrofas y 7210 versos. 225 entradas de glosario corresponden a vocabulario localizado en los cantos.
 - **Lector:** enlaces internos a cada guía y exégesis, anclas estables y referencias identificadas a Project Gutenberg (14765, 15066) y Biblioteca Virtual Miguel de Cervantes (ediciones de 1872 y 1879). Falta colación filológica exhaustiva de variantes.
 - **Institucional:** /proyecto/ incluye política de uso de herramientas de IA y correcciones; /fuentes-y-derechos/ identifica las fuentes digitales y distingue cotejo pendiente.
-- **Imágenes de revista — NO APROBADO:** auditoría de 6 artículos: **6 imágenes con ancho menor que 1600 píxeles** (cuatro archivos de 1536 px y dos de 1586 px); **2 usos duplicados binariamente**. Quedan por verificar autorías, licencias y variantes responsive. La compilación verde **no certifica estas condiciones**: el inventario es deliberadamente diagnóstico.
+- **Imágenes de revista — NO APROBADO:** auditoría de 6 artículos: **6 imágenes con ancho menor que 1600 píxeles** según el control histórico del 1/11 (cuatro archivos de 1536 px y dos de 1586 px); **2 usos duplicados binariamente**. Desde el 2/11 el umbral técnico autorizado es 1536 px y la duplicación se informa como advertencia, sin bloqueo automático; los derechos pendientes siguen bloqueando la aprobación. Quedan por verificar autorías, licencias y variantes responsive. La compilación verde **no certifica estas condiciones**: el inventario es deliberadamente diagnóstico.
 - **Indexación y despliegue:** PR de borrador, sin fusión a main. Se conserva el `Disallow: /` y la protección HTTP existente; no se autorizó la apertura de buscadores.
 
 ## Pendientes bloqueantes para declarar cumplimiento integral
@@ -78,3 +78,11 @@ Cada casilla se marca [x] únicamente al incorporar enlace a **commit, ruta exac
 - Se incorporó `pageType="Article"` y `image` por artículo a las seis rutas de `src/pages/revista/*/index.astro`, con `@type: Article` en el JSON-LD compartido y `og:type: article`. Commit de la serie: `2f5be30fd97195369ef59febdca7b378a0723ced`.
 - No se añadieron fechas de publicación inexistentes ni firmas personales inventadas. Esos campos requieren fuentes editoriales reales y comprobación de fecha visible/schema.
 - Las imágenes registradas aún tienen problemas de resolución y duplicación. Los atributos de esquema no los resuelven.
+
+## Seguimiento de despliegue — 2026-11-02
+
+- La rama de trabajo sigue sin fusionar con `main`; no atribuir a producción los cambios de esta rama.
+- Se sustituyó `public/media/revista/pulperias-y-sociabilidad.webp` en la rama tras generar una recreación IA nueva; comprobar el tamaño efectivo en CI posterior a la subida, no con registros anteriores.
+- El manifiesto `datos/auditoria/derechos-imagenes-revista.json` conserva `verificado: false` donde faltan evidencia y condiciones de uso; una declaración de generación IA no equivale por sí sola a certificación jurídica.
+- La auditoría estricta mantiene el bloqueo por ancho insuficiente y derechos sin verificar; el hash duplicado es advertencia editorial.
+- Cada cambio posterior debe constituir un commit separado, con validación y sin fusionar ni desbloquear indexación automáticamente.
