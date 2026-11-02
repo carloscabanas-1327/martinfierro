@@ -396,11 +396,11 @@ export const vocabularioCantos=[
     "terminos": [
       {
         "termino": "partida",
-        "explicacion": "Grupo armado que actúa al servicio de la autoridad."
+        "explicacion": "En «empeñaos en la partida» (estrofa 451), alude figuradamente a la lucha o trance que atraviesan, no a una partida policial."
       },
       {
         "termino": "leva",
-        "explicacion": "Reclutamiento de personas para el servicio militar; distinguir institución histórica y relato."
+        "explicacion": "Reclutamiento forzoso; en la estrofa 471 se usa figuradamente para la captura de animales durante la caza, no para una leva militar real."
       },
       {
         "termino": "indio",
@@ -412,7 +412,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; su pérdida es decisiva en el relato."
+        "explicacion": "Vivienda rural; en la estrofa 456, las pajas que arranca el viento forman parte de una comparación sobre la desgracia."
       }
     ]
   },
