@@ -46,8 +46,8 @@ export const lecturasIdaEstudiantes=[
   {
     "canto": 5,
     "titulo": "El deseo de fuga y la violencia fronteriza",
-    "hechos": "Fierro declara que busca ocasión para dejar el servicio. El canto desarrolla la tensión entre los enfrentamientos de la frontera y el propósito del protagonista de escapar de una vida que considera injusta. Su deseo de hacerse cimarrón expresa la pérdida de confianza en la protección de las autoridades.",
-    "interpretacion": "No debe leerse la fuga como simple aventura. El motivo nace de experiencias de coacción, hambre y abandono relatadas en cantos anteriores. La narración sobre ataques y persecuciones está atravesada por el miedo del personaje y por estereotipos de época que requieren contextualización.",
+    "hechos": "Fierro declara que busca ocasión para dejar el servicio. Denuncia que los soldados trabajan para los jefes y relata el disparo de un centinela seguido de una estaqueada. Su deseo de hacerse cimarrón expresa la pérdida de confianza en las autoridades.",
+    "interpretacion": "No debe leerse la fuga como simple aventura. El motivo nace de experiencias de coacción, hambre y abandono relatadas en cantos anteriores. El episodio del centinela y el castigo (estrofas 140–148) debe distinguirse de los ataques indígenas narrados en el canto anterior. Las descalificaciones de los reclutas extranjeros (149–155) son prejuicios del personaje, no descripciones históricas neutrales.",
     "preguntas": [
       "¿Por qué Fierro quiere abandonar el fortín?",
       "¿Qué palabras utiliza para describir su condición y su deseo de fuga?",
@@ -67,9 +67,9 @@ export const lecturasIdaEstudiantes=[
   },
   {
     "canto": 7,
-    "titulo": "La pelea en la pulpería y el hombre muerto",
-    "hechos": "Fierro cuenta un enfrentamiento en la pulpería con un hombre afrodescendiente al que termina matando. En el relato aparecen agravios racistas y el intento del protagonista de explicar su propia violencia. El episodio resulta incómodo precisamente porque el cantor que denuncia injusticias también comete una grave injusticia.",
-    "interpretacion": "Para leer esta escena con rigor no hay que repetir los insultos del personaje como descripción objetiva ni confundir a la víctima con el Moreno que cantará en La vuelta. La primera persona narra desde su propia defensa; una interpretación literaria responsable observa lo que hace, lo que dice de ello y a quién silencia.",
+    "titulo": "La pelea durante el baile y el hombre muerto",
+    "hechos": "Fierro cuenta un enfrentamiento durante un baile con un hombre afrodescendiente al que termina matando. El protagonista inicia las provocaciones racistas contra una mujer y el hombre que la acompaña; luego relata la violencia desde su propio punto de vista. El episodio resulta incómodo precisamente porque el cantor que denuncia injusticias también comete una grave injusticia.",
+    "interpretacion": "Para leer esta escena con rigor no hay que repetir los insultos del personaje como descripción objetiva ni confundir a la víctima con el Moreno que cantará en La vuelta. Aunque el adversario responde en diálogo (estrofas 202 y 206), la muerte y sus consecuencias se cuentan desde la perspectiva de Fierro: una lectura crítica distingue esas voces y la responsabilidad del narrador.",
     "preguntas": [
       "¿Qué desencadena la pelea y cuál es su desenlace?",
       "¿Cómo aparecen los prejuicios raciales en las palabras del protagonista?",
@@ -134,12 +134,12 @@ export const lecturasIdaEstudiantes=[
   {
     "canto": 13,
     "titulo": "La decisión final de partir con Cruz",
-    "hechos": "El cierre de La ida reúne a Fierro y Cruz en una misma condición de hombres perseguidos. Se reconocen como semejantes y toman una decisión que los conduce fuera de la sociedad que los hostiga. El cantor se despide recordando que ha contado males que muchos conocen, pero que nadie habría contado de ese modo.",
-    "interpretacion": "El final no restaura el hogar ni resuelve la injusticia. Deja abierta una ruptura que La vuelta retomará siete años después de la publicación original. Conviene escuchar el valor retórico de la despedida: el personaje aspira a convertir su experiencia en testimonio colectivo, aunque su mirada siga siendo parcial.",
+    "hechos": "El cierre de La ida reúne a Fierro y Cruz en una misma condición de hombres perseguidos. Se reconocen como semejantes y toman una decisión que los conduce fuera de la sociedad que los hostiga. Fierro rompe la guitarra y una voz narrativa externa cuenta la partida de ambos hacia territorio indígena; esa voz cierra la relación de los males del gaucho.",
+    "interpretacion": "El final no restaura el hogar ni resuelve la injusticia. Deja abierta una ruptura que La vuelta retomará siete años después de la publicación original. Hay que distinguir el discurso de Fierro (estrofas 367–387), la rotura de su guitarra (388–389) y la voz externa que narra la partida y cierra el poema (390–395). La afirmación final de haber contado males conocidos no debe atribuirse sin más a Fierro.",
     "preguntas": [
       "¿Qué deciden Fierro y Cruz hacia el final?",
       "¿Qué significa compararse con astillas del mismo palo?",
-      "¿Por qué la despedida promete contar males conocidos pero no resueltos?"
+      "¿Quién pronuncia la despedida final y cómo se relaciona con los males narrados?"
     ]
   }
 ] as const;
