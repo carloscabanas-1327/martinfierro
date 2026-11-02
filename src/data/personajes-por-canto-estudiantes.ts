@@ -70,7 +70,7 @@ export const personajesPorCanto=[
       },
       {
         "nombre": "El hombre afrodescendiente",
-        "accion": "Enfrenta a Fierro durante el conflicto narrado en la pulpería."
+        "accion": "Enfrenta a Fierro durante el conflicto narrado en el baile."
       }
     ]
   },
