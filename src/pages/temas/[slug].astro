@@ -13,9 +13,10 @@ import '../../styles/vida-gaucha-dossier.css';
 import '../../styles/investigacion-temas.css';
 export function getStaticPaths(){return temas.map(t=>({params:{slug:t.slug},props:{tema:t}}));}
 const {tema}=Astro.props as {tema:typeof temas[number]};
+const seoDescripcion=tema.introduccion.slice(0,153).replace(/\s+\S*$/,'').replace(/[,:;]$/,'')+'.';
 const estiloImagen=`--sprite-x:${tema.imagenIndice%3*50}%;--sprite-y:${Math.floor(tema.imagenIndice/3)*100}%`;
 ---
-<Base title={`${tema.titulo} en Martín Fierro: significado, contexto y pasajes`} description={`${tema.descripcion} Guía editorial con explicaciones, fuentes y enlaces a cantos originales de El gaucho Martín Fierro y La vuelta.`} adKind="transition">
+<Base title={`${tema.titulo} en Martín Fierro`} description={seoDescripcion} adKind="transition">
 <EditorialSection kind="transition" image="/media/fotografias-v3/exegesis.webp" label={`RECORRIDO TEMÁTICO · ${tema.titulo.toUpperCase()}`}>
  <nav class="breadcrumbs"><a href="/">Inicio</a><span><a href="/temas/">Temas</a></span><span>{tema.titulo}</span></nav>
  <section class="section-intro mf-tema-detail-intro">
