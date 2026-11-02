@@ -764,7 +764,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "juez",
-        "explicacion": "Autoridad mencionada en conflictos con el protagonista; no identificar con individuo histórico sin prueba."
+        "explicacion": "Autoridad a la que el alcalde anuncia que informará sobre los objetos encontrados en casa de Vizcacha (estrofa 810); el texto no identifica a un juez histórico."
       },
       {
         "termino": "mate",
