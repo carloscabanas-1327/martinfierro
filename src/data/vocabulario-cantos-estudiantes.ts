@@ -646,7 +646,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "mate",
-        "explicacion": "Infusión de yerba mate o recipiente empleado para beberla, según el verso."
+        "explicacion": "En el canto XII se menciona porque la penitenciaría prohíbe beberlo (estrofa 703); no se trata de una reunión social."
       }
     ]
   },
@@ -660,7 +660,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "juez",
-        "explicacion": "Autoridad mencionada en conflictos con el protagonista; no identificar con individuo histórico sin prueba."
+        "explicacion": "Autoridad que, tras la muerte de la tía del hijo menor, interviene sobre su herencia y dispone nombrarle tutor (estrofas 725–730)."
       },
       {
         "termino": "poncho",
@@ -686,19 +686,19 @@ export const vocabularioCantos=[
       },
       {
         "termino": "cimarrón",
-        "explicacion": "En el poema puede aludir a apartarse o huir; interpretar dentro del verso."
+        "explicacion": "Aplicado a Vizcacha significa de carácter montaraz, arisco o poco sujeto a normas; no describe aquí una huida (estrofa 731)."
       },
       {
         "termino": "juez",
-        "explicacion": "Autoridad mencionada en conflictos con el protagonista; no identificar con individuo histórico sin prueba."
+        "explicacion": "Autoridad que designa a Vizcacha como tutor del hijo menor (estrofas 732 y 747)."
       },
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; su pérdida es decisiva en el relato."
+        "explicacion": "Vivienda rural precaria; en este canto se describe el rancho deteriorado de Vizcacha (estrofas 738 y 749), no su pérdida."
       },
       {
         "termino": "mate",
-        "explicacion": "Infusión de yerba mate o recipiente empleado para beberla, según el verso."
+        "explicacion": "Bebida mencionada en un relato de oídas sobre la presunta muerte de la esposa de Vizcacha por servir un mate frío (estrofa 752); el hecho no está comprobado por el narrador."
       }
     ]
   },
