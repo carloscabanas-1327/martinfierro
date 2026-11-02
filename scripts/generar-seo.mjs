@@ -23,6 +23,30 @@ for(const file of files){
  const urlPath=rel?'/'+rel+'/':'/';
  if(excludes.has(urlPath))continue;
  const html=await readFile(file,'utf8');
+ const spanish=urlPath==='/'||(!urlPath.startsWith('/en/')&&!urlPath.startsWith('/it/')&&!urlPath.startsWith('/pt/'));
+ if(spanish){
+  const title=(html.match(/<title>([^<]*)<\/title>/i)||[])[1]?.replace(/&amp;/g,'&')||'';
+  const desc=(html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)/i)||[])[1]?.replace(/&amp;/g,'&')||'';
+  const blocked=/<meta\s+name=["']robots["'][^>]*noindex/i.test(html);
+  const ogImage=(html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']*)/i)||[])[1];
+  const schemaText=(html.match(/<script\s+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/i)||[])[1];
+  if(!title||title.length>60)errors.push({urlPath,issue:'title',length:title.length});
+  if(!blocked&&(desc.length<140||desc.length>155))errors.push({urlPath,issue:'meta description',length:desc.length});
+  if(!ogImage)errors.push({urlPath,issue:'og:image ausente'});
+  if(!schemaText)errors.push({urlPath,issue:'JSON-LD ausente'});
+  else {try{const parsed=JSON.parse(schemaText);if(!parsed['@graph'])errors.push({urlPath,issue:'schema graph ausente'});}catch{errors.push({urlPath,issue:'JSON-LD inválido'})}}
+ }
+
+ if(/^\/estudiantes\/(ida|vuelta)\/canto-/.test(urlPath)){
+  const title=(html.match(/<title>([^<]*)<\/title>/i)||[])[1]?.replace(/&amp;/g,'&')||'';
+  const description=(html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)/i)||[])[1]?.replace(/&amp;/g,'&')||'';
+  if(title.length>60||!title)errors.push({urlPath,issue:'title fuera de 60 caracteres',length:title.length});
+  if(description.length<140||description.length>155)errors.push({urlPath,issue:'description fuera de 140-155',length:description.length});
+  if(!html.includes('property="og:image"'))errors.push({urlPath,issue:'sin og:image'});
+  if(!html.includes('property="og:type" content="article"'))errors.push({urlPath,issue:'og:type incorrecto'});
+  if(!html.includes('summary_large_image'))errors.push({urlPath,issue:'twitter card incorrecta'});
+ }
+
  if(/<meta\s+name=["']robots["'][^>]*noindex/i.test(html))continue;
  const canonical=(html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)/i)||[])[1];
  const expected=origin+urlPath;
@@ -31,7 +55,7 @@ for(const file of files){
  if(urlPath.startsWith('/en/')&&lang!=='en-US')errors.push({urlPath,issue:'English route missing en-US language',lang});
  locations.push(expected);
 }
-if(errors.length){console.error('Invalid canonical or page language',errors.slice(0,20));process.exit(1)}
+if(errors.length){await writeFile(path.join(root,'auditoria-seo-es.json'),JSON.stringify({total:errors.length,errors},null,2),'utf8');console.error('Auditoría SEO española: '+errors.length+' incidencias');console.error(JSON.stringify(errors,null,2));process.exit(1)}
 locations.sort((a,b)=>a.localeCompare(b,'en'));
 const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+locations.map(u=>`  <url><loc>${esc(u)}</loc></url>`).join('\n')+'\n</urlset>\n';
 await writeFile(path.join(root,'sitemap.xml'),sitemap,'utf8');

@@ -28,19 +28,19 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 5,
     "titulo": "La invasión y la frontera representada como guerra",
-    "analisis": "Las escenas de partida, retorno, violencia y botín organizan la frontera en torno al enfrentamiento. Esa selección narrativa sirve al temor y al conflicto del personaje; no ofrece una historia completa de comercio, tratados, intercambio y relaciones familiares en la región.",
+    "analisis": "El regreso de una incursión, el reparto del botín y el trato a las mujeres, según la voz de Fierro, organizan este canto en torno a la violencia de frontera. El propio narrador admite una regla de igualdad en el reparto (estrofa 502), matiz que impide atribuirle una valoración absolutamente uniforme. Su selección narrativa no ofrece una historia completa de comercio, tratados, intercambio y relaciones familiares en la región.",
     "contexto": "El discurso de guerra explica cómo el protagonista interpreta lo que ve, mientras la historiografía muestra que las relaciones fronterizas fueron más variadas que una hostilidad uniforme."
   },
   {
     "canto": 6,
-    "titulo": "La epidemia y el duelo que se aproxima",
-    "analisis": "El paso del tiempo no trae la liberación; la enfermedad transforma las condiciones de la comunidad y amenaza también a los dos compañeros. La vulnerabilidad corporal rompe cualquier imagen de invencibilidad gaucha. La narración prepara el momento en que Fierro perderá el vínculo central de su exilio.",
+    "titulo": "La enfermedad y la muerte de Cruz",
+    "analisis": "El paso del tiempo no trae la liberación; la enfermedad transforma las condiciones de la comunidad y amenaza también a los dos compañeros. La vulnerabilidad corporal rompe cualquier imagen de invencibilidad gaucha. El canto culmina con la muerte de Cruz, que Fierro relata como un golpe devastador; la pérdida no debe desplazarse al canto siguiente.",
     "contexto": "La representación de una epidemia no basta para identificar con certeza diagnósticos médicos ni sus causas. La dimensión literaria consiste en dramatizar la fragilidad humana."
   },
   {
     "canto": 7,
-    "titulo": "La muerte de Cruz: el compañero convertido en memoria",
-    "analisis": "La muerte de Cruz separa definitivamente los destinos de dos hombres que habían elegido acompañarse. Fierro lo sepulta y queda aislado. La pérdida transforma al compañero de acción en objeto de memoria: el relato abandona por un momento la aventura y se concentra en el duelo.",
+    "titulo": "El entierro de Cruz y la soledad de Fierro",
+    "analisis": "Tras la muerte de Cruz al final del canto anterior, Fierro recuerda al compañero, lo sepulta y queda aislado. La pérdida transforma al compañero de acción en objeto de memoria: el relato abandona por un momento la aventura y se concentra en el duelo.",
     "contexto": "El personaje que ayudó a Fierro en La ida deja una ausencia que influye en la segunda parte, particularmente en la historia posterior del hijo de Cruz."
   },
   {
@@ -64,13 +64,13 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 11,
     "titulo": "El reencuentro y la confesión de responsabilidad",
-    "analisis": "Este canto está compuesto en el corpus por una extensa estrofa narrativa. El regreso permite reencontrar a los hijos y conocer la muerte de la esposa. Fierro recuerda hechos violentos y ensaya justificaciones de sus propias acciones; el lector debe distinguir su explicación retrospectiva de un juicio histórico o moral imparcial.",
+    "analisis": "Este canto está compuesto en el corpus por una extensa estrofa narrativa. Tras anunciarse la presencia de los hijos al final del canto X, el reencuentro permite reconstruir el pasado familiar y conocer la muerte de la esposa. Fierro recuerda hechos violentos y ensaya justificaciones de sus propias acciones; el lector debe distinguir su explicación retrospectiva de un juicio histórico o moral imparcial.",
     "contexto": "La singular extensión de la estrofa requiere citar un fragmento representativo y remitir al canto entero. La noticia de la muerte y la reunión con los hijos introducen relatos de una generación que también sufrió el desarraigo."
   },
   {
     "canto": 12,
     "titulo": "El primer hijo: la experiencia de la injusticia",
-    "analisis": "El hijo empieza a narrar lo que le ocurrió tras la desaparición de la familia. La voz filial muestra que las consecuencias de la persecución no terminan con el padre. Cambiar de narrador modifica el alcance del poema: aparecen encierro, arbitrariedad y educación impuesta desde la experiencia del joven.",
+    "analisis": "El hijo empieza a narrar lo que le ocurrió tras la desaparición de la familia. La voz filial muestra que las consecuencias de la persecución no terminan con el padre. Cambiar de narrador modifica el alcance del poema: aparecen encierro, arbitrariedad y un aprendizaje doloroso de la injusticia; el joven incluso lamenta no haber aprendido a leer (estrofa 698).",
     "contexto": "No todos los episodios legales deben tomarse como prueba aislada de una práctica universal. Las escenas invitan a investigar instituciones y formas de autoridad del período."
   },
   {
@@ -94,14 +94,14 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 16,
     "titulo": "Enfermedad, muerte y humillación",
-    "analisis": "La enfermedad del tutor y las reacciones de quienes lo rodean mezclan comicidad, temor y crueldad. El relato enseña cómo una existencia regida por el interés deja vínculos precarios. El joven no controla las decisiones de los adultos ni la administración de lo que queda.",
-    "contexto": "El tono burlesco no elimina el desamparo del narrador, y las escenas populares deben leerse como elaboración literaria, no como inventario antropológico."
+    "analisis": "La enfermedad del tutor se narra junto con una interrupción cómica del propio acto de contar: un oyente corrige al cantor por decir «tabernáculo» en lugar de «tubérculo» (estrofas 779–784). De vuelta al relato, el hijo menor describe el miedo que le inspira Vizcacha enfermo, sus blasfemias y la muerte entre los perros (785–790). La revisión de sus bienes corresponde al canto siguiente, no a este.",
+    "contexto": "La interrupción del público (780–784) debe distinguirse de los hechos que el hijo menor recuerda sobre Vizcacha. El tono burlesco no elimina el miedo del muchacho ni autoriza a tomar la escena como inventario antropológico."
   },
   {
     "canto": 17,
-    "titulo": "El velorio y la sátira de los rituales",
-    "analisis": "La muerte de Vizcacha abre escenas en las que circulan supersticiones, comentarios y usos sociales de la comunidad. La comedia y la irreverencia contrastan con la gravedad de las pérdidas que atraviesan el poema, mostrando una amplia variedad de registros narrativos.",
-    "contexto": "El episodio describe creencias desde una voz satírica; no justifica atribuirlas sin distinción a toda la población rural de la época."
+    "titulo": "El inventario de Vizcacha y la sátira de la herencia",
+    "analisis": "Tras la muerte de Vizcacha, el alcalde llega con vecinos que recuerdan sus robos y otras malas costumbres (791–804). Después registran sus pertenencias (805–812) y el alcalde nombra heredero al hijo menor (813–815), quien contrapone ese inventario a las vacas que ha perdido. No se narra un velorio en este canto; el siguiente aclara que ni siquiera lo velaron (824).",
+    "contexto": "El episodio satiriza los relatos de los vecinos, la requisa de objetos y la promesa de herencia; las supersticiones sobre el muerto y los perros aparecen en el canto XVIII, no en este."
   },
   {
     "canto": 18,
@@ -112,7 +112,7 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 19,
     "titulo": "El aprendizaje sentimental y sus riesgos",
-    "analisis": "La narración del hijo alterna libertad aparente, enfermedad y vínculos afectivos. La comicidad y la exageración recubren una experiencia insegura: el joven busca amparo en circunstancias en las que carece de recursos y protección.",
+    "analisis": "La narración del hijo menor alterna libertad precaria, desengaño amoroso y remedios supersticiosos. Tras apartarse de la viuda por la advertencia del cura (estrofas 848–851), relata que fue enviado a la frontera en un contingente (852–853). La comicidad no borra la vulnerabilidad del joven ni la intervención de las autoridades.",
     "contexto": "El episodio no debe confundirse con un manual de costumbres; la voz narrativa elabora el deseo, la vulnerabilidad y el fracaso mediante recursos burlescos."
   },
   {
@@ -130,7 +130,7 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 22,
     "titulo": "El juego y la economía del engaño",
-    "analisis": "Las partidas y las tretas de Picardía convierten el juego en un espacio de habilidad, azar, pérdida y dependencia. La comicidad no elimina la advertencia acerca del vicio: el cantor reconoce la posibilidad de que la supervivencia derive en explotación.",
+    "analisis": "Picardía describe trampas concretas con un cómplice y el dueño de una fonda (estrofas 882–899), no solamente habilidad o azar. La comicidad no atenúa su juicio retrospectivo: llama robo a aprovecharse del jugador inexperto (900) y declara que abandonó el juego (901).",
     "contexto": "La representación de naipes y apuestas es literatura de costumbres, y no un registro exhaustivo de prácticas económicas de la campaña."
   },
   {
@@ -196,7 +196,7 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 33,
     "titulo": "La separación final y lo que el narrador calla",
-    "analisis": "Los cuatro personajes se dispersan y guardan un secreto. El final evita una restauración idílica del hogar y deja abiertos varios destinos. El canto desplaza la atención hacia la memoria, la circulación del relato y el trabajo ético de recordar.",
+    "analisis": "Los cuatro personajes se dispersan después de hacerse una promesa cuyo contenido el narrador calla (1175); además, acuerdan cambiar sus nombres (1176), decisión que el propio relato vincula ambiguamente con culpas ocultas (1177), sin especificarlas. El final evita una restauración idílica del hogar, reivindica casa, escuela, iglesia y derechos para el gaucho (1182) y desplaza la atención hacia la memoria y el alcance colectivo del canto (1191–1193).",
     "contexto": "Interpretar el secreto como un hecho determinado sería ir más allá del texto. La incertidumbre forma parte de la arquitectura final del poema."
   }
 ];

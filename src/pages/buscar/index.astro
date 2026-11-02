@@ -2,7 +2,7 @@
 import EditorialSection from '../../components/EditorialSection.astro';
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Buscar en Martín Fierro">
+<Base description="Buscá palabras y expresiones en los versos de Martín Fierro. Encontrá pasajes de La ida y La vuelta, consultá su canto y leé el texto completo original." title="Buscar en Martín Fierro">
 <EditorialSection kind="utility" image="/media/fotografias-v3/archivo-documental-recreacion.webp" label="BUSCAR · ARCHIVO DE VERSOS"><p class="eyebrow">Buscador de la obra</p><h1>Buscar versos</h1><p class="lead">Encontrá palabras o frases en los 7.210 versos de las dos partes. La búsqueda ignora diferencias entre mayúsculas y minúsculas y puede ignorar tildes.</p>
 <div class="search-control"><input id="consulta" type="search" aria-label="Palabras o frase a buscar" placeholder="Ej.: los hermanos sean unidos" autocomplete="off"/><select id="parte" aria-label="Filtrar por parte"><option value="ambas">Ambas partes</option><option value="ida">La ida</option><option value="vuelta">La vuelta</option></select></div>
 <p id="estado" role="status" aria-live="polite">Escribí dos o más caracteres para buscar.</p><div id="resultados" aria-label="Resultados de búsqueda"></div>

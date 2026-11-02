@@ -7,7 +7,7 @@ export function getStaticPaths(){return (Object.keys(partes) as Array<keyof type
 const {parte}=Astro.props as {parte:keyof typeof partes};
 const libro=partes[parte];
 ---
-<Base title={`Índice de ${libro.nombre}`} adKind="category">
+<Base title={`Índice de cantos: ${libro.nombre}`} description={`Leé los ${libro.cantos.length} cantos de ${libro.nombre}, de José Hernández (${libro.anio}). Consultá el texto completo con sus estrofas numeradas y enlaces a las guías.`} adKind="category">
 <EditorialSection kind="category" image={parte==='ida'?'/media/fotografias-v3/la-ida.webp':'/media/fotografias-v3/la-vuelta.webp'} label="ÍNDICE DE CANTOS · EDICIÓN LITERARIA">
  <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span><a href="/leer/">Leer</a></span><span>{libro.nombre}</span></nav>
  <p class="eyebrow">{libro.anio} · {libro.cantos.length} cantos</p>
