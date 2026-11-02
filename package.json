@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run audit:estudiantes && astro build && node scripts/generar-seo.mjs",
+    "build": "npm run audit:estudiantes && node scripts/generar-tarjetas-og.mjs && astro build && node scripts/generar-seo.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "audit:estudiantes": "node scripts/auditar-estudiantes.mjs"
   },
   "dependencies": {
-    "astro": "^5.0.0"
+    "astro": "^5.0.0",
+    "sharp": "^0.34.4"
   },
   "overrides": {
     "@types/estree": "1.0.8"
