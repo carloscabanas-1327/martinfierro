@@ -8,6 +8,7 @@ const editorial=lang.toLowerCase().startsWith('es')&&(['Article','LearningResour
 const authorOrg={'@type':'Organization',name:'Edición MARTINFIERRO.ORG',url:new URL('/proyecto/',Astro.site).toString()};
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
 const english=lang.toLowerCase().startsWith('en');
+const ocultarAccesosLectura=Astro.url.pathname.replace(/\/$/,'')==='/revista/dia-de-la-tradicion-10-de-noviembre';
 const ruta=Astro.url.pathname.split('/').filter(Boolean);
 const esCapitulo=pageType==='Chapter'&&ruta[0]==='leer'&&(ruta[1]==='ida'||ruta[1]==='vuelta')&&/^\d+$/.test(ruta[2]??'');
 const esGuia=pageType==='LearningResource'&&ruta[0]==='estudiantes'&&(ruta[1]==='ida'||ruta[1]==='vuelta');
@@ -59,7 +60,7 @@ import '../styles/editorial-shell.css';
     </nav>
    </div>
   </div>
-  {!english && <div class="mf-es-shortcuts"><details class="mf-es-shortcuts-disclosure"><summary>Lectura y herramientas <span aria-hidden="true">▾</span></summary><nav aria-label="Recorridos y búsqueda del poema"><a href="/leer/ida/">La ida</a><a href="/leer/vuelta/">La vuelta</a><a href="/buscar/">Buscar versos</a><a href="/temas/">Temas</a><a href="/personajes/">Personajes</a><a href="/exegesis/">Análisis</a><a href="/archivo/">Archivo</a><a href="/en/" lang="en">English</a></nav></details></div>}
+  {!english && !ocultarAccesosLectura && <div class="mf-es-shortcuts"><details class="mf-es-shortcuts-disclosure"><summary>Lectura y herramientas <span aria-hidden="true">▾</span></summary><nav aria-label="Recorridos y búsqueda del poema"><a href="/leer/ida/">La ida</a><a href="/leer/vuelta/">La vuelta</a><a href="/buscar/">Buscar versos</a><a href="/temas/">Temas</a><a href="/personajes/">Personajes</a><a href="/exegesis/">Análisis</a><a href="/archivo/">Archivo</a><a href="/en/" lang="en">English</a></nav></details></div>}
  </header>
  <main id="contenido" class="container">
  {['Article','NewsArticle','Chapter','LearningResource'].includes(pageType) && <div class="mf-share-wrap">
