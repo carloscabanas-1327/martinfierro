@@ -738,11 +738,11 @@ export const vocabularioCantos=[
       },
       {
         "termino": "tropa",
-        "explicacion": "Conjunto de soldados o animales, según el pasaje."
+        "explicacion": "Conjunto de animales en el refrán de la estrofa 780 («en la tropa nunca falta un güey corneta»), aplicado figuradamente al oyente que interrumpe al cantor; aquí no se refiere a soldados."
       },
       {
         "termino": "cencerro",
-        "explicacion": "Campana metálica que se coloca al cuello de algunos animales."
+        "explicacion": "Campana metálica usada habitualmente con animales; en la estrofa 790 el muchacho ata un cencerro a la mano de Vizcacha moribundo."
       },
       {
         "termino": "dende",
@@ -786,7 +786,7 @@ export const vocabularioCantos=[
     "terminos": [
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; su pérdida es decisiva en el relato."
+        "explicacion": "Vivienda sencilla de la campaña; el hijo menor abandona el rancho de Vizcacha en la estrofa 823, sin que el poema indique que fuera de su propiedad."
       },
       {
         "termino": "gaucho",
