@@ -82,7 +82,7 @@ export const preguntasVueltaEstudiantes=[
   {
     "canto": 11,
     "preguntas": [
-      "¿Qué cambia cuando Fierro vuelve a encontrarse con su familia?",
+      "¿Qué cambia cuando Fierro se reencuentra con dos de sus hijos, mientras confirma que su esposa ha muerto?",
       "¿Qué noticias del pasado obligan a revisar su propio relato?",
       "¿Qué noticias familiares ofrece Fierro durante la estrofa extensa 655?"
     ]
@@ -98,7 +98,7 @@ export const preguntasVueltaEstudiantes=[
   {
     "canto": 13,
     "preguntas": [
-      "¿Qué experiencias muestran la dependencia del hijo mayor?",
+      "¿Qué experiencias muestran la dependencia del hijo menor tras la muerte de su tía?",
       "¿Cómo se relacionan esas experiencias con la pérdida del hogar?",
       "¿Cómo describe el hijo menor su llegada a la tutela en la estrofa 730?"
     ]
