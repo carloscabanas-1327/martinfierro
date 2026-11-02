@@ -298,7 +298,7 @@ export const pruebasCantos=[
     "estrofas": [
       855
     ],
-    "justificacion": "La estrofa extensa introduce al hijo de Cruz y produce el cambio de narrador hacia Picardía."
+    "justificacion": "La estrofa extensa presenta a Picardía como nuevo cantor sin revelar aún su filiación; que es hijo de Cruz se declara expresamente en Vuelta XXVI, estrofa 957."
   },
   {
     "parte": "vuelta",
