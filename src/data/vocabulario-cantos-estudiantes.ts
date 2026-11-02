@@ -1094,7 +1094,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "lanza",
-        "explicacion": "Forma del verbo «lanzar»: la fiera «lanza con furor» sus bramidos (1086); aquí no se refiere a un arma."
+        "explicacion": "Forma del verbo «lanzar»: en la estrofa 1086 la fiera lanza bramidos; aquí no se refiere a un arma."
       }
     ]
   },
