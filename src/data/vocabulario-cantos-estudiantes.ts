@@ -422,7 +422,7 @@ export const vocabularioCantos=[
     "terminos": [
       {
         "termino": "pampa",
-        "explicacion": "Extensión geográfica nombrada en contextos diferentes, que deben distinguirse."
+        "explicacion": "En la estrofa 475 «la pampa» designa la llanura; en la 481 «todo pampa valiente» se refiere a un hombre indígena. La misma palabra tiene aquí dos sentidos distintos."
       },
       {
         "termino": "malón",
@@ -1116,7 +1116,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; su pérdida es decisiva en el relato."
+        "explicacion": "Vivienda rural; en la estrofa 1143 se dice que el gaucho duerme al aire libre, lejos del camino, «mas siguro que en su rancho». No se narra aquí la pérdida de una casa."
       },
       {
         "termino": "gaucho",
@@ -1160,7 +1160,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; su pérdida es decisiva en el relato."
+        "explicacion": "Vivienda rural empleada en sentido figurado en la estrofa 1187: «no se ha de llover el rancho / en donde este libro esté», expresión de confianza en la protección que ofrece el libro."
       },
       {
         "termino": "gaucho",
