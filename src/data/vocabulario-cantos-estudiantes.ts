@@ -1078,7 +1078,7 @@ export const vocabularioCantos=[
     "terminos": [
       {
         "termino": "partida",
-        "explicacion": "Grupo armado que actúa al servicio de la autoridad."
+        "explicacion": "Contienda o desafío entre los payadores: el canto usa «partida» para la competencia verbal, no para un grupo armado (1083, 1096 y 1100)."
       },
       {
         "termino": "güeno",
@@ -1094,7 +1094,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "lanza",
-        "explicacion": "Arma de asta larga empleada en enfrentamientos de caballería."
+        "explicacion": "Forma del verbo «lanzar»: la fiera «lanza con furor» sus bramidos (1086); aquí no se refiere a un arma."
       }
     ]
   },
@@ -1130,7 +1130,7 @@ export const vocabularioCantos=[
     "terminos": [
       {
         "termino": "partida",
-        "explicacion": "Grupo armado que actúa al servicio de la autoridad."
+        "explicacion": "Mala jugada o acción desleal contra una mujer querida (1171); aquí no designa un grupo armado."
       },
       {
         "termino": "güeno",
@@ -1142,7 +1142,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "mate",
-        "explicacion": "Infusión de yerba mate o recipiente empleado para beberla, según el verso."
+        "explicacion": "Forma del verbo «matar» en «El hombre no mate al hombre» (1167): exhortación a no matar, no referencia a la infusión."
       },
       {
         "termino": "lanza",
@@ -1172,7 +1172,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "cuero",
-        "explicacion": "Piel animal empleada como material de uso rural."
+        "explicacion": "Piel animal usada figuradamente: «el gaucho es el cuero flaco» (1186) denuncia cómo otros se benefician a costa de él."
       }
     ]
   }
