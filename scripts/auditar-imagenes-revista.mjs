@@ -30,3 +30,11 @@ await fs.writeFile('auditoria-imagenes-revista-es.json',JSON.stringify(report,nu
 console.log('Auditoría de revista: '+inventory.length+' artículos; '+report.imagenesPorDebajo1600+' imágenes inferiores a 1600 px; '+duplicateHashes.length+' duplicados binarios.');
 for(const i of inventory.filter(x=>!x.aptoAncho1600||x.error))console.log('REVISAR '+i.ruta+' '+i.imagen+' '+(i.ancho??'?')+'x'+(i.alto??'?'));
 if(inventory.some(x=>x.error))process.exit(1);
+
+// El inventario sigue siendo diagnóstico por defecto. En modo de aprobación,
+// incumplimientos visuales bloquean el candidato sin inventar licencias.
+const strict=process.argv.includes('--strict');
+if(strict && (report.imagenesPorDebajo1600>0 || duplicateHashes.length>0 || inventory.some(x=>x.estadoDerechos!=='verificado'))){
+ console.error('NO APTO: resolución, duplicación o derechos sin verificar.');
+ process.exitCode=1;
+}
