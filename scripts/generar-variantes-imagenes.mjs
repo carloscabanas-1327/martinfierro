@@ -14,7 +14,7 @@ for(const section of ['fotografias-v3','revista']){
   if(!meta.width||meta.width<480){skipped++;continue;}
   for(const width of [480,960]){
    if(meta.width<=width)continue;
-   const output=path.join(dest,file.replace(/\.webp$/,\`-${width}.webp\`));
+   const output=path.join(dest,file.replace(/\.webp$/,'-'+width+'.webp'));
    await sharp(source).rotate().resize({width,withoutEnlargement:true}).webp({quality:80,effort:4}).toFile(output);
    const result=await sharp(output).metadata();
    if(result.width!==width||result.format!=='webp')throw new Error('Variante inválida: '+output);
