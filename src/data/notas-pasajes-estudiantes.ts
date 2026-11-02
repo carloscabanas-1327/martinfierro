@@ -259,7 +259,7 @@ export const notasPasajesCantos=[
     "canto": 19,
     "notas": [
       "El hijo menor explica la libertad relativa que siente al evitar otro tutor.",
-      "El cierre muestra el retorno a sus preocupaciones y a los asuntos pendientes."
+      "Al cierre, el hijo menor atribuye su envío forzoso a la frontera a una intervención del cura ante el juez (estrofas 852–853) y manifiesta que quiere averiguar qué ocurrió con su rodeo (854)."
     ]
   },
   {
