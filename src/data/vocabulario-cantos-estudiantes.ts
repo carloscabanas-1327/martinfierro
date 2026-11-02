@@ -48,7 +48,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; su pérdida es decisiva en el relato."
+        "explicacion": "Vivienda familiar; en la estrofa 44, Fierro denuncia que el alcalde puede perseguir al gaucho incluso si vuelve a su propio rancho. Aquí no se narra su destrucción."
       }
     ]
   },
@@ -170,7 +170,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; su pérdida es decisiva en el relato."
+        "explicacion": "Vivienda rural; en la estrofa 190 Fierro dice que no tenía mujer ni rancho, para expresar su desamparo. No se describe aquí la pérdida material de una casa."
       },
       {
         "termino": "gaucho",
@@ -230,7 +230,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; su pérdida es decisiva en el relato."
+        "explicacion": "Vivienda rural; en la estrofa 242 Fierro vigila a la policía desde las inmediaciones de un rancho y en la 285 se refugia en uno tras el combate. No se narra aquí la pérdida de su hogar."
       }
     ]
   },
@@ -240,11 +240,11 @@ export const vocabularioCantos=[
     "terminos": [
       {
         "termino": "matrero",
-        "explicacion": "Gaucho perseguido o apartado de la autoridad, según el contexto del relato."
+        "explicacion": "En la estrofa 296, «el zorro más matrero» es una comparación sobre la astucia que también puede fracasar; no se refiere literalmente a un gaucho perseguido."
       },
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; su pérdida es decisiva en el relato."
+        "explicacion": "Vivienda de Cruz: en la estrofa 307 el jefe frecuenta su rancho y en la 322 Cruz se despide de él tras el conflicto afectivo. No se describe su destrucción."
       },
       {
         "termino": "china",
@@ -278,7 +278,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "rancho",
-        "explicacion": "Vivienda sencilla de la campaña; su pérdida es decisiva en el relato."
+        "explicacion": "Vivienda rural: en la estrofa 331 designa el local precario de un baile; en la 344, «ni rancho ni asiento» expresa la falta de residencia estable del matrero."
       },
       {
         "termino": "gaucho",
