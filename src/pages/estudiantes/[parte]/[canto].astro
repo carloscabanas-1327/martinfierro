@@ -10,6 +10,8 @@ import {preguntasVueltaEstudiantes} from '../../../data/preguntas-vuelta-estudia
 import {pruebasCantos} from '../../../data/pruebas-literarias-cantos';
 import {vocabularioCantos} from '../../../data/vocabulario-cantos-estudiantes';
 import {alertasCriticasCantos} from '../../../data/alertas-criticas-cantos';
+import {personajesPorCanto} from '../../../data/personajes-por-canto-estudiantes';
+import {notasPasajesCantos} from '../../../data/notas-pasajes-estudiantes';
 export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).flatMap(parte=>partes[parte].cantos.map(c=>({params:{parte,canto:seoCanto(parte,c.numero).slug},props:{parte,canto:c.numero}})));}
 const {parte,canto}=Astro.props as {parte:'ida'|'vuelta';canto:number};
 const seo=seoCanto(parte,canto);
@@ -31,22 +33,33 @@ const entradilla=hechos.length>175?`${hechos.slice(0,172).replace(/\s+\S*$/,'')}
 const alertaCritica=alertasCriticasCantos.find(x=>x.parte===parte&&x.canto===canto)?.alerta;
 if(!alertaCritica)throw new Error(`Sin control crítico de ${parte}, canto ${canto}`);
 const vocabulario=vocabularioCantos.find(x=>x.parte===parte&&x.canto===canto)?.terminos??[];
-const completo=Boolean(hechos.trim()&&seleccion.estrofas.length>=2&&vocabulario.length>=3&&preguntas.length>=2);
+const actuaciones=personajesPorCanto.find(x=>x.parte===parte&&x.canto===canto)?.actuaciones??[];
+const comentarios=notasPasajesCantos.find(x=>x.parte===parte&&x.canto===canto)?.notas??[];
+const pasajes=ejemplos.flatMap(e=>{
+ if(e.versos.length<=12)return [{estrofa:e,primerVerso:1,versos:e.versos}];
+ const length=e.versos.length;
+ return [0,Math.floor((length-10)/2),length-10].map(start=>({estrofa:e,primerVerso:start+1,versos:e.versos.slice(start,start+10)}));
+});
+if(comentarios.length!==pasajes.length)throw new Error(`Pasajes sin comentario: ${parte} ${canto}`);
+const completo=Boolean(hechos.trim()&&pasajes.length>=2&&pasajes.length<=4&&vocabulario.length>=3&&vocabulario.length<=6&&preguntas.length>=3&&actuaciones.length>=1&&comentarios.length===pasajes.length);
 const relacionados=personajes.filter(p=>p.referencias.some(r=>r.parte===parte&&r.canto===canto));
 const siguiente=canto<libro.cantos.length? urlEstudio(parte,canto+1):parte==='ida'?urlEstudio('vuelta',1):null;
 const anterior=canto>1? urlEstudio(parte,canto-1):parte==='vuelta'?urlEstudio('ida',13):null;
+const tituloAnterior=canto>1?seoCanto(parte,canto-1).titulo:parte==='vuelta'?seoCanto('ida',13).titulo:null;
+const tituloSiguiente=canto<libro.cantos.length?seoCanto(parte,canto+1).titulo:parte==='ida'?seoCanto('vuelta',1).titulo:null;
 ---
 <Base pageType="LearningResource" modified="2026-11-01" image={`/media/og/guia-${parte}-${canto}.webp`} title={seoTitleGuia(seo.titulo,parte,canto)} description={descriptionGuia(seo.tema,libro.nombre,canto,hechos)} noindex={!completo}>
 <article class="mf-study">
  <nav class="mf-crumb" aria-label="Ruta de navegación"><a href="/">Inicio</a> / <a href="/estudiantes/">Para estudiantes</a> / <a href={`/leer/${parte}/`}>{libro.nombre}</a> / Canto {canto}</nav>
  <header><p class="eyebrow">GUÍA DE ESTUDIO · {libro.anio}</p><p><a href="/proyecto/">Edición MARTINFIERRO.ORG</a> · Revisada el <time datetime="2026-11-01">1 de noviembre de 2026</time></p><h1>{seo.titulo}</h1><p class="lead">{entradilla}</p>{seo.imagen&&<figure class="mf-study-feature"><img src={`/media/fotografias-v3/${seo.imagen}`} alt={`Ilustración editorial para el canto ${canto}: ${seo.tema}`} width="1024" height="680" loading="eager"/><figcaption>Ilustración interpretativa contemporánea; no es documentación histórica.</figcaption></figure>}<a class="mf-study-primary" href={enlaceCanto(parte,canto)}>Leer el canto íntegro en el poema original →</a></header>
- <section><h2>{analisisTitulo}</h2><h3>Hechos y desarrollo del canto</h3><p>{hechos}</p><h3>¿Quién habla y desde qué perspectiva?</h3><p>{voz}</p><h3>Interpretación literaria y contexto</h3><p>{interpretacion}</p><p>{alertaCritica}</p></section>
+ <section><h2>{analisisTitulo}</h2><h3>Hechos y desarrollo del canto</h3><p>{hechos}</p><h3>¿Quién habla y desde qué perspectiva?</h3><p>{voz}</p><h3>Interpretación literaria y contexto</h3><p>{interpretacion}</p></section>
  <section><h2>Texto original y lectura del canto</h2>
  
- {ejemplos.map(e=><figure class="mf-study-stanza"><figcaption>Estrofa {e.numero} · <a href={`${enlaceCanto(parte,canto)}#${e.id}`}>Consultar en el lector →</a></figcaption><blockquote>{e.versos.slice(0,12).map(v=><span>{v.texto}</span>)}</blockquote>{e.versos.length>12&&<p><em>Se muestran los primeros 12 de {e.versos.length} versos de esta estrofa extensa.</em> <a href={`${enlaceCanto(parte,canto)}#${e.id}`}>Leer la estrofa completa en el texto original →</a></p>}</figure>)}</section>
+ {pasajes.map((p,i)=><figure class="mf-study-stanza"><figcaption>Estrofa {p.estrofa.numero}{p.estrofa.versos.length>12?` · versos ${p.primerVerso}–${p.primerVerso+p.versos.length-1}`:''} · <a href={`${enlaceCanto(parte,canto)}#${p.estrofa.id}`}>Leer en el poema →</a></figcaption><blockquote>{p.versos.map(v=><span>{v.texto}</span>)}</blockquote><p>{comentarios[i]}</p></figure>)}</section>
  <section><h2>Vocabulario gauchesco y términos históricos del canto</h2>{vocabulario.length?<dl>{vocabulario.map(t=><div><dt><strong>{t.termino}</strong></dt><dd>{t.explicacion}</dd></div>)}</dl>:<p>No se seleccionaron términos del glosario básico para este canto. Para interpretar expresiones difíciles, utilizá el <a href="/buscar/">buscador de versos</a> y consultá su contexto completo.</p>}</section>
- <section><h2>Personajes vinculados a este canto</h2>{relacionados.length?<ul>{relacionados.map(p=><li><a href={`/personajes/#${p.id}`}>{p.nombre}</a> — {p.tipo}</li>)}</ul>:<p>Esta selección de fichas no identifica un protagonista secundario específico para el canto. Consultá las voces del texto y la <a href="/personajes/">guía general de personajes</a>.</p>}<p><a href="/estudiantes/#personajes">Volver a personajes en la biblioteca de estudiantes →</a></p></section>
- <section><h2>Preguntas específicas para estudiar el canto {canto}</h2><ol>{preguntas.map(q=><li>{q}</li>)}<li>¿Quién habla en este canto? Identificá en qué versos se manifiesta la voz narradora.</li><li>¿Qué hechos narra el texto y cuáles son opiniones o juicios de quien los cuenta? Citá dos versos para justificar tu respuesta.</li><li>Elegí una de las estrofas seleccionadas reproducidas y explicá cómo sostiene —o matiza— el comentario editorial. Indicá número de estrofa y verso.</li></ol><p>Fundamentá tus respuestas citando el canto y la estrofa.</p></section>
+ <section><h2>Personajes y sus acciones</h2><ul>{actuaciones.map(p=><li><strong>{p.nombre}:</strong> {p.accion}</li>)}</ul>{relacionados.length>0&&<p>Consultá también las fichas: {relacionados.map(p=><a href={`/personajes/#${p.id}`}>{p.nombre} · </a>)}</p>}</section>
+ <section><h2>Preguntas específicas para estudiar el canto {canto}</h2><ol>{preguntas.map(q=><li>{q}</li>)}</ol><p>Fundamentá tus respuestas citando el canto y la estrofa.</p></section>
+ <section><h2>Relación con el resto de la obra</h2>{anterior&&tituloAnterior&&<p><strong>Antes:</strong> <a href={anterior}>{tituloAnterior}</a>.</p>}{siguiente&&tituloSiguiente&&<p><strong>Después:</strong> <a href={siguiente}>{tituloSiguiente}</a>.</p>}</section>
  <section><h2>Fuente de esta guía</h2><p>José Hernández, <cite>{libro.nombre}</cite> ({libro.anio}), <a href={enlaceCanto(parte,canto)}>canto {canto}, texto íntegro</a>. Consultá la <a href="/fuentes-y-derechos/">procedencia de la edición</a>.</p></section>
  <section><h2>Profundizar</h2><p><a href="/temas/">Temas de lectura</a> · <a href="/exegesis/">Análisis literario</a> · <a href="/buscar/">Buscar versos</a> · <a href="/personajes/">Personajes</a></p></section>
  <nav class="mf-study-pager" aria-label="Continuar estudiando">{anterior&&<a href={anterior}>← Ficha anterior</a>}<a href="/estudiantes/">Los 46 cantos</a>{siguiente&&<a href={siguiente}>Ficha siguiente →</a>}</nav>
