@@ -334,6 +334,15 @@ const grupos=[
     ]
   }
 ];
+const enlacesInvestigacionReciente=[
+ {titulo:'What Is a Gaucho? — English guide',url:'/en/what-is-a-gaucho/',descripcion:'Introducción en inglés a la historia y cultura del gaucho.'},
+ {titulo:'Los pampas',url:'/historia/los-pampas/',descripcion:'Denominaciones históricas y pueblos indígenas de la llanura.'},
+ {titulo:'Puelches',url:'/historia/puelches/',descripcion:'Historia y denominaciones de los pueblos indígenas.'},
+ {titulo:'Querandíes',url:'/historia/querandies/',descripcion:'Investigación histórica sobre los querandíes.'},
+ {titulo:'Ranqueles',url:'/historia/ranqueles/',descripcion:'Historia de los ranqueles y la frontera.'},
+ {titulo:'Tehuelches',url:'/historia/tehuelches/',descripcion:'Pueblos tehuelches y denominaciones históricas.'}
+];
+grupos.find(g=>g.id==='estudios')?.enlaces.push(...enlacesInvestigacionReciente);
 const enlacesEducativos=[
  {titulo:'Para estudiantes · recursos de estudio',url:'/estudiantes/',descripcion:'Análisis de lectura, personajes y actividades para los 46 cantos.'},
  ...(['ida','vuelta'] as const).flatMap(parte=>partes[parte].cantos.map(c=>({titulo:`Ficha para estudiantes · ${parte==='ida'?'La ida':'La vuelta'} · Canto ${c.numero}`,url:urlEstudio(parte,c.numero),descripcion:'Estrofas originales, personajes y preguntas de lectura.'})))
