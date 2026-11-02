@@ -39,3 +39,8 @@ La inspección anterior **NO** acredita un cotejo semántico exhaustivo de todas
 ### Diagnóstico de CI (comparación con estado anterior a las correcciones)
 
 En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta tanda**, el workflow `Validar portal Astro` ya terminaba con éxito y `Auditoría de aprobación editorial (ES)` ya fallaba: [ejecución previa](https://github.com/carloscabanas-1327/martinfierro/actions/runs/41444681308). El log indica: «Auditoría de revista: 6 artículos; 0 imágenes inferiores a 1536 px; 1 duplicados binarios» y «NO APTO: resolución o derechos sin verificar». La misma causa aparece tras las correcciones en [run 41446548633](https://github.com/carloscabanas-1327/martinfierro/actions/runs/41446548633), mientras la compilación y el control SEO de ese job habían pasado. **Es un bloqueo editorial preexistente de derechos/resolución de imágenes de revista, no un fallo de cotejo filológico demostrado.** No se modificaron imágenes ni se debilitó el control bloqueante. Falta verificar los runs correspondientes al último commit.
+
+### Segunda tanda de La vuelta (IV–VI)
+
+- [Cotejo de Vuelta IV–VI](MF-ES-024-VUELTA-COTEJO-04-06-2026-11-02.md): lectura íntegra de las estrofas 475–550 (456 versos); corregida la interpretación de Vuelta V para eliminar una partida no narrada y recoger el matiz de reparto igualitario de la estrofa 502. Se corroboró que Cruz muere en Vuelta VI, estrofas 549–550.
+- **Estado actualizado: 19/46 guías cotejadas individualmente; pendientes 27 (Vuelta VII–XXXIII).** La cifra anterior de 16/46 documenta el corte previo, no el estado actual.
