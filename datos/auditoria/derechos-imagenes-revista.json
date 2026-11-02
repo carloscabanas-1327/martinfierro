@@ -4,14 +4,14 @@
     "autor": null,
     "licencia": null,
     "fuente": null,
-    "observacion": "Usada por Día de la Tradición y Pulperías; duplicación pendiente de resolver; el usuario identifica las imágenes como recreaciones generadas con IA. Autoría, herramienta, fecha y derechos de uso aún requieren documentación; no es fotografía histórica."
+    "observacion": "Usada en Día de la Tradición. Procedencia y condiciones de uso pendientes de verificación; no debe presentarse como fotografía histórica sin evidencia."
   },
   "/media/revista/fortines-vida-cotidiana.webp": {
     "verificado": false,
     "autor": null,
     "licencia": null,
     "fuente": null,
-    "observacion": "Usada por vida en los fortines y quiénes eran los gauchos; duplicación pendiente; el usuario identifica las imágenes como recreaciones generadas con IA. Autoría, herramienta, fecha y derechos de uso aún requieren documentación; no es fotografía histórica."
+    "observacion": "Usada en Vida en los fortines. Recreación con IA según declaración del usuario. Pendiente documentación de generación, atribución y derechos."
   },
   "/media/revista/frontera-pueblos-indigenas.webp": {
     "verificado": false,
@@ -33,5 +33,12 @@
     "licencia": null,
     "fuente": null,
     "observacion": "Imagen generada con IA en conversación; archivo preliminar 756x500; derechos y resolución pendientes; no es fotografía histórica."
+  },
+  "/media/revista/quienes-eran-los-gauchos.webp": {
+    "verificado": false,
+    "autor": null,
+    "licencia": null,
+    "fuente": null,
+    "observacion": "Archivo subido por el usuario y asignado al artículo ¿Quiénes eran los gauchos? La procedencia se declara como recreación IA, pero falta documentar herramienta, fecha y condiciones de uso. Puede compartir contenido binario con fortines-vida-cotidiana.webp."
   }
 }
