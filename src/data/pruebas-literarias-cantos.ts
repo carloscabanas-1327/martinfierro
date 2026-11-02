@@ -62,7 +62,7 @@ export const pruebasCantos=[
       204,
       221
     ],
-    "justificacion": "El comienzo del conflicto en la pulpería y el recuerdo posterior de los restos obligan a reconocer a la víctima y la voz parcial de Fierro."
+    "justificacion": "El comienzo del conflicto durante el baile y el recuerdo posterior de los restos obligan a reconocer a la víctima y la voz parcial de Fierro."
   },
   {
     "parte": "ida",
