@@ -504,7 +504,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "pampa",
-        "explicacion": "Extensión geográfica nombrada en contextos diferentes, que deben distinguirse."
+        "explicacion": "En este canto «el pampa» designa al hombre indígena que Fierro observa junto a la cautiva (estrofa 564), no a la región geográfica; es una denominación de la voz narrativa."
       },
       {
         "termino": "naides",
@@ -512,7 +512,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "rebenque",
-        "explicacion": "Látigo corto utilizado para conducir o estimular al caballo."
+        "explicacion": "Látigo corto de cuero; en este canto Fierro lo ve ensangrentado en manos del hombre que maltrata a la cautiva (estrofa 564), no empleado para conducir un caballo."
       },
       {
         "termino": "toldo",
@@ -552,7 +552,7 @@ export const vocabularioCantos=[
     "terminos": [
       {
         "termino": "pampa",
-        "explicacion": "Extensión geográfica nombrada en contextos diferentes, que deben distinguirse."
+        "explicacion": "En este canto «el pampa» nombra al hombre indígena que combate con Fierro (estrofa 597), no a la llanura; es una denominación del narrador."
       },
       {
         "termino": "indio",
@@ -578,7 +578,7 @@ export const vocabularioCantos=[
     "terminos": [
       {
         "termino": "pampa",
-        "explicacion": "Extensión geográfica nombrada en contextos diferentes, que deben distinguirse."
+        "explicacion": "En este canto «pampa» nombra a un hombre indígena, en especial al dueño o domador del caballo (estrofas 626, 628 y 630), no a la región geográfica."
       },
       {
         "termino": "indio",
