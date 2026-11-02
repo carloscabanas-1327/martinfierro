@@ -72,3 +72,11 @@ En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta
 - Commits de corrección verificados por lectura posterior: `57147de`, `e2aeec0`, `1ccd756`, `5e5e24c`, `1bf52a7`, `634e6c0`, `75d0967`, `e848c24`, `a0ddbf3`. Informe: `f953a86`.
 - Control estático posterior: **46 guías, 1193 estrofas, 7210 versos, 138 preguntas, 225 términos, 104 notas, cero incidencias de pertenencia de estrofas, coincidencia léxica y preguntas mínimas**. Los workflows del último commit se consultan por separado; no se afirma que Astro haya pasado sin conclusión explícita.
 - **Estado actualizado: 31/46 guías cotejadas; 15 pendientes (Vuelta XIX–XXXIII).** Las cifras anteriores son históricas. El corpus, `main`, los despliegues y la indexación no fueron alterados.
+
+### Quinta tanda de La vuelta (XIX–XXII)
+
+- [Cotejo individual de Vuelta XIX–XXII](MF-ES-024-VUELTA-COTEJO-19-22-2026-11-02.md): lectura íntegra de las estrofas **829–901 (73 estrofas, 472 versos)**, con cotejo de análisis, contexto, voces, personajes, tres preguntas por guía, glosas, notas y pruebas.
+- Se corrigió en XIX una mención equívoca a «enfermedad» y la omisión del envío a la frontera, respaldado por 852–854; se precisó la nota del cierre. En XX se distinguió la presentación de Picardía (855) de la revelación de que es hijo de Cruz (957, canto XXVI). En XXII se documentaron las trampas y el juicio retrospectivo explícito (882–901).
+- Commits de contenido verificados por lectura posterior: `3b4c11d`, `189aeeb`, `50e0747`. El informe de esta tanda quedó guardado en la rama.
+- Control estructural posterior: **46 guías, 1193 estrofas, 7210 versos, 138 preguntas, 225 términos con coincidencia literal, 104 notas y 0 incidencias estructurales**. SHA de corpus conservados: Ida `5d0de1ee6f8ffe088cd2a79360017d95ab9b9e7d`, Vuelta `8034740ca956cf77daf2aa76a2ca5bfbf2199987`. La conclusión de CI se comprueba por separado.
+- **Estado actualizado: 35/46 guías cotejadas; 11 pendientes (Vuelta XXIII–XXXIII).** El dato previo de 31/46 es histórico. No se modificó `main`, no se desplegó ni se alteró indexación.
