@@ -132,7 +132,7 @@ export const preguntasVueltaEstudiantes=[
     "preguntas": [
       "¿Qué hacen el alcalde y los vecinos cuando llegan tras la muerte de Vizcacha (estrofas 791–804)?",
       "¿Qué episodios de la conducta de Vizcacha cuentan los vecinos y cómo funciona la ironía en esos relatos?",
-      "¿Por qué el hijo menor cuestiona la herencia que recibe en la estrofa 815?"
+      "¿Por qué el hijo menor cuestiona la herencia que le anuncian en la estrofa 815?"
     ]
   },
   {
