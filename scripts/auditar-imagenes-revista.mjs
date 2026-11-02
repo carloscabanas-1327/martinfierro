@@ -7,7 +7,8 @@ const pages='src/pages/revista';
 const files=await fs.readdir(pages,{withFileTypes:true});
 const inventory=[];
 let derechos={};
-try { derechos=JSON.parse(await fs.readFile('datos/auditoria/derechos-imagenes-revista.json','utf8')); } catch(e) { if(e.code!=='ENOENT') throw e; }
+const manifestPath='datos/auditoria/derechos-imagenes-revista.json';
+try { derechos=JSON.parse(await fs.readFile(manifestPath,'utf8')); } catch(e) { if(e.code!=='ENOENT') throw e; }
 
 for(const entry of files){
  if(!entry.isDirectory())continue;
@@ -27,8 +28,10 @@ for(const entry of files){
  }catch(e){error=String(e);}
  inventory.push({ruta:'/revista/'+route+'/',imagen:src,ancho:width,alto:height,formato:format,bytes:size,hashSha256:hash,aptoAncho1600:width>=1600,estadoDerechos:(derechos[src]?.verificado===true && derechos[src]?.autor && derechos[src]?.licencia && derechos[src]?.fuente ? 'verificado':'requiere cotejo de autor y licencia'),error});
 }
+// Las declaraciones sin evidencia no certifican derechos; exigir además datos de origen y crédito.
+const rightsPending=inventory.filter(x=>x.estadoDerechos!=='verificado');
 const duplicateHashes=inventory.filter((x,i)=>x.hashSha256&&inventory.findIndex(y=>y.hashSha256===x.hashSha256)!==i);
-const report={articulosConImagen:inventory.length,imagenesPorDebajo1600:inventory.filter(x=>!x.aptoAncho1600).length,duplicadosBinarios:duplicateHashes.map(x=>x.ruta),imagenes:inventory};
+const report={articulosConImagen:inventory.length,imagenesPorDebajo1600:inventory.filter(x=>!x.aptoAncho1600).length,duplicadosBinarios:duplicateHashes.map(x=>x.ruta),derechosPendientes:rightsPending.map(x=>x.ruta),imagenes:inventory};
 await fs.writeFile('auditoria-imagenes-revista-es.json',JSON.stringify(report,null,2)+'\n','utf8');
 console.log('Auditoría de revista: '+inventory.length+' artículos; '+report.imagenesPorDebajo1600+' imágenes inferiores a 1600 px; '+duplicateHashes.length+' duplicados binarios.');
 for(const i of inventory.filter(x=>!x.aptoAncho1600||x.error))console.log('REVISAR '+i.ruta+' '+i.imagen+' '+(i.ancho??'?')+'x'+(i.alto??'?'));
@@ -37,7 +40,7 @@ if(inventory.some(x=>x.error))process.exit(1);
 // El inventario sigue siendo diagnóstico por defecto. En modo de aprobación,
 // incumplimientos visuales bloquean el candidato sin inventar licencias.
 const strict=process.argv.includes('--strict');
-if(strict && (inventory.length===0 || report.imagenesPorDebajo1600>0 || duplicateHashes.length>0 || inventory.some(x=>x.estadoDerechos!=='verificado'))){
+if(strict && (inventory.length===0 || report.imagenesPorDebajo1600>0 || duplicateHashes.length>0 || rightsPending.length>0)){
  console.error('NO APTO: resolución, duplicación o derechos sin verificar.');
  process.exitCode=1;
 }
