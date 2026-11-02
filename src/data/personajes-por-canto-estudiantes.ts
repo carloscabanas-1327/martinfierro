@@ -348,11 +348,11 @@ export const personajesPorCanto=[
     "actuaciones": [
       {
         "nombre": "El hijo menor de Fierro",
-        "accion": "Presencia las diligencias posteriores al fallecimiento y recibe una herencia precaria."
+        "accion": "Presencia el registro de los objetos de Vizcacha y es nombrado heredero, aunque el canto no muestra que reciba efectivamente los bienes."
       },
       {
         "nombre": "Viejo Vizcacha",
-        "accion": "Permanece como centro de las anécdotas del velorio."
+        "accion": "Es recordado por los vecinos mediante anécdotas sobre robos y abusos; no se celebra un velorio en el canto."
       }
     ]
   },
