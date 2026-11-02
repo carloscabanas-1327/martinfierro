@@ -12,7 +12,7 @@ for(const entry of files){
  const source=path.join(pages,route,'index.astro');
  let content;
  try{content=await fs.readFile(source,'utf8')}catch{continue}
- const src=content.match(/<EditorialSection[\\s\\S]*?\\bimage="(\\/media\\/[^"]+)"/)?.[1];
+ const src=content.match(/<EditorialSection[\s\S]*?\bimage="(\/media\/[^"]+)"/)?.[1];
  if(!src)continue;
  const local=path.join('public',src);
  let size,width,height,format,hash,error;
