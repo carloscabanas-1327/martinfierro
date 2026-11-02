@@ -66,3 +66,9 @@ Cada casilla se marca [x] únicamente al incorporar enlace a **commit, ruta exac
 3. Validación completa del JSON-LD y fechas editoriales en todas las familias de páginas (revista, archivo, personajes, idiomas).
 4. Auditoría de enlaces y referencias históricas de cada pieza de revista y de los perfiles; corrección de frases metodológicas aún presentes fuera de las guías.
 5. Conciliar el conjunto de PR #140–#147 en un único estado candidato a producción. Sin apertura de indexación hasta aprobación específica.
+
+## Segunda ronda documentada: imágenes y revista
+
+- **Responsive aprobado:** [GitHub Actions #41367284357](https://github.com/carloscabanas-1327/martinfierro/actions/runs/41367284357), commit `d548cf8783acb5d19c261d142e014ea4a2637d9a`. La compilación ejecuta `scripts/generar-variantes-imagenes.mjs` y el componente `src/components/EditorialSection.astro` sirve `srcset` y `sizes`, con 480/960 px generados únicamente mediante reducción de los originales y ancho/alto reales. **No** acredita portadas nativas ≥1600 px, licencia ni exclusividad del archivo.
+- **Día de la Tradición:** `src/pages/revista/dia-de-la-tradicion-10-de-noviembre/index.astro` enlaza directamente las leyes 4756 (provincia de Buenos Aires, 1939) y 21.154 (nacional, 1975). Se retiraron el aviso al lector sobre metodología, rótulo «VERIFICACIÓN» y numeración repetitiva. Commit `ca7abf9ef85f2ca8b827332cfa36bd93e2e2c9fb`. Su última compilación debe verificarse de forma independiente.
+- **Pendientes editoriales sin certificar:** colación literal externa de toda la edición y bibliografía de críticas, licencias y reemplazo de seis imágenes de revista inferiores a 1600 px, duplicación de dos fotografías, revisión completa de fuentes de los demás artículos. El bloqueo global de indexación continúa sin cambios.
