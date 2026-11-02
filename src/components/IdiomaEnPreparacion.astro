@@ -12,7 +12,7 @@ interface Props { codigo: string; nombre: string; dir?: 'ltr' | 'rtl'; textos: T
 const { codigo, nombre, dir = 'ltr', textos } = Astro.props;
 const fichas = traduccionesDe(codigo);
 ---
-<Base lang={codigo} title={`${textos.titulo} · MARTINFIERRO.ORG`} description={textos.aviso} noindex={true} pageType="CollectionPage">
+<Base lang={codigo} title={`Martín Fierro · ${nombre} · MARTINFIERRO.ORG`} description={textos.aviso} noindex={true} pageType="CollectionPage">
   <div class="breadcrumbs" dir="ltr"><a href="/">Martín Fierro</a><span>{nombre}</span></div>
   <div dir={dir} lang={codigo}>
     <section class="section-intro">
