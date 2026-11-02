@@ -1,12 +1,14 @@
 ---
-import Base from '../../layouts/Base.astro';
-const code = 'sl';
+import IdiomaEnPreparacion from '../../components/IdiomaEnPreparacion.astro';
+const textos = {
+  "titulo": "Martín Fierro v slovenščini: prevodi in viri",
+  "aviso": "Jezikovna različica je v pripravi. Noben prevod ne bo objavljen, dokler ne preverimo njegovega vira, celovitosti in pravic reprodukcije.",
+  "original": "Preberite izvirno pesnitev v španščini",
+  "traducciones": "Dokumentirani prevodi",
+  "sinTraducciones": "Za ta jezik še ni dokumentiranega prevoda.",
+  "biblioteca": "Knjižnica in arhiv",
+  "bibliotecaTexto": "Zgodovinski viri, izdaje in dokumenti so skupni vsem jezikom in so dostopni v španščini.",
+  "derechos": "Katalog prevodov in pravic"
+};
 ---
-<Base lang={code} title={'Martín Fierro — '+code.toUpperCase()+' · edición en preparación'} description={'Espacio documental de Martín Fierro para el idioma '+code+'. Traducciones y fuentes sujetas a verificación editorial.'} noindex={true} pageType="CollectionPage">
-  <main id="contenido" class="container" style="padding:3rem 1rem;max-width:60rem">
-    <p><a href="/">Martín Fierro</a> · <a href="/en/">English</a></p>
-    <h1>Martín Fierro · {code.toUpperCase()}</h1>
-    <p>Edición lingüística en preparación. No se publica ninguna traducción hasta verificar su fuente, integridad y derechos de reproducción.</p>
-    <p><a href="/leer/">Consultar el poema original en español</a></p>
-  </main>
-</Base>
+<IdiomaEnPreparacion codigo="sl" nombre="Slovenščina" textos={textos} />

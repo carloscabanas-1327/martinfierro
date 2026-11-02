@@ -1,10 +1,14 @@
 ---
-import Base from '../../layouts/Base.astro';
-import {idiomas} from '../../data/idiomas';
+import IdiomaEnPreparacion from '../../components/IdiomaEnPreparacion.astro';
+const textos = {
+  "titulo": "Martín Fierro auf Deutsch: Übersetzungen und Quellen",
+  "aviso": "Sprachausgabe in Vorbereitung. Eine Übersetzung wird erst veröffentlicht, wenn Quelle, Vollständigkeit und Vervielfältigungsrechte geprüft sind.",
+  "original": "Das Originalgedicht auf Spanisch lesen",
+  "traducciones": "Dokumentierte Übersetzungen",
+  "sinTraducciones": "Für diese Sprache ist noch keine Übersetzung dokumentiert.",
+  "biblioteca": "Bibliothek und Archiv",
+  "bibliotecaTexto": "Historische Quellen, Ausgaben und Dokumente sind für alle Sprachen gemeinsam und auf Spanisch zugänglich.",
+  "derechos": "Verzeichnis der Übersetzungen und Rechte"
+};
 ---
-<Base title="Deutsch: bibliografische Recherche läuft" description="Die deutsche Übersetzung von Martín Fierro ist noch bibliografisch zu prüfen. Das spanische Original ist verfügbar." lang="de" pageType="CollectionPage" noindex={true}>
- <div class="breadcrumbs"><a href="/">Martín Fierro</a><span>Deutsch</span></div>
- <section class="section-intro"><p class="eyebrow">Bibliografische Recherche</p><h1>Deutsch: Ausgabe in Vorbereitung</h1><p class="lead">Eine konkrete deutsche Übersetzung ist noch nicht anhand einer Ausgabe überprüft. Deshalb wird hier weder eine vollständige Übersetzung noch ein freier Nutzungsstatus behauptet.</p></section>
- <nav class="language-picker" aria-label="Andere Sprachen">{idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo}>{i.nombre}</a>)}</nav>
- <div class="editorial-paper"><h2>Spanisches Original</h2><p>Die beiden Teile von José Hernández können im spanischen Original gelesen werden.</p><p><a href="/leer/">Original lesen</a></p></div>
-</Base>
+<IdiomaEnPreparacion codigo="de" nombre="Deutsch" textos={textos} />
