@@ -204,7 +204,7 @@ export const preguntasVueltaEstudiantes=[
     "preguntas": [
       "¿Qué faltas reconoce Picardía?",
       "¿Qué indicios permiten hablar de arrepentimiento sin idealizarlo?",
-      "¿Qué descubre Picardía acerca del pasado de Cruz en la estrofa 958?"
+      "¿Qué episodio de la vida de Cruz recuerda Picardía en la estrofa 958, después de descubrir en la 957 que era su padre?"
     ]
   },
   {
