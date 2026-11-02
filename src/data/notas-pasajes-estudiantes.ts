@@ -218,7 +218,7 @@ export const notasPasajesCantos=[
     "canto": 14,
     "notas": [
       "El hijo menor identifica al viejo Vizcacha y da una primera caracterización crítica.",
-      "La evaluación final del joven condensa el contraste entre tutela y aprendizaje."
+      "En la estrofa 748, el hijo menor contrasta la educación que debía recibir de su tutor con la conducta de Vizcacha."
     ]
   },
   {
