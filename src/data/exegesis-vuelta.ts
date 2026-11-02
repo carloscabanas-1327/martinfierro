@@ -28,7 +28,7 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 5,
     "titulo": "La invasión y la frontera representada como guerra",
-    "analisis": "Las escenas de partida, retorno, violencia y botín organizan la frontera en torno al enfrentamiento. Esa selección narrativa sirve al temor y al conflicto del personaje; no ofrece una historia completa de comercio, tratados, intercambio y relaciones familiares en la región.",
+    "analisis": "El regreso de una incursión, el reparto del botín y el trato a las mujeres, según la voz de Fierro, organizan este canto en torno a la violencia de frontera. El propio narrador admite una regla de igualdad en el reparto (estrofa 502), matiz que impide atribuirle una valoración absolutamente uniforme. Su selección narrativa no ofrece una historia completa de comercio, tratados, intercambio y relaciones familiares en la región.",
     "contexto": "El discurso de guerra explica cómo el protagonista interpreta lo que ve, mientras la historiografía muestra que las relaciones fronterizas fueron más variadas que una hostilidad uniforme."
   },
   {
