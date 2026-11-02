@@ -343,8 +343,8 @@ export const vocabularioCantos=[
     "canto": 1,
     "terminos": [
       {
-        "termino": "vigüela",
-        "explicacion": "Instrumento de cuerda mencionado por el cantor; su forma gráfica pertenece al poema."
+        "termino": "viguela",
+        "explicacion": "Grafía empleada en el corpus de La vuelta, estrofa 398, para el instrumento de cuerda que acompaña al cantor; conservar la forma original del verso."
       },
       {
         "termino": "naides",
@@ -619,8 +619,8 @@ export const vocabularioCantos=[
         "explicacion": "Habitante o trabajador de la campaña al que se atribuyen diversos oficios y experiencias sociales."
       },
       {
-        "termino": "mate",
-        "explicacion": "Infusión de yerba mate o recipiente empleado para beberla, según el verso."
+        "termino": "garguero",
+        "explicacion": "Garganta; Fierro dice que bebe un trago para refrescar el garguero antes de narrar el reencuentro (estrofa 655). El «maté» de este canto es el verbo matar, no la infusión."
       }
     ]
   },
