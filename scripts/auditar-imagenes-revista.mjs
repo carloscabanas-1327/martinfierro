@@ -6,6 +6,9 @@ import sharp from 'sharp';
 const pages='src/pages/revista';
 const files=await fs.readdir(pages,{withFileTypes:true});
 const inventory=[];
+let derechos={};
+try { derechos=JSON.parse(await fs.readFile('datos/auditoria/derechos-imagenes-revista.json','utf8')); } catch(e) { if(e.code!=='ENOENT') throw e; }
+
 for(const entry of files){
  if(!entry.isDirectory())continue;
  const route=entry.name;
@@ -22,7 +25,7 @@ for(const entry of files){
   size=buffer.length;width=m.width;height=m.height;format=m.format;
   hash=crypto.createHash('sha256').update(buffer).digest('hex');
  }catch(e){error=String(e);}
- inventory.push({ruta:'/revista/'+route+'/',imagen:src,ancho:width,alto:height,formato:format,bytes:size,hashSha256:hash,aptoAncho1600:width>=1600,estadoDerechos:'requiere cotejo de autor y licencia',error});
+ inventory.push({ruta:'/revista/'+route+'/',imagen:src,ancho:width,alto:height,formato:format,bytes:size,hashSha256:hash,aptoAncho1600:width>=1600,estadoDerechos:(derechos[src]?.verificado===true && derechos[src]?.autor && derechos[src]?.licencia && derechos[src]?.fuente ? 'verificado':'requiere cotejo de autor y licencia'),error});
 }
 const duplicateHashes=inventory.filter((x,i)=>x.hashSha256&&inventory.findIndex(y=>y.hashSha256===x.hashSha256)!==i);
 const report={articulosConImagen:inventory.length,imagenesPorDebajo1600:inventory.filter(x=>!x.aptoAncho1600).length,duplicadosBinarios:duplicateHashes.map(x=>x.ruta),imagenes:inventory};
@@ -34,7 +37,7 @@ if(inventory.some(x=>x.error))process.exit(1);
 // El inventario sigue siendo diagnóstico por defecto. En modo de aprobación,
 // incumplimientos visuales bloquean el candidato sin inventar licencias.
 const strict=process.argv.includes('--strict');
-if(strict && (report.imagenesPorDebajo1600>0 || duplicateHashes.length>0 || inventory.some(x=>x.estadoDerechos!=='verificado'))){
+if(strict && (inventory.length===0 || report.imagenesPorDebajo1600>0 || duplicateHashes.length>0 || inventory.some(x=>x.estadoDerechos!=='verificado'))){
  console.error('NO APTO: resolución, duplicación o derechos sin verificar.');
  process.exitCode=1;
 }
