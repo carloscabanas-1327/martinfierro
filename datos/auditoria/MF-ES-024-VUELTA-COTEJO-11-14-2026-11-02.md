@@ -11,10 +11,10 @@ Se leyó el texto completo de las **100 estrofas y 744 versos** de los cuatro ca
 - **Afirmaciones y acontecimientos:** la estrofa 655 cuenta cómo Fierro conoce la muerte del juez perseguidor, justifica retrospectivamente sus peleas, se entera de que el gobierno ya no lo busca, encuentra **solo a dos hijos** en una carrera y recibe la noticia de la muerte de su esposa en un hospital. El análisis y el contexto corresponden a esta evidencia; las justificaciones de Fierro deben seguir presentándose como su versión, no como absolución objetiva.
 - **Personajes:** Martín Fierro narra y sus dos hijos se disponen a cantar; la esposa y el juez son evocados, no intervienen directamente. Sin discrepancias en la ficha de personajes.
 - **Preguntas:** se precisó «volver a encontrarse con su familia» para **no insinuar** que también se reúne con su esposa; la nueva formulación identifica expresamente a los dos hijos y la muerte de la madre.
-- **Glosario:** `matrero`, `pulpería`, `partida`, `gaucho` y `mate` aparecen en el canto y son compatibles con sus usos. La `pulpería` se menciona retrospectivamente; no es el lugar del reencuentro.
+- **Glosario:** `matrero`, `pulpería`, `partida`, `gaucho` y `garguero` aparecen en el canto. La `pulpería` se menciona retrospectivamente; no es el lugar del reencuentro. La entrada anterior `mate` era un falso positivo por la forma verbal **«maté»**, no la bebida; se sustituyó por `garguero` («garganta», estrofa 655).
 - **Pasaje y notas:** el único número de estrofa, 655, comprende el canto entero; las tres notas señalan su inicio, desarrollo y cierre. No constituyen tres estrofas distintas.
 
-**Veredicto:** cotejada; una precisión de pregunta.
+**Veredicto:** cotejada; una precisión de pregunta y una sustitución léxica.
 
 ## Canto XII — El hijo mayor y la prisión
 
@@ -52,8 +52,9 @@ Se hicieron cambios **secuenciales, un archivo y un commit por operación**, con
 2. `62e17e2ed2b029eadf6baf59535c641b5f8a2347`: `src/data/preguntas-vuelta-estudiantes.ts` (Vuelta XI y XIII).
 3. `e96b5c9953cadcfff812cdf1b1501aeb3007e0cb`: `src/data/vocabulario-cantos-estudiantes.ts` (seis entradas en XII–XIV).
 4. `73559c786f46995743ff312c0f47c8541bdeb0d4`: `src/data/notas-pasajes-estudiantes.ts` (Vuelta XIV).
+5. `7824a2eab15a6d7fc5ac992f06439f7df5b7174a`: glosario de Vuelta XI (`maté` no es `mate`) y corrección retrospectiva de Vuelta I (`viguela`, grafía exacta del corpus en la estrofa 398).
 
-**Control estructural independiente** tras las correcciones: 46 guías, 1193 estrofas, 7210 versos, 138 preguntas, 225 términos de glosario y 104 notas; **cero incidencias** en existencia de datos, pertenencia de las estrofas al canto y presencia literal normalizada de los términos. Este control no reemplaza la compilación Astro. En el último commit consultado, `Validar portal Astro` estaba **queued** y `Auditoría de aprobación editorial (ES)` estaba **in_progress** (no se anticipan resultados).
+**Control estructural independiente** tras las correcciones: 46 guías, 1193 estrofas, 7210 versos, 138 preguntas, 225 términos de glosario y 104 notas; **cero incidencias** en existencia de datos, pertenencia de las estrofas al canto y presencia literal de los términos con límites de palabra y distinción de tildes (para no confundir `mate` con `maté`). Este control no reemplaza la compilación Astro. En el último commit consultado, `Validar portal Astro` estaba **queued** y `Auditoría de aprobación editorial (ES)` estaba **in_progress** (no se anticipan resultados).
 
 ## Estado y límites
 
