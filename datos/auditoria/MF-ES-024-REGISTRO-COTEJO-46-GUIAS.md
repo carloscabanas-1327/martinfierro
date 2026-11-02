@@ -52,3 +52,12 @@ En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta
 - Se precisó la primera pregunta de Vuelta VII para diferenciar la muerte de Cruz narrada en VI del recuerdo y entierro en VII. Commit `71f5da32ff9668e6b6de7628afd3607c5d6e1c7e`.
 - Verificación de lectura posterior en GitHub: las cuatro definiciones y la pregunta quedaron actualizadas. Control estructural independiente sobre los datos de las **46 guías**: 1193 estrofas, 7210 versos, 138 preguntas, 225 términos, 104 notas, **0 incidencias de estructura/referencias/literalidad**. Este control no equivale a la compilación Astro.
 - **Estado actualizado: 23/46 guías cotejadas; 23 pendientes (Vuelta XI–XXXIII)**. El dato anterior de 19/46 es histórico. El CI más reciente debe comprobarse al terminar; el bloqueo de imágenes de revista continúa separado de la auditoría literaria.
+
+### Cuarta tanda de La vuelta (XI–XIV)
+
+- [Cotejo individual de Vuelta XI–XIV](MF-ES-024-VUELTA-COTEJO-11-14-2026-11-02.md): lectura íntegra de las estrofas **655–754** (100 estrofas y 744 versos) y contraste de todas las secciones editoriales de las cuatro guías.
+- Se corrigió una interpretación de Vuelta XII que sugería educación impuesta durante la prisión, pese a que el hijo mayor lamenta no haber aprendido a leer (estrofa 698): commit `9cb65dd81b2a870d0bbd9286a3b6385eb1f80640`.
+- Se corrigieron preguntas de Vuelta XI (reencuentro solo con dos hijos, esposa fallecida) y Vuelta XIII (narrador: **hijo menor**, no mayor): commit `62e17e2ed2b029eadf6baf59535c641b5f8a2347`.
+- Se contextualizaron seis glosas de Vuelta XII–XIV (`mate`, `juez`, `cimarrón`, `rancho`): commit `e96b5c9953cadcfff812cdf1b1501aeb3007e0cb`. Se precisó una nota sobre la estrofa 748 de Vuelta XIV: commit `73559c786f46995743ff312c0f47c8541bdeb0d4`.
+- Lectura posterior a cada modificación directamente en GitHub: **verificada**. Control estático independiente: **46 guías, 1193 estrofas, 7210 versos, 138 preguntas, 225 términos, 104 notas; cero incidencias estructurales y de pertenencia de referencias**. En el commit `73559c7`, CI de Astro todavía estaba en cola y auditoría editorial en curso al consultarse: no se declara compilación exitosa hasta tener su conclusión.
+- **Estado actualizado: 27/46 guías cotejadas individualmente; 19 pendientes (Vuelta XV–XXXIII).** Las cifras anteriores reflejan cortes históricos. No se alteró el corpus, ni `main`, ni despliegues, ni indexación.
