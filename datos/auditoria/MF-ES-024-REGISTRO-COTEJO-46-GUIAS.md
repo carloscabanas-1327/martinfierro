@@ -23,3 +23,15 @@ La inspección anterior **NO** acredita un cotejo semántico exhaustivo de todas
 5. Emitir informe final solo con 46/46 fichas cotejadas y sin incidencias abiertas, o consignar explícitamente las pendientes.
 
 **Protecciones:** no modificar el corpus, no fusionar `main`, no desplegar, no abrir indexación.
+
+## Avance verificable del 2 de noviembre de 2026
+
+**16/46 guías cotejadas individualmente contra todos los versos de sus cantos (Ida 13/13, Vuelta 3/33); 30 pendientes (Vuelta IV–XXXIII).**
+
+- [Informe de La ida, cantos I–XIII](MF-ES-024-IDA-COTEJO-13-GUIAS-2026-11-02.md): lectura de las estrofas 1–395 (2316 versos), evidencia por canto y correcciones documentadas de Ida V, VI, VII y XIII. Se conservó el slug histórico de Ida VII para no romper enlaces.
+- [Informe de La vuelta, cantos I–III](MF-ES-024-VUELTA-COTEJO-01-03-2026-11-02.md): lectura de las estrofas 396–474 (474 versos) y corrección de usos figurados de «partida», «leva» y «rancho» en Vuelta III.
+- Se corrigió además una atribución equivocada en la plantilla: Vuelta XIII presenta al hijo menor, no al mayor; **su guía completa todavía no está aprobada**.
+- Control estático posterior a las correcciones de La ida: 46 guías, 104 notas de pasajes, 225 términos presentes literalmente en los cantos, 138 preguntas, 1193 estrofas y 7210 versos, sin incidencias estructurales. Este control no sustituye la compilación Astro ni la lectura literaria de las 30 guías restantes.
+- Los workflows de GitHub Actions fueron activados por los commits; sus conclusiones deben verificarse y cualquier fallo debe resolverse antes del cierre.
+
+**La auditoría continúa abierta.**
