@@ -239,8 +239,8 @@ export const seoCantos=[
     "parte": "vuelta",
     "canto": 17,
     "slug": "canto-17-el-velorio-y-la-satira-de-los-rituales",
-    "titulo": "El velorio y la sátira de los rituales — La vuelta, canto 17",
-    "tema": "el velorio y la sátira de los rituales",
+    "titulo": "El inventario de Vizcacha y la herencia irónica — La vuelta, canto 17",
+    "tema": "inventario de Vizcacha, vecinos y herencia",
     "imagen": null
   },
   {
