@@ -55,7 +55,7 @@ export const seoCantos=[
     "parte": "ida",
     "canto": 7,
     "slug": "canto-7-pelea-en-la-pulperia",
-    "titulo": "La pelea de Martín Fierro en la pulpería | Canto 7",
+    "titulo": "La pelea de Martín Fierro durante el baile | Canto 7",
     "tema": "violencia y narrador",
     "imagen": null
   },
