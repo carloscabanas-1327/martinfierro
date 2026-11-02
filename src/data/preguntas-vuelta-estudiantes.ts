@@ -115,7 +115,7 @@ export const preguntasVueltaEstudiantes=[
     "canto": 15,
     "preguntas": [
       "¿Qué consejo de Vizcacha privilegia el beneficio personal?",
-      "¿Qué diferencia existe entre ese dicho y la posición del narrador joven?",
+      "¿Qué distancia puede establecer el lector entre los consejos de Vizcacha y el hecho de que el hijo menor los recuerde, sin dar por supuesto que los aprueba?",
       "¿En qué circunstancias Vizcacha comienza a aconsejar al muchacho, según la estrofa 755?"
     ]
   },
@@ -130,8 +130,8 @@ export const preguntasVueltaEstudiantes=[
   {
     "canto": 17,
     "preguntas": [
-      "¿Cómo se desarrolla el velorio?",
-      "¿Qué costumbres y supersticiones aparecen narradas con ironía?",
+      "¿Qué hacen el alcalde y los vecinos cuando llegan tras la muerte de Vizcacha (estrofas 791–804)?",
+      "¿Qué episodios de la conducta de Vizcacha cuentan los vecinos y cómo funciona la ironía en esos relatos?",
       "¿Por qué el hijo menor cuestiona la herencia que recibe en la estrofa 815?"
     ]
   },
