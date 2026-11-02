@@ -70,7 +70,7 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 12,
     "titulo": "El primer hijo: la experiencia de la injusticia",
-    "analisis": "El hijo empieza a narrar lo que le ocurrió tras la desaparición de la familia. La voz filial muestra que las consecuencias de la persecución no terminan con el padre. Cambiar de narrador modifica el alcance del poema: aparecen encierro, arbitrariedad y educación impuesta desde la experiencia del joven.",
+    "analisis": "El hijo empieza a narrar lo que le ocurrió tras la desaparición de la familia. La voz filial muestra que las consecuencias de la persecución no terminan con el padre. Cambiar de narrador modifica el alcance del poema: aparecen encierro, arbitrariedad y un aprendizaje doloroso de la injusticia; el joven incluso lamenta no haber aprendido a leer (estrofa 698).",
     "contexto": "No todos los episodios legales deben tomarse como prueba aislada de una práctica universal. Las escenas invitan a investigar instituciones y formas de autoridad del período."
   },
   {
