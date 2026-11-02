@@ -72,3 +72,9 @@ Cada casilla se marca [x] únicamente al incorporar enlace a **commit, ruta exac
 - **Responsive aprobado:** [GitHub Actions #41367284357](https://github.com/carloscabanas-1327/martinfierro/actions/runs/41367284357), commit `d548cf8783acb5d19c261d142e014ea4a2637d9a`. La compilación ejecuta `scripts/generar-variantes-imagenes.mjs` y el componente `src/components/EditorialSection.astro` sirve `srcset` y `sizes`, con 480/960 px generados únicamente mediante reducción de los originales y ancho/alto reales. **No** acredita portadas nativas ≥1600 px, licencia ni exclusividad del archivo.
 - **Día de la Tradición:** `src/pages/revista/dia-de-la-tradicion-10-de-noviembre/index.astro` enlaza directamente las leyes 4756 (provincia de Buenos Aires, 1939) y 21.154 (nacional, 1975). Se retiraron el aviso al lector sobre metodología, rótulo «VERIFICACIÓN» y numeración repetitiva. Commit `ca7abf9ef85f2ca8b827332cfa36bd93e2e2c9fb`. Su última compilación debe verificarse de forma independiente.
 - **Pendientes editoriales sin certificar:** colación literal externa de toda la edición y bibliografía de críticas, licencias y reemplazo de seis imágenes de revista inferiores a 1600 px, duplicación de dos fotografías, revisión completa de fuentes de los demás artículos. El bloqueo global de indexación continúa sin cambios.
+
+## Esquema editorial de revista (validación actual)
+
+- Se incorporó `pageType="Article"` y `image` por artículo a las seis rutas de `src/pages/revista/*/index.astro`, con `@type: Article` en el JSON-LD compartido y `og:type: article`. Commit de la serie: `2f5be30fd97195369ef59febdca7b378a0723ced`.
+- No se añadieron fechas de publicación inexistentes ni firmas personales inventadas. Esos campos requieren fuentes editoriales reales y comprobación de fecha visible/schema.
+- Las imágenes registradas aún tienen problemas de resolución y duplicación. Los atributos de esquema no los resuelven.
