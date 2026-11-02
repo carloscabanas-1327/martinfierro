@@ -694,7 +694,7 @@ export const vocabularioCantos=[
       },
       {
         "termino": "rancho",
-        "explicacion": "Vivienda rural precaria; en este canto se describe el rancho deteriorado de Vizcacha (estrofas 738 y 749), no su pérdida."
+        "explicacion": "Vivienda rural: en la estrofa 738 se menciona el rancho de unas vascas, distinto del de Vizcacha; en la 749 aparece el rancho medio deshecho que le servía de guarida. No se narra aquí la pérdida de esa vivienda."
       },
       {
         "termino": "mate",
