@@ -44,7 +44,7 @@ export const notasPasajesCantos=[
     "parte": "ida",
     "canto": 6,
     "notas": [
-      "El gato que permanece en el rancho vacío vuelve visible la destrucción del ámbito familiar.",
+      "El gato que se refugia cerca del rancho arruinado, en una vizcachera, vuelve visible el abandono del hogar.",
       "La suerte imaginada de los hijos muestra que el daño del reclutamiento alcanza a toda la familia."
     ]
   },
@@ -52,9 +52,9 @@ export const notasPasajesCantos=[
     "parte": "ida",
     "canto": 7,
     "notas": [
-      "La provocación en la pulpería permite reconocer la responsabilidad de Fierro en el comienzo del conflicto.",
+      "La provocación durante el baile permite reconocer la responsabilidad de Fierro en el comienzo del conflicto.",
       "La reacción violenta del adversario precede a un desenlace mortal narrado por Fierro.",
-      "Al recordar los restos del hombre muerto, Fierro vuelve sobre una víctima que el canto no deja hablar."
+      "Al recordar los restos del hombre muerto, Fierro vuelve sobre una víctima que sí respondió durante la pelea, pero cuya muerte se cuenta desde la perspectiva del protagonista."
     ]
   },
   {
@@ -105,7 +105,7 @@ export const notasPasajesCantos=[
     "notas": [
       "Los dos gauchos se reconocen en una condición semejante y proyectan su partida.",
       "La rotura de la guitarra señala un cierre dramático de la situación del cantor.",
-      "El último verso reivindica los males relatados y deja abierta la historia."
+      "La voz narrativa externa cierra la relación reivindicando los males del gaucho y deja abierta su historia."
     ]
   },
   {
