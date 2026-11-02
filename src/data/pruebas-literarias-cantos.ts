@@ -272,7 +272,7 @@ export const pruebasCantos=[
       791,
       815
     ],
-    "justificacion": "El miedo al cadáver y la distribución de bienes muestran el tono satírico de las escenas posteriores a la muerte."
+    "justificacion": "El miedo al cadáver (791) y la designación del muchacho como heredero de un inventario precario (815) muestran el tono satírico posterior a la muerte; el canto no narra una distribución efectiva de bienes."
   },
   {
     "parte": "vuelta",
