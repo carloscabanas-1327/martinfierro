@@ -351,9 +351,16 @@ const grupoEstudiantes={id:'estudiantes',numero:'07',titulo:'Para estudiantes',n
 grupos.push(grupoEstudiantes);
 const partesIndice=[{clave:'ida',nombre:'El gaucho Martín Fierro · La ida',anio:1872},{clave:'vuelta',nombre:'La vuelta de Martín Fierro',anio:1879}] as const;
 const totalCantos=partesIndice.reduce((n,p)=>n+partes[p.clave].cantos.length,0);
+// Cada URL se muestra una sola vez en el directorio, conservando su primera ubicación editorial.
+const rutasVistas=new Set<string>();
+for(const grupo of grupos){
+  grupo.enlaces=grupo.enlaces.filter(enlace=>{
+    if(rutasVistas.has(enlace.url)) return false;
+    rutasVistas.add(enlace.url);
+    return true;
+  });
+}
 const totalEnlaces=grupos.reduce((n,g)=>n+g.enlaces.length,0)+totalCantos;
-const rutas=grupos.flatMap(g=>g.enlaces.map(e=>e.url));
-if(new Set(rutas).size!==rutas.length) throw new Error("Enlaces duplicados en el índice general");
 ---
 <Base title="Índice general de Martín Fierro" description="Recorré el índice general de Martín Fierro: sus dos partes y 46 cantos, personajes, investigaciones históricas, revista cultural y documentos del sitio.">
 <article class="mf-directorio">
