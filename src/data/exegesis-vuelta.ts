@@ -94,14 +94,14 @@ export const lecturasVuelta:LecturaCanto[]=[
   {
     "canto": 16,
     "titulo": "Enfermedad, muerte y humillación",
-    "analisis": "La enfermedad del tutor y las reacciones de quienes lo rodean mezclan comicidad, temor y crueldad. El relato enseña cómo una existencia regida por el interés deja vínculos precarios. El joven no controla las decisiones de los adultos ni la administración de lo que queda.",
-    "contexto": "El tono burlesco no elimina el desamparo del narrador, y las escenas populares deben leerse como elaboración literaria, no como inventario antropológico."
+    "analisis": "La enfermedad del tutor se narra junto con una interrupción cómica del propio acto de contar: un oyente corrige al cantor por decir «tabernáculo» en lugar de «tubérculo» (estrofas 779–784). De vuelta al relato, el hijo menor describe el miedo que le inspira Vizcacha enfermo, sus blasfemias y la muerte entre los perros (785–790). La revisión de sus bienes corresponde al canto siguiente, no a este.",
+    "contexto": "La interrupción del público (780–784) debe distinguirse de los hechos que el hijo menor recuerda sobre Vizcacha. El tono burlesco no elimina el miedo del muchacho ni autoriza a tomar la escena como inventario antropológico."
   },
   {
     "canto": 17,
-    "titulo": "El velorio y la sátira de los rituales",
-    "analisis": "La muerte de Vizcacha abre escenas en las que circulan supersticiones, comentarios y usos sociales de la comunidad. La comedia y la irreverencia contrastan con la gravedad de las pérdidas que atraviesan el poema, mostrando una amplia variedad de registros narrativos.",
-    "contexto": "El episodio describe creencias desde una voz satírica; no justifica atribuirlas sin distinción a toda la población rural de la época."
+    "titulo": "El inventario de Vizcacha y la sátira de la herencia",
+    "analisis": "Tras la muerte de Vizcacha, el alcalde llega con vecinos que recuerdan sus robos y otras malas costumbres (791–804). Después registran sus pertenencias (805–812) y el alcalde nombra heredero al hijo menor (813–815), quien contrapone ese inventario a las vacas que ha perdido. No se narra un velorio en este canto; el siguiente aclara que ni siquiera lo velaron (824).",
+    "contexto": "El episodio satiriza los relatos de los vecinos, la requisa de objetos y la promesa de herencia; las supersticiones sobre el muerto y los perros aparecen en el canto XVIII, no en este."
   },
   {
     "canto": 18,
