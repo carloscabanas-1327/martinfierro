@@ -1,0 +1,26 @@
+---
+import Base from '../../../layouts/Base.astro';
+import EditorialSection from '../../../components/EditorialSection.astro';
+import AdSlot from '../../../components/AdSlot.astro';
+import '../../../styles/ensayos-culturales.css';
+const fuentes=[
+{nombre:'Vollweiler: nombres y rótulos étnicos en la región pampeana (UBA/CONICET)',url:'https://revistascientificas.testing.filo.uba.ar/index.php/MA/article/view/8383'},
+{nombre:'Salomón Tarquini y Casali: pueblos indígenas de Pampa y Patagonia (UNSAM)',url:'https://revistasacademicas.unsam.edu.ar/index.php/papdetrab/article/view/645'},
+{nombre:'Lazzari, Rodríguez y Papazian: antropología de los pueblos indígenas (UNSAM)',url:'https://revistasacademicas.unsam.edu.ar/index.php/papdetrab/article/view/646'},
+{nombre:'Atlas sociolingüístico de pueblos indígenas (UNICEF)',url:'https://www.unicef.org/lac/media/9791/file/PDF%20Atlas%20sociolinguistico%20de%20pueblos%20indigenas%20en%20ALC-Tomo%201.pdf'}
+];
+---
+<Base pageType="Article" title="Los pampas y los tehuelches en Martín Fierro: historia y significado" description="Qué significa «entre pampas» en Martín Fierro: pueblos indígenas de la región pampeana, vínculos con los tehuelches y nombres históricos." adKind="article">
+<EditorialSection kind="article" label="HISTORIA · PUEBLOS ORIGINARIOS">
+<nav class="breadcrumbs" aria-label="Ubicación"><a href="/">Inicio</a><a href="/revista/">Revista</a><span>Los pampas y los tehuelches</span></nav>
+<section class="section-intro"><p class="eyebrow">HISTORIA · PUEBLOS ORIGINARIOS</p><h1>Los pampas y los tehuelches: qué significa «entre pampas» en Martín Fierro</h1><p class="lead">En los consejos de Martín Fierro aparece la expresión «entre pampas». El nombre remite a pueblos indígenas de la región pampeana, pero su significado cambió según la época y quién lo utilizaba.</p></section>
+<section class="mf-essay"><h2>La expresión en el poema</h2><blockquote><p>Bien lo pasa hasta entre pampas<br/>El que respeta a la gente;<br/>El hombre ha de ser prudente<br/>Para librarse de enojos,<br/>Cauteloso entre los flojos,<br/>Moderado entre valientes.</p></blockquote><p>El consejo pertenece al canto XXXII de <em>La vuelta de Martín Fierro</em> (1879). Hernández emplea una denominación corriente en el lenguaje fronterizo de su época. La frase debe leerse como voz del personaje y no como definición etnográfica de una comunidad.</p><p><a href="/leer/vuelta/32/">Leer el canto XXXII completo ↗</a></p></section>
+<section class="mf-essay"><h2>¿Quiénes eran llamados «pampas»?</h2><p>«Pampas» fue un rótulo geográfico y étnico aplicado por cronistas, autoridades y pobladores a diferentes grupos indígenas de las llanuras. Su alcance varió entre los siglos coloniales y el XIX. Por eso, no es riguroso presentarlo como el nombre invariable de una única etnia. La investigación etnohistórica de Sabrina Lorena Vollweiler muestra la importancia de examinar quién aplicaba estos nombres, en qué territorio y con qué propósito.</p></section>
+<section class="mf-essay"><h2>¿Los pampas eran tehuelches?</h2><p>Las denominaciones se superponen en algunas fuentes, especialmente al hablar de poblaciones del norte patagónico y de la región pampeana. «Tehuelche» tampoco designó siempre una unidad homogénea: distintas comunidades y autores emplearon nombres y clasificaciones diferentes. Algunas investigaciones vinculan el término «pampa» con poblaciones identificadas como gününa küne o tehuelches septentrionales; otras muestran que los rótulos reunieron comunidades de trayectorias diversas. No corresponde afirmar que todos los pampas eran tehuelches ni que todos los tehuelches eran pampas.</p></section>
+<section class="mf-essay"><h2>Mapuches, ranqueles y relaciones de frontera</h2><p>La Pampa y la Patagonia fueron espacios de circulación, alianzas, comercio, conflictos y vínculos entre comunidades, incluidos grupos mapuches, ranqueles y tehuelches. Sus identidades no deben reducirse a una sola etiqueta colonial. Los estudios contemporáneos analizan también la continuidad y visibilidad actual de estas comunidades, en lugar de describirlas únicamente como parte de un pasado desaparecido.</p></section>
+<section class="mf-essay"><h2>Qué aporta esta distinción a la lectura</h2><p>Cuando Fierro aconseja respetar a la gente «hasta entre pampas», expresa una norma de prudencia y convivencia desde su propia experiencia y los prejuicios de su mundo. Comprender el uso histórico de «pampas» ayuda a interpretar la frase sin convertir el poema en un registro neutral sobre los pueblos indígenas.</p><p><a href="/revista/frontera-pueblos-indigenas/">La frontera y los pueblos indígenas ↗</a></p></section>
+<section class="mf-essay"><h2>Fuentes históricas y académicas</h2><ul>{fuentes.map(f=><li><a href={f.url} target="_blank" rel="noopener noreferrer">{f.nombre} ↗</a></li>)}</ul><p>Las equivalencias entre etnónimos son objeto de investigación y deben tratarse con cautela.</p></section>
+<nav class="mf-personajes-final"><a href="/revista/">Volver a la revista ↗</a><a href="/leer/vuelta/32/">Leer el poema ↗</a></nav>
+<AdSlot id="article-02" kind="article"/><AdSlot id="article-03" kind="article"/><AdSlot id="article-04" kind="article"/><AdSlot id="article-05" kind="article"/>
+</EditorialSection>
+</Base>
