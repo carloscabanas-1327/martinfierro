@@ -33,7 +33,7 @@ function fragmentosGlosario(texto:string){
 }
 const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('ida',partes.ida.cantos.length):null;
 ---
-<Base title={`Canto ${canto} — ${libro.nombre}`} description={descripcionLector}>
+<Base pageType="Chapter" image={`/media/og/lector-${parte}-${canto}.webp`} title={`Canto ${canto} — ${libro.nombre}`} description={descripcionLector}>
 <div class="mf-reader-page">
  <div class="mf-reader-hero">
   <img src={parte==='ida'?'/media/fotografias-v3/la-ida.webp':'/media/fotografias-v3/la-vuelta.webp'} alt="" width="1600" height="1000" decoding="async" fetchpriority="high"/>
