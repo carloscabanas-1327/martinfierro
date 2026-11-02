@@ -62,7 +62,7 @@ export const alertasCriticasCantos=[
   {
     "parte": "ida",
     "canto": 13,
-    "alerta": "La despedida no implica reconciliación ni desenlace familiar feliz."
+    "alerta": "La despedida no implica reconciliación ni desenlace familiar feliz; desde la estrofa 388 interviene una voz narrativa externa a Fierro."
   },
   {
     "parte": "vuelta",
