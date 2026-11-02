@@ -10,16 +10,40 @@ const preguntas=['¿Por qué se eligió el 10 de noviembre y no la fecha de publ
 const lecturas=[{"nombre":"La ida · Canto I","url":"/leer/ida/1/"},{"nombre":"Biografía documental de José Hernández","url":"/jose-hernandez/"},{"nombre":"Los gauchos: historia social","url":"/revista/quienes-eran-los-gauchos/"}];
 ---
 <Base pageType="Article" image="/media/fotografias-v3/revista-cultural.webp" title="Día de la Tradición: origen y actividades" description="Día de la Tradición: por qué se celebra el 10 de noviembre, su historia y leyes, José Hernández y actividades escolares para conocer Martín Fierro." adKind="article">
-<EditorialSection kind="article" image="/media/fotografias-v3/revista-cultural.webp" label="EFEMÉRIDES · HISTORIA CULTURAL">
+<div class="tradicion-especial">
 <nav class="breadcrumbs" aria-label="Ubicación"><a href="/">Inicio</a><a href="/revista/">Revista cultural</a><span>Día de la Tradición: por qué se celebra el 10 de noviembre</span></nav>
-<section class="section-intro"><p class="eyebrow">EFEMÉRIDES · HISTORIA CULTURAL</p><h1>Día de la Tradición: por qué se celebra el 10 de noviembre</h1><p class="lead">El 10 de noviembre recuerda el nacimiento de José Hernández en 1834. La efeméride se instituyó en Buenos Aires en 1939 y fue reconocida por ley nacional en 1975.</p></section>
+<header class="tradicion-hero"><img src="/media/fotografias-v3/revista-cultural.webp" alt="Recreación digital contemporánea de la cultura gauchesca argentina" width="1600" height="900" fetchpriority="high"/><div class="tradicion-hero-text"><p class="tradicion-fecha">10 DE NOVIEMBRE · ARGENTINA</p><h1>Día de la Tradición</h1><p>José Hernández, Martín Fierro y las costumbres que forman nuestra memoria cultural.</p></div></header><p class="tradicion-credit">Imagen editorial: recreación digital contemporánea, no documento fotográfico histórico.</p><p class="tradicion-lead">El 10 de noviembre recuerda el nacimiento de José Hernández en 1834. La efeméride se instituyó en Buenos Aires en 1939 y fue reconocida por ley nacional en 1975.</p><div class="tradicion-grid"><div class="tradicion-main">
 
 {apartados.map((a,i)=><section class="mf-essay"><h2>{a.titulo}</h2><p>{a.texto}</p></section>)}
-<section class="mf-essay" aria-labelledby="actividades-tradicion"><p class="eyebrow">PARA ESCUELAS Y FAMILIAS</p><h2 id="actividades-tradicion">Actividades para el Día de la Tradición</h2><p>Propuestas adaptables a cada edad y contexto; no requieren comprar materiales ni reproducir fotografías de terceros.</p>{actividades.map(a=><div class="mf-actividad"><h3>{a.titulo}</h3><p>{a.detalle}</p></div>)}</section>
+</div><aside class="tradicion-aside" aria-label="Actividades y recursos educativos"><section class="mf-essay" aria-labelledby="actividades-tradicion"><p class="eyebrow">PARA ESCUELAS Y FAMILIAS</p><h2 id="actividades-tradicion">Actividades para el Día de la Tradición</h2><p>Propuestas adaptables a cada edad y contexto; no requieren comprar materiales ni reproducir fotografías de terceros.</p>{actividades.map(a=><div class="mf-actividad"><h3>{a.titulo}</h3><p>{a.detalle}</p></div>)}</section>
 <section class="mf-essay" aria-labelledby="preguntas-tradicion"><h2 id="preguntas-tradicion">Cuatro preguntas para trabajar en clase</h2><ol>{preguntas.map(p=><li>{p}</li>)}</ol><p>Para empezar la lectura, abrí <a href="/leer/ida/1/">el canto I de <em>El gaucho Martín Fierro</em></a> y distinguí el texto original de las interpretaciones actuales.</p></section>
 <section class="mf-essay"><h2>Preguntas frecuentes</h2><h3>¿Cuándo es el Día de la Tradición en Argentina?</h3><p>Se celebra cada 10 de noviembre, fecha de nacimiento de José Hernández en 1834.</p><h3>¿Es lo mismo que el Día del Gaucho?</h3><p>No. El Día de la Tradición recuerda el nacimiento de Hernández y celebra un conjunto amplio de prácticas culturales; el Día Nacional del Gaucho se conmemora el 6 de diciembre.</p><h3>¿Por qué se relaciona con Martín Fierro?</h3><p>Porque el poema de Hernández se convirtió en una referencia central para comprender la representación literaria del gaucho, aunque no resume por sí solo todas las tradiciones argentinas.</p></section>
 <section class="mf-essay"><p class="eyebrow">ENLACES DE LECTURA</p><h2>Seguir la historia en el poema y en el sitio</h2><ul>{lecturas.map(item=><li><a href={item.url}>{item.nombre} ↗</a></li>)}</ul></section>
 <section class="mf-essay"><h2>Fuentes</h2><ul>{fuentes.map(f=><li><a href={f.url} target="_blank" rel="noopener noreferrer">{f.nombre} ↗</a></li>)}</ul></section>
-<nav class="mf-personajes-final"><a href="/revista/">Volver a Revista cultural ↗</a><a href="/indice-general/">Ver índice general ↗</a></nav>
+</aside></div><nav class="mf-personajes-final"><a href="/revista/">Volver a Revista cultural ↗</a><a href="/indice-general/">Ver índice general ↗</a></nav>
 <AdSlot id="article-02" kind="article"/><AdSlot id="article-03" kind="article"/><AdSlot id="article-04" kind="article"/><AdSlot id="article-05" kind="article"/>
-</EditorialSection></Base>
+<style>
+.tradicion-especial{--tinta:#173d30;--papel:#fffaf2;--celeste:#dceef5;--borde:#d5c8b5;max-width:1180px;margin:16px auto 70px;color:#302820}
+.tradicion-especial a{color:#285a69;text-underline-offset:3px}
+.tradicion-especial .breadcrumbs{display:flex;gap:12px;flex-wrap:wrap;font:.78rem/1.5 system-ui,sans-serif;margin:0 0 15px}
+.tradicion-hero{position:relative;isolation:isolate;min-height:clamp(320px,38vw,460px);display:flex;align-items:center;overflow:hidden;border-radius:12px;background:#d4c4a6}
+.tradicion-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.tradicion-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,251,241,.96) 0%,rgba(255,251,241,.86) 38%,rgba(255,251,241,.08) 83%);z-index:-1}
+.tradicion-hero-text{max-width:650px;padding:clamp(25px,5vw,60px)}
+.tradicion-fecha{display:inline-block;background:#173d30;color:#fff;padding:9px 15px;letter-spacing:.1em;font:750 .8rem system-ui,sans-serif}
+.tradicion-hero h1{font:650 clamp(3rem,7vw,5.8rem)/.98 Georgia,serif;letter-spacing:-.035em;color:#173d30;margin:22px 0}
+.tradicion-hero-text>p:last-child{font:italic clamp(1.1rem,2vw,1.5rem)/1.4 Georgia,serif;max-width:460px}
+.tradicion-credit{font:.72rem/1.5 system-ui,sans-serif;color:#655c51;text-align:right;margin:7px 3px 22px}
+.tradicion-lead{font:1.28rem/1.65 Georgia,serif;border-left:5px solid #83bfd9;padding:10px 22px;margin:20px 0 28px}
+.tradicion-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(285px,1fr);gap:clamp(18px,3vw,34px);align-items:start}
+.tradicion-especial .mf-essay{max-width:none;margin:0 0 17px;padding:22px 24px;background:#fffaf2;border:1px solid var(--borde);border-top:3px solid #173d30;border-radius:9px}
+.tradicion-especial .mf-essay h2{font:600 clamp(1.45rem,2.6vw,2.1rem)/1.2 Georgia,serif;color:#173d30;margin:4px 0 13px}
+.tradicion-especial .mf-essay h3{font:600 1.17rem/1.35 Georgia,serif;color:#173d30;margin:17px 0 6px}
+.tradicion-especial .mf-essay p,.tradicion-especial .mf-essay li{font:1rem/1.7 Georgia,serif;color:#382e28}
+.tradicion-aside .mf-essay{background:#eaf3f7;border-top-color:#82bdd6}
+.tradicion-aside .mf-essay:nth-child(even){background:#f5eee3;border-top-color:#b69a73}
+.tradicion-especial .mf-actividad{padding:12px 0;border-top:1px solid #c4d4d7}
+.tradicion-especial .mf-personajes-final{display:flex;flex-wrap:wrap;gap:18px;padding:22px;border-top:1px solid #d1c6b8;margin:20px 0}
+@media(max-width:790px){.tradicion-grid{grid-template-columns:1fr}.tradicion-hero:after{background:linear-gradient(90deg,rgba(255,251,241,.94),rgba(255,251,241,.5))}.tradicion-hero{min-height:350px}.tradicion-hero h1{font-size:clamp(2.8rem,11vw,4.5rem)}}
+@media(max-width:480px){.tradicion-hero-text{padding:24px}.tradicion-hero{min-height:340px}.tradicion-especial .mf-essay{padding:18px 16px}.tradicion-lead{font-size:1.08rem}}
+</style></div></Base>
