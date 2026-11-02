@@ -44,3 +44,11 @@ En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta
 
 - [Cotejo de Vuelta IV–VI](MF-ES-024-VUELTA-COTEJO-04-06-2026-11-02.md): lectura íntegra de las estrofas 475–550 (456 versos); corregida la interpretación de Vuelta V para eliminar una partida no narrada y recoger el matiz de reparto igualitario de la estrofa 502. Se corroboró que Cruz muere en Vuelta VI, estrofas 549–550.
 - **Estado actualizado: 19/46 guías cotejadas individualmente; pendientes 27 (Vuelta VII–XXXIII).** La cifra anterior de 16/46 documenta el corte previo, no el estado actual.
+
+### Tercera tanda de La vuelta (VII–X)
+
+- [Cotejo individual de Vuelta VII–X](MF-ES-024-VUELTA-COTEJO-07-10-2026-11-02.md): lectura íntegra de las estrofas **551–654 (104 estrofas, 626 versos)**, con contraste de interpretaciones, personajes, preguntas, glosario y comentarios.
+- Se corrigieron cuatro explicaciones de vocabulario: **«pampa»** en VII, IX y X significa aquí **persona indígena**, no extensión geográfica; **«rebenque»** en VII se usa para agredir a la cautiva, no para conducir un caballo. Commit `8110ea926025e92b8e6fb43fac18bf6264e34b6c`.
+- Se precisó la primera pregunta de Vuelta VII para diferenciar la muerte de Cruz narrada en VI del recuerdo y entierro en VII. Commit `71f5da32ff9668e6b6de7628afd3607c5d6e1c7e`.
+- Verificación de lectura posterior en GitHub: las cuatro definiciones y la pregunta quedaron actualizadas. Control estructural independiente sobre los datos de las **46 guías**: 1193 estrofas, 7210 versos, 138 preguntas, 225 términos, 104 notas, **0 incidencias de estructura/referencias/literalidad**. Este control no equivale a la compilación Astro.
+- **Estado actualizado: 23/46 guías cotejadas; 23 pendientes (Vuelta XI–XXXIII)**. El dato anterior de 19/46 es histórico. El CI más reciente debe comprobarse al terminar; el bloqueo de imágenes de revista continúa separado de la auditoría literaria.
