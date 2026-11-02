@@ -4,27 +4,34 @@
     "autor": null,
     "licencia": null,
     "fuente": null,
-    "observacion": "Usada por Día de la Tradición y Pulperías; duplicación pendiente de resolver"
+    "observacion": "Usada por Día de la Tradición y Pulperías; duplicación pendiente de resolver; el usuario identifica las imágenes como recreaciones generadas con IA. Autoría, herramienta, fecha y derechos de uso aún requieren documentación; no es fotografía histórica."
   },
   "/media/revista/fortines-vida-cotidiana.webp": {
     "verificado": false,
     "autor": null,
     "licencia": null,
     "fuente": null,
-    "observacion": "Usada por vida en los fortines y quiénes eran los gauchos; duplicación pendiente"
+    "observacion": "Usada por vida en los fortines y quiénes eran los gauchos; duplicación pendiente; el usuario identifica las imágenes como recreaciones generadas con IA. Autoría, herramienta, fecha y derechos de uso aún requieren documentación; no es fotografía histórica."
   },
   "/media/revista/frontera-pueblos-indigenas.webp": {
     "verificado": false,
     "autor": null,
     "licencia": null,
     "fuente": null,
-    "observacion": "Procedencia y derechos pendientes"
+    "observacion": "Procedencia y derechos pendientes; el usuario identifica las imágenes como recreaciones generadas con IA. Autoría, herramienta, fecha y derechos de uso aún requieren documentación; no es fotografía histórica."
   },
   "/media/revista/fortineras-mujeres-frontera.webp": {
     "verificado": false,
     "autor": null,
     "licencia": null,
     "fuente": null,
-    "observacion": "Procedencia y derechos pendientes"
+    "observacion": "Procedencia y derechos pendientes; el usuario identifica las imágenes como recreaciones generadas con IA. Autoría, herramienta, fecha y derechos de uso aún requieren documentación; no es fotografía histórica."
+  },
+  "/media/revista/pulperias-y-sociabilidad.webp": {
+    "verificado": false,
+    "autor": null,
+    "licencia": null,
+    "fuente": null,
+    "observacion": "Imagen generada con IA en conversación; archivo preliminar 756x500; derechos y resolución pendientes; no es fotografía histórica."
   }
 }
