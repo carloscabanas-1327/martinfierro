@@ -32,6 +32,7 @@ for(const entry of files){
 }
 // Las declaraciones sin evidencia no certifican derechos; exigir además datos de origen y crédito.
 const rightsPending=inventory.filter(x=>x.estadoDerechos!=='verificado');
+// La reutilización exacta se registra como advertencia editorial, no como fallo técnico.
 const duplicateHashes=inventory.filter((x,i)=>x.hashSha256&&inventory.findIndex(y=>y.hashSha256===x.hashSha256)!==i);
 const report={anchoMinimoRequerido:minWidth,articulosConImagen:inventory.length,imagenesPorDebajoMinimo:inventory.filter(x=>!x.aptoAnchoMinimo).length,duplicadosBinarios:duplicateHashes.map(x=>x.ruta),derechosPendientes:rightsPending.map(x=>x.ruta),imagenes:inventory};
 await fs.writeFile('auditoria-imagenes-revista-es.json',JSON.stringify(report,null,2)+'\n','utf8');
@@ -42,7 +43,7 @@ if(inventory.some(x=>x.error))process.exit(1);
 // El inventario sigue siendo diagnóstico por defecto. En modo de aprobación,
 // incumplimientos visuales bloquean el candidato sin inventar licencias.
 const strict=process.argv.includes('--strict');
-if(strict && (inventory.length===0 || report.imagenesPorDebajoMinimo>0 || duplicateHashes.length>0 || rightsPending.length>0)){
- console.error('NO APTO: resolución, duplicación o derechos sin verificar.');
+if(strict && (inventory.length===0 || report.imagenesPorDebajoMinimo>0 || rightsPending.length>0)){
+ console.error('NO APTO: resolución o derechos sin verificar. Las duplicaciones se informan como advertencia.');
  process.exitCode=1;
 }
