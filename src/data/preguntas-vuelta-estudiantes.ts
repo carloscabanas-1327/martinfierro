@@ -50,7 +50,7 @@ export const preguntasVueltaEstudiantes=[
   {
     "canto": 7,
     "preguntas": [
-      "¿Cómo se narra la muerte de Cruz?",
+      "¿Cómo recuerda Fierro la muerte de Cruz y qué hace con su cuerpo en las estrofas 551–553?",
       "¿Por qué su desaparición modifica la historia de Fierro?",
       "¿Qué recuerdos y sensaciones de pérdida expresa Fierro en las estrofas 551 y 554?"
     ]
