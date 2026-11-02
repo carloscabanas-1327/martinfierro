@@ -1,0 +1,26 @@
+name: Auditoría de aprobación editorial (ES)
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  aprobacion-editorial:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Compilar y verificar controles existentes
+        run: npm run build
+      - name: Validar imágenes y derechos de revista (bloqueante)
+        run: npm run audit:aprobacion
+      - name: Guardar informe aunque falle el control
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-imagenes-revista-es
+          path: auditoria-imagenes-revista-es.json
+          if-no-files-found: warn

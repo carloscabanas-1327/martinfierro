@@ -1,5 +1,7 @@
 ---
 import '../styles/section-editorial.css';
+import sharp from 'sharp';
+import path from 'node:path';
 interface Props {
   kind?:'article'|'category'|'transition'|'utility';
   image?:string;
@@ -7,10 +9,15 @@ interface Props {
   label?:string;
 }
 const {kind='category',image='/media/fotografias-v3/revista-cultural.webp',imageAlt='Escena recreada digitalmente del mundo cultural rioplatense',label='MARTÍN FIERRO · REVISTA CULTURAL'}=Astro.props;
+const file=path.join(process.cwd(),'public',image.replace(/^\//,''));
+const meta=await sharp(file).metadata();
+const ancho=meta.width??1600,alto=meta.height??950;
+const base=image.replace(/^\/media\//,'').replace(/\.webp$/,'');
+const srcset=image.endsWith('.webp')?[...[480,960].filter(w=>ancho>w).map(w=>`/media/responsive/${base}-${w}.webp ${w}w`),`${image} ${ancho}w`].join(', '):`${image} ${ancho}w`;
 ---
 <div class={`mf-section-page mf-section-page--${kind}`}>
  <div class="mf-section-hero" aria-label="Ambientación visual de la sección">
-  <img src={image} width="1600" height="950" loading="eager" decoding="async" alt={imageAlt} />
+  <img src={image} srcset={srcset} sizes="(max-width: 740px) 100vw, (max-width: 1120px) 88vw, 1120px" width={ancho} height={alto} loading="eager" fetchpriority="high" decoding="async" alt={imageAlt} />
   <div class="mf-section-hero-shade" aria-hidden="true"></div>
   <p class="mf-section-hero-label">{label}</p>
  </div>

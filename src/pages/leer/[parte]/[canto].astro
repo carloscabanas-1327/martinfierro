@@ -2,9 +2,20 @@
 import Base from '../../../layouts/Base.astro';
 import '../../../styles/reader-editorial.css';
 import {partes,estrofasDeCanto,enlaceCanto} from '../../../lib/corpus';
+import {urlEstudio} from '../../../data/seo-cantos-estudiantes';
 export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).flatMap(parte=>partes[parte].cantos.map(c=>({params:{parte,canto:String(c.numero)},props:{parte,canto:c.numero}})));}
 const {parte,canto}=Astro.props as {parte:keyof typeof partes;canto:number};
 const libro=partes[parte];const estrofas=estrofasDeCanto(parte,canto);
+const versoInicial=estrofas[0]?.versos[0]?.texto??'';
+const inicio=`Canto ${canto} de ${libro.nombre}: «${versoInicial}».`;
+const lectura=` Leé el poema original de José Hernández, con estrofas numeradas y enlaces para continuar con la guía de estudio.`;
+let descripcionLector=inicio+lectura;
+if(descripcionLector.length<140)descripcionLector+=' Consultá el texto y sus referencias documentales.';
+if(descripcionLector.length>155)descripcionLector=descripcionLector.slice(0,155).replace(/\s+\S*$/,'').replace(/[,;:.]$/,'')+'.';
+
+const fuentePG=parte==='ida'?'https://www.gutenberg.org/ebooks/14765':'https://www.gutenberg.org/ebooks/15066';
+const fuenteHistorica=parte==='ida'?'https://www.cervantesvirtual.com/nd/ark:/59851/bmc2b8x3':'https://www.cervantesvirtual.com/nd/ark:/59851/bmc9w0c8';
+const enlaceExegesis=parte==='vuelta'?`/exegesis/la-vuelta/#canto-${canto}`:'/exegesis/';
 const siguiente=canto<libro.cantos.length?enlaceCanto(parte,canto+1):parte==='ida'?enlaceCanto('vuelta',1):null;
 // Glosario de lectura opcional: la fuente documental jamás se modifica.
 const definiciones: Record<string,string> = {
@@ -26,7 +37,7 @@ function fragmentosGlosario(texto:string){
 }
 const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('ida',partes.ida.cantos.length):null;
 ---
-<Base title={`Canto ${canto} — ${libro.nombre}`} description={`Leé el canto ${canto} de ${libro.nombre}, de José Hernández, estrofa por estrofa.`}>
+<Base pageType="Chapter" image={`/media/og/lector-${parte}-${canto}.webp`} title={`Canto ${canto} — ${libro.nombre}`} description={descripcionLector}>
 <div class="mf-reader-page">
  <div class="mf-reader-hero">
   <img src={parte==='ida'?'/media/fotografias-v3/la-ida.webp':'/media/fotografias-v3/la-vuelta.webp'} alt="" width="1600" height="1000" decoding="async" fetchpriority="high"/>
@@ -41,6 +52,7 @@ const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('
    <h1>Canto {canto}</h1>
    <p class="lead">{libro.cantos[canto-1]?.titulo ?? ''}</p>
    <p class="meta">{estrofas.length} estrofas · {estrofas.reduce((n,e)=>n+e.versos.length,0)} versos</p>
+   <p><a href={urlEstudio(parte,canto)}>Estudiá este canto</a> · <a href={enlaceExegesis}>Análisis literario</a></p>
   </header>
   <div class="reader-layout">
    <article class="verse-text" aria-label={`Texto del canto ${canto}`}>
@@ -52,6 +64,7 @@ const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('
        : <a href={`#${v.id}`} title={`Enlace al verso ${e.numero}.${v.linea}`}>{fragmento.texto}</a>)}
      </p>)}
     </section>)}
+    <p class="reader-source"><strong>Fuente de la transcripción:</strong> <a href={fuentePG}>Project Gutenberg, texto digital de {libro.nombre}</a>. Para el cotejo histórico, consultá también la <a href={fuenteHistorica}>ficha de la Biblioteca Virtual Miguel de Cervantes</a> y la <a href="/fuentes-y-derechos/">procedencia documental de esta edición</a>.</p>
     <p class="mf-glossary-hint">Las palabras con subrayado tenue ofrecen una aclaración breve al tocarlas. El poema se reproduce sin alterar su texto.</p>
     <nav class="pager" aria-label="Cantos contiguos">
      <span>{anterior&&<a href={anterior}>← Canto anterior</a>}</span>

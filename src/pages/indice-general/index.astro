@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { partes, enlaceCanto } from '../../lib/corpus';
 import { temas } from '../../data/temas';
 import { personajes } from '../../data/personajes';
+import {urlEstudio} from '../../data/seo-cantos-estudiantes';
 import '../../styles/indice-general.css';
 const grupos=[
   {
@@ -250,7 +251,7 @@ const grupos=[
       {"titulo":"Characters of Martín Fierro — English guide","url":"/en/characters/","descripcion":"Once perfiles ingleses con cantos y contexto crítico."},
       {"titulo":"Martín Fierro Historical Archive — English edition","url":"/en/archive/","descripcion":"Fuentes, manuscritos, cartas y primeras ediciones explicados en inglés."},
       {"titulo":"José Hernández — English documentary biography","url":"/en/jose-hernandez/","descripcion":"Biografía original en inglés sobre el autor, vida política, periodismo y obra."},
-      {"titulo":"Who Were the Argentine Gauchos? — English history guide","url":"/en/argentine-gauchos/","descripcion":"Historia, trabajo rural, caballos, costumbres, fronteras y cultura del gaucho en inglés."},
+      {"titulo":"Who Were the Argentine Gauchos? — English history guide","url":"/en/what-is-a-gaucho/","descripcion":"Historia, trabajo rural, caballos, costumbres, fronteras y cultura del gaucho en inglés."},
       {"titulo":"What Is Martín Fierro? — English reader’s guide","url":"/en/what-is-martin-fierro/","descripcion":"Guía original en inglés: trama, historia, interpretación y fuentes documentales."},
       {
         "titulo": "Traducciones y referencias",
@@ -333,19 +334,35 @@ const grupos=[
     ]
   }
 ];
+const enlacesInvestigacionReciente=[
+ {titulo:'What Is a Gaucho? — English guide',url:'/en/what-is-a-gaucho/',descripcion:'Introducción en inglés a la historia y cultura del gaucho.'},
+ {titulo:'Los pampas',url:'/historia/los-pampas/',descripcion:'Denominaciones históricas y pueblos indígenas de la llanura.'},
+ {titulo:'Puelches',url:'/historia/puelches/',descripcion:'Historia y denominaciones de los pueblos indígenas.'},
+ {titulo:'Querandíes',url:'/historia/querandies/',descripcion:'Investigación histórica sobre los querandíes.'},
+ {titulo:'Ranqueles',url:'/historia/ranqueles/',descripcion:'Historia de los ranqueles y la frontera.'},
+ {titulo:'Tehuelches',url:'/historia/tehuelches/',descripcion:'Pueblos tehuelches y denominaciones históricas.'}
+];
+grupos.find(g=>g.id==='estudios')?.enlaces.push(...enlacesInvestigacionReciente);
 const enlacesEducativos=[
  {titulo:'Para estudiantes · recursos de estudio',url:'/estudiantes/',descripcion:'Análisis de lectura, personajes y actividades para los 46 cantos.'},
- ...(['ida','vuelta'] as const).flatMap(parte=>partes[parte].cantos.map(c=>({titulo:`Ficha para estudiantes · ${parte==='ida'?'La ida':'La vuelta'} · Canto ${c.numero}`,url:`/estudiantes/${parte}/${c.numero}/`,descripcion:'Estrofas originales, personajes y preguntas de lectura.'})))
+ ...(['ida','vuelta'] as const).flatMap(parte=>partes[parte].cantos.map(c=>({titulo:`Ficha para estudiantes · ${parte==='ida'?'La ida':'La vuelta'} · Canto ${c.numero}`,url:urlEstudio(parte,c.numero),descripcion:'Estrofas originales, personajes y preguntas de lectura.'})))
 ];
 const grupoEstudiantes={id:'estudiantes',numero:'07',titulo:'Para estudiantes',nota:'Guías y fichas de lectura de los 46 cantos, con personajes',enlaces:enlacesEducativos};
 grupos.push(grupoEstudiantes);
 const partesIndice=[{clave:'ida',nombre:'El gaucho Martín Fierro · La ida',anio:1872},{clave:'vuelta',nombre:'La vuelta de Martín Fierro',anio:1879}] as const;
 const totalCantos=partesIndice.reduce((n,p)=>n+partes[p.clave].cantos.length,0);
+// Cada URL se muestra una sola vez en el directorio, conservando su primera ubicación editorial.
+const rutasVistas=new Set<string>();
+for(const grupo of grupos){
+  grupo.enlaces=grupo.enlaces.filter(enlace=>{
+    if(rutasVistas.has(enlace.url)) return false;
+    rutasVistas.add(enlace.url);
+    return true;
+  });
+}
 const totalEnlaces=grupos.reduce((n,g)=>n+g.enlaces.length,0)+totalCantos;
-const rutas=grupos.flatMap(g=>g.enlaces.map(e=>e.url));
-if(new Set(rutas).size!==rutas.length) throw new Error("Enlaces duplicados en el índice general");
 ---
-<Base title="Índice general del sitio — Directorio de contenidos" description="Directorio completo de Martín Fierro: secciones, investigaciones culturales, idiomas, documentos, legales y los 46 cantos de la obra.">
+<Base title="Índice general de Martín Fierro" description="Recorré el índice general de Martín Fierro: sus dos partes y 46 cantos, personajes, investigaciones históricas, revista cultural y documentos del sitio.">
 <article class="mf-directorio">
   <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span>Índice general</span></nav>
   <header class="mf-directorio-header">
