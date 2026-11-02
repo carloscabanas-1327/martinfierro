@@ -42,7 +42,7 @@ if(inventory.some(x=>x.error))process.exit(1);
 // El inventario sigue siendo diagnóstico por defecto. En modo de aprobación,
 // incumplimientos visuales bloquean el candidato sin inventar licencias.
 const strict=process.argv.includes('--strict');
-if(strict && (inventory.length===0 || report.imagenesPorDebajo1600>0 || duplicateHashes.length>0 || rightsPending.length>0)){
+if(strict && (inventory.length===0 || report.imagenesPorDebajoMinimo>0 || duplicateHashes.length>0 || rightsPending.length>0)){
  console.error('NO APTO: resolución, duplicación o derechos sin verificar.');
  process.exitCode=1;
 }
