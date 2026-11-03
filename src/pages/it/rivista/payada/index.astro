@@ -1,0 +1,35 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import ArticoloIt from '../../../../components/ArticoloIt.astro';
+import StrofaIt from '../../../../components/StrofaIt.astro';
+---
+<Base lang="it-IT" pageType="Article" title="La payada: poesia gauchesca cantata e improvvisata"
+ description="Che cos’è la payada: payadores, chitarra e contrappunto nel Río de la Plata, e la celebre sfida fra Martín Fierro e il Moreno nella seconda parte del poema.">
+<ArticoloIt occhiello="Il mondo gaucho · Musica e poesia" titolo="La <em>payada</em>: poesia, chitarra e canto improvvisato"
+ sommario="Nella payada le parole diventano spettacolo pubblico. I cantori usano verso e melodia per raccontare, rispondersi e talvolta sfidarsi. È una porta d’ingresso al mondo poetico creato da Hernández."
+ percorso={[{label:'Rivista',href:'/it/rivista/'},{label:'La payada'}]}
+ immagine="/media/fotografias-v3/el-moreno.webp" alt="Ricostruzione digitale di un cantore con la chitarra" didascalia="Ricostruzione digitale editoriale; non è una fotografia d’archivio."
+ fonti={[
+  {nome:'Josefina Ludmer, «The gaucho genre», The Cambridge History of Latin American Literature',url:'https://www.cambridge.org/core/books/abs/cambridge-history-of-latin-american-literature/gaucho-genre/11C314A9DE198E5081055141AB126635',lingua:'en'},
+  {nome:'What Is a Payada? — edizione inglese',url:'/en/magazine/payadas/',lingua:'en'},
+  {nome:'Canto XXX della seconda parte, originale spagnolo',url:'/leer/vuelta/30/',lingua:'es'}
+ ]}
+ notaFonti="Articolo originale in italiano. Distinguiamo fonti storiche, rappresentazioni letterarie e illustrazioni moderne.">
+ <section><h2>Il payador e il verso improvvisato</h2>
+  <p>Il <em>payador</em> è un cantore-poeta, spesso accompagnato dalla chitarra. In molte forme di payada improvvisa versi su un tema, per il pubblico o in risposta a un altro cantore: lo scambio poetico si chiama <em>contrapunto</em>. Ogni luogo e ogni interprete ha le sue pratiche, e non ogni brano cantato è una gara. L’abilità è letteraria quanto musicale: bisogna trovare rima, ritmo e senso mentre si risponde a ciò che è appena stato detto.</p>
+  <p>Per un lettore italiano il paragone più vicino è forse quello con l’ottava rima improvvisata dei poeti a braccio toscani e laziali, o con il contrasto: anche lì due voci si sfidano in versi davanti a un pubblico. È un’analogia utile per orientarsi, non un’equivalenza storica.</p>
+ </section>
+ <section><h2>Tradizione orale e letteratura scritta</h2>
+  <p>Il genere gauchesco attinse alla performance orale e al lavoro consapevole di scrittori colti. Un poeta che scrive con la voce di un gaucho non sta registrando un canto anonimo. Nel primo canto del <em>Martín Fierro</em> il narratore presenta il suo canto come il mezzo per raccontare ciò che ha vissuto: Hernández dà al lettore l’illusione potente di ascoltare una voce, anche se sta leggendo un libro stampato.</p>
+ </section>
+ <section><h2>La sfida con il Moreno</h2>
+  <p>Nella seconda parte Fierro affronta un cantore afrodiscendente, il Moreno, in una gara di domande e risposte (canti XXIX e XXX). Lo scambio dà al linguaggio un ruolo drammatico centrale e richiama un episodio di violenza razzista della prima parte: alla fine il Moreno rivela di essere il fratello dell’uomo che Fierro uccise. Per questo la scena va letta esaminando la memoria e le pretese d’onore del narratore, non come un innocuo duello musicale.</p>
+  <StrofaIt parte="ritorno" canto={30} strofa={4} originale={1042}/>
+  <p>Nell’originale il canto XXIX è una lunga tirata di versi senza divisione in strofe; Testena la divide in sestine. È uno dei casi in cui la numerazione delle strofe non coincide: lo documentiamo nella <a href="/it/biblioteca/traduzione-testena/#corrispondenza">tabella di corrispondenza</a>.</p>
+ </section>
+ <section><h2>Come ascoltare e leggere</h2>
+  <p>Un buon esercizio è confrontare il primo canto, in cui Fierro si dichiara cantore, con la payada della seconda parte: la voce passa dal lamento personale alla domanda pubblica. La tradizione continua a essere praticata, ma una registrazione moderna non va presentata come una ricostruzione fedele dell’Ottocento.</p>
+  <p><a href="/it/lettore/ritorno/29/">Leggi i canti XXIX</a> e <a href="/it/lettore/ritorno/30/">XXX</a> in italiano.</p>
+ </section>
+</ArticoloIt>
+</Base>

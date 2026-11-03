@@ -1,0 +1,52 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ArticoloIt from '../../../components/ArticoloIt.astro';
+import {pagineIt} from '../../../data/it-edizione';
+---
+<Base lang="it-IT" pageType="SearchResultsPage" title="Cerca in Martín Fierro: pagine e versi in italiano"
+ description="Cerca nelle pagine dell’edizione italiana e nei 7.106 versi della traduzione di Folco Testena: personaggi, luoghi, parole e temi del poema.">
+<ArticoloIt occhiello="Strumenti · Ricerca" titolo="Cerca nell’edizione italiana"
+ sommario="Cerca una parola nelle pagine dell’edizione italiana e nei versi della traduzione di Testena. Per i versi originali usa la ricerca spagnola."
+ percorso={[{label:'Indice',href:'/it/indice/'},{label:'Cerca'}]}>
+ <form id="it-cerca" role="search" class="it-cerca-form"><label for="it-termine">Parola, personaggio o tema</label><div><input id="it-termine" name="q" type="search" placeholder="Prova: Croce, frontiera, chitarra, Viscaccia…" autocomplete="off"/><button type="submit">Cerca</button></div></form>
+ <p class="it-cerca-nota">I versi italiani vengono da una trascrizione OCR in revisione: una parola può non comparire se l’OCR l’ha letta male. Testena italianizza alcuni nomi: Cruz diventa «Croce», Vizcacha «Viscaccia», Picardía «Furbería». Testo originale: <a href="/buscar/" lang="es">ricerca nei 7.210 versi spagnoli</a>.</p>
+ <p id="it-stato" role="status" aria-live="polite">Tutte le pagine dell’edizione italiana sono elencate qui sotto.</p>
+ <section aria-labelledby="it-pagine"><h2 id="it-pagine">Pagine</h2><div id="it-risultati-pagine" class="it-risultati">{pagineIt.map(p=><article class="it-risultato" data-testo={`${p.titolo} ${p.descrizione} ${p.sezione}`}><small>{p.sezione}</small><h3><a href={p.url}>{p.titolo}</a></h3><p>{p.descrizione}</p></article>)}</div></section>
+ <section aria-labelledby="it-versi" id="it-sezione-versi" hidden><h2 id="it-versi">Versi della traduzione</h2><ol id="it-risultati-versi" class="it-versi"></ol></section>
+ <noscript><p>La ricerca richiede JavaScript; le pagine restano comunque elencate qui sopra e nell’<a href="/it/indice/">indice del sito</a>.</p></noscript>
+</ArticoloIt>
+<script>
+const norm=(s:string)=>s.toLocaleLowerCase('it').normalize('NFD').replace(/[̀-ͯ]/g,'');
+const form=document.querySelector<HTMLFormElement>('#it-cerca');
+const input=document.querySelector<HTMLInputElement>('#it-termine');
+const stato=document.querySelector<HTMLElement>('#it-stato');
+const pagine=Array.from(document.querySelectorAll<HTMLElement>('#it-risultati-pagine .it-risultato'));
+const sezioneVersi=document.querySelector<HTMLElement>('#it-sezione-versi');
+const listaVersi=document.querySelector<HTMLOListElement>('#it-risultati-versi');
+let versi:{t:string;u:string;r:string;n?:string}[]|null=null;
+async function caricaVersi(){
+ if(versi)return versi;
+ try{const r=await fetch('/it/indice-versi.json');versi=(await r.json()).map((v:{t:string;u:string;r:string})=>({...v,n:norm(v.t)}));}catch{versi=[];}
+ return versi!;
+}
+async function cerca(raw:string){
+ const q=norm(raw.trim());const parole=q.split(/\s+/).filter(Boolean);
+ let np=0;
+ pagine.forEach(p=>{const ok=parole.every(w=>norm(p.dataset.testo||'').includes(w));p.hidden=!ok;if(ok)np++;});
+ if(!listaVersi||!sezioneVersi)return;
+ listaVersi.replaceChildren();
+ if(!parole.length){sezioneVersi.hidden=true;if(stato)stato.textContent='Tutte le pagine dell’edizione italiana sono elencate qui sotto.';return;}
+ const tutti=await caricaVersi();
+ const trovati=tutti.filter(v=>parole.every(w=>v.n!.includes(w)));
+ for(const v of trovati.slice(0,200)){const li=document.createElement('li');const a=document.createElement('a');a.href=v.u;a.textContent=v.t;const s=document.createElement('small');s.textContent=v.r;li.append(s,a);listaVersi.append(li);}
+ sezioneVersi.hidden=false;
+ if(stato)stato.textContent=`${np} ${np===1?'pagina':'pagine'} e ${trovati.length} ${trovati.length===1?'verso':'versi'}${trovati.length>200?' (mostrati i primi 200)':''}.`;
+ const u=new URL(location.href);u.searchParams.set('q',raw.trim());history.replaceState(null,'',u);
+}
+form?.addEventListener('submit',e=>{e.preventDefault();cerca(input?.value||'')});
+let timer:number|undefined;
+input?.addEventListener('input',()=>{clearTimeout(timer);timer=window.setTimeout(()=>cerca(input.value),250);});
+const iniziale=new URLSearchParams(location.search).get('q')||'';if(input&&iniziale){input.value=iniziale;cerca(iniziale);}
+</script>
+<style>.it-cerca-form{background:#eee3d6;padding:24px;margin:20px 0}.it-cerca-form label{display:block;font:700 1rem system-ui,sans-serif;margin-bottom:10px}.it-cerca-form div{display:flex;gap:10px}.it-cerca-form input{flex:1;min-width:0;border:1px solid #aa9581;background:#fff;padding:13px;font:1rem system-ui,sans-serif}.it-cerca-form button{background:#3b2d22;color:#fff;border:0;padding:12px 22px;font:700 .9rem system-ui,sans-serif;cursor:pointer}.it-cerca-nota,#it-stato{font:.9rem/1.6 system-ui,sans-serif!important}.it-risultati{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.it-risultato{background:#f2e8db;border-top:2px solid #574337;padding:16px}.it-risultato[hidden]{display:none}.it-risultato small{font:700 .68rem system-ui,sans-serif;text-transform:uppercase;color:#795743}.it-risultato h3{margin:6px 0}.it-risultato p{margin:0;font-size:.98rem!important}.it-versi{list-style:none;padding:0}.it-versi li{border-bottom:1px solid #d6c6b2;padding:8px 0;display:grid;grid-template-columns:120px 1fr;gap:12px}.it-versi small{font:.75rem system-ui,sans-serif;color:#795743}@media(max-width:650px){.it-risultati{grid-template-columns:1fr}.it-cerca-form div{flex-direction:column}.it-versi li{grid-template-columns:1fr;gap:2px}}</style>
+</Base>

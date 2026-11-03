@@ -1,0 +1,20 @@
+---
+// Plantilla de artículo de la edición italiana (misma tipografía y paleta que /en/).
+import '../styles/edizione-italiana.css';
+interface Props {occhiello:string; titolo:string; sommario:string; percorso:{label:string; href?:string}[]; immagine?:string; alt?:string; didascalia?:string; fonti?:{nome:string; url:string; lingua?:string}[]; notaFonti?:string}
+const {occhiello,titolo,sommario,percorso,immagine,alt='',didascalia,fonti=[],notaFonti}=Astro.props;
+---
+<article class="it-articolo" lang="it">
+ <nav class="it-percorso" aria-label="Percorso"><a href="/it/">Edizione italiana</a>{percorso.map(p=><><span aria-hidden="true">/</span>{p.href?<a href={p.href}>{p.label}</a>:<span>{p.label}</span>}</>)}</nav>
+ <header class="it-testata">
+  <p class="it-occhiello">{occhiello}</p>
+  <h1 set:html={titolo}/>
+  <p class="it-sommario">{sommario}</p>
+ </header>
+ {immagine && <figure class="it-figura"><img src={immagine} alt={alt} loading="eager" decoding="async"/>{didascalia && <figcaption>{didascalia}</figcaption>}</figure>}
+ <div class="it-corpo">
+  <slot/>
+  {fonti.length>0 && <section class="it-fonti" aria-labelledby="it-fonti"><h2 id="it-fonti">Fonti e approfondimenti</h2>{notaFonti && <p>{notaFonti}</p>}<ul>{fonti.map(f=><li><a href={f.url} lang={f.lingua} {...(f.url.startsWith('http')?{target:'_blank',rel:'noopener noreferrer'}:{})}>{f.nome}</a></li>)}</ul></section>}
+  <p class="it-ritorno"><a href="/it/">← Torna all’edizione italiana</a> · <a href="/it/indice/">Indice del sito</a></p>
+ </div>
+</article>

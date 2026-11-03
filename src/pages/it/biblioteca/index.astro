@@ -1,0 +1,43 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ArticoloIt from '../../../components/ArticoloIt.astro';
+import {VISORE_IAI} from '../../../lib/testena';
+---
+<Base lang="it-IT" pageType="CollectionPage" title="Biblioteca di Martín Fierro: edizioni, traduzioni e fonti"
+ description="La biblioteca dell’edizione italiana: il testo originale, la traduzione di Folco Testena, le altre versioni italiane, gli studi critici e gli archivi dove consultare le fonti.">
+<ArticoloIt occhiello="Biblioteca · Fonti documentarie" titolo="Biblioteca e fonti"
+ sommario="Dove vengono i testi che leggi in questo sito, quali altre edizioni e traduzioni esistono, e dove consultare documenti e studi. Distinguiamo sempre ciò che pubblichiamo da ciò che colleghiamo soltanto."
+ percorso={[{label:'Biblioteca'}]}
+ immagine="/media/fotografias-v3/biblioteca-critica.webp" alt="Ricostruzione digitale di una biblioteca" didascalia="Ricostruzione digitale editoriale; non è una fotografia storica.">
+ <section><h2>I testi pubblicati in questo sito</h2><div class="it-griglia">
+  <div><h3><a href="/leer/" lang="es">Il poema originale</a></h3><p>José Hernández, <em lang="es">El gaucho Martín Fierro</em> (1872) e <em lang="es">La vuelta de Martín Fierro</em> (1879): 46 canti e 7.210 versi, con controllo tecnico documentato.</p></div>
+  <div><h3><a href="/it/biblioteca/traduzione-testena/">La traduzione di Folco Testena</a></h3><p>Buenos Aires, «Nosotros», 1919. Prima traduzione italiana completa, in versi. Pubblico dominio; trascrizione OCR in revisione.</p></div>
+ </div></section>
+ <section><h2>Facsimili e archivi</h2>
+  <ul>
+   <li><a href={VISORE_IAI} target="_blank" rel="noopener noreferrer">Ibero-Amerikanisches Institut, Berlino — facsimile della traduzione di Testena (1919) ↗</a></li>
+   <li><a href="/archivo/" lang="es">Archivio storico del sito: prime edizioni, manoscritti e lettere (in spagnolo)</a></li>
+   <li><a href="/en/archive/" lang="en">Historical Archive (in inglese)</a></li>
+   <li><a href="https://www.cervantesvirtual.com/portales/jose_hernandez/" target="_blank" rel="noopener noreferrer" lang="es">Biblioteca Virtual Miguel de Cervantes — portale José Hernández ↗</a></li>
+  </ul>
+ </section>
+ <section><h2>Studi sulla traduzione italiana</h2>
+  <ul>
+   <li>Antonella Cancellier, «2019: a cent’anni dalla prima traduzione italiana di Martín Fierro», <em>Oltreoceano</em>, 16 (2020). <a href="https://riviste.lineaedizioni.it/index.php/oltreoceano/article/view/48" target="_blank" rel="noopener noreferrer">Leggi ↗</a></li>
+   <li>Sara Jaquelina Iriarte, «Traducir el Martín Fierro, una credencial cultural para Folco Testena», <em>Cadernos de Tradução</em>, 40, 2 (2020). <a href="https://periodicos.ufsc.br/index.php/traducao/article/view/2175-7968.2020v40n2p98" target="_blank" rel="noopener noreferrer" lang="es">Leggi ↗</a></li>
+   <li>Giovanni Meo Zilio, «Traduzioni italiane del Martín Fierro». <a href="https://www.cervantesvirtual.com/obra-visor/traduzioni-italiane-del-martin-fierro/html/c8917dd8-a0f8-11e1-b1fb-00163ebf5e63_2.html" target="_blank" rel="noopener noreferrer">Leggi ↗</a></li>
+  </ul>
+ </section>
+ <section><h2>Altre traduzioni italiane</h2>
+  <p>Dopo Testena il poema è stato tradotto in italiano da Mario Todesco (prosa, 1959), Francesco e Giuseppe Crocitto Cuonzo (1972) e Giovanni Meo Zilio (1977 e 1985). Non le riproduciamo: i diritti non sono liberi o non sono stati verificati. <a href="/it/biblioteca/traduzione-testena/#corrispondenza">Dettagli nella scheda della traduzione →</a></p>
+ </section>
+ <section><h2>Guide e approfondimenti</h2><div class="it-griglia">
+  <div><h3><a href="/it/che-cose-martin-fierro/">Che cos’è Martín Fierro?</a></h3><p>Presentazione dell’opera.</p></div>
+  <div><h3><a href="/it/le-due-parti/">Le due parti</a></h3><p>Trama, personaggi e temi.</p></div>
+  <div><h3><a href="/it/contesto-storico/">Il contesto storico</a></h3><p>L’Argentina dell’Ottocento.</p></div>
+  <div><h3><a href="/it/jose-hernandez/">José Hernández</a></h3><p>Biografia e cronologia.</p></div>
+  <div><h3><a href="/en/library/critical-library/" lang="en">Critical library</a></h3><p>Autori e ricezione critica (in inglese).</p></div>
+  <div><h3><a href="/biblioteca-critica/" lang="es">Biblioteca crítica</a></h3><p>Studi e saggi (in spagnolo).</p></div>
+ </div></section>
+</ArticoloIt>
+</Base>

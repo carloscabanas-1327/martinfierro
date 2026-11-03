@@ -1,0 +1,52 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ArticoloIt from '../../../components/ArticoloIt.astro';
+import StrofaIt from '../../../components/StrofaIt.astro';
+const personaggi=[
+ ['Martín Fierro','Protagonista e narratore principale. Le sue affermazioni non coincidono automaticamente con le opinioni dell’autore.'],
+ ['Il sergente Cruz','Mandato a catturare Fierro, sceglie di difenderlo: incarna l’amicizia e il conflitto fra ordini e coscienza.'],
+ ['I figli di Fierro','Nella seconda parte raccontano esperienze diverse da quelle del padre: il carcere, l’orfanezza, la tutela di Vizcacha.'],
+ ['Il Vecchio Vizcacha','Tutore del figlio minore, autore di massime ciniche che fanno da contrappunto ai consigli finali di Fierro.'],
+ ['Picardía','Figlio di Cruz, racconta un’infanzia difficile, il gioco d’azzardo e il servizio alla frontiera.'],
+ ['La prigioniera','Donna bianca tenuta prigioniera oltre la frontiera, che Fierro difende e che a sua volta gli salva la vita.'],
+ ['Il Moreno','Cantore afrodiscendente che sfida Fierro in una payada. Non è l’uomo ucciso da Fierro nella prima parte, ma suo fratello: il legame fra le due scene è essenziale.']
+];
+---
+<Base lang="it-IT" pageType="Article" title="Martín Fierro: trama e personaggi delle due parti"
+ description="Riassunto di Martín Fierro di José Hernández: la prima parte (1872) e il ritorno (1879), i personaggi principali e i temi, con citazioni dalla traduzione di Folco Testena.">
+<ArticoloIt occhiello="Guida alla lettura · José Hernández" titolo="Le due parti di <em>Martín Fierro</em>: trama, personaggi e temi"
+ sommario="José Hernández racconta la storia di un gaucho in due poemi collegati: prima la distruzione della sua vita, poi la difficile domanda su come vivere dopo la perdita. Una guida alla trama che non confonde il narratore con l’autore."
+ percorso={[{label:'Le due parti'}]}
+ immagine="/media/fotografias-v3/la-vuelta.webp" alt="Ricostruzione digitale di un paesaggio rurale argentino" didascalia="Ricostruzione digitale editoriale; non è una fotografia storica."
+ fonti={[{nome:'Martín Fierro Summary — edizione inglese',url:'/en/martin-fierro-summary/',lingua:'en'},{nome:'Personajes de Martín Fierro (in spagnolo)',url:'/personajes/',lingua:'es'},{nome:'Biblioteca Virtual Miguel de Cervantes — portale José Hernández',url:'https://www.cervantesvirtual.com/portales/jose_hernandez/',lingua:'es'}]}
+ notaFonti="Riassunto originale in italiano. Le citazioni del poema vengono dalla traduzione di Testena (1919) e dal testo spagnolo del sito.">
+ <nav class="it-indice-locale" aria-label="In questa pagina"><strong>In questa pagina</strong><a href="#breve">La storia in breve</a><a href="#andata">Prima parte</a><a href="#ritorno">Seconda parte</a><a href="#personaggi">Personaggi</a><a href="#temi">Temi</a></nav>
+ <section id="breve"><h2>La storia in breve</h2>
+  <p>Martín Fierro si presenta come un cantore la cui vita ruotava attorno al lavoro di campagna, alla moglie e ai figli. Arruolato per la frontiera, subisce privazioni e maltrattamenti. Quando torna, il mondo che conosceva è scomparso. Diventa un fuggiasco e il poema affronta la violenza che subisce e quella che commette.</p>
+  <p>Il sergente Cruz, parte della pattuglia che lo insegue, rifiuta di lasciarlo solo contro gli aggressori. Insieme abbandonano il mondo governato dalle autorità locali, sperando in un’altra vita oltre la frontiera.</p>
+ </section>
+ <section id="andata"><h2>Prima parte: <em lang="es">El gaucho Martín Fierro</em> (1872)</h2>
+  <p>Il primo poema mette in moto il conflitto: un gaucho viene separato dalla famiglia e costretto a servire in un fortino di frontiera. L’esperienza produce un senso devastante di ingiustizia. Tornato a casa e trovatala distrutta, viene trascinato in scontri e uccisioni che non vanno addolciti in una semplice avventura eroica.</p>
+  <p>La decisione di Cruz di unirsi a lui offre una delle immagini più forti di solidarietà. I due partono insieme, e la storia si interrompe prima che si conosca il loro destino.</p>
+  <p><a href="/it/lettore/andata/">Indice dei 13 canti della prima parte →</a></p>
+ </section>
+ <section id="ritorno"><h2>Seconda parte: <em lang="es">La vuelta de Martín Fierro</em> (1879)</h2>
+  <p>Nella continuazione Fierro ricorda gli anni oltre la frontiera, la malattia e la morte di Cruz, l’incontro con una donna prigioniera. Alla fine torna e ritrova i figli, che raccontano le loro storie; Picardía, figlio di Cruz, aggiunge un’altra testimonianza.</p>
+  <p>Il figlio minore descrive la vita sotto la tutela dell’eccentrico Vecchio Vizcacha. Più avanti una sfida poetica fra Fierro e un cantore afroargentino, il Moreno, riporta alla luce una violenza mai risolta. Il poema si chiude con i consigli di Fierro ai figli e con la separazione dei quattro compagni.</p>
+  <StrofaIt parte="ritorno" canto={32} strofa={2} originale={1145}/>
+  <p><a href="/it/lettore/ritorno/">Indice dei 33 canti della seconda parte →</a></p>
+ </section>
+ <section id="personaggi"><h2>I personaggi principali</h2><div class="it-griglia">{personaggi.map(([n,d])=><div><h3>{n}</h3><p>{d}</p></div>)}</div></section>
+ <section id="temi"><h2>I temi</h2>
+  <ul>
+   <li><strong>Servizio forzato e abuso di potere</strong>: muovono l’azione della prima parte.</li>
+   <li><strong>Perdita della casa e della famiglia</strong>: trasformano l’identità del narratore.</li>
+   <li><strong>Amicizia e lealtà</strong>: Fierro e Cruz, e il ricordo di Cruz nella seconda parte.</li>
+   <li><strong>Giustizia e autorità</strong>: giudici, comandanti e pattuglie visti dal basso.</li>
+   <li><strong>Memoria e responsabilità</strong>: la payada con il Moreno costringe Fierro a confrontarsi con il passato.</li>
+   <li><strong>Consiglio fra generazioni</strong>: i consigli di Fierro contro le massime di Vizcacha.</li>
+  </ul>
+  <p>Per un percorso canto per canto vedi la sezione <a href="/it/studenti/">Per gli studenti</a>.</p>
+ </section>
+</ArticoloIt>
+</Base>

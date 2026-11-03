@@ -1,0 +1,62 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ArticoloIt from '../../../components/ArticoloIt.astro';
+import StrofaIt from '../../../components/StrofaIt.astro';
+const domande=[
+ ['Di che cosa parla Martín Fierro?','Racconta la storia di un gaucho arruolato a forza per il servizio militare alla frontiera, della distruzione della sua famiglia, della fuga dalle autorità e, nella seconda parte, del tentativo di ritrovare i figli e di tornare a vivere fra gli altri.'],
+ ['Chi lo ha scritto?','José Hernández (1834–1886), scrittore, giornalista e uomo politico argentino.'],
+ ['Quando fu pubblicato?','La prima parte, El gaucho Martín Fierro, uscì nel 1872; la seconda, La vuelta de Martín Fierro, nel 1879.'],
+ ['Esiste in italiano?','Sì. La prima traduzione italiana completa, in versi, è di Folco Testena (Buenos Aires, 1919) ed è quella che si legge in questo sito. Ne sono seguite altre (Mario Todesco, in prosa, 1959; Francesco e Giuseppe Crocitto Cuonzo, 1972; Giovanni Meo Zilio, 1977 e 1985), che non riproduciamo perché i diritti non sono liberi o non sono stati verificati.']
+];
+---
+<Base lang="it-IT" pageType="Article" title="Che cos’è Martín Fierro? Storia e significato del poema"
+ description="Guida per lettori italiani a Martín Fierro di José Hernández: che tipo di opera è, che cosa racconta, il contesto storico, perché conta ancora e come cominciare a leggerlo.">
+<ArticoloIt occhiello="Letteratura argentina · Guida alla lettura" titolo="Che cos’è <em>Martín Fierro</em>?"
+ sommario="Un uomo canta la perdita della casa, della libertà e del suo posto nel mondo. Attraverso la sua voce, José Hernández trasformò le durezze della campagna argentina dell’Ottocento in una delle opere più durature della letteratura del suo paese."
+ percorso={[{label:'Che cos’è Martín Fierro?'}]}
+ immagine="/media/fotografias-v3/hero-gaucho-pampa.webp" alt="Ricostruzione digitale della pampa argentina" didascalia="Ricostruzione digitale editoriale; non è una fotografia storica."
+ fonti={[
+  {nome:'Biblioteca Virtual Miguel de Cervantes — portale José Hernández (in spagnolo)',url:'https://www.cervantesvirtual.com/portales/jose_hernandez/',lingua:'es'},
+  {nome:'What Is Martín Fierro? — guida dell’edizione inglese',url:'/en/what-is-martin-fierro/',lingua:'en'},
+  {nome:'Testo originale spagnolo completo',url:'/leer/',lingua:'es'},
+  {nome:'Antonella Cancellier, «2019: a cent’anni dalla prima traduzione italiana di Martín Fierro», Oltreoceano, 16 (2020)',url:'https://riviste.lineaedizioni.it/index.php/oltreoceano/article/view/48'}
+ ]}
+ notaFonti="Questa guida è testo originale in italiano, scritto per l’edizione italiana; le citazioni del poema vengono dalla traduzione di Folco Testena (1919) e dal testo spagnolo del sito.">
+ <section class="it-scheda" aria-labelledby="scheda"><h2 id="scheda">In breve</h2><dl>
+  <div><dt>Autore</dt><dd>José Hernández (1834–1886)</dd></div>
+  <div><dt>Prima parte</dt><dd><em lang="es">El gaucho Martín Fierro</em> (1872), 13 canti</dd></div>
+  <div><dt>Seconda parte</dt><dd><em lang="es">La vuelta de Martín Fierro</em> (1879), 33 canti</dd></div>
+  <div><dt>Forma</dt><dd>Poema narrativo, per lo più in sestine di versi ottonari; letteratura gauchesca</dd></div>
+  <div><dt>Lingua originale</dt><dd>Spagnolo del Río de la Plata, con forme della parlata rurale</dd></div>
+  <div><dt>In italiano</dt><dd>Folco Testena, Buenos Aires, 1919 (pubblico dominio)</dd></div>
+ </dl></section>
+ <nav class="it-indice-locale" aria-label="In questa pagina"><strong>In questa pagina</strong><a href="#opera">Che tipo di opera è</a><a href="#trama">La storia</a><a href="#storia">Il contesto</a><a href="#oggi">Perché conta ancora</a><a href="#cominciare">Come cominciare</a><a href="#domande">Domande frequenti</a></nav>
+ <section id="opera"><h2>Che tipo di opera è?</h2>
+  <p><em>Martín Fierro</em> è un poema narrativo scritto dall’argentino José Hernández e pubblicato in due parti, a sette anni di distanza. Il protagonista è un <strong>gaucho</strong>, un cavaliere delle grandi pianure dell’Argentina e delle regioni vicine, che racconta in prima persona la propria vita.</p>
+  <p>A prima vista sembra una storia raccontata attorno al fuoco: cavalli e lavoro, amicizia e inimicizia, perdita e resistenza. Ma la voce apparentemente semplice nasconde una domanda difficile: che cosa accade quando il modo di vivere di un uomo viene trattato come sacrificabile dalle istituzioni che pretendono di governarlo?</p>
+  <p>Con <em>letteratura gauchesca</em> si intende una tradizione che usa la figura e la parlata del gaucho come materia poetica. Non significa che il poema sia una registrazione fedele di ciò che i gauchos dicevano: Hernández era uno scrittore che faceva scelte artistiche e politiche.</p>
+  <StrofaIt parte="andata" canto={1} strofa={6} originale={6}/>
+ </section>
+ <section id="trama"><h2>Che cosa racconta?</h2>
+  <h3>Prima parte: un uomo cacciato da casa (1872)</h3>
+  <p>All’inizio Fierro ricorda una vita di lavoro e di famiglia. Quella stabilità crolla quando viene portato a servire in un fortino di frontiera. Disciplina militare, privazioni e ingiustizie cambiano il suo rapporto con l’autorità; quando finalmente torna, la casa non c’è più. Diventa un fuggiasco, e il poema lo segue attraverso scontri violenti e una profonda solitudine. Il sergente Cruz, mandato a catturarlo, sceglie di schierarsi con lui: i due partono insieme verso le terre oltre la frontiera.</p>
+  <h3>Seconda parte: ritorno, testimonianze e consigli (1879)</h3>
+  <p><em lang="es">La vuelta</em> cambia accento. Prendono la parola altri personaggi, fra cui i figli di Fierro e il figlio di Cruz, e le loro storie mostrano altre forme di sofferenza e di sopravvivenza. Il poema si chiude con i celebri consigli che Fierro dà ai giovani prima che le loro strade si separino.</p>
+  <p>Le due parti non sono intercambiabili: la prima dà voce alla spoliazione e alla ribellione, la seconda esplora le possibilità e i compromessi del vivere di nuovo in società. <a href="/it/le-due-parti/">Leggi la trama completa delle due parti →</a></p>
+ </section>
+ <section id="storia"><h2>La storia dietro il poema</h2>
+  <p>Nell’Argentina dell’Ottocento la società rurale cambiava mentre lo Stato cercava di consolidare il controllo sul territorio e sul lavoro. Il servizio militare alla frontiera, i metodi di reclutamento, i conflitti con i popoli indigeni e il trattamento diseguale dei lavoratori della campagna fanno parte del paesaggio storico in cui Hernández scriveva.</p>
+  <p>Il poema contiene anche descrizioni ostili e spesso piene di pregiudizi dei popoli indigeni e di personaggi afrodiscendenti. Appartengono al testo storico e vanno lette con spirito critico, non ripetute come fatti. <a href="/it/contesto-storico/">Approfondisci il contesto storico →</a></p>
+ </section>
+ <section id="oggi"><h2>Perché conta ancora?</h2>
+  <p>Il poema è durato perché dà parole a un’esperienza che va oltre il suo tempo: la paura di perdere il proprio sostentamento, il dolore della separazione dalla famiglia, la richiesta di essere trattati con dignità. Contano anche il suono e la forma: Fierro non è descritto da un narratore esterno, ma difende la propria causa cantando.</p>
+  <p>Le generazioni successive ne hanno fatto un simbolo dell’identità argentina, e l’Argentina celebra il <a href="/it/rivista/giorno-della-tradizione/">Giorno della Tradizione</a> il 10 novembre, anniversario della nascita di Hernández. Ma lo status di icona non deve impedire le domande difficili su violenza, pregiudizio e codici d’onore che il poema mette in scena.</p>
+  <p>Per l’Italia il poema ha anche un legame particolare: la prima traduzione in un’altra lingua nacque a Buenos Aires, nella grande comunità italiana, per mano del marchigiano Folco Testena. <a href="/it/biblioteca/traduzione-testena/">Scopri la storia della traduzione →</a></p>
+ </section>
+ <section id="cominciare"><h2>Come cominciare a leggerlo</h2>
+  <p>Comincia dal primo canto del 1872, in cui Fierro si presenta come cantore; segui il racconto della frontiera e poi passa alla seconda parte. Tieni a mente qualche parola: <em>gaucho</em> è il cavaliere della pampa, <em>payada</em> è il canto poetico improvvisato a botta e risposta, la <em>pulpería</em> era l’emporio e luogo d’incontro della campagna. Il <a href="/it/studenti/glossario/">glossario</a> ne spiega altre.</p>
+  <p><a href="/it/lettore/andata/1/">Leggi il canto I in italiano →</a> · <a href="/leer/ida/1/" lang="es">Leggi il canto I in spagnolo →</a> · <a href="/it/studenti/">Riassunti per canto →</a></p>
+ </section>
+ <section id="domande"><h2>Domande frequenti</h2>{domande.map(([d,r])=><><h3>{d}</h3><p>{r}</p></>)}</section>
+</ArticoloIt>
+</Base>

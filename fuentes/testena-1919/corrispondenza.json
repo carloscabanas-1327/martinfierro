@@ -1,0 +1,925 @@
+{
+ "nota": "Corrispondenza canto per canto fra l'originale (obra/) e la traduzione di Testena. Generata da scripts/importar-testena.py.",
+ "canti": [
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 1,
+   "originale": {
+    "url": "/leer/ida/1/",
+    "estrofe": 19,
+    "versi": 114,
+    "prima_estrofa": 1,
+    "ultima_estrofa": 19
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/1/",
+    "estrofe": 20,
+    "versi": 114
+   },
+   "differenza_versi": 0,
+   "pagina_libro": null,
+   "immagine_facsimile": 21
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 2,
+   "originale": {
+    "url": "/leer/ida/2/",
+    "estrofe": 29,
+    "versi": 174,
+    "prima_estrofa": 20,
+    "ultima_estrofa": 48
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/2/",
+    "estrofe": 30,
+    "versi": 169
+   },
+   "differenza_versi": -5,
+   "pagina_libro": 17,
+   "immagine_facsimile": 23
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 3,
+   "originale": {
+    "url": "/leer/ida/3/",
+    "estrofe": 55,
+    "versi": 330,
+    "prima_estrofa": 49,
+    "ultima_estrofa": 103
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/3/",
+    "estrofe": 55,
+    "versi": 326
+   },
+   "differenza_versi": -4,
+   "pagina_libro": 21,
+   "immagine_facsimile": 27
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 4,
+   "originale": {
+    "url": "/leer/ida/4/",
+    "estrofe": 30,
+    "versi": 180,
+    "prima_estrofa": 104,
+    "ultima_estrofa": 133
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/4/",
+    "estrofe": 31,
+    "versi": 177
+   },
+   "differenza_versi": -3,
+   "pagina_libro": 27,
+   "immagine_facsimile": 33
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 5,
+   "originale": {
+    "url": "/leer/ida/5/",
+    "estrofe": 22,
+    "versi": 132,
+    "prima_estrofa": 134,
+    "ultima_estrofa": 155
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/5/",
+    "estrofe": 22,
+    "versi": 133
+   },
+   "differenza_versi": 1,
+   "pagina_libro": 30,
+   "immagine_facsimile": 36
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 6,
+   "originale": {
+    "url": "/leer/ida/6/",
+    "estrofe": 32,
+    "versi": 192,
+    "prima_estrofa": 156,
+    "ultima_estrofa": 187
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/6/",
+    "estrofe": 32,
+    "versi": 183
+   },
+   "differenza_versi": -9,
+   "pagina_libro": 33,
+   "immagine_facsimile": 39
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 7,
+   "originale": {
+    "url": "/leer/ida/7/",
+    "estrofe": 34,
+    "versi": 142,
+    "prima_estrofa": 188,
+    "ultima_estrofa": 221
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/7/",
+    "estrofe": 27,
+    "versi": 140
+   },
+   "differenza_versi": -2,
+   "pagina_libro": 37,
+   "immagine_facsimile": 43
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 8,
+   "originale": {
+    "url": "/leer/ida/8/",
+    "estrofe": 20,
+    "versi": 126,
+    "prima_estrofa": 222,
+    "ultima_estrofa": 241
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/8/",
+    "estrofe": 21,
+    "versi": 125
+   },
+   "differenza_versi": -1,
+   "pagina_libro": 40,
+   "immagine_facsimile": 46
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 9,
+   "originale": {
+    "url": "/leer/ida/9/",
+    "estrofe": 49,
+    "versi": 296,
+    "prima_estrofa": 242,
+    "ultima_estrofa": 290
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/9/",
+    "estrofe": 50,
+    "versi": 291
+   },
+   "differenza_versi": -5,
+   "pagina_libro": 42,
+   "immagine_facsimile": 48
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 10,
+   "originale": {
+    "url": "/leer/ida/10/",
+    "estrofe": 33,
+    "versi": 198,
+    "prima_estrofa": 291,
+    "ultima_estrofa": 323
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/10/",
+    "estrofe": 33,
+    "versi": 196
+   },
+   "differenza_versi": -2,
+   "pagina_libro": 48,
+   "immagine_facsimile": 54
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 11,
+   "originale": {
+    "url": "/leer/ida/11/",
+    "estrofe": 23,
+    "versi": 138,
+    "prima_estrofa": 324,
+    "ultima_estrofa": 346
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/11/",
+    "estrofe": 23,
+    "versi": 131
+   },
+   "differenza_versi": -7,
+   "pagina_libro": 52,
+   "immagine_facsimile": 58
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 12,
+   "originale": {
+    "url": "/leer/ida/12/",
+    "estrofe": 20,
+    "versi": 120,
+    "prima_estrofa": 347,
+    "ultima_estrofa": 366
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/12/",
+    "estrofe": 19,
+    "versi": 110
+   },
+   "differenza_versi": -10,
+   "pagina_libro": 54,
+   "immagine_facsimile": 60
+  },
+  {
+   "parte": "andata",
+   "parte_originale": "ida",
+   "canto": 13,
+   "originale": {
+    "url": "/leer/ida/13/",
+    "estrofe": 29,
+    "versi": 174,
+    "prima_estrofa": 367,
+    "ultima_estrofa": 395
+   },
+   "traduzione": {
+    "url": "/it/lettore/andata/13/",
+    "estrofe": 25,
+    "versi": 146
+   },
+   "differenza_versi": -28,
+   "pagina_libro": 57,
+   "immagine_facsimile": 63
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 1,
+   "originale": {
+    "url": "/leer/vuelta/1/",
+    "estrofe": 27,
+    "versi": 162,
+    "prima_estrofa": 396,
+    "ultima_estrofa": 422
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/1/",
+    "estrofe": 27,
+    "versi": 159
+   },
+   "differenza_versi": -3,
+   "pagina_libro": null,
+   "immagine_facsimile": 69
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 2,
+   "originale": {
+    "url": "/leer/vuelta/2/",
+    "estrofe": 28,
+    "versi": 168,
+    "prima_estrofa": 423,
+    "ultima_estrofa": 450
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/2/",
+    "estrofe": 29,
+    "versi": 167
+   },
+   "differenza_versi": -1,
+   "pagina_libro": 66,
+   "immagine_facsimile": 72
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 3,
+   "originale": {
+    "url": "/leer/vuelta/3/",
+    "estrofe": 24,
+    "versi": 144,
+    "prima_estrofa": 451,
+    "ultima_estrofa": 474
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/3/",
+    "estrofe": 24,
+    "versi": 140
+   },
+   "differenza_versi": -4,
+   "pagina_libro": 69,
+   "immagine_facsimile": 75
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 4,
+   "originale": {
+    "url": "/leer/vuelta/4/",
+    "estrofe": 22,
+    "versi": 132,
+    "prima_estrofa": 475,
+    "ultima_estrofa": 496
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/4/",
+    "estrofe": 22,
+    "versi": 127
+   },
+   "differenza_versi": -5,
+   "pagina_libro": 72,
+   "immagine_facsimile": 78
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 5,
+   "originale": {
+    "url": "/leer/vuelta/5/",
+    "estrofe": 28,
+    "versi": 168,
+    "prima_estrofa": 497,
+    "ultima_estrofa": 524
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/5/",
+    "estrofe": 30,
+    "versi": 168
+   },
+   "differenza_versi": 0,
+   "pagina_libro": 75,
+   "immagine_facsimile": 81
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 6,
+   "originale": {
+    "url": "/leer/vuelta/6/",
+    "estrofe": 26,
+    "versi": 156,
+    "prima_estrofa": 525,
+    "ultima_estrofa": 550
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/6/",
+    "estrofe": 26,
+    "versi": 154
+   },
+   "differenza_versi": -2,
+   "pagina_libro": 78,
+   "immagine_facsimile": 84
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 7,
+   "originale": {
+    "url": "/leer/vuelta/7/",
+    "estrofe": 14,
+    "versi": 84,
+    "prima_estrofa": 551,
+    "ultima_estrofa": 564
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/7/",
+    "estrofe": 15,
+    "versi": 81
+   },
+   "differenza_versi": -3,
+   "pagina_libro": 81,
+   "immagine_facsimile": 87
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 8,
+   "originale": {
+    "url": "/leer/vuelta/8/",
+    "estrofe": 17,
+    "versi": 102,
+    "prima_estrofa": 565,
+    "ultima_estrofa": 581
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/8/",
+    "estrofe": 18,
+    "versi": 101
+   },
+   "differenza_versi": -1,
+   "pagina_libro": 83,
+   "immagine_facsimile": 89
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 9,
+   "originale": {
+    "url": "/leer/vuelta/9/",
+    "estrofe": 42,
+    "versi": 254,
+    "prima_estrofa": 582,
+    "ultima_estrofa": 623
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/9/",
+    "estrofe": 43,
+    "versi": 254
+   },
+   "differenza_versi": 0,
+   "pagina_libro": 85,
+   "immagine_facsimile": 91
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 10,
+   "originale": {
+    "url": "/leer/vuelta/10/",
+    "estrofe": 31,
+    "versi": 186,
+    "prima_estrofa": 624,
+    "ultima_estrofa": 654
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/10/",
+    "estrofe": 31,
+    "versi": 186
+   },
+   "differenza_versi": 0,
+   "pagina_libro": 90,
+   "immagine_facsimile": 96
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 11,
+   "originale": {
+    "url": "/leer/vuelta/11/",
+    "estrofe": 1,
+    "versi": 150,
+    "prima_estrofa": 655,
+    "ultima_estrofa": 655
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/11/",
+    "estrofe": 25,
+    "versi": 147
+   },
+   "differenza_versi": -3,
+   "pagina_libro": 93,
+   "immagine_facsimile": 99
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 12,
+   "originale": {
+    "url": "/leer/vuelta/12/",
+    "estrofe": 63,
+    "versi": 378,
+    "prima_estrofa": 656,
+    "ultima_estrofa": 718
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/12/",
+    "estrofe": 65,
+    "versi": 372
+   },
+   "differenza_versi": -6,
+   "pagina_libro": 96,
+   "immagine_facsimile": 102
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 13,
+   "originale": {
+    "url": "/leer/vuelta/13/",
+    "estrofe": 12,
+    "versi": 72,
+    "prima_estrofa": 719,
+    "ultima_estrofa": 730
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/13/",
+    "estrofe": 13,
+    "versi": 72
+   },
+   "differenza_versi": 0,
+   "pagina_libro": 104,
+   "immagine_facsimile": 110
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 14,
+   "originale": {
+    "url": "/leer/vuelta/14/",
+    "estrofe": 24,
+    "versi": 144,
+    "prima_estrofa": 731,
+    "ultima_estrofa": 754
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/14/",
+    "estrofe": 24,
+    "versi": 143
+   },
+   "differenza_versi": -1,
+   "pagina_libro": 105,
+   "immagine_facsimile": 111
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 15,
+   "originale": {
+    "url": "/leer/vuelta/15/",
+    "estrofe": 23,
+    "versi": 138,
+    "prima_estrofa": 755,
+    "ultima_estrofa": 777
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/15/",
+    "estrofe": 25,
+    "versi": 142
+   },
+   "differenza_versi": 4,
+   "pagina_libro": 108,
+   "immagine_facsimile": 114
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 16,
+   "originale": {
+    "url": "/leer/vuelta/16/",
+    "estrofe": 13,
+    "versi": 78,
+    "prima_estrofa": 778,
+    "ultima_estrofa": 790
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/16/",
+    "estrofe": 14,
+    "versi": 80
+   },
+   "differenza_versi": 2,
+   "pagina_libro": 111,
+   "immagine_facsimile": 117
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 17,
+   "originale": {
+    "url": "/leer/vuelta/17/",
+    "estrofe": 25,
+    "versi": 150,
+    "prima_estrofa": 791,
+    "ultima_estrofa": 815
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/17/",
+    "estrofe": 25,
+    "versi": 148
+   },
+   "differenza_versi": -2,
+   "pagina_libro": 112,
+   "immagine_facsimile": 118
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 18,
+   "originale": {
+    "url": "/leer/vuelta/18/",
+    "estrofe": 13,
+    "versi": 78,
+    "prima_estrofa": 816,
+    "ultima_estrofa": 828
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/18/",
+    "estrofe": 13,
+    "versi": 78
+   },
+   "differenza_versi": 0,
+   "pagina_libro": 115,
+   "immagine_facsimile": 121
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 19,
+   "originale": {
+    "url": "/leer/vuelta/19/",
+    "estrofe": 26,
+    "versi": 158,
+    "prima_estrofa": 829,
+    "ultima_estrofa": 854
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/19/",
+    "estrofe": 27,
+    "versi": 155
+   },
+   "differenza_versi": -3,
+   "pagina_libro": 117,
+   "immagine_facsimile": 123
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 20,
+   "originale": {
+    "url": "/leer/vuelta/20/",
+    "estrofe": 1,
+    "versi": 38,
+    "prima_estrofa": 855,
+    "ultima_estrofa": 855
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/20/",
+    "estrofe": 7,
+    "versi": 35
+   },
+   "differenza_versi": -3,
+   "pagina_libro": 120,
+   "immagine_facsimile": 126
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 21,
+   "originale": {
+    "url": "/leer/vuelta/21/",
+    "estrofe": 24,
+    "versi": 144,
+    "prima_estrofa": 856,
+    "ultima_estrofa": 879
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/21/",
+    "estrofe": 25,
+    "versi": 141
+   },
+   "differenza_versi": -3,
+   "pagina_libro": 121,
+   "immagine_facsimile": 127
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 22,
+   "originale": {
+    "url": "/leer/vuelta/22/",
+    "estrofe": 22,
+    "versi": 132,
+    "prima_estrofa": 880,
+    "ultima_estrofa": 901
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/22/",
+    "estrofe": 23,
+    "versi": 132
+   },
+   "differenza_versi": 0,
+   "pagina_libro": 123,
+   "immagine_facsimile": 129
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 23,
+   "originale": {
+    "url": "/leer/vuelta/23/",
+    "estrofe": 20,
+    "versi": 120,
+    "prima_estrofa": 902,
+    "ultima_estrofa": 921
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/23/",
+    "estrofe": 20,
+    "versi": 116
+   },
+   "differenza_versi": -4,
+   "pagina_libro": 126,
+   "immagine_facsimile": 132
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 24,
+   "originale": {
+    "url": "/leer/vuelta/24/",
+    "estrofe": 10,
+    "versi": 60,
+    "prima_estrofa": 922,
+    "ultima_estrofa": 931
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/24/",
+    "estrofe": 10,
+    "versi": 60
+   },
+   "differenza_versi": 0,
+   "pagina_libro": 128,
+   "immagine_facsimile": 134
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 25,
+   "originale": {
+    "url": "/leer/vuelta/25/",
+    "estrofe": 21,
+    "versi": 126,
+    "prima_estrofa": 932,
+    "ultima_estrofa": 952
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/25/",
+    "estrofe": 24,
+    "versi": 133
+   },
+   "differenza_versi": 7,
+   "pagina_libro": 130,
+   "immagine_facsimile": 136
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 26,
+   "originale": {
+    "url": "/leer/vuelta/26/",
+    "estrofe": 11,
+    "versi": 66,
+    "prima_estrofa": 953,
+    "ultima_estrofa": 963
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/26/",
+    "estrofe": 11,
+    "versi": 65
+   },
+   "differenza_versi": -1,
+   "pagina_libro": 133,
+   "immagine_facsimile": 139
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 27,
+   "originale": {
+    "url": "/leer/vuelta/27/",
+    "estrofe": 34,
+    "versi": 136,
+    "prima_estrofa": 964,
+    "ultima_estrofa": 997
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/27/",
+    "estrofe": 25,
+    "versi": 139
+   },
+   "differenza_versi": 3,
+   "pagina_libro": 134,
+   "immagine_facsimile": 140
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 28,
+   "originale": {
+    "url": "/leer/vuelta/28/",
+    "estrofe": 40,
+    "versi": 162,
+    "prima_estrofa": 998,
+    "ultima_estrofa": 1037
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/28/",
+    "estrofe": 29,
+    "versi": 161
+   },
+   "differenza_versi": -1,
+   "pagina_libro": 137,
+   "immagine_facsimile": 143
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 29,
+   "originale": {
+    "url": "/leer/vuelta/29/",
+    "estrofe": 1,
+    "versi": 30,
+    "prima_estrofa": 1038,
+    "ultima_estrofa": 1038
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/29/",
+    "estrofe": 5,
+    "versi": 29
+   },
+   "differenza_versi": -1,
+   "pagina_libro": 140,
+   "immagine_facsimile": 146
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 30,
+   "originale": {
+    "url": "/leer/vuelta/30/",
+    "estrofe": 104,
+    "versi": 606,
+    "prima_estrofa": 1039,
+    "ultima_estrofa": 1142
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/30/",
+    "estrofe": 107,
+    "versi": 613
+   },
+   "differenza_versi": 7,
+   "pagina_libro": 141,
+   "immagine_facsimile": 147
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 31,
+   "originale": {
+    "url": "/leer/vuelta/31/",
+    "estrofe": 1,
+    "versi": 72,
+    "prima_estrofa": 1143,
+    "ultima_estrofa": 1143
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/31/",
+    "estrofe": 12,
+    "versi": 70
+   },
+   "differenza_versi": -2,
+   "pagina_libro": 154,
+   "immagine_facsimile": 160
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 32,
+   "originale": {
+    "url": "/leer/vuelta/32/",
+    "estrofe": 31,
+    "versi": 186,
+    "prima_estrofa": 1144,
+    "ultima_estrofa": 1174
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/32/",
+    "estrofe": 31,
+    "versi": 182
+   },
+   "differenza_versi": -4,
+   "pagina_libro": 155,
+   "immagine_facsimile": 161
+  },
+  {
+   "parte": "ritorno",
+   "parte_originale": "vuelta",
+   "canto": 33,
+   "originale": {
+    "url": "/leer/vuelta/33/",
+    "estrofe": 19,
+    "versi": 114,
+    "prima_estrofa": 1175,
+    "ultima_estrofa": 1193
+   },
+   "traduzione": {
+    "url": "/it/lettore/ritorno/33/",
+    "estrofe": 20,
+    "versi": 115
+   },
+   "differenza_versi": 1,
+   "pagina_libro": 159,
+   "immagine_facsimile": 165
+  }
+ ]
+}
