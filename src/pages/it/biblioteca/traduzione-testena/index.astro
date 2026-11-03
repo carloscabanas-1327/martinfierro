@@ -18,7 +18,6 @@ const totale=versiDiParte('andata')+versiDiParte('ritorno');
   <div><dt>Tipo</dt><dd>Traduzione in versi, integrale (prima e seconda parte), edizione bilingue</dd></div>
   <div><dt>Esemplare</dt><dd>{f.esemplare_digitalizzato.istituzione}, {f.esemplare_digitalizzato.identificativo}. <a href={VISORE_IAI} target="_blank" rel="noopener noreferrer">Apri il facsimile ↗</a></dd></div>
   <div><dt>Diritti</dt><dd>Pubblico dominio (vedi sotto)</dd></div>
-  <div><dt>Nel repository</dt><dd><code>fuentes/testena-1919/</code>: scheda, testo strutturato per canti, strofe e versi, e tabella di corrispondenza</dd></div>
  </dl></section>
  <section><h2>Il traduttore</h2>
   <p>Folco Testena è il nome con cui firmava Comunardo Braccialarghe, nato a Macerata nel 1875, primo di dieci figli. Nel 1897 partecipò alla spedizione garibaldina in Grecia guidata da Ricciotti Garibaldi. Nel 1910 emigrò a Buenos Aires, dove visse fino alla morte, il 26 marzo 1951.</p>
@@ -41,7 +40,7 @@ const totale=versiDiParte('andata')+versiDiParte('ritorno');
   </ul>
  </section>
  <section id="trascrizione"><h2>La trascrizione</h2>
-  <p>{f.trascrizione.metodo}</p>
+  <p>Il testo è stato ricavato con il riconoscimento ottico dei caratteri (OCR) dalle immagini dell’Ibero-Amerikanisches Institut; poi le colonne italiana e spagnola sono state separate e ogni strofa è stata assegnata al suo canto confrontandola con l’originale.</p>
   <p>Risultato: {totale.toLocaleString('it-IT')} versi in 46 canti ({versiDiParte('andata').toLocaleString('it-IT')} nella prima parte, {versiDiParte('ritorno').toLocaleString('it-IT')} nella seconda). Stato: <strong>non collazionata</strong>. Limiti noti:</p>
   <ul>{f.trascrizione.limiti.map(l=><li>{l}</li>)}</ul>
   <p class="it-riquadro"><strong>Regola editoriale.</strong> {f.trascrizione.regola} Finché la collazione non è completa, le pagine dei canti non sono indicizzate dai motori di ricerca.</p>
@@ -52,7 +51,6 @@ const totale=versiDiParte('andata')+versiDiParte('ritorno');
    <thead><tr><th>Canto</th><th>Originale (strofe)</th><th class="num">Versi orig.</th><th class="num">Strofe trad.</th><th class="num">Versi trad.</th><th class="num">Diff.</th><th>Pagina</th></tr></thead>
    <tbody>{tuttaLaCorrispondenza.map(c=><tr><td><a href={c.traduzione.url}>{c.parte==='andata'?'I':'II'}·{romano(c.canto)}</a></td><td><a href={c.originale.url} lang="es">{c.originale.prima_estrofa}–{c.originale.ultima_estrofa}</a></td><td class="num">{c.originale.versi}</td><td class="num">{c.traduzione.estrofe}</td><td class="num">{c.traduzione.versi}</td><td class="num">{c.differenza_versi>0?'+':''}{c.differenza_versi}</td><td><a href={`https://digital.iai.spk-berlin.de/viewer/image/835991172/${c.immagine_facsimile}/`} target="_blank" rel="noopener noreferrer">{c.pagina_libro ?? 'img. '+c.immagine_facsimile} ↗</a></td></tr>)}</tbody>
   </table></div>
-  <p>I dati sono in <code>fuentes/testena-1919/corrispondenza.json</code> e si rigenerano con <code>scripts/importar-testena.py</code>.</p>
  </section>
  <section id="altre-traduzioni"><h2>Altre traduzioni italiane</h2>
   <ul>

@@ -21,7 +21,7 @@ export const pagineIt: VoceIt[] = [
  {sezione:'Rivista', titolo:'La pulpería', url:'/it/rivista/pulperie/', descrizione:'Emporio e luogo d’incontro della campagna rioplatense.'},
  {sezione:'Strumenti', titolo:'Indice del sito', url:'/it/indice/', descrizione:'Tutte le pagine dell’edizione italiana.'},
  {sezione:'Strumenti', titolo:'Cerca', url:'/it/cerca/', descrizione:'Ricerca nelle pagine e nei 7.106 versi della traduzione.'},
- {sezione:'Il progetto', titolo:'Fonti e metodo editoriale', url:'/it/metodo-editoriale/', descrizione:'Da dove vengono i testi e come sono stati controllati.'},
- {sezione:'Il progetto', titolo:'Fonti e diritti', url:'/it/fonti-e-diritti/', descrizione:'Diritti del poema, della traduzione, delle immagini e dei materiali di terzi.'}
+ {sezione:'Il progetto', titolo:'Metodo editoriale', url:'/it/metodo-editoriale/', descrizione:'Da dove vengono i testi e come sono stati controllati.'},
+ {sezione:'Il progetto', titolo:'Diritti e crediti', url:'/it/fonti-e-diritti/', descrizione:'Diritti del poema, della traduzione, delle immagini e dei materiali di terzi.'}
 ];
 export const sezioniIt = [...new Set(pagineIt.map(p=>p.sezione))];

@@ -15,9 +15,9 @@
   "editore": "Edición de la revista «Nosotros»",
   "luogo": "Buenos Aires",
   "anno": 1919,
-  "nota_anno": "La rivista Nosotros annuncia l'uscita nel dicembre 1919 (año XIII, n. 127, secondo Cancellier). La trascrizione di archivo.ar segnala che il frontespizio dell'esemplare digitalizzato reca 1920.",
+  "nota_anno": "La rivista Nosotros annuncia l’uscita nel dicembre 1919 (año XIII, n. 127, secondo Cancellier). La trascrizione di archivo.ar segnala che il frontespizio dell’esemplare digitalizzato reca 1920.",
   "bilingue": true,
-  "nota_bilingue": "L'esemplare dell'IAI presenta il testo spagnolo e quello italiano in colonne affiancate. Qui si riproduce solo la colonna italiana.",
+  "nota_bilingue": "L’esemplare dell’IAI presenta il testo spagnolo e quello italiano in colonne affiancate. Qui si riproduce solo la colonna italiana.",
   "prologo": "Folco Testena, «Il perchè di questa traduzione» (non riprodotto)",
   "edizioni_successive": [
    "1930, Buenos Aires, Imprenta Fontana (solo la prima parte)",
@@ -31,10 +31,10 @@
   "istituzione": "Ibero-Amerikanisches Institut, Preußischer Kulturbesitz (Berlino)",
   "identificativo": "PPN 835991172",
   "visore": "https://digital.iai.spk-berlin.de/viewer/image/835991172/1/",
-  "nota": "Le immagini restano dell'istituzione che le conserva; si collegano, non si ripubblicano."
+  "nota": "Le immagini restano dell’istituzione che le conserva; si collegano, non si ripubblicano."
  },
  "trascrizione": {
-  "metodo": "OCR delle immagini dell'IAI, separazione delle colonne e assegnazione dei canti per confronto con l'originale. Lavoro fatto per archivo.ar (repo carloscabanas-1327/archivo, commit 143cca7, 2 novembre 2026).",
+  "metodo": "OCR delle immagini dell’IAI, separazione delle colonne e assegnazione dei canti per confronto con l’originale. Lavoro fatto per archivo.ar (repo carloscabanas-1327/archivo, commit 143cca7, 2 novembre 2026).",
   "file_sorgente": "fuente-ocr-archivo-ar.json",
   "sha256_sorgente": "074aa97bfe5b9f1f24e2cf2f1f26a77c22ec40775cfea746181fde319c7e6412",
   "canti": 46,
@@ -42,7 +42,7 @@
   "stato": "non collazionata",
   "limiti": [
    "Restano errori di OCR (per esempio «woglio» per «voglio», accenti e apostrofi alterati).",
-   "Alcuni versi non letti dall'OCR mancano: la prima parte ha 2.241 versi contro i 2.316 dell'originale; il canto XIII ne ha 28 in meno.",
+   "Alcuni versi non letti dall’OCR mancano: la prima parte ha 2.241 versi contro i 2.316 dell’originale; il canto XIII ne ha 28 in meno.",
    "Alcune strofe possono essere tagliate male ai cambi di pagina.",
    "Non sono riprodotti il prologo né le note del traduttore."
   ],
@@ -52,10 +52,10 @@
   "testo_originale": "José Hernández (1834–1886): pubblico dominio.",
   "traduzione": "Testena morì nel 1951: la traduzione è di pubblico dominio in Argentina e in Italia dal 1° gennaio 2022 (vita più 70 anni). Negli Stati Uniti è di pubblico dominio perché pubblicata prima del 1931.",
   "edizioni_moderne": "Le edizioni moderne (per esempio 2014 o 2024) possono avere diritti propri su prefazioni, apparati e cura del testo: non sono state usate.",
-  "immagini": "Le immagini del facsimile appartengono all'IAI e non sono incluse nel repository."
+  "immagini": "Le immagini del facsimile appartengono all’IAI e non sono incluse nel repository."
  },
  "bibliografia": [
-  {"id": "cancellier-2020", "citazione": "Antonella Cancellier, «2019: a cent'anni dalla prima traduzione italiana di Martín Fierro», Oltreoceano. Rivista sulle migrazioni, 16 (2020), pp. 163–173.", "url": "https://riviste.lineaedizioni.it/index.php/oltreoceano/article/view/48"},
+  {"id": "cancellier-2020", "citazione": "Antonella Cancellier, «2019: a cent’anni dalla prima traduzione italiana di Martín Fierro», Oltreoceano. Rivista sulle migrazioni, 16 (2020), pp. 163–173.", "url": "https://riviste.lineaedizioni.it/index.php/oltreoceano/article/view/48"},
   {"id": "iriarte-2020", "citazione": "Sara Jaquelina Iriarte, «Traducir el Martín Fierro, una credencial cultural para Folco Testena», Cadernos de Tradução, 40, 2 (2020), pp. 98–111. DOI 10.5007/2175-7968.2020v40n2p98.", "url": "https://periodicos.ufsc.br/index.php/traducao/article/view/2175-7968.2020v40n2p98"},
   {"id": "meo-zilio", "citazione": "Giovanni Meo Zilio, «Traduzioni italiane del Martín Fierro», Biblioteca Virtual Miguel de Cervantes.", "url": "https://www.cervantesvirtual.com/obra-visor/traduzioni-italiane-del-martin-fierro/html/c8917dd8-a0f8-11e1-b1fb-00163ebf5e63_2.html"}
  ]
