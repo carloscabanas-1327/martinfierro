@@ -14,7 +14,7 @@ const grupo=robotsBlocked?undefined:equivalenti(Astro.url.pathname);
 const alternates=grupo?(Object.entries(grupo) as [keyof typeof hreflang,string][]).filter(([l])=>l!=='it').map(([l,href])=>({hreflang:hreflang[l],href:new URL(href,Astro.site).toString()})):[];
 const xDefault=grupo?.es??grupo?.en;
 // Selector visible de idioma: equivalentes registrados o los que indique la página.
-const selettore=lingue??grupo??(english?{es:'/',en:Astro.url.pathname,it:'/it/'}:italian?{es:'/',en:'/en/',it:Astro.url.pathname}:undefined);
+const selettore=english?{es:'/',en:Astro.url.pathname,it:'/it/',...(grupo??{}),...(lingue??{})}:lingue??grupo??(italian?{es:'/',en:'/en/',it:Astro.url.pathname}:undefined);
 const nomiLingua={es:'Español',en:'English',it:'Italiano'} as const;
 const linguaCorrente=english?'en':italian?'it':'es';
 const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
