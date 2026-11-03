@@ -174,3 +174,11 @@ En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta
 - [Informe de evidencia por canto](MF-ES-024-SEGUNDA-LECTURA-VUELTA-05-06-2026-11-03.md), commit `cc21261495eeb0dc6aee625d8da55c663d90bc8d`, **verificado por lectura posterior**. La precisión sobre el reparto igualitario de V/502 sigue correcta; VI/547–550 confirma encomienda del hijo y muerte de Cruz. **Errores nuevos demostrados: 0; correcciones de contenido: 0.**
 - **Límite:** esta segunda pasada cotejó íntegramente el corpus de ambos cantos con sus análisis, pero no revalidó exhaustivamente cada pregunta, glosa y nota; no se presenta como segunda certificación completa de ambas guías. Las 46 primeras lecturas permanecen documentadas.
 - **Pruebas:** recuento del corpus de estos cantos y lectura posterior del informe satisfactorios. Certificación automatizada del HEAD pendiente. **Próxima ejecución:** contrastar individualmente preguntas, glosario, notas, personajes y selecciones probatorias de V–VI; revisar CI. Sin modificar corpus, `main`, despliegues ni indexación. Auditoría integral abierta.
+
+
+### Cotejo complementario de componentes — Vuelta V y VI (2026-11-03)
+
+- **Cobertura histórica: 46/46 guías; guías nuevas: 0.** Se completó la revisión individual pendiente de **6 preguntas, 10 glosas, 4 notas, 3 actuaciones y 2 selecciones probatorias** de Vuelta V–VI contra las estrofas 497–550. [Matriz de evidencia por canto](MF-ES-024-SEGUNDA-LECTURA-VUELTA-05-06-COMPONENTES-2026-11-03.md).
+- **Un error probado y corregido:** la tercera pregunta de Vuelta VI ubicaba ambiguamente lo que le ocurre a Cruz «al final de la estrofa 550». El poema narra su muerte en **549** y el desmayo de Fierro en **550**. Pregunta precisada en commit `9945b53ea3445e72d426b6876ae8b2679d9607ae`, comprobado por lectura posterior.
+- Informe documental incorporado en commit `b161c7ef8869fb5ffaed29fd74c10a722e3b2b73` y verificado por lectura posterior. **Corpus de Vuelta sin alteración:** SHA `8034740ca956cf77daf2aa76a2ca5bfbf2199987`.
+- Pruebas de lectura y coherencia pregunta–estrofas satisfactorias; **CI integral aún no certificado**. Próxima ejecución: comprobar CI del HEAD y continuar revisión contextual de otros cantos. Sin cambios a `main`, despliegues o indexación; auditoría abierta.
