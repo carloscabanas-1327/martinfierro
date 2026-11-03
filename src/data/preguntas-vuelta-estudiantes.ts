@@ -44,7 +44,7 @@ export const preguntasVueltaEstudiantes=[
     "preguntas": [
       "¿Qué cambios provoca la enfermedad en la convivencia?",
       "¿Cómo anticipa la narración el duelo posterior?",
-      "¿Qué le ocurre a Cruz al final de la estrofa 550 y cómo reacciona Fierro?"
+      "¿En qué estrofa muere Cruz y qué le sucede a Fierro al verlo muerto en la estrofa 550?"
     ]
   },
   {
