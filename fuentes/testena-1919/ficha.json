@@ -38,11 +38,11 @@
   "file_sorgente": "fuente-ocr-archivo-ar.json",
   "sha256_sorgente": "074aa97bfe5b9f1f24e2cf2f1f26a77c22ec40775cfea746181fde319c7e6412",
   "canti": 46,
-  "versi": 7106,
+  "versi": 7105,
   "stato": "non collazionata",
   "limiti": [
-   "Restano errori di OCR (per esempio «woglio» per «voglio», accenti e apostrofi alterati).",
-   "Alcuni versi non letti dall’OCR mancano: la prima parte ha 2.241 versi contro i 2.316 dell’originale; il canto XIII ne ha 28 in meno.",
+   "Restano errori di OCR (per esempio «woglio» per «voglio», accenti e apostrofi alterati, «T’uom» per «L’uom»).",
+   "Alcuni versi non letti dall’OCR mancano: la prima parte ha 2.240 versi contro i 2.316 dell’originale; il canto XIII ne ha 28 in meno.",
    "Alcune strofe possono essere tagliate male ai cambi di pagina.",
    "Non sono riprodotti il prologo né le note del traduttore."
   ],

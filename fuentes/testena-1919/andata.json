@@ -198,7 +198,7 @@
       {
        "id": "it-andata-c01-e006-v02",
        "linea": 2,
-       "testo": "M°han cantando da interrare,"
+       "testo": "M'han cantando da interrare,"
       },
       {
        "id": "it-andata-c01-e006-v03",
@@ -824,37 +824,32 @@
       {
        "id": "it-andata-c02-e004-v01",
        "linea": 1,
-       "testo": "(*) Vedansi le note alla fine del volume,"
+       "testo": "Io conobbi questa terra"
       },
       {
        "id": "it-andata-c02-e004-v02",
        "linea": 2,
-       "testo": "Io conobbi questa terra"
+       "testo": "Dove il creolo viveva"
       },
       {
        "id": "it-andata-c02-e004-v03",
        "linea": 3,
-       "testo": "Dove il creolo viveva"
+       "testo": "E la sua capanna aveva,"
       },
       {
        "id": "it-andata-c02-e004-v04",
        "linea": 4,
-       "testo": "E la sua capanna aveva;"
+       "testo": "Moglie, figli, gioie vere..."
       },
       {
        "id": "it-andata-c02-e004-v05",
        "linea": 5,
-       "testo": "Moglie, figli, gioie vere..."
+       "testo": "Che delizia era vedere"
       },
       {
        "id": "it-andata-c02-e004-v06",
        "linea": 6,
-       "testo": "Che delizia era vedere"
-      },
-      {
-       "id": "it-andata-c02-e004-v07",
-       "linea": 7,
-       "testo": "Come i di passar soleva!"
+       "testo": "Come i dí passar soleva!"
       }
      ]
     },
