@@ -3,15 +3,12 @@ import {equivalenti,hreflang,type Grupo} from '../data/equivalencias';
 interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'; lingue?:Grupo; migas?:{label:string; href?:string}[]}
 const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none',lingue,migas}=Astro.props;
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
-// Bloqueo temporal de indexación y seguimiento para TODAS las rutas /it/.
-const italianReviewHold=Astro.url.pathname==='/it' || Astro.url.pathname.startsWith('/it/');
-const robotsBlocked=noindex || italianReviewHold;
+const robotsBlocked=noindex;
 const english=lang.toLowerCase().startsWith('en');
 const italian=lang.toLowerCase().startsWith('it');
 // hreflang recíproco: solo para páginas indexables registradas en src/data/equivalencias.ts.
 const grupo=robotsBlocked?undefined:equivalenti(Astro.url.pathname);
-// Mientras dure el bloqueo de /it/ (italianReviewHold), sus páginas son noindex: no se anuncian como hreflang. Quitar este filtro al levantar el bloqueo.
-const alternates=grupo?(Object.entries(grupo) as [keyof typeof hreflang,string][]).filter(([l])=>l!=='it').map(([l,href])=>({hreflang:hreflang[l],href:new URL(href,Astro.site).toString()})):[];
+const alternates=grupo?(Object.entries(grupo) as [keyof typeof hreflang,string][]).map(([l,href])=>({hreflang:hreflang[l],href:new URL(href,Astro.site).toString()})):[];
 const xDefault=grupo?.es??grupo?.en;
 const nomiLingua={es:'Español',en:'English',it:'Italiano'} as const;
 const linguaCorrente=english?'en':italian?'it':'es';
