@@ -10,7 +10,8 @@ const english=lang.toLowerCase().startsWith('en');
 const italian=lang.toLowerCase().startsWith('it');
 // hreflang recíproco: solo para páginas indexables registradas en src/data/equivalencias.ts.
 const grupo=robotsBlocked?undefined:equivalenti(Astro.url.pathname);
-const alternates=grupo?(Object.entries(grupo) as [keyof typeof hreflang,string][]).map(([l,href])=>({hreflang:hreflang[l],href:new URL(href,Astro.site).toString()})):[];
+// Mientras dure el bloqueo de /it/ (italianReviewHold), sus páginas son noindex: no se anuncian como hreflang. Quitar este filtro al levantar el bloqueo.
+const alternates=grupo?(Object.entries(grupo) as [keyof typeof hreflang,string][]).filter(([l])=>l!=='it').map(([l,href])=>({hreflang:hreflang[l],href:new URL(href,Astro.site).toString()})):[];
 const xDefault=grupo?.es??grupo?.en;
 // Selector visible de idioma: equivalentes registrados o los que indique la página.
 const selettore=lingue??grupo??(italian?{es:'/',en:'/en/',it:Astro.url.pathname}:undefined);
