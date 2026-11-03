@@ -1,8 +1,18 @@
 ---
-interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'}
-const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none'}=Astro.props;
+import {equivalenti,hreflang,type Grupo} from '../data/equivalencias';
+interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'; lingue?:Grupo}
+const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none',lingue}=Astro.props;
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
 const english=lang.toLowerCase().startsWith('en');
+const italian=lang.toLowerCase().startsWith('it');
+// hreflang recíproco: solo para páginas indexables registradas en src/data/equivalencias.ts.
+const grupo=noindex?undefined:equivalenti(Astro.url.pathname);
+const alternates=grupo?(Object.entries(grupo) as [keyof typeof hreflang,string][]).map(([l,href])=>({hreflang:hreflang[l],href:new URL(href,Astro.site).toString()})):[];
+const xDefault=grupo?.es??grupo?.en;
+// Selector visible de idioma: equivalentes registrados o los que indique la página.
+const selettore=lingue??grupo??(italian?{es:'/',en:'/en/',it:Astro.url.pathname}:undefined);
+const nomiLingua={es:'Español',en:'English',it:'Italiano'} as const;
+const linguaCorrente=english?'en':italian?'it':'es';
 const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
 import AdSlot from '../components/AdSlot.astro';
 import '../styles/global.css';
@@ -18,6 +28,8 @@ import '../styles/editorial-shell.css';
  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=20261030-original-2"/>
  <link rel="shortcut icon" href="/favicon.ico?v=20261030-original-2"/>
  <link rel="canonical" href={canonical}/>
+ {alternates.map(a=><link rel="alternate" hreflang={a.hreflang} href={a.href}/>)}
+ {xDefault && <link rel="alternate" hreflang="x-default" href={new URL(xDefault,Astro.site).toString()}/>}
  {noindex && <meta name="robots" content="noindex,follow"/>}
  <meta property="og:type" content="website"/>
  <meta property="og:site_name" content="Martín Fierro"/>
@@ -32,24 +44,58 @@ import '../styles/editorial-shell.css';
 <body>
  <!-- Reserva n.º 1: inmediatamente después de abrir BODY; permanece oculta. -->
  {adKind !== 'none' && <AdSlot id={`${adKind}-01-body`} kind={adKind} />}
- <a class="skip" href="#contenido">{english ? "Skip to content" : "Saltar al contenido"}</a>
+ <a class="skip" href="#contenido">{english ? "Skip to content" : italian ? "Vai al contenuto" : "Saltar al contenido"}</a>
  <header class="site-header">
-  <div class="editorial-topline"><div class="container"><span>{english ? "ARGENTINA · LITERATURE · CULTURE" : "ARGENTINA · LITERATURA · CULTURA"}</span><span>JOSÉ HERNÁNDEZ · 1872—1879</span></div></div>
+  <div class="editorial-topline"><div class="container"><span>{english ? "ARGENTINA · LITERATURE · CULTURE" : italian ? "ARGENTINA · LETTERATURA · CULTURA" : "ARGENTINA · LITERATURA · CULTURA"}</span><span>JOSÉ HERNÁNDEZ · 1872—1879</span>{selettore && Object.keys(selettore).length>1 && <nav class="mf-lingue" aria-label={english ? "Language" : italian ? "Lingua" : "Idioma"}>{(['es','en','it'] as const).filter(l=>selettore[l]).map(l=>l===linguaCorrente ? <b aria-current="page" lang={l}>{nomiLingua[l]}</b> : <a href={selettore[l]} hreflang={hreflang[l]} lang={l}>{nomiLingua[l]}</a>)}</nav>}</div></div>
   <div class="container editorial-masthead">
-   <a class="brand" href={english ? "/en/" : "/"} aria-label={english ? "Martín Fierro — English edition" : "Martín Fierro — inicio"}><span>Martín Fierro<small>{english ? "Documentary library & cultural magazine" : "Biblioteca documental & revista cultural"}</small></span></a>
-   <a class="editorial-read" href={english ? "/en/students/" : "/leer/ida/1/"}>{english ? "STUDY THE POEM" : "LEER LA OBRA"} <span aria-hidden="true">↗</span></a>
+   <a class="brand" href={english ? "/en/" : italian ? "/it/" : "/"} aria-label={english ? "Martín Fierro — English edition" : italian ? "Martín Fierro — edizione italiana" : "Martín Fierro — inicio"}><span>Martín Fierro<small>{english ? "Documentary library & cultural magazine" : italian ? "Biblioteca documentaria & rivista culturale" : "Biblioteca documental & revista cultural"}</small></span></a>
+   <a class="editorial-read" href={english ? "/en/students/" : italian ? "/it/lettore/andata/1/" : "/leer/ida/1/"}>{english ? "STUDY THE POEM" : italian ? "LEGGI IL POEMA" : "LEER LA OBRA"} <span aria-hidden="true">↗</span></a>
   </div>
   <div class="editorial-nav-wrap">
    <div class="container">
-    <nav class="editorial-nav" aria-label={english ? "Main navigation" : "Navegación principal"}>
-     {english ? <><a href="/en/">Home</a><a href="/en/reader/">Read the poem</a><a href="/en/magazine/">Magazine</a><a href="/en/students/">For students</a><a href="/en/jose-hernandez/">José Hernández</a><a href="/en/library/">Library</a><a href="/en/site-index/">Site index</a><a href="/">Español</a></> : <><a href="/leer/">Leer la obra</a><a href="/revista/">Revista</a><a href="/estudiantes/">Para estudiantes</a><a href="/jose-hernandez/">José Hernández</a><a href="/biblioteca/">Biblioteca</a><a href="/indice-general/">Índice general</a><a href="/buscar-documentos/">Buscar documentos</a></>}
+    <nav class="editorial-nav" aria-label={english ? "Main navigation" : italian ? "Navigazione principale" : "Navegación principal"}>
+     {italian ? <><a href="/it/">Home</a><a href="/it/lettore/">Leggi il poema</a><a href="/it/rivista/">Rivista</a><a href="/it/studenti/">Per gli studenti</a><a href="/it/jose-hernandez/">José Hernández</a><a href="/it/biblioteca/">Biblioteca</a><a href="/it/indice/">Indice del sito</a><a href="/it/cerca/">Cerca</a></> : english ? <><a href="/en/">Home</a><a href="/en/reader/">Read the poem</a><a href="/en/magazine/">Magazine</a><a href="/en/students/">For students</a><a href="/en/jose-hernandez/">José Hernández</a><a href="/en/library/">Library</a><a href="/en/site-index/">Site index</a><a href="/">Español</a></> : <><a href="/leer/">Leer la obra</a><a href="/revista/">Revista</a><a href="/estudiantes/">Para estudiantes</a><a href="/jose-hernandez/">José Hernández</a><a href="/biblioteca/">Biblioteca</a><a href="/indice-general/">Índice general</a><a href="/buscar-documentos/">Buscar documentos</a></>}
     </nav>
    </div>
   </div>
   
  </header>
  <main id="contenido" class="container"><slot/></main>
- {english ?  <footer class="site-footer editorial-footer" aria-label="Site information and footer">
+ {italian ? <footer class="site-footer editorial-footer" aria-label="Informazioni sul sito">
+  <div class="container editorial-footer-grid">
+   <div class="editorial-footer-identity">
+    <a href="/it/" class="editorial-footer-brand">Martín Fierro</a>
+    <p>Biblioteca documentaria · Letteratura, storia e cultura argentina.</p>
+    <p>José Hernández · <em>El gaucho Martín Fierro</em> (1872) · <em>La vuelta de Martín Fierro</em> (1879). Traduzione italiana di Folco Testena (1919).</p>
+   </div>
+   <nav class="editorial-footer-links" aria-label="Esplora">
+    <strong>Esplora</strong>
+    <a href="/it/">Edizione italiana</a>
+    <a href="/it/lettore/">Il poema in italiano</a>
+    <a href="/leer/" lang="es">Testo originale spagnolo</a>
+    <a href="/it/rivista/">Rivista culturale</a>
+    <a href="/it/indice/">Indice del sito</a>
+    <a href="/it/cerca/">Cerca</a>
+   </nav>
+   <nav class="editorial-footer-links" aria-label="Il progetto">
+    <strong>Il progetto</strong>
+    <a href="/it/metodo-editoriale/">Fonti e metodo</a>
+    <a href="/it/fonti-e-diritti/">Fonti e diritti</a>
+    <a href="/it/biblioteca/traduzione-testena/">La traduzione di Testena</a>
+    <a href="/contacto/" lang="es">Contatti (in spagnolo)</a>
+   </nav>
+   <nav class="editorial-footer-links" aria-label="Altre lingue">
+    <strong>Altre lingue</strong>
+    <a href="/" lang="es">Español</a>
+    <a href="/en/" lang="en">English</a>
+    <a href="/traducciones/" lang="es">Traduzioni del poema (in spagnolo)</a>
+   </nav>
+  </div>
+  <div class="container editorial-footer-credits">
+   <p>© {new Date().getFullYear()} MARTINFIERRO.ORG · Edizione digitale indipendente · Grazie al professor Robertino Ferro.</p>
+   <p>Testo originale di José Hernández e traduzione di Folco Testena, di pubblico dominio · <a href="/it/fonti-e-diritti/">Crediti e provenienza</a></p>
+  </div>
+ </footer> : english ?  <footer class="site-footer editorial-footer" aria-label="Site information and footer">
   <div class="container editorial-footer-grid">
    <div class="editorial-footer-identity">
     <a href="/en/" class="editorial-footer-brand">Martín Fierro</a>
