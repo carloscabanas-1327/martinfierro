@@ -292,4 +292,4 @@ body .site-footer.editorial-footer {
 /* Portadas multilingües: misma distancia menú/franja editorial que la portada española. */
 main#contenido.container:has(> .en-portal),main#contenido.container:has(> .it-portale){padding-top:0}
 /* Páginas interiores italianas: reducir el vacío sobre las migas sin suprimir su separación. */
-html[lang="it-IT"] main#contenido.container:not(:has(> .it-portale)){padding-top:24px}
+html[lang="it-IT"] main#contenido.container:not(:has(> .it-portale)),html[lang="en-US"] main#contenido.container:not(:has(> .en-portal)){padding-top:16px}
