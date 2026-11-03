@@ -343,3 +343,6 @@ body main#contenido .mf-revista>.mf-lead .mf-lead-copy{background:#eae0d1;paddin
 body main#contenido .mf-revista>.mf-lead .mf-kicker{display:block;color:#8b4731;font:750 .7rem system-ui,sans-serif;letter-spacing:.15em;margin:0 0 18px}
 @media(min-width:841px){body main#contenido .mf-revista>.mf-lead{display:grid;grid-template-columns:1.13fr .87fr}}
 @media(max-width:840px){body main#contenido .mf-revista>.mf-lead .mf-lead-copy{padding:26px}}
+/* Doble raya bajo el menú: mismos extremos que las demás líneas de la cabecera, sin salirse a los lados. */
+.site-header .editorial-nav-wrap{border-bottom:0}
+.site-header .editorial-nav-wrap>.container{border-bottom:3px double #40342c}
