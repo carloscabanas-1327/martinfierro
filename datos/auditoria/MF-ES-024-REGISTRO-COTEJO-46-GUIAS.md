@@ -150,3 +150,11 @@ En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta
 - Informe creado en commit `3101c703fef2dd1de0b2ea0eda17f6d243870ca4` y **verificado por lectura posterior**; el commit solo añadió el informe. SHA del corpus inalterados: Ida `5d0de1ee6f8ffe088cd2a79360017d95ab9b9e7d`, Vuelta `8034740ca956cf77daf2aa76a2ca5bfbf2199987`.
 - **CI:** el HEAD anterior `27767d6` tenía un check `Cloudflare Pages: success`, insuficiente para certificar la auditoría. Los últimos workflows de Actions visibles eran del commit `1dd44ae`: `Validar portal Astro` **failure** (41504455816) y `Auditoría de aprobación editorial (ES)` **failure** (41504455790). Pendiente verificar CI del nuevo HEAD; no se atribuyen los fallos a errores filológicos sin prueba.
 - **Próxima ejecución:** revisar los checks de la rama y nuevas ambigüedades en otros cantos. No alterar el corpus, `main`, despliegues ni indexación. **Auditoría integral abierta.**
+
+
+### Revisión contextual adicional — Vuelta I (2026-11-03)
+
+- **Acumulado histórico: 46/46 guías cotejadas; nuevas: 0.** Se contrastó nuevamente Vuelta I (estrofas 396–422, 27 estrofas y 162 versos) con análisis, contexto, personajes, tres preguntas, cinco glosas y dos notas. [Informe con evidencia por sección](MF-ES-024-SEGUNDA-LECTURA-VUELTA-01-2026-11-03.md).
+- **Errores comprobados: 0; correcciones de contenido: 0.** Se examinó la tensión entre la referencia a la guitarra/vigüela (397–398) y «Aunque rompí el estrumento» (416): no se atribuyó un error seguro a la fórmula editorial «retoma la guitarra», susceptible de lectura figurada.
+- Informe creado en commit `47618ae1f78d928f9d570aab2914ac89c6e38782`, y comprobado mediante lectura posterior en GitHub. Sin alteraciones del corpus, guías, `main`, despliegues o indexación.
+- **Pendiente:** pruebas CI concluyentes del HEAD y nuevas lecturas contextuales. Auditoría integral abierta.
