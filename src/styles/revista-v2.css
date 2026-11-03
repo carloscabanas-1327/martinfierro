@@ -2,8 +2,6 @@
 :root{--mf-paper:#f7f2e8;--mf-ink:#211e1b;--mf-muted:#686058;--mf-red:#ad523b;--mf-border:#d8cdbd;--mf-serif:Georgia,'Times New Roman',serif}
 body:has(.mf-revista){background:var(--mf-paper);color:var(--mf-ink)}
 body:has(.mf-revista) .site-header{background:#f7f2e8;color:var(--mf-ink);border-bottom:1px solid #cfc3b2}
-body:has(.mf-revista) .site-header .brand,body:has(.mf-revista) .site-header nav a{color:#211e1b}
-body:has(.mf-revista) .site-header .brand small{color:#75665a}
 body:has(.mf-revista) .site-header .brand-mark{border-radius:0;border-color:#b85e45;color:#a74c34}
 body:has(.mf-revista) main.container{width:100%;max-width:none;padding:0;min-height:0}
 /* El footer usa exclusivamente su identidad oscura global. No sobreescribir su fondo desde la portada. */

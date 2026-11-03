@@ -332,3 +332,6 @@ body:has(main) .site-header.site-header{border-bottom:none}
 /* Páginas institucionales (StaticEditorial): su contenedor ocupa todo el ancho; las migas se alinean con el resto del sitio. */
 body main#contenido.container:has(.mf-static-editorial)>.mf-migas{width:min(var(--mf-reading-width),calc(100% - 52px));margin:16px auto 25px}
 @media(max-width:720px){body main#contenido.container:has(.mf-static-editorial)>.mf-migas{width:calc(100% - 32px)}}
+/* Portadas: la imagen principal va dentro de la columna y a 24 px de la franja, como en la portada inglesa. */
+body main#contenido .mf-revista>.mf-editionline+.mf-lead{width:min(var(--mf-reading-width),calc(100% - 52px));max-width:none;margin:24px auto clamp(16px,2.5vw,36px)}
+@media(max-width:720px){body main#contenido .mf-revista>.mf-editionline+.mf-lead{width:calc(100% - 32px)}}
