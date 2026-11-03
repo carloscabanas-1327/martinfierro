@@ -1,5 +1,5 @@
 {
- "nota": "Correzioni della trascrizione OCR verificate sul facsimile dell'IAI. Le applica scripts/importar-testena.py. La chiave «verso» è la posizione del verso nell'OCR; «stampa»: null elimina una riga che non è un verso. Ogni voce indica il testo dell'OCR, quello stampato e l'immagine consultata.",
+ "nota": "Correzioni della trascrizione OCR verificate sul facsimile dell'IAI. Le applica scripts/importar-testena.py. La chiave «verso» è la posizione del verso nell'OCR; «stampa»: null elimina una riga che non è un verso; una lista sostituisce la riga con più versi (versi persi dall'OCR). Ogni voce indica il testo dell'OCR, quello stampato e l'immagine consultata.",
  "correzioni": [
   {
    "verso": "it-ritorno-c30-e004-v02",
@@ -40,6 +40,184 @@
    "stampa": "Come i dí passar soleva!",
    "immagine_facsimile": 24,
    "pagina_libro": null,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e001-v01",
+   "ocr": "“Quando un padre da consigli",
+   "stampa": "“Quando un padre dá consigli",
+   "immagine_facsimile": 161,
+   "pagina_libro": 155,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e001-v02",
+   "ocr": "Pitt che un padre egli é un amico;",
+   "stampa": "Piú che un padre egli é un amico;",
+   "immagine_facsimile": 161,
+   "pagina_libro": 155,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e001-v04",
+   "ocr": "D'ayer molta precauzione:",
+   "stampa": "D'aver molta precauzione:",
+   "immagine_facsimile": 161,
+   "pagina_libro": 155,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e003-v01",
+   "ocr": "Cé qualcuno cui la scienza",
+   "stampa": "C'é qualcuno cui la scienza",
+   "immagine_facsimile": 161,
+   "pagina_libro": 155,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e003-v04",
+   "ocr": "lo direi, senz'esser colto:",
+   "stampa": "Io direi, senz'esser colto:",
+   "immagine_facsimile": 161,
+   "pagina_libro": 155,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e003-v06",
+   "ocr": "E” imparare cose buone.",
+   "stampa": "E' imparare cose buone.",
+   "immagine_facsimile": 161,
+   "pagina_libro": 155,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e005-v02",
+   "ocr": "Tri un cuore alieno, mai;",
+   "stampa": "In un cuore alieno, mai;",
+   "immagine_facsimile": 162,
+   "pagina_libro": 156,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e009-v03",
+   "ocr": "I'uom deve esseré prudente",
+   "stampa": "L'uom deve essere prudente",
+   "immagine_facsimile": 162,
+   "pagina_libro": 156,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e011-v03",
+   "ocr": "Ta miseria va a tentone",
+   "stampa": "La miseria va a tentone",
+   "immagine_facsimile": 162,
+   "pagina_libro": 156,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e011-v05",
+   "ocr": "Batte alla “porta di tutti,",
+   "stampa": "Batte alla porta di tutti,",
+   "immagine_facsimile": 162,
+   "pagina_libro": 156,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e012-v04",
+   "ocr": "E saccorge l'imprudente",
+   "stampa": "E s'accorge l'imprudente",
+   "immagine_facsimile": 162,
+   "pagina_libro": 156,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e013-v04",
+   "ocr": "Pit di ciò che taglia o brucia,",
+   "stampa": "Piú di ció che taglia o brucia,",
+   "immagine_facsimile": 162,
+   "pagina_libro": 156,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e015-v05",
+   "ocr": "I'occasione é come il ferro:",
+   "stampa": "L'occasione é come il ferro:",
+   "immagine_facsimile": 163,
+   "pagina_libro": 157,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e017-v05",
+   "ocr": "Li divide, quei di fuori'",
+   "stampa": "Li divide, quei di fuori",
+   "immagine_facsimile": 163,
+   "pagina_libro": 157,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e018-v01",
+   "ocr": "Chi det vecchi si fa beffe",
+   "stampa": "Chi dei vecchi si fa beffe",
+   "immagine_facsimile": 163,
+   "pagina_libro": 157,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e023-v03",
+   "ocr": "T/uom che ha la sua ragione,",
+   "stampa": "L'uom che ha la sua ragione,",
+   "immagine_facsimile": 164,
+   "pagina_libro": 158,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e024-v01",
+   "ocr": "T/uomo non uccida l'uomo",
+   "stampa": "L'uomo non uccida l'uomo",
+   "immagine_facsimile": 164,
+   "pagina_libro": 158,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e026-v02",
+   "ocr": "Il ber troppo é il gran nemico;",
+   "stampa": [
+    "Il ber troppo é il gran nemico;",
+    "Ve lo dice un vostro amico,"
+   ],
+   "immagine_facsimile": 164,
+   "pagina_libro": 158,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e027-v03",
+   "ocr": "Nor mostratevi mai alteri",
+   "stampa": "Non mostratevi mai alteri",
+   "immagine_facsimile": 164,
+   "pagina_libro": 158,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e029-v01",
+   "ocr": "Non prendete l'istrumento",
+   "stampa": [
+    "Se cantori siete, fate",
+    "Di cantar con sentimento;",
+    "Non prendete l'istrumento"
+   ],
+   "immagine_facsimile": 164,
+   "pagina_libro": 158,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-ritorno-c32-e031-v02",
+   "ocr": "Stando solo meditai;",
+   "stampa": [
+    "Stando solo meditai;",
+    "D'ogni errore le mondai,"
+   ],
+   "immagine_facsimile": 164,
+   "pagina_libro": 158,
    "data": "2026-11-03"
   }
  ]
