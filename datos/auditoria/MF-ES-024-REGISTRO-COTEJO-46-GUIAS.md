@@ -182,3 +182,11 @@ En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta
 - **Un error probado y corregido:** la tercera pregunta de Vuelta VI ubicaba ambiguamente lo que le ocurre a Cruz «al final de la estrofa 550». El poema narra su muerte en **549** y el desmayo de Fierro en **550**. Pregunta precisada en commit `9945b53ea3445e72d426b6876ae8b2679d9607ae`, comprobado por lectura posterior.
 - Informe documental incorporado en commit `b161c7ef8869fb5ffaed29fd74c10a722e3b2b73` y verificado por lectura posterior. **Corpus de Vuelta sin alteración:** SHA `8034740ca956cf77daf2aa76a2ca5bfbf2199987`.
 - Pruebas de lectura y coherencia pregunta–estrofas satisfactorias; **CI integral aún no certificado**. Próxima ejecución: comprobar CI del HEAD y continuar revisión contextual de otros cantos. Sin cambios a `main`, despliegues o indexación; auditoría abierta.
+
+
+### Segunda lectura focalizada — Vuelta XI y XII (2026-11-03)
+
+- **Cobertura histórica: 46/46 guías con primera lectura; nuevas: 0.** Dos guías revisadas **parcialmente**: Vuelta XI (estrofa 655, 150 versos) y XII (pasajes 656–667). No se considera completada la segunda lectura integral de XII.
+- [Informe con evidencia textual](MF-ES-024-SEGUNDA-LECTURA-VUELTA-11-12-2026-11-03.md): comprobados en XI el balance de diez años (655:25–36), el reencuentro (655:87–112), la noticia de la muerte de la esposa (655:121–134) y las justificaciones del narrador; en XII el desamparo (657–665), la voz filial (656) y el trabajo y la imputación (666–667). Se cotejaron las interpretaciones, preguntas, notas y glosas pertinentes a los pasajes indicados.
+- **Errores nuevos demostrados: 0; correcciones de contenido: 0.** Informe creado en commit `d134fdaf2a7e897e5a66afac3209013405846015` y verificado mediante lectura posterior. No se alteraron corpus, `main`, despliegues ni indexación.
+- **Pruebas:** lectura documental y cotejo manual de pasajes; no se certificó CI de Astro ni aprobación editorial del HEAD. **Próxima ejecución:** lectura completa de XII (668–703), restantes glosas/notas y consulta de CI. Auditoría integral abierta.
