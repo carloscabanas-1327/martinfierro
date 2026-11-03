@@ -194,8 +194,8 @@ export const preguntasVueltaEstudiantes=[
   {
     "canto": 25,
     "preguntas": [
-      "¿Qué papel cumple la papeleta en la vida del joven?",
-      "¿Qué consecuencias produce el reclutamiento en su situación material?",
+      "¿Por qué el Comendante retiene la papeleta de uno de los reclutados en la estrofa 943?",
+      "¿Qué consecuencias del reclutamiento sufren las familias de los hombres enviados a la frontera en las estrofas 946–952?",
       "¿Para qué se convoca un contingente de hombres en la estrofa 932?"
     ]
   },
