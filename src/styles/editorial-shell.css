@@ -293,3 +293,10 @@ body .site-footer.editorial-footer {
 main#contenido.container:has(> .en-portal),main#contenido.container:has(> .it-portale){padding-top:0}
 /* Páginas interiores italianas: reducir el vacío sobre las migas sin suprimir su separación. */
 html[lang="it-IT"] main#contenido.container:not(:has(> .it-portale)),html[lang="en-US"] main#contenido.container:not(:has(> .en-portal)){padding-top:16px}
+
+/* Cabecera inglesa uniforme: las reglas de artículos no deben cambiar la altura del menú. */
+html[lang="en-US"] .site-header .editorial-topline>.container{min-height:49px;align-items:center}
+html[lang="en-US"] .site-header .editorial-masthead{min-height:133px}
+html[lang="en-US"] .site-header nav.editorial-nav{min-height:56px;align-content:center}
+html[lang="en-US"] .site-header nav.editorial-nav a{font:750 .79rem/1.4 system-ui,sans-serif;padding:15px 0;white-space:nowrap}
+@media(max-width:760px){html[lang="en-US"] .site-header .editorial-topline>.container{min-height:0}html[lang="en-US"] .site-header .editorial-masthead{min-height:100px}html[lang="en-US"] .site-header nav.editorial-nav{min-height:56px}html[lang="en-US"] .site-header nav.editorial-nav a{font-size:.75rem;padding:9px 0}}
