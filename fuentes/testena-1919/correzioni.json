@@ -1,5 +1,5 @@
 {
- "nota": "Correzioni della trascrizione OCR verificate sul facsimile dell'IAI. Le applica scripts/importar-testena.py; ogni voce indica il verso, il testo dell'OCR, il testo stampato e l'immagine consultata.",
+ "nota": "Correzioni della trascrizione OCR verificate sul facsimile dell'IAI. Le applica scripts/importar-testena.py. La chiave «verso» è la posizione del verso nell'OCR; «stampa»: null elimina una riga che non è un verso. Ogni voce indica il testo dell'OCR, quello stampato e l'immagine consultata.",
  "correzioni": [
   {
    "verso": "it-ritorno-c30-e004-v02",
@@ -7,6 +7,39 @@
    "stampa": "L'uom si deve misurare",
    "immagine_facsimile": 147,
    "pagina_libro": 141,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-andata-c01-e006-v02",
+   "ocr": "M°han cantando da interrare,",
+   "stampa": "M'han cantando da interrare,",
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-andata-c02-e004-v01",
+   "ocr": "(*) Vedansi le note alla fine del volume,",
+   "stampa": null,
+   "nota": "Nota a piè di pagina letta come verso; la strofa stampata comincia con «Io conobbi questa terra».",
+   "immagine_facsimile": 24,
+   "pagina_libro": null,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-andata-c02-e004-v04",
+   "ocr": "E la sua capanna aveva;",
+   "stampa": "E la sua capanna aveva,",
+   "immagine_facsimile": 24,
+   "pagina_libro": null,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-andata-c02-e004-v07",
+   "ocr": "Come i di passar soleva!",
+   "stampa": "Come i dí passar soleva!",
+   "immagine_facsimile": 24,
+   "pagina_libro": null,
    "data": "2026-11-03"
   }
  ]

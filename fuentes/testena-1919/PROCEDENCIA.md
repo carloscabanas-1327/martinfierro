@@ -20,10 +20,11 @@ Se regeneran con `python3 scripts/importar-testena.py`.
 
 ## Estado: transcripción NO cotejada
 
-- 7.106 versos en 46 cantos (original: 7.210). La Ida tiene 2.241 contra 2.316; el canto XIII de la Ida, 28 menos.
+- 7.105 versos en 46 cantos (original: 7.210). La Ida tiene 2.240 contra 2.316; el canto XIII de la Ida, 28 menos.
 - Quedan errores de OCR («woglio», «M°han», restos de notas al pie, alguna palabra española colada) y estrofas mal cortadas en los saltos de página. El canto XIII de la Ida tiene el orden alterado en sus primeras estrofas.
 - No se completó ni generó ningún verso. Las correcciones se hacen contra el facsímil y quedan anotadas en `correzioni.json` (verso, texto del OCR, texto impreso e imagen consultada); `importar-testena.py` las aplica y falla si el OCR no coincide.
 - Patrón conocido: el OCR lee «T’uom» por «L’uom» (5 casos en la Vuelta; uno ya cotejado).
+- Cotejadas con el facsímil (3 de noviembre de 2026): Ida I, estrofa 6; Ida II, estrofa 4; Vuelta XXX, estrofa 4. Una nota al pie leída como verso se eliminó de Ida II, estrofa 4.
 - Mientras tanto las 46 páginas `/it/lettore/…/N/` van en `noindex` y no se declaran como equivalentes `hreflang` de `/leer/…/N/`. Para habilitarlas: `TESTO_COLLAZIONATO = true` en `src/lib/testena.ts`.
 
 ## Fuentes bibliográficas

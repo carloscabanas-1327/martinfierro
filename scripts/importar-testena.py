@@ -33,11 +33,13 @@ for p in fuente["partes"]:
     canti = []
     for c in p["cantos"]:
         n = c["canto"]
-        estrofe = [
-            {"numero": i, "id": f"it-{slug}-c{n:02d}-e{i:03d}",
-             "versi": [{"id": f"it-{slug}-c{n:02d}-e{i:03d}-v{j:02d}", "linea": j, "testo": testo(f"it-{slug}-c{n:02d}-e{i:03d}-v{j:02d}", v)} for j, v in enumerate(e, 1)]}
-            for i, e in enumerate(c["estrofas"], 1)
-        ]
+        estrofe = []
+        for i, e in enumerate(c["estrofas"], 1):
+            # Las claves de correzioni.json usan la posición del verso en el OCR;
+            # un texto impreso null elimina la línea (p. ej. una nota al pie leída como verso).
+            versi = [x for x in (testo(f"it-{slug}-c{n:02d}-e{i:03d}-v{j:02d}", v) for j, v in enumerate(e, 1)) if x is not None]
+            estrofe.append({"numero": i, "id": f"it-{slug}-c{n:02d}-e{i:03d}",
+                            "versi": [{"id": f"it-{slug}-c{n:02d}-e{i:03d}-v{j:02d}", "linea": j, "testo": v} for j, v in enumerate(versi, 1)]})
         pagina = None if c["pagina"] == "-" else int(c["pagina"])
         canti.append({"numero": n, "pagina_libro": pagina, "immagine_facsimile": c["pdf"],
                       "url_facsimile": f"{visor}{c['pdf']}/", "estrofe": estrofe})
