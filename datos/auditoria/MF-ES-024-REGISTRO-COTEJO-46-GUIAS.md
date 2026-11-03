@@ -158,3 +158,11 @@ En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta
 - **Errores comprobados: 0; correcciones de contenido: 0.** Se examinó la tensión entre la referencia a la guitarra/vigüela (397–398) y «Aunque rompí el estrumento» (416): no se atribuyó un error seguro a la fórmula editorial «retoma la guitarra», susceptible de lectura figurada.
 - Informe creado en commit `47618ae1f78d928f9d570aab2914ac89c6e38782`, y comprobado mediante lectura posterior en GitHub. Sin alteraciones del corpus, guías, `main`, despliegues o indexación.
 - **Pendiente:** pruebas CI concluyentes del HEAD y nuevas lecturas contextuales. Auditoría integral abierta.
+
+
+### Revisión contextual adicional — Vuelta II y III (2026-11-03)
+
+- **Acumulado histórico: 46/46 guías cotejadas; nuevas: 0.** Segunda lectura de dos guías de La vuelta, II (423–450) y III (451–474): **52 estrofas, 312 versos**, 6 preguntas, 10 glosas, 4 notas y 4 actuaciones. Se cotejaron también análisis y contexto contra los cantos completos.
+- [Informe de evidencia por canto](MF-ES-024-SEGUNDA-LECTURA-VUELTA-02-03-2026-11-03.md). En II se comprobaron la llegada a los toldos (429), el peligro y cautiverio (430–438), y la prudencia (435–436); en III la separación de Cruz durante dos años (462–463), la reunión (464–468) y los sentidos figurados de «partida» (451), «rancho» (456) y «leva» (471). Los juicios generalizadores se atribuyen a la voz narrativa.
+- **Errores demostrados: 0; correcciones de contenido: 0.** Informe incorporado en commit `687617d56a441a18c667bb084dda0994d8a97fc5`, verificado por lectura posterior. Corpus Vuelta SHA `8034740ca956cf77daf2aa76a2ca5bfbf2199987` intacto.
+- **Pendiente:** comprobar CI concluyente del HEAD y proseguir segundas lecturas de cantos no revisados. No alterar corpus, `main`, despliegues ni indexación; certificación integral abierta.
