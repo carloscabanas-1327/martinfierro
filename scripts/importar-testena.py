@@ -37,7 +37,12 @@ for p in fuente["partes"]:
         for i, e in enumerate(c["estrofas"], 1):
             # Las claves de correzioni.json usan la posición del verso en el OCR;
             # un texto impreso null elimina la línea (p. ej. una nota al pie leída como verso).
-            versi = [x for x in (testo(f"it-{slug}-c{n:02d}-e{i:03d}-v{j:02d}", v) for j, v in enumerate(e, 1)) if x is not None]
+            # Un texto impreso en forma de lista reemplaza la línea por varias (versos que el OCR perdió).
+            versi = []
+            for j, v in enumerate(e, 1):
+                x = testo(f"it-{slug}-c{n:02d}-e{i:03d}-v{j:02d}", v)
+                if x is None: continue
+                versi.extend(x if isinstance(x, list) else [x])
             estrofe.append({"numero": i, "id": f"it-{slug}-c{n:02d}-e{i:03d}",
                             "versi": [{"id": f"it-{slug}-c{n:02d}-e{i:03d}-v{j:02d}", "linea": j, "testo": v} for j, v in enumerate(versi, 1)]})
         pagina = None if c["pagina"] == "-" else int(c["pagina"])
