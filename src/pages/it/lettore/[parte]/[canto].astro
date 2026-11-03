@@ -15,7 +15,7 @@ const anteriore=numero>1?urlCantoIt(parte,numero-1):parte==='ritorno'?urlCantoIt
 const successivo=numero<ultimo?urlCantoIt(parte,numero+1):parte==='andata'?urlCantoIt('ritorno',1):null;
 const originale=urlCantoOriginale(parte,numero);
 ---
-<Base lang="it-IT" pageType="Article" noindex={!TESTO_COLLAZIONATO} lingue={{es:originale,it:urlCantoIt(parte,numero)}}
+<Base migas={[{label:"Lettore",href:"/it/lettore/"},{label:libro.titolo,href:`/it/lettore/${parte}/`},{label:`Canto ${romano(numero)}`}]} lang="it-IT" pageType="Article" noindex={!TESTO_COLLAZIONATO} lingue={{es:originale,it:urlCantoIt(parte,numero)}}
  title={`Canto ${romano(numero)} · ${libro.titolo} (Testena)`}
  description={`${libro.titolo}, canto ${romano(numero)}: traduzione italiana in versi di Folco Testena (1919), con rimando al testo spagnolo di José Hernández e al facsimile.`}>
 <div class="mf-reader-page mf-it-reader" lang="it">
@@ -24,9 +24,6 @@ const originale=urlCantoOriginale(parte,numero);
   <div class="mf-reader-hero-label">{libro.titolo} · {libro.anno} · Traduzione di Folco Testena (1919)</div>
  </div>
  <div class="mf-reader-frame">
-  <nav class="breadcrumbs" aria-label="Percorso">
-   <a href="/it/">Home</a><span><a href="/it/lettore/">Lettore</a></span><span><a href={`/it/lettore/${parte}/`}>{libro.titolo}</a></span><span>Canto {romano(numero)}</span>
-  </nav>
   <header class="reader-header">
    <p class="eyebrow">{libro.etichetta} · {libro.anno} · traduzione italiana</p>
    <h1>Canto {romano(numero)}</h1>

@@ -20,11 +20,10 @@ const voci=[
  {voce:'Strofa e verso',tipo:'Struttura letteraria',significato:'La strofa è un gruppo di versi; il verso è una riga poetica, non sempre una frase completa.',contesto:'Il poema è scritto per lo più in sestine di ottonari; la traduzione di Testena ne conserva la forma.',url:'/it/biblioteca/traduzione-testena/'}
 ];
 ---
-<Base lang="it-IT" pageType="Article" title="Glossario di Martín Fierro: parole gauchesche spiegate"
+<Base migas={[{label:'Per gli studenti',href:'/it/studenti/'},{label:'Glossario'}]} lang="it-IT" pageType="Article" title="Glossario di Martín Fierro: parole gauchesche spiegate"
  description="Glossario per studenti di Martín Fierro: payada, pulpería, fortín, facón, leva, Moreno, Vizcacha, Picardía e altre parole del poema spiegate in italiano.">
 <ArticoloIt occhiello="Per gli studenti · Parole nel contesto" titolo="Glossario gauchesco"
  sommario="Le parole del poema si capiscono meglio dentro la storia che sostituendole con un equivalente italiano. Ogni voce spiega il significato e il ruolo nel Martín Fierro."
- percorso={[{label:'Per gli studenti',href:'/it/studenti/'},{label:'Glossario'}]}
  fonti={[{nome:'Gaucho glossary — edizione inglese',url:'/en/students/glossary/',lingua:'en'},{nome:'Diccionario de americanismos (ASALE)',url:'https://www.asale.org/damer/',lingua:'es'}]}
  notaFonti="Le definizioni sono spiegazioni per i lettori, non sostituiscono i versi di Hernández.">
  <dl class="it-glossario">{voci.map(v=><div><dt lang="es">{v.voce}</dt><dd><p class="it-glossario-tipo">{v.tipo}</p><p><strong>Significato:</strong> {v.significato}</p><p><strong>Nel poema:</strong> {v.contesto}</p><p><a href={v.url}>Approfondisci →</a></p></dd></div>)}</dl>

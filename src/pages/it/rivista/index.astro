@@ -7,11 +7,10 @@ const articoli=[
  {url:'/it/rivista/pulperie/',occhiello:'Storia sociale · Río de la Plata',titolo:'La pulpería',testo:'Emporio, osteria e luogo di notizie: lo spazio sociale della campagna, e le scene del poema che vi accadono.',img:'/media/fotografias-v3/mate-pava-yerba.webp'}
 ];
 ---
-<Base lang="it-IT" pageType="CollectionPage" title="Rivista culturale: tradizioni del Río de la Plata"
+<Base migas={[{label:'Rivista'}]} lang="it-IT" pageType="CollectionPage" title="Rivista culturale: tradizioni del Río de la Plata"
  description="La rivista culturale dell’edizione italiana di MARTINFIERRO.ORG: il Giorno della Tradizione, la payada, la pulpería e il mondo rurale del poema di José Hernández.">
 <ArticoloIt occhiello="Rivista culturale · In italiano" titolo="Rivista culturale"
- sommario="Articoli sulla cultura rurale del Río de la Plata e sulle ricorrenze legate al poema, scritti per lettori italiani e sempre con le fonti indicate."
- percorso={[{label:'Rivista'}]}>
+ sommario="Articoli sulla cultura rurale del Río de la Plata e sulle ricorrenze legate al poema, scritti per lettori italiani e sempre con le fonti indicate.">
  <div class="it-rivista">{articoli.map(a=><article><a href={a.url}><img src={a.img} alt="" loading="lazy" decoding="async"/><p class="it-occhiello">{a.occhiello}</p><h2>{a.titolo}</h2><p>{a.testo}</p><strong>Leggi l’articolo →</strong></a></article>)}</div>
  <section><h2>Altri articoli in spagnolo e in inglese</h2><p>La rivista spagnola e quella inglese hanno altri articoli su fortini, donne della frontiera, popoli indigeni, mate e abiti gauchos.</p><p><a href="/revista/" lang="es">Revista cultural (in spagnolo)</a> · <a href="/en/magazine/" lang="en">Cultural magazine (in inglese)</a></p></section>
 </ArticoloIt>

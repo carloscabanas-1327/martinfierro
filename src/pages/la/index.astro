@@ -3,8 +3,7 @@ import Base from '../../layouts/Base.astro';
 import {idiomas} from '../../data/idiomas';
 const ficha=idiomas.find(i=>i.codigo==='la')!;
 ---
-<Base title={ficha.titulo} description={ficha.intro} lang="la" pageType="CollectionPage" noindex={ficha.estado !== 'original'}>
-  <div class="breadcrumbs"><a href="/">Martín Fierro</a><span>{ficha.nombre}</span></div>
+<Base migas={[{label:ficha.nombre}]} title={ficha.titulo} description={ficha.intro} lang="la" pageType="CollectionPage" noindex={ficha.estado !== 'original'}>
   <section class="section-intro">
     <p class="eyebrow">MARTINFIERRO.ORG · {ficha.nombre}</p>
     <h1>{ficha.titulo}</h1>

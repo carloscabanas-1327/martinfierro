@@ -17,9 +17,8 @@ const secciones=[
 ];
 const grupos=['LECTURA Y ESTUDIO','CRÍTICA LITERARIA','CONSEJOS Y LENGUAJE','HISTORIA Y CULTURA'];
 ---
-<Base pageType="CollectionPage" title="Biblioteca popular de Martín Fierro: guías y estudios" description="Biblioteca de consulta en español sobre Martín Fierro: estudiantes, personajes, crítica literaria, consejos, historia gauchesca y revista.">
+<Base migas={[{label:"Biblioteca popular"}]} pageType="CollectionPage" title="Biblioteca popular de Martín Fierro: guías y estudios" description="Biblioteca de consulta en español sobre Martín Fierro: estudiantes, personajes, crítica literaria, consejos, historia gauchesca y revista.">
 <article class="mf-popular">
-<nav class="mf-crumb" aria-label="Ruta de navegación"><a href="/">Inicio</a> / Biblioteca popular</nav>
 <header><p class="eyebrow">BIBLIOTECA DE CONSULTA · ESPAÑOL</p><h1>Biblioteca popular de Martín Fierro</h1><p class="lead">Un punto de entrada a las guías, estudios, investigaciones y recursos ya publicados. Organizamos lo existente sin alterar su contenido ni confundirlo con el poema original.</p><p><a href="/leer/">Leer el poema completo</a> · <a href="/buscar-documentos/">Buscar documentos</a> · <a href="/indice-general/">Índice completo del sitio</a></p></header>
 <nav class="mf-popular-jumps" aria-label="Explorar colecciones">{grupos.map((grupo,i)=><a href={`#coleccion-${i+1}`}>{grupo.replace('CRÍTICA','Crítica').toLowerCase()}</a>)}</nav>
 {grupos.map((grupo,i)=><section id={`coleccion-${i+1}`} aria-label={grupo}><h2>{grupo}</h2><div class="mf-popular-grid">{secciones.filter(s=>s.grupo===grupo).map(s=><a class="mf-popular-card" href={s.href}><img src={s.imagen} alt="" width="640" height="400" loading="lazy" decoding="async"/><div><small>{s.grupo}</small><h3>{s.titulo}</h3><p>{s.descripcion}</p><span>Explorar recurso →</span></div></a>)}</div></section>)}

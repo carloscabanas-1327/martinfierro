@@ -2,11 +2,10 @@
 import Base from '../../../layouts/Base.astro';
 import ArticoloIt from '../../../components/ArticoloIt.astro';
 ---
-<Base lang="it-IT" pageType="AboutPage" title="Fonti e metodo editoriale dell’edizione italiana"
+<Base migas={[{label:'Fonti e metodo'}]} lang="it-IT" pageType="AboutPage" title="Fonti e metodo editoriale dell’edizione italiana"
  description="Da dove vengono il testo spagnolo e la traduzione italiana di Martín Fierro pubblicati su MARTINFIERRO.ORG, come sono stati controllati e quali sono i limiti della verifica.">
 <ArticoloIt occhiello="Informazioni editoriali · 3 novembre 2026" titolo="Fonti e metodo editoriale"
- sommario="La provenienza dei testi, gli interventi documentati e i limiti della verifica, per il poema originale e per la traduzione italiana."
- percorso={[{label:'Fonti e metodo'}]}>
+ sommario="La provenienza dei testi, gli interventi documentati e i limiti della verifica, per il poema originale e per la traduzione italiana.">
  <section><h2>Il testo originale spagnolo</h2>
   <p>La base digitale del poema viene da Project Gutenberg: <em lang="es">El gaucho Martín Fierro</em> (n. 14765) e <em lang="es">La vuelta de Martín Fierro</em> (n. 15066). I file scaricati sono conservati nel repository. L’edizione digitale ripristina due versi assenti nella trascrizione adottata, normalizza il numero di una strofa e riordina una sequenza; gli interventi sono elencati nel <a href="/acerca/" lang="es">registro degli emendamenti</a>.</p>
   <p>I controlli tecnici coprono 7.210 versi in 46 canti. Un confronto automatico con un’edizione della Biblioteca del Congresso argentino ha segnalato 55 versi sotto il 90% di somiglianza, da esaminare. Non è una certificazione filologica indipendente. L’edizione italiana non modifica in alcun modo questo testo: lo cita e lo collega.</p>

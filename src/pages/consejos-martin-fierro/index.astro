@@ -34,7 +34,7 @@ const structuredData={
  description:'Texto íntegro del canto XXXII de La vuelta de Martín Fierro, con 31 estrofas, introducción, comentarios y ayuda de lectura.'
 };
 ---
-<Base title="Consejos de Martín Fierro a sus hijos: texto completo y significado" description="Leé los consejos de Martín Fierro a sus hijos: canto XXXII íntegro, sus 31 estrofas, significado, valores, glosario gauchesco y enlaces a los versos.">
+<Base migas={[{label:"La vuelta",href:"/leer/vuelta/"},{label:"Consejos a sus hijos"}]} title="Consejos de Martín Fierro a sus hijos: texto completo y significado" description="Leé los consejos de Martín Fierro a sus hijos: canto XXXII íntegro, sus 31 estrofas, significado, valores, glosario gauchesco y enlaces a los versos.">
 <article class="mf-consejos">
  <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g,'\\u003c')}/>
  <header class="mf-consejos-hero">
@@ -47,7 +47,6 @@ const structuredData={
   </div>
  </header>
  <div class="mf-consejos-frame">
-  <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span><a href="/leer/vuelta/">La vuelta</a></span><span>Consejos a sus hijos</span></nav>
   <div class="mf-consejos-intro">
    <p class="eyebrow">CANTO XXXII · EDICIÓN ÍNTEGRA</p>
    <h2>Las palabras que deja un padre</h2>

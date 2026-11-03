@@ -10,9 +10,8 @@ const relacionados=personajes.filter(p=>p.referencias.some(r=>r.parte===parte&&r
 const siguiente=canto<libro.cantos.length? `/estudiantes/${parte}/${canto+1}/`:parte==='ida'?'/estudiantes/vuelta/1/':null;
 const anterior=canto>1? `/estudiantes/${parte}/${canto-1}/`:parte==='vuelta'?'/estudiantes/ida/13/':null;
 ---
-<Base pageType="LearningResource" title={`Guía de estudio: ${libro.nombre}, canto ${canto}`} description={`Ficha de lectura del canto ${canto} de ${libro.nombre}: fragmentos originales, personajes, preguntas para analizar y enlace al poema íntegro.`}>
+<Base migas={[{label:"Para estudiantes",href:"/estudiantes/"},{label:libro.nombre,href:`/leer/${parte}/`},{label:`Canto ${canto}`}]} pageType="LearningResource" title={`Guía de estudio: ${libro.nombre}, canto ${canto}`} description={`Ficha de lectura del canto ${canto} de ${libro.nombre}: fragmentos originales, personajes, preguntas para analizar y enlace al poema íntegro.`}>
 <article class="mf-study">
- <nav class="mf-crumb" aria-label="Ruta de navegación"><a href="/">Inicio</a> / <a href="/estudiantes/">Para estudiantes</a> / <a href={`/leer/${parte}/`}>{libro.nombre}</a> / Canto {canto}</nav>
  <header><p class="eyebrow">GUÍA DE ESTUDIO · {libro.anio}</p><h1>{libro.nombre} — Canto {canto}</h1><p class="lead">{libro.cantos[canto-1]?.titulo}</p><p>Esta ficha proporciona el material de lectura y preguntas para trabajar el canto. No reemplaza la lectura ni ofrece todavía un resumen interpretativo individual verificado.</p><a class="mf-study-primary" href={enlaceCanto(parte,canto)}>Leer el canto íntegro en el poema original →</a></header>
  <section><h2>Pasajes del texto original</h2><p>Estas estrofas se obtienen directamente del corpus documental, sin modificar la redacción. Para interpretarlas es importante leer el canto completo.</p>
  {ejemplos.map(e=><figure class="mf-study-stanza"><figcaption>Estrofa {e.numero} · <a href={`${enlaceCanto(parte,canto)}#${e.id}`}>Consultar en el lector →</a></figcaption><blockquote>{e.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>)}</section>

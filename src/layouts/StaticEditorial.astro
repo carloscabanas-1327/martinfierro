@@ -8,8 +8,9 @@ interface Props {
   sections?:Array<{title:string;id:string}>;
   image?:string;
   imageAlt?:string;
+  migas?:{label:string; href?:string}[];
 }
-const {title,description,sections=[],image,imageAlt} = Astro.props;
+const {title,description,sections=[],image,imageAlt,migas} = Astro.props;
 const imageByPath:Record<string,string>={
  '/proyecto/':'/media/fotografias-v3/hero-gaucho-pampa.webp',
  '/contacto/':'/media/fotografias-v3/revista-cultural.webp',
@@ -21,7 +22,7 @@ const imageByPath:Record<string,string>={
 };
 const heroImage=image || imageByPath[Astro.url.pathname] || '/media/fotografias-v3/revista-cultural.webp';
 ---
-<Base title={title} description={description}>
+<Base title={title} description={description} migas={migas}>
   <div class="mf-static-editorial">
     <div class="mf-static-hero" role="img" aria-label={imageAlt || 'Recreación visual digital de la cultura y los archivos relacionados con Martín Fierro'}>
       <img src={heroImage} alt="" width="1600" height="900" loading="eager" decoding="async" />

@@ -3,11 +3,10 @@ import Base from '../../../../layouts/Base.astro';
 import ArticoloIt from '../../../../components/ArticoloIt.astro';
 import StrofaIt from '../../../../components/StrofaIt.astro';
 ---
-<Base lang="it-IT" pageType="Article" title="La payada: poesia gauchesca cantata e improvvisata"
+<Base migas={[{label:'Rivista',href:'/it/rivista/'},{label:'La payada'}]} lang="it-IT" pageType="Article" title="La payada: poesia gauchesca cantata e improvvisata"
  description="Che cos’è la payada: payadores, chitarra e contrappunto nel Río de la Plata, e la celebre sfida fra Martín Fierro e il Moreno nella seconda parte del poema.">
 <ArticoloIt occhiello="Il mondo gaucho · Musica e poesia" titolo="La <em>payada</em>: poesia, chitarra e canto improvvisato"
  sommario="Nella payada le parole diventano spettacolo pubblico. I cantori usano verso e melodia per raccontare, rispondersi e talvolta sfidarsi. È una porta d’ingresso al mondo poetico creato da Hernández."
- percorso={[{label:'Rivista',href:'/it/rivista/'},{label:'La payada'}]}
  immagine="/media/fotografias-v3/el-moreno.webp" alt="Ricostruzione digitale di un cantore con la chitarra" didascalia="Ricostruzione digitale editoriale; non è una fotografia d’archivio."
  fonti={[
   {nome:'Josefina Ludmer, «The gaucho genre», The Cambridge History of Latin American Literature',url:'https://www.cambridge.org/core/books/abs/cambridge-history-of-latin-american-literature/gaucho-genre/11C314A9DE198E5081055141AB126635',lingua:'en'},

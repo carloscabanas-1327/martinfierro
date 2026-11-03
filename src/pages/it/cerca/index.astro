@@ -3,11 +3,10 @@ import Base from '../../../layouts/Base.astro';
 import ArticoloIt from '../../../components/ArticoloIt.astro';
 import {pagineIt} from '../../../data/it-edizione';
 ---
-<Base lang="it-IT" pageType="SearchResultsPage" title="Cerca in Martín Fierro: pagine e versi in italiano"
+<Base migas={[{label:'Indice',href:'/it/indice/'},{label:'Cerca'}]} lang="it-IT" pageType="SearchResultsPage" title="Cerca in Martín Fierro: pagine e versi in italiano"
  description="Cerca nelle pagine dell’edizione italiana e nei 7.106 versi della traduzione di Folco Testena: personaggi, luoghi, parole e temi del poema.">
 <ArticoloIt occhiello="Strumenti · Ricerca" titolo="Cerca nell’edizione italiana"
- sommario="Cerca una parola nelle pagine dell’edizione italiana e nei versi della traduzione di Testena. Per i versi originali usa la ricerca spagnola."
- percorso={[{label:'Indice',href:'/it/indice/'},{label:'Cerca'}]}>
+ sommario="Cerca una parola nelle pagine dell’edizione italiana e nei versi della traduzione di Testena. Per i versi originali usa la ricerca spagnola.">
  <form id="it-cerca" role="search" class="it-cerca-form"><label for="it-termine">Parola, personaggio o tema</label><div><input id="it-termine" name="q" type="search" placeholder="Prova: Croce, frontiera, chitarra, Viscaccia…" autocomplete="off"/><button type="submit">Cerca</button></div></form>
  <p class="it-cerca-nota">I versi italiani vengono da una trascrizione OCR in revisione: una parola può non comparire se l’OCR l’ha letta male. Testena italianizza alcuni nomi: Cruz diventa «Croce», Vizcacha «Viscaccia», Picardía «Furbería». Testo originale: <a href="/buscar/" lang="es">ricerca nei 7.210 versi spagnoli</a>.</p>
  <p id="it-stato" role="status" aria-live="polite">Tutte le pagine dell’edizione italiana sono elencate qui sotto.</p>

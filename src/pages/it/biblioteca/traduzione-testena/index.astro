@@ -4,11 +4,10 @@ import ArticoloIt from '../../../../components/ArticoloIt.astro';
 import {fichaTestena as f,tuttaLaCorrispondenza,partiIt,versiDiParte,romano,VISORE_IAI} from '../../../../lib/testena';
 const totale=versiDiParte('andata')+versiDiParte('ritorno');
 ---
-<Base lang="it-IT" pageType="Article" title="La traduzione italiana di Folco Testena (1919)"
+<Base migas={[{label:'Biblioteca',href:'/it/biblioteca/'},{label:'Traduzione di Testena'}]} lang="it-IT" pageType="Article" title="La traduzione italiana di Folco Testena (1919)"
  description="Scheda della prima traduzione italiana di Martín Fierro: Folco Testena, Buenos Aires, Nosotros, 1919. Edizione, esemplare digitalizzato, diritti, trascrizione e corrispondenza dei canti.">
 <ArticoloIt occhiello="Biblioteca · Scheda bibliografica" titolo="La traduzione di <em>Folco Testena</em> (1919)"
  sommario="La prima versione completa del Martín Fierro in un’altra lingua nacque a Buenos Aires, in italiano e in versi. È il testo che si legge nel lettore di questa edizione: ecco da dove viene, in che stato è e perché si può pubblicare."
- percorso={[{label:'Biblioteca',href:'/it/biblioteca/'},{label:'Traduzione di Testena'}]}
  fonti={f.bibliografia.map(b=>({nome:b.citazione,url:b.url}))}
  notaFonti="Dati biografici e bibliografici controllati sugli studi di Cancellier e Iriarte. Il facsimile resta all’istituzione che lo conserva.">
  <section class="it-scheda" aria-labelledby="scheda"><h2 id="scheda">Scheda</h2><dl>

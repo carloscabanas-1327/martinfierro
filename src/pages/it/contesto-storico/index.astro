@@ -3,11 +3,10 @@ import Base from '../../../layouts/Base.astro';
 import ArticoloIt from '../../../components/ArticoloIt.astro';
 import StrofaIt from '../../../components/StrofaIt.astro';
 ---
-<Base lang="it-IT" pageType="Article" title="Il contesto storico di Martín Fierro"
+<Base migas={[{label:'Il contesto storico'}]} lang="it-IT" pageType="Article" title="Il contesto storico di Martín Fierro"
  description="Frontiera, leva militare, Buenos Aires e province, popoli indigeni e immigrazione: il contesto storico argentino in cui José Hernández scrisse Martín Fierro (1872 e 1879).">
 <ArticoloIt occhiello="Storia argentina · Ottocento" titolo="L’Argentina di <em>Martín Fierro</em>"
  sommario="Il poema nasce in un paese che sta costruendo lo Stato, spostando la frontiera e trasformando il lavoro nelle campagne. Conoscere quel contesto aiuta a capire la protesta di Fierro senza scambiarla per una cronaca."
- percorso={[{label:'Il contesto storico'}]}
  immagine="/media/fotografias-v3/archivo-documental-recreacion.webp" alt="Ricostruzione editoriale di un archivio storico" didascalia="Ricostruzione digitale editoriale; non è una fotografia storica."
  fonti={[
   {nome:'Life in Argentina’s Frontier Forts — edizione inglese',url:'/en/magazine/frontier-forts/',lingua:'en'},
