@@ -288,3 +288,8 @@ body .site-footer.editorial-footer {
  .site-header .editorial-topline>.container:has(.mf-lingue){flex-wrap:wrap;row-gap:6px}
  .site-header .editorial-topline .mf-lingue{width:100%;gap:16px;border-top:1px solid #4a4038;padding-top:7px}
 }
+
+/* Portadas multilingües: misma distancia menú/franja editorial que la portada española. */
+main#contenido.container:has(> .en-portal),main#contenido.container:has(> .it-portale){padding-top:0}
+/* Páginas interiores italianas: reducir el vacío sobre las migas sin suprimir su separación. */
+html[lang="it-IT"] main#contenido.container:not(:has(> .it-portale)){padding-top:24px}
