@@ -1,0 +1,13 @@
+{
+ "nota": "Correzioni della trascrizione OCR verificate sul facsimile dell'IAI. Le applica scripts/importar-testena.py; ogni voce indica il verso, il testo dell'OCR, il testo stampato e l'immagine consultata.",
+ "correzioni": [
+  {
+   "verso": "it-ritorno-c30-e004-v02",
+   "ocr": "T'uom si deve misurare",
+   "stampa": "L'uom si deve misurare",
+   "immagine_facsimile": 147,
+   "pagina_libro": 141,
+   "data": "2026-11-03"
+  }
+ ]
+}

@@ -14,6 +14,7 @@
 | `andata.json`, `ritorno.json` | Texto estructurado: cantos, estrofas y versos con identificadores permanentes (`it-andata-c01-e001-v01`). |
 | `corrispondenza.json` | Por canto: estrofas y versos del original (`obra/`) y de la traducción, diferencia, página del libro e imagen del facsímil. |
 | `ficha.json` | Ficha bibliográfica, derechos, método, límites y bibliografía. |
+| `correzioni.json` | Correcciones del OCR cotejadas con el facsímil. |
 
 Se regeneran con `python3 scripts/importar-testena.py`.
 
@@ -21,7 +22,8 @@ Se regeneran con `python3 scripts/importar-testena.py`.
 
 - 7.106 versos en 46 cantos (original: 7.210). La Ida tiene 2.241 contra 2.316; el canto XIII de la Ida, 28 menos.
 - Quedan errores de OCR («woglio», «M°han», restos de notas al pie, alguna palabra española colada) y estrofas mal cortadas en los saltos de página. El canto XIII de la Ida tiene el orden alterado en sus primeras estrofas.
-- No se corrigió, completó ni generó ningún verso. Cada corrección futura debe hacerse contra el facsímil y quedar anotada.
+- No se completó ni generó ningún verso. Las correcciones se hacen contra el facsímil y quedan anotadas en `correzioni.json` (verso, texto del OCR, texto impreso e imagen consultada); `importar-testena.py` las aplica y falla si el OCR no coincide.
+- Patrón conocido: el OCR lee «T’uom» por «L’uom» (5 casos en la Vuelta; uno ya cotejado).
 - Mientras tanto las 46 páginas `/it/lettore/…/N/` van en `noindex` y no se declaran como equivalentes `hreflang` de `/leer/…/N/`. Para habilitarlas: `TESTO_COLLAZIONATO = true` en `src/lib/testena.ts`.
 
 ## Fuentes bibliográficas
