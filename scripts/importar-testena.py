@@ -5,7 +5,8 @@ Entrada: fuentes/testena-1919/fuente-ocr-archivo-ar.json (OCR por cantos, tal co
 se publicó en archivo.ar, repo carloscabanas-1327/archivo, commit 143cca7).
 Salida: andata.json, ritorno.json y corrispondenza.json en la misma carpeta.
 
-No corrige ni completa versos: copia el texto del OCR tal cual y solo agrega
+No completa versos: copia el texto del OCR tal cual, salvo las correcciones
+cotejadas con el facsímil que figuran en correzioni.json, y solo agrega
 identificadores, numeración propia de la traducción y la correspondencia por canto
 con el original de obra/. Uso: python3 scripts/importar-testena.py
 """
@@ -16,6 +17,15 @@ base = Path("fuentes/testena-1919")
 visor = "https://digital.iai.spk-berlin.de/viewer/image/835991172/"
 nombres = {1: ("andata", "ida"), 2: ("ritorno", "vuelta")}
 fuente = json.loads((base / "fuente-ocr-archivo-ar.json").read_text(encoding="utf-8"))
+# Correcciones cotejadas con el facsímil (correzioni.json): verso, texto OCR y texto impreso.
+correzioni = {c["verso"]: c for c in json.loads((base / "correzioni.json").read_text(encoding="utf-8"))["correzioni"]}
+applicate = set()
+def testo(vid, ocr):
+    c = correzioni.get(vid)
+    if not c: return ocr
+    assert c["ocr"] == ocr, f"{vid}: el OCR no coincide con correzioni.json"
+    applicate.add(vid)
+    return c["stampa"]
 corr = []
 for p in fuente["partes"]:
     slug, orig = nombres[p["parte"]]
@@ -25,7 +35,7 @@ for p in fuente["partes"]:
         n = c["canto"]
         estrofe = [
             {"numero": i, "id": f"it-{slug}-c{n:02d}-e{i:03d}",
-             "versi": [{"id": f"it-{slug}-c{n:02d}-e{i:03d}-v{j:02d}", "linea": j, "testo": v} for j, v in enumerate(e, 1)]}
+             "versi": [{"id": f"it-{slug}-c{n:02d}-e{i:03d}-v{j:02d}", "linea": j, "testo": testo(f"it-{slug}-c{n:02d}-e{i:03d}-v{j:02d}", v)} for j, v in enumerate(e, 1)]}
             for i, e in enumerate(c["estrofas"], 1)
         ]
         pagina = None if c["pagina"] == "-" else int(c["pagina"])
@@ -46,4 +56,5 @@ for p in fuente["partes"]:
 (base / "corrispondenza.json").write_text(json.dumps(
     {"nota": "Corrispondenza canto per canto fra l'originale (obra/) e la traduzione di Testena. Generata da scripts/importar-testena.py.",
      "canti": corr}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+assert applicate == set(correzioni), f"Correcciones sin aplicar: {set(correzioni) - applicate}"
 print(f"Testena: {len(corr)} cantos, {sum(c['traduzione']['versi'] for c in corr)} versos")
