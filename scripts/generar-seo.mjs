@@ -57,5 +57,5 @@ locations.sort((a,b)=>a.localeCompare(b,'en'));
 const entry=u=>{const alts=pages.get(u.slice(origin.length))?.alternates||[];return `  <url><loc>${esc(u)}</loc>${alts.map(a=>`<xhtml:link rel="alternate" hreflang="${esc(a.hreflang)}" href="${esc(a.href)}"/>`).join('')}</url>`};
 const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'+locations.map(entry).join('\n')+'\n</urlset>\n';
 await writeFile(path.join(root,'sitemap.xml'),sitemap,'utf8');
-await writeFile(path.join(root,'robots.txt'),'User-agent: *\nDisallow: /\n','utf8');
+await writeFile(path.join(root,'robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`,'utf8');
 console.log(`SEO OK: ${locations.length} indexable URLs, canonical and language verified; ${hreflangLinks} hreflang links reciprocal; sitemap.xml and robots.txt generated.`);
