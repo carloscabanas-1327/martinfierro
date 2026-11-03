@@ -3,10 +3,13 @@ import {equivalenti,hreflang,type Grupo} from '../data/equivalencias';
 interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'; lingue?:Grupo}
 const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none',lingue}=Astro.props;
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
+// Bloqueo temporal de indexación y seguimiento para TODAS las rutas /it/.
+const italianReviewHold=Astro.url.pathname==='/it' || Astro.url.pathname.startsWith('/it/');
+const robotsBlocked=noindex || italianReviewHold;
 const english=lang.toLowerCase().startsWith('en');
 const italian=lang.toLowerCase().startsWith('it');
 // hreflang recíproco: solo para páginas indexables registradas en src/data/equivalencias.ts.
-const grupo=noindex?undefined:equivalenti(Astro.url.pathname);
+const grupo=robotsBlocked?undefined:equivalenti(Astro.url.pathname);
 const alternates=grupo?(Object.entries(grupo) as [keyof typeof hreflang,string][]).map(([l,href])=>({hreflang:hreflang[l],href:new URL(href,Astro.site).toString()})):[];
 const xDefault=grupo?.es??grupo?.en;
 // Selector visible de idioma: equivalentes registrados o los que indique la página.
@@ -30,7 +33,7 @@ import '../styles/editorial-shell.css';
  <link rel="canonical" href={canonical}/>
  {alternates.map(a=><link rel="alternate" hreflang={a.hreflang} href={a.href}/>)}
  {xDefault && <link rel="alternate" hreflang="x-default" href={new URL(xDefault,Astro.site).toString()}/>}
- {noindex && <meta name="robots" content="noindex,follow"/>}
+ {robotsBlocked && <meta name="robots" content="noindex,nofollow"/>}
  <meta property="og:type" content="website"/>
  <meta property="og:site_name" content="Martín Fierro"/>
  <meta property="og:title" content={`${title} | Martín Fierro`}/>
