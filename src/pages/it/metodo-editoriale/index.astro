@@ -2,9 +2,9 @@
 import Base from '../../../layouts/Base.astro';
 import ArticoloIt from '../../../components/ArticoloIt.astro';
 ---
-<Base migas={[{label:'Fonti e metodo'}]} lang="it-IT" pageType="AboutPage" title="Fonti e metodo editoriale dell’edizione italiana"
+<Base migas={[{label:'Metodo editoriale'}]} lang="it-IT" pageType="AboutPage" title="Fonti e metodo editoriale dell’edizione italiana"
  description="Da dove vengono il testo spagnolo e la traduzione italiana di Martín Fierro pubblicati su MARTINFIERRO.ORG, come sono stati controllati e quali sono i limiti della verifica.">
-<ArticoloIt occhiello="Informazioni editoriali · 3 novembre 2026" titolo="Fonti e metodo editoriale"
+<ArticoloIt occhiello="Informazioni editoriali · 3 novembre 2026" titolo="Metodo editoriale"
  sommario="La provenienza dei testi, gli interventi documentati e i limiti della verifica, per il poema originale e per la traduzione italiana.">
  <section><h2>Il testo originale spagnolo</h2>
   <p>La base digitale del poema viene da Project Gutenberg: <em lang="es">El gaucho Martín Fierro</em> (n. 14765) e <em lang="es">La vuelta de Martín Fierro</em> (n. 15066). I file scaricati sono conservati nel repository. L’edizione digitale ripristina due versi assenti nella trascrizione adottata, normalizza il numero di una strofa e riordina una sequenza; gli interventi sono elencati nel <a href="/acerca/" lang="es">registro delle correzioni</a> (in spagnolo).</p>
@@ -15,11 +15,11 @@ import ArticoloIt from '../../../components/ArticoloIt.astro';
    <li><strong>Testo:</strong> Folco Testena, Buenos Aires, edizione della rivista «Nosotros», 1919.</li>
    <li><strong>Fonte:</strong> le immagini dell’esemplare dell’Ibero-Amerikanisches Institut di Berlino (PPN 835991172).</li>
    <li><strong>Trascrizione:</strong> OCR, separazione delle colonne italiana e spagnola, assegnazione dei canti per confronto con l’originale. 46 canti, 7.106 versi.</li>
-   <li><strong>Dati:</strong> <code>fuentes/testena-1919/</code> nel repository: scheda bibliografica (<code>ficha.json</code>), testo per canti, strofe e versi (<code>andata.json</code>, <code>ritorno.json</code>), corrispondenza con l’originale (<code>corrispondenza.json</code>) e file OCR di partenza con la sua impronta SHA-256.</li>
+   <li><strong>Dati:</strong> la scheda bibliografica, il testo diviso in canti, strofe e versi, la tabella di corrispondenza con l’originale e il file OCR di partenza sono conservati negli archivi del progetto.</li>
    <li><strong>Interventi:</strong> nessuno sul testo. Le parole errate dell’OCR restano come sono finché non vengono corrette contro il facsimile, con nota.</li>
    <li><strong>Numerazione:</strong> quella della traduzione. Non si impone la numerazione delle strofe dell’originale.</li>
   </ul>
-  <p class="it-riquadro">Finché la collazione non è completa, le 46 pagine dei canti italiani sono escluse dall’indicizzazione (<code>noindex</code>) e non sono dichiarate come equivalenti dei canti spagnoli. Quando un canto sarà verificato, basterà attivarlo nel codice (<code>TESTO_COLLAZIONATO</code> in <code>src/lib/testena.ts</code>).</p>
+  <p class="it-riquadro">Finché la collazione non è completa, le 46 pagine dei canti italiani sono escluse dai motori di ricerca e non sono collegate ai canti spagnoli come loro equivalenti. Ogni canto lo diventerà quando sarà stato verificato.</p>
  </section>
  <section><h2>Le pagine in italiano</h2>
   <p>Guide, biografia, rivista e glossario sono testi originali in italiano, scritti per questa edizione a partire dalle pagine documentate delle edizioni spagnola e inglese. Le citazioni del poema vengono solo da due fonti identificate: il testo spagnolo del sito e la traduzione di Testena. Nessun verso è stato tradotto o generato per questa edizione.</p>

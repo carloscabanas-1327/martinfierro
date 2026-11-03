@@ -13,7 +13,7 @@ const equivalenze=gruppi.filter(g=>g.it);
  <p><a href="/it/cerca/">Cerca nell’edizione italiana →</a></p>
  {sezioniIt.map(s=><section><h2>{s}</h2><div class="it-griglia">{pagineIt.filter(p=>p.sezione===s).map(p=><div><h3><a href={p.url}>{p.titolo}</a></h3><p>{p.descrizione}</p></div>)}</div></section>)}
  <section><h2>I 46 canti in italiano</h2>{(Object.keys(partiIt) as ParteIt[]).map(p=><><h3>{partiIt[p].titolo} ({partiIt[p].anno})</h3><div class="it-indice-canti">{partiIt[p].canti.map(c=><a href={urlCantoIt(p,c.numero)}>Canto {romano(c.numero)}</a>)}</div></>)}</section>
- <section><h2>Pagine equivalenti nelle altre lingue</h2><p>Queste corrispondenze sono le stesse dichiarate ai motori di ricerca con <code>hreflang</code>.</p>
+ <section><h2>Pagine equivalenti nelle altre lingue</h2><p>Ogni pagina italiana accanto alle sue versioni in spagnolo e in inglese, quando esistono.</p>
   <div class="it-tabella-wrap"><table class="it-tabella"><thead><tr><th>Italiano</th><th>Español</th><th>English</th></tr></thead><tbody>{equivalenze.map(g=><tr><td><a href={g.it}>{g.it}</a></td><td>{g.es?<a href={g.es} lang="es">{g.es}</a>:'—'}</td><td>{g.en?<a href={g.en} lang="en">{g.en}</a>:'—'}</td></tr>)}</tbody></table></div>
  </section>
 </ArticoloIt>
