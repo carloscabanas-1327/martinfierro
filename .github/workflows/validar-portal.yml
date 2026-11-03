@@ -69,7 +69,10 @@ jobs:
           html=Path('dist/index.html').read_text()
           assert '/buscar-documentos/' in html
           assert '/indice-general/' in html
-          assert 'Lectura y herramientas' in html
+          # La barra «Lectura y herramientas» se retiró por duplicada (f51d033);
+          # se exige que la portada siga enlazando a los recorridos y herramientas.
+          for destino in ['/leer/ida/','/leer/vuelta/','/buscar/','/personajes/','/exegesis/','/archivo/','/en/']:
+            assert f'href="{destino}"' in html, destino
           print('Navegación ES: destinos, cobertura y buscador documental OK')
           PY
       - name: Guardar reporte de navegación
