@@ -25,7 +25,7 @@ export const englishSections:ReferenceItem[]=[
   },
   {
     "title": "Gaucho Culture",
-    "url": "/en/argentine-gauchos/",
+    "url": "/en/what-is-a-gaucho/",
     "description": "History, traditions and the people of the pampas",
     "kind": "section",
     "lang": "en"
@@ -261,7 +261,7 @@ export const editorialPairs:EditorialPair[]=[
   {
     "subject": "Gaucho Culture",
     "spanish": "/cultura-gauchesca/",
-    "english": "/en/argentine-gauchos/",
+    "english": "/en/what-is-a-gaucho/",
     "relationship": "related"
   },
   {
