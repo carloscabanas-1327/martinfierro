@@ -27,13 +27,13 @@ const sezioni=[
   <div class="en-hero-copy">
    <p class="en-kicker">JOSÉ HERNÁNDEZ · 1872 / 1879</p>
    <h1 id="it-titolo">Martín Fierro: <em>il poema del gaucho argentino, in italiano.</em></h1>
-   <p class="en-lead">Un cavaliere, un fuorilegge, un cantore. Leggi il grande poema argentino nella prima traduzione italiana completa, accanto al testo originale di José Hernández.</p>
+   <p class="en-lead">Un cavaliere, un fuorilegge, un cantore. Leggi il grande poema argentino nella prima traduzione italiana completa, con l’originale di José Hernández a un clic.</p>
    <div class="en-actions"><a class="en-button" href={urlCantoIt('andata',1)}>Leggi il canto I <span aria-hidden="true">↗</span></a><a class="en-outline" href="#esplora">Esplora l’edizione ↓</a></div>
    <p class="en-language-note">Testo italiano: Folco Testena, Buenos Aires, 1919 ({totale.toLocaleString('it-IT')} versi in 46 canti, trascrizione in revisione). Testo originale: José Hernández, 7.210 versi in spagnolo.</p>
   </div>
  </section>
 
- <ConsejosPortada id="it-consigli" kicker="IL RITORNO · CANTO XXXII · 1879 · FEDE · STOICISMO · ETICA" titulo="I consigli di Martín Fierro ai figli" texto="Un vecchio della campagna raccoglie ciò che la vita gli ha insegnato: la fede, la padronanza di sé, il lavoro onesto, l’amicizia e l’unione fra fratelli. Leggili nella traduzione di Folco Testena, con l’originale spagnolo a fronte." llamado="Leggi i consigli" href={urlCantoIt('ritorno',32)} alt="Ricostruzione digitale di Martín Fierro, dei suoi due figli e del figlio di Cruz che ascoltano i suoi consigli accanto al fuoco e al mate"/>
+ <ConsejosPortada id="it-consigli" kicker="IL RITORNO · CANTO XXXII · 1879 · FEDE · STOICISMO · ETICA" titulo="I consigli di Martín Fierro ai figli" texto="Un vecchio della campagna raccoglie ciò che la vita gli ha insegnato: la fede, la padronanza di sé, il lavoro onesto, l’amicizia e l’unione fra fratelli. Leggili nella traduzione di Folco Testena, con un rimando all’originale spagnolo." llamado="Leggi i consigli" href={urlCantoIt('ritorno',32)} alt="Ricostruzione digitale di Martín Fierro, dei suoi due figli e del figlio di Cruz che ascoltano i suoi consigli accanto al fuoco e al mate"/>
 
  <section class="it-apertura" aria-labelledby="it-apertura-titolo">
   <p class="en-kicker">COSÌ COMINCIA IL POEMA</p>
@@ -51,8 +51,8 @@ const sezioni=[
  <section class="en-first-feature" aria-labelledby="it-rivista"><div><p class="en-kicker">RIVISTA CULTURALE</p><h2 id="it-rivista">Payadas, pulperías e il Giorno della Tradizione</h2><p>Articoli sulla cultura rurale del Río de la Plata e sulle ricorrenze legate al poema.</p><a href="/it/rivista/">Leggi la rivista ↗</a></div></section>
 
  <section id="esplora" class="en-section" aria-labelledby="it-esplora">
-  <div class="en-section-heading"><p class="en-kicker">ESPLORA LA COLLEZIONE</p><h2 id="it-esplora">Il poema, l’autore, il mondo, le fonti.</h2></div>
-  <div class="en-grid">{sezioni.map(s=><article class="en-card"><a href={s.href}><div class="en-image"><img src={s.img} alt={s.alt} loading="lazy" decoding="async"/></div><div class="en-card-copy"><span>{s.n} / LA COLLEZIONE</span><h3>{s.titolo}</h3><p>{s.testo}</p><strong>Esplora la sezione <span aria-hidden="true">↗</span></strong></div></a></article>)}</div>
+  <div class="en-section-heading"><p class="en-kicker">ESPLORA L’EDIZIONE</p><h2 id="it-esplora">Il poema, l’autore, il mondo, le fonti.</h2></div>
+  <div class="en-grid">{sezioni.map(s=><article class="en-card"><a href={s.href}><div class="en-image"><img src={s.img} alt={s.alt} loading="lazy" decoding="async"/></div><div class="en-card-copy"><span>{s.n} / L’EDIZIONE</span><h3>{s.titolo}</h3><p>{s.testo}</p><strong>Esplora la sezione <span aria-hidden="true">↗</span></strong></div></a></article>)}</div>
  </section>
 
  <section class="en-translation" aria-labelledby="it-traduzione"><div><p class="en-kicker">LA TRADUZIONE</p><h2 id="it-traduzione">Una traduzione nata a Buenos Aires.</h2><p>Folco Testena, nome d’arte del marchigiano Comunardo Braccialarghe, emigrato in Argentina nel 1910, pubblicò nel 1919 la prima versione italiana completa del poema, in versi, con l’originale a fronte. Testena morì nel 1951: la sua traduzione è oggi di pubblico dominio. La trascrizione che pubblichiamo viene dal facsimile conservato a Berlino e indica sempre la pagina di provenienza.</p><div class="en-actions"><a class="en-button" href="/it/biblioteca/traduzione-testena/">Scheda della traduzione ↗</a><a class="en-outline" href="/it/metodo-editoriale/">Fonti e metodo ↗</a></div></div><img src="/media/archivo/ejemplar-corregido-martin-fierro-1872-portada.webp" alt="Copertina della prima edizione spagnola del 1872 di El gaucho Martín Fierro; non è l’edizione di Testena" loading="lazy"/></section>

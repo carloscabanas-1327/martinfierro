@@ -7,7 +7,7 @@ export const pagineIt: VoceIt[] = [
  {sezione:'Il poema', titolo:'Il gaucho Martín Fierro (1872)', url:'/it/lettore/andata/', descrizione:'Prima parte: indice dei 13 canti in italiano.'},
  {sezione:'Il poema', titolo:'Il ritorno di Martín Fierro (1879)', url:'/it/lettore/ritorno/', descrizione:'Seconda parte: indice dei 33 canti in italiano.'},
  {sezione:'Conoscere l’opera', titolo:'Che cos’è Martín Fierro?', url:'/it/che-cose-martin-fierro/', descrizione:'Presentazione del poema: genere, storia, significato e come cominciare.'},
- {sezione:'Conoscere l’opera', titolo:'Le due parti del poema', url:'/it/le-due-parti/', descrizione:'La trama dell’andata e del ritorno, i personaggi e i temi.'},
+ {sezione:'Conoscere l’opera', titolo:'Le due parti del poema', url:'/it/le-due-parti/', descrizione:'La trama della prima parte e del ritorno, i personaggi e i temi.'},
  {sezione:'Conoscere l’opera', titolo:'Il contesto storico argentino', url:'/it/contesto-storico/', descrizione:'Frontiera, leva militare, Buenos Aires e province nell’Ottocento.'},
  {sezione:'Conoscere l’opera', titolo:'Chi era il gaucho?', url:'/it/il-gaucho/', descrizione:'Storia, lavoro e mito del cavaliere della pampa.'},
  {sezione:'Conoscere l’opera', titolo:'José Hernández', url:'/it/jose-hernandez/', descrizione:'Biografia documentata dell’autore (1834–1886).'},

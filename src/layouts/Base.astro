@@ -68,7 +68,7 @@ import '../styles/editorial-shell.css';
   <div class="editorial-topline"><div class="container"><span>{english ? "ARGENTINA · LITERATURE · CULTURE" : italian ? "ARGENTINA · LETTERATURA · CULTURA" : "ARGENTINA · LITERATURA · CULTURA"}</span><span>JOSÉ HERNÁNDEZ · 1872—1879</span><nav class="mf-lingue" aria-label={english ? "Language" : italian ? "Lingua" : "Idioma"}>{(['es','en','it'] as const).filter(l=>selettore[l]).map(l=>edicionPropia && l===linguaCorrente ? <b aria-current="page" lang={l}>{nomiLingua[l]}</b> : <a href={selettore[l]} hreflang={hreflang[l]} lang={l}>{nomiLingua[l]}</a>)}</nav></div></div>
   <div class="container editorial-masthead">
    <a class="brand" href={english ? "/en/" : italian ? "/it/" : "/"} aria-label={english ? "Martín Fierro — English edition" : italian ? "Martín Fierro — edizione italiana" : "Martín Fierro — inicio"}><span>Martín Fierro<small>{english ? "Documentary library & cultural magazine" : italian ? "Biblioteca documentaria & rivista culturale" : "Biblioteca documental & revista cultural"}</small></span></a>
-   <a class="editorial-read" href={english ? "/en/students/" : italian ? "/it/lettore/andata/1/" : "/leer/ida/1/"}>{english ? "STUDY THE POEM" : italian ? "LEGGI IL POEMA" : "LEER LA OBRA"} <span aria-hidden="true">↗</span></a>
+   <a class="editorial-read" href={english ? "/en/students/" : italian ? "/it/lettore/andata/1/" : "/leer/ida/1/"}>{english ? "STUDY THE POEM" : italian ? "LEGGI IL CANTO I" : "LEER LA OBRA"} <span aria-hidden="true">↗</span></a>
   </div>
   <div class="editorial-nav-wrap">
    <div class="container">

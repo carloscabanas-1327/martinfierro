@@ -1,7 +1,7 @@
 ---
 import Base from '../../../../layouts/Base.astro';
 import ArticoloIt from '../../../../components/ArticoloIt.astro';
-const voci=[
+const voci:{voce:string;tipo:string;significato:string;contesto:string;url:string;link?:string;lingua?:string}[]=[
  {voce:'Gaucho',tipo:'Termine storico e culturale',significato:'Cavaliere delle praterie dell’Argentina e delle regioni vicine. Non è semplicemente un cowboy americano.',contesto:'Indica lavoro, abilità, posizione sociale e un’identità letteraria discussa. Fierro parla come un gaucho, non a nome di tutti.',url:'/it/il-gaucho/'},
  {voce:'Payada',tipo:'Poesia orale e musica',significato:'Poesia cantata e improvvisata del Río de la Plata, spesso a botta e risposta fra due cantori accompagnati dalla chitarra.',contesto:'Il Moreno e Fierro si sfidano in una payada che riapre una violenza irrisolta.',url:'/it/rivista/payada/'},
  {voce:'Payador',tipo:'Persona',significato:'Il cantore-poeta che esegue una payada.',contesto:'La sua arte sta nell’invenzione verbale e nella risposta alle sfide.',url:'/it/rivista/payada/'},
@@ -11,11 +11,11 @@ const voci=[
  {voce:'Partida',tipo:'Gruppo armato',significato:'Pattuglia formata per un compito preciso; nel poema, spesso la forza che insegue qualcuno.',contesto:'Cruz fa parte della pattuglia che dà la caccia a Fierro prima di difenderlo.',url:'/it/lettore/andata/9/'},
  {voce:'Facón',tipo:'Cultura materiale',significato:'Lungo coltello associato al gaucho storico.',contesto:'Le descrizioni dei duelli al coltello non vanno lette come un elogio della violenza.',url:'/it/il-gaucho/'},
  {voce:'Mate',tipo:'Bevanda',significato:'Infuso di foglie di yerba mate; la parola indica anche il recipiente.',contesto:'Pratica quotidiana condivisa nella vita rurale e urbana del Río de la Plata.',url:'/it/il-gaucho/'},
- {voce:'Paisano',tipo:'Forma di appello',significato:'Uomo di campagna, compaesano, secondo il contesto.',contesto:'Nel poema segnala solidarietà ed esperienza rurale comune.',url:'/it/lettore/ritorno/33/'},
- {voce:'Moreno',tipo:'Designazione storica',significato:'Termine che indica la pelle scura; nel poema designa un cantore afrodiscendente.',contesto:'Il Moreno della payada non è l’uomo ucciso nella prima parte, ma suo fratello. Va discusso con attenzione al contesto ottocentesco.',url:'/it/lettore/ritorno/30/'},
- {voce:'Vecchio Vizcacha',tipo:'Nome di personaggio',significato:'Viejo significa «vecchio»; la vizcacha è un roditore sudamericano che vive in tane.',contesto:'Il soprannome invita a paragoni con l’animale; va distinto ciò che è certo da ciò che è congettura.',url:'/it/lettore/ritorno/15/'},
- {voce:'Picardía',tipo:'Nome di personaggio e parola comune',significato:'Furbizia, malizia, astuzia: secondo il contesto, ingegno scherzoso o inganno.',contesto:'Il figlio di Cruz porta questo soprannome, che lo segue anche dopo aver cercato di correggersi.',url:'/it/lettore/ritorno/26/'},
- {voce:'Naides',tipo:'Lingua poetica gauchesca',significato:'Forma popolare di «nadie», «nessuno».',contesto:'La poesia gauchesca usa queste forme per creare una voce rurale riconoscibile.',url:'/leer/ida/1/'},
+ {voce:'Paisano',tipo:'Appellativo',significato:'Uomo di campagna, compaesano, secondo il contesto.',contesto:'Nel poema segnala solidarietà ed esperienza rurale comune.',url:'/it/lettore/ritorno/33/'},
+ {voce:'Moreno',tipo:'Designazione storica',significato:'Termine che indica la pelle scura; nel poema designa un cantore afroargentino.',contesto:'Il Moreno della payada non è l’uomo ucciso nella prima parte, ma suo fratello. Va discusso con attenzione al contesto ottocentesco.',url:'/it/lettore/ritorno/30/'},
+ {voce:'Vecchio Vizcacha',tipo:'Nome di personaggio',significato:'Viejo significa «vecchio»; la vizcacha è un roditore sudamericano che vive in tane.',contesto:'Il soprannome fa pensare all’animale, ma il paragone resta un’ipotesi del lettore.',url:'/it/lettore/ritorno/15/'},
+ {voce:'Picardía',tipo:'Nome di personaggio e parola comune',significato:'Furbizia, malizia, astuzia: secondo il contesto, ingegno scherzoso o inganno.',contesto:'Il figlio di Cruz porta questo soprannome, che gli resta addosso anche dopo che ha provato a cambiare vita.',url:'/it/lettore/ritorno/26/'},
+ {voce:'Naides',tipo:'Lingua poetica gauchesca',significato:'Forma popolare di «nadie», «nessuno».',contesto:'La poesia gauchesca usa queste forme per creare una voce rurale riconoscibile.',url:'/leer/ida/1/',link:'Leggi il canto I in spagnolo →',lingua:'es'},
  {voce:'Canto',tipo:'Struttura letteraria',significato:'Sezione numerata di un poema lungo, simile a un capitolo.',contesto:'Le due parti hanno 13 e 33 canti.',url:'/it/lettore/'},
  {voce:'Strofa e verso',tipo:'Struttura letteraria',significato:'La strofa è un gruppo di versi; il verso è una riga poetica, non sempre una frase completa.',contesto:'Il poema è scritto per lo più in sestine di ottonari; la traduzione di Testena ne conserva la forma.',url:'/it/biblioteca/traduzione-testena/'}
 ];
@@ -23,10 +23,10 @@ const voci=[
 <Base migas={[{label:'Per gli studenti',href:'/it/studenti/'},{label:'Glossario'}]} lang="it-IT" pageType="Article" title="Glossario di Martín Fierro: parole gauchesche spiegate"
  description="Glossario per studenti di Martín Fierro: payada, pulpería, fortín, facón, leva, Moreno, Vizcacha, Picardía e altre parole del poema spiegate in italiano.">
 <ArticoloIt occhiello="Per gli studenti · Parole nel contesto" titolo="Glossario gauchesco"
- sommario="Le parole del poema si capiscono meglio dentro la storia che sostituendole con un equivalente italiano. Ogni voce spiega il significato e il ruolo nel Martín Fierro."
+ sommario="Le parole del poema si capiscono meglio nel loro contesto che cercando un equivalente italiano. Ogni voce spiega il significato e il ruolo nel Martín Fierro."
  fonti={[{nome:'Gaucho glossary — edizione inglese',url:'/en/students/glossary/',lingua:'en'},{nome:'Diccionario de americanismos (ASALE)',url:'https://www.asale.org/damer/',lingua:'es'}]}
  notaFonti="Le definizioni sono spiegazioni per i lettori, non sostituiscono i versi di Hernández.">
- <dl class="it-glossario">{voci.map(v=><div><dt lang="es">{v.voce}</dt><dd><p class="it-glossario-tipo">{v.tipo}</p><p><strong>Significato:</strong> {v.significato}</p><p><strong>Nel poema:</strong> {v.contesto}</p><p><a href={v.url}>Approfondisci →</a></p></dd></div>)}</dl>
+ <dl class="it-glossario">{voci.map(v=><div><dt lang="es">{v.voce}</dt><dd><p class="it-glossario-tipo">{v.tipo}</p><p><strong>Significato:</strong> {v.significato}</p><p><strong>Nel poema:</strong> {v.contesto}</p><p><a href={v.url} lang={v.lingua}>{v.link ?? 'Approfondisci →'}</a></p></dd></div>)}</dl>
 </ArticoloIt>
 <style>.it-glossario>div{border-top:1px solid #c6b6a3;padding:16px 0}.it-glossario dt{font:600 1.5rem Georgia,serif}.it-glossario dd{margin:0}.it-glossario p{margin:6px 0}.it-glossario-tipo{font:700 .72rem system-ui,sans-serif!important;letter-spacing:.1em;text-transform:uppercase;color:#8a523a}</style>
 </Base>

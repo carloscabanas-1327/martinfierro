@@ -13,7 +13,7 @@ const parti=Object.keys(partiIt) as ParteIt[];
  <p class="lead">Il poema è diviso in due libri: <em lang="es">El gaucho Martín Fierro</em> (1872) e <em lang="es">La vuelta de Martín Fierro</em> (1879). Qui li leggi nella prima traduzione italiana completa, in versi, pubblicata a Buenos Aires da Folco Testena nel 1919.</p>
  <div class="cards">{parti.map(p=><a class="card" href={`/it/lettore/${p}/`}><p class="eyebrow">{partiIt[p].etichetta} · {partiIt[p].anno}</p><h2>{partiIt[p].titolo}</h2><p>{partiIt[p].canti.length} canti · {versiDiParte(p).toLocaleString('it-IT')} versi</p></a>)}</div>
  <section class="section">
-  <h2>Quale testo state leggendo</h2>
+  <h2>Quale testo stai leggendo</h2>
   <ul>
    <li><strong>Traduttore:</strong> Folco Testena, pseudonimo di Comunardo Braccialarghe (Macerata 1875 – Buenos Aires 1951).</li>
    <li><strong>Edizione:</strong> Buenos Aires, edizione della rivista «Nosotros», 1919. Bilingue, con lo spagnolo a fronte; qui si riproduce la colonna italiana.</li>

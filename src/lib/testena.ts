@@ -15,8 +15,8 @@ type DatiParte = {parte:ParteIt; parte_originale:'ida'|'vuelta'; titolo:string; 
 export const TESTO_COLLAZIONATO = false;
 
 export const partiIt: Record<ParteIt, DatiParte & {anno:number; etichetta:string; descrizione:string}> = {
- andata:{...(andata as DatiParte), anno:1872, etichetta:'Prima parte', descrizione:'L’andata: Fierro perde la casa, serve alla frontiera, diventa fuggiasco e trova in Cruz un amico.'},
- ritorno:{...(ritorno as DatiParte), anno:1879, etichetta:'Seconda parte', descrizione:'Il ritorno: la morte di Cruz, la fuga, l’incontro con i figli, la payada con il Moreno e i consigli.'}
+ andata:{...(andata as DatiParte), anno:1872, etichetta:'Prima parte', descrizione:'Fierro perde la casa, serve alla frontiera, diventa fuggiasco e trova in Cruz un amico.'},
+ ritorno:{...(ritorno as DatiParte), anno:1879, etichetta:'Seconda parte', descrizione:'La morte di Cruz, la fuga, l’incontro con i figli, la payada con il Moreno e i consigli.'}
 };
 export const parteOriginale = (p:ParteIt) => partiIt[p].parte_originale;
 export const urlCantoIt = (p:ParteIt, n:number) => `/it/lettore/${p}/${n}/`;

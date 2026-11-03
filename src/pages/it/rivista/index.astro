@@ -4,7 +4,7 @@ import ArticoloIt from '../../../components/ArticoloIt.astro';
 const articoli=[
  {url:'/it/rivista/giorno-della-tradizione/',occhiello:'Storia culturale · 10 novembre',titolo:'Il Giorno della Tradizione',testo:'Perché l’Argentina celebra la tradizione nel giorno in cui nacque José Hernández, e come una festa provinciale del 1939 diventò nazionale nel 1975.',img:'/media/fotografias-v3/revista-cultural.webp'},
  {url:'/it/rivista/payada/',occhiello:'Il mondo gaucho · Musica e poesia',titolo:'La payada',testo:'Payadores, chitarra e contrappunto: la poesia cantata e improvvisata che diede voce al Martín Fierro.',img:'/media/fotografias-v3/el-moreno.webp'},
- {url:'/it/rivista/pulperie/',occhiello:'Storia sociale · Río de la Plata',titolo:'La pulpería',testo:'Emporio, osteria e luogo di notizie: lo spazio sociale della campagna, e le scene del poema che vi accadono.',img:'/media/fotografias-v3/mate-pava-yerba.webp'}
+ {url:'/it/rivista/pulperie/',occhiello:'Storia sociale · Río de la Plata',titolo:'La pulpería',testo:'Emporio, osteria e luogo di notizie: lo spazio sociale della campagna, e le scene del poema che vi si svolgono.',img:'/media/fotografias-v3/mate-pava-yerba.webp'}
 ];
 ---
 <Base migas={[{label:'Rivista'}]} lang="it-IT" pageType="CollectionPage" title="Rivista culturale: tradizioni del Río de la Plata"
@@ -12,7 +12,7 @@ const articoli=[
 <ArticoloIt occhiello="Rivista culturale · In italiano" titolo="Rivista culturale"
  sommario="Articoli sulla cultura rurale del Río de la Plata e sulle ricorrenze legate al poema, scritti per lettori italiani e sempre con le fonti indicate.">
  <div class="it-rivista">{articoli.map(a=><article><a href={a.url}><img src={a.img} alt="" loading="lazy" decoding="async"/><p class="it-occhiello">{a.occhiello}</p><h2>{a.titolo}</h2><p>{a.testo}</p><strong>Leggi l’articolo →</strong></a></article>)}</div>
- <section><h2>Altri articoli in spagnolo e in inglese</h2><p>La rivista spagnola e quella inglese hanno altri articoli su fortini, donne della frontiera, popoli indigeni, mate e abiti gauchos.</p><p><a href="/revista/" lang="es">Revista cultural (in spagnolo)</a> · <a href="/en/magazine/" lang="en">Cultural magazine (in inglese)</a></p></section>
+ <section><h2>Altri articoli in spagnolo e in inglese</h2><p>La rivista spagnola e quella inglese hanno altri articoli su fortini, donne della frontiera, popoli indigeni, mate e abbigliamento del gaucho.</p><p><a href="/revista/" lang="es">Revista cultural (in spagnolo)</a> · <a href="/en/magazine/" lang="en">Cultural magazine (in inglese)</a></p></section>
 </ArticoloIt>
 <style>.it-rivista{display:grid;gap:22px}.it-rivista article{border-top:2px solid #382d25;background:#f3ecdf}.it-rivista a{display:grid;grid-template-columns:220px 1fr;grid-template-rows:auto auto auto 1fr;column-gap:22px;text-decoration:none;color:inherit;padding:0 20px 18px 0}.it-rivista img{grid-row:1/5;width:100%;height:100%;min-height:200px;object-fit:cover}.it-rivista h2{margin:4px 0 8px!important}.it-rivista strong{font:700 .82rem system-ui,sans-serif;text-decoration:underline}.it-rivista .it-occhiello{margin-top:18px}@media(max-width:600px){.it-rivista a{grid-template-columns:1fr;padding:0 0 16px}.it-rivista img{grid-row:auto;height:200px}.it-rivista a>*:not(img){padding:0 16px}}</style>
 </Base>
