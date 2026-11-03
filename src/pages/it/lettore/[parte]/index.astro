@@ -2,6 +2,7 @@
 import EditorialSection from '../../../../components/EditorialSection.astro';
 import Base from '../../../../layouts/Base.astro';
 import '../../../../styles/edizione-italiana.css';
+import {sintesiIt} from '../../../../data/it-canti';
 import {partiIt,urlCantoIt,urlCantoOriginale,versiDiCanto,versiDiParte,romano,corrispondenzaCanto,type ParteIt} from '../../../../lib/testena';
 export function getStaticPaths(){return (Object.keys(partiIt) as ParteIt[]).map(parte=>({params:{parte},props:{parte}}));}
 const {parte}=Astro.props as {parte:ParteIt};
@@ -16,7 +17,7 @@ const libro=partiIt[parte];
  <p class="mf-it-avviso">Trascrizione OCR dell’edizione del 1919, in revisione. Ogni canto rimanda al testo spagnolo e all’immagine della pagina stampata.</p>
  <p><a class="btn" href={urlCantoIt(parte,1)}>Comincia dal canto I</a></p>
  <section class="section"><h2>Indice dei canti</h2><div class="cards">
- {libro.canti.map(c=>{const k=corrispondenzaCanto(parte,c.numero);return <article class="card"><p class="eyebrow">Canto {romano(c.numero)}</p><h3><a href={urlCantoIt(parte,c.numero)}>Leggi il canto {romano(c.numero)}</a></h3><p>{versiDiCanto(c)} versi nella traduzione · {k.originale.versi} nell’originale</p><p><a href={urlCantoOriginale(parte,c.numero)} lang="es">Originale spagnolo</a> · <a href={c.url_facsimile} target="_blank" rel="noopener noreferrer">Facsimile ↗</a></p></article>})}
+ {libro.canti.map(c=>{const k=corrispondenzaCanto(parte,c.numero);return <article class="card"><p class="eyebrow">Canto {romano(c.numero)}</p><h3><a href={urlCantoIt(parte,c.numero)}>{sintesiIt[parte][c.numero-1]?.titolo ?? `Leggi il canto ${romano(c.numero)}`}</a></h3><p>{versiDiCanto(c)} versi nella traduzione · {k.originale.versi} nell’originale</p><p><a href={urlCantoOriginale(parte,c.numero)} lang="es">Originale spagnolo</a> · <a href={c.url_facsimile} target="_blank" rel="noopener noreferrer">Facsimile ↗</a></p></article>})}
  </div></section>
 </EditorialSection>
 </Base>
