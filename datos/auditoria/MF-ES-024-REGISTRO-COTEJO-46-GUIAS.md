@@ -190,3 +190,12 @@ En el commit inicial `90b64719c289d346d0529f4d0c6be699ff9d77f7`, **antes de esta
 - [Informe con evidencia textual](MF-ES-024-SEGUNDA-LECTURA-VUELTA-11-12-2026-11-03.md): comprobados en XI el balance de diez años (655:25–36), el reencuentro (655:87–112), la noticia de la muerte de la esposa (655:121–134) y las justificaciones del narrador; en XII el desamparo (657–665), la voz filial (656) y el trabajo y la imputación (666–667). Se cotejaron las interpretaciones, preguntas, notas y glosas pertinentes a los pasajes indicados.
 - **Errores nuevos demostrados: 0; correcciones de contenido: 0.** Informe creado en commit `d134fdaf2a7e897e5a66afac3209013405846015` y verificado mediante lectura posterior. No se alteraron corpus, `main`, despliegues ni indexación.
 - **Pruebas:** lectura documental y cotejo manual de pasajes; no se certificó CI de Astro ni aprobación editorial del HEAD. **Próxima ejecución:** lectura completa de XII (668–703), restantes glosas/notas y consulta de CI. Auditoría integral abierta.
+
+
+### Segunda lectura completa — Vuelta XII (2026-11-03)
+
+- **Cobertura histórica: 46/46; guías nuevas: 0.** Se completó la segunda lectura del canto XII, estrofas **656–718** (63 estrofas, 378 versos), incluido el tramo **668–718** pendiente en el informe anterior.
+- [Informe de cotejo por pasajes](MF-ES-024-SEGUNDA-LECTURA-VUELTA-12-COMPLETA-2026-11-03.md): matriz de evidencia para relato del hijo mayor, acusación y proceso (666–673), aislamiento (674–697), analfabetismo y prohibiciones (698–703), palabra y amistad (704–713), y valoración matizada de carceleros (714–718). Revisados análisis, tres preguntas, cinco glosas, dos notas, voz y referencias.
+- **Errores inequívocos nuevos: 0; correcciones de contenido: 0.** La glosa «pampa» es vaga, pero no se demostró un error afirmativo; no se cambió.
+- Informe añadido en commit `c34774aed1247a78f4f53f4e1ab4f248ce696e5a` y comprobado por lectura posterior. SHA de blob de Vuelta sin cambios: `8034740ca956cf77daf2aa76a2ca5bfbf2199987`.
+- **Pruebas:** cotejo manual de 63 estrofas, 378 versos, 5 glosas y 3 preguntas; **CI Astro y auditoría editorial no certificados**. Próxima ejecución: verificar CI concluyente del HEAD y continuar lecturas contextuales. Sin alterar corpus, `main`, despliegues ni indexación. **Auditoría abierta**.
