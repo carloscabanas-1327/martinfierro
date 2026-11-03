@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+  <!-- Español (Argentina) -->
+  <svg x="0" width="20%" height="100%" viewBox="0 0 9 6" preserveAspectRatio="xMidYMid slice">
+    <rect width="9" height="6" fill="#74acdf"/><rect y="2" width="9" height="2" fill="#fff"/><circle cx="4.5" cy="3" r=".55" fill="#f6b40e"/>
+  </svg>
+  <!-- English (Reino Unido) -->
+  <svg x="20%" width="20%" height="100%" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice">
+    <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+    <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+    <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#c8102e" stroke-width="4"/>
+    <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+    <path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6"/>
+  </svg>
+  <!-- Italiano -->
+  <svg x="40%" width="20%" height="100%" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice">
+    <rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/>
+  </svg>
+  <!-- Português (Brasil) -->
+  <svg x="60%" width="20%" height="100%" viewBox="0 0 30 20" preserveAspectRatio="xMidYMid slice">
+    <rect width="30" height="20" fill="#009c3b"/><path d="M15,2.5 L27.5,10 L15,17.5 L2.5,10 z" fill="#ffdf00"/><circle cx="15" cy="10" r="4.2" fill="#002776"/>
+  </svg>
+  <!-- Français -->
+  <svg x="80%" width="20%" height="100%" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice">
+    <rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ed2939"/>
+  </svg>
+</svg>

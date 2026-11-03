@@ -278,6 +278,14 @@ body:has(.mf-revista) main.container{
 .mf-revista .mf-lead h1{font-size:clamp(2.8rem,4.1vw,5.1rem);line-height:1.045;overflow-wrap:normal;text-wrap:balance}
 .mf-revista .mf-lead-actions{width:min(100%,340px);gap:10px}
 .mf-revista .mf-lead-copy>.mf-language-toplink{min-height:36px;width:fit-content;max-width:100%;padding:6px 0;margin:12px 0 20px;border:0;background:transparent;font-size:.83rem;text-decoration:underline;text-underline-offset:4px}
+/* «Otros idiomas» como tercer botón: mismas medidas que los dos de arriba, fondo con banderas
+   de los idiomas del sitio y texto negro sobre un velo claro para que se lea. */
+.mf-revista .mf-lead-copy>.mf-language-toplink{width:min(100%,340px);min-height:48px;padding:9px 12px;gap:8px;margin:10px 0 22px;border:1px solid #53372e;border-radius:3px;color:#111!important;background:#fbf5ea url(/media/idiomas/banderas-collage.svg) center/100% 100% no-repeat;font-size:.9rem;text-decoration:none}
+.mf-revista .mf-lead-copy>.mf-language-toplink span{margin-left:0;padding:3px 8px;white-space:nowrap;border-radius:3px;background:rgba(255,255,255,.88);color:#111}
+.mf-revista .mf-lead-copy>.mf-language-toplink .mf-language-toplink-arrow{margin-left:auto;padding:3px 7px}
+@media(max-width:360px){.mf-revista .mf-lead-copy>.mf-language-toplink{font-size:.8rem}}
+.mf-revista .mf-lead-copy>.mf-language-toplink:hover,.mf-revista .mf-lead-copy>.mf-language-toplink:focus-visible{border-color:#111;box-shadow:0 0 0 2px #111 inset}
+.mf-revista .mf-lead-copy>.mf-language-toplink:hover .mf-language-toplink-text,.mf-revista .mf-lead-copy>.mf-language-toplink:focus-visible .mf-language-toplink-text{text-decoration:underline;text-underline-offset:3px}
 .mf-revista .mf-storyline{padding-top:clamp(42px,5vw,72px);padding-bottom:clamp(48px,6vw,84px)}
 .mf-revista .mf-story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,2.5vw,34px);align-items:start}
 .mf-revista .mf-feature-story,.mf-revista .mf-side-story{min-width:0;align-self:stretch}
