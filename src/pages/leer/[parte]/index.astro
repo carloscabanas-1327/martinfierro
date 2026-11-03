@@ -7,9 +7,8 @@ export function getStaticPaths(){return (Object.keys(partes) as Array<keyof type
 const {parte}=Astro.props as {parte:keyof typeof partes};
 const libro=partes[parte];
 ---
-<Base title={`Índice de ${libro.nombre}`} adKind="category">
+<Base migas={[{label:"Leer",href:"/leer/"},{label:libro.nombre}]} title={`Índice de ${libro.nombre}`} adKind="category">
 <EditorialSection kind="category" image={parte==='ida'?'/media/fotografias-v3/la-ida.webp':'/media/fotografias-v3/la-vuelta.webp'} label="ÍNDICE DE CANTOS · EDICIÓN LITERARIA">
- <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span><a href="/leer/">Leer</a></span><span>{libro.nombre}</span></nav>
  <p class="eyebrow">{libro.anio} · {libro.cantos.length} cantos</p>
  <h1>{libro.nombre}</h1><p class="lead">Elegí un canto para leerlo, o comenzá por el primero. Los enlaces a las estrofas y versos son permanentes.</p>
  <p><a class="btn" href={enlaceCanto(parte,1)}>Comenzar</a></p>

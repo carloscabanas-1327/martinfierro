@@ -3,11 +3,10 @@ import Base from '../../../layouts/Base.astro';
 import ArticoloIt from '../../../components/ArticoloIt.astro';
 import {VISORE_IAI} from '../../../lib/testena';
 ---
-<Base lang="it-IT" pageType="CollectionPage" title="Biblioteca di Martín Fierro: edizioni, traduzioni e fonti"
+<Base migas={[{label:'Biblioteca'}]} lang="it-IT" pageType="CollectionPage" title="Biblioteca di Martín Fierro: edizioni, traduzioni e fonti"
  description="La biblioteca dell’edizione italiana: il testo originale, la traduzione di Folco Testena, le altre versioni italiane, gli studi critici e gli archivi dove consultare le fonti.">
 <ArticoloIt occhiello="Biblioteca · Fonti documentarie" titolo="Biblioteca e fonti"
  sommario="Dove vengono i testi che leggi in questo sito, quali altre edizioni e traduzioni esistono, e dove consultare documenti e studi. Distinguiamo sempre ciò che pubblichiamo da ciò che colleghiamo soltanto."
- percorso={[{label:'Biblioteca'}]}
  immagine="/media/fotografias-v3/biblioteca-critica.webp" alt="Ricostruzione digitale di una biblioteca" didascalia="Ricostruzione digitale editoriale; non è una fotografia storica.">
  <section><h2>I testi pubblicati in questo sito</h2><div class="it-griglia">
   <div><h3><a href="/leer/" lang="es">Il poema originale</a></h3><p>José Hernández, <em lang="es">El gaucho Martín Fierro</em> (1872) e <em lang="es">La vuelta de Martín Fierro</em> (1879): 46 canti e 7.210 versi, con controllo tecnico documentato.</p></div>

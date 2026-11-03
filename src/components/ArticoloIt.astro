@@ -1,11 +1,10 @@
 ---
 // Plantilla de artículo de la edición italiana (misma tipografía y paleta que /en/).
 import '../styles/edizione-italiana.css';
-interface Props {occhiello:string; titolo:string; sommario:string; percorso:{label:string; href?:string}[]; immagine?:string; alt?:string; didascalia?:string; fonti?:{nome:string; url:string; lingua?:string}[]; notaFonti?:string}
-const {occhiello,titolo,sommario,percorso,immagine,alt='',didascalia,fonti=[],notaFonti}=Astro.props;
+interface Props {occhiello:string; titolo:string; sommario:string; immagine?:string; alt?:string; didascalia?:string; fonti?:{nome:string; url:string; lingua?:string}[]; notaFonti?:string}
+const {occhiello,titolo,sommario,immagine,alt='',didascalia,fonti=[],notaFonti}=Astro.props;
 ---
 <article class="it-articolo" lang="it">
- <nav class="it-percorso" aria-label="Percorso"><a href="/it/">Edizione italiana</a>{percorso.map(p=><><span aria-hidden="true">/</span>{p.href?<a href={p.href}>{p.label}</a>:<span aria-current="page">{p.label}</span>}</>)}</nav>
  <header class="it-testata">
   <p class="it-occhiello">{occhiello}</p>
   <h1 set:html={titolo}/>

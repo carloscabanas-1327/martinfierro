@@ -351,9 +351,8 @@ const totalEnlaces=grupos.reduce((n,g)=>n+g.enlaces.length,0)+totalCantos;
 const rutas=grupos.flatMap(g=>g.enlaces.map(e=>e.url));
 if(new Set(rutas).size!==rutas.length) throw new Error("Enlaces duplicados en el índice general");
 ---
-<Base title="Índice general del sitio — Directorio de contenidos" description="Directorio completo de Martín Fierro: secciones, investigaciones culturales, idiomas, documentos, legales y los 46 cantos de la obra.">
+<Base migas={[{label:"Índice general"}]} title="Índice general del sitio — Directorio de contenidos" description="Directorio completo de Martín Fierro: secciones, investigaciones culturales, idiomas, documentos, legales y los 46 cantos de la obra.">
 <article class="mf-directorio">
-  <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a><span>Índice general</span></nav>
   <header class="mf-directorio-header">
     <p class="mf-directorio-kicker">DIRECTORIO EDITORIAL · MARTINFIERRO.ORG</p>
     <h1>Índice general del sitio</h1>

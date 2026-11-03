@@ -7,10 +7,9 @@ export function getStaticPaths(){return (Object.keys(partiIt) as ParteIt[]).map(
 const {parte}=Astro.props as {parte:ParteIt};
 const libro=partiIt[parte];
 ---
-<Base lang="it-IT" pageType="CollectionPage" title={`${libro.titolo}: indice dei canti in italiano`}
+<Base migas={[{label:"Lettore",href:"/it/lettore/"},{label:libro.titolo}]} lang="it-IT" pageType="CollectionPage" title={`${libro.titolo}: indice dei canti in italiano`}
  description={`${libro.titolo} (${libro.anno}) di José Hernández nella traduzione italiana di Folco Testena: ${libro.canti.length} canti, ciascuno con l’originale spagnolo e il facsimile.`}>
 <EditorialSection kind="category" image={parte==='andata'?'/media/fotografias-v3/la-ida.webp':'/media/fotografias-v3/la-vuelta.webp'} imageAlt="Ricostruzione digitale della pampa argentina" label="INDICE DEI CANTI · TRADUZIONE ITALIANA" heroLabel="Immagine di ambientazione" credit="Immagine di ambientazione: ricostruzione digitale contemporanea, non fotografia storica.">
- <nav class="breadcrumbs" aria-label="Percorso"><a href="/it/">Home</a><span><a href="/it/lettore/">Lettore</a></span><span>{libro.titolo}</span></nav>
  <p class="eyebrow">{libro.etichetta} · {libro.anno} · {libro.canti.length} canti · {versiDiParte(parte).toLocaleString('it-IT')} versi</p>
  <h1>{libro.titolo}</h1>
  <p class="lead">{libro.descrizione} Titolo originale: <em lang="es">{libro.titolo_originale}</em>.</p>
