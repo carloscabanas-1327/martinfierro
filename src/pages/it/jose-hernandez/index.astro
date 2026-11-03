@@ -1,0 +1,57 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ArticoloIt from '../../../components/ArticoloIt.astro';
+const cronologia=[
+ ['1834','Nasce il 10 novembre a Perdriel, nell’attuale partido di General San Martín (provincia di Buenos Aires).'],
+ ['anni ’40','Vive e lavora nella campagna di Buenos Aires e conosce da vicino la vita dell’allevamento.'],
+ ['anni ’50–’60','Partecipa ai conflitti politici e militari e comincia la carriera di giornalista.'],
+ ['1863','Pubblica lo scritto sul caudillo federale Ángel Vicente Peñaloza, detto «el Chacho».'],
+ ['1869','Fonda il giornale El Río de la Plata.'],
+ ['1872','Pubblica El gaucho Martín Fierro.'],
+ ['1879','Pubblica La vuelta de Martín Fierro.'],
+ ['1882','Pubblica Instrucción del estanciero, manuale pratico di gestione di una tenuta.'],
+ ['1886','Muore il 21 ottobre a Belgrano, Buenos Aires.']
+];
+---
+<Base lang="it-IT" pageType="Article" title="José Hernández: biografia dell’autore di Martín Fierro"
+ description="Chi era José Hernández (1834–1886): la vita, il giornalismo, la politica e la scrittura di Martín Fierro, con cronologia e fonti documentarie.">
+<ArticoloIt occhiello="Letteratura argentina · Biografia documentata" titolo="José Hernández, <em>l’autore di Martín Fierro</em>"
+ sommario="Hernández non scrisse della campagna argentina da lontano. Lavoratore rurale, militare, giornalista e uomo politico, conobbe da dentro le tensioni che avrebbero dato forma al suo poema più famoso."
+ percorso={[{label:'José Hernández'}]}
+ immagine="https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg" alt="Ritratto fotografico storico di José Hernández" didascalia="Ritratto storico di José Hernández, da Wikimedia Commons (fotografo sconosciuto). A differenza delle illustrazioni del sito, è una fotografia d’epoca."
+ fonti={[
+  {nome:'Biblioteca Virtual Miguel de Cervantes — cronologia di José Hernández',url:'https://www.cervantesvirtual.com/portales/jose_hernandez/autor_cronologia/',lingua:'es'},
+  {nome:'Biblioteca Nacional Mariano Moreno — «10 de noviembre de 1834: nace José Hernández»',url:'https://www.bn.gob.ar/noticias/10-de-noviembre-de-1834-nace-jose-hernandez',lingua:'es'},
+  {nome:'Biblioteca Virtual Miguel de Cervantes — «Homenaje a José Hernández (1834–1886)»',url:'https://www.cervantesvirtual.com/obra-visor/homenaje-a-jose-hernandez-1834-1886/html/10d05a70-a0f8-11e1-b1fb-00163ebf5e63_2.html',lingua:'es'},
+  {nome:'Biblioteca Pública de las Misiones — lettera autografa alla moglie, 1865',url:'https://repositorio.bpm.parquedelconocimiento.com/handle/bpm/386',lingua:'es'},
+  {nome:'Biografia nell’edizione spagnola del sito',url:'/jose-hernandez/',lingua:'es'}
+ ]}
+ notaFonti="Biografia originale in italiano; date e dati editoriali sono controllati sulle cronologie documentarie indicate.">
+ <section class="it-scheda" aria-labelledby="scheda"><h2 id="scheda">In breve</h2><dl>
+  <div><dt>Nome completo</dt><dd>José Rafael Hernández y Pueyrredón</dd></div>
+  <div><dt>Nascita</dt><dd>10 novembre 1834, Perdriel (provincia di Buenos Aires)</dd></div>
+  <div><dt>Morte</dt><dd>21 ottobre 1886, Belgrano (Buenos Aires)</dd></div>
+  <div><dt>Opere principali</dt><dd><em lang="es">El gaucho Martín Fierro</em> (1872), <em lang="es">La vuelta de Martín Fierro</em> (1879)</dd></div>
+  <div><dt>Altri scritti</dt><dd>Giornalismo, <em lang="es">Vida del Chacho</em>, <em lang="es">Instrucción del estanciero</em></dd></div>
+ </dl></section>
+ <section><h2>Da Perdriel alla campagna</h2>
+  <p>José Hernández nacque il 10 novembre 1834 a Perdriel, vicino a Buenos Aires, da Rafael Hernández e Isabel Pueyrredón. Le divisioni politiche dell’Argentina del tempo non erano astrazioni: modellavano famiglie, istituzioni e vita quotidiana. Studiò a Buenos Aires, ma gli anni passati in campagna, nelle zone di Camarones e Laguna de los Padres, lo misero a contatto con i lavoratori rurali e con il mestiere dell’allevamento.</p>
+  <p>Sarebbe però fuorviante descriverlo come un gaucho che mise per iscritto la sua vita. Hernández era un uomo colto, un attore politico e un giornalista esperto: la voce di Martín Fierro è una creazione letteraria, nata dall’osservazione e da una tesi sulla società.</p>
+ </section>
+ <section><h2>Un giornalista nelle lotte politiche</h2>
+  <p>Visse le dispute fra Buenos Aires e le province argentine. Le idee federali, le lotte per il potere e le conseguenze delle guerre segnarono la sua carriera. Prese parte alla vita militare e politica prima di farsi conoscere come giornalista, spesso in difesa di chi stava lontano dai centri del potere. Lavorò fra l’altro a Paraná e a Corrientes e nel 1869 fondò il giornale <em lang="es">El Río de la Plata</em>, da cui denunciava le ingiustizie subite dalla popolazione rurale. Fu poi deputato e senatore provinciale.</p>
+ </section>
+ <section><h2>La scrittura di Martín Fierro</h2>
+  <p>Nel 1872 pubblicò <em lang="es">El gaucho Martín Fierro</em>, poema narrativo affidato alla voce di un cavaliere della campagna. Nel 1879 uscì il seguito, <em lang="es">La vuelta de Martín Fierro</em>, con nuove testimonianze e più spazio per il ricongiungimento e il consiglio. Le due parti vanno lette insieme senza ridurle a un solo messaggio: protesta, esclusione, violenza, responsabilità e adattamento convivono.</p>
+  <p><a href="/it/che-cose-martin-fierro/">Che cos’è Martín Fierro? →</a> · <a href="/it/lettore/">Leggi il poema in italiano →</a></p>
+ </section>
+ <section><h2>Oltre il poema</h2>
+  <p>Hernández scrisse anche sul caudillo federale Ángel Vicente Peñaloza, «el Chacho», e nel 1882 pubblicò <em lang="es">Instrucción del estanciero</em>, sulla gestione pratica di una tenuta: i suoi interessi erano letterari e agricoli insieme. Una lettera autografa alla moglie, Carolina González del Solar, dell’aprile 1865, è conservata e riprodotta dalla Biblioteca Pública de las Misiones.</p>
+ </section>
+ <section><h2>Perché conta ancora</h2>
+  <p>Hernández morì a Belgrano il 21 ottobre 1886. Le generazioni successive fecero del suo poema un riferimento centrale per pensare l’identità argentina, e il giorno della sua nascita, il 10 novembre, è oggi il <a href="/it/rivista/giorno-della-tradizione/">Giorno della Tradizione</a>. Il modo migliore di onorarlo non è ripeterne la fama, ma leggere i versi da vicino e confrontarli con le fonti storiche.</p>
+ </section>
+ <section><h2>Cronologia</h2><ol class="it-cronologia">{cronologia.map(([a,t])=><li><strong>{a}</strong><span>{t}</span></li>)}</ol></section>
+</ArticoloIt>
+<style>.it-cronologia{list-style:none;padding:0}.it-cronologia li{display:grid;grid-template-columns:110px 1fr;gap:16px;border-top:1px solid #c8baab;padding:12px 0}.it-cronologia strong{color:#8d4b36;font-family:system-ui,sans-serif}@media(max-width:520px){.it-cronologia li{grid-template-columns:1fr;gap:2px}}</style>
+</Base>

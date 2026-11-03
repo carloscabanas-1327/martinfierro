@@ -1,36 +1,70 @@
 ---
 import Base from '../../layouts/Base.astro';
-import {idiomas} from '../../data/idiomas';
-const ficha=idiomas.find(i=>i.codigo==='it')!;
+import '../../styles/edizione-italiana.css';
+import '../../styles/portale-edizione.css';
+import {partiIt,versiDiParte,urlCantoIt} from '../../lib/testena';
+import {estrofasDeCanto} from '../../lib/corpus';
+const primaIt=partiIt.andata.canti[0].estrofe[0];
+const primaEs=estrofasDeCanto('ida',1)[0];
+const totale=versiDiParte('andata')+versiDiParte('ritorno');
+const sezioni=[
+ {n:'01',titolo:'Leggi il poema in italiano',testo:'Le due parti e i 46 canti nella traduzione in versi di Folco Testena (1919), ciascuno con l’originale spagnolo e la pagina del facsimile.',href:'/it/lettore/',img:'/media/fotografias-v3/la-ida.webp',alt:'Ricostruzione digitale di un gaucho nella campagna argentina'},
+ {n:'02',titolo:'Conosci José Hernández',testo:'Giornalista, militare e uomo politico: la vita dell’autore spiega la forza polemica del poema.',href:'/it/jose-hernandez/',img:'https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg',alt:'Fotografia storica dello scrittore argentino José Hernández'},
+ {n:'03',titolo:'Scopri il mondo del gaucho',testo:'Lavoro a cavallo, frontiera, leva forzata e mito nazionale: chi erano davvero i gauchos.',href:'/it/il-gaucho/',img:'/media/fotografias-v3/revista-cultural.webp',alt:'Ricostruzione digitale della vita rurale argentina dell’Ottocento'},
+ {n:'04',titolo:'Biblioteca e fonti',testo:'La traduzione di Testena, le altre versioni italiane, gli studi critici e gli archivi da consultare.',href:'/it/biblioteca/',img:'/media/fotografias-v3/archivo-documental-recreacion.webp',alt:'Ricostruzione editoriale di un archivio storico'}
+];
 ---
-<Base title={ficha.titulo} description={ficha.intro} lang="it" pageType="CollectionPage" noindex={ficha.estado !== 'original'}>
-  <div class="breadcrumbs"><a href="/">Martín Fierro</a><span>{ficha.nombre}</span></div>
-  <section class="section-intro">
-    <p class="eyebrow">MARTINFIERRO.ORG · {ficha.nombre}</p>
-    <h1>{ficha.titulo}</h1>
-    <p class="lead">{ficha.intro}</p>
-  </section>
-  <nav class="language-picker" aria-label="Idiomas · Languages">
-    {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo} aria-current={i.codigo === ficha.codigo ? 'page' : undefined}>{i.nombre}</a>)}
-  </nav>
-  <section class="editorial-paper" aria-labelledby="traduccion-documentada">
-    <p class="eyebrow">{ficha.estado==='original'?'Texto original · 1872 y 1879':'Catálogo documental · Verificación pendiente'}</p>
-    <h2 id="traduccion-documentada">{ficha.traduccion}</h2>
-    <p>{ficha.nota}</p>
-    {ficha.estado!=='original' && <p><strong>Nota editorial:</strong> la referencia procede del inventario preliminar del proyecto; no implica que exista una edición íntegra localizada, ni que sea de dominio público o esté autorizada para reproducirse.</p>}
-  </section>
-  <section class="editorial-paper" aria-labelledby="fonte-internacional">
-    <p class="eyebrow">DOCUMENTARY ACCESS · IT</p>
-    <h2 id="fonte-internacional">Consultare gli studi sulla traduzione italiana</h2>
-    <p><strong>Folco Testena · traduzione del 1919 · studio critico</strong></p>
-    <p>Giovanni Meo Zilio analizza le traduzioni italiane del Martín Fierro. Il collegamento apre uno studio accademico, non un libro integrale né una traduzione nel nostro lettore.</p>
-    <p><a href="https://www.cervantesvirtual.com/obra-visor/traduzioni-italiane-del-martin-fierro/html/c8917dd8-a0f8-11e1-b1fb-00163ebf5e63_2.html" target="_blank" rel="noopener noreferrer">Leggere lo studio sulle traduzioni italiane ↗</a></p>
-    <p><a href="/traducciones/">Consultare il catalogo generale delle traduzioni →</a></p>
-  </section>
-  <div class="editorial-directory">
-    <a class="directory-feature" href="/leer/ida/"><span class="directory-mark">1872 · ORIGINAL</span><h2>El gaucho Martín Fierro</h2><p>13 cantos · texto original en español</p><span class="text-link">Leer →</span></a>
-    <a class="directory-feature" href="/leer/vuelta/"><span class="directory-mark">1879 · ORIGINAL</span><h2>La vuelta de Martín Fierro</h2><p>33 cantos · texto original en español</p><span class="text-link">Leer →</span></a>
-    <a class="directory-feature" href="/archivo/"><span class="directory-mark">FUENTES</span><h2>Archivo documental</h2><p>Procedencia del corpus, metodología y recursos de investigación en español</p><span class="text-link">Consultar →</span></a>
+<Base lang="it-IT" pageType="CollectionPage" title="Martín Fierro in italiano: il poema e la sua storia"
+ description="Martín Fierro di José Hernández in italiano: la traduzione completa di Folco Testena (1919), l’originale spagnolo, guide per studenti, la vita dell’autore e il mondo del gaucho.">
+<div class="en-portal it-portale" lang="it">
+ <nav class="en-breadcrumb" aria-label="Percorso"><a href="/" lang="es">Martín Fierro</a><span aria-hidden="true">/</span><span>Edizione italiana</span></nav>
+ <div class="en-edition"><span>L’EDIZIONE ITALIANA</span><span>LETTERATURA · STORIA · CULTURA ARGENTINA</span></div>
+ <section class="en-hero" aria-labelledby="it-titolo">
+  <div class="en-visual">
+   <img src="/media/fotografias-v3/hero-gaucho-pampa.webp" width="1440" height="850" fetchpriority="high" alt="Ricostruzione digitale di un gaucho a cavallo nella pampa al tramonto"/>
+   <p>RICOSTRUZIONE EDITORIALE · NON È UNA FOTOGRAFIA STORICA</p>
   </div>
-  <p class="notice">Las fichas internacionales son páginas documentales iniciales, no traducciones publicadas. Los enlaces a la obra llevan a la edición original española.</p>
+  <div class="en-hero-copy">
+   <p class="en-kicker">JOSÉ HERNÁNDEZ · 1872 / 1879</p>
+   <h1 id="it-titolo">Martín Fierro: <em>il poema del gaucho argentino, in italiano.</em></h1>
+   <p class="en-lead">Un cavaliere, un fuorilegge, un cantore. Leggi il grande poema argentino nella prima traduzione italiana completa, accanto al testo originale di José Hernández.</p>
+   <div class="en-actions"><a class="en-button" href={urlCantoIt('andata',1)}>Leggi il canto I <span aria-hidden="true">↗</span></a><a class="en-outline" href="#esplora">Esplora l’edizione ↓</a></div>
+   <p class="en-language-note">Testo italiano: Folco Testena, Buenos Aires, 1919 ({totale.toLocaleString('it-IT')} versi in 46 canti, trascrizione in revisione). Testo originale: José Hernández, 7.210 versi in spagnolo.</p>
+  </div>
+ </section>
+
+ <section class="it-apertura" aria-labelledby="it-apertura-titolo">
+  <p class="en-kicker">COSÌ COMINCIA IL POEMA</p>
+  <h2 id="it-apertura-titolo">Due voci per la stessa strofa</h2>
+  <div class="it-apertura-griglia">
+   <figure lang="es"><figcaption>José Hernández, 1872</figcaption><blockquote>{primaEs.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+   <figure lang="it"><figcaption>Folco Testena, 1919</figcaption><blockquote>{primaIt.versi.map(v=><span>{v.testo}</span>)}</blockquote></figure>
+  </div>
+  <p><a href={urlCantoIt('andata',1)}>Continua a leggere il canto I →</a> · <a href="/leer/ida/1/" lang="es">Leer el canto I en español →</a></p>
+ </section>
+
+ <section class="en-first-feature" aria-labelledby="it-guida"><div><p class="en-kicker">GUIDA ALLA LETTURA</p><h2 id="it-guida">Che cos’è Martín Fierro?</h2><p>Un poema narrativo in due parti, scritto da un giornalista e uomo politico, in cui un gaucho racconta in prima persona la perdita della casa, la frontiera, la fuga e il ritorno. Una guida per lettori italiani.</p><a href="/it/che-cose-martin-fierro/">Leggi la presentazione ↗</a> · <a href="/it/le-due-parti/">La trama delle due parti ↗</a></div></section>
+ <section class="en-first-feature" aria-labelledby="it-storia"><div><p class="en-kicker">STORIA ARGENTINA</p><h2 id="it-storia">L’Argentina dell’Ottocento dietro i versi</h2><p>Leva forzata, fortini di frontiera, conflitti con i popoli indigeni e lotte fra Buenos Aires e le province: il contesto che dà forza alla protesta di Fierro.</p><a href="/it/contesto-storico/">Leggi il contesto storico ↗</a></div></section>
+ <section class="en-first-feature" aria-labelledby="it-studenti"><div><p class="en-kicker">PER GLI STUDENTI</p><h2 id="it-studenti">I 46 canti in breve</h2><p>Un riassunto per ogni canto, domande per la discussione e un glossario delle parole gauchesche, sempre con il rimando al testo.</p><a href="/it/studenti/">Apri le risorse per gli studenti ↗</a> · <a href="/it/studenti/glossario/">Glossario ↗</a></div></section>
+ <section class="en-first-feature" aria-labelledby="it-rivista"><div><p class="en-kicker">RIVISTA CULTURALE</p><h2 id="it-rivista">Payadas, pulperías e il Giorno della Tradizione</h2><p>Articoli sulla cultura rurale del Río de la Plata e sulle ricorrenze legate al poema.</p><a href="/it/rivista/">Leggi la rivista ↗</a></div></section>
+
+ <section id="esplora" class="en-section" aria-labelledby="it-esplora">
+  <div class="en-section-heading"><p class="en-kicker">ESPLORA LA COLLEZIONE</p><h2 id="it-esplora">Il poema, l’autore, il mondo, le fonti.</h2></div>
+  <div class="en-grid">{sezioni.map(s=><article class="en-card"><a href={s.href}><div class="en-image"><img src={s.img} alt={s.alt} loading="lazy" decoding="async"/></div><div class="en-card-copy"><span>{s.n} / LA COLLEZIONE</span><h3>{s.titolo}</h3><p>{s.testo}</p><strong>Esplora la sezione <span aria-hidden="true">↗</span></strong></div></a></article>)}</div>
+ </section>
+
+ <section class="en-translation" aria-labelledby="it-traduzione"><div><p class="en-kicker">LA TRADUZIONE</p><h2 id="it-traduzione">Una traduzione nata a Buenos Aires.</h2><p>Folco Testena, nome d’arte del marchigiano Comunardo Braccialarghe, emigrato in Argentina nel 1910, pubblicò nel 1919 la prima versione italiana completa del poema, in versi, con l’originale a fronte. Testena morì nel 1951: la sua traduzione è oggi di pubblico dominio. La trascrizione che pubblichiamo viene dal facsimile conservato a Berlino e indica sempre la pagina di provenienza.</p><div class="en-actions"><a class="en-button" href="/it/biblioteca/traduzione-testena/">Scheda della traduzione ↗</a><a class="en-outline" href="/it/metodo-editoriale/">Fonti e metodo ↗</a></div></div><img src="/media/archivo/ejemplar-corregido-martin-fierro-1872-portada.webp" alt="Copertina della prima edizione spagnola del 1872 di El gaucho Martín Fierro; non è l’edizione di Testena" loading="lazy"/></section>
+
+ <section class="en-final" aria-labelledby="it-finale"><p class="en-kicker">UNA BIBLIOTECA DOCUMENTARIA</p><h2 id="it-finale">Tre lingue, un solo poema.</h2><p>MARTINFIERRO.ORG è un’edizione digitale indipendente in spagnolo, inglese e italiano. Le tre edizioni condividono lo stesso testo originale e distinguono sempre le fonti storiche dalle interpretazioni moderne.</p><p><a href="/" lang="es">Edición en español</a> · <a href="/en/" lang="en">English edition</a> · <a href="/it/indice/">Indice dell’edizione italiana</a></p></section>
+</div>
+<style>
+.it-apertura{margin:45px 0;padding:36px 0;border-block:1px solid #bba995}
+.it-apertura h2{font:600 clamp(1.9rem,3.4vw,3rem)/1.15 Georgia,serif;margin:0 0 22px}
+.it-apertura-griglia{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.it-apertura figure{margin:0;background:#f3ecdf;padding:22px 26px;border-top:2px solid #382d25}
+.it-apertura figcaption{font:700 .72rem system-ui,sans-serif;letter-spacing:.1em;color:#8b4731;text-transform:uppercase}
+.it-apertura blockquote{margin:12px 0 0}.it-apertura blockquote span{display:block;font:1.15rem/1.7 Georgia,serif}
+.it-apertura>p{font:.92rem system-ui,sans-serif;margin-top:18px}
+@media(max-width:700px){.it-apertura-griglia{grid-template-columns:1fr}}
+</style>
 </Base>

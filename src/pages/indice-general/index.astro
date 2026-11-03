@@ -4,6 +4,8 @@ import { partes, enlaceCanto } from '../../lib/corpus';
 import { temas } from '../../data/temas';
 import { personajes } from '../../data/personajes';
 import '../../styles/indice-general.css';
+import { pagineIt } from '../../data/it-edizione';
+import { partiIt, urlCantoIt, romano, type ParteIt } from '../../lib/testena';
 const grupos=[
   {
     "id": "lectura",
@@ -285,8 +287,10 @@ const grupos=[
       {
         "titulo": "Italiano",
         "url": "/it/",
-        "descripcion": "Página del proyecto en italiano."
+        "descripcion": "Edición italiana: traducción completa de Folco Testena (1919) y guías en italiano."
       },
+      ...pagineIt.filter(p=>p.url!=='/it/').map(p=>({titulo:`Italiano — ${p.titolo}`,url:p.url,descripcion:p.descrizione})),
+      ...(Object.keys(partiIt) as ParteIt[]).flatMap(p=>partiIt[p].canti.map(c=>({titulo:`Italiano — ${partiIt[p].titolo}, canto ${romano(c.numero)} (Testena)`,url:urlCantoIt(p,c.numero),descripcion:'Traducción italiana de Folco Testena (1919), transcripción en revisión.'}))),
       {
         "titulo": "Latín",
         "url": "/la/",

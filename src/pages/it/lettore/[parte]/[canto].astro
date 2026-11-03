@@ -1,0 +1,62 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import '../../../../styles/reader-editorial.css';
+import '../../../../styles/edizione-italiana.css';
+import {partiIt,urlCantoIt,urlCantoOriginale,versiDiCanto,corrispondenzaCanto,romano,TESTO_COLLAZIONATO,type ParteIt} from '../../../../lib/testena';
+export function getStaticPaths(){
+ return (Object.keys(partiIt) as ParteIt[]).flatMap(parte=>partiIt[parte].canti.map(c=>({params:{parte,canto:String(c.numero)},props:{parte,numero:c.numero}})));
+}
+const {parte,numero}=Astro.props as {parte:ParteIt;numero:number};
+const libro=partiIt[parte];
+const canto=libro.canti.find(c=>c.numero===numero)!;
+const corr=corrispondenzaCanto(parte,numero);
+const ultimo=libro.canti.length;
+const anteriore=numero>1?urlCantoIt(parte,numero-1):parte==='ritorno'?urlCantoIt('andata',partiIt.andata.canti.length):null;
+const successivo=numero<ultimo?urlCantoIt(parte,numero+1):parte==='andata'?urlCantoIt('ritorno',1):null;
+const originale=urlCantoOriginale(parte,numero);
+---
+<Base lang="it-IT" pageType="Article" noindex={!TESTO_COLLAZIONATO} lingue={{es:originale,it:urlCantoIt(parte,numero)}}
+ title={`Canto ${romano(numero)} · ${libro.titolo} (Testena)`}
+ description={`${libro.titolo}, canto ${romano(numero)}: traduzione italiana in versi di Folco Testena (1919), con rimando al testo spagnolo di José Hernández e al facsimile.`}>
+<div class="mf-reader-page mf-it-reader" lang="it">
+ <div class="mf-reader-hero">
+  <img src={parte==='andata'?'/media/fotografias-v3/la-ida.webp':'/media/fotografias-v3/la-vuelta.webp'} alt="" width="1600" height="1000" decoding="async" fetchpriority="high"/>
+  <div class="mf-reader-hero-label">{libro.titolo} · {libro.anno} · Traduzione di Folco Testena (1919)</div>
+ </div>
+ <div class="mf-reader-frame">
+  <nav class="breadcrumbs" aria-label="Percorso">
+   <a href="/it/">Home</a><span><a href="/it/lettore/">Lettore</a></span><span><a href={`/it/lettore/${parte}/`}>{libro.titolo}</a></span><span>Canto {romano(numero)}</span>
+  </nav>
+  <header class="reader-header">
+   <p class="eyebrow">{libro.etichetta} · {libro.anno} · traduzione italiana</p>
+   <h1>Canto {romano(numero)}</h1>
+   <p class="meta">{canto.estrofe.length} strofe · {versiDiCanto(canto)} versi nella traduzione · originale: {corr.originale.estrofe} strofe, {corr.originale.versi} versi</p>
+  </header>
+  <p class="mf-it-avviso"><strong>Trascrizione in revisione.</strong> Il testo è stato letto con OCR dal facsimile dell’edizione del 1919 e non è ancora stato collazionato verso per verso: possono esserci refusi o versi mancanti. Fa fede l’<a href={canto.url_facsimile} target="_blank" rel="noopener noreferrer">immagine della pagina</a>.</p>
+  <div class="reader-layout">
+   <article class="verse-text" aria-label={`Testo del canto ${romano(numero)}`}>
+    {canto.estrofe.map(e=><section class="stanza" id={e.id} aria-label={`Strofa ${e.numero}`}>
+     <div class="stanza-label"><a href={`#${e.id}`} title={`Collegamento alla strofa ${e.numero}`}>Strofa {e.numero}</a></div>
+     {e.versi.map(v=><p class="verse" id={v.id}><a href={`#${v.id}`} title={`Verso ${e.numero}.${v.linea}`}>{v.testo}</a></p>)}
+    </section>)}
+    <p class="mf-glossary-hint">La numerazione di strofe e versi è quella della traduzione e non coincide con quella dell’originale spagnolo.</p>
+    <nav class="pager" aria-label="Canti contigui">
+     <span>{anteriore&&<a href={anteriore}>← Canto precedente</a>}</span>
+     <span>{successivo&&<a href={successivo}>Canto successivo →</a>}</span>
+    </nav>
+   </article>
+   <aside class="reader-nav" aria-label="Strumenti di lettura">
+    <strong>Questo canto</strong>
+    <a href={originale} lang="es" hreflang="es-AR">Testo originale spagnolo ↗</a>
+    <a href={canto.url_facsimile} target="_blank" rel="noopener noreferrer">Facsimile del 1919{canto.pagina_libro?` (p. ${canto.pagina_libro})`:''} ↗</a>
+    <a href={`/it/lettore/${parte}/`}>Indice di questa parte</a>
+    {anteriore&&<a href={anteriore}>← Canto precedente</a>}
+    {successivo&&<a href={successivo}>Canto successivo →</a>}
+    <a href="/it/biblioteca/traduzione-testena/">Sulla traduzione</a>
+    <a href="/it/cerca/">Cerca nel poema</a>
+   </aside>
+  </div>
+  <p class="mf-it-fonte">José Hernández, <em lang="es">{libro.titolo_originale}</em> ({libro.anno}), canto {romano(numero)}. Traduzione di Folco Testena, Buenos Aires, edizione della rivista «Nosotros», 1919. Pubblico dominio. Esemplare digitalizzato: Ibero-Amerikanisches Institut, Berlino.</p>
+ </div>
+</div>
+</Base>

@@ -1,0 +1,14 @@
+---
+// Cita una estrofa auténtica de la traducción de Testena junto al original, desde los datos del repositorio.
+import {partiIt,urlCantoIt,romano,type ParteIt} from '../lib/testena';
+import {estrofasDeCanto} from '../lib/corpus';
+interface Props {parte:ParteIt; canto:number; strofa:number; originale?:number}
+const {parte,canto,strofa,originale}=Astro.props;
+const it=partiIt[parte].canti.find(c=>c.numero===canto)!.estrofe.find(e=>e.numero===strofa)!;
+const es=originale?estrofasDeCanto(partiIt[parte].parte_originale,canto).find(e=>e.numero===originale):undefined;
+---
+<figure class="it-strofa">
+ <figcaption>{partiIt[parte].titolo}, canto {romano(canto)}, strofa {strofa} · traduzione di Folco Testena (1919), trascrizione OCR in revisione · <a href={`${urlCantoIt(parte,canto)}#${it.id}`}>leggi nel contesto</a></figcaption>
+ <blockquote lang="it">{it.versi.map(v=><span>{v.testo}</span>)}</blockquote>
+ {es && <><figcaption lang="es">Original · estrofa {es.numero}</figcaption><blockquote lang="es">{es.versos.map(v=><span>{v.texto}</span>)}</blockquote></>}
+</figure>

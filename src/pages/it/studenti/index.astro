@@ -1,0 +1,31 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ArticoloIt from '../../../components/ArticoloIt.astro';
+import {sintesiIt} from '../../../data/it-canti';
+import {urlCantoIt,urlCantoOriginale,romano} from '../../../lib/testena';
+const parti=[
+ {chiave:'andata' as const,titolo:'Prima parte · Il gaucho Martín Fierro (1872)',en:(n:number)=>`/en/students/canto-${n}/`},
+ {chiave:'ritorno' as const,titolo:'Seconda parte · Il ritorno di Martín Fierro (1879)',en:(n:number)=>`/en/students/vuelta-canto-${n}/`}
+];
+const domande=[
+ 'Perché Fierro comincia cantando invece di raccontare i fatti in ordine? (canto I)',
+ 'Che cosa cambia nella vita di Fierro con la leva? Quali parole usa per descrivere la frontiera? (canti III–V)',
+ 'Come va letta la scena del ballo del canto VII? Che cosa dice il narratore e che cosa può giudicare il lettore?',
+ 'Perché Cruz sceglie di stare con Fierro? Che cosa ci dice sulla legge e sulla coscienza? (canto IX)',
+ 'Confronta i consigli del Vecchio Vizcacha (seconda parte, canto XV) con quelli di Fierro (canto XXXII).',
+ 'In che modo la payada con il Moreno (canto XXX) riapre la violenza della prima parte?'
+];
+---
+<Base lang="it-IT" pageType="CollectionPage" title="Martín Fierro per gli studenti: i 46 canti in breve"
+ description="Risorse per studenti su Martín Fierro: la sintesi di ciascuno dei 46 canti, domande per la discussione, glossario e collegamenti al testo italiano e spagnolo.">
+<ArticoloIt occhiello="Per gli studenti · Risorse di studio" titolo="<em>Martín Fierro</em> per gli studenti"
+ sommario="Segui la storia canto per canto senza perdere il contatto con le parole di Hernández. Ogni scheda ha una sintesi in italiano e tre collegamenti: la traduzione di Testena, l’originale spagnolo e la guida di studio in inglese."
+ percorso={[{label:'Per gli studenti'}]}
+ fonti={[{nome:'Study guides — edizione inglese (46 guide verificate)',url:'/en/students/',lingua:'en'},{nome:'Martín Fierro para estudiantes — edizione spagnola',url:'/estudiantes/',lingua:'es'}]}
+ notaFonti="Le sintesi sono testo editoriale moderno, adattato dalle guide inglesi del sito; non sostituiscono la lettura del poema.">
+ <section class="it-riquadro"><h2 style="margin-top:0">Prima di cominciare</h2><p>Il <a href="/it/studenti/glossario/">glossario gauchesco</a> spiega parole come <em>payada</em>, <em>pulpería</em>, <em>fortín</em> e <em>facón</em>. Per l’inquadramento generale leggi <a href="/it/che-cose-martin-fierro/">Che cos’è Martín Fierro?</a> e <a href="/it/le-due-parti/">Le due parti</a>.</p></section>
+ {parti.map(p=><section><h2>{p.titolo}</h2><ol class="it-canti">{sintesiIt[p.chiave].map((c,i)=><li><p class="it-canti-num">Canto {romano(i+1)}</p><h3><a href={urlCantoIt(p.chiave,i+1)}>{c.titolo}</a></h3><p>{c.sintesi}</p><p class="it-canti-link"><a href={urlCantoIt(p.chiave,i+1)}>Testo italiano</a> · <a href={urlCantoOriginale(p.chiave,i+1)} lang="es">Originale</a> · <a href={p.en(i+1)} lang="en">Guida (in inglese)</a></p></li>)}</ol></section>)}
+ <section><h2>Domande per la discussione</h2><ol>{domande.map(d=><li>{d}</li>)}</ol><p>Rispondi con dettagli presi dal testo. Interpretazioni diverse sono legittime se i passi citati e il contesto le sostengono.</p></section>
+</ArticoloIt>
+<style>.it-canti{list-style:none;padding:0;display:grid;gap:14px}.it-canti li{background:#efe4d7;border-top:2px solid #45382a;padding:16px 20px;margin:0}.it-canti h3{margin:4px 0 6px}.it-canti p{margin:4px 0}.it-canti-num{font:750 .7rem system-ui,sans-serif!important;letter-spacing:.12em;color:#8a523a;text-transform:uppercase}.it-canti-link{font:.85rem system-ui,sans-serif!important}</style>
+</Base>

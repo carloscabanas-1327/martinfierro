@@ -1,0 +1,42 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ArticoloIt from '../../../components/ArticoloIt.astro';
+import StrofaIt from '../../../components/StrofaIt.astro';
+---
+<Base lang="it-IT" pageType="Article" title="Il contesto storico di Martín Fierro"
+ description="Frontiera, leva militare, Buenos Aires e province, popoli indigeni e immigrazione: il contesto storico argentino in cui José Hernández scrisse Martín Fierro (1872 e 1879).">
+<ArticoloIt occhiello="Storia argentina · Ottocento" titolo="L’Argentina di <em>Martín Fierro</em>"
+ sommario="Il poema nasce in un paese che sta costruendo lo Stato, spostando la frontiera e trasformando il lavoro nelle campagne. Conoscere quel contesto aiuta a capire la protesta di Fierro senza scambiarla per una cronaca."
+ percorso={[{label:'Il contesto storico'}]}
+ immagine="/media/fotografias-v3/archivo-documental-recreacion.webp" alt="Ricostruzione editoriale di un archivio storico" didascalia="Ricostruzione digitale editoriale; non è una fotografia storica."
+ fonti={[
+  {nome:'Life in Argentina’s Frontier Forts — edizione inglese',url:'/en/magazine/frontier-forts/',lingua:'en'},
+  {nome:'Vida en los fortines (in spagnolo)',url:'/revista/vida-en-los-fortines/',lingua:'es'},
+  {nome:'Frontera y pueblos indígenas (in spagnolo)',url:'/revista/frontera-pueblos-indigenas/',lingua:'es'},
+  {nome:'Richard W. Slatta, «Gaúcho and gaucho» (1980), storia sociale comparata',url:'https://revistaseletronicas.pucrs.br/iberoamericana/article/view/30624',lingua:'en'},
+  {nome:'Antonella Cancellier, «2019: a cent’anni dalla prima traduzione italiana di Martín Fierro», Oltreoceano, 16 (2020)',url:'https://riviste.lineaedizioni.it/index.php/oltreoceano/article/view/48'}
+ ]}
+ notaFonti="Sintesi originale in italiano basata sulle pagine storiche del sito e sugli studi indicati. Le affermazioni storiche sono distinte dalle scene del poema.">
+ <nav class="it-indice-locale" aria-label="In questa pagina"><strong>In questa pagina</strong><a href="#paese">Un paese in costruzione</a><a href="#frontiera">La frontiera</a><a href="#leva">La leva</a><a href="#indigeni">Popoli indigeni</a><a href="#italiani">Gli italiani</a><a href="#leggere">Leggere con cautela</a></nav>
+ <section id="paese"><h2>Un paese in costruzione</h2>
+  <p>Dopo l’indipendenza (1816) l’Argentina visse decenni di guerre civili fra chi voleva un paese guidato da Buenos Aires e chi difendeva l’autonomia delle province. La Costituzione del 1853 e l’unificazione del 1861–1862 non chiusero subito i conflitti. Hernández, legato al federalismo, partecipò a quelle lotte come militare, giornalista e uomo politico: per questo la voce di Fierro ha tanta energia polemica.</p>
+ </section>
+ <section id="frontiera"><h2>La frontiera e i fortini</h2>
+  <p>A sud e a ovest di Buenos Aires una linea mobile di <strong>fortini</strong>, piccoli avamposti militari, separava le terre controllate dallo Stato da quelle dei popoli indigeni. Era una zona di commercio, negoziazione e guerra, non un deserto vuoto. Nel poema la frontiera non è un fondale pittoresco: è il luogo dove il protagonista subisce coercizione, fame e paghe mai ricevute.</p>
+  <StrofaIt parte="andata" canto={2} strofa={4} originale={23}/>
+ </section>
+ <section id="leva"><h2>Leva forzata e controllo del lavoro</h2>
+  <p>Le autorità cercavano di regolare la mobilità degli uomini della campagna. Chi non poteva dimostrare un impiego rischiava di essere considerato «vagabondo» e mandato alla frontiera. Giudici di pace e comandanti avevano un potere grande e poco controllato. La <em lang="es">leva</em>, il reclutamento forzato, è all’origine della rovina di Fierro: questo spiega perché la prima parte suonò come una denuncia.</p>
+ </section>
+ <section id="indigeni"><h2>I popoli indigeni</h2>
+  <p>Mapuche, ranqueles, tehuelche e altri popoli avevano territori, autorità politiche e reti commerciali proprie. Pochi anni dopo la seconda parte del poema, le campagne militari note come «Conquista del Deserto» (1878–1885) occuparono quei territori con violenza. Il poema descrive gli indigeni con forte ostilità e stereotipi: è una testimonianza dello sguardo dell’epoca, non una fonte neutrale sulla loro vita.</p>
+ </section>
+ <section id="italiani"><h2>Gli italiani nel Río de la Plata</h2>
+  <p>Fra la seconda metà dell’Ottocento e il primo Novecento milioni di europei arrivarono in Argentina, e gli italiani furono il gruppo più numeroso. Il poema stesso li nomina: nel canto V della prima parte Fierro deride un soldato immigrato, un «gringo» che sa dire soltanto di essere «papolitano», cioè napoletano; e nel canto XII si lamenta del denaro speso per i coloni stranieri. Fu proprio dentro questa comunità che, nel 1919, Folco Testena pubblicò la prima traduzione completa del poema, pensata anche come ponte fra gli italiani e la cultura del paese che li accoglieva.</p>
+  <p><a href="/it/biblioteca/traduzione-testena/">La storia della traduzione di Testena →</a></p>
+ </section>
+ <section id="leggere"><h2>Leggere il poema con cautela storica</h2>
+  <p>Hernández scrisse un’opera letteraria potente, non un rapporto storico. Documenti d’archivio, memorie di viaggiatori e studi moderni aiutano a distinguere ciò che il narratore afferma da ciò che si può accertare in modo indipendente. Leggere così non toglie forza al poema: mostra perché fu, e resta, un intervento politico.</p>
+ </section>
+</ArticoloIt>
+</Base>

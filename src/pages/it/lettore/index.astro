@@ -1,0 +1,33 @@
+---
+import EditorialSection from '../../../components/EditorialSection.astro';
+import Base from '../../../layouts/Base.astro';
+import '../../../styles/edizione-italiana.css';
+import {partiIt,versiDiParte,urlCantoIt,romano,type ParteIt} from '../../../lib/testena';
+const parti=Object.keys(partiIt) as ParteIt[];
+---
+<Base lang="it-IT" pageType="CollectionPage" title="Leggere Martín Fierro in italiano: il lettore"
+ description="Le due parti di Martín Fierro nella traduzione italiana in versi di Folco Testena (1919): 46 canti, con l’originale spagnolo di José Hernández e il facsimile.">
+<EditorialSection kind="category" image="/media/fotografias-v3/la-ida.webp" imageAlt="Ricostruzione digitale di un gaucho nella pampa" label="IL POEMA · TRADUZIONE ITALIANA" heroLabel="Immagine di ambientazione" credit="Immagine di ambientazione: ricostruzione digitale contemporanea, non fotografia storica.">
+ <nav class="breadcrumbs" aria-label="Percorso"><a href="/it/">Home</a><span>Lettore</span></nav>
+ <p class="eyebrow">José Hernández · 1872 e 1879 · Folco Testena · 1919</p>
+ <h1>Leggere <em>Martín Fierro</em> in italiano</h1>
+ <p class="lead">Il poema è diviso in due libri: <em lang="es">El gaucho Martín Fierro</em> (1872) e <em lang="es">La vuelta de Martín Fierro</em> (1879). Qui li leggi nella prima traduzione italiana completa, in versi, pubblicata a Buenos Aires da Folco Testena nel 1919.</p>
+ <div class="cards">{parti.map(p=><a class="card" href={`/it/lettore/${p}/`}><p class="eyebrow">{partiIt[p].etichetta} · {partiIt[p].anno}</p><h2>{partiIt[p].titolo}</h2><p>{partiIt[p].canti.length} canti · {versiDiParte(p).toLocaleString('it-IT')} versi</p></a>)}</div>
+ <section class="section">
+  <h2>Quale testo state leggendo</h2>
+  <ul>
+   <li><strong>Traduttore:</strong> Folco Testena, pseudonimo di Comunardo Braccialarghe (Macerata 1875 – Buenos Aires 1951).</li>
+   <li><strong>Edizione:</strong> Buenos Aires, edizione della rivista «Nosotros», 1919. Bilingue, con lo spagnolo a fronte; qui si riproduce la colonna italiana.</li>
+   <li><strong>Esemplare:</strong> copia digitalizzata dall’Ibero-Amerikanisches Institut di Berlino. Ogni canto rimanda alla sua pagina.</li>
+   <li><strong>Diritti:</strong> pubblico dominio in Argentina e in Italia dal 2022 e negli Stati Uniti (pubblicazione anteriore al 1931).</li>
+   <li><strong>Stato del testo:</strong> trascrizione OCR non ancora collazionata. Nessun verso è stato corretto o aggiunto a mano.</li>
+  </ul>
+  <p><a href="/it/biblioteca/traduzione-testena/">Scheda completa della traduzione e tabella di corrispondenza →</a></p>
+ </section>
+ <section class="section">
+  <h2>Originale e traduzione</h2>
+  <p>Testena traduce strofa per strofa, ma la numerazione dei versi non coincide sempre con quella dell’originale: alcune strofe sono divise o unite in modo diverso e l’OCR ha perso alcuni versi. Per questo ogni canto indica quanti versi ha nell’una e nell’altra versione, e rimanda al <a href="/leer/" lang="es">testo spagnolo completo</a> (7.210 versi) senza imporre una numerazione artificiale.</p>
+  <p><a class="btn" href={urlCantoIt('andata',1)}>Comincia dal canto {romano(1)}</a></p>
+ </section>
+</EditorialSection>
+</Base>

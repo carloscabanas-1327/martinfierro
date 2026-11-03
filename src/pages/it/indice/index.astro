@@ -1,0 +1,22 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ArticoloIt from '../../../components/ArticoloIt.astro';
+import {pagineIt,sezioniIt} from '../../../data/it-edizione';
+import {partiIt,urlCantoIt,romano,type ParteIt} from '../../../lib/testena';
+import {gruppi} from '../../../data/equivalencias';
+const equivalenze=gruppi.filter(g=>g.it);
+---
+<Base lang="it-IT" pageType="CollectionPage" title="Indice dell’edizione italiana di Martín Fierro"
+ description="Tutte le pagine dell’edizione italiana di MARTINFIERRO.ORG: i 46 canti della traduzione di Testena, guide, biografia, rivista, biblioteca e fonti.">
+<ArticoloIt occhiello="Strumenti · Indice" titolo="Indice del sito"
+ sommario="Tutte le pagine dell’edizione italiana, i 46 canti del lettore e le pagine equivalenti nelle edizioni spagnola e inglese."
+ percorso={[{label:'Indice'}]}>
+ <p><a href="/it/cerca/">Cerca nell’edizione italiana →</a></p>
+ {sezioniIt.map(s=><section><h2>{s}</h2><div class="it-griglia">{pagineIt.filter(p=>p.sezione===s).map(p=><div><h3><a href={p.url}>{p.titolo}</a></h3><p>{p.descrizione}</p></div>)}</div></section>)}
+ <section><h2>I 46 canti in italiano</h2>{(Object.keys(partiIt) as ParteIt[]).map(p=><><h3>{partiIt[p].titolo} ({partiIt[p].anno})</h3><div class="it-indice-canti">{partiIt[p].canti.map(c=><a href={urlCantoIt(p,c.numero)}>Canto {romano(c.numero)}</a>)}</div></>)}</section>
+ <section><h2>Pagine equivalenti nelle altre lingue</h2><p>Queste corrispondenze sono le stesse dichiarate ai motori di ricerca con <code>hreflang</code>.</p>
+  <div class="it-tabella-wrap"><table class="it-tabella"><thead><tr><th>Italiano</th><th>Español</th><th>English</th></tr></thead><tbody>{equivalenze.map(g=><tr><td><a href={g.it}>{g.it}</a></td><td>{g.es?<a href={g.es} lang="es">{g.es}</a>:'—'}</td><td>{g.en?<a href={g.en} lang="en">{g.en}</a>:'—'}</td></tr>)}</tbody></table></div>
+ </section>
+</ArticoloIt>
+<style>.it-indice-canti{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}.it-indice-canti a{padding:9px;border-bottom:1px solid #c2ae99;font:.88rem system-ui,sans-serif}</style>
+</Base>
