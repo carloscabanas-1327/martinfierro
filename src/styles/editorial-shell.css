@@ -333,5 +333,13 @@ body:has(main) .site-header.site-header{border-bottom:none}
 body main#contenido.container:has(.mf-static-editorial)>.mf-migas{width:min(var(--mf-reading-width),calc(100% - 52px));margin:16px auto 25px}
 @media(max-width:720px){body main#contenido.container:has(.mf-static-editorial)>.mf-migas{width:calc(100% - 32px)}}
 /* Portadas: la imagen principal va dentro de la columna y a 24 px de la franja, como en la portada inglesa. */
-body main#contenido .mf-revista>.mf-editionline+.mf-lead{width:min(var(--mf-reading-width),calc(100% - 52px));max-width:none;margin:24px auto clamp(16px,2.5vw,36px)}
+body main#contenido .mf-revista>.mf-editionline+.mf-lead{width:min(var(--mf-reading-width),calc(100% - 52px));max-width:none;margin:21px auto clamp(16px,2.5vw,36px)}
 @media(max-width:720px){body main#contenido .mf-revista>.mf-editionline+.mf-lead{width:calc(100% - 32px)}}
+/* Imagen principal y panel de las portadas: una sola geometría (modelo inglés), 21 px bajo la franja. */
+body main#contenido .en-hero{margin-top:21px}
+body main#contenido .en-hero h1,body main#contenido .mf-revista>.mf-lead h1{font-size:clamp(2.3rem,4.7vw,4.8rem);line-height:1.05;letter-spacing:-.045em;margin:0 0 24px;max-width:none}
+body main#contenido .mf-revista>.mf-lead{background:#eae0d1;min-height:520px;border-bottom:0}
+body main#contenido .mf-revista>.mf-lead .mf-lead-copy{background:#eae0d1;padding:clamp(25px,4vw,66px)}
+body main#contenido .mf-revista>.mf-lead .mf-kicker{display:block;color:#8b4731;font:750 .7rem system-ui,sans-serif;letter-spacing:.15em;margin:0 0 18px}
+@media(min-width:841px){body main#contenido .mf-revista>.mf-lead{display:grid;grid-template-columns:1.13fr .87fr}}
+@media(max-width:840px){body main#contenido .mf-revista>.mf-lead .mf-lead-copy{padding:26px}}
