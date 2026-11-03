@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ConsejosPortada from '../../components/ConsejosPortada.astro';
 import '../../styles/edizione-italiana.css';
 import '../../styles/portale-edizione.css';
 import {partiIt,versiDiParte,urlCantoIt} from '../../lib/testena';
@@ -31,6 +32,8 @@ const sezioni=[
    <p class="en-language-note">Testo italiano: Folco Testena, Buenos Aires, 1919 ({totale.toLocaleString('it-IT')} versi in 46 canti, trascrizione in revisione). Testo originale: José Hernández, 7.210 versi in spagnolo.</p>
   </div>
  </section>
+
+ <ConsejosPortada id="it-consigli" kicker="IL RITORNO · CANTO XXXII · 1879 · FEDE · STOICISMO · ETICA" titulo="I consigli di Martín Fierro ai figli" texto="Un vecchio della campagna raccoglie ciò che la vita gli ha insegnato: la fede, la padronanza di sé, il lavoro onesto, l’amicizia e l’unione fra fratelli. Leggili nella traduzione di Folco Testena, con l’originale spagnolo a fronte." llamado="Leggi i consigli" href={urlCantoIt('ritorno',32)} alt="Ricostruzione digitale di Martín Fierro, dei suoi due figli e del figlio di Cruz che ascoltano i suoi consigli accanto al fuoco e al mate"/>
 
  <section class="it-apertura" aria-labelledby="it-apertura-titolo">
   <p class="en-kicker">COSÌ COMINCIA IL POEMA</p>
