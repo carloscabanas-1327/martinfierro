@@ -1,0 +1,47 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import {estrofasDeCanto} from '../../../../lib/corpus';
+// Vers du poème où apparaissent le maté et le « cimarrón » (le maté amer).
+const strophe=(parte:'ida'|'vuelta',canto:number,n:number)=>estrofasDeCanto(parte,canto).find(e=>e.numero===n)!;
+const vers=[
+ {e:strophe('ida',2,25),ref:'El gaucho Martín Fierro, chant II',href:'/leer/ida/2/',commentaire:'C’est le souvenir du temps heureux, avant l’enrôlement : le gaucho se lève avant le jour, s’assoit près du feu et boit du cimarrón jusqu’à en être tout rond, pendant que sa compagne dort enroulée dans son poncho. Le cimarrón, c’est le maté amer, sans sucre.'},
+ {e:strophe('vuelta',12,703),ref:'La vuelta de Martín Fierro, chant XII',href:'/leer/vuelta/12/',commentaire:'Le fils aîné de Fierro raconte la vie au pénitencier. Parmi les privations, la première de la liste est l’interdiction du maté : pour l’homme de la campagne, perdre son maté, c’est perdre toute compagnie.'},
+ {e:strophe('vuelta',30,1090),ref:'La vuelta de Martín Fierro, chant XXX',href:'/leer/vuelta/30/',commentaire:'Dans la payada, la joute chantée, l’un des chanteurs se compare au maté : il ne sert que lorsqu’on lui ouvre la bouche. L’image ne fonctionne que parce que chaque auditeur connaissait le geste de préparer un maté.'},
+];
+const sections=[
+ {id:'une-boisson',titre:'Une boisson, plusieurs pays',paragraphes:[
+  'À Buenos Aires et à Montevideo, on dit mate ; dans le sud du Brésil, chimarrão ; au Paraguay, quand l’eau est froide, tereré. Les noms changent, mais le geste est le même : la yerba dans la calebasse, l’eau chaude, la paille métallique qui passe de main en main.',
+  'En français, on écrit souvent « maté », et l’on trouve aujourd’hui la yerba dans bien des épiceries. Mais dans la pampa du XIXe siècle, le maté n’avait rien d’exotique : c’était la boisson quotidienne du gaucho, celle du réveil, du feu de camp et de l’hospitalité.']},
+ {id:'guaranis',titre:'Avant les frontières : l’herbe des Guaranis',paragraphes:[
+  'La yerba maté (Ilex paraguariensis) est un arbre originaire des forêts du sud de l’Amérique du Sud : est du Paraguay, sud du Brésil et province argentine de Misiones. Elle n’a aucun lien de parenté avec le thé noir ou le thé vert, qui viennent d’une autre plante.',
+  'Bien avant l’existence de l’Argentine, de l’Uruguay ou du Paraguay, les peuples guaranis récoltaient et consommaient déjà ses feuilles, qu’ils appelaient ka’a (herbe, plante). La coutume est donc d’origine autochtone. Ni le gaucho ni les États nationaux ne l’ont inventée : ils en ont hérité.']},
+ {id:'missions',titre:'Les missions jésuites',paragraphes:[
+  'Aux XVIIe et XVIIIe siècles, les jésuites organisèrent avec les Guaranis des réductions dans une région aujourd’hui partagée entre l’Argentine, le Paraguay et le Brésil. La yerba cessa alors d’être seulement cueillie en forêt pour être cultivée en plantations, ce qui en fit une marchandise échangée dans tout le bassin du Río de la Plata.',
+  'Les ruines de ces missions, comme San Ignacio Miní en Argentine ou São Miguel das Missões au Brésil, sont inscrites au patrimoine mondial de l’UNESCO. Le maté que boit Martín Fierro a des racines dans cette rencontre entre la plante guarani et la vie coloniale.']},
+ {id:'ronde',titre:'La ronde du maté',paragraphes:[
+  'Celui qui prépare le maté, le cebador, verse l’eau chaude mais non bouillante sur la yerba et boit souvent le premier, le plus amer. Puis il remplit la calebasse et la tend à chacun à tour de rôle ; on la boit jusqu’au bout avant de la lui rendre. On ne touche pas à la bombilla, la paille métallique, et dire « gracias » signifie qu’on n’en veut plus.',
+  'Ce sont des règles de courtoisie, non des lois, et elles varient d’une maison à l’autre. Leur sens est clair : le maté se partage. C’est pour cela qu’il est, dans le poème comme dans la vie, un signe de compagnie.']},
+ {id:'cimarron',titre:'Pourquoi « cimarrón » ?',paragraphes:[
+  'En espagnol, cimarrón veut dire sauvage, sans maître : on le disait du bétail et des chevaux qui vivaient en liberté dans la campagne. Appliqué au maté, le mot a pris le sens de maté amer, sans sucre, bu « au naturel ». Au Río de la Plata, « cimarrón » reste synonyme de maté amer.',
+  'Martín Fierro emploie le mot dans les deux sens : il y a le « perro cimarrón », le chien sans maître, et le cimarrón que le gaucho boit près du feu. C’est un bon exemple de la manière dont le poème puise dans la langue de la campagne.']},
+];
+const sources=[
+ {nom:'UNESCO : Missions jésuites des Guaranis (San Ignacio Miní, São Miguel das Missões…)',url:'https://whc.unesco.org/fr/list/275'},
+ {nom:'Royal Botanic Gardens, Kew : Ilex paraguariensis (aire de répartition naturelle), en anglais',url:'https://powo.science.kew.org/taxon/315555-2'},
+ {nom:'Argentina.gob.ar : le maté, son histoire botanique et guarani (en espagnol)',url:'https://www.argentina.gob.ar/node/213295'},
+];
+---
+<Base migas={[{label:'Revue',href:'/fr/revue/'},{label:'Le maté'}]} lingue={{en:'/en/magazine/yerba-mate/',pt:'/pt/revista/chimarrao/'}} lang="fr-FR" pageType="Article" noindex title="Le maté, boisson de la pampa : des Guaranis à Martín Fierro" description="L’histoire du maté et de la yerba : l’origine guarani, les missions jésuites, la ronde du maté et la place du cimarrón dans les vers de Martín Fierro.">
+<article class="essai-fr">
+<header><p class="eyebrow">REVUE CULTURELLE · LE MONDE DU GAUCHO</p><h1>Le maté, boisson de la pampa</h1><p class="chapo">De Buenos Aires au sud du Brésil, la même calebasse passe de main en main. L’histoire du maté commence chez les Guaranis, traverse les missions jésuites et arrive jusqu’aux vers de Martín Fierro, où le maté amer s’appelle encore cimarrón.</p></header>
+<figure><img src="/media/cultura-gauchesca/mate-tradicional-con-bombilla-rio-de-la-plata.webp" alt="Illustration éditoriale d’un maté avec sa bombilla, à la manière du Río de la Plata" fetchpriority="high"/><figcaption>Illustration éditoriale contemporaine, ce n’est pas une photographie d’époque.</figcaption></figure>
+<div class="lecture"><nav class="sommaire" aria-label="Dans cet article"><strong>Dans cet article</strong>{sections.map(s=><a href={`#${s.id}`}>{s.titre}</a>)}<a href="#dans-les-vers">Le maté dans les vers</a><a href="#sources">Sources</a></nav>
+{sections.map(s=><section id={s.id}><h2>{s.titre}</h2>{s.paragraphes.map(p=><p>{p}</p>)}</section>)}
+<section id="dans-les-vers"><h2>Le maté dans les vers de Martín Fierro</h2><p>Le poème de José Hernández ne consacre pas de scène au maté, mais la calebasse apparaît partout où apparaît la vie quotidienne. Trois passages, dans l’original :</p>
+{vers.map(v=><figure class="citation"><figcaption><a href={v.href} lang="es">{v.ref}</a> · strophe {v.e.numero}</figcaption><blockquote lang="es">{v.e.versos.map(l=><span>{l.texto}</span>)}</blockquote><p>{v.commentaire}</p></figure>)}
+<p>Pour aller plus loin, <a href="/fr/conseils-de-martin-fierro/">les conseils de Martín Fierro à ses fils</a> présentent le chant XXXII en entier, avec une traduction d’étude en français.</p></section>
+<section id="sources"><h2>Sources et méthode</h2><p>Cet article a été écrit pour l’édition française à partir du guide culturel de l’édition espagnole et de l’article de l’édition brésilienne. Nous distinguons toujours les faits historiques, les représentations littéraires et les illustrations modernes. Les vers viennent du texte original de Hernández utilisé dans tout le site.</p><ul>{sources.map(f=><li><a href={f.url} target="_blank" rel="noopener noreferrer">{f.nom}</a></li>)}</ul>
+<p><a href="/fr/revue/">← Retour à la revue</a> · <a href="/fr/">Édition française</a></p></section>
+</div></article>
+<style>.essai-fr{max-width:1040px;margin:24px auto 85px;color:#302820}.essai-fr a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .71rem system-ui,sans-serif;letter-spacing:.14em;color:#934e35}.essai-fr h1{font:600 clamp(2.4rem,5vw,4.75rem)/1.09 Georgia,serif;letter-spacing:-.035em;max-width:930px;margin:17px 0;text-wrap:balance}.chapo{font:1.25rem/1.65 Georgia,serif;max-width:78ch}.essai-fr>figure{margin:32px 0 38px}.essai-fr>figure img{width:100%;max-height:470px;object-fit:cover;border-radius:6px}.essai-fr>figure figcaption{font:.77rem system-ui,sans-serif;color:#6c5b4a;margin-top:9px}.lecture{max-width:770px;margin:auto}.sommaire{display:flex;flex-wrap:wrap;gap:11px 19px;border-block:1px solid #c8b9a7;padding:21px 0;font:.83rem system-ui,sans-serif}.sommaire strong{width:100%}.lecture section{margin:44px 0}.lecture h2{font:600 clamp(1.75rem,3vw,2.5rem)/1.17 Georgia,serif;margin:0 0 19px}.lecture p,.lecture li{font:1.08rem/1.83 Georgia,serif}.lecture li{margin:12px 0}.citation{margin:26px 0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.citation figcaption{font:700 .74rem system-ui,sans-serif;letter-spacing:.06em;color:#8b4731}.citation blockquote{margin:12px 0;border-left:3px solid #ac937b;padding-left:16px}.citation blockquote span{display:block;font:1.1rem/1.65 Georgia,serif}.citation p{font-size:1rem!important;margin:0}#sources{background:#eee3d7;padding:25px 30px}@media(max-width:600px){#sources,.citation{padding:18px}}</style>
+</Base>

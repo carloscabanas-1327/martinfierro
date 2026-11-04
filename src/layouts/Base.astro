@@ -7,28 +7,33 @@ const robotsBlocked=noindex;
 const english=lang.toLowerCase().startsWith('en');
 const italian=lang.toLowerCase().startsWith('it');
 const portuguese=lang.toLowerCase().startsWith('pt');
+const french=lang.toLowerCase().startsWith('fr');
 // hreflang recíproco: solo para páginas indexables registradas en src/data/equivalencias.ts.
 const grupo=robotsBlocked?undefined:equivalenti(Astro.url.pathname);
 const alternates=grupo?(Object.entries(grupo) as [keyof typeof hreflang,string][]).map(([l,href])=>({hreflang:hreflang[l],href:new URL(href,Astro.site).toString()})):[];
 const xDefault=grupo?.es??grupo?.en;
-const nomiLingua={es:'Español',en:'English',it:'Italiano',pt:'Português'} as const;
+const nomiLingua={es:'Español',en:'English',it:'Italiano',pt:'Português',fr:'Français'} as const;
 type Lingua=keyof typeof nomiLingua;
-const linguaCorrente:Lingua=english?'en':italian?'it':portuguese?'pt':'es';
+const linguaCorrente:Lingua=english?'en':italian?'it':portuguese?'pt':french?'fr':'es';
 // Edición brasileña (/pt/): abierta a buscadores desde el 2026-11-04. Con false,
 // «Português» solo aparecería en el selector dentro de /pt/.
 const PT_PUBLICADA=true;
-const lingueSelettore:Lingua[]=['es','en','it',...(PT_PUBLICADA||portuguese?['pt' as const]:[])];
+// Edición francesa (/fr/): en noindex hasta su lanzamiento. Con false,
+// «Français» solo aparece en el selector dentro de /fr/.
+const FR_PUBLICADA=false;
+const lingueSelettore:Lingua[]=['es','en','it',...(PT_PUBLICADA||portuguese?['pt' as const]:[]),...(FR_PUBLICADA||french?['fr' as const]:[])];
 // Selector visible de idioma: los mismos idiomas en todas las ediciones.
 // Usa la página equivalente si está registrada; si no, la portada de cada edición.
 // Las fichas en otras lenguas (/de/, /fr/…) no marcan ningún idioma como actual.
-const edicionPropia=english||italian||portuguese||lang.toLowerCase().startsWith('es');
-const selettore:Partial<Record<Lingua,string>>={es:'/',en:'/en/',it:'/it/',pt:'/pt/',...(edicionPropia?{[linguaCorrente]:Astro.url.pathname}:{}),...(grupo??{}),...(lingue??{})};
+const edicionPropia=english||italian||portuguese||french||lang.toLowerCase().startsWith('es');
+const selettore:Partial<Record<Lingua,string>>={es:'/',en:'/en/',it:'/it/',pt:'/pt/',fr:'/fr/',...(edicionPropia?{[linguaCorrente]:Astro.url.pathname}:{}),...(grupo??{}),...(lingue??{})};
 // Textos fijos de la cabecera, uno por edición.
 const testata={
  es:{salto:'Saltar al contenido',franja:'ARGENTINA · LITERATURA · CULTURA',idioma:'Idioma',inicio:'/',marca:'Martín Fierro — inicio',lema:'Biblioteca documental & revista cultural',leerHref:'/leer/ida/1/',leer:'LEER LA OBRA',nav:'Navegación principal'},
  en:{salto:'Skip to content',franja:'ARGENTINA · LITERATURE · CULTURE',idioma:'Language',inicio:'/en/',marca:'Martín Fierro — English edition',lema:'Documentary library & cultural magazine',leerHref:'/en/students/',leer:'STUDY THE POEM',nav:'Main navigation'},
  it:{salto:'Vai al contenuto',franja:'ARGENTINA · LETTERATURA · CULTURA',idioma:'Lingua',inicio:'/it/',marca:'Martín Fierro — edizione italiana',lema:'Biblioteca documentaria & rivista culturale',leerHref:'/it/lettore/andata/1/',leer:'LEGGI IL CANTO I',nav:'Navigazione principale'},
  pt:{salto:'Pular para o conteúdo',franja:'ARGENTINA · LITERATURA · CULTURA',idioma:'Idioma',inicio:'/pt/',marca:'Martín Fierro — edição brasileira',lema:'Biblioteca documental & revista cultural',leerHref:'/pt/estudantes/',leer:'ESTUDAR O POEMA',nav:'Navegação principal'},
+ fr:{salto:'Aller au contenu',franja:'ARGENTINE · LITTÉRATURE · CULTURE',idioma:'Langue',inicio:'/fr/',marca:'Martín Fierro — édition française',lema:'Bibliothèque documentaire & revue culturelle',leerHref:'/fr/etudiants/',leer:'ÉTUDIER LE POÈME',nav:'Navigation principale'},
 }[linguaCorrente];
 // Menú principal: mismos destinos en todas las ediciones (la brasileña crece por etapas).
 const menu={
@@ -36,6 +41,7 @@ const menu={
  en:[['/en/','Home'],['/en/reader/','Read the poem'],['/en/magazine/','Magazine'],['/en/students/','For students'],['/en/jose-hernandez/','José Hernández'],['/en/library/','Library'],['/en/site-index/','Site index'],['/en/search/','Search']],
  it:[['/it/','Home'],['/it/lettore/','Leggi il poema'],['/it/rivista/','Rivista'],['/it/studenti/','Per gli studenti'],['/it/jose-hernandez/','José Hernández'],['/it/biblioteca/','Biblioteca'],['/it/indice/','Indice del sito'],['/it/cerca/','Cerca']],
  pt:[['/pt/','Início'],['/pt/ler-o-poema/','Ler o poema'],['/pt/revista/','Revista'],['/pt/estudantes/','Para estudantes'],['/pt/jose-hernandez/','José Hernández'],['/pt/personagens/','Personagens'],['/pt/conselhos-de-martin-fierro/','Os conselhos']],
+ fr:[['/fr/','Accueil'],['/fr/lire-le-poeme/','Lire le poème'],['/fr/revue/','Revue'],['/fr/etudiants/','Pour les étudiants'],['/fr/jose-hernandez/','José Hernández'],['/fr/personnages/','Personnages'],['/fr/conseils-de-martin-fierro/','Les conseils']],
 }[linguaCorrente];
 const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
 import AdSlot from '../components/AdSlot.astro';
@@ -92,7 +98,44 @@ import AvisoRecreacion from '../components/AvisoRecreacion.astro';
   
  </header>
  <main id="contenido" class="container">{migas && <Migas items={migas} edicion={linguaCorrente}/>}<slot/></main>
- {portuguese ? <footer class="site-footer editorial-footer" aria-label="Informações do site">
+ {french ? <footer class="site-footer editorial-footer" aria-label="Informations sur le site">
+  <div class="container editorial-footer-grid">
+   <div class="editorial-footer-identity">
+    <a href="/fr/" class="editorial-footer-brand">Martín Fierro</a>
+    <p>Bibliothèque documentaire · Littérature, histoire et culture du Río de la Plata.</p>
+    <p>José Hernández · <em>El gaucho Martín Fierro</em> (1872) · <em>La vuelta de Martín Fierro</em> (1879). Les vers sont toujours cités dans l’original espagnol.</p>
+   </div>
+   <nav class="editorial-footer-links" aria-label="Explorer">
+    <strong>Explorer</strong>
+    <a href="/fr/">Édition française</a>
+    <a href="/fr/lire-le-poeme/">Comment lire le poème</a>
+    <a href="/fr/etudiants/">Fiches pour les étudiants</a>
+    <a href="/fr/conseils-de-martin-fierro/">Les conseils à ses fils</a>
+    <a href="/fr/revue/">Revue culturelle</a>
+    <a href="/leer/" lang="es">Texte original en espagnol</a>
+   </nav>
+   <nav class="editorial-footer-links" aria-label="Le projet">
+    <strong>Le projet</strong>
+    <a href="/fr/jose-hernandez/">José Hernández</a>
+    <a href="/fr/personnages/">Personnages</a>
+    <a href="/fr/etudiants/glossaire/">Glossaire gauchesque</a>
+    <a href="/fr/sources-et-droits/">Sources et droits</a>
+    <a href="/contacto/" lang="es">Contact (en espagnol)</a>
+   </nav>
+   <nav class="editorial-footer-links" aria-label="Autres langues">
+    <strong>Autres langues</strong>
+    <a href="/" lang="es">Español</a>
+    <a href="/en/" lang="en">English</a>
+    <a href="/it/" lang="it">Italiano</a>
+    <a href="/pt/" lang="pt-BR">Português</a>
+    <a href="/traducciones/" lang="es">Traductions du poème (en espagnol)</a>
+   </nav>
+  </div>
+  <div class="container editorial-footer-credits">
+   <p>© {new Date().getFullYear()} MARTINFIERRO.ORG · Édition numérique indépendante · Remerciements au professeur Robertino Ferro.</p>
+   <p>Texte original de José Hernández, dans le domaine public · Commentaires et traductions d’étude en français : MARTINFIERRO.ORG · <a href="/fr/sources-et-droits/">Crédits</a></p>
+  </div>
+ </footer> : portuguese ? <footer class="site-footer editorial-footer" aria-label="Informações do site">
   <div class="container editorial-footer-grid">
    <div class="editorial-footer-identity">
     <a href="/pt/" class="editorial-footer-brand">Martín Fierro</a>

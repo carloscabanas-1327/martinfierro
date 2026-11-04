@@ -1,0 +1,19 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {partes} from '../../../lib/corpus';
+import {guidesAller} from '../../../data/fr-guides-aller';
+import {guidesRetour} from '../../../data/fr-guides-retour';
+const blocs=[
+ {slug:'aller',titre:'Première partie · El gaucho Martín Fierro (1872)',desc:'Du rancho perdu à la frontière : l’enrôlement, la désertion, les meurtres, l’amitié avec Cruz et le passage vers le désert.',chants:partes.ida.cantos.map(c=>({...c,g:guidesAller[c.numero]}))},
+ {slug:'retour',titre:'Seconde partie · La vuelta de Martín Fierro (1879)',desc:'La captivité, la captive, les retrouvailles avec les fils, le Vieux Vizcacha, Picardía, la payada avec le Moreno et les conseils.',chants:partes.vuelta.cantos.map(c=>({...c,g:guidesRetour[c.numero]}))},
+];
+---
+<Base migas={[{label:'Pour les étudiants'}]} lingue={{es:'/estudiantes/',en:'/en/students/',it:'/it/studenti/',pt:'/pt/estudantes/'}} lang="fr-FR" pageType="CollectionPage" noindex title="Martín Fierro pour les étudiants : les 46 chants en français" description="Fiches d’étude en français pour les 46 chants de Martín Fierro : résumé, strophes originales, personnages, thèmes, vocabulaire gauchesque et questions pour la discussion.">
+<div class="etudiants-fr">
+ <header><p class="eyebrow">POUR LES ÉTUDIANTS · 46 FICHES EN FRANÇAIS</p><h1>Martín Fierro, chant par chant</h1><p class="chapo">Une fiche pour chaque chant, avec un résumé, les strophes originales essentielles, les personnages, les thèmes, les mots de l’espagnol gauchesque et des questions pour le cours d’espagnol, la préparation d’un exposé ou le club de lecture.</p></header>
+ <div class="avis"><strong>Mode d’emploi :</strong> lisez la fiche, puis le chant dans l’original (le lien figure sur chaque page). Si vous disposez de la traduction de Paul Verdevoye, gardez-la à côté de l’original pour comparer. Les fiches proposent un commentaire, pas une traduction des vers ; pour une traduction d’étude complète, voyez <a href="/fr/conseils-de-martin-fierro/">les conseils à ses fils</a>.</div>
+ {blocs.map(b=><section><h2>{b.titre}</h2><p>{b.desc}</p><ol class="liste">{b.chants.map(c=><li><a href={`/fr/etudiants/${b.slug}/${c.numero}/`}><span>Chant {c.titulo}</span><strong>{c.g.titre}</strong></a></li>)}</ol></section>)}
+ <section class="extra"><h2>Pour aller plus loin</h2><p><a href="/fr/lire-le-poeme/">Lire l’original quand on est francophone</a> · <a href="/fr/revue/mate/">Le maté, boisson de la pampa</a> · <a href="/fr/etudiants/glossaire/">Glossaire gauchesque</a> · <a href="/fr/personnages/">Personnages</a></p></section>
+</div>
+<style>.etudiants-fr{max-width:1000px;margin:25px auto 85px;color:#302820}.etudiants-fr a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .72rem system-ui,sans-serif;letter-spacing:.13em;color:#934e35}.etudiants-fr h1{font:600 clamp(2.3rem,5vw,4.2rem)/1.1 Georgia,serif;letter-spacing:-.03em;margin:16px 0}.chapo{font:1.2rem/1.65 Georgia,serif;max-width:70ch}.avis{background:#eee3d5;border-left:4px solid #904b36;padding:20px 22px;font:1rem/1.65 Georgia,serif;margin:28px 0}.etudiants-fr section{margin:40px 0}.etudiants-fr h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.2 Georgia,serif}.etudiants-fr section>p{font:1.05rem/1.7 Georgia,serif}.liste{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.liste a{display:grid;gap:4px;background:#efe5d8;padding:14px 16px;text-decoration:none;color:#30271f;height:100%}.liste span{font:700 .72rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8b4731}.liste strong{font:600 1.04rem/1.35 Georgia,serif}.liste a:hover strong{text-decoration:underline}.extra{background:#f3ecdf;padding:20px 24px}@media(max-width:650px){.liste{grid-template-columns:1fr}.extra{padding:16px}}</style>
+</Base>

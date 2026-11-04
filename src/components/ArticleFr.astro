@@ -1,0 +1,19 @@
+---
+// Modèle d’article de l’édition française (même typographie que l’édition italienne).
+import '../styles/edizione-italiana.css';
+interface Props {surtitre:string; titre:string; chapo:string; image?:string; alt?:string; legende?:string; sources?:{nom:string; url:string; langue?:string}[]; noteSources?:string}
+const {surtitre,titre,chapo,image,alt='',legende,sources=[],noteSources}=Astro.props;
+---
+<article class="it-articolo" lang="fr-FR">
+ <header class="it-testata">
+  <p class="it-occhiello">{surtitre}</p>
+  <h1 set:html={titre}/>
+  <p class="it-sommario">{chapo}</p>
+ </header>
+ {image && <figure class="it-figura"><img src={image} alt={alt} loading="eager" decoding="async"/>{legende && <figcaption>{legende}</figcaption>}</figure>}
+ <div class="it-corpo">
+  <slot/>
+  {sources.length>0 && <section class="it-fonti" aria-labelledby="fr-sources"><h2 id="fr-sources">Sources et lectures</h2>{noteSources && <p>{noteSources}</p>}<ul>{sources.map(f=><li><a href={f.url} lang={f.langue} {...(f.url.startsWith('http')?{target:'_blank',rel:'noopener noreferrer'}:{})}>{f.nom}</a></li>)}</ul></section>}
+  <p class="it-ritorno"><a href="/fr/">← Retour à l’édition française</a> · <a href="/fr/etudiants/">Fiches pour les étudiants</a></p>
+ </div>
+</article>

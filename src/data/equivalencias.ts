@@ -3,8 +3,8 @@
 // scripts/generar-seo.mjs comprueba en el build que cada destino exista, sea indexable
 // y devuelva el enlace (reciprocidad).
 import {TESTO_COLLAZIONATO} from '../lib/testena';
-export type Grupo = Partial<Record<'es'|'en'|'it'|'pt', string>>;
-export const hreflang = {es:'es-AR', en:'en-US', it:'it-IT', pt:'pt-BR'} as const;
+export type Grupo = Partial<Record<'es'|'en'|'it'|'pt'|'fr', string>>;
+export const hreflang = {es:'es-AR', en:'en-US', it:'it-IT', pt:'pt-BR', fr:'fr-FR'} as const;
 const base: Grupo[] = [
  {es:'/', en:'/en/', it:'/it/', pt:'/pt/'},
  {es:'/leer/', en:'/en/reader/', it:'/it/lettore/', pt:'/pt/ler-o-poema/'},

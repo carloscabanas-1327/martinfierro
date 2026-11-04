@@ -1,0 +1,51 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {estrofasDeCanto,partes,numeroDeVersos} from '../../../lib/corpus';
+import {ouvertureFr,ouvertureMots} from '../../../data/fr-etude';
+const ouverture=estrofasDeCanto('ida',1).slice(0,3);
+const totalVers=numeroDeVersos('ida')+numeroDeVersos('vuelta');
+const pistes=[
+ ['güeno, güen, gúenas','bueno, buenas','bon, bonnes. Le « bu » de la campagne se prononce « gü ».'],
+ ['juí, juego, ajuera','fui, fuego, afuera','je fus, feu, dehors. Le « f » devient un « j » aspiré.'],
+ ['naides, ansí, ansina','nadie, así','personne, ainsi.'],
+ ['dende, pa, ande','desde, para, donde','depuis, pour, où.'],
+ ['sentao, desgraciao','sentado, desgraciado','assis, malheureux. Le « d » entre deux voyelles disparaît, comme à l’oral.'],
+ ['estraño, esperencia','extraño, experiencia','étrange, expérience. Le « x » savant devient un simple « s ».'],
+];
+const fauxAmis=[
+ ['rato','un moment, un petit moment (rien à voir avec le rat)'],
+ ['pelear','se battre, se bagarrer (pas « peler »)'],
+ ['china','la compagne, la femme du gaucho (pas la Chine)'],
+ ['pago','le pays natal, le coin où l’on est né (pas un paiement)'],
+ ['flete, pingo','le bon cheval, le cheval favori (pas le fret)'],
+ ['facón','le grand couteau du gaucho'],
+ ['pulpería','l’épicerie-buvette de campagne, lieu de rencontre et de rixes'],
+ ['picardía','la roublardise, la filouterie (pas la Picardie)'],
+];
+const partiesListe=[
+ {parte:'ida' as const,slug:'aller',titre:'Première partie · El gaucho Martín Fierro (1872)',desc:'Fierro chante la vie heureuse au rancho, l’enrôlement forcé à la frontière, la désertion, la vie de fugitif et l’amitié avec le sergent Cruz. À la fin, les deux hommes passent la frontière pour vivre chez les Indiens.'},
+ {parte:'vuelta' as const,slug:'retour',titre:'Seconde partie · La vuelta de Martín Fierro (1879)',desc:'Fierro revient, retrouve ses fils et rencontre le fils de Cruz. Chacun raconte son histoire ; il y a le Vieux Vizcacha, la payada avec le Moreno et, au chant XXXII, les conseils à ses fils.'},
+];
+---
+<Base migas={[{label:'Lire le poème'}]} lingue={{es:'/leer/',en:'/en/reader/',it:'/it/lettore/',pt:'/pt/ler-o-poema/'}} lang="fr-FR" pageType="CollectionPage" noindex title="Comment lire Martín Fierro dans l’original : guide pour les francophones" description="Guide en français pour lire Martín Fierro dans l’espagnol original : l’ouverture du poème avec une traduction d’étude, l’orthographe de l’espagnol gauchesque, les faux amis et les 46 chants.">
+<article class="guide-fr">
+<header><p class="eyebrow">LIRE LE POÈME · GUIDE POUR LES FRANCOPHONES</p><h1>Comment lire Martín Fierro dans l’original</h1><p class="lead">Un lecteur qui a fait un peu d’espagnol au lycée comprend déjà une bonne partie du poème, et le français, langue romane, aide à deviner beaucoup de mots. Ce guide montre ce qui change dans l’orthographe de Hernández, quels mots sont trompeurs et comment accéder à chacun des 46 chants.</p></header>
+<div class="avis"><strong>À propos du texte :</strong> les liens « Lire dans l’original » mènent au poème en espagnol, avec les {totalVers.toLocaleString('fr-FR')} vers de José Hernández. Cette édition ne publie pas de traduction intégrale : la traduction française existante est protégée par le droit d’auteur. Les passages en français de cette page sont des traductions d’étude de notre rédaction.</div>
+
+<section class="ouverture" aria-labelledby="fr-ouverture"><p class="eyebrow">AINSI COMMENCE LE POÈME</p><h2 id="fr-ouverture">« Aquí me pongo a cantar »</h2><p>Les trois premières strophes du chant I. Le chanteur demande l’aide des saints avant de raconter son histoire, comme le faisaient les payadores en ouvrant leur performance.</p>
+{ouverture.map(e=><div class="paire"><blockquote lang="es"><span class="num">Strophe {e.numero}</span>{e.versos.map(v=><span class="vers">{v.texto}</span>)}</blockquote><div class="etude"><span class="num">Traduction d’étude</span><p>{ouvertureFr[e.numero]}</p>{ouvertureMots[e.numero]&&<dl>{ouvertureMots[e.numero].map(([w,s])=><><dt lang="es">{w}</dt><dd>{s}</dd></>)}</dl>}</div></div>)}
+<p class="suite"><a href="/leer/ida/1/" lang="es">Poursuivre le chant I dans l’original →</a></p></section>
+
+<section aria-labelledby="fr-graphies"><h2 id="fr-graphies">L’espagnol des campagnes : six repères</h2><p>Hernández écrit comme parle le gaucho de la province de Buenos Aires. L’orthographe semble étrange, mais elle suit des règles simples. Lisez à voix haute : presque toujours, le son révèle le mot.</p>
+<table><thead><tr><th scope="col">Dans le poème</th><th scope="col">Espagnol standard</th><th scope="col">En français</th></tr></thead><tbody>{pistes.map(([a,b,c])=><tr><td lang="es"><em>{a}</em></td><td lang="es">{b}</td><td>{c}</td></tr>)}</tbody></table></section>
+
+<section aria-labelledby="fr-faux"><h2 id="fr-faux">Les faux amis</h2><p>Certains mots ressemblent à des mots français, ou à des mots de l’espagnol appris en classe, et veulent dire tout autre chose dans le poème.</p><dl class="faux">{fauxAmis.map(([w,s])=><div><dt lang="es">{w}</dt><dd>{s}</dd></div>)}</dl><p>Pour aller plus loin, consultez le <a href="/fr/etudiants/glossaire/">glossaire gauchesque</a>.</p></section>
+
+{partiesListe.map(p=><section aria-label={p.titre}><h2>{p.titre}</h2><p>{p.desc}</p><div class="chants">{partes[p.parte].cantos.map(c=><div><strong>Chant {c.titulo}</strong><a href={`/fr/etudiants/${p.slug}/${c.numero}/`}>Fiche d’étude</a><a href={`/leer/${p.parte}/${c.numero}/`} lang="es">Lire dans l’original</a></div>)}</div>{p.parte==='vuelta'&&<p class="encadre">Commencez par le chant XXXII : <a href="/fr/conseils-de-martin-fierro/">les conseils à ses fils, avec une traduction d’étude strophe par strophe</a>.</p>}</section>)}
+
+<section class="traductions" aria-labelledby="fr-traductions"><h2 id="fr-traductions">Martín Fierro en français</h2><p>La traduction française de référence est celle de Paul Verdevoye (1912-2001), hispaniste, avec introduction et notes : <em>Martin Fierro</em>, Paris, Nagel, 1955, Collection UNESCO d’œuvres représentatives (n° 6), 271 pages. On la trouve dans de nombreuses bibliothèques universitaires et municipales. Comme elle est encore protégée par le droit d’auteur, nous ne la reproduisons pas.</p><p>Si vous en avez un exemplaire, lisez-le à côté de l’original : cette édition a été pensée pour cela. Une étude sur cette traduction, ses tournures et ses proverbes, est disponible en espagnol à la <a href="https://www.cervantesvirtual.com/obra-visor/martin-fierro-en-frances-la-traduccion-de-verdevoye-modismos-y-refranes/html/5181d520-a0f9-11e1-b1fb-00163ebf5e63_2.html" target="_blank" rel="noopener noreferrer" lang="es">Biblioteca Virtual Miguel de Cervantes</a>.</p><p class="source">Sources : notices du Catalogue collectif de France (BnF) et du Sudoc.</p></section>
+
+<section aria-labelledby="fr-citer"><h2 id="fr-citer">Comment citer un passage</h2><p>Indiquez l’auteur, le titre original de la partie, l’année, le chant et la strophe, par exemple : Hernández, <em>La vuelta de Martín Fierro</em> (1879), chant XXXII, strophe 1160. Chaque strophe du lecteur a sa propre adresse, que l’on peut copier. Les traductions d’étude de cette édition peuvent être citées sous la forme « traduction d’étude, MARTINFIERRO.ORG ».</p></section>
+</article>
+<style>.guide-fr{max-width:1050px;margin:28px auto 85px;color:#30271f}.guide-fr a{color:#83402d;text-underline-offset:4px}.eyebrow{font:750 .73rem system-ui,sans-serif;letter-spacing:.12em;color:#95503a}.guide-fr h1{font:600 clamp(2.4rem,5vw,4.5rem)/1.1 Georgia,serif;text-wrap:balance}.guide-fr h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.2 Georgia,serif}.guide-fr p,.guide-fr td,.guide-fr dd{font:1.06rem/1.7 Georgia,serif}.lead{font-size:1.24rem!important;max-width:70ch}.avis{background:#eee3d5;border-left:4px solid #904b36;padding:22px;font:1rem/1.65 Georgia,serif}.guide-fr section{margin:44px 0}.ouverture{border-block:1px solid #bba995;padding:30px 0}.paire{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:18px 0}.paire blockquote{margin:0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.vers{display:block;font:1.13rem/1.65 Georgia,serif}.num{display:block;font:700 .7rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8b4731;margin-bottom:8px}.etude{padding:20px 4px}.etude p{margin:0}.etude dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:12px 0 0;font:.85rem/1.5 system-ui,sans-serif;color:#56483b}.etude dt{font-style:italic;font-weight:600}.etude dd{margin:0;font:inherit}.suite{font:.95rem system-ui,sans-serif!important}table{width:100%;border-collapse:collapse;margin-top:14px}th{font:700 .78rem system-ui,sans-serif;letter-spacing:.06em;text-align:left;border-bottom:2px solid #382d25;padding:8px}td{border-bottom:1px solid #d7c7b4;padding:10px 8px;vertical-align:top}.faux{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}.faux div{border-top:1px solid #d7c7b4;padding-top:8px}.faux dt{font:600 1.05rem Georgia,serif;font-style:italic}.faux dd{margin:2px 0 0}.chants{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.chants div{background:#efe5d8;padding:14px 16px;display:grid;gap:6px}.chants strong{font:700 .93rem system-ui,sans-serif;color:#30271f}.chants a{font:.84rem system-ui,sans-serif}.encadre{background:#f0e6d7;border-top:3px solid #aa533c;padding:16px 20px}.traductions{background:#f6efe5;padding:10px 25px 22px}.source{font:.85rem/1.5 system-ui,sans-serif!important;color:#6c5b4a}@media(max-width:750px){.paire{grid-template-columns:1fr;gap:6px}.chants{grid-template-columns:repeat(2,minmax(0,1fr))}.faux{grid-template-columns:1fr}td,th{padding:8px 4px}.guide-fr td{font-size:.95rem}}</style>
+</Base>
