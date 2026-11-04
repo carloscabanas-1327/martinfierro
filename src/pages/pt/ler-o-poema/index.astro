@@ -1,0 +1,51 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {estrofasDeCanto,partes,numeroDeVersos} from '../../../lib/corpus';
+import {aberturaPt,aberturaPalavras} from '../../../data/pt-estudo';
+const abertura=estrofasDeCanto('ida',1).slice(0,3);
+const totalVersos=numeroDeVersos('ida')+numeroDeVersos('vuelta');
+const pistas=[
+ ['güeno, güen, gúenas','bueno, buenas','bom, boas. O “bu” do campo soa “gü”.'],
+ ['juí, juego, ajuera','fui, fuego, afuera','fui, fogo, fora. O “f” vira um “j” aspirado.'],
+ ['naides, ansí, ansina','nadie, así','ninguém, assim.'],
+ ['dende, pa, ande','desde, para, donde','desde, para, onde.'],
+ ['sentao, desgraciao','sentado, desgraciado','sentado, desgraçado. O “d” entre vogais some, como na fala.'],
+ ['estraño, esperencia','extraño, experiencia','estranho, experiência.'],
+];
+const falsos=[
+ ['rato','um momento, um tempinho (não o animal)'],
+ ['pelear','brigar, “peleiar”'],
+ ['china','a companheira, a mulher do gaúcho, como no gauchês'],
+ ['pago','a terra natal, a querência, como no Sul'],
+ ['flete, pingo','o cavalo bom, de estimação'],
+ ['facón','facão, a faca grande do gaúcho'],
+ ['pulpería','venda de campanha, bolicho'],
+ ['picardía','malandragem, esperteza (não “picardia” brincalhona)'],
+];
+const partesLista=[
+ {parte:'ida' as const,titulo:'Primeira parte · El gaucho Martín Fierro (1872)',desc:'Fierro canta a vida feliz no rancho, a leva forçada para a fronteira, a deserção, a vida de fugitivo e a amizade com o sargento Cruz. No fim, os dois cruzam a fronteira para viver entre os índios.'},
+ {parte:'vuelta' as const,titulo:'Segunda parte · La vuelta de Martín Fierro (1879)',desc:'Fierro volta, reencontra os filhos e conhece o filho de Cruz. Cada um conta sua história; há o velho Vizcacha, a payada com o Moreno e, no canto XXXII, os conselhos aos filhos.'},
+];
+---
+<Base migas={[{label:'Ler o poema'}]} lingue={{es:'/leer/',en:'/en/reader/',it:'/it/lettore/'}} lang="pt-BR" noindex={true} pageType="CollectionPage" title="Como ler Martín Fierro no original: guia para leitores brasileiros" description="Guia em português para ler Martín Fierro no espanhol original: a abertura do poema com tradução de estudo, as grafias do espanhol gauchesco, os falsos amigos e os 46 cantos.">
+<article class="guia-pt">
+<header><p class="eyebrow">LER O POEMA · GUIA PARA LEITORES BRASILEIROS</p><h1>Como ler Martín Fierro no original</h1><p class="lead">Quem fala português lê boa parte do espanhol sem esforço, e quem conhece o gauchês do Sul tem ainda mais vantagem. Este guia mostra o que muda na escrita de Hernández, quais palavras enganam e como chegar a cada um dos 46 cantos.</p></header>
+<div class="aviso"><strong>Sobre o texto:</strong> os links “Ler no original” levam ao poema em espanhol, com os {totalVersos.toLocaleString('pt-BR')} versos de José Hernández. Esta edição não publica uma tradução integral: as traduções brasileiras existentes têm direitos de autor. Os trechos em português nesta página são traduções de estudo da nossa redação.</div>
+
+<section class="abertura" aria-labelledby="pt-abertura"><p class="eyebrow">ASSIM COMEÇA O POEMA</p><h2 id="pt-abertura">“Aquí me pongo a cantar”</h2><p>As três primeiras estrofes do canto I. O cantador pede ajuda aos santos antes de contar sua história, como faziam os payadores ao abrir uma apresentação.</p>
+{abertura.map(e=><div class="par"><blockquote lang="es"><span class="num">Estrofe {e.numero}</span>{e.versos.map(v=><span class="verso">{v.texto}</span>)}</blockquote><div class="estudo"><span class="num">Tradução de estudo</span><p>{aberturaPt[e.numero]}</p>{aberturaPalavras[e.numero]&&<dl>{aberturaPalavras[e.numero].map(([w,s])=><><dt lang="es">{w}</dt><dd>{s}</dd></>)}</dl>}</div></div>)}
+<p class="seguir"><a href="/leer/ida/1/" lang="es">Continuar o canto I no original →</a></p></section>
+
+<section aria-labelledby="pt-grafias"><h2 id="pt-grafias">O espanhol do campo: seis pistas</h2><p>Hernández escreve como fala o gaúcho da província de Buenos Aires. A grafia parece estranha, mas segue regras simples. Leia em voz alta: quase sempre o som revela a palavra.</p>
+<table><thead><tr><th scope="col">No poema</th><th scope="col">Espanhol padrão</th><th scope="col">Em português</th></tr></thead><tbody>{pistas.map(([a,b,c])=><tr><td lang="es"><em>{a}</em></td><td lang="es">{b}</td><td>{c}</td></tr>)}</tbody></table></section>
+
+<section aria-labelledby="pt-falsos"><h2 id="pt-falsos">Palavras que enganam e palavras irmãs</h2><p>Algumas palavras parecem portuguesas e não são; outras são as mesmas do gauchês riograndense.</p><dl class="falsos">{falsos.map(([w,s])=><div><dt lang="es">{w}</dt><dd>{s}</dd></div>)}</dl><p>Mais sobre essa ponte entre o Prata e o Sul do Brasil em <a href="/pt/revista/chimarrao/">Chimarrão: a erva que une o Pampa</a>.</p></section>
+
+{partesLista.map(p=><section aria-label={p.titulo}><h2>{p.titulo}</h2><p>{p.desc}</p><div class="cantos">{partes[p.parte].cantos.map(c=><a href={`/leer/${p.parte}/${c.numero}/`} lang="es"><strong>Canto {c.titulo}</strong><span>Ler no original</span></a>)}</div>{p.parte==='vuelta'&&<p class="destaque">Comece pelo canto XXXII: <a href="/pt/conselhos-de-martin-fierro/">os conselhos aos filhos, com tradução de estudo estrofe por estrofe</a>.</p>}</section>)}
+
+<section class="traducoes" aria-labelledby="pt-traducoes"><h2 id="pt-traducoes">Martín Fierro em português</h2><p>O português é a língua com mais traduções do poema: sete, seis delas brasileiras. A primeira tradução completa é a de João Otávio Nogueira Leiria, publicada em Porto Alegre no centenário do poema, em 1972. Há também a versão de Walmir Ayala (Ediouro) e a de Leopoldo Jobim, só da primeira parte, além de trechos traduzidos por Cecília Meireles e Josué Montello.</p><p>Se você tem uma dessas edições em casa, use-a ao lado do original: esta edição foi pensada para isso.</p><p class="fonte">Fonte: Tiago Pedruzzi, “Dos traducciones brasileñas de Martín Fierro”, <em>Caderno de Letras</em> (UFPel), n. 30, 2018.</p></section>
+
+<section aria-labelledby="pt-citar"><h2 id="pt-citar">Como citar um trecho</h2><p>Indique o autor, o título original da parte, o ano, o canto e a estrofe, por exemplo: Hernández, <em>La vuelta de Martín Fierro</em> (1879), canto XXXII, estrofe 1160. Cada estrofe do leitor tem um endereço próprio que pode ser copiado. As traduções de estudo desta edição podem ser citadas como “tradução de estudo, MARTINFIERRO.ORG”.</p></section>
+</article>
+<style>.guia-pt{max-width:1050px;margin:28px auto 85px;color:#30271f}.guia-pt a{color:#83402d;text-underline-offset:4px}.eyebrow{font:750 .73rem system-ui,sans-serif;letter-spacing:.12em;color:#95503a}.guia-pt h1{font:600 clamp(2.4rem,5vw,4.5rem)/1.1 Georgia,serif;text-wrap:balance}.guia-pt h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.2 Georgia,serif}.guia-pt p,.guia-pt td,.guia-pt dd{font:1.06rem/1.7 Georgia,serif}.lead{font-size:1.24rem!important;max-width:70ch}.aviso{background:#eee3d5;border-left:4px solid #904b36;padding:22px;font:1rem/1.65 Georgia,serif}.guia-pt section{margin:44px 0}.abertura{border-block:1px solid #bba995;padding:30px 0}.par{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:18px 0}.par blockquote{margin:0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.verso{display:block;font:1.13rem/1.65 Georgia,serif}.num{display:block;font:700 .7rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8b4731;margin-bottom:8px}.estudo{padding:20px 4px}.estudo p{margin:0}.estudo dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:12px 0 0;font:.85rem/1.5 system-ui,sans-serif;color:#56483b}.estudo dt{font-style:italic;font-weight:600}.estudo dd{margin:0;font:inherit}.seguir{font:.95rem system-ui,sans-serif!important}table{width:100%;border-collapse:collapse;margin-top:14px}th{font:700 .78rem system-ui,sans-serif;letter-spacing:.06em;text-align:left;border-bottom:2px solid #382d25;padding:8px}td{border-bottom:1px solid #d7c7b4;padding:10px 8px;vertical-align:top}.falsos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}.falsos div{border-top:1px solid #d7c7b4;padding-top:8px}.falsos dt{font:600 1.05rem Georgia,serif;font-style:italic}.falsos dd{margin:2px 0 0}.cantos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.cantos a{background:#efe5d8;padding:14px 16px;display:grid;gap:4px;text-decoration:none}.cantos strong{font:700 .93rem system-ui,sans-serif;color:#30271f}.cantos span{font:.8rem system-ui,sans-serif;text-decoration:underline}.destaque{background:#f0e6d7;border-top:3px solid #aa533c;padding:16px 20px}.traducoes{background:#f6efe5;padding:10px 25px 22px}.fonte{font:.85rem/1.5 system-ui,sans-serif!important;color:#6c5b4a}@media(max-width:750px){.par{grid-template-columns:1fr;gap:6px}.cantos{grid-template-columns:repeat(2,minmax(0,1fr))}.falsos{grid-template-columns:1fr}td,th{padding:8px 4px}.guia-pt td{font-size:.95rem}}</style>
+</Base>
