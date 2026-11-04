@@ -43,6 +43,8 @@ const secoes=[
 
  <section class="en-first-feature" aria-labelledby="pt-pampa"><div><p class="en-kicker">UM SÓ PAMPA</p><h2 id="pt-pampa">O mesmo gaúcho dos dois lados da fronteira</h2><p>A planície que vai de Buenos Aires ao Rio Grande do Sul criou um mesmo tipo humano, com o mesmo poncho, a mesma bombacha e quase as mesmas palavras: pago, pingo, china, bagual, bolicho. Quem fala gauchês tem meio caminho andado para ler Martín Fierro no original.</p><a href="/pt/ler-o-poema/">Veja as palavras irmãs ↗</a> · <a href="/pt/revista/chimarrao/">De cimarrón a chimarrão ↗</a></div></section>
 
+ <section class="en-first-feature" aria-labelledby="pt-estudantes"><div><p class="en-kicker">PARA ESTUDANTES</p><h2 id="pt-estudantes">Os 46 cantos, um por um</h2><p>Para cada canto, um guia em português: resumo, as estrofes originais mais importantes, personagens, temas, palavras do espanhol gauchesco e perguntas para a sala de aula ou o clube de leitura.</p><a href="/pt/estudantes/">Abrir os guias de estudo ↗</a> · <a href="/pt/estudantes/ida/1/">Começar pelo canto I ↗</a></div></section>
+
  <section id="explorar" class="en-section" aria-labelledby="pt-explorar">
   <div class="en-section-heading"><p class="en-kicker">EXPLORE A EDIÇÃO</p><h2 id="pt-explorar">O poema, os conselhos, o mundo do gaúcho.</h2></div>
   <div class="en-grid">{secoes.map(s=><article class="en-card"><a href={s.href}><div class="en-image"><img src={s.img} alt={s.alt} loading="lazy" decoding="async"/></div><div class="en-card-copy"><span>{s.n} / A EDIÇÃO</span><h3>{s.titulo}</h3><p>{s.texto}</p><strong>Explore a seção <span aria-hidden="true">↗</span></strong></div></a></article>)}</div>

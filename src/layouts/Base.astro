@@ -28,14 +28,14 @@ const testata={
  es:{salto:'Saltar al contenido',franja:'ARGENTINA · LITERATURA · CULTURA',idioma:'Idioma',inicio:'/',marca:'Martín Fierro — inicio',lema:'Biblioteca documental & revista cultural',leerHref:'/leer/ida/1/',leer:'LEER LA OBRA',nav:'Navegación principal'},
  en:{salto:'Skip to content',franja:'ARGENTINA · LITERATURE · CULTURE',idioma:'Language',inicio:'/en/',marca:'Martín Fierro — English edition',lema:'Documentary library & cultural magazine',leerHref:'/en/students/',leer:'STUDY THE POEM',nav:'Main navigation'},
  it:{salto:'Vai al contenuto',franja:'ARGENTINA · LETTERATURA · CULTURA',idioma:'Lingua',inicio:'/it/',marca:'Martín Fierro — edizione italiana',lema:'Biblioteca documentaria & rivista culturale',leerHref:'/it/lettore/andata/1/',leer:'LEGGI IL CANTO I',nav:'Navigazione principale'},
- pt:{salto:'Pular para o conteúdo',franja:'ARGENTINA · LITERATURA · CULTURA',idioma:'Idioma',inicio:'/pt/',marca:'Martín Fierro — edição brasileira',lema:'Biblioteca documental & revista cultural',leerHref:'/pt/ler-o-poema/',leer:'LER O POEMA',nav:'Navegação principal'},
+ pt:{salto:'Pular para o conteúdo',franja:'ARGENTINA · LITERATURA · CULTURA',idioma:'Idioma',inicio:'/pt/',marca:'Martín Fierro — edição brasileira',lema:'Biblioteca documental & revista cultural',leerHref:'/pt/estudantes/',leer:'ESTUDAR O POEMA',nav:'Navegação principal'},
 }[linguaCorrente];
 // Menú principal: mismos destinos en todas las ediciones (la brasileña crece por etapas).
 const menu={
  es:[['/', 'Inicio'],['/leer/','Leer la obra'],['/revista/','Revista'],['/estudiantes/','Para estudiantes'],['/jose-hernandez/','José Hernández'],['/biblioteca/','Biblioteca'],['/indice-general/','Índice general'],['/buscar-documentos/','Buscar']],
  en:[['/en/','Home'],['/en/reader/','Read the poem'],['/en/magazine/','Magazine'],['/en/students/','For students'],['/en/jose-hernandez/','José Hernández'],['/en/library/','Library'],['/en/site-index/','Site index'],['/en/search/','Search']],
  it:[['/it/','Home'],['/it/lettore/','Leggi il poema'],['/it/rivista/','Rivista'],['/it/studenti/','Per gli studenti'],['/it/jose-hernandez/','José Hernández'],['/it/biblioteca/','Biblioteca'],['/it/indice/','Indice del sito'],['/it/cerca/','Cerca']],
- pt:[['/pt/','Início'],['/pt/ler-o-poema/','Ler o poema'],['/pt/conselhos-de-martin-fierro/','Os conselhos'],['/pt/revista/','Revista']],
+ pt:[['/pt/','Início'],['/pt/ler-o-poema/','Ler o poema'],['/pt/estudantes/','Para estudantes'],['/pt/conselhos-de-martin-fierro/','Os conselhos'],['/pt/revista/','Revista']],
 }[linguaCorrente];
 const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
 import AdSlot from '../components/AdSlot.astro';
@@ -102,6 +102,7 @@ import '../styles/editorial-shell.css';
     <strong>Explorar</strong>
     <a href="/pt/">Edição brasileira</a>
     <a href="/pt/ler-o-poema/">Como ler o poema</a>
+    <a href="/pt/estudantes/">Guias para estudantes</a>
     <a href="/pt/conselhos-de-martin-fierro/">Os conselhos aos filhos</a>
     <a href="/pt/revista/">Revista cultural</a>
     <a href="/leer/" lang="es">Texto original em espanhol</a>

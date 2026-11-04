@@ -1,0 +1,36 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import {estrofasDeCanto,partes,type Parte} from '../../../../lib/corpus';
+import {guiasIda,type GuiaPt} from '../../../../data/pt-guias-ida';
+import {guiasVuelta} from '../../../../data/pt-guias-vuelta';
+export function getStaticPaths(){
+ const p=(slug:'ida'|'volta',parte:Parte,g:Record<number,GuiaPt>)=>Object.keys(g).map(n=>({params:{parte:slug,canto:n},props:{parte,n:Number(n)}}));
+ return [...p('ida','ida',guiasIda),...p('volta','vuelta',guiasVuelta)];
+}
+const {parte,n}=Astro.props as {parte:Parte;n:number};
+const guias=parte==='ida'?guiasIda:guiasVuelta;
+const g=guias[n];
+const slug=parte==='ida'?'ida':'volta';
+const romano=partes[parte].cantos.find(c=>c.numero===n)!.titulo;
+const total=partes[parte].cantos.length;
+const nomeParte=parte==='ida'?'El gaucho Martín Fierro':'La vuelta de Martín Fierro';
+const ano=partes[parte].anio;
+const trechos=estrofasDeCanto(parte,n).filter(e=>g.estrofes.includes(e.numero));
+const anterior=n>1?`/pt/estudantes/${slug}/${n-1}/`:(parte==='vuelta'?'/pt/estudantes/ida/13/':undefined);
+const seguinte=n<total?`/pt/estudantes/${slug}/${n+1}/`:(parte==='ida'?'/pt/estudantes/volta/1/':undefined);
+const outras={en:`/en/students/${parte==='ida'?'canto':'vuelta-canto'}-${n}/`};
+---
+<Base migas={[{label:'Para estudantes',href:'/pt/estudantes/'},{label:`${parte==='ida'?'Primeira':'Segunda'} parte, canto ${romano}`}]} lingue={outras} lang="pt-BR" noindex={true} pageType="Article" title={`Martín Fierro, ${parte==='ida'?'primeira':'segunda'} parte, canto ${romano}: ${g.titulo}`} description={`Resumo e análise em português do canto ${romano} de ${nomeParte}: estrofes originais, personagens, temas, vocabulário gauchesco e perguntas para estudo.`}>
+<article class="guia-estudo">
+<header><p class="eyebrow">MARTÍN FIERRO PARA ESTUDANTES · {nomeParte.toUpperCase()} · {ano}</p><h1><span>Canto {romano}</span> {g.titulo}</h1><p class="deck">Guia de estudo em português, sempre ao lado do poema original de José Hernández.</p></header>
+<section><h2>O que acontece no canto {romano}?</h2><p>{g.resumo}</p><p><a href={`/leer/${parte}/${n}/`} lang="es">Ler o canto {romano} completo no original ↗</a></p></section>
+<section><h2>Versos originais: {trechos.length===1?'um trecho':`${trechos.length} trechos`} para estudar</h2><p>As estrofes vêm do texto original, sem modernização. As explicações desta página são interpretação, não tradução.</p>{trechos.map(e=><figure class="estrofe" lang="es"><figcaption>Estrofe {e.numero}</figcaption><blockquote>{e.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>)}</section>
+<section class="fichas"><div><h2>Personagens e vozes</h2><p>{g.personagens}</p></div><div><h2>Temas</h2><p>{g.temas}</p></div></section>
+<section><h2>Palavras do canto</h2><dl class="palavras">{g.palavras.map(([w,s])=><div><dt lang="es">{w}</dt><dd>{s}</dd></div>)}</dl></section>
+{g.analise&&<section><h2>Para ler com atenção</h2><p>{g.analise}</p>{parte==='vuelta'&&n===32&&<p><a href="/pt/conselhos-de-martin-fierro/">Os conselhos estrofe por estrofe, com tradução de estudo ↗</a></p>}</section>}
+<section><h2>Perguntas para estudo e discussão</h2><ol>{g.perguntas.map(q=><li>{q}</li>)}</ol><p>Apoie as respostas em passagens do canto original. Interpretações diferentes podem ser válidas, desde que sustentadas pelo texto e pelo contexto.</p></section>
+<nav class="navegacao" aria-label="Outros cantos">{anterior?<a href={anterior}>← Canto anterior</a>:<span></span>}<a href="/pt/estudantes/">Todos os cantos</a>{seguinte?<a href={seguinte}>Próximo canto →</a>:<span></span>}</nav>
+<section class="fontes"><h2>Fonte</h2><p>José Hernández, <em>{nomeParte}</em> ({ano}), canto {romano}, a partir do texto original estruturado do site. Resumo, análise e perguntas: comentário educativo da redação do MARTINFIERRO.ORG, não explicações do autor.</p></section>
+</article>
+<style>.guia-estudo{max-width:850px;margin:25px auto 85px;color:#302820}.guia-estudo a{color:#80402f;text-underline-offset:4px}.eyebrow{font:750 .72rem system-ui,sans-serif;letter-spacing:.13em;color:#945138}.guia-estudo h1{font:600 clamp(2.2rem,5vw,3.9rem)/1.1 Georgia,serif;letter-spacing:-.03em;margin:15px 0;text-wrap:balance}.guia-estudo h1 span{display:block;font:700 .9rem system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#8b4731;margin-bottom:10px}.deck{font:1.2rem/1.6 Georgia,serif}.guia-estudo section{margin:36px 0}.guia-estudo h2{font:600 clamp(1.6rem,3vw,2.2rem) Georgia,serif}.guia-estudo p,.guia-estudo li,.guia-estudo dd{font:1.05rem/1.8 Georgia,serif}.guia-estudo li{margin:12px 0}.estrofe{border-top:1px solid #cab7a2;margin:22px 0;padding:20px;background:#f3ecdf}.estrofe figcaption{font:.78rem system-ui,sans-serif;color:#74604e}.estrofe blockquote{margin:12px 0;border-left:3px solid #ac937b;padding-left:17px}.estrofe span{display:block;font:1.11rem/1.65 Georgia,serif}.fichas{display:grid;grid-template-columns:1fr 1fr;gap:28px}.fichas h2{font-size:1.5rem!important}.palavras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 26px}.palavras div{border-top:1px solid #d7c7b4;padding-top:8px}.palavras dt{font:600 1.05rem Georgia,serif;font-style:italic}.palavras dd{margin:0;font-size:.98rem!important;line-height:1.6!important}.navegacao{display:flex;justify-content:space-between;gap:12px;border-block:1px solid #c8b9a7;padding:16px 0;font:.88rem system-ui,sans-serif}.fontes{background:#eee4d7;padding:22px 25px}@media(max-width:650px){.fichas,.palavras{grid-template-columns:1fr;gap:12px}.estrofe{padding:16px}.fontes{padding:18px}}</style>
+</Base>
