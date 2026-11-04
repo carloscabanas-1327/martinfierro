@@ -1,5 +1,5 @@
 // Traducción italiana de Folco Testena (1919): datos en fuentes/testena-1919/.
-// El texto procede del OCR y no se corrige aquí: se muestra tal cual con su advertencia.
+// El texto procede del OCR, cotejado con el facsímil; las correcciones viven en fuentes/testena-1919/correzioni.json.
 import andata from '../../fuentes/testena-1919/andata.json';
 import ritorno from '../../fuentes/testena-1919/ritorno.json';
 import corrispondenza from '../../fuentes/testena-1919/corrispondenza.json';
@@ -11,8 +11,8 @@ export type CantoIt = {numero:number; pagina_libro:number|null; immagine_facsimi
 export type ParteIt = 'andata'|'ritorno';
 type DatiParte = {parte:ParteIt; parte_originale:'ida'|'vuelta'; titolo:string; titolo_originale:string; avvertenza:string; canti:CantoIt[]};
 
-/** Mientras la transcripción no esté cotejada con el facsímil, los 46 cantos van en noindex. */
-export const TESTO_COLLAZIONATO = false;
+/** Transcripción cotejada con el facsímil (noviembre de 2026): los 46 cantos se indexan. */
+export const TESTO_COLLAZIONATO = true;
 
 export const partiIt: Record<ParteIt, DatiParte & {anno:number; etichetta:string; descrizione:string}> = {
  andata:{...(andata as DatiParte), anno:1872, etichetta:'Prima parte', descrizione:'Fierro perde la casa, serve alla frontiera, diventa fuggiasco e trova in Cruz un amico.'},

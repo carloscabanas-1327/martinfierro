@@ -8,7 +8,7 @@ const it=partiIt[parte].canti.find(c=>c.numero===canto)!.estrofe.find(e=>e.numer
 const es=originale?estrofasDeCanto(partiIt[parte].parte_originale,canto).find(e=>e.numero===originale):undefined;
 ---
 <figure class="it-strofa">
- <figcaption>{partiIt[parte].titolo}, canto {romano(canto)}, strofa {strofa} · traduzione di Folco Testena (1919), trascrizione OCR in revisione · <a href={`${urlCantoIt(parte,canto)}#${it.id}`}>leggi nel contesto</a></figcaption>
+ <figcaption>{partiIt[parte].titolo}, canto {romano(canto)}, strofa {strofa} · traduzione di Folco Testena (1919) · <a href={`${urlCantoIt(parte,canto)}#${it.id}`}>leggi nel contesto</a></figcaption>
  <blockquote lang="it">{it.versi.map(v=><span>{v.testo}</span>)}</blockquote>
  {es && <><figcaption lang="es">Original · estrofa {es.numero}</figcaption><blockquote lang="es">{es.versos.map(v=><span>{v.texto}</span>)}</blockquote></>}
 </figure>

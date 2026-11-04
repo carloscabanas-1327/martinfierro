@@ -70,7 +70,7 @@ for p in fuente["partes"]:
                      "traduzione": {"url": f"/it/lettore/{slug}/{n}/", "estrofe": len(estrofe), "versi": vt},
                      "differenza_versi": vt - vo, "pagina_libro": pagina, "immagine_facsimile": c["pdf"]})
     salida = {"parte": slug, "parte_originale": orig, "titolo": p["titulo_it"], "titolo_originale": p["titulo"],
-              "avvertenza": "Trascrizione OCR non collazionata integralmente. La numerazione di strofe e versi è quella della traduzione, non quella dell'originale spagnolo.",
+              "avvertenza": "Trascrizione OCR collazionata con il facsimile (novembre 2026). La numerazione di strofe e versi è quella della traduzione, non quella dell'originale spagnolo.",
               "canti": canti}
     (base / f"{slug}.json").write_text(json.dumps(salida, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 (base / "corrispondenza.json").write_text(json.dumps(
