@@ -2,12 +2,39 @@
  "nota": "Correzioni della trascrizione OCR verificate sul facsimile dell'IAI. Le applica scripts/importar-testena.py. La chiave «verso» è la posizione del verso nell'OCR; «stampa»: null elimina una riga che non è un verso; una lista sostituisce la riga con più versi (versi persi dall'OCR). Ogni voce indica il testo dell'OCR, quello stampato e l'immagine consultata.",
  "correzioni": [
   {
-   "verso": "it-ritorno-c30-e004-v02",
-   "ocr": "T'uom si deve misurare",
-   "stampa": "L'uom si deve misurare",
-   "immagine_facsimile": 147,
-   "pagina_libro": 141,
-   "data": "2026-11-03"
+   "verso": "it-andata-c01-e002-v03",
+   "ocr": "Ciò lor chiedo nel momento",
+   "stampa": "Ció lor chiedo nel momento",
+   "immagine_facsimile": 21,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e003-v03",
+   "ocr": "La mia lingua stenta, o. parmi,",
+   "stampa": "La mia lingua stenta, o parmi,",
+   "immagine_facsimile": 21,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e005-v01",
+   "ocr": "Ma dov'altro creolo passa,",
+   "stampa": [
+    "Ma dov'altro creolo passa,",
+    "Martín Fierro ha da passare;"
+   ],
+   "immagine_facsimile": 21,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e005-v05",
+   "ocr": "Ancor io woglio cantare,",
+   "stampa": "Ancor io voglio cantare.",
+   "immagine_facsimile": 21,
+   "pagina_libro": null,
+   "data": "2026-11-04"
   },
   {
    "verso": "it-andata-c01-e006-v02",
@@ -16,6 +43,190 @@
    "immagine_facsimile": 22,
    "pagina_libro": null,
    "data": "2026-11-03"
+  },
+  {
+   "verso": "it-andata-c01-e007-v05",
+   "ocr": "Mi dovran così trovare",
+   "stampa": "Mi dovran cosí trovare",
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e008-v06",
+   "ocr": "Può spaziare a suo talento.",
+   "stampa": "Puó spaziare a suo talento.",
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e011-v02",
+   "ocr": "E anche più nel chiuso altrui;",
+   "stampa": "E anche piú nel chiuso altrui;",
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e011-v05",
+   "ocr": "Venga un altro qui a cañtare",
+   "stampa": "Venga un altro qui a cantare",
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e013-v04",
+   "ocr": "mio cuore si disserra;",
+   "stampa": "Il mio cuore si disserra;",
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e014-v01",
+   "ocr": "Si può far dovunque. guerra;",
+   "stampa": "Si puó far dovunque. guerra;",
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e014-v04",
+   "ocr": "Stampa l'orma in ogni terra.,",
+   "stampa": "Stampa l'orma in ogni terra.",
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e014-v06",
+   "ocr": "Si convio la conto schietta;",
+   "stampa": "Sí com'io la conto schietta;",
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e015-v04",
+   "ocr": "Né del sol sento il bruciore. è;",
+   "stampa": "Né del sol sento il bruciore.",
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e016-v01",
+   "ocr": "eee ttt",
+   "stampa": null,
+   "immagine_facsimile": 22,
+   "pagina_libro": null,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e016-v03",
+   "ocr": "Nel profondo, giù, del mare;",
+   "stampa": "Nel profondo, giú, del mare;",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e016-v04",
+   "ocr": "Nessun mi potrà strappare",
+   "stampa": "Nessun mi potrá strappare",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e017-v01",
+   "ocr": "Ilevar.: Me lo voglio riportare.",
+   "stampa": "Me lo voglio riportare.",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e017-v06",
+   "ocr": "Nessun mi dovrà 'seguire",
+   "stampa": "Nessun mi dovrá seguire",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e018-v01",
+   "ocr": "Quando ancora*apriró il volo,",
+   "stampa": "Quando ancora apriró il volo,",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e018-v04",
+   "ocr": "bellas 3, Come quelle tortorelle",
+   "stampa": "Come quelle tortorelle",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e019-v03",
+   "ocr": "Tutto ciò ch'io riferisco,",
+   "stampa": "Tutto ció ch'io riferisco,",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e019-v05",
+   "ocr": "Solo é per necessità:",
+   "stampa": "Solo é per necessitá:",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e019-v06",
+   "ocr": "Mi portò l'avversità à",
+   "stampa": "Mi portó l'avversitá á",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c01-e020-v06",
+   "ocr": "È . E malgrado ciò la gente",
+   "stampa": "E malgrado ció la gente",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e002-v04",
+   "ocr": "llanto; 5 'Tra le sofferenze e il pianto;",
+   "stampa": "Tra le sofferenze e il pianto;",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e003-v01",
+   "ocr": "Viene l'uomo. cieco al mondo",
+   "stampa": "Viene l'uomo cieco al mondo",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e003-v02",
+   "ocr": "Y lo culla la speranza;",
+   "stampa": "E lo culla la speranza;",
+   "immagine_facsimile": 23,
+   "pagina_libro": 17,
+   "data": "2026-11-04"
   },
   {
    "verso": "it-andata-c02-e004-v01",
@@ -40,6 +251,2854 @@
    "stampa": "Come i dí passar soleva!",
    "immagine_facsimile": 24,
    "pagina_libro": null,
+   "data": "2026-11-03"
+  },
+  {
+   "verso": "it-andata-c02-e005-v04",
+   "ocr": "Il chiaror del di annunziava,",
+   "stampa": "Il chiaror del dí annunziava,",
+   "immagine_facsimile": 24,
+   "pagina_libro": 18,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e007-v04",
+   "ocr": "E il pollame scuotea ali,",
+   "stampa": "E il pollame scuotea l'ali,",
+   "immagine_facsimile": 24,
+   "pagina_libro": 18,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e008-v02",
+   "ocr": "Già s'avvia l'altro cantando,",
+   "stampa": "Giá s'avvia l'altro cantando,",
+   "immagine_facsimile": 24,
+   "pagina_libro": 18,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e010-v01",
+   "ocr": "Si, ma. il Gaudio intelligente",
+   "stampa": "Si, ma il Gaucio intelligente",
+   "immagine_facsimile": 24,
+   "pagina_libro": 18,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e011-v04",
+   "ocr": "Mentre il Gaucio agil Jo carca",
+   "stampa": "Mentre il Gaucio agil lo carca",
+   "immagine_facsimile": 24,
+   "pagina_libro": 18,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e013-v06",
+   "ocr": "Animali ricontavatio;",
+   "stampa": "Animali ricontavano;",
+   "immagine_facsimile": 25,
+   "pagina_libro": 19,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e015-v05",
+   "ocr": "Tre, in braccio dell'amore,",
+   "stampa": [
+    "Ire, in braccio dell'amore,",
+    "A dormir come i cristiani,",
+    "Per riprender l'indomani",
+    "Il daffar del dí anteriore."
+   ],
+   "immagine_facsimile": 25,
+   "pagina_libro": 19,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e016-v05",
+   "ocr": "Fa pietà, convé conciata.",
+   "stampa": "Fa pietá, com'é conciata.",
+   "immagine_facsimile": 25,
+   "pagina_libro": 19,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e017-v01",
+   "ocr": "Ed il Gaucio più meschino",
+   "stampa": "Ed il Gaucio piú meschino",
+   "immagine_facsimile": 25,
+   "pagina_libro": 19,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e017-v03",
+   "ocr": "Cera il sol, se cera il gelo;",
+   "stampa": "C'era il sol, se c'era il gelo;",
+   "immagine_facsimile": 25,
+   "pagina_libro": 19,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e018-v04",
+   "ocr": "Ecco, é preso: alla borora!",
+   "stampa": "Ecco, é preso: alla bon'ora!",
+   "immagine_facsimile": 25,
+   "pagina_libro": 19,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e018-v05",
+   "ocr": "Tempi! Ahimé, non più d'allora",
+   "stampa": "Tempi! Ahimé, non piú d'allora",
+   "immagine_facsimile": 25,
+   "pagina_libro": 19,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e018-v06",
+   "ocr": "Ritornò tanto splendore!",
+   "stampa": "Ritornó tanto splendore!",
+   "immagine_facsimile": 25,
+   "pagina_libro": 19,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e022-v01",
+   "ocr": "Eran giorni di trambusto;",
+   "stampa": [
+    "Eran giorni di trambusto;",
+    "Per le donne era affar grande",
+    "Preparare le vivande",
+    "E trattar bene la gente;"
+   ],
+   "immagine_facsimile": 26,
+   "pagina_libro": 20,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e024-v02",
+   "ocr": "Franco e in ogni sicurtà,",
+   "stampa": [
+    "Franco e in ogni sicurtá,",
+    "Mentre adesso... Oh atrocitá!"
+   ],
+   "immagine_facsimile": 26,
+   "pagina_libro": 20,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e024-v05",
+   "ocr": "A fuggir le autorità.",
+   "stampa": "A fuggir le autoritá.",
+   "immagine_facsimile": 26,
+   "pagina_libro": 20,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e025-v01",
+   "ocr": "E Palcalde ce lo coglie,",
+   "stampa": "E l'alcalde ce lo coglie,",
+   "immagine_facsimile": 26,
+   "pagina_libro": 20,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e025-v05",
+   "ocr": "Né laccio che non:si scioglie.",
+   "stampa": "Né laccio che non si scioglie.",
+   "immagine_facsimile": 26,
+   "pagina_libro": 20,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e028-v03",
+   "ocr": "E non c'é più salvazione;",
+   "stampa": "E non c'é piú salvazione;",
+   "immagine_facsimile": 26,
+   "pagina_libro": 20,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e029-v02",
+   "ocr": "Se vi-piace... in altri canti",
+   "stampa": "Se vi piace... in altri canti",
+   "immagine_facsimile": 26,
+   "pagina_libro": 20,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e029-v03",
+   "ocr": "Vi dirò quel che ho patito",
+   "stampa": "Vi diró quel che ho patito",
+   "immagine_facsimile": 26,
+   "pagina_libro": 20,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c02-e030-v01",
+   "ocr": "Mentre adesso... Oh atrocità!",
+   "stampa": null,
+   "immagine_facsimile": 26,
+   "pagina_libro": 20,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e005-v01",
+   "ocr": "Si squagliarono i più furbi.",
+   "stampa": "Si squagliarono i piú furbi.",
+   "immagine_facsimile": 27,
+   "pagina_libro": 21,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e010-v02",
+   "ocr": "sin dall'ultima, elezione.",
+   "stampa": "sin dall'ultima elezione.",
+   "immagine_facsimile": 28,
+   "pagina_libro": 22,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e010-v05",
+   "ocr": "Così disse ch'io servivo",
+   "stampa": "Cosí disse ch'io servivo",
+   "immagine_facsimile": 28,
+   "pagina_libro": 22,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e013-v05",
+   "ocr": "Non mai un Gaucio può stare",
+   "stampa": "Non mai un Gaucio puó stare",
+   "immagine_facsimile": 28,
+   "pagina_libro": 22,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e015-v06",
+   "ocr": "Forse non crederà questo.",
+   "stampa": "Forse non crederá questo.",
+   "immagine_facsimile": 28,
+   "pagina_libro": 22,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e016-v04",
+   "ocr": "Ciò che chiamano Cantone...",
+   "stampa": "Ció che chiamano Cantone...",
+   "immagine_facsimile": 28,
+   "pagina_libro": 22,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e017-v03",
+   "ocr": "più vecchi brontolarono;",
+   "stampa": "I piú vecchi brontolarono;",
+   "immagine_facsimile": 28,
+   "pagina_libro": 22,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e017-v04",
+   "ocr": "Ma perché un si lamentò,",
+   "stampa": "Ma perché un si lamentó,",
+   "immagine_facsimile": 28,
+   "pagina_libro": 22,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e017-v06",
+   "ocr": "E l'affare terminò.",
+   "stampa": "E l'affare terminó.",
+   "immagine_facsimile": 28,
+   "pagina_libro": 22,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e018-v05",
+   "ocr": "Avrà proprio un bel fischiare:",
+   "stampa": "Avrá proprio un bel fischiare:",
+   "immagine_facsimile": 29,
+   "pagina_libro": 23,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e020-v03",
+   "ocr": "Ma più tardi... Come osare",
+   "stampa": "Ma piú tardi... Come osare",
+   "immagine_facsimile": 29,
+   "pagina_libro": 23,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e020-v05",
+   "ocr": "Ca.. Icutta! ci si trattava",
+   "stampa": "Ca.. lcutta! ci si trattava",
+   "immagine_facsimile": 29,
+   "pagina_libro": 23,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e021-v05",
+   "ocr": "Tante botte pigliavate",
+   "stampa": [
+    "Tante botte pigliavate",
+    "Da restar spossato, infermo."
+   ],
+   "immagine_facsimile": 29,
+   "pagina_libro": 23,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e025-v01",
+   "ocr": "Ci ritenner più di un anno",
+   "stampa": "Ci ritenner piú di un anno",
+   "immagine_facsimile": 29,
+   "pagina_libro": 23,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e027-v03",
+   "ocr": "Tornavam tutti al Canton;e",
+   "stampa": "Tornavam tutti al Canton, e",
+   "immagine_facsimile": 30,
+   "pagina_libro": 24,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e030-v02",
+   "ocr": "Mi narrò; “S'aveano, avanti;",
+   "stampa": "Mi narró; “S'aveano, avanti;",
+   "immagine_facsimile": 30,
+   "pagina_libro": 24,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e030-v03",
+   "ocr": "Ma'*se le compra a contanti",
+   "stampa": "Ma se le compra a contanti",
+   "immagine_facsimile": 30,
+   "pagina_libro": 24,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e031-v05",
+   "ocr": "Non portavan via di più",
+   "stampa": "Non portavan via di piú",
+   "immagine_facsimile": 30,
+   "pagina_libro": 24,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e033-v02",
+   "ocr": "piccini appena nati;",
+   "stampa": "I piccini appena nati;",
+   "immagine_facsimile": 30,
+   "pagina_libro": 24,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e033-v05",
+   "ocr": "T'Indio regola ogni cosa",
+   "stampa": "L'Indio regola ogni cosa",
+   "immagine_facsimile": 30,
+   "pagina_libro": 24,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e033-v06",
+   "ocr": "Con la lancia e coi latrati.",
+   "stampa": [
+    "Con la lancia e coi latrati.",
+    "Treman le carni a vederli:",
+    "I cavalli irta la crina,"
+   ],
+   "immagine_facsimile": 30,
+   "pagina_libro": 24,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e034-v02",
+   "ocr": "La lancia nella diritta;",
+   "stampa": "La lancia nella diritta; —",
+   "immagine_facsimile": 30,
+   "pagina_libro": 24,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e035-v04",
+   "ocr": "Ma P'Indió é come formica,",
+   "stampa": "Ma l'Indio é come formica,",
+   "immagine_facsimile": 30,
+   "pagina_libro": 24,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e036-v01",
+   "ocr": "Li sa maneggiare i cappi",
+   "stampa": "Ei sa maneggiare i cappi",
+   "immagine_facsimile": 31,
+   "pagina_libro": 25,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e036-v04",
+   "ocr": "Ki ti getta a volo un laccio:",
+   "stampa": "Ei ti getta a volo un laccio:",
+   "immagine_facsimile": 31,
+   "pagina_libro": 25,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e038-v03",
+   "ocr": "“Prascinando seco ognora",
+   "stampa": "Trascinando seco ognora",
+   "immagine_facsimile": 31,
+   "pagina_libro": 25,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e038-v04",
+   "ocr": "Qualche donna. Ci Narravano",
+   "stampa": "Qualche donna. Ci narravano",
+   "immagine_facsimile": 31,
+   "pagina_libro": 25,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e041-v06",
+   "ocr": "Restò in si trista occasione.",
+   "stampa": "Restó in si trista occasione.",
+   "immagine_facsimile": 31,
+   "pagina_libro": 25,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e042-v02",
+   "ocr": "Dietro un colle, se non CLLO TOS",
+   "stampa": [
+    "Dietro un colle, se non erro...",
+    "Chi lo vide a Martín Fierro"
+   ],
+   "immagine_facsimile": 31,
+   "pagina_libro": 25,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e042-v04",
+   "ocr": "GP'Indii irruppero al suonare",
+   "stampa": "Gl'Indii irruppero al suonare",
+   "immagine_facsimile": 31,
+   "pagina_libro": 25,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e044-v03",
+   "ocr": "lo m'arrangio se sto in guerra;",
+   "stampa": "Io m'arrangio se sto in guerra;",
+   "immagine_facsimile": 31,
+   "pagina_libro": 25,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e045-v05",
+   "ocr": "Cribbio! in mezzo ci serrò",
+   "stampa": "Cribbio! in mezzo ci serró",
+   "immagine_facsimile": 32,
+   "pagina_libro": 26,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e046-v02",
+   "ocr": "Svelti come razzi e più.",
+   "stampa": "Svelti come razzi e piú.",
+   "immagine_facsimile": 32,
+   "pagina_libro": 26,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e046-v03",
+   "ocr": "Giù lanciate, botte, giù!",
+   "stampa": "Giú lanciate, botte, giú!",
+   "immagine_facsimile": 32,
+   "pagina_libro": 26,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e049-v06",
+   "ocr": "lo voler tutto infilzato”.",
+   "stampa": "Io voler tutto infilzato”.",
+   "immagine_facsimile": 32,
+   "pagina_libro": 26,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e051-v03",
+   "ocr": "lo fui sempre un poco guappo,",
+   "stampa": "Io fui sempre un poco guappo,",
+   "immagine_facsimile": 32,
+   "pagina_libro": 26,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e051-v05",
+   "ocr": "area avessi il core a danza:",
+   "stampa": "Parea avessi il core a danza:",
+   "immagine_facsimile": 32,
+   "pagina_libro": 26,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e052-v02",
+   "ocr": "gran smania d'accopparmi.",
+   "stampa": "La gran smania d'accopparmi.",
+   "immagine_facsimile": 32,
+   "pagina_libro": 26,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e053-v04",
+   "ocr": "lo fui molto spaventato;",
+   "stampa": "Io fui molto spaventato;",
+   "immagine_facsimile": 32,
+   "pagina_libro": 26,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e053-v05",
+   "ocr": "inché un colpo ben piazzato",
+   "stampa": "Finché un colpo ben piazzato",
+   "immagine_facsimile": 32,
+   "pagina_libro": 26,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c03-e054-v05",
+   "ocr": "Lo fini: fu un'opra santa,",
+   "stampa": "Lo finii: fu un'opra santa,",
+   "immagine_facsimile": 33,
+   "pagina_libro": 27,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e001-v02",
+   "ocr": "Benché sia già un po' lunghetta.",
+   "stampa": "Benché sia giá un po' lunghetta.",
+   "immagine_facsimile": 33,
+   "pagina_libro": 27,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e002-v01",
+   "ocr": "Della paga non vi patlo,",
+   "stampa": "Della paga non vi parlo,",
+   "immagine_facsimile": 33,
+   "pagina_libro": 27,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e005-v01",
+   "ocr": "Gli utensili,.il sacco, il poncio,",
+   "stampa": "Gli utensili, il sacco, il poncio,",
+   "immagine_facsimile": 33,
+   "pagina_libro": 27,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e005-v03",
+   "ocr": "Putto, 'amici, nei Cantoni",
+   "stampa": "Tutto, amici, nei Cantoni",
+   "immagine_facsimile": 33,
+   "pagina_libro": 27,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e005-v04",
+   "ocr": "Andò in fumo ratto ratto;",
+   "stampa": "Andó in fumo ratto ratto;",
+   "immagine_facsimile": 33,
+   "pagina_libro": 27,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e006-v02",
+   "ocr": "Che avea vinto 'alle piastrelle,",
+   "stampa": "Che avea vinto alle piastrelle,",
+   "immagine_facsimile": 33,
+   "pagina_libro": 27,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e006-v06",
+   "ocr": "Più lontano delle stelle,",
+   "stampa": "Piú lontano delle stelle,",
+   "immagine_facsimile": 33,
+   "pagina_libro": 27,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e008-v06",
+   "ocr": "Tanto male; e il più nol dico.",
+   "stampa": "Tanto male; e il piú nol dico.",
+   "immagine_facsimile": 34,
+   "pagina_libro": 28,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e009-v01",
+   "ocr": "E passò mese su mese,",
+   "stampa": "E passó mese su mese,",
+   "immagine_facsimile": 34,
+   "pagina_libro": 28,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e009-v03",
+   "ocr": "E la cosa andò ugualmente,",
+   "stampa": "E la cosa andó ugualmente,",
+   "immagine_facsimile": 34,
+   "pagina_libro": 28,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e009-v05",
+   "ocr": "Parea fatto apposta tutto",
+   "stampa": [
+    "Parea fatto apposta tutto",
+    "Per attormentar la gente."
+   ],
+   "immagine_facsimile": 34,
+   "pagina_libro": 28,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e011-v06",
+   "ocr": "Giunti appena, e già puliti.",
+   "stampa": "Giunti appena, e giá puliti.",
+   "immagine_facsimile": 34,
+   "pagina_libro": 28,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e013-v05",
+   "ocr": "Si dicea che Paiutava",
+   "stampa": "Si dicea che l'aiutava",
+   "immagine_facsimile": 34,
+   "pagina_libro": 28,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e014-v04",
+   "ocr": "Avea'il gozzo di caucciú.",
+   "stampa": "Avea il gozzo di caucciú.",
+   "immagine_facsimile": 34,
+   "pagina_libro": 28,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e014-v05",
+   "ocr": "Si potea \"l covo chiamare",
+   "stampa": "Si potea 'l covo chiamare",
+   "immagine_facsimile": 34,
+   "pagina_libro": 28,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e014-v06",
+   "ocr": "L'osteria della virtú”,",
+   "stampa": "“L'osteria della virtú”.",
+   "immagine_facsimile": 34,
+   "pagina_libro": 28,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e016-v03",
+   "ocr": "Quando si annunciò un salario,",
+   "stampa": "Quando si annunció un salario,",
+   "immagine_facsimile": 35,
+   "pagina_libro": 29,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e017-v04",
+   "ocr": "La speranza già fuggia,",
+   "stampa": [
+    "La speranza giá fuggia,",
+    "Quando lí, nell'osteria"
+   ],
+   "immagine_facsimile": 35,
+   "pagina_libro": 29,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e019-v03",
+   "ocr": "T'utti all'oste eran restati.",
+   "stampa": "Tutti all'oste eran restati.",
+   "immagine_facsimile": 35,
+   "pagina_libro": 29,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e019-v06",
+   "ocr": "Perché mal non 'giudicassero,",
+   "stampa": "Perché mal non giudicassero,",
+   "immagine_facsimile": 35,
+   "pagina_libro": 29,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e021-v01",
+   "ocr": "Ma potevo rimanerci 8",
+   "stampa": "Ma potevo rimanerci",
+   "immagine_facsimile": 35,
+   "pagina_libro": 29,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e023-v03",
+   "ocr": "“Gia.la paga terminó:",
+   "stampa": "“Giá la paga terminó:",
+   "immagine_facsimile": 35,
+   "pagina_libro": 29,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e023-v05",
+   "ocr": "Risi, eppoi dissi: “Però",
+   "stampa": "Risi, eppoi dissi: “Peró",
+   "immagine_facsimile": 35,
+   "pagina_libro": 29,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e024-v01",
+   "ocr": "Stralunò gli occhi; sembrava",
+   "stampa": "Stralunó gli occhi; sembrava",
+   "immagine_facsimile": 35,
+   "pagina_libro": 29,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e027-v04",
+   "ocr": "Come andasse quella cosa.",
+   "stampa": [
+    "Come andasse quella cosa.",
+    "— “Non é piú il tempo di Rosas,"
+   ],
+   "immagine_facsimile": 36,
+   "pagina_libro": 30,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e028-v01",
+   "ocr": "Cominciò Pindagazione:",
+   "stampa": "Cominció l'indagazione:",
+   "immagine_facsimile": 36,
+   "pagina_libro": 30,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e028-v04",
+   "ocr": "un puledro mi portai,",
+   "stampa": "Se un puledro mi portai,",
+   "immagine_facsimile": 36,
+   "pagina_libro": 30,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e028-v05",
+   "ocr": "O una brenna,o uno stallone.",
+   "stampa": "O una brenna, o uno stallone.",
+   "immagine_facsimile": 36,
+   "pagina_libro": 30,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c04-e028-v06",
+   "ocr": "ra un vero parapiglia;",
+   "stampa": "Era un vero parapiglia;",
+   "immagine_facsimile": 36,
+   "pagina_libro": 30,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e001-v07",
+   "ocr": "Non si chiama ció servire",
+   "stampa": [
+    "Non si chiama ció servire",
+    "Né difender la frontiera;"
+   ],
+   "immagine_facsimile": 36,
+   "pagina_libro": 30,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e002-v05",
+   "ocr": "Rosas,",
+   "stampa": null,
+   "immagine_facsimile": 36,
+   "pagina_libro": 30,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e002-v06",
+   "ocr": "A a Gean ct",
+   "stampa": null,
+   "immagine_facsimile": 36,
+   "pagina_libro": 30,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e006-v06",
+   "ocr": "Era ancor la più sicura.",
+   "stampa": "Era ancor la piú sicura.",
+   "immagine_facsimile": 37,
+   "pagina_libro": 31,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e007-v01",
+   "ocr": "Oltre a ciò una brutta notte",
+   "stampa": "Oltre a ció una brutta notte",
+   "immagine_facsimile": 37,
+   "pagina_libro": 31,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e007-v02",
+   "ocr": "M°ebbi tante botte e tante",
+   "stampa": "M'ebbi tante botte e tante",
+   "immagine_facsimile": 37,
+   "pagina_libro": 31,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e008-v01",
+   "ocr": "Non dimenticherò mai",
+   "stampa": "Non dimenticheró mai",
+   "immagine_facsimile": 37,
+   "pagina_libro": 31,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e009-v01",
+   "ocr": "Era un “gringo”, così... “gringo”",
+   "stampa": "Era un “gringo”, cosí... “gringo”",
+   "immagine_facsimile": 37,
+   "pagina_libro": 31,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e009-v02",
+   "ocr": "Che nessuno Pintendeva.",
+   "stampa": "Che nessuno l'intendeva.",
+   "immagine_facsimile": 37,
+   "pagina_libro": 31,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e010-v06",
+   "ocr": "E così pagai lo scotto.",
+   "stampa": "E cosí pagai lo scotto.",
+   "immagine_facsimile": 37,
+   "pagina_libro": 31,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e011-v03",
+   "ocr": "— “Ma che cesta! tira 14%",
+   "stampa": "— “Ma che cesta! tira lá” —",
+   "immagine_facsimile": 37,
+   "pagina_libro": 31,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e013-v02",
+   "ocr": "TI vespaio andò in furori",
+   "stampa": "Il vespaio andó in furori;",
+   "immagine_facsimile": 38,
+   "pagina_libro": 32,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e013-v04",
+   "ocr": "Cominciò la tarantella:",
+   "stampa": "Cominció la tarantella:",
+   "immagine_facsimile": 38,
+   "pagina_libro": 32,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e013-v06",
+   "ocr": "E, Martín.. dai battitori.",
+   "stampa": "E Martín.. dai battitori.",
+   "immagine_facsimile": 38,
+   "pagina_libro": 32,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e014-v01",
+   "ocr": "¿Entro quattro bajonette",
+   "stampa": "Entro quattro bajonette",
+   "immagine_facsimile": 38,
+   "pagina_libro": 32,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e015-v03",
+   "ocr": "Non un “Ahi!” .m'usci dai denti",
+   "stampa": "Non un “Ahi!” m'usci dai denti",
+   "immagine_facsimile": 38,
+   "pagina_libro": 32,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e015-v06",
+   "ocr": "Mandai mille e più accidenti.",
+   "stampa": "Mandai mille e piú accidenti.",
+   "immagine_facsimile": 38,
+   "pagina_libro": 32,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c05-e018-v02",
+   "ocr": "'lutto il giorno ciarlottando",
+   "stampa": "Tutto il giorno ciarlottando",
+   "immagine_facsimile": 38,
+   "pagina_libro": 32,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e001-v02",
+   "ocr": "Del racconto più sentita,",
+   "stampa": "Del racconto piú sentita,",
+   "immagine_facsimile": 39,
+   "pagina_libro": 33,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e005-v04",
+   "ocr": "Palle sopra, palle giù...",
+   "stampa": "Palle sopra, palle giú...",
+   "immagine_facsimile": 39,
+   "pagina_libro": 33,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e005-v06",
+   "ocr": "Non volevan finir più.",
+   "stampa": "Non volevan finir piú.",
+   "immagine_facsimile": 39,
+   "pagina_libro": 33,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e007-v06",
+   "ocr": "Al buon tempo e al tempo tri",
+   "stampa": [
+    "Al buon tempo e al tempo tristo.",
+    "Sin da bimbo guadagnai"
+   ],
+   "immagine_facsimile": 40,
+   "pagina_libro": 34,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e008-v06",
+   "ocr": "Tgnorante come sono,",
+   "stampa": "Ignorante come sono,",
+   "immagine_facsimile": 40,
+   "pagina_libro": 34,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e009-v04",
+   "ocr": "Ma color che in alto 'stanno",
+   "stampa": "Ma color che in alto stanno",
+   "immagine_facsimile": 40,
+   "pagina_libro": 34,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e011-v06",
+   "ocr": "Far ciò che rende contento!",
+   "stampa": "Far ció che rende contento!",
+   "immagine_facsimile": 40,
+   "pagina_libro": 34,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e012-v03",
+   "ocr": "Non dé peso al primo gesto;",
+   "stampa": "Non dó peso al primo gesto;",
+   "immagine_facsimile": 40,
+   "pagina_libro": 34,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e013-v01",
+   "ocr": "Ritornavo dopo avere",
+   "stampa": [
+    "Ritornavo dopo avere",
+    "Per tre anni tribolato,",
+    "Disertor, nudo, affamato,",
+    "A cercar nuovo destino;"
+   ],
+   "immagine_facsimile": 40,
+   "pagina_libro": 34,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e013-v05",
+   "ocr": "Né la traccia più leggera.",
+   "stampa": "Né la traccia piú leggera.",
+   "immagine_facsimile": 40,
+   "pagina_libro": 34,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e015-v01",
+   "ocr": "Chi mon sentiria lo stesso",
+   "stampa": "Chi non sentiría lo stesso",
+   "immagine_facsimile": 40,
+   "pagina_libro": 34,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e015-v04",
+   "ocr": "Come feminina versai;",
+   "stampa": "Come femmina versai;",
+   "immagine_facsimile": 40,
+   "pagina_libro": 34,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e019-v04",
+   "ocr": "a che avean da lavorare,",
+   "stampa": "Ma che avean da lavorare,",
+   "immagine_facsimile": 41,
+   "pagina_libro": 35,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e021-v06",
+   "ocr": "Che poteva far più",
+   "stampa": "Che poteva far piú lí?",
+   "immagine_facsimile": 41,
+   "pagina_libro": 35,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e022-v02",
+   "ocr": "Ciò che gli altri fa scialare,",
+   "stampa": "Ció che gli altri fa scialare,",
+   "immagine_facsimile": 41,
+   "pagina_libro": 35,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e023-v01",
+   "ocr": "Forse non ti vedrò più,",
+   "stampa": "Forse non ti vedró piú,",
+   "immagine_facsimile": 41,
+   "pagina_libro": 35,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e023-v03",
+   "ocr": "Ti protegga almeno Tddio,",
+   "stampa": "Ti protegga almeno Iddio,",
+   "immagine_facsimile": 41,
+   "pagina_libro": 35,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e024-v05",
+   "ocr": "Senza una sola person",
+   "stampa": "Senza una sola persona,",
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e027-v01",
+   "ocr": "E chissa, in qualche occasione,",
+   "stampa": "E chissá, in qualche occasione,",
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e027-v02",
+   "ocr": "Benché siano assiderati,",
+   "stampa": [
+    "Benché siano assiderati,",
+    "Da un bracier saran scacciati,",
+    "Ché non turbin le persone."
+   ],
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e027-v04",
+   "ocr": "Come si scaccia un mastirio,",
+   "stampa": "Come si scaccia un mastino,",
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e027-v06",
+   "ocr": "Andran vinti e disperati",
+   "stampa": [
+    "Andran vinti e disperati",
+    "A cercar meno spietati"
+   ],
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e028-v03",
+   "ocr": "Ii mio colpo riservare;",
+   "stampa": "Il mio colpo riservare;",
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e029-v02",
+   "ocr": "D'ora in poi sarò ribelle.",
+   "stampa": "D'ora in poi saró ribelle.",
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e029-v06",
+   "ocr": "Pur l'ho conosciuto il mondo,",
+   "stampa": [
+    "Pur l'ho conosciuto il mondo.",
+    "Io le so le lor magagne,",
+    "Io le so le lor cuccagne;"
+   ],
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e030-v03",
+   "ocr": "Degli imbrogli sfarò l'arte",
+   "stampa": "Degli imbrogli sfaró l'arte",
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e031-v02",
+   "ocr": "Che il mio gioco sarà stretto,",
+   "stampa": "Che il mio gioco sará stretto,",
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c06-e031-v05",
+   "ocr": "Io sarò come le tigri",
+   "stampa": "Io saró come le tigri",
+   "immagine_facsimile": 42,
+   "pagina_libro": 36,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e004-v02",
+   "ocr": "he lí presso si ballava;",
+   "stampa": "Che lí presso si ballava;",
+   "immagine_facsimile": 43,
+   "pagina_libro": 37,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e005-v01",
+   "ocr": "anti amici ritrovai",
+   "stampa": "Tanti amici ritrovai",
+   "immagine_facsimile": 43,
+   "pagina_libro": 37,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e006-v04",
+   "ocr": "on una smorfia le dissi:",
+   "stampa": "Con una smorfia le dissi:",
+   "immagine_facsimile": 43,
+   "pagina_libro": 37,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e007-v04",
+   "ocr": "Sarà vacca vostra madre!”",
+   "stampa": "Sará vacca vostra madre!”",
+   "immagine_facsimile": 43,
+   "pagina_libro": 37,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e008-v03",
+   "ocr": "Bianchi come la ricotta,",
+   "stampa": [
+    "Bianchi come la ricotta,",
+    "Io le dissi: “Bella mora,",
+    "La risposta é stata buona”;"
+   ],
+   "immagine_facsimile": 43,
+   "pagina_libro": 37,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e008-v04",
+   "ocr": "mi mise a canticchiare",
+   "stampa": "E mi mise a canticchiare",
+   "immagine_facsimile": 43,
+   "pagina_libro": 37,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e011-v05",
+   "ocr": "“Tu più perfido sarai”",
+   "stampa": "“Tu piú perfido sarai”",
+   "immagine_facsimile": 44,
+   "pagina_libro": 38,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e012-v03",
+   "ocr": "lo gli ruppi sulla testa",
+   "stampa": "Io gli ruppi sulla testa",
+   "immagine_facsimile": 44,
+   "pagina_libro": 38,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e012-v06",
+   "ocr": "Come un porcellín gridò,",
+   "stampa": "Come un porcellín gridó,",
+   "immagine_facsimile": 44,
+   "pagina_libro": 38,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e017-v01",
+   "ocr": "Mi assalî*si fiero il negro",
+   "stampa": "Mi assalí sí fiero il negro",
+   "immagine_facsimile": 44,
+   "pagina_libro": 38,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e017-v03",
+   "ocr": "Mi tirò due colpi in fila,",
+   "stampa": "Mi tiró due colpi in fila,",
+   "immagine_facsimile": 44,
+   "pagina_libro": 38,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e020-v05",
+   "ocr": "Aifrontai il negro di pieno:",
+   "stampa": "Affrontai il negro di pieno:",
+   "immagine_facsimile": 45,
+   "pagina_libro": 39,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e022-v01",
+   "ocr": "Sgambettò tre o quattro volte:",
+   "stampa": "Sgambettó tre o quattro volte:",
+   "immagine_facsimile": 45,
+   "pagina_libro": 39,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e022-v03",
+   "ocr": "Non potrò scordare mai",
+   "stampa": "Non potró scordare mai",
+   "immagine_facsimile": 45,
+   "pagina_libro": 39,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e022-v05",
+   "ocr": "Capitò la negra; aveva",
+   "stampa": "Capitó la negra; aveva",
+   "immagine_facsimile": 45,
+   "pagina_libro": 39,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e023-v02",
+   "ocr": "Cominciò la poveretta",
+   "stampa": "Cominció la poveretta",
+   "immagine_facsimile": 45,
+   "pagina_libro": 39,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c07-e023-v04",
+   "ocr": "lo l'avrei ben ben picchiata",
+   "stampa": "Io l'avrei ben ben picchiata",
+   "immagine_facsimile": 45,
+   "pagina_libro": 39,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e001-v01",
+   "ocr": "Me ne stavo a meriggiare,",
+   "stampa": [
+    "Altra volta all'osteria",
+    "Me ne stavo a meriggiare,"
+   ],
+   "immagine_facsimile": 46,
+   "pagina_libro": 40,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e002-v07",
+   "ocr": "Bene con le autorità.",
+   "stampa": "Bene con le autoritá.",
+   "immagine_facsimile": 46,
+   "pagina_libro": 40,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e003-v04",
+   "ocr": "Dava giú senza pietà.",
+   "stampa": "Dava giú senza pietá.",
+   "immagine_facsimile": 46,
+   "pagina_libro": 40,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e004-v01",
+   "ocr": "Chi direbbe che già stava",
+   "stampa": "Chi direbbe che giá stava",
+   "immagine_facsimile": 46,
+   "pagina_libro": 40,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e004-v03",
+   "ocr": "Pur così la va nel mondo",
+   "stampa": "Pur cosí la va nel mondo",
+   "immagine_facsimile": 46,
+   "pagina_libro": 40,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e004-v04",
+   "ocr": "E cosi triste é la vita:",
+   "stampa": "E cosí triste é la vita:",
+   "immagine_facsimile": 46,
+   "pagina_libro": 40,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e005-v03",
+   "ocr": "Poi, offrendomi il suo fiasco,'",
+   "stampa": "Poi, offrendomi il suo fiasco,",
+   "immagine_facsimile": 46,
+   "pagina_libro": 40,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e006-v03",
+   "ocr": "Cerchi busse, vero? Sî?_",
+   "stampa": "Cerchi busse, vero? Sí?",
+   "immagine_facsimile": 46,
+   "pagina_libro": 40,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e007-v01",
+   "ocr": "Ed uscimmo già avvinghiati,",
+   "stampa": "Ed uscimmo giá avvinghiati,",
+   "immagine_facsimile": 46,
+   "pagina_libro": 40,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e008-v04",
+   "ocr": "È strillò l'oste l'allarmi",
+   "stampa": "E strilló l'oste l'allarmi",
+   "immagine_facsimile": 46,
+   "pagina_libro": 40,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e011-v03",
+   "ocr": "cocchieri prepotenti.",
+   "stampa": "I cocchieri prepotenti.",
+   "immagine_facsimile": 47,
+   "pagina_libro": 41,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e011-v06",
+   "ocr": "Sta in balfa degli elementi.",
+   "stampa": "Sta in balía degli elementi.",
+   "immagine_facsimile": 47,
+   "pagina_libro": 41,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e012-v01",
+   "ocr": "Gri dan l'acqua benedetta",
+   "stampa": "Gli dan l'acqua benedetta",
+   "immagine_facsimile": 47,
+   "pagina_libro": 41,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e020-v03",
+   "ocr": "Giù frustate! mano al palo!",
+   "stampa": "Giú frustate! mano al palo!",
+   "immagine_facsimile": 48,
+   "pagina_libro": 42,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e021-v04",
+   "ocr": "E slegare niun ci può.",
+   "stampa": "E slegare niun ci puó.",
+   "immagine_facsimile": 48,
+   "pagina_libro": 42,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c08-e021-v06",
+   "ocr": "Col coltello io m'aprirò,",
+   "stampa": "Col coltello io m'apriró,",
+   "immagine_facsimile": 48,
+   "pagina_libro": 42,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e002-v04",
+   "ocr": "Ogni can la può annazzare;",
+   "stampa": "Ogni can la puó annazzare;",
+   "immagine_facsimile": 48,
+   "pagina_libro": 42,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e002-v05",
+   "ocr": "E purtroppo può sbagliare",
+   "stampa": "E purtroppo puó sbagliare",
+   "immagine_facsimile": 48,
+   "pagina_libro": 42,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e002-v06",
+   "ocr": "La persona. pitt scaltrita.",
+   "stampa": "La persona piú scaltrita.",
+   "immagine_facsimile": 48,
+   "pagina_libro": 42,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e003-v04",
+   "ocr": "Nella più seréna calma,",
+   "stampa": "Nella piú seréna calma,",
+   "immagine_facsimile": 48,
+   "pagina_libro": 42,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e005-v04",
+   "ocr": "Anche l'uom si può adattare:",
+   "stampa": "Anche l'uom si puó adattare:",
+   "immagine_facsimile": 49,
+   "pagina_libro": 43,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e007-v02",
+   "ocr": "più randagio e sconsolato",
+   "stampa": "piú randagio e sconsolato",
+   "immagine_facsimile": 49,
+   "pagina_libro": 43,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e008-v02",
+   "ocr": "Sperso in quella immensità",
+   "stampa": "Sperso in quella immensitá",
+   "immagine_facsimile": 49,
+   "pagina_libro": 43,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e008-v03",
+   "ocr": "E fra tanta oscurità",
+   "stampa": "E fra tanta oscuritá",
+   "immagine_facsimile": 49,
+   "pagina_libro": 43,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e008-v06",
+   "ocr": "Coglier dalle autorità.",
+   "stampa": "Coglier dalle autoritá.",
+   "immagine_facsimile": 49,
+   "pagina_libro": 43,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e009-v04",
+   "ocr": "Cosí vive, sempre allerta:",
+   "stampa": "Cosí vive, sempre all'erta:",
+   "immagine_facsimile": 49,
+   "pagina_libro": 43,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e010-v03",
+   "ocr": "Esse sembrano più belle",
+   "stampa": "Esse sembrano piú belle",
+   "immagine_facsimile": 49,
+   "pagina_libro": 43,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e010-v06",
+   "ocr": "Perché pace ci dieno elle.",
+   "stampa": [
+    "Perché pace ci dieno elle.",
+    "L'uomo ha per le stelle affetto;",
+    "Vede con letizia ognora"
+   ],
+   "immagine_facsimile": 49,
+   "pagina_libro": 43,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e014-v04",
+   "ocr": "Balzo in piedi: Che sarà?",
+   "stampa": "Balzo in piedi: Che sará?",
+   "immagine_facsimile": 50,
+   "pagina_libro": 44,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e018-v06",
+   "ocr": "— dissi — “€ l'ora; o tutto o niente”.",
+   "stampa": "— dissi — “é l'ora; o tutto o niente”.",
+   "immagine_facsimile": 50,
+   "pagina_libro": 44,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e019-v03",
+   "ocr": "T calzoni rimboccai,",
+   "stampa": "I calzoni rimboccai,",
+   "immagine_facsimile": 50,
+   "pagina_libro": 44,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e021-v01",
+   "ocr": "Quando li sentii da 'presso",
+   "stampa": "Quando lí sentii da presso",
+   "immagine_facsimile": 50,
+   "pagina_libro": 44,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e021-v04",
+   "ocr": "E benché fossi all'oscuro,",
+   "stampa": [
+    "E benché fossi all'oscuro,",
+    "— “Non impazzirán sicuro”,"
+   ],
+   "immagine_facsimile": 50,
+   "pagina_libro": 44,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e021-v05",
+   "ocr": "— Dissi lor — giá mi trovarono,”",
+   "stampa": "— Dissi lor — giá mi trovarono.” —",
+   "immagine_facsimile": 50,
+   "pagina_libro": 44,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e023-v02",
+   "ocr": "— Disse.un per fare il gallo",
+   "stampa": "— Disse un per fare il gallo —;",
+   "immagine_facsimile": 51,
+   "pagina_libro": 45,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e023-v06",
+   "ocr": "Che taggiusta la partita.",
+   "stampa": "Che t'aggiusta la partita.",
+   "immagine_facsimile": 51,
+   "pagina_libro": 45,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e031-v05",
+   "ocr": "'lîrai'l poncio da volpone,",
+   "stampa": "Tirai 'l poncio da volpone,",
+   "immagine_facsimile": 52,
+   "pagina_libro": 46,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e031-v06",
+   "ocr": "L'altro andò per terra a volo.",
+   "stampa": "L'altro andó per terra a volo.",
+   "immagine_facsimile": 52,
+   "pagina_libro": 46,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e032-v06",
+   "ocr": "Credé bene; e scappò via.",
+   "stampa": "Credé bene; e scappó via.",
+   "immagine_facsimile": 52,
+   "pagina_libro": 46,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e033-v06",
+   "ocr": "Se ne scappò via abbaiando.",
+   "stampa": "Se ne scappó via abbaiando.",
+   "immagine_facsimile": 52,
+   "pagina_libro": 46,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e034-v01",
+   "ocr": "vPer fortuna, in quel momento",
+   "stampa": "Per fortuna, in quel momento",
+   "immagine_facsimile": 52,
+   "pagina_libro": 46,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e034-v02",
+   "ocr": "T/alba apriva il ciel lontano;",
+   "stampa": "L'alba apriva il ciel lontano;",
+   "immagine_facsimile": 52,
+   "pagina_libro": 46,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e036-v02",
+   "ocr": "Disviai del più gradasso;",
+   "stampa": "Disviai del piú gradasso;",
+   "immagine_facsimile": 52,
+   "pagina_libro": 46,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e037-v01",
+   "ocr": "E mentr'egli si scitoteva",
+   "stampa": "E mentr'egli si scuoteva",
+   "immagine_facsimile": 52,
+   "pagina_libro": 46,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e039-v01",
+   "ocr": "Feci qualche passo indietro",
+   "stampa": [
+    "Feci qualche passo indietro",
+    "A cercar suol resistente,"
+   ],
+   "immagine_facsimile": 52,
+   "pagina_libro": 46,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e040-v05",
+   "ocr": "Tal delitto; non si può",
+   "stampa": "Tal delitto; non si puó",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e040-v06",
+   "ocr": "Ammazzar così un valente!”",
+   "stampa": "Ammazzar cosí un valente!”",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e041-v02",
+   "ocr": "Ballò insieme la furlana;",
+   "stampa": "Balló insieme la furlana;",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e042-v01",
+   "ocr": "Uno ne mandò all'inferno",
+   "stampa": "Uno ne mandó all'inferno",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e044-v05",
+   "ocr": "Il perdon perla feroce?”",
+   "stampa": "Il perdon per la feroce?”",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e045-v05",
+   "ocr": "A una capanna vicina",
+   "stampa": [
+    "A una capanna vicina",
+    "Noi volgemmo le pedate."
+   ],
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e046-v03",
+   "ocr": "Ci son casi, già si sa,",
+   "stampa": "Ci son casi, giá si sa,",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e047-v04",
+   "ocr": "Seguivam più che bisogna",
+   "stampa": "Seguivam piú che bisogna",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e048-v02",
+   "ocr": "“Dove la sorte vorrà;",
+   "stampa": "“Dove la sorte vorrá;",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e048-v03",
+   "ocr": "“Ma se qualcuno ardirà",
+   "stampa": "“Ma se qualcuno ardirá",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e048-v05",
+   "ocr": "“To mi piegherò al destino",
+   "stampa": "“Io mi piegheró al destino",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e048-v06",
+   "ocr": "“E sarà quel che sara.",
+   "stampa": "“E sará quel che sara.",
+   "immagine_facsimile": 53,
+   "pagina_libro": 47,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e049-v05",
+   "ocr": "“ Ma ciò non mi fa paura",
+   "stampa": "“ Ma ció non mi fa paura",
+   "immagine_facsimile": 54,
+   "pagina_libro": 48,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c09-e050-v06",
+   "ocr": "“Questo fiume 'ove travasa,",
+   "stampa": "“Questo fiume ove travasa.”",
+   "immagine_facsimile": 54,
+   "pagina_libro": 48,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e002-v02",
+   "ocr": "Non per ciò son men di tanti.",
+   "stampa": "Non per ció son men di tanti.",
+   "immagine_facsimile": 54,
+   "pagina_libro": 48,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e002-v03",
+   "ocr": "Non sarò legno da santi,",
+   "stampa": "Non saró legno da santi,",
+   "immagine_facsimile": 54,
+   "pagina_libro": 48,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e003-v02",
+   "ocr": "Ed ho molte infermità,",
+   "stampa": "Ed ho molte infermitá,",
+   "immagine_facsimile": 54,
+   "pagina_libro": 48,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e003-v03",
+   "ocr": "E disdette in quantità,",
+   "stampa": "E disdette in quantitá,",
+   "immagine_facsimile": 54,
+   "pagina_libro": 48,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e003-v04",
+   "ocr": "Benché ciò m'affligga poco:",
+   "stampa": "Benché ció m'affligga poco:",
+   "immagine_facsimile": 54,
+   "pagina_libro": 48,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e003-v05",
+   "ocr": "Io mi fingo un baccalà",
+   "stampa": "Io mi fingo un baccalá",
+   "immagine_facsimile": 54,
+   "pagina_libro": 48,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e005-v02",
+   "ocr": "Finché avrò la pelle dura,",
+   "stampa": "Finché avró la pelle dura,",
+   "immagine_facsimile": 54,
+   "pagina_libro": 48,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e006-v04",
+   "ocr": "Può finir come un pulcino:",
+   "stampa": "Puó finir come un pulcino:",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e007-v03",
+   "ocr": "Ma a nessuno ciò. 'stupisce",
+   "stampa": "Ma a nessuno ció stupisce",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e008-v05",
+   "ocr": "Ciò che il debole trattiene,",
+   "stampa": "Ció che il debole trattiene,",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e009-v02",
+   "ocr": "Ciò che ognun soffrir dové;",
+   "stampa": "Ció che ognun soffrir dové;",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e009-v03",
+   "ocr": "Perché,amico, quanto a me,",
+   "stampa": "Perché, amico, quanto a me,",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e009-v04",
+   "ocr": "Faccio il conto mio così:",
+   "stampa": "Faccio il conto mio cosí:",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e009-v05",
+   "ocr": "Ter fu ieri, e più non c'é,",
+   "stampa": "Ier fu ieri, e piú non c'é,",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e009-v06",
+   "ocr": "E doman sarà altro di.",
+   "stampa": "E doman sará altro di.",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e010-v04",
+   "ocr": "Qualcun n'avesse cercato,",
+   "stampa": "Qualcun m'avesse cercato,",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e011-v02",
+   "ocr": "Niuno mai smarri la via;",
+   "stampa": "Niuno mai smarrí la via;",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e011-v04",
+   "ocr": "E ogni Gaucio é professore",
+   "stampa": [
+    "E ogni Gaucio é professore",
+    "Se, a cantar loro d'amore,",
+    "Cercar deve l'armonia."
+   ],
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e013-v03",
+   "ocr": "Jo soccorre s'é malato;",
+   "stampa": "Lo soccorre s'é malato;",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e014-v01",
+   "ocr": "lo da grande la passavo",
+   "stampa": "Io da grande la passavo",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e014-v03",
+   "ocr": "Ti vivevo in allegria",
+   "stampa": "E vivevo in allegria",
+   "immagine_facsimile": 55,
+   "pagina_libro": 49,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e015-v03",
+   "ocr": "E dell'alba era più bella",
+   "stampa": "E dell'alba era piú bella",
+   "immagine_facsimile": 56,
+   "pagina_libro": 50,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e015-v04",
+   "ocr": "Quando il sole si destò;",
+   "stampa": "Quando il sole si destó;",
+   "immagine_facsimile": 56,
+   "pagina_libro": 50,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e016-v01",
+   "ocr": "Però, amico, il Comandante",
+   "stampa": "Peró, amico, il Comandante",
+   "immagine_facsimile": 56,
+   "pagina_libro": 50,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e017-v06",
+   "ocr": "In mia casa, come 'sevo.",
+   "stampa": "In mia casa, come sevo.",
+   "immagine_facsimile": 56,
+   "pagina_libro": 50,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e018-v01",
+   "ocr": "Passò poco, ed io m'accorsi",
+   "stampa": "Passó poco, ed io m'accorsi",
+   "immagine_facsimile": 56,
+   "pagina_libro": 50,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e019-v03",
+   "ocr": "in un luogo fuor di mano,",
+   "stampa": "In un luogo fuor di mano,",
+   "immagine_facsimile": 56,
+   "pagina_libro": 50,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e020-v01",
+   "ocr": "Non c'é nulla di più triste,",
+   "stampa": "Non c'é nulla di piú triste,",
+   "immagine_facsimile": 56,
+   "pagina_libro": 50,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e026-v01",
+   "ocr": "Sparò una pistolettata",
+   "stampa": "Sparó una pistolettata",
+   "immagine_facsimile": 57,
+   "pagina_libro": 51,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e027-v01",
+   "ocr": "gli intanto m'inseguiva",
+   "stampa": "Egli intanto m'inseguiva",
+   "immagine_facsimile": 57,
+   "pagina_libro": 51,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e030-v05",
+   "ocr": "Restò il vecchio lí, annusando,",
+   "stampa": "Restó il vecchio lí, annusando,",
+   "immagine_facsimile": 57,
+   "pagina_libro": 51,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e032-v06",
+   "ocr": "Per non ci tornar più mai.",
+   "stampa": [
+    "Per non ci tornar piú mai.",
+    "Io le donne, da quel giorno,",
+    "Le conobbi tutte in una;"
+   ],
+   "immagine_facsimile": 57,
+   "pagina_libro": 51,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e033-v01",
+   "ocr": "Non avrò mai più fortuna",
+   "stampa": "Non avró mai piú fortuna",
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e033-v03",
+   "ocr": "Donna e cagna già accoppiata",
+   "stampa": "Donna e cagna giá accoppiata",
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e033-v05",
+   "ocr": "A qualcun salgon le strofe",
+   "stampa": null,
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c10-e033-v06",
+   "ocr": "Sí com'acqua zampillante,",
+   "stampa": null,
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e001-v01",
+   "ocr": "E a me accade simigliante:",
+   "stampa": [
+    "A qualcun salgon le strofe",
+    "Sí com'acqua zampillante,",
+    "E a me accade simigliante:"
+   ],
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e002-v02",
+   "ocr": "Le altre seguono la tracci",
+   "stampa": "Le altre seguono la traccia,",
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e002-v04",
+   "ocr": "Saltan, calcian... ma la",
+   "stampa": "Saltan, calcian... ma la zuffa",
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e003-v04",
+   "ocr": "Devi creder ciò che: conto,",
+   "stampa": "Devi creder ció che: conto,",
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e005-v05",
+   "ocr": "Però, amico, tale vita",
+   "stampa": "Peró, amico, tale vita",
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e006-v05",
+   "ocr": "Penso che dovrò portare",
+   "stampa": "Penso che dovró portare",
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e007-v01",
+   "ocr": "Così andavo, come uccello",
+   "stampa": [
+    "Cosí andavo, come uccello",
+    "Quando passa il temporale."
+   ],
+   "immagine_facsimile": 58,
+   "pagina_libro": 52,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e008-v05",
+   "ocr": "meschin se ha un'ora grata.",
+   "stampa": "Il meschin se ha un'ora grata.",
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e009-v01",
+   "ocr": "lo calzavo mezze scarpe",
+   "stampa": "Io calzavo mezze scarpe",
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e010-v04",
+   "ocr": "M°ero raggomitolato;",
+   "stampa": "M'ero raggomitolato;",
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e010-v06",
+   "ocr": "E andò tutto a rotolone.",
+   "stampa": "E andó tutto a rotolone.",
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e011-v02",
+   "ocr": "Cera un Gaucio sboccato;",
+   "stampa": "C'era un Gaucio sboccato;",
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e012-v04",
+   "ocr": "Mi conobbe luomo; e allora",
+   "stampa": "Mi conobbe l'uomo; e allora",
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e012-v06",
+   "ocr": "Come a mettermi in burletta:",
+   "stampa": [
+    "Come a mettermi in burletta:",
+    "“Son le donne tutte",
+    "Come le mule:"
+   ],
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e014-v04",
+   "ocr": "Scaldin la panca.”",
+   "stampa": [
+    "Scaldin la panca.”",
+    "Sussurrarono le donne."
+   ],
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e014-v05",
+   "ocr": "Comè un lampo io scattai,",
+   "stampa": "Come un lampo io scattai,",
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e015-v01",
+   "ocr": "— “Smetti di cantare, gazza!l”",
+   "stampa": "— “Smetti di cantare, gazza!” —",
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e016-v03",
+   "ocr": "Contro il lume del covile,",
+   "stampa": [
+    "Contro il lume del covile,",
+    "Guadagnai presto la porta"
+   ],
+   "immagine_facsimile": 59,
+   "pagina_libro": 53,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e016-v04",
+   "ocr": "E gridai: “Non vappressate!”",
+   "stampa": "E gridai: “Non v'appressate!”",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e017-v01",
+   "ocr": "Già strillavano — sicuro!",
+   "stampa": "Giá strillavano — sicuro! —",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e017-v02",
+   "ocr": "TA tra gli uomini mischiate.",
+   "stampa": "Lí tra gli uomini mischiate.",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e017-v04",
+   "ocr": "Il cantore e s'appressò;",
+   "stampa": "Il cantore e s'appressó;",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e018-v04",
+   "ocr": "Per temibil son per ciò.",
+   "stampa": "Per temibil son per ció.",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e022-v05",
+   "ocr": "Non può l'acqua in su salire,",
+   "stampa": "Non puó l'acqua in su salire,",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e022-v06",
+   "ocr": "Né capretti dà il castrato.",
+   "stampa": "Né capretti dá il castrato.",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c11-e023-v06",
+   "ocr": "Trova'ognor chi lo perdone.",
+   "stampa": "Trova ognor chi lo perdone.",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e001-v02",
+   "ocr": "Questa vita mia durò.",
+   "stampa": "Questa vita mia duró.",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e001-v03",
+   "ocr": "La miseria ci obbligò",
+   "stampa": "La miseria ci obbligó",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e001-v06",
+   "ocr": "Uno mangia quel che può.",
+   "stampa": "Uno mangia quel che puó.",
+   "immagine_facsimile": 60,
+   "pagina_libro": 54,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e004-v01",
+   "ocr": "Ti dirò: nella mia terra",
+   "stampa": "Ti diró: nella mia terra",
+   "immagine_facsimile": 61,
+   "pagina_libro": 55,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e005-v01",
+   "ocr": "Perciò il giudice, suppongo,",
+   "stampa": "Perció il giudice, suppongo,",
+   "immagine_facsimile": 61,
+   "pagina_libro": 55,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e005-v02",
+   "ocr": "Mi chiamò in Commisseria,",
+   "stampa": "Mi chiamó in Commisseria,",
+   "immagine_facsimile": 61,
+   "pagina_libro": 55,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e005-v04",
+   "ocr": "Come niente, Pudii dire:",
+   "stampa": "Come niente, l'udii dire:",
+   "immagine_facsimile": 61,
+   "pagina_libro": 55,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e007-v01",
+   "ocr": "Così fui della partita.",
+   "stampa": "Cosí fui della partita.",
+   "immagine_facsimile": 61,
+   "pagina_libro": 55,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e008-v04",
+   "ocr": "né t'avrà d'abbandonare,",
+   "stampa": "né t'avrá d'abbandonare,",
+   "immagine_facsimile": 61,
+   "pagina_libro": 55,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e009-v03",
+   "ocr": "Niuna cosa avrà a mancarci:",
+   "stampa": "Niuna cosa avrá a mancarci:",
+   "immagine_facsimile": 61,
+   "pagina_libro": 55,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e010-v03",
+   "ocr": "lo di un lupo scorticato",
+   "stampa": "Io di un lupo scorticato",
+   "immagine_facsimile": 62,
+   "pagina_libro": 56,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e010-v04",
+   "ocr": "Avrò il cuoio; e dirti so",
+   "stampa": "Avró il cuoio; e dirti so",
+   "immagine_facsimile": 62,
+   "pagina_libro": 56,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e015-v01",
+   "ocr": "Già: parlavan d'arricchire",
+   "stampa": "Giá: parlavan d'arricchire",
+   "immagine_facsimile": 62,
+   "pagina_libro": 56,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e015-v03",
+   "ocr": "Invadendo i più vicini",
+   "stampa": "Invadendo i piú vicini",
+   "immagine_facsimile": 62,
+   "pagina_libro": 56,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e016-v06",
+   "ocr": "Te lo pelan di frustate.",
+   "stampa": [
+    "Te lo pelan di frustate.",
+    "Se continuano le cose"
+   ],
+   "immagine_facsimile": 62,
+   "pagina_libro": 56,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e018-v02",
+   "ocr": "Questa sorte ognor,più schiva;",
+   "stampa": "Questa sorte ognor piú schiva;",
+   "immagine_facsimile": 62,
+   "pagina_libro": 56,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e018-v06",
+   "ocr": "Né gli lascian la saliva,",
+   "stampa": [
+    "Né gli lascian la saliva,",
+    "Dei malanni che soffriamo",
+    "Van ciarlando questi e quelli;",
+    "Fanno come quegli uccelli",
+    "Che, a nascondere i lor nidi,",
+    "Lancian da una parte i gridi"
+   ],
+   "immagine_facsimile": 62,
+   "pagina_libro": 56,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e019-v01",
+   "ocr": "E han dall'altra i pulcinelli.",
+   "stampa": [
+    "E han dall'altra i pulcinelli.",
+    "E cosí nessun azzecca"
+   ],
+   "immagine_facsimile": 63,
+   "pagina_libro": 57,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e019-v02",
+   "ocr": "Quello che si dovria fare.",
+   "stampa": [
+    "Quello che si dovría fare.",
+    "Mentre il Gaucio fan penare",
+    "Con rigor le autoritá,"
+   ],
+   "immagine_facsimile": 63,
+   "pagina_libro": 57,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c12-e019-v03",
+   "ocr": "Cresce ognor l'infermità",
+   "stampa": [
+    "Cresce ognor l'infermitá",
+    "Che nessuno sa curare. —"
+   ],
+   "immagine_facsimile": 63,
+   "pagina_libro": 57,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e001-v01",
+   "ocr": "Al mio Dio chiedo perdono,",
+   "stampa": [
+    "— Vedo ben che siamo due",
+    "Schegge dello stesso palo.",
+    "Tengon me per gaucio malo,",
+    "Buona fama non hai molta.",
+    "Per finirla in una volta,",
+    "Dove sono gl'Indii calo.",
+    "Al mio Dio chiedo perdono,",
+    "Ché mi diede tanto bene;",
+    "Ma poich'oggi mi conviene,",
+    "Andró in mezzo agli infedeli,",
+    "Saró crudo coi crudeli:",
+    "A ciascun la sorte tiene.",
+    "Dio, creando delicato"
+   ],
+   "immagine_facsimile": 63,
+   "pagina_libro": 57,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e001-v02",
+   "ocr": "E sí bel di forma il fiore,",
+   "stampa": [
+    "E sí bel di forma il fiore,",
+    "Di profumo e di colore,"
+   ],
+   "immagine_facsimile": 63,
+   "pagina_libro": 57,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e001-v03",
+   "ocr": "Mostró quello che poteva;",
+   "stampa": [
+    "Mostró quello che poteva;",
+    "Ma un portento ver faceva"
+   ],
+   "immagine_facsimile": 63,
+   "pagina_libro": 57,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e001-v04",
+   "ocr": "Quando all'uomo dava il cuore.;",
+   "stampa": [
+    "Quando all'uomo dava il cuore.",
+    "Diede chiaritá alla luce,",
+    "Forza al correre del vento,",
+    "Diede vita e movimento",
+    "Cosí all'aquila e al tafano;",
+    "Ma di piú diede al cristiano,",
+    "Dandogli l'intendimento."
+   ],
+   "immagine_facsimile": 63,
+   "pagina_libro": 57,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e001-v05",
+   "ocr": "E benché agli uccelli diede,",
+   "stampa": [
+    "E benché agli uccelli diede,",
+    "Con altre virtú che ignoro,",
+    "I beccucci come d'oro",
+    "E la piuma tanto bella,",
+    "Diede all'uom maggior tesoro"
+   ],
+   "immagine_facsimile": 63,
+   "pagina_libro": 57,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e003-v02",
+   "ocr": "— lo suppongo — all'uomo dié,",
+   "stampa": "— Io suppongo — all'uomo dié,",
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e003-v04",
+   "ocr": "Che Puom d'essi bisognava,",
+   "stampa": "Che l'uom d'essi bisognava,",
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e003-v05",
+   "ocr": "Poiché i beni bilanciava",
+   "stampa": [
+    "Poiché i beni bilanciava",
+    "Con le pene — molte, affé!"
+   ],
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e004-v02",
+   "ocr": "Né l'està temo, né il verno",
+   "stampa": [
+    "Né l'está temo, né il verno",
+    "E so adoperar le mani."
+   ],
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e005-v01",
+   "ocr": "lo so bene che i cacicchi",
+   "stampa": "Io so bene che i cacicchi",
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e006-v05",
+   "ocr": "E se sbaglierò cammino...",
+   "stampa": "E se sbaglieró cammino...",
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e006-v06",
+   "ocr": "Non sarò 'l primo che erra.",
+   "stampa": "Non saró 'l primo che erra.",
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e009-v01",
+   "ocr": "Non si morirà di fame;",
+   "stampa": "Non si morirá di fame;",
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e009-v02",
+   "ocr": "Altri nYebbero a narrare",
+   "stampa": "Altri m'ebbero a narrare",
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e009-v03",
+   "ocr": "Che si può al campo trovare",
+   "stampa": "Che si puó al campo trovare",
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e010-v05",
+   "ocr": "Potrà dirsi fortunato",
+   "stampa": "Potrá dirsi fortunato",
+   "immagine_facsimile": 64,
+   "pagina_libro": 58,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e012-v01",
+   "ocr": "Là vivremo almen sicuri,",
+   "stampa": "Lá vivremo almen sicuri,",
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e012-v02",
+   "ocr": "Già che qui non lo possiamo.",
+   "stampa": "Giá che qui non lo possiamo.",
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e012-v04",
+   "ocr": "Sarà pure un gran contento,",
+   "stampa": "Sará pure un gran contento,",
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e013-v06",
+   "ocr": "Di noi aver vorrà pietà,",
+   "stampa": "Di noi aver vorrá pietá,",
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e015-v03",
+   "ocr": "Forse cambierà il destino,",
+   "stampa": [
+    "Forse cambierá il destino,",
+    "Finiran le nostre pene;"
+   ],
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e015-v05",
+   "ocr": "Croce, andiam, questo & il cammino",
+   "stampa": "Croce, andiam, questo é il cammino",
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e016-v05",
+   "ocr": "Meno mal la può passare.",
+   "stampa": "Meno mal la puó passare.",
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e017-v05",
+   "ocr": "Io mi voglio liberare",
+   "stampa": [
+    "Io mi voglio liberare",
+    "Da tutte le pene mie."
+   ],
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e018-v02",
+   "ocr": "Un boccal ampio cercò",
+   "stampa": "Un boccal ampio cercó",
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e018-v03",
+   "ocr": "E d'un fiato lo vuotò",
+   "stampa": [
+    "E d'un fiato lo vuotó",
+    "Dando fine all'argomento."
+   ],
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e018-v05",
+   "ocr": "Sulla terra frantumó,",
+   "stampa": "Sulla terra frantumó.",
+   "immagine_facsimile": 65,
+   "pagina_libro": 59,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e018-v06",
+   "ocr": "Martín Flerro",
+   "stampa": null,
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e019-v03",
+   "ocr": "Nessun la deye toccare;",
+   "stampa": "Nessun la deve toccare;",
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e020-v01",
+   "ocr": "E qui chiudo. le mie strofe,",
+   "stampa": "E qui chiudo le mie strofe,",
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e021-v04",
+   "ocr": "Così scaltri e ben provvisti,",
+   "stampa": "Cosí scaltri e ben provvisti,",
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e023-v01",
+   "ocr": "Penetrarono, così",
+   "stampa": "Penetrarono, cosí",
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e023-v06",
+   "ocr": "vi darò più certi dati.",
+   "stampa": "vi daró piú certi dati.",
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e025-v01",
+   "ocr": "Fi riponga la speranza",
+   "stampa": "Ei riponga la speranza",
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e025-v02",
+   "ocr": "In quel Dio che lo creò.",
+   "stampa": "In quel Dio che lo creó.",
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e025-v03",
+   "ocr": "Ho finito e tacerò,",
+   "stampa": "Ho finito e taceró,",
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e025-v05",
+   "ocr": "Ciò che da niuno é ignorato,",
+   "stampa": "Ció che da niuno é ignorato,",
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-andata-c13-e025-v06",
+   "ocr": "Ma che niuno mai cantò.",
+   "stampa": "Ma che niuno mai cantó.",
+   "immagine_facsimile": 66,
+   "pagina_libro": 60,
+   "data": "2026-11-04"
+  },
+  {
+   "verso": "it-ritorno-c30-e004-v02",
+   "ocr": "T'uom si deve misurare",
+   "stampa": "L'uom si deve misurare",
+   "immagine_facsimile": 147,
+   "pagina_libro": 141,
    "data": "2026-11-03"
   },
   {
@@ -220,5 +3279,431 @@
    "pagina_libro": 158,
    "data": "2026-11-03"
   }
- ]
+ ],
+ "strofe": {
+  "andata-1": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-2": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-3": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-4": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-5": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-6": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-7": [
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   10,
+   4,
+   4,
+   4,
+   4
+  ],
+  "andata-8": [
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-9": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   8,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-10": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-11": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-12": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ],
+  "andata-13": [
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6,
+   6
+  ]
+ }
 }
