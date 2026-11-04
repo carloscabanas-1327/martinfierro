@@ -14,9 +14,9 @@ const xDefault=grupo?.es??grupo?.en;
 const nomiLingua={es:'Español',en:'English',it:'Italiano',pt:'Português'} as const;
 type Lingua=keyof typeof nomiLingua;
 const linguaCorrente:Lingua=english?'en':italian?'it':portuguese?'pt':'es';
-// La edición brasileña (/pt/) está en construcción y en noindex: solo aparece en el
-// selector dentro de sus propias páginas. Al lanzarla, poner PT_PUBLICADA en true.
-const PT_PUBLICADA=false;
+// Edición brasileña (/pt/): abierta a buscadores desde el 2026-11-04. Con false,
+// «Português» solo aparecería en el selector dentro de /pt/.
+const PT_PUBLICADA=true;
 const lingueSelettore:Lingua[]=['es','en','it',...(PT_PUBLICADA||portuguese?['pt' as const]:[])];
 // Selector visible de idioma: los mismos idiomas en todas las ediciones.
 // Usa la página equivalente si está registrada; si no, la portada de cada edición.
