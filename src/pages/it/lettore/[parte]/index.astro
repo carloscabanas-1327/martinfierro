@@ -14,7 +14,7 @@ const libro=partiIt[parte];
  <p class="eyebrow">{libro.etichetta} · {libro.anno} · {libro.canti.length} canti · {versiDiParte(parte).toLocaleString('it-IT')} versi</p>
  <h1>{libro.titolo}</h1>
  <p class="lead">{libro.descrizione} Titolo originale: <em lang="es">{libro.titolo_originale}</em>.</p>
- <p class="mf-it-avviso">Trascrizione OCR dell’edizione del 1919, in revisione. Ogni canto rimanda al testo spagnolo e all’immagine della pagina stampata.</p>
+ <p class="mf-it-avviso">Trascrizione dell’edizione del 1919, collazionata con il facsimile. Ogni canto rimanda al testo spagnolo e all’immagine della pagina stampata.</p>
  <p><a class="btn" href={urlCantoIt(parte,1)}>Comincia dal canto I</a></p>
  <section class="section"><h2>Indice dei canti</h2><div class="cards">
  {libro.canti.map(c=>{const k=corrispondenzaCanto(parte,c.numero);return <article class="card"><p class="eyebrow">Canto {romano(c.numero)}</p><h3><a href={urlCantoIt(parte,c.numero)}>{sintesiIt[parte][c.numero-1]?.titolo ?? `Leggi il canto ${romano(c.numero)}`}</a></h3><p>{versiDiCanto(c)} versi nella traduzione · {k.originale.versi} nell’originale</p><p><a href={urlCantoOriginale(parte,c.numero)} lang="es">Originale spagnolo</a> · <a href={c.url_facsimile} target="_blank" rel="noopener noreferrer">Facsimile ↗</a></p></article>})}

@@ -29,7 +29,7 @@ const originale=urlCantoOriginale(parte,numero);
    <h1>Canto {romano(numero)}</h1>
    <p class="meta">{canto.estrofe.length} strofe · {versiDiCanto(canto)} versi nella traduzione · originale: {corr.originale.estrofe} strofe, {corr.originale.versi} versi</p>
   </header>
-  <p class="mf-it-avviso"><strong>Trascrizione in revisione.</strong> Il testo è stato letto con OCR dal facsimile dell’edizione del 1919 e non è ancora stato collazionato verso per verso: possono esserci refusi o versi mancanti. Fa fede l’<a href={canto.url_facsimile} target="_blank" rel="noopener noreferrer">immagine della pagina</a>.</p>
+  <p class="mf-it-avviso">Testo trascritto dal facsimile dell’edizione del 1919 e collazionato verso per verso, con la grafia della stampa. Fa fede l’<a href={canto.url_facsimile} target="_blank" rel="noopener noreferrer">immagine della pagina</a>.</p>
   <div class="reader-layout">
    <article class="verse-text" aria-label={`Testo del canto ${romano(numero)}`}>
     {canto.estrofe.map(e=><section class="stanza" id={e.id} aria-label={`Strofa ${e.numero}`}>

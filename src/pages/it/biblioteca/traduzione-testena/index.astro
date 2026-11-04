@@ -41,9 +41,9 @@ const totale=versiDiParte('andata')+versiDiParte('ritorno');
  </section>
  <section id="trascrizione"><h2>La trascrizione</h2>
   <p>Il testo è stato ricavato con il riconoscimento ottico dei caratteri (OCR) dalle immagini dell’Ibero-Amerikanisches Institut; poi le colonne italiana e spagnola sono state separate e ogni strofa è stata assegnata al suo canto confrontandola con l’originale.</p>
-  <p>Risultato: {totale.toLocaleString('it-IT')} versi in 46 canti ({versiDiParte('andata').toLocaleString('it-IT')} nella prima parte, {versiDiParte('ritorno').toLocaleString('it-IT')} nella seconda). Stato: <strong>non collazionata</strong>. Limiti noti:</p>
+  <p>Risultato: {totale.toLocaleString('it-IT')} versi in 46 canti ({versiDiParte('andata').toLocaleString('it-IT')} nella prima parte, {versiDiParte('ritorno').toLocaleString('it-IT')} nella seconda). Stato: <strong>collazionata con il facsimile</strong> (novembre 2026). Limiti noti:</p>
   <ul>{f.trascrizione.limiti.map(l=><li>{l}</li>)}</ul>
-  <p class="it-riquadro"><strong>Regola editoriale.</strong> {f.trascrizione.regola} Finché la collazione non è completa, le pagine dei canti non sono indicizzate dai motori di ricerca.</p>
+  <p class="it-riquadro"><strong>Regola editoriale.</strong> {f.trascrizione.regola}</p>
  </section>
  <section id="corrispondenza"><h2>Corrispondenza fra originale e traduzione</h2>
   <p>Testena traduce strofa per strofa, ma non sempre con lo stesso numero di versi, e l’OCR ne ha perso alcuni. Invece di imporre una numerazione artificiale, la tabella mostra canto per canto quante strofe e quanti versi ha ciascuna versione, la pagina del libro e l’immagine del facsimile. La numerazione dell’originale è quella del lettore spagnolo (strofe numerate per tutta la parte).</p>

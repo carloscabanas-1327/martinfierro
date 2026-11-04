@@ -38,12 +38,11 @@
   "file_sorgente": "fuente-ocr-archivo-ar.json",
   "sha256_sorgente": "074aa97bfe5b9f1f24e2cf2f1f26a77c22ec40775cfea746181fde319c7e6412",
   "canti": 46,
-  "versi": 7109,
-  "stato": "non collazionata",
+  "versi": 7205,
+  "stato": "collazionata con il facsimile (novembre 2026)",
   "limiti": [
-   "Restano errori di OCR (per esempio «woglio» per «voglio», accenti e apostrofi alterati, «T’uom» per «L’uom»).",
-   "Alcuni versi non letti dall’OCR mancano: la prima parte ha 2.240 versi contro i 2.316 dell’originale; il canto XIII ne ha 28 in meno.",
-   "Alcune strofe possono essere tagliate male ai cambi di pagina.",
+   "Si segue la grafia della stampa del 1919, con l’accento acuto (piú, ció, cosí) e i suoi refusi.",
+   "La seconda parte ha 4.889 versi contro i 4.894 dell’originale: un verso manca nella stampa stessa (canto III) e i canti XXVII e XXVIII seguono la disposizione di Testena.",
    "Non sono riprodotti il prologo né le note del traduttore."
   ],
   "regola": "Nessun verso è stato completato o generato. Ogni correzione si fa contro il facsimile ed è documentata, con il testo dell’OCR e quello stampato."
