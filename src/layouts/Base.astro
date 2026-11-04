@@ -18,9 +18,9 @@ const linguaCorrente:Lingua=english?'en':italian?'it':portuguese?'pt':french?'fr
 // Edición brasileña (/pt/): abierta a buscadores desde el 2026-11-04. Con false,
 // «Português» solo aparecería en el selector dentro de /pt/.
 const PT_PUBLICADA=true;
-// Edición francesa (/fr/): en noindex hasta su lanzamiento. Con false,
-// «Français» solo aparece en el selector dentro de /fr/.
-const FR_PUBLICADA=false;
+// Edición francesa (/fr/): abierta a buscadores desde el 2026-11-04. Con false,
+// «Français» solo aparecería en el selector dentro de /fr/.
+const FR_PUBLICADA=true;
 const lingueSelettore:Lingua[]=['es','en','it',...(PT_PUBLICADA||portuguese?['pt' as const]:[]),...(FR_PUBLICADA||french?['fr' as const]:[])];
 // Selector visible de idioma: los mismos idiomas en todas las ediciones.
 // Usa la página equivalente si está registrada; si no, la portada de cada edición.
