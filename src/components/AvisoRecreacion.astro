@@ -1,0 +1,58 @@
+---
+// Etiqueta visible «Recreación digital» sobre cada imagen creada para el sitio
+// (carpetas fotografias-v3, cultura-gauchesca, revista y la lámina de temas).
+// Las fotografías y los documentos históricos (archivo, documentos) no la llevan.
+// Se coloca en la esquina superior izquierda de la imagen, sin mover el diseño.
+---
+<script is:inline>
+(()=>{
+ const sel='img[src*="/media/fotografias-v3/"],img[src*="/media/cultura-gauchesca/"],img[src*="/media/revista/"],.mf-temas-thumb,.mf-tema-figure-image';
+ const textos={
+  es:['Recreación digital','Recreación digital del sitio; no es una fotografía histórica.'],
+  en:['Digital recreation','Digital recreation made for this site; not a historical photograph.'],
+  it:['Ricostruzione digitale','Ricostruzione digitale realizzata per il sito; non è una fotografia storica.'],
+  pt:['Recriação digital','Recriação digital feita para o site; não é uma fotografia histórica.'],
+  de:['Digitale Nachbildung','Für diese Website erstellte digitale Nachbildung; keine historische Fotografie.'],
+  fr:['Recréation numérique','Recréation numérique réalisée pour le site ; ce n’est pas une photographie historique.']
+ };
+ const l=(document.documentElement.lang||'es').slice(0,2).toLowerCase();
+ const [etiqueta,detalle]=textos[l]||textos[l==='pm'?'it':'es'];
+ const pares=[];
+ const ubicar=([el,b])=>{
+  const visible=el.offsetWidth>=90&&el.offsetHeight>=60;
+  b.hidden=!visible;
+  if(visible){b.style.top=(el.offsetTop+6)+'px';b.style.left=(el.offsetLeft+6)+'px';}
+ };
+ const poner=()=>{
+  document.querySelectorAll(sel).forEach(el=>{
+   if(el.dataset.mfRecreacion)return;
+   el.dataset.mfRecreacion='1';
+   // El contenedor de bloque más cercano sirve de referencia para la posición.
+   let c=el.parentElement;
+   while(c&&c!==document.body&&getComputedStyle(c).display.startsWith('inline'))c=c.parentElement;
+   if(!c)return;
+   if(getComputedStyle(c).position==='static')c.style.position='relative';
+   const b=document.createElement('span');
+   b.className='mf-aviso-recreacion';
+   b.textContent=etiqueta;
+   b.title=detalle;
+   c.appendChild(b);
+   if(el.tagName==='IMG'&&!el.title)el.title=detalle;
+   const par=[el,b];pares.push(par);
+   if(el.tagName==='IMG'&&!el.complete)el.addEventListener('load',()=>ubicar(par),{once:true});
+  });
+  pares.forEach(ubicar);
+ };
+ const iniciar=()=>{
+  poner();
+  if('ResizeObserver' in window){const ro=new ResizeObserver(()=>pares.forEach(ubicar));pares.forEach(([el])=>ro.observe(el));}
+  else addEventListener('resize',()=>pares.forEach(ubicar));
+ };
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
+})();
+</script>
+<style is:global>
+.mf-aviso-recreacion{position:absolute;z-index:3;pointer-events:auto;cursor:help;background:rgba(20,16,12,.72);color:#fff;font:600 .68rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.02em;padding:3px 7px;border-radius:3px;white-space:nowrap;max-width:calc(100% - 12px);overflow:hidden;text-overflow:ellipsis}
+.mf-aviso-recreacion[hidden]{display:none}
+@media print{.mf-aviso-recreacion{background:#fff;color:#000;border:1px solid #000}}
+</style>
