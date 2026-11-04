@@ -1,0 +1,52 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import {estrofasDeCanto} from '../../../../lib/corpus';
+// Versos do poema em que aparecem o mate e o "cimarrón" (de onde vem a palavra chimarrão).
+const estrofe=(parte:'ida'|'vuelta',canto:number,n:number)=>estrofasDeCanto(parte,canto).find(e=>e.numero===n)!;
+const versos=[
+ {e:estrofe('ida',2,25),ref:'El gaucho Martín Fierro, canto II',href:'/leer/ida/2/',comentario:'É a lembrança do tempo feliz, antes da leva para a fronteira: o gaúcho acorda antes do dia, senta junto ao fogo e toma cimarrão até ficar “rechonchudo”, enquanto a mulher dorme enrolada no poncho. Repare na palavra: cimarrón, o mate amargo, é a mãe do nosso chimarrão.'},
+ {e:estrofe('vuelta',12,703),ref:'La vuelta de Martín Fierro, canto XII',href:'/leer/vuelta/12/',comentario:'O filho mais velho de Fierro conta a vida na penitenciária. Entre os castigos, o primeiro da lista é ficar sem mate: para o homem do campo, perder a cuia é perder a companhia.'},
+ {e:estrofe('vuelta',30,1090),ref:'La vuelta de Martín Fierro, canto XXX',href:'/leer/vuelta/30/',comentario:'Na payada, o desafio cantado, um dos cantadores se compara à cuia: só serve quando lhe abrem a boca. A imagem só funciona porque todo ouvinte conhecia o gesto de cevar.'},
+];
+const secoes=[
+ {id:'uma-bebida',titulo:'Uma bebida, muitas fronteiras',paragrafos:[
+  'No Rio Grande do Sul se diz chimarrão; em Buenos Aires e Montevidéu, mate; no Paraguai, quando a água é fria, tereré. Os nomes mudam, mas o gesto é o mesmo de um lado e do outro da fronteira: a erva na cuia, a água quente, a bomba que passa de mão em mão.',
+  'O Pampa não respeita linhas de mapa. A mesma planície se estende pelo sul do Brasil, pelo Uruguai e pela província de Buenos Aires, e nela nasceu um mesmo tipo humano, o gaúcho (gaucho, em espanhol), com o mesmo cavalo, o mesmo poncho e a mesma cuia. É por isso que o leitor gaúcho reconhece tanto do mundo de Martín Fierro.']},
+ {id:'guaranis',titulo:'Antes das fronteiras: a erva dos guaranis',paragrafos:[
+  'A erva-mate (Ilex paraguariensis) é uma árvore nativa das matas do sul da América do Sul: Paraná, Santa Catarina, Rio Grande do Sul, Mato Grosso do Sul, leste do Paraguai e a província argentina de Misiones. Não tem parentesco com o chá-preto ou o chá-verde, que vêm de outra planta.',
+  'Muito antes de existirem Brasil, Argentina ou Uruguai, os povos guaranis já colhiam e consumiam as folhas, que chamavam de ka’a (erva, planta). O costume é, portanto, indígena na origem. Nem o gaúcho nem os Estados nacionais o inventaram: eles o herdaram.']},
+ {id:'missoes',titulo:'As missões jesuíticas e os Sete Povos',paragrafos:[
+  'Nos séculos XVII e XVIII, os padres jesuítas organizaram reduções com os guaranis numa região que hoje se divide entre Argentina, Paraguai e Brasil. Ali a erva deixou de ser apenas colhida no mato e passou a ser cultivada em ervais, o que a transformou em produto de comércio em todo o Prata.',
+  'Sete dessas reduções ficavam a leste do rio Uruguai, no atual Rio Grande do Sul: os Sete Povos das Missões. As ruínas de São Miguel Arcanjo, em São Miguel das Missões, são Patrimônio Mundial da UNESCO junto com as missões guaranis da Argentina. A roda de chimarrão gaúcha tem raízes nesse encontro entre a erva guarani e a vida das estâncias.']},
+ {id:'parana',titulo:'O ciclo da erva-mate no Paraná',paragrafos:[
+  'No século XIX, a erva-mate foi uma das grandes riquezas do sul do Brasil. No Paraná, os engenhos de beneficiamento movimentaram a economia de Curitiba e de cidades do planalto, e boa parte da produção seguia para os portos e para os mercados de Buenos Aires e Montevidéu.',
+  'Ou seja: o mate que Martín Fierro tomava num rancho da província de Buenos Aires podia muito bem ter vindo de ervais brasileiros ou paraguaios. A cuia sempre foi uma bebida de fronteira.']},
+ {id:'jeito-gaucho',titulo:'O chimarrão: o jeito gaúcho',paragrafos:[
+  'O chimarrão gaúcho usa erva verde, moída bem fina e com pouco palo, o que dá a cor viva e o pó característico. A cuia costuma ser grande, feita de porongo, e a água vem da chaleira (hoje, muitas vezes, da térmica), quente mas sem ferver. No Uruguai e na Argentina, em geral, a erva é mais grossa e envelhecida, e a cuia, menor.',
+  'Na roda, quem ceva toma o primeiro mate, que é o mais amargo e arruma a erva. Depois a cuia gira sempre na mesma direção, cada um toma até o fim e devolve. Não se mexe na bomba, e dizer “obrigado” quer dizer que você já está satisfeito. São regras de cortesia, não de lei, e variam de casa para casa.',
+  'Desde 2003, o chimarrão é por lei a bebida símbolo do Rio Grande do Sul, e o Dia do Chimarrão é comemorado em 24 de abril. A erva-mate, por sua vez, já era a árvore símbolo do estado desde 1980.']},
+ {id:'palavra',titulo:'De cimarrón a chimarrão',paragrafos:[
+  'A palavra chimarrão vem do espanhol cimarrón, que quer dizer xucro, selvagem, sem dono: dizia-se do gado e dos cavalos que viviam soltos no campo. Aplicada ao mate, passou a significar o mate amargo, sem açúcar, tomado “ao natural”. No Prata, “cimarrón” continua sendo sinônimo de mate amargo.',
+  'Martín Fierro usa a palavra nos dois sentidos: há o “perro cimarrón”, o cachorro sem dono, e há o cimarrão que o gaúcho toma junto ao fogo. Muitas outras palavras fazem o mesmo caminho entre o espanhol do campo e o português do Sul: pago, pingo, china, bagual, guaxo, bolicho, peleia, bombacha. Quem fala gauchês tem meio caminho andado para ler o poema no original.']},
+];
+const fontes=[
+ {nome:'Rio Grande do Sul, Lei nº 11.929, de 20 de junho de 2003 (chimarrão como bebida símbolo; Dia do Chimarrão), via MTG',url:'https://www.mtg.org.br/wp-content/uploads/2020/06/mtgrs-lei-churrasco-e-do-chimarrao.pdf'},
+ {nome:'UNESCO: Missões jesuíticas dos guaranis (São Miguel das Missões e missões argentinas)',url:'https://whc.unesco.org/en/list/275'},
+ {nome:'Royal Botanic Gardens, Kew: Ilex paraguariensis (distribuição nativa)',url:'https://powo.science.kew.org/taxon/315555-2'},
+ {nome:'Argentina.gob.ar: o mate e sua história botânica e guarani (em espanhol)',url:'https://www.argentina.gob.ar/node/213295'},
+];
+---
+<Base migas={[{label:'Revista',href:'/pt/revista/'},{label:'Chimarrão'}]} lingue={{en:'/en/magazine/yerba-mate/'}} lang="pt-BR" noindex={true} pageType="Article" title="Chimarrão: a erva que une o Pampa, do Rio Grande do Sul a Martín Fierro" description="A história do chimarrão e da erva-mate: a origem guarani, as missões jesuíticas, o ciclo da erva no Paraná, a roda gaúcha e o mate nos versos de Martín Fierro.">
+<article class="ensaio-pt">
+<header><p class="eyebrow">REVISTA CULTURAL · O MUNDO DO GAÚCHO</p><h1>Chimarrão: a erva que une o Pampa</h1><p class="deck">Do Rio Grande do Sul a Buenos Aires, a mesma cuia passa de mão em mão. A história do chimarrão começa com os guaranis, atravessa as missões jesuíticas e os ervais do Paraná e chega aos versos de Martín Fierro, onde o mate amargo ainda se chama cimarrón.</p></header>
+<figure><img src="/media/cultura-gauchesca/mate-tradicional-con-bombilla-rio-de-la-plata.webp" alt="Ilustração editorial de uma cuia de mate com bomba, ao estilo do Prata" fetchpriority="high"/><figcaption>Ilustração editorial contemporânea, não é fotografia de época.</figcaption></figure>
+<div class="leitura"><nav class="sumario" aria-label="Neste artigo"><strong>Neste artigo</strong>{secoes.map(s=><a href={`#${s.id}`}>{s.titulo}</a>)}<a href="#nos-versos">O mate nos versos</a><a href="#fontes">Fontes</a></nav>
+{secoes.map(s=><section id={s.id}><h2>{s.titulo}</h2>{s.paragrafos.map(p=><p>{p}</p>)}</section>)}
+<section id="nos-versos"><h2>O mate nos versos de Martín Fierro</h2><p>O poema de José Hernández não faz uma cena dedicada ao mate, mas a cuia aparece onde aparece a vida cotidiana. Três passagens, no original:</p>
+{versos.map(v=><figure class="citacao"><figcaption><a href={v.href} lang="es">{v.ref}</a> · estrofe {v.e.numero}</figcaption><blockquote lang="es">{v.e.versos.map(l=><span>{l.texto}</span>)}</blockquote><p>{v.comentario}</p></figure>)}
+<p>Para quem quer ir além, os <a href="/pt/conselhos-de-martin-fierro/">conselhos de Martín Fierro aos filhos</a> trazem o canto XXXII completo, com tradução de estudo em português.</p></section>
+<section id="fontes"><h2>Fontes e método</h2><p>Este artigo foi escrito para a edição brasileira a partir do guia cultural da edição espanhola, com dados específicos do sul do Brasil. Distinguimos sempre os fatos históricos, as representações literárias e as ilustrações modernas. Os versos vêm do texto original de Hernández usado em todo o site.</p><ul>{fontes.map(f=><li><a href={f.url} target="_blank" rel="noopener noreferrer">{f.nome}</a></li>)}</ul>
+<p><a href="/pt/revista/">← Voltar à revista</a> · <a href="/pt/">Edição brasileira</a></p></section>
+</div></article>
+<style>.ensaio-pt{max-width:1040px;margin:24px auto 85px;color:#302820}.ensaio-pt a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .71rem system-ui,sans-serif;letter-spacing:.14em;color:#934e35}.ensaio-pt h1{font:600 clamp(2.4rem,5vw,4.75rem)/1.09 Georgia,serif;letter-spacing:-.035em;max-width:930px;margin:17px 0;text-wrap:balance}.deck{font:1.25rem/1.65 Georgia,serif;max-width:78ch}.ensaio-pt>figure{margin:32px 0 38px}.ensaio-pt>figure img{width:100%;max-height:470px;object-fit:cover;border-radius:6px}.ensaio-pt>figure figcaption{font:.77rem system-ui,sans-serif;color:#6c5b4a;margin-top:9px}.leitura{max-width:770px;margin:auto}.sumario{display:flex;flex-wrap:wrap;gap:11px 19px;border-block:1px solid #c8b9a7;padding:21px 0;font:.83rem system-ui,sans-serif}.sumario strong{width:100%}.leitura section{margin:44px 0}.leitura h2{font:600 clamp(1.75rem,3vw,2.5rem)/1.17 Georgia,serif;margin:0 0 19px}.leitura p,.leitura li{font:1.08rem/1.83 Georgia,serif}.leitura li{margin:12px 0}.citacao{margin:26px 0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.citacao figcaption{font:700 .74rem system-ui,sans-serif;letter-spacing:.06em;color:#8b4731}.citacao blockquote{margin:12px 0;border-left:3px solid #ac937b;padding-left:16px}.citacao blockquote span{display:block;font:1.1rem/1.65 Georgia,serif}.citacao p{font-size:1rem!important;margin:0}#fontes{background:#eee3d7;padding:25px 30px}@media(max-width:600px){#fontes,.citacao{padding:18px}}</style>
+</Base>

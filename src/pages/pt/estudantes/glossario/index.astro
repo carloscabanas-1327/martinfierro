@@ -1,0 +1,35 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import ArtigoPt from '../../../../components/ArtigoPt.astro';
+// No Sul do Brasil muitas destas palavras existem no gauchês: indicamos o equivalente quando há.
+const verbetes:{verbete:string;tipo:string;significado:string;poema:string;sul?:string;url:string}[]=[
+ {verbete:'Gaucho',tipo:'Termo histórico e cultural',significado:'Cavaleiro das planícies da Argentina, do Uruguai e do sul do Brasil.',poema:'Indica trabalho, habilidade, posição social e uma identidade literária discutida. Fierro fala como um gaúcho, não em nome de todos.',sul:'gaúcho',url:'/pt/ler-o-poema/'},
+ {verbete:'Payada',tipo:'Poesia oral e música',significado:'Poesia cantada e improvisada do Prata, muitas vezes em desafio entre dois cantadores com violão.',poema:'O Moreno e Fierro se enfrentam numa payada que reabre uma violência não resolvida.',sul:'payada, trova',url:'/pt/estudantes/volta/30/'},
+ {verbete:'Pulpería',tipo:'Instituição rural',significado:'Venda de campanha e ponto de encontro, onde se compravam provisões, se bebia e às vezes se cantava.',poema:'Várias brigas do poema acontecem nesses espaços.',sul:'bolicho, venda',url:'/pt/estudantes/ida/8/'},
+ {verbete:'Fortín',tipo:'Instituição de fronteira',significado:'Pequeno posto militar na fronteira com os territórios indígenas.',poema:'Fierro descreve miséria e exploração durante o serviço.',sul:'fortim',url:'/pt/estudantes/ida/4/'},
+ {verbete:'Leva',tipo:'Termo militar e político',significado:'Recrutamento forçado de homens para o serviço militar.',poema:'Explica por que a fronteira destrói a vida familiar de Fierro.',sul:'recrutamento',url:'/pt/estudantes/ida/3/'},
+ {verbete:'Partida',tipo:'Grupo armado',significado:'Patrulha formada para uma tarefa; no poema, quase sempre a força que persegue alguém.',poema:'Cruz faz parte da partida que caça Fierro antes de defendê-lo.',url:'/pt/estudantes/ida/9/'},
+ {verbete:'Facón',tipo:'Cultura material',significado:'Faca grande associada ao gaúcho histórico.',poema:'As lutas de faca não devem ser lidas como elogio da violência.',sul:'facão, faca de bainha',url:'/pt/estudantes/ida/7/'},
+ {verbete:'Mate, cimarrón',tipo:'Bebida',significado:'Infusão de erva-mate; a palavra também designa a cuia. Cimarrón é o mate amargo.',poema:'Fierro lembra o cimarrão tomado junto ao fogo antes do amanhecer.',sul:'chimarrão, cuia',url:'/pt/revista/chimarrao/'},
+ {verbete:'Pago',tipo:'Lugar',significado:'A terra natal, o lugar de origem.',poema:'Voltar ao pago e encontrá-lo em ruínas é um dos golpes da primeira parte.',sul:'pago, querência',url:'/pt/estudantes/ida/6/'},
+ {verbete:'Tapera',tipo:'Lugar',significado:'Casa abandonada ou em ruínas (palavra de origem tupi-guarani).',poema:'O rancho de Fierro virou tapera quando ele volta da fronteira.',sul:'tapera',url:'/pt/estudantes/ida/6/'},
+ {verbete:'Matrero',tipo:'Condição social',significado:'Gaúcho fugitivo, que vive escondido da autoridade.',poema:'Fierro se torna matrero depois da deserção.',sul:'alçado',url:'/pt/estudantes/ida/6/'},
+ {verbete:'Pingo, flete',tipo:'Cavalo',significado:'O cavalo bom, de estimação.',poema:'O cavalo é companheiro, meio de fuga e sinal de status.',sul:'pingo',url:'/pt/estudantes/ida/5/'},
+ {verbete:'China',tipo:'Tratamento',significado:'A companheira, a mulher do homem do campo.',poema:'Aparece nos quadros da vida doméstica e nas cenas de baile.',sul:'china',url:'/pt/estudantes/ida/2/'},
+ {verbete:'Malón',tipo:'Termo de fronteira',significado:'Ataque indígena a estâncias e povoados da fronteira.',poema:'Fierro e Cruz chegam ao acampamento indígena durante a preparação de um malón.',url:'/pt/estudantes/volta/2/'},
+ {verbete:'Moreno',tipo:'Designação histórica',significado:'Termo da época para pessoa de pele escura; no poema, designa um cantador afro-argentino.',poema:'O Moreno da payada não é o homem morto na primeira parte, mas o irmão dele.',url:'/pt/estudantes/volta/30/'},
+ {verbete:'Viejo Vizcacha',tipo:'Nome de personagem',significado:'Viejo é “velho”; a viscacha é um roedor do pampa que vive em tocas.',poema:'O apelido lembra o bicho que junta coisas na toca; o paralelo é uma leitura possível, não uma regra.',url:'/pt/estudantes/volta/15/'},
+ {verbete:'Picardía',tipo:'Nome de personagem e palavra comum',significado:'Malandragem, esperteza, astúcia: conforme o contexto, engenho brincalhão ou trapaça.',poema:'O filho de Cruz carrega o apelido mesmo depois de tentar mudar de vida.',url:'/pt/estudantes/volta/26/'},
+ {verbete:'Naides',tipo:'Língua gauchesca',significado:'Forma popular de “nadie”, ninguém.',poema:'A poesia gauchesca usa essas formas para criar uma voz rural reconhecível.',url:'/pt/ler-o-poema/'},
+ {verbete:'Canto, estrofe, verso',tipo:'Estrutura literária',significado:'O canto é uma seção numerada, como um capítulo; a estrofe é um grupo de versos; o verso é uma linha do poema.',poema:'As duas partes têm 13 e 33 cantos, quase sempre em sextilhas de versos de oito sílabas.',url:'/pt/estudantes/'},
+];
+---
+<Base migas={[{label:'Para estudantes',href:'/pt/estudantes/'},{label:'Glossário'}]} lingue={{en:'/en/students/glossary/',it:'/it/studenti/glossario/'}} lang="pt-BR" noindex={true} pageType="Article" title="Glossário de Martín Fierro: palavras gauchescas explicadas" description="Glossário para estudantes de Martín Fierro: payada, pulpería, fortín, facón, leva, pago, tapera, Vizcacha, Picardía e outras palavras do poema, com o equivalente no gauchês do Sul.">
+<ArtigoPt chamada="Para estudantes · Palavras no contexto" titulo="Glossário gauchesco"
+ resumo="As palavras do poema se entendem melhor no contexto do que procurando um equivalente no dicionário. Cada verbete explica o sentido, o papel no Martín Fierro e, quando existe, a palavra irmã no gauchês do Rio Grande do Sul."
+ fontes={[{nome:'Diccionario de americanismos (ASALE), em espanhol',url:'https://www.asale.org/damer/',lingua:'es'},{nome:'Gaucho glossary, edição inglesa',url:'/en/students/glossary/',lingua:'en'}]}
+ notaFontes="As definições são explicações para o leitor e não substituem os versos de Hernández.">
+ <dl class="pt-glossario">{verbetes.map(v=><div><dt lang="es">{v.verbete}</dt><dd><p class="pt-tipo">{v.tipo}</p><p><strong>Significado:</strong> {v.significado}</p><p><strong>No poema:</strong> {v.poema}</p>{v.sul&&<p><strong>No gauchês do Sul:</strong> {v.sul}</p>}<p><a href={v.url}>Saiba mais →</a></p></dd></div>)}</dl>
+</ArtigoPt>
+<style>.pt-glossario{display:grid;gap:0;margin:0}.pt-glossario>div{display:grid;grid-template-columns:200px 1fr;gap:20px;border-top:1px solid #c8baab;padding:18px 0}.pt-glossario dt{font:600 1.3rem Georgia,serif;font-style:italic}.pt-glossario dd{margin:0}.pt-glossario dd p{margin:0 0 6px}.pt-tipo{font:700 .7rem system-ui,sans-serif!important;letter-spacing:.1em;text-transform:uppercase;color:#8b4731}@media(max-width:600px){.pt-glossario>div{grid-template-columns:1fr;gap:6px}}</style>
+</Base>

@@ -1,0 +1,19 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {partes} from '../../../lib/corpus';
+import {guiasIda} from '../../../data/pt-guias-ida';
+import {guiasVuelta} from '../../../data/pt-guias-vuelta';
+const blocos=[
+ {slug:'ida',titulo:'Primeira parte · El gaucho Martín Fierro (1872)',desc:'Do rancho perdido à fronteira: a leva, a deserção, as mortes, a amizade com Cruz e a travessia para o deserto.',cantos:partes.ida.cantos.map(c=>({...c,g:guiasIda[c.numero]}))},
+ {slug:'volta',titulo:'Segunda parte · La vuelta de Martín Fierro (1879)',desc:'O cativeiro, a cativa, o reencontro com os filhos, o Velho Vizcacha, Picardía, a payada com o Moreno e os conselhos.',cantos:partes.vuelta.cantos.map(c=>({...c,g:guiasVuelta[c.numero]}))},
+];
+---
+<Base migas={[{label:'Para estudantes'}]} lingue={{es:'/estudiantes/',en:'/en/students/',it:'/it/studenti/'}} lang="pt-BR" noindex={true} pageType="CollectionPage" title="Martín Fierro para estudantes: os 46 cantos em português" description="Guias de estudo em português para os 46 cantos de Martín Fierro: resumo, estrofes originais, personagens, temas, vocabulário gauchesco e perguntas para discussão.">
+<div class="estudantes-pt">
+ <header><p class="eyebrow">PARA ESTUDANTES · 46 GUIAS EM PORTUGUÊS</p><h1>Martín Fierro, canto por canto</h1><p class="deck">Um guia para cada canto, com resumo, as estrofes originais mais importantes, personagens, temas, palavras do espanhol gauchesco e perguntas para a sala de aula ou o clube de leitura.</p></header>
+ <div class="aviso"><strong>Como usar:</strong> leia o guia, depois o canto no original (o link está em cada página). Se você tem em casa uma tradução brasileira, use-a ao lado do original para comparar. Os guias trazem comentário, não tradução dos versos; para uma tradução de estudo completa, veja <a href="/pt/conselhos-de-martin-fierro/">os conselhos aos filhos</a>.</div>
+ {blocos.map(b=><section><h2>{b.titulo}</h2><p>{b.desc}</p><ol class="lista">{b.cantos.map(c=><li><a href={`/pt/estudantes/${b.slug}/${c.numero}/`}><span>Canto {c.titulo}</span><strong>{c.g.titulo}</strong></a></li>)}</ol></section>)}
+ <section class="extra"><h2>Para ir além</h2><p><a href="/pt/ler-o-poema/">Como ler o original sendo brasileiro</a> · <a href="/pt/revista/chimarrao/">Chimarrão: a erva que une o Pampa</a> · <a href="/pt/estudantes/glossario/">Glossário gauchesco</a> · <a href="/pt/personagens/">Personagens</a></p></section>
+</div>
+<style>.estudantes-pt{max-width:1000px;margin:25px auto 85px;color:#302820}.estudantes-pt a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .72rem system-ui,sans-serif;letter-spacing:.13em;color:#934e35}.estudantes-pt h1{font:600 clamp(2.3rem,5vw,4.2rem)/1.1 Georgia,serif;letter-spacing:-.03em;margin:16px 0}.deck{font:1.2rem/1.65 Georgia,serif;max-width:70ch}.aviso{background:#eee3d5;border-left:4px solid #904b36;padding:20px 22px;font:1rem/1.65 Georgia,serif;margin:28px 0}.estudantes-pt section{margin:40px 0}.estudantes-pt h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.2 Georgia,serif}.estudantes-pt section>p{font:1.05rem/1.7 Georgia,serif}.lista{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.lista a{display:grid;gap:4px;background:#efe5d8;padding:14px 16px;text-decoration:none;color:#30271f;height:100%}.lista span{font:700 .72rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8b4731}.lista strong{font:600 1.04rem/1.35 Georgia,serif}.lista a:hover strong{text-decoration:underline}.extra{background:#f3ecdf;padding:20px 24px}@media(max-width:650px){.lista{grid-template-columns:1fr}.extra{padding:16px}}</style>
+</Base>
