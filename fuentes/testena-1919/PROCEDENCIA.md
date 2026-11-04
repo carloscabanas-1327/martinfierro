@@ -18,12 +18,13 @@
 
 Se regeneran con `python3 scripts/importar-testena.py`.
 
-## Estado: cotejo en curso
+## Estado: cotejada
 
-- **Ida (13 cantos): cotejada con el facsímil completo** (PDF del IAI, 189 imágenes, 4 de noviembre de 2026). 2.316 versos, igual que el original; cada canto tiene las mismas estrofas que el español (salvo el VIII, que Testena imprime en cuartetas donde Hernández tiene octavas). Método: segunda lectura OCR de la columna italiana de cada página, alineada verso por verso con el texto anterior; cada diferencia se revisó a ojo sobre la imagen. Se recuperaron 83 versos que el OCR había perdido (casi todos en saltos de página), se eliminaron 8 líneas basura (cabeceras, notas al pie, palabras españolas coladas) y se corrigieron letras y acentos. El facsímil usa acento agudo (piú, ció, perché, cosí); se sigue la grafía impresa.
-- **Vuelta (33 cantos): pendiente**, salvo Vuelta XXX, estrofa 4, y Vuelta XXXII (los Consejos), cotejado sobre capturas de pantalla (palabras y versos verificados, acentos no).
+- **Todo el poema cotejado con el facsímil completo** (PDF del IAI, 189 imágenes, 4 de noviembre de 2026). Método: segunda lectura OCR de la columna italiana de cada página, alineada verso por verso con el texto anterior; cada diferencia se revisó a ojo sobre la imagen, y al final se repasaron sobre la imagen todas las líneas con signos sospechosos (puntos sueltos, comillas por apóstrofo, «AI» por «Al», «lo» por «Io», «È» por «E»). El facsímil usa acento agudo (piú, ció, perché, cosí); se sigue la grafía impresa, erratas incluidas.
+- **Ida (13 cantos):** 2.316 versos, igual que el original; mismas estrofas que el español (salvo el VIII, que Testena imprime en cuartetas donde Hernández tiene octavas). Se recuperaron 83 versos que el OCR había perdido (casi todos en saltos de página) y se eliminaron 8 líneas basura.
+- **Vuelta (33 cantos):** 4.889 versos (el original tiene 4.894). Se recuperaron 75 versos y se eliminaron 51 líneas basura (cabeceras, notas, rótulos de interlocutor como «Il Nero» o «A un altro», fragmentos de verso partidos por el salto de línea). Diferencias con el original que vienen de la impresión: Vuelta III tiene un verso omitido en la propia edición (línea de puntos); XXVII y XXVIII siguen la disposición italiana (135 y 159 versos, con algún terceto); XXX (la payada) agrupa los versos como Testena (99 estrofas). Los dos versos «Martín Fierro e i suoi due figli / Entro tutta quella gente» abren el XX, como en el impreso.
 - No se completó ni generó ningún verso: cada verso agregado está leído en el facsímil. Las correcciones quedan en `correzioni.json` (verso, texto del OCR, texto impreso e imagen consultada) y, en `strofe`, la partición en estrofas de cada canto cotejado; `importar-testena.py` las aplica y falla si el OCR no coincide o si la partición no suma los versos.
-- Mientras tanto las 46 páginas `/it/lettore/…/N/` van en `noindex` y no se declaran como equivalentes `hreflang` de `/leer/…/N/`. Para habilitarlas: `TESTO_COLLAZIONATO = true` en `src/lib/testena.ts`.
+- Las 46 páginas `/it/lettore/…/N/` siguen en `noindex` hasta que se apruebe este cotejo. Para habilitarlas: `TESTO_COLLAZIONATO = true` en `src/lib/testena.ts`.
 
 ## Fuentes bibliográficas
 

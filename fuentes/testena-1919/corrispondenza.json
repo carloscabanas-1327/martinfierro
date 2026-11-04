@@ -275,9 +275,9 @@
    "traduzione": {
     "url": "/it/lettore/ritorno/1/",
     "estrofe": 27,
-    "versi": 159
+    "versi": 162
    },
-   "differenza_versi": -3,
+   "differenza_versi": 0,
    "pagina_libro": null,
    "immagine_facsimile": 69
   },
@@ -294,10 +294,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/2/",
-    "estrofe": 29,
-    "versi": 167
+    "estrofe": 28,
+    "versi": 168
    },
-   "differenza_versi": -1,
+   "differenza_versi": 0,
    "pagina_libro": 66,
    "immagine_facsimile": 72
   },
@@ -315,9 +315,9 @@
    "traduzione": {
     "url": "/it/lettore/ritorno/3/",
     "estrofe": 24,
-    "versi": 140
+    "versi": 143
    },
-   "differenza_versi": -4,
+   "differenza_versi": -1,
    "pagina_libro": 69,
    "immagine_facsimile": 75
   },
@@ -335,9 +335,9 @@
    "traduzione": {
     "url": "/it/lettore/ritorno/4/",
     "estrofe": 22,
-    "versi": 127
+    "versi": 132
    },
-   "differenza_versi": -5,
+   "differenza_versi": 0,
    "pagina_libro": 72,
    "immagine_facsimile": 78
   },
@@ -354,7 +354,7 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/5/",
-    "estrofe": 30,
+    "estrofe": 28,
     "versi": 168
    },
    "differenza_versi": 0,
@@ -375,9 +375,9 @@
    "traduzione": {
     "url": "/it/lettore/ritorno/6/",
     "estrofe": 26,
-    "versi": 154
+    "versi": 156
    },
-   "differenza_versi": -2,
+   "differenza_versi": 0,
    "pagina_libro": 78,
    "immagine_facsimile": 84
   },
@@ -394,10 +394,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/7/",
-    "estrofe": 15,
-    "versi": 81
+    "estrofe": 14,
+    "versi": 84
    },
-   "differenza_versi": -3,
+   "differenza_versi": 0,
    "pagina_libro": 81,
    "immagine_facsimile": 87
   },
@@ -414,10 +414,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/8/",
-    "estrofe": 18,
-    "versi": 101
+    "estrofe": 17,
+    "versi": 102
    },
-   "differenza_versi": -1,
+   "differenza_versi": 0,
    "pagina_libro": 83,
    "immagine_facsimile": 89
   },
@@ -434,7 +434,7 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/9/",
-    "estrofe": 43,
+    "estrofe": 42,
     "versi": 254
    },
    "differenza_versi": 0,
@@ -475,9 +475,9 @@
    "traduzione": {
     "url": "/it/lettore/ritorno/11/",
     "estrofe": 25,
-    "versi": 147
+    "versi": 150
    },
-   "differenza_versi": -3,
+   "differenza_versi": 0,
    "pagina_libro": 93,
    "immagine_facsimile": 99
   },
@@ -494,10 +494,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/12/",
-    "estrofe": 65,
-    "versi": 372
+    "estrofe": 63,
+    "versi": 378
    },
-   "differenza_versi": -6,
+   "differenza_versi": 0,
    "pagina_libro": 96,
    "immagine_facsimile": 102
   },
@@ -514,7 +514,7 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/13/",
-    "estrofe": 13,
+    "estrofe": 12,
     "versi": 72
    },
    "differenza_versi": 0,
@@ -535,9 +535,9 @@
    "traduzione": {
     "url": "/it/lettore/ritorno/14/",
     "estrofe": 24,
-    "versi": 143
+    "versi": 144
    },
-   "differenza_versi": -1,
+   "differenza_versi": 0,
    "pagina_libro": 105,
    "immagine_facsimile": 111
   },
@@ -554,10 +554,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/15/",
-    "estrofe": 25,
-    "versi": 142
+    "estrofe": 23,
+    "versi": 138
    },
-   "differenza_versi": 4,
+   "differenza_versi": 0,
    "pagina_libro": 108,
    "immagine_facsimile": 114
   },
@@ -574,10 +574,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/16/",
-    "estrofe": 14,
-    "versi": 80
+    "estrofe": 13,
+    "versi": 78
    },
-   "differenza_versi": 2,
+   "differenza_versi": 0,
    "pagina_libro": 111,
    "immagine_facsimile": 117
   },
@@ -595,9 +595,9 @@
    "traduzione": {
     "url": "/it/lettore/ritorno/17/",
     "estrofe": 25,
-    "versi": 148
+    "versi": 150
    },
-   "differenza_versi": -2,
+   "differenza_versi": 0,
    "pagina_libro": 112,
    "immagine_facsimile": 118
   },
@@ -634,10 +634,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/19/",
-    "estrofe": 27,
-    "versi": 155
+    "estrofe": 26,
+    "versi": 158
    },
-   "differenza_versi": -3,
+   "differenza_versi": 0,
    "pagina_libro": 117,
    "immagine_facsimile": 123
   },
@@ -654,10 +654,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/20/",
-    "estrofe": 7,
-    "versi": 35
+    "estrofe": 1,
+    "versi": 38
    },
-   "differenza_versi": -3,
+   "differenza_versi": 0,
    "pagina_libro": 120,
    "immagine_facsimile": 126
   },
@@ -674,10 +674,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/21/",
-    "estrofe": 25,
-    "versi": 141
+    "estrofe": 24,
+    "versi": 144
    },
-   "differenza_versi": -3,
+   "differenza_versi": 0,
    "pagina_libro": 121,
    "immagine_facsimile": 127
   },
@@ -694,7 +694,7 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/22/",
-    "estrofe": 23,
+    "estrofe": 22,
     "versi": 132
    },
    "differenza_versi": 0,
@@ -715,9 +715,9 @@
    "traduzione": {
     "url": "/it/lettore/ritorno/23/",
     "estrofe": 20,
-    "versi": 116
+    "versi": 120
    },
-   "differenza_versi": -4,
+   "differenza_versi": 0,
    "pagina_libro": 126,
    "immagine_facsimile": 132
   },
@@ -754,10 +754,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/25/",
-    "estrofe": 24,
-    "versi": 133
+    "estrofe": 21,
+    "versi": 126
    },
-   "differenza_versi": 7,
+   "differenza_versi": 0,
    "pagina_libro": 130,
    "immagine_facsimile": 136
   },
@@ -775,9 +775,9 @@
    "traduzione": {
     "url": "/it/lettore/ritorno/26/",
     "estrofe": 11,
-    "versi": 65
+    "versi": 66
    },
-   "differenza_versi": -1,
+   "differenza_versi": 0,
    "pagina_libro": 133,
    "immagine_facsimile": 139
   },
@@ -794,10 +794,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/27/",
-    "estrofe": 25,
-    "versi": 139
+    "estrofe": 33,
+    "versi": 135
    },
-   "differenza_versi": 3,
+   "differenza_versi": -1,
    "pagina_libro": 134,
    "immagine_facsimile": 140
   },
@@ -814,10 +814,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/28/",
-    "estrofe": 29,
-    "versi": 161
+    "estrofe": 40,
+    "versi": 159
    },
-   "differenza_versi": -1,
+   "differenza_versi": -3,
    "pagina_libro": 137,
    "immagine_facsimile": 143
   },
@@ -834,10 +834,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/29/",
-    "estrofe": 5,
-    "versi": 29
+    "estrofe": 1,
+    "versi": 30
    },
-   "differenza_versi": -1,
+   "differenza_versi": 0,
    "pagina_libro": 140,
    "immagine_facsimile": 146
   },
@@ -854,10 +854,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/30/",
-    "estrofe": 107,
-    "versi": 613
+    "estrofe": 99,
+    "versi": 606
    },
-   "differenza_versi": 7,
+   "differenza_versi": 0,
    "pagina_libro": 141,
    "immagine_facsimile": 147
   },
@@ -875,9 +875,9 @@
    "traduzione": {
     "url": "/it/lettore/ritorno/31/",
     "estrofe": 12,
-    "versi": 70
+    "versi": 72
    },
-   "differenza_versi": -2,
+   "differenza_versi": 0,
    "pagina_libro": 154,
    "immagine_facsimile": 160
   },
@@ -914,10 +914,10 @@
    },
    "traduzione": {
     "url": "/it/lettore/ritorno/33/",
-    "estrofe": 20,
-    "versi": 115
+    "estrofe": 19,
+    "versi": 114
    },
-   "differenza_versi": 1,
+   "differenza_versi": 0,
    "pagina_libro": 159,
    "immagine_facsimile": 165
   }
