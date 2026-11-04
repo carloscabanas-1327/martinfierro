@@ -1,35 +1,73 @@
 ---
 import Base from '../../layouts/Base.astro';
-import {idiomas} from '../../data/idiomas';
-const ficha=idiomas.find(i=>i.codigo==='fr')!;
+import ConsejosPortada from '../../components/ConsejosPortada.astro';
+import '../../styles/portale-edizione.css';
+import {estrofasDeCanto} from '../../lib/corpus';
+import {ouvertureFr} from '../../data/fr-etude';
+const premiere=estrofasDeCanto('ida',1)[0];
+const basque=estrofasDeCanto('ida',8).find(e=>e.numero===225)!;
+const sections=[
+ {n:'01',titre:'Lire le poème dans l’original',texte:'Un guide pour les francophones : l’orthographe de l’espagnol des campagnes, les faux amis et le chemin vers chacun des 46 chants.',href:'/fr/lire-le-poeme/',img:'/media/fotografias-v3/la-ida.webp',alt:'Reconstitution numérique d’un gaucho dans la campagne argentine'},
+ {n:'02',titre:'Les conseils à ses fils',texte:'Le chant XXXII en entier, strophe par strophe, avec une traduction d’étude en français et des notes de lecture.',href:'/fr/conseils-de-martin-fierro/',img:'/media/fotografias-v3/consejos-fogon-hijos.webp',alt:'Reconstitution numérique de Martín Fierro conseillant ses fils près du feu'},
+ {n:'03',titre:'Le maté, boisson de la pampa',texte:'Des Guaranis aux missions jésuites, de la calebasse au feu de camp : l’histoire du maté et sa place dans les vers du poème.',href:'/fr/revue/mate/',img:'/media/fotografias-v3/mate-pava-yerba.webp',alt:'Reconstitution numérique d’une bouilloire et d’un maté près du feu'},
+ {n:'04',titre:'Revue culturelle',texte:'Les traditions de la pampa racontées aux lecteurs francophones, toujours avec leurs sources.',href:'/fr/revue/',img:'/media/fotografias-v3/revista-cultural.webp',alt:'Reconstitution numérique de la vie rurale dans la pampa au XIXe siècle'},
+];
 ---
-<Base migas={[{label:ficha.nombre}]} title={ficha.titulo} description={ficha.intro} lang="fr" pageType="CollectionPage" noindex={ficha.estado !== 'original'}>
-  <section class="section-intro">
-    <p class="eyebrow">MARTINFIERRO.ORG · {ficha.nombre}</p>
-    <h1>{ficha.titulo}</h1>
-    <p class="lead">{ficha.intro}</p>
-  </section>
-  <nav class="language-picker" aria-label="Idiomas · Languages">
-    {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo} aria-current={i.codigo === ficha.codigo ? 'page' : undefined}>{i.nombre}</a>)}
-  </nav>
-  <section class="editorial-paper" aria-labelledby="traduccion-documentada">
-    <p class="eyebrow">{ficha.estado==='original'?'Texto original · 1872 y 1879':'Catálogo documental · Verificación pendiente'}</p>
-    <h2 id="traduccion-documentada">{ficha.traduccion}</h2>
-    <p>{ficha.nota}</p>
-    {ficha.estado!=='original' && <p><strong>Nota editorial:</strong> la referencia procede del inventario preliminar del proyecto; no implica que exista una edición íntegra localizada, ni que sea de dominio público o esté autorizada para reproducirse.</p>}
-  </section>
-  <section class="editorial-paper" aria-labelledby="fonte-internacional">
-    <p class="eyebrow">DOCUMENTARY ACCESS · FR</p>
-    <h2 id="fonte-internacional">Consulter l'étude sur la traduction française</h2>
-    <p><strong>Paul Verdevoye · traduction imprimée en 1955</strong></p>
-    <p>La Bibliothèque virtuelle Miguel de Cervantes présente une étude sur cette traduction, ses expressions et ses proverbes. Ce lien ne mène pas au texte intégral traduit.</p>
-    <p><a href="https://www.cervantesvirtual.com/obra-visor/martin-fierro-en-frances-la-traduccion-de-verdevoye-modismos-y-refranes/html/5181d520-a0f9-11e1-b1fb-00163ebf5e63_2.html" target="_blank" rel="noopener noreferrer">Lire l'étude académique ↗</a></p>
-    <p><a href="/traducciones/">Voir le catalogue des traductions →</a></p>
-  </section>
-  <div class="editorial-directory">
-    <a class="directory-feature" href="/leer/ida/"><span class="directory-mark">1872 · ORIGINAL</span><h2>El gaucho Martín Fierro</h2><p>13 cantos · texto original en español</p><span class="text-link">Leer →</span></a>
-    <a class="directory-feature" href="/leer/vuelta/"><span class="directory-mark">1879 · ORIGINAL</span><h2>La vuelta de Martín Fierro</h2><p>33 cantos · texto original en español</p><span class="text-link">Leer →</span></a>
-    <a class="directory-feature" href="/archivo/"><span class="directory-mark">FUENTES</span><h2>Archivo documental</h2><p>Procedencia del corpus, metodología y recursos de investigación en español</p><span class="text-link">Consultar →</span></a>
+<Base lang="fr-FR" pageType="CollectionPage" noindex title="Martín Fierro en français : le poème du gaucho argentin" description="Martín Fierro, de José Hernández, pour les lecteurs francophones : les vers dans l’original espagnol avec des traductions d’étude, les conseils à ses fils, 46 fiches pour les étudiants et le monde du gaucho.">
+<div class="en-portal fr-portail" lang="fr-FR">
+ <div class="mf-editionline"><span>ÉDITION CULTURELLE · ARGENTINE ET FRANCE</span><span>JOSÉ HERNÁNDEZ · 1872 / 1879</span><a href="/fr/lire-le-poeme/">COMMENT LIRE CETTE ÉDITION ↗</a></div>
+ <section class="en-hero" aria-labelledby="fr-titre">
+  <div class="en-visual">
+   <img src="/media/fotografias-v3/hero-gaucho-pampa.webp" width="1440" height="850" fetchpriority="high" alt="Reconstitution numérique d’un gaucho à cheval dans la pampa au coucher du soleil"/>
+   <p>RECONSTITUTION ÉDITORIALE · CE N’EST PAS UNE PHOTOGRAPHIE HISTORIQUE</p>
   </div>
-  <p class="notice">Las fichas internacionales son páginas documentales iniciales, no traducciones publicadas. Los enlaces a la obra llevan a la edición original española.</p>
+  <div class="en-hero-copy">
+   <p class="en-kicker">JOSÉ HERNÁNDEZ · 1872 / 1879</p>
+   <h1 id="fr-titre">Martín Fierro : <em>le grand poème du gaucho, pour les lecteurs francophones.</em></h1>
+   <p class="en-lead">Un chanteur, un déserteur, un père qui rentre chez lui. Le poème national argentin raconte la pampa du XIXe siècle : le cheval, le feu de camp, le maté qui passe de main en main, et l’injustice faite aux hommes de la campagne.</p>
+   <div class="en-actions"><a class="en-button" href="/fr/lire-le-poeme/">Commencer la lecture <span aria-hidden="true">↗</span></a><a class="en-outline" href="#explorer">Explorer l’édition ↓</a></div>
+   <p class="en-language-note">Les vers sont toujours cités dans l’espagnol original de José Hernández (7 210 vers en 46 chants), accompagnés de traductions d’étude et de commentaires en français rédigés par notre équipe.</p>
+  </div>
+ </section>
+
+ <ConsejosPortada id="fr-conseils" lang="fr-FR" kicker="LA VUELTA · CHANT XXXII · 1879 · FOI · TRAVAIL · AMITIÉ" titulo="Les conseils de Martín Fierro à ses fils" texto="Un vieil homme de la campagne rassemble ce que la vie lui a appris : la foi, la maîtrise de soi, le travail honnête, l’amitié et l’union entre frères. Lisez le chant entier dans l’original, avec une traduction d’étude pour chaque strophe." llamado="Lire les conseils" href="/fr/conseils-de-martin-fierro/" alt="Reconstitution numérique de Martín Fierro, de ses deux fils et du fils de Cruz écoutant ses conseils près du feu et du maté"/>
+
+ <section class="fr-ouverture" aria-labelledby="fr-ouverture-titre">
+  <p class="en-kicker">AINSI COMMENCE LE POÈME</p>
+  <h2 id="fr-ouverture-titre">La première strophe, dans l’original et en français</h2>
+  <div class="fr-ouverture-grille">
+   <figure lang="es"><figcaption>José Hernández, 1872</figcaption><blockquote>{premiere.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+   <figure><figcaption>Traduction d’étude, en prose</figcaption><p>{ouvertureFr[premiere.numero]}</p></figure>
+  </div>
+  <p><a href="/fr/lire-le-poeme/">Lire les premières strophes avec le vocabulaire expliqué →</a> · <a href="/leer/ida/1/" lang="es">Leer el canto I en español →</a></p>
+ </section>
+
+ <section class="en-first-feature" aria-labelledby="fr-pyrenees"><div><p class="en-kicker">DES PYRÉNÉES À LA PAMPA</p><h2 id="fr-pyrenees">La France n’est pas si loin du monde de Martín Fierro</h2><p>Au XIXe siècle, des dizaines de milliers de Basques et de Béarnais ont émigré vers le Río de la Plata, où beaucoup sont devenus bergers, laitiers ou commerçants dans la campagne de Buenos Aires. Le poème lui-même en garde la trace : au chant VIII, le fanfaron qui entre dans la buvette bouscule « un vasco », un Basque. Paul Groussac, né à Toulouse en 1848, devint l’un des grands critiques argentins et dirigea la Bibliothèque nationale de Buenos Aires ; Jules Supervielle, né à Montevideo, a écrit <em>L’Homme de la pampa</em> (1923).</p>
+ <figure class="fr-citation" lang="es"><figcaption>El gaucho Martín Fierro, chant VIII · strophe {basque.numero}</figcaption><blockquote>{basque.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+ <a href="/fr/etudiants/aller/8/">Fiche du chant VIII ↗</a> · <a href="/fr/jose-hernandez/">José Hernández ↗</a> · <a href="/fr/etudiants/glossaire/">Glossaire gauchesque ↗</a></div></section>
+
+ <section class="en-first-feature" aria-labelledby="fr-etudiants"><div><p class="en-kicker">POUR LES ÉTUDIANTS</p><h2 id="fr-etudiants">Les 46 chants, un par un</h2><p>Pour chaque chant, une fiche en français : résumé, strophes originales essentielles, personnages, thèmes, mots de l’espagnol gauchesque et questions pour le cours d’espagnol, la préparation d’un exposé ou le club de lecture.</p><a href="/fr/etudiants/">Ouvrir les fiches d’étude ↗</a> · <a href="/fr/personnages/">Les personnages ↗</a> · <a href="/fr/etudiants/aller/1/">Commencer par le chant I ↗</a></div></section>
+
+ <section id="explorer" class="en-section" aria-labelledby="fr-explorer">
+  <div class="en-section-heading"><p class="en-kicker">EXPLORER L’ÉDITION</p><h2 id="fr-explorer">Le poème, les conseils, le monde du gaucho.</h2></div>
+  <div class="en-grid">{sections.map(s=><article class="en-card"><a href={s.href}><div class="en-image"><img src={s.img} alt={s.alt} loading="lazy" decoding="async"/></div><div class="en-card-copy"><span>{s.n} / L’ÉDITION</span><h3>{s.titre}</h3><p>{s.texte}</p><strong>Découvrir la rubrique <span aria-hidden="true">↗</span></strong></div></a></article>)}</div>
+ </section>
+
+ <section class="en-translation" aria-labelledby="fr-traductions"><div><p class="en-kicker">MARTÍN FIERRO EN FRANÇAIS</p><h2 id="fr-traductions">La traduction de Paul Verdevoye (1955).</h2><p>La traduction française de référence est celle de l’hispaniste Paul Verdevoye, avec introduction et notes, publiée à Paris en 1955 chez Nagel dans la Collection UNESCO d’œuvres représentatives. Verdevoye étant mort en 2001, sa traduction est encore protégée par le droit d’auteur : cette édition ne la reproduit pas. Elle propose l’original, des traductions d’étude en prose et un commentaire, à lire à côté de l’exemplaire que vous trouverez en bibliothèque.</p><div class="en-actions"><a class="en-button" href="/fr/lire-le-poeme/#fr-traductions">En savoir plus ↗</a><a class="en-outline" href="/traducciones/" lang="es">Catalogue des traductions (en espagnol) ↗</a></div></div><img src="/media/archivo/ejemplar-corregido-martin-fierro-1872-portada.webp" alt="Couverture de la première édition de El gaucho Martín Fierro, 1872" loading="lazy"/></section>
+
+ <section class="en-final" aria-labelledby="fr-final"><p class="en-kicker">UNE BIBLIOTHÈQUE DOCUMENTAIRE</p><h2 id="fr-final">Cinq langues, un seul poème.</h2><p>MARTINFIERRO.ORG est une édition numérique indépendante en espagnol, en anglais, en italien, en portugais et désormais en français. Toutes les éditions partagent le même texte original et séparent toujours les sources historiques des interprétations modernes.</p><p><a href="/" lang="es">Edición en español</a> · <a href="/en/" lang="en">English edition</a> · <a href="/it/" lang="it">Edizione italiana</a> · <a href="/pt/" lang="pt-BR">Edição brasileira</a></p></section>
+</div>
+<style>
+.fr-portail{margin-top:0}
+.fr-ouverture{margin:45px 0;padding:36px 0;border-block:1px solid #bba995}
+.fr-ouverture h2{font:600 clamp(1.9rem,3.4vw,3rem)/1.15 Georgia,serif;margin:0 0 22px}
+.fr-ouverture-grille{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fr-ouverture figure,.fr-citation{margin:0;background:#f3ecdf;padding:22px 26px;border-top:2px solid #382d25}
+.fr-ouverture figcaption,.fr-citation figcaption{font:700 .72rem system-ui,sans-serif;letter-spacing:.1em;color:#8b4731;text-transform:uppercase}
+.fr-ouverture blockquote,.fr-citation blockquote{margin:12px 0 0}.fr-ouverture blockquote span,.fr-citation blockquote span{display:block;font:1.15rem/1.7 Georgia,serif}
+.fr-citation{margin:20px 0}
+.fr-ouverture figure p{font:1.08rem/1.7 Georgia,serif;margin:12px 0 0}
+.fr-ouverture>p{font:.92rem system-ui,sans-serif;margin-top:18px}
+@media(max-width:700px){.fr-ouverture-grille{grid-template-columns:1fr}}
+</style>
 </Base>
