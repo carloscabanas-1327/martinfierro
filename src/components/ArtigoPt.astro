@@ -1,0 +1,19 @@
+---
+// Modelo de artigo da edição brasileira (mesma tipografia da edição italiana).
+import '../styles/edizione-italiana.css';
+interface Props {chamada:string; titulo:string; resumo:string; imagem?:string; alt?:string; legenda?:string; fontes?:{nome:string; url:string; lingua?:string}[]; notaFontes?:string}
+const {chamada,titulo,resumo,imagem,alt='',legenda,fontes=[],notaFontes}=Astro.props;
+---
+<article class="it-articolo" lang="pt-BR">
+ <header class="it-testata">
+  <p class="it-occhiello">{chamada}</p>
+  <h1 set:html={titulo}/>
+  <p class="it-sommario">{resumo}</p>
+ </header>
+ {imagem && <figure class="it-figura"><img src={imagem} alt={alt} loading="eager" decoding="async"/>{legenda && <figcaption>{legenda}</figcaption>}</figure>}
+ <div class="it-corpo">
+  <slot/>
+  {fontes.length>0 && <section class="it-fonti" aria-labelledby="pt-fontes"><h2 id="pt-fontes">Fontes e leituras</h2>{notaFontes && <p>{notaFontes}</p>}<ul>{fontes.map(f=><li><a href={f.url} lang={f.lingua} {...(f.url.startsWith('http')?{target:'_blank',rel:'noopener noreferrer'}:{})}>{f.nome}</a></li>)}</ul></section>}
+  <p class="it-ritorno"><a href="/pt/">← Voltar à edição brasileira</a> · <a href="/pt/estudantes/">Guias para estudantes</a></p>
+ </div>
+</article>

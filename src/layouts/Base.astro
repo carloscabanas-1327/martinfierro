@@ -35,7 +35,7 @@ const menu={
  es:[['/', 'Inicio'],['/leer/','Leer la obra'],['/revista/','Revista'],['/estudiantes/','Para estudiantes'],['/jose-hernandez/','José Hernández'],['/biblioteca/','Biblioteca'],['/indice-general/','Índice general'],['/buscar-documentos/','Buscar']],
  en:[['/en/','Home'],['/en/reader/','Read the poem'],['/en/magazine/','Magazine'],['/en/students/','For students'],['/en/jose-hernandez/','José Hernández'],['/en/library/','Library'],['/en/site-index/','Site index'],['/en/search/','Search']],
  it:[['/it/','Home'],['/it/lettore/','Leggi il poema'],['/it/rivista/','Rivista'],['/it/studenti/','Per gli studenti'],['/it/jose-hernandez/','José Hernández'],['/it/biblioteca/','Biblioteca'],['/it/indice/','Indice del sito'],['/it/cerca/','Cerca']],
- pt:[['/pt/','Início'],['/pt/ler-o-poema/','Ler o poema'],['/pt/estudantes/','Para estudantes'],['/pt/conselhos-de-martin-fierro/','Os conselhos'],['/pt/revista/','Revista']],
+ pt:[['/pt/','Início'],['/pt/ler-o-poema/','Ler o poema'],['/pt/revista/','Revista'],['/pt/estudantes/','Para estudantes'],['/pt/jose-hernandez/','José Hernández'],['/pt/personagens/','Personagens'],['/pt/conselhos-de-martin-fierro/','Os conselhos']],
 }[linguaCorrente];
 const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
 import AdSlot from '../components/AdSlot.astro';
@@ -109,8 +109,10 @@ import '../styles/editorial-shell.css';
    </nav>
    <nav class="editorial-footer-links" aria-label="O projeto">
     <strong>O projeto</strong>
-    <a href="/acerca/" lang="es">Fontes e método (em espanhol)</a>
-    <a href="/fuentes-y-derechos/" lang="es">Direitos e créditos (em espanhol)</a>
+    <a href="/pt/jose-hernandez/">José Hernández</a>
+    <a href="/pt/personagens/">Personagens</a>
+    <a href="/pt/estudantes/glossario/">Glossário gauchesco</a>
+    <a href="/pt/fontes-e-direitos/">Fontes e direitos</a>
     <a href="/contacto/" lang="es">Contato (em espanhol)</a>
    </nav>
    <nav class="editorial-footer-links" aria-label="Outros idiomas">
@@ -123,7 +125,7 @@ import '../styles/editorial-shell.css';
   </div>
   <div class="container editorial-footer-credits">
    <p>© {new Date().getFullYear()} MARTINFIERRO.ORG · Edição digital independente · Agradecimentos ao professor Robertino Ferro.</p>
-   <p>Texto original de José Hernández, em domínio público · Comentários e traduções de estudo em português: MARTINFIERRO.ORG</p>
+   <p>Texto original de José Hernández, em domínio público · Comentários e traduções de estudo em português: MARTINFIERRO.ORG · <a href="/pt/fontes-e-direitos/">Créditos</a></p>
   </div>
  </footer> : italian ? <footer class="site-footer editorial-footer" aria-label="Informazioni sul sito">
   <div class="container editorial-footer-grid">
