@@ -20,7 +20,7 @@ const anterior=n>1?`/pt/estudantes/${slug}/${n-1}/`:(parte==='vuelta'?'/pt/estud
 const seguinte=n<total?`/pt/estudantes/${slug}/${n+1}/`:(parte==='ida'?'/pt/estudantes/volta/1/':undefined);
 const outras={en:`/en/students/${parte==='ida'?'canto':'vuelta-canto'}-${n}/`};
 ---
-<Base migas={[{label:'Para estudantes',href:'/pt/estudantes/'},{label:`${parte==='ida'?'Primeira':'Segunda'} parte, canto ${romano}`}]} lingue={outras} lang="pt-BR" noindex={true} pageType="Article" title={`Martín Fierro, ${parte==='ida'?'primeira':'segunda'} parte, canto ${romano}: ${g.titulo}`} description={`Resumo e análise em português do canto ${romano} de ${nomeParte}: estrofes originais, personagens, temas, vocabulário gauchesco e perguntas para estudo.`}>
+<Base migas={[{label:'Para estudantes',href:'/pt/estudantes/'},{label:`${parte==='ida'?'Primeira':'Segunda'} parte, canto ${romano}`}]} lingue={outras} lang="pt-BR" pageType="Article" title={`Martín Fierro, ${parte==='ida'?'primeira':'segunda'} parte, canto ${romano}: ${g.titulo}`} description={`Resumo e análise em português do canto ${romano} de ${nomeParte}: estrofes originais, personagens, temas, vocabulário gauchesco e perguntas para estudo.`}>
 <article class="guia-estudo">
 <header><p class="eyebrow">MARTÍN FIERRO PARA ESTUDANTES · {nomeParte.toUpperCase()} · {ano}</p><h1><span>Canto {romano}</span> {g.titulo}</h1><p class="deck">Guia de estudo em português, sempre ao lado do poema original de José Hernández.</p></header>
 <section><h2>O que acontece no canto {romano}?</h2><p>{g.resumo}</p><p><a href={`/leer/${parte}/${n}/`} lang="es">Ler o canto {romano} completo no original ↗</a></p></section>

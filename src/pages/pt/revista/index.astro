@@ -4,7 +4,7 @@ const artigos=[
  {url:'/pt/revista/chimarrao/',chamada:'O mundo do gaúcho · Rio Grande do Sul e Prata',titulo:'Chimarrão: a erva que une o Pampa',texto:'Da erva dos guaranis às missões jesuíticas, dos ervais do Paraná à roda gaúcha: a história da cuia que passa de mão em mão, e o mate amargo nos versos de Martín Fierro.',img:'/media/fotografias-v3/chimarrao-chaleira-cuia.webp',alt:'Recriação digital de chaleira e cuia de chimarrão no campo'},
 ];
 ---
-<Base migas={[{label:'Revista'}]} lingue={{es:'/revista/',en:'/en/magazine/',it:'/it/rivista/'}} lang="pt-BR" noindex={true} pageType="CollectionPage" title="Revista cultural: o mundo do gaúcho, do Prata ao Sul do Brasil" description="A revista cultural da edição brasileira do MARTINFIERRO.ORG: chimarrão, tradições do Pampa e o mundo rural do poema de José Hernández.">
+<Base migas={[{label:'Revista'}]} lingue={{es:'/revista/',en:'/en/magazine/',it:'/it/rivista/'}} lang="pt-BR" pageType="CollectionPage" title="Revista cultural: o mundo do gaúcho, do Prata ao Sul do Brasil" description="A revista cultural da edição brasileira do MARTINFIERRO.ORG: chimarrão, tradições do Pampa e o mundo rural do poema de José Hernández.">
 <div class="revista-pt">
  <header><p class="eyebrow">REVISTA CULTURAL · EM PORTUGUÊS</p><h1>O mundo do gaúcho, dos dois lados da fronteira</h1><p class="deck">Artigos sobre a cultura rural do Pampa, que une o Rio Grande do Sul, o Uruguai e a Argentina, escritos para leitores brasileiros e sempre com as fontes indicadas.</p></header>
  <div class="lista">{artigos.map(a=><article><a href={a.url}><img src={a.img} alt={a.alt} loading="lazy" decoding="async"/><div><p class="chamada">{a.chamada}</p><h2>{a.titulo}</h2><p>{a.texto}</p><strong>Ler o artigo →</strong></div></a></article>)}</div>
