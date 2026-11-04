@@ -311,8 +311,8 @@ main#contenido>.mf-migas a{color:inherit;text-decoration:underline;text-underlin
  .site-header .editorial-topline>.container{letter-spacing:.06em;gap:10px}
  .site-header .editorial-topline .mf-lingue a,.site-header .editorial-topline .mf-lingue b{letter-spacing:.04em}
 }
-/* Cinco idiomas en el selector: en móviles muy angostos se acorta el espacio entre nombres. */
-@media(max-width:340px){.site-header .editorial-topline .mf-lingue{gap:9px}}
+/* Cinco idiomas en el selector: en móviles muy angostos se acorta el espacio y, si las fuentes son más anchas, pasan a dos líneas. */
+@media(max-width:340px){.site-header .editorial-topline>.container>span:first-child{flex-basis:0}.site-header .editorial-topline .mf-lingue{flex:0 1 auto;min-width:0;flex-wrap:wrap;justify-content:flex-end;gap:4px 7px}.site-header .editorial-topline .mf-lingue a,.site-header .editorial-topline .mf-lingue b{letter-spacing:.02em}}
 /* Línea de texto bajo las migas (antetítulo): mismo estilo y misma distancia en todas las páginas.
    Las páginas con foto de cabecera mantienen la foto como primer elemento bajo las migas. */
 main#contenido>.mf-migas+*,
