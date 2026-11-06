@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import ConsejosPortada from '../../components/ConsejosPortada.astro';
+import '../../styles/portale-edizione.css';
+import {estrofasDeCanto} from '../../lib/corpus';
+import {kaitouZh} from '../../data/zh-xuexi';
+const diyi=estrofasDeCanto('ida',1)[0];
+const xiongdi=estrofasDeCanto('vuelta',32).find(e=>e.numero===1160)!;
+const lanmu=[
+ {n:'01',biaoti:'阅读西班牙语原诗',neirong:'写给中文读者的阅读指南：高乔乡音的拼写规律、容易误解的“假朋友”，以及通往全部 46 歌的入口。',href:'/zh/yuedu/',tu:'/media/fotografias-v3/la-ida.webp',alt:'数字重现：阿根廷草原上的高乔人'},
+ {n:'02',biaoti:'父亲的教诲',neirong:'第三十二歌全文，逐节对照中文学习译文，并附阅读说明。',href:'/zh/jiaohui/',tu:'/media/fotografias-v3/consejos-fogon-hijos.webp',alt:'数字重现：马丁·菲耶罗在火边给儿子们忠告'},
+ {n:'03',biaoti:'马黛茶，潘帕斯的饮品',neirong:'从瓜拉尼人到耶稣会传教区，从茶具到篝火：马黛茶的历史和它在诗中的位置。',href:'/zh/zazhi/mate/',tu:'/media/fotografias-v3/mate-pava-yerba.webp',alt:'数字重现：火边的水壶和马黛茶'},
+ {n:'04',biaoti:'文化杂志',neirong:'为中文读者讲述的潘帕斯传统，每篇都注明来源。',href:'/zh/zazhi/',tu:'/media/fotografias-v3/revista-cultural.webp',alt:'数字重现：十九世纪潘帕斯的乡村生活'},
+];
+---
+<Base noindex lang="zh-CN" pageType="CollectionPage" title="《马丁·菲耶罗》中文版：阿根廷高乔史诗导读" description="何塞·埃尔南德斯的《马丁·菲耶罗》中文导读：西班牙语原文诗句配中文学习译文，父亲对儿子们的教诲，46 张学习卡片，以及高乔人的世界。">
+<div class="en-portal zh-portal" lang="zh-CN">
+ <div class="mf-editionline"><span>文化版 · 阿根廷与中文读者</span><span>何塞·埃尔南德斯 · 1872 / 1879</span><a href="/zh/yuedu/">如何阅读本版 ↗</a></div>
+ <section class="en-hero" aria-labelledby="zh-biaoti">
+  <div class="en-visual">
+   <img src="/media/fotografias-v3/hero-gaucho-pampa.webp" width="1440" height="850" fetchpriority="high" alt="数字重现：夕阳下潘帕斯草原上骑马的高乔人"/>
+   <p>编辑部重现图像 · 并非历史照片</p>
+  </div>
+  <div class="en-hero-copy">
+   <p class="en-kicker">何塞·埃尔南德斯 · 1872 / 1879</p>
+   <h1 id="zh-biaoti">《马丁·菲耶罗》：<em>写给中文读者的高乔史诗。</em></h1>
+   <p class="en-lead">歌手、逃兵、归来的父亲。这部阿根廷的民族史诗讲述十九世纪的潘帕斯草原：骏马、篝火、在众人手中传递的马黛茶，以及草原上的人所遭受的不公。</p>
+   <div class="en-actions"><a class="en-button" href="/zh/yuedu/">开始阅读 <span aria-hidden="true">↗</span></a><a class="en-outline" href="#benban">浏览本版 ↓</a></div>
+   <p class="en-language-note">诗句一律引用何塞·埃尔南德斯的西班牙语原文（46 歌，共 7210 行），并配有本站编辑部撰写的中文学习译文和评注。</p>
+  </div>
+ </section>
+
+ <ConsejosPortada id="zh-jiaohui" lang="zh-CN" kicker="LA VUELTA · 第三十二歌 · 1879 · 信念 · 劳动 · 友谊" titulo="马丁·菲耶罗对儿子们的教诲" texto="老高乔人总结了生活教给他的一切：信念、自制、诚实的劳动、友谊和兄弟团结。阅读这一歌的原文，每一节都附有中文学习译文。" llamado="阅读教诲" href="/zh/jiaohui/" alt="数字重现：马丁·菲耶罗、他的两个儿子和克鲁斯的儿子在火边听他的教诲，手边有马黛茶"/>
+
+ <section class="zh-kaitou" aria-labelledby="zh-kaitou-biaoti">
+  <p class="en-kicker">全诗就这样开始</p>
+  <h2 id="zh-kaitou-biaoti">第一节：原文与中文</h2>
+  <div class="zh-kaitou-wangge">
+   <figure lang="es"><figcaption>José Hernández, 1872</figcaption><blockquote>{diyi.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+   <figure><figcaption>散文体学习译文</figcaption><p>{kaitouZh[diyi.numero]}</p></figure>
+  </div>
+  <p><a href="/zh/yuedu/">阅读开头几节及词语解释 →</a> · <a href="/leer/ida/1/" lang="es">Leer el canto I en español →</a></p>
+ </section>
+
+ <section class="en-first-feature" aria-labelledby="zh-qiao"><div><p class="en-kicker">从布宜诺斯艾利斯的唐人街说起</p><h2 id="zh-qiao">马丁·菲耶罗的世界，离中文读者并不遥远</h2><p>埃尔南德斯 1886 年在布宜诺斯艾利斯的贝尔格拉诺（Belgrano）去世。一百年后，正是在贝尔格拉诺，阿里贝尼奥斯街（Arribeños）一带渐渐形成了阿根廷的唐人街，最早的居民多来自台湾，后来又有许多来自中国大陆的家庭。今天，华人社区已是阿根廷社会的一部分，许多阿根廷孩子在学校背诵的诗句，华人家庭的孩子也一样会背。在中国，西班牙语专业的学生在拉美文学课上读到这部诗；北京大学的赵振江教授把全诗译成了中文。诗中最常被引用的一节，讲的是一个中文读者再熟悉不过的道理：兄弟团结。</p>
+ <figure class="zh-yinwen" lang="es"><figcaption>La vuelta de Martín Fierro，第三十二歌 · 第 {xiongdi.numero} 节</figcaption><blockquote>{xiongdi.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+ <a href="/zh/jiaohui/">阅读全部教诲 ↗</a> · <a href="/zh/jose-hernandez/">何塞·埃尔南德斯 ↗</a> · <a href="/zh/xuesheng/cihui/">高乔词汇 ↗</a></div></section>
+
+ <section class="en-first-feature" aria-labelledby="zh-xuesheng"><div><p class="en-kicker">学生园地</p><h2 id="zh-xuesheng">46 歌，一歌一卡</h2><p>每一歌都配有一张中文学习卡片：内容概要、原文重点诗节、人物、主题、高乔词语，以及适合西班牙语课、读书报告和读书会的讨论题。</p><a href="/zh/xuesheng/">打开学习卡片 ↗</a> · <a href="/zh/renwu/">人物 ↗</a> · <a href="/zh/xuesheng/ida/1/">从第一歌开始 ↗</a></div></section>
+
+ <section id="benban" class="en-section" aria-labelledby="zh-lanmu">
+  <div class="en-section-heading"><p class="en-kicker">浏览本版</p><h2 id="zh-lanmu">史诗、教诲、高乔人的世界。</h2></div>
+  <div class="en-grid">{lanmu.map(s=><article class="en-card"><a href={s.href}><div class="en-image"><img src={s.tu} alt={s.alt} loading="lazy" decoding="async"/></div><div class="en-card-copy"><span>{s.n} / 本版</span><h3>{s.biaoti}</h3><p>{s.neirong}</p><strong>进入栏目 <span aria-hidden="true">↗</span></strong></div></a></article>)}</div>
+ </section>
+
+ <section class="en-translation" aria-labelledby="zh-yiben"><div><p class="en-kicker">《马丁·菲耶罗》的中文译本</p><h2 id="zh-yiben">一部中文全译本，仍受版权保护。</h2><p>北京大学教授、翻译家赵振江（1940 年生）在墨西哥进修期间译出全诗；译本 1984 年由湖南人民出版社出版，正值埃尔南德斯诞辰 150 周年，1999 年译林出版社出版了修订版。译本受版权保护，因此本版不加转载。我们提供原文、散文体学习译文和评注，可以与图书馆里的译本对照阅读。</p><div class="en-actions"><a class="en-button" href="/zh/yuedu/#zh-yiben-xiangqing">了解更多 ↗</a><a class="en-outline" href="/traducciones/" lang="es">译本目录（西班牙语）↗</a></div></div><img src="/media/archivo/ejemplar-corregido-martin-fierro-1872-portada.webp" alt="《El gaucho Martín Fierro》1872 年初版扉页" loading="lazy"/></section>
+
+ <section class="en-final" aria-labelledby="zh-jiewei"><p class="en-kicker">文献图书馆</p><h2 id="zh-jiewei">八种语言，一部史诗。</h2><p>MARTINFIERRO.ORG 是一个独立的数字版本，有西班牙语、英语、意大利语、葡萄牙语、法语、德语、俄语版，现在又有了中文版。所有版本使用同一份原文，并始终把历史资料和当代解读区分开来。</p><p><a href="/" lang="es">Edición en español</a> · <a href="/en/" lang="en">English edition</a> · <a href="/it/" lang="it">Edizione italiana</a> · <a href="/pt/" lang="pt-BR">Edição brasileira</a> · <a href="/fr/" lang="fr">Édition française</a> · <a href="/de/" lang="de">Deutsche Ausgabe</a> · <a href="/ru/" lang="ru">Русское издание</a></p></section>
+</div>
+<style>
+.zh-portal{margin-top:0}
+.zh-portal h1,.zh-portal h2{line-break:strict}
+.zh-kaitou{margin:45px 0;padding:36px 0;border-block:1px solid #bba995}
+.zh-kaitou h2{font:600 clamp(1.9rem,3.4vw,3rem)/1.25 Georgia,serif;margin:0 0 22px}
+.zh-kaitou-wangge{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.zh-kaitou figure,.zh-yinwen{margin:0;background:#f3ecdf;padding:22px 26px;border-top:2px solid #382d25}
+.zh-kaitou figcaption,.zh-yinwen figcaption{font:700 .72rem system-ui,sans-serif;letter-spacing:.1em;color:#8b4731;text-transform:uppercase}
+.zh-kaitou blockquote,.zh-yinwen blockquote{margin:12px 0 0}.zh-kaitou blockquote span,.zh-yinwen blockquote span{display:block;font:1.15rem/1.7 Georgia,serif}
+.zh-yinwen{margin:20px 0}
+.zh-kaitou figure p{font:1.08rem/1.9 Georgia,serif;margin:12px 0 0}
+.zh-kaitou>p{font:.92rem system-ui,sans-serif;margin-top:18px}
+@media(max-width:700px){.zh-kaitou-wangge{grid-template-columns:1fr}}
+</style>
+</Base>

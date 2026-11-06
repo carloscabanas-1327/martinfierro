@@ -1,0 +1,19 @@
+---
+// 中文版文章模板（与意大利语版使用相同的版式）。
+import '../styles/edizione-italiana.css';
+interface Props {yinti:string; biaoti:string; daoyu:string; tupian?:string; alt?:string; tuzhu?:string; laiyuan?:{name:string; url:string; yuyan?:string}[]; shuoming?:string}
+const {yinti,biaoti,daoyu,tupian,alt='',tuzhu,laiyuan=[],shuoming}=Astro.props;
+---
+<article class="it-articolo" lang="zh-CN">
+ <header class="it-testata">
+  <p class="it-occhiello">{yinti}</p>
+  <h1 set:html={biaoti}/>
+  <p class="it-sommario">{daoyu}</p>
+ </header>
+ {tupian && <figure class="it-figura"><img src={tupian} alt={alt} loading="eager" decoding="async"/>{tuzhu && <figcaption>{tuzhu}</figcaption>}</figure>}
+ <div class="it-corpo">
+  <slot/>
+  {laiyuan.length>0 && <section class="it-fonti" aria-labelledby="zh-laiyuan"><h2 id="zh-laiyuan">来源与参考</h2>{shuoming && <p>{shuoming}</p>}<ul>{laiyuan.map(f=><li><a href={f.url} lang={f.yuyan} {...(f.url.startsWith('http')?{target:'_blank',rel:'noopener noreferrer'}:{})}>{f.name}</a></li>)}</ul></section>}
+  <p class="it-ritorno"><a href="/zh/">← 返回中文版首页</a> · <a href="/zh/xuesheng/">学习卡片</a></p>
+ </div>
+</article>

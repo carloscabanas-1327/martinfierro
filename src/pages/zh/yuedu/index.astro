@@ -1,0 +1,51 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {estrofasDeCanto,partes,numeroDeVersos} from '../../../lib/corpus';
+import {kaitouZh,kaitouCi,zhShu} from '../../../data/zh-xuexi';
+const kaitou=estrofasDeCanto('ida',1).slice(0,3);
+const zongHang=numeroDeVersos('ida')+numeroDeVersos('vuelta');
+const guilv=[
+ ['güeno, güen, gúenas','bueno, buenas','好的。乡下人把 “bu” 读成 “gü”。'],
+ ['juí, juego, ajuera','fui, fuego, afuera','我去了（我是），火，外面。“f” 变成送气的 “j”。'],
+ ['naides, ansí, ansina','nadie, así','没有人，这样。'],
+ ['dende, pa, ande','desde, para, donde','从，为了，在哪里。'],
+ ['sentao, desgraciao','sentado, desgraciado','坐着的，不幸的。元音之间的 “d” 脱落，和口语一样。'],
+ ['estraño, esperencia','extraño, experiencia','奇怪的，经验。书面语的 “x” 变成简单的 “s”。'],
+];
+const jiaPengyou=[
+ ['rato','一会儿，片刻（不是“老鼠” ratón）'],
+ ['pelear','打架，搏斗'],
+ ['china','高乔人的女伴、妻子（和“中国” China 无关）'],
+ ['pago','故乡，出生的地方（不是“付款”）'],
+ ['flete, pingo','好马，心爱的马（不是“运费”）'],
+ ['facón','高乔人的大刀'],
+ ['pulpería','乡村杂货酒铺，人们相聚也常在这里打架'],
+ ['picardía','狡黠，诡计'],
+];
+const bufen=[
+ {parte:'ida' as const,biaoti:'第一部 · El gaucho Martín Fierro（1872）',neirong:'菲耶罗歌唱自己在茅屋里的幸福生活、被强征到边境、开小差、亡命生涯，以及与克鲁斯中士的友谊。最后，两个人越过边境，去和印第安人一起生活。'},
+ {parte:'vuelta' as const,biaoti:'第二部 · La vuelta de Martín Fierro（1879）',neirong:'菲耶罗归来，找到了自己的儿子们，又遇见了克鲁斯的儿子。每个人都讲述自己的故事；这里有老比斯卡查，有与莫雷诺的对歌，还有第三十二歌中对儿子们的教诲。'},
+];
+---
+<Base noindex migas={[{label:'阅读史诗'}]} lingue={{es:'/leer/',en:'/en/reader/',it:'/it/lettore/',pt:'/pt/ler-o-poema/',fr:'/fr/lire-le-poeme/',de:'/de/das-gedicht-lesen/',ru:'/ru/chitat-poemu/'}} lang="zh-CN" pageType="CollectionPage" title="如何阅读《马丁·菲耶罗》西班牙语原文：中文导读" description="中文读者阅读《马丁·菲耶罗》西班牙语原文的指南：开头诗节配学习译文、高乔乡音的拼写规律、易混淆的词语和全部 46 歌。">
+<article class="daodu-zh">
+<header><p class="eyebrow">阅读史诗 · 中文导读</p><h1>如何阅读《马丁·菲耶罗》原文</h1><p class="lead">学过一些西班牙语的人，已经能读懂这部诗的不少内容。这份导读告诉你埃尔南德斯的拼写有哪些变化、哪些词容易让人误解，以及怎样找到 46 歌中的每一歌。</p></header>
+<div class="shuoming"><strong>关于文本：</strong>“阅读原文”的链接通往何塞·埃尔南德斯共 {zongHang.toLocaleString('zh-CN')} 行的西班牙语原诗。本版不发表完整译文：现有的中文译本受版权保护。本页的中文段落都是本站编辑部的学习译文。</div>
+
+<section class="kaitou" aria-labelledby="zh-kaitou"><p class="eyebrow">全诗就这样开始</p><h2 id="zh-kaitou" lang="es">«Aquí me pongo a cantar»</h2><p>第一歌的前三节。歌手在讲述自己的故事之前，先向圣徒求助，就像即兴歌手（payador）开场时那样。</p>
+{kaitou.map(e=><div class="duizhao"><blockquote lang="es"><span class="hao">第 {e.numero} 节</span>{e.versos.map(v=><span class="hang">{v.texto}</span>)}</blockquote><div class="yiwen"><span class="hao">学习译文</span><p>{kaitouZh[e.numero]}</p>{kaitouCi[e.numero]&&<dl>{kaitouCi[e.numero].map(([w,s])=><><dt lang="es">{w}</dt><dd>{s}</dd></>)}</dl>}</div></div>)}
+<p class="jixu"><a href="/leer/ida/1/" lang="es">继续阅读第一歌原文 →</a></p></section>
+
+<section aria-labelledby="zh-pinxie"><h2 id="zh-pinxie">乡下的西班牙语：六条规律</h2><p>埃尔南德斯按照布宜诺斯艾利斯省高乔人的说话方式来写。拼写看起来奇怪，却遵循简单的规律。不妨读出声来：几乎每一次，声音都会提示你是哪个词。</p>
+<table><thead><tr><th scope="col">诗中写法</th><th scope="col">标准西班牙语</th><th scope="col">中文</th></tr></thead><tbody>{guilv.map(([a,b,c])=><tr><td lang="es"><em>{a}</em></td><td lang="es">{b}</td><td>{c}</td></tr>)}</tbody></table></section>
+
+<section aria-labelledby="zh-jia"><h2 id="zh-jia">“假朋友”</h2><p>有些词看起来像课本里学过的西班牙语，在诗中却完全是另一个意思。</p><dl class="jia">{jiaPengyou.map(([w,s])=><div><dt lang="es">{w}</dt><dd>{s}</dd></div>)}</dl><p>更多词语请看<a href="/zh/xuesheng/cihui/">高乔词汇</a>。</p></section>
+
+{bufen.map(p=><section aria-label={p.biaoti}><h2>{p.biaoti}</h2><p>{p.neirong}</p><div class="gelie">{partes[p.parte].cantos.map(c=><div><strong>第{zhShu(c.numero)}歌</strong><a href={`/zh/xuesheng/${p.parte}/${c.numero}/`}>学习卡片</a><a href={`/leer/${p.parte}/${c.numero}/`} lang="es">阅读原文</a></div>)}</div>{p.parte==='vuelta'&&<p class="tishi">建议从第三十二歌读起：<a href="/zh/jiaohui/">父亲的教诲，逐节附学习译文</a>。</p>}</section>)}
+
+<section class="yiben" aria-labelledby="zh-yiben-xiangqing"><h2 id="zh-yiben-xiangqing">《马丁·菲耶罗》的中文译本</h2><p>我们所知的中文全译本出自赵振江（1940 年生于北京）之手。他是北京大学西班牙语专业的首批学生之一，后来担任北京大学西方语言文学系主任，长期翻译西班牙语诗歌，还参与了《红楼梦》西班牙文全译本的翻译。1979 至 1981 年在墨西哥进修期间，他译出了这部诗的全文。</p><p>译本以《马丁·菲耶罗》为题，1984 年由湖南人民出版社出版，正值作者诞辰 150 周年；中译本当年还被送到布宜诺斯艾利斯，与其他语种的译本一起展出。1999 年，译林出版社在“世界英雄史诗译丛”中出版了修订版，2018 年再版。</p><p>这部译本受版权保护，因此本版不加转载。如果你手头有这本书，可以把它和原文放在一起对照阅读：本版正是为此而设计的。</p><p class="laiyuan">资料来源：豆瓣读书《马丁·菲耶罗》条目（译林出版社 1999 年版，及其他版本列表）；中国新闻网 2022 年 4 月 2 日报道《“译诗要像诗” 他将〈红楼梦〉带进西语世界》（原载《光明日报》）。</p></section>
+
+<section aria-labelledby="zh-yinyong"><h2 id="zh-yinyong">如何引用</h2><p>请注明作者、该部的原名、年份、歌和节，例如：Hernández, <em lang="es">La vuelta de Martín Fierro</em>（1879），第三十二歌，第 1160 节。阅读区里的每一节都有自己的网址，可以直接复制。本版的学习译文可以引用为“学习译文，MARTINFIERRO.ORG”。</p></section>
+</article>
+<style>.daodu-zh{max-width:1050px;margin:28px auto 85px;color:#30271f}.daodu-zh a{color:#83402d;text-underline-offset:4px}.eyebrow{font:750 .78rem system-ui,sans-serif;letter-spacing:.12em;color:#95503a}.daodu-zh h1{font:600 clamp(2.2rem,5vw,4rem)/1.2 Georgia,serif;text-wrap:balance}.daodu-zh h2{font:600 clamp(1.6rem,3vw,2.2rem)/1.3 Georgia,serif}.daodu-zh p,.daodu-zh td,.daodu-zh dd{font:1.06rem/1.85 Georgia,serif}.lead{font-size:1.2rem!important;max-width:42em}.shuoming{background:#eee3d5;border-left:4px solid #904b36;padding:22px;font:1rem/1.8 Georgia,serif}.daodu-zh section{margin:44px 0}.kaitou{border-block:1px solid #bba995;padding:30px 0}.duizhao{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:18px 0}.duizhao blockquote{margin:0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.hang{display:block;font:1.13rem/1.65 Georgia,serif}.hao{display:block;font:700 .74rem system-ui,sans-serif;letter-spacing:.1em;color:#8b4731;margin-bottom:8px}.yiwen{padding:20px 4px}.yiwen p{margin:0}.yiwen dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:12px 0 0;font:.88rem/1.6 system-ui,sans-serif;color:#56483b}.yiwen dt{font-style:italic;font-weight:600}.yiwen dd{margin:0;font:inherit}.jixu{font:.95rem system-ui,sans-serif!important}table{width:100%;border-collapse:collapse;margin-top:14px}th{font:700 .82rem system-ui,sans-serif;letter-spacing:.06em;text-align:left;border-bottom:2px solid #382d25;padding:8px}td{border-bottom:1px solid #d7c7b4;padding:10px 8px;vertical-align:top}.jia{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}.jia div{border-top:1px solid #d7c7b4;padding-top:8px}.jia dt{font:600 1.05rem Georgia,serif;font-style:italic}.jia dd{margin:2px 0 0}.gelie{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.gelie div{background:#efe5d8;padding:14px 16px;display:grid;gap:6px}.gelie strong{font:700 .95rem system-ui,sans-serif;color:#30271f}.gelie a{font:.86rem system-ui,sans-serif}.tishi{background:#f0e6d7;border-top:3px solid #aa533c;padding:16px 20px}.yiben{background:#f6efe5;padding:10px 25px 22px}.laiyuan{font:.85rem/1.6 system-ui,sans-serif!important;color:#6c5b4a}@media(max-width:750px){.duizhao{grid-template-columns:1fr;gap:6px}.gelie{grid-template-columns:repeat(2,minmax(0,1fr))}.jia{grid-template-columns:1fr}td,th{padding:8px 4px}.daodu-zh td{font-size:.95rem}}</style>
+</Base>

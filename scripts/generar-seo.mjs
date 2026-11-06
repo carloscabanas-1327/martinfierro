@@ -35,6 +35,7 @@ for(const file of files){
  if((urlPath==='/fr/'||urlPath.startsWith('/fr/'))&&lang!=='fr-FR')errors.push({urlPath,issue:'French route missing fr-FR language',lang});
  if((urlPath==='/de/'||urlPath.startsWith('/de/'))&&lang!=='de-DE')errors.push({urlPath,issue:'German route missing de-DE language',lang});
  if((urlPath==='/ru/'||urlPath.startsWith('/ru/'))&&lang!=='ru-RU')errors.push({urlPath,issue:'Russian route missing ru-RU language',lang});
+ if((urlPath==='/zh/'||urlPath.startsWith('/zh/'))&&lang!=='zh-CN')errors.push({urlPath,issue:'Chinese route missing zh-CN language',lang});
  const alternates=[...html.matchAll(/<link\s+rel=["']alternate["']\s+hreflang=["']([^"']+)["']\s+href=["']([^"']+)["']/gi)].map(m=>({hreflang:m[1],href:m[2]}));
  pages.set(urlPath,{lang,alternates});
  locations.push(expected);
