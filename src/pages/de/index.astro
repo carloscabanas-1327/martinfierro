@@ -1,9 +1,74 @@
 ---
 import Base from '../../layouts/Base.astro';
-import {idiomas} from '../../data/idiomas';
+import ConsejosPortada from '../../components/ConsejosPortada.astro';
+import '../../styles/portale-edizione.css';
+import {estrofasDeCanto} from '../../lib/corpus';
+import {eroeffnungDe} from '../../data/de-studie';
+const erste=estrofasDeCanto('ida',1)[0];
+const kolonien=estrofasDeCanto('ida',12).find(e=>e.numero===362)!;
+const rubriken=[
+ {n:'01',titel:'Das Gedicht im Original lesen',text:'Ein Leitfaden für deutschsprachige Leser: die Schreibweise des ländlichen Spanisch, die falschen Freunde und der Weg zu jedem der 46 Gesänge.',href:'/de/das-gedicht-lesen/',bild:'/media/fotografias-v3/la-ida.webp',alt:'Digitale Nachbildung eines Gaucho auf dem argentinischen Land'},
+ {n:'02',titel:'Die Ratschläge an die Söhne',text:'Gesang XXXII vollständig, Strophe für Strophe, mit deutscher Studienübersetzung und Lesehinweisen.',href:'/de/ratschlaege-von-martin-fierro/',bild:'/media/fotografias-v3/consejos-fogon-hijos.webp',alt:'Digitale Nachbildung: Martín Fierro berät seine Söhne am Feuer'},
+ {n:'03',titel:'Mate, das Getränk der Pampa',text:'Von den Guaraní zu den Jesuitenmissionen, vom Gefäß zum Lagerfeuer: die Geschichte des Mate und sein Platz in den Versen des Gedichts.',href:'/de/magazin/mate/',bild:'/media/fotografias-v3/mate-pava-yerba.webp',alt:'Digitale Nachbildung eines Wasserkessels und eines Mate am Feuer'},
+ {n:'04',titel:'Kulturmagazin',text:'Die Traditionen der Pampa, erzählt für deutschsprachige Leser, immer mit Quellenangaben.',href:'/de/magazin/',bild:'/media/fotografias-v3/revista-cultural.webp',alt:'Digitale Nachbildung des ländlichen Lebens in der Pampa im 19. Jahrhundert'},
+];
 ---
-<Base migas={[{label:"Deutsch"}]} title="Deutsch: bibliografische Recherche läuft" description="Die deutsche Übersetzung von Martín Fierro ist noch bibliografisch zu prüfen. Das spanische Original ist verfügbar." lang="de" pageType="CollectionPage" noindex={true}>
- <section class="section-intro"><p class="eyebrow">Bibliografische Recherche</p><h1>Deutsch: Ausgabe in Vorbereitung</h1><p class="lead">Eine konkrete deutsche Übersetzung ist noch nicht anhand einer Ausgabe überprüft. Deshalb wird hier weder eine vollständige Übersetzung noch ein freier Nutzungsstatus behauptet.</p></section>
- <nav class="language-picker" aria-label="Andere Sprachen">{idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo}>{i.nombre}</a>)}</nav>
- <div class="editorial-paper"><h2>Spanisches Original</h2><p>Die beiden Teile von José Hernández können im spanischen Original gelesen werden.</p><p><a href="/leer/">Original lesen</a></p></div>
+<Base lang="de-DE" pageType="CollectionPage" noindex={true} title="Martín Fierro auf Deutsch: das Gedicht des argentinischen Gaucho" description="Martín Fierro von José Hernández für deutschsprachige Leser: die Verse im spanischen Original mit Studienübersetzungen, die Ratschläge an die Söhne, 46 Studienblätter und die Welt des Gaucho.">
+<div class="en-portal de-portal" lang="de-DE">
+ <div class="mf-editionline"><span>KULTURAUSGABE · ARGENTINIEN UND DER DEUTSCHE SPRACHRAUM</span><span>JOSÉ HERNÁNDEZ · 1872 / 1879</span><a href="/de/das-gedicht-lesen/">WIE MAN DIESE AUSGABE LIEST ↗</a></div>
+ <section class="en-hero" aria-labelledby="de-titel">
+  <div class="en-visual">
+   <img src="/media/fotografias-v3/hero-gaucho-pampa.webp" width="1440" height="850" fetchpriority="high" alt="Digitale Nachbildung eines Gaucho zu Pferd in der Pampa bei Sonnenuntergang"/>
+   <p>REDAKTIONELLE NACHBILDUNG · KEINE HISTORISCHE FOTOGRAFIE</p>
+  </div>
+  <div class="en-hero-copy">
+   <p class="en-kicker">JOSÉ HERNÁNDEZ · 1872 / 1879</p>
+   <h1 id="de-titel">Martín Fierro: <em>das große Gedicht des Gaucho, für deutschsprachige Leser.</em></h1>
+   <p class="en-lead">Ein Sänger, ein Deserteur, ein Vater, der heimkehrt. Das argentinische Nationalepos erzählt von der Pampa des 19. Jahrhunderts: vom Pferd, vom Lagerfeuer, vom Mate, der von Hand zu Hand geht, und vom Unrecht an den Männern vom Land.</p>
+   <div class="en-actions"><a class="en-button" href="/de/das-gedicht-lesen/">Mit dem Lesen beginnen <span aria-hidden="true">↗</span></a><a class="en-outline" href="#entdecken">Die Ausgabe entdecken ↓</a></div>
+   <p class="en-language-note">Die Verse werden immer im spanischen Original von José Hernández zitiert (7.210 Verse in 46 Gesängen), begleitet von Studienübersetzungen und Kommentaren auf Deutsch, die unsere Redaktion verfasst hat.</p>
+  </div>
+ </section>
+
+ <ConsejosPortada id="de-ratschlaege" lang="de-DE" kicker="LA VUELTA · GESANG XXXII · 1879 · GLAUBE · ARBEIT · FREUNDSCHAFT" titulo="Die Ratschläge Martín Fierros an seine Söhne" texto="Ein alter Mann vom Land fasst zusammen, was ihn das Leben gelehrt hat: Glaube, Selbstbeherrschung, ehrliche Arbeit, Freundschaft und Einigkeit unter Brüdern. Lesen Sie den ganzen Gesang im Original, mit einer Studienübersetzung zu jeder Strophe." llamado="Die Ratschläge lesen" href="/de/ratschlaege-von-martin-fierro/" alt="Digitale Nachbildung: Martín Fierro, seine beiden Söhne und der Sohn von Cruz hören am Feuer und beim Mate seine Ratschläge"/>
+
+ <section class="de-eroeffnung" aria-labelledby="de-eroeffnung-titel">
+  <p class="en-kicker">SO BEGINNT DAS GEDICHT</p>
+  <h2 id="de-eroeffnung-titel">Die erste Strophe, im Original und auf Deutsch</h2>
+  <div class="de-eroeffnung-raster">
+   <figure lang="es"><figcaption>José Hernández, 1872</figcaption><blockquote>{erste.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+   <figure><figcaption>Studienübersetzung, in Prosa</figcaption><p>{eroeffnungDe[erste.numero]}</p></figure>
+  </div>
+  <p><a href="/de/das-gedicht-lesen/">Die ersten Strophen mit erklärtem Wortschatz lesen →</a> · <a href="/leer/ida/1/" lang="es">Leer el canto I en español →</a></p>
+ </section>
+
+ <section class="en-first-feature" aria-labelledby="de-bruecke"><div><p class="en-kicker">VOM RHEIN UND VON DER WOLGA IN DIE PAMPA</p><h2 id="de-bruecke">Der deutsche Sprachraum ist der Welt von Martín Fierro näher, als man denkt</h2><p>Als Hernández schrieb, entstanden in der Pampa die ersten landwirtschaftlichen Kolonien mit europäischen Einwanderern: Esperanza in der Provinz Santa Fe wurde 1856 unter anderem von Schweizern und Deutschen gegründet, und ab 1878, während Hernández an der <em lang="es">Vuelta</em> arbeitete, ließen sich Wolgadeutsche in Entre Ríos und in der Provinz Buenos Aires nieder. Das Gedicht nimmt diese Politik wahr, wenn auch voller Groll: In Gesang XII klagt Cruz über die »Projekte von Kolonien und Eisenbahnen«, für die man Tausende ausgebe, während der arme Soldat leer ausgehe. Der deutsche Naturforscher Hermann Burmeister leitete zur selben Zeit das Museo Público von Buenos Aires, und die erste deutsche Übersetzung des Gedichts entstand 1945 im deutschsprachigen Exil von Buenos Aires.</p>
+ <figure class="de-zitat" lang="es"><figcaption>El gaucho Martín Fierro, Gesang XII · Strophe {kolonien.numero}</figcaption><blockquote>{kolonien.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+ <a href="/de/studierende/ida/12/">Studienblatt zu Gesang XII ↗</a> · <a href="/de/jose-hernandez/">José Hernández ↗</a> · <a href="/de/studierende/glossar/">Gauchesker Glossar ↗</a></div></section>
+
+ <section class="en-first-feature" aria-labelledby="de-studierende"><div><p class="en-kicker">FÜR STUDIERENDE</p><h2 id="de-studierende">Die 46 Gesänge, einer nach dem anderen</h2><p>Zu jedem Gesang ein Blatt auf Deutsch: Zusammenfassung, wichtige Originalstrophen, Figuren, Themen, Wörter des gauchesken Spanisch und Fragen für den Spanischunterricht, das Referat oder den Lesekreis.</p><a href="/de/studierende/">Die Studienblätter öffnen ↗</a> · <a href="/de/figuren/">Die Figuren ↗</a> · <a href="/de/studierende/ida/1/">Mit Gesang I beginnen ↗</a></div></section>
+
+ <section id="entdecken" class="en-section" aria-labelledby="de-entdecken">
+  <div class="en-section-heading"><p class="en-kicker">DIE AUSGABE ENTDECKEN</p><h2 id="de-entdecken">Das Gedicht, die Ratschläge, die Welt des Gaucho.</h2></div>
+  <div class="en-grid">{rubriken.map(s=><article class="en-card"><a href={s.href}><div class="en-image"><img src={s.bild} alt={s.alt} loading="lazy" decoding="async"/></div><div class="en-card-copy"><span>{s.n} / DIE AUSGABE</span><h3>{s.titel}</h3><p>{s.text}</p><strong>Zur Rubrik <span aria-hidden="true">↗</span></strong></div></a></article>)}</div>
+ </section>
+
+ <section class="en-translation" aria-labelledby="de-uebersetzungen"><div><p class="en-kicker">MARTÍN FIERRO AUF DEUTSCH</p><h2 id="de-uebersetzungen">Drei Übersetzungen, noch keine gemeinfrei.</h2><p>Die erste deutsche Übersetzung schuf Adolf Borstendörfer, ein Exilschriftsteller aus Prag, 1945 in Buenos Aires. Es folgten die Nachdichtung von Alfredo Bauer (Stuttgart, 1995) und die zweisprachige Ausgabe von Pedro Pluhar (Köln, 1999). Alle drei sind noch urheberrechtlich geschützt: Diese Ausgabe gibt sie nicht wieder. Sie bietet das Original, Studienübersetzungen in Prosa und einen Kommentar, die man neben einem Bibliotheksexemplar lesen kann. Borstendörfers Übersetzung wird am 1. Januar 2028 gemeinfrei.</p><div class="en-actions"><a class="en-button" href="/de/das-gedicht-lesen/#de-uebersetzungen">Mehr erfahren ↗</a><a class="en-outline" href="/traducciones/" lang="es">Katalog der Übersetzungen (auf Spanisch) ↗</a></div></div><img src="/media/archivo/ejemplar-corregido-martin-fierro-1872-portada.webp" alt="Titelblatt der Erstausgabe von El gaucho Martín Fierro, 1872" loading="lazy"/></section>
+
+ <section class="en-final" aria-labelledby="de-schluss"><p class="en-kicker">EINE DOKUMENTARISCHE BIBLIOTHEK</p><h2 id="de-schluss">Sechs Sprachen, ein Gedicht.</h2><p>MARTINFIERRO.ORG ist eine unabhängige digitale Ausgabe auf Spanisch, Englisch, Italienisch, Portugiesisch, Französisch und nun auch auf Deutsch. Alle Ausgaben teilen denselben Originaltext und trennen stets die historischen Quellen von modernen Deutungen.</p><p><a href="/" lang="es">Edición en español</a> · <a href="/en/" lang="en">English edition</a> · <a href="/it/" lang="it">Edizione italiana</a> · <a href="/pt/" lang="pt-BR">Edição brasileira</a> · <a href="/fr/" lang="fr">Édition française</a></p></section>
+</div>
+<style>
+.de-portal{margin-top:0}
+.de-portal h1,.de-portal h2{hyphens:auto}
+.de-eroeffnung{margin:45px 0;padding:36px 0;border-block:1px solid #bba995}
+.de-eroeffnung h2{font:600 clamp(1.9rem,3.4vw,3rem)/1.15 Georgia,serif;margin:0 0 22px}
+.de-eroeffnung-raster{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.de-eroeffnung figure,.de-zitat{margin:0;background:#f3ecdf;padding:22px 26px;border-top:2px solid #382d25}
+.de-eroeffnung figcaption,.de-zitat figcaption{font:700 .72rem system-ui,sans-serif;letter-spacing:.1em;color:#8b4731;text-transform:uppercase}
+.de-eroeffnung blockquote,.de-zitat blockquote{margin:12px 0 0}.de-eroeffnung blockquote span,.de-zitat blockquote span{display:block;font:1.15rem/1.7 Georgia,serif}
+.de-zitat{margin:20px 0}
+.de-eroeffnung figure p{font:1.08rem/1.7 Georgia,serif;margin:12px 0 0}
+.de-eroeffnung>p{font:.92rem system-ui,sans-serif;margin-top:18px}
+@media(max-width:700px){.de-eroeffnung-raster{grid-template-columns:1fr}}
+</style>
 </Base>

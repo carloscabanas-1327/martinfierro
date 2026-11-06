@@ -1,0 +1,19 @@
+---
+// Artikelvorlage der deutschen Ausgabe (gleiche Typografie wie die italienische Ausgabe).
+import '../styles/edizione-italiana.css';
+interface Props {dachzeile:string; titel:string; vorspann:string; bild?:string; alt?:string; legende?:string; quellen?:{name:string; url:string; sprache?:string}[]; quellenHinweis?:string}
+const {dachzeile,titel,vorspann,bild,alt='',legende,quellen=[],quellenHinweis}=Astro.props;
+---
+<article class="it-articolo" lang="de-DE">
+ <header class="it-testata">
+  <p class="it-occhiello">{dachzeile}</p>
+  <h1 set:html={titel}/>
+  <p class="it-sommario">{vorspann}</p>
+ </header>
+ {bild && <figure class="it-figura"><img src={bild} alt={alt} loading="eager" decoding="async"/>{legende && <figcaption>{legende}</figcaption>}</figure>}
+ <div class="it-corpo">
+  <slot/>
+  {quellen.length>0 && <section class="it-fonti" aria-labelledby="de-quellen"><h2 id="de-quellen">Quellen und Lektüre</h2>{quellenHinweis && <p>{quellenHinweis}</p>}<ul>{quellen.map(f=><li><a href={f.url} lang={f.sprache} {...(f.url.startsWith('http')?{target:'_blank',rel:'noopener noreferrer'}:{})}>{f.name}</a></li>)}</ul></section>}
+  <p class="it-ritorno"><a href="/de/">← Zurück zur deutschen Ausgabe</a> · <a href="/de/studierende/">Studienblätter</a></p>
+ </div>
+</article>

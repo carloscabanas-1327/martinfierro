@@ -1,0 +1,47 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import {estrofasDeCanto} from '../../../../lib/corpus';
+// Verse des Gedichts, in denen Mate und »cimarrón« (der bittere Mate) vorkommen.
+const strophe=(parte:'ida'|'vuelta',canto:number,n:number)=>estrofasDeCanto(parte,canto).find(e=>e.numero===n)!;
+const verse=[
+ {e:strophe('ida',2,25),ref:'El gaucho Martín Fierro, Gesang II',href:'/leer/ida/2/',kommentar:'Es ist die Erinnerung an die glückliche Zeit vor der Rekrutierung: Der Gaucho steht vor Tagesanbruch auf, setzt sich ans Feuer und trinkt cimarrón, bis er ganz voll ist, während seine Gefährtin in ihren Poncho gewickelt schläft. Cimarrón ist der bittere Mate ohne Zucker.'},
+ {e:strophe('vuelta',12,703),ref:'La vuelta de Martín Fierro, Gesang XII',href:'/leer/vuelta/12/',kommentar:'Fierros älterer Sohn erzählt vom Leben im Zuchthaus. Unter den Entbehrungen steht das Verbot des Mate an erster Stelle: Für den Mann vom Land heißt den Mate verlieren, jede Gesellschaft verlieren.'},
+ {e:strophe('vuelta',30,1090),ref:'La vuelta de Martín Fierro, Gesang XXX',href:'/leer/vuelta/30/',kommentar:'In der payada, dem gesungenen Wettstreit, vergleicht sich einer der Sänger mit dem Mate: Er tauge nur, wenn man ihm den Mund öffnet. Das Bild funktioniert nur, weil jeder Zuhörer die Handgriffe der Mate-Zubereitung kannte.'},
+];
+const abschnitte=[
+ {id:'ein-getraenk',titel:'Ein Getränk, mehrere Länder',absaetze:[
+  'In Buenos Aires und Montevideo sagt man mate; in Südbrasilien chimarrão; in Paraguay, wenn das Wasser kalt ist, tereré. Die Namen ändern sich, die Geste bleibt: die Yerba im Gefäß, das heiße Wasser, das Metallröhrchen, das von Hand zu Hand geht.',
+  'Im deutschen Sprachraum kennt man Mate heute als Tee aus dem Bioladen oder als koffeinhaltige Limonade. In der Pampa des 19. Jahrhunderts aber war Mate nichts Exotisches: Er war das tägliche Getränk des Gaucho, das Getränk des Erwachens, des Lagerfeuers und der Gastfreundschaft.']},
+ {id:'guarani',titel:'Vor den Grenzen: das Kraut der Guaraní',absaetze:[
+  'Der Mate-Strauch (Ilex paraguariensis) ist ein Baum aus den Wäldern im Süden Südamerikas: Ostparaguay, Südbrasilien und die argentinische Provinz Misiones. Mit schwarzem oder grünem Tee ist er nicht verwandt; diese stammen von einer anderen Pflanze.',
+  'Lange bevor es Argentinien, Uruguay oder Paraguay gab, ernteten und genossen die Guaraní-Völker schon seine Blätter, die sie ka’a nannten (Kraut, Pflanze). Der Brauch ist also indigenen Ursprungs. Weder der Gaucho noch die Nationalstaaten haben ihn erfunden: Sie haben ihn geerbt.']},
+ {id:'missionen',titel:'Die Jesuitenmissionen',absaetze:[
+  'Im 17. und 18. Jahrhundert gründeten die Jesuiten mit den Guaraní Reduktionen in einem Gebiet, das heute zwischen Argentinien, Paraguay und Brasilien geteilt ist. Die Yerba wurde nun nicht mehr nur im Wald gesammelt, sondern in Pflanzungen angebaut, was sie zu einer Ware machte, die im ganzen Becken des Río de la Plata gehandelt wurde.',
+  'Die Ruinen dieser Missionen, etwa San Ignacio Miní in Argentinien oder São Miguel das Missões in Brasilien, gehören zum UNESCO-Welterbe. Unter den Jesuiten der Reduktionen waren auch Patres aus dem deutschen Sprachraum. Der Mate, den Martín Fierro trinkt, wurzelt in dieser Begegnung zwischen der Guaraní-Pflanze und dem kolonialen Leben.']},
+ {id:'runde',titel:'Die Mate-Runde',absaetze:[
+  'Wer den Mate zubereitet, der cebador, gießt heißes, aber nicht kochendes Wasser auf die Yerba und trinkt oft selbst den ersten, bittersten Aufguss. Dann füllt er das Gefäß nach und reicht es der Reihe nach jedem; man trinkt es aus, bevor man es zurückgibt. Die bombilla, das Metallröhrchen, rührt man nicht an, und »gracias« zu sagen heißt, dass man nichts mehr möchte.',
+  'Das sind Regeln der Höflichkeit, keine Gesetze, und sie wechseln von Haus zu Haus. Ihr Sinn ist klar: Mate wird geteilt. Deshalb ist er im Gedicht wie im Leben ein Zeichen der Gesellschaft.']},
+ {id:'cimarron',titel:'Warum »cimarrón«?',absaetze:[
+  'Auf Spanisch heißt cimarrón wild, herrenlos: So nannte man Rinder und Pferde, die frei auf dem Land lebten. Auf den Mate übertragen bekam das Wort die Bedeutung bitterer Mate ohne Zucker, »naturbelassen« getrunken. Am Río de la Plata ist »cimarrón« bis heute gleichbedeutend mit bitterem Mate.',
+  'Martín Fierro verwendet das Wort in beiden Bedeutungen: Es gibt den »perro cimarrón«, den herrenlosen Hund, und den cimarrón, den der Gaucho am Feuer trinkt. Das ist ein gutes Beispiel dafür, wie das Gedicht aus der Sprache des Landes schöpft.']},
+];
+const quellen=[
+ {name:'UNESCO: Jesuit Missions of the Guaranis (San Ignacio Miní, São Miguel das Missões …), auf Englisch',url:'https://whc.unesco.org/en/list/275'},
+ {name:'Royal Botanic Gardens, Kew: Ilex paraguariensis (natürliches Verbreitungsgebiet), auf Englisch',url:'https://powo.science.kew.org/taxon/315555-2'},
+ {name:'Argentina.gob.ar: Mate, seine botanische Geschichte und die Guaraní (auf Spanisch)',url:'https://www.argentina.gob.ar/node/213295'},
+];
+---
+<Base migas={[{label:'Magazin',href:'/de/magazin/'},{label:'Mate'}]} lingue={{en:'/en/magazine/yerba-mate/',pt:'/pt/revista/chimarrao/',fr:'/fr/revue/mate/'}} lang="de-DE" pageType="Article" noindex={true} title="Mate, das Getränk der Pampa: von den Guaraní zu Martín Fierro" description="Die Geschichte von Mate und Yerba: der Ursprung bei den Guaraní, die Jesuitenmissionen, die Mate-Runde und der cimarrón in den Versen von Martín Fierro.">
+<article class="essay-de">
+<header><p class="eyebrow">KULTURMAGAZIN · DIE WELT DES GAUCHO</p><h1>Mate, das Getränk der Pampa</h1><p class="vorspann">Von Buenos Aires bis Südbrasilien geht dasselbe Gefäß von Hand zu Hand. Die Geschichte des Mate beginnt bei den Guaraní, führt durch die Jesuitenmissionen und reicht bis in die Verse von Martín Fierro, wo der bittere Mate noch cimarrón heißt.</p></header>
+<figure><img src="/media/cultura-gauchesca/mate-tradicional-con-bombilla-rio-de-la-plata.webp" alt="Redaktionelle Illustration eines Mate mit bombilla, wie am Río de la Plata" fetchpriority="high"/><figcaption>Zeitgenössische redaktionelle Illustration, keine Fotografie aus der Zeit.</figcaption></figure>
+<div class="lektuere"><nav class="inhalt" aria-label="In diesem Artikel"><strong>In diesem Artikel</strong>{abschnitte.map(s=><a href={`#${s.id}`}>{s.titel}</a>)}<a href="#in-den-versen">Mate in den Versen</a><a href="#quellen">Quellen</a></nav>
+{abschnitte.map(s=><section id={s.id}><h2>{s.titel}</h2>{s.absaetze.map(p=><p>{p}</p>)}</section>)}
+<section id="in-den-versen"><h2>Mate in den Versen von Martín Fierro</h2><p>Das Gedicht von José Hernández widmet dem Mate keine eigene Szene, doch das Gefäß erscheint überall, wo der Alltag erscheint. Drei Stellen im Original:</p>
+{verse.map(v=><figure class="zitat"><figcaption><a href={v.href} lang="es">{v.ref}</a> · Strophe {v.e.numero}</figcaption><blockquote lang="es">{v.e.versos.map(l=><span>{l.texto}</span>)}</blockquote><p>{v.kommentar}</p></figure>)}
+<p>Weiterlesen: <a href="/de/ratschlaege-von-martin-fierro/">Die Ratschläge Martín Fierros an seine Söhne</a> zeigen Gesang XXXII vollständig, mit einer deutschen Studienübersetzung.</p></section>
+<section id="quellen"><h2>Quellen und Methode</h2><p>Dieser Artikel wurde für die deutsche Ausgabe auf der Grundlage des Kulturführers der spanischen Ausgabe und der Artikel der brasilianischen und der französischen Ausgabe geschrieben. Wir unterscheiden stets zwischen historischen Tatsachen, literarischen Darstellungen und modernen Illustrationen. Die Verse stammen aus dem Originaltext von Hernández, den die ganze Website verwendet.</p><ul>{quellen.map(f=><li><a href={f.url} target="_blank" rel="noopener noreferrer">{f.name}</a></li>)}</ul>
+<p><a href="/de/magazin/">← Zurück zum Magazin</a> · <a href="/de/">Deutsche Ausgabe</a></p></section>
+</div></article>
+<style>.essay-de{max-width:1040px;margin:24px auto 85px;color:#302820}.essay-de a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .71rem system-ui,sans-serif;letter-spacing:.14em;color:#934e35}.essay-de h1{font:600 clamp(2.4rem,5vw,4.75rem)/1.09 Georgia,serif;letter-spacing:-.035em;max-width:930px;margin:17px 0;text-wrap:balance}.vorspann{font:1.25rem/1.65 Georgia,serif;max-width:78ch}.essay-de>figure{margin:32px 0 38px}.essay-de>figure img{width:100%;max-height:470px;object-fit:cover;border-radius:6px}.essay-de>figure figcaption{font:.77rem system-ui,sans-serif;color:#6c5b4a;margin-top:9px}.lektuere{max-width:770px;margin:auto}.inhalt{display:flex;flex-wrap:wrap;gap:11px 19px;border-block:1px solid #c8b9a7;padding:21px 0;font:.83rem system-ui,sans-serif}.inhalt strong{width:100%}.lektuere section{margin:44px 0}.lektuere h2{font:600 clamp(1.75rem,3vw,2.5rem)/1.17 Georgia,serif;margin:0 0 19px;hyphens:auto}.lektuere p,.lektuere li{font:1.08rem/1.83 Georgia,serif;hyphens:auto}.lektuere li{margin:12px 0}.zitat{margin:26px 0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.zitat figcaption{font:700 .74rem system-ui,sans-serif;letter-spacing:.06em;color:#8b4731}.zitat blockquote{margin:12px 0;border-left:3px solid #ac937b;padding-left:16px}.zitat blockquote span{display:block;font:1.1rem/1.65 Georgia,serif}.zitat p{font-size:1rem!important;margin:0}#quellen{background:#eee3d7;padding:25px 30px}@media(max-width:600px){#quellen,.zitat{padding:18px}}</style>
+</Base>

@@ -10,6 +10,8 @@ import { guiasIda } from '../../data/pt-guias-ida';
 import { guiasVuelta } from '../../data/pt-guias-vuelta';
 import { guidesAller } from '../../data/fr-guides-aller';
 import { guidesRetour } from '../../data/fr-guides-retour';
+import { leitfaedenIda } from '../../data/de-leitfaeden-ida';
+import { leitfaedenVuelta } from '../../data/de-leitfaeden-vuelta';
 const grupos=[
   {
     "id": "lectura",
@@ -310,8 +312,19 @@ const grupos=[
       {
         "titulo": "Deutsch",
         "url": "/de/",
-        "descripcion": "Página del proyecto en alemán."
+        "descripcion": "Edición alemana (en preparación): versos originales con traducción de estudio y comentario en alemán."
       },
+      {titulo:"Deutsch — Das Gedicht lesen",url:"/de/das-gedicht-lesen/",descripcion:"Guía para leer el original en español desde el alemán."},
+      {titulo:"Deutsch — Für Studierende",url:"/de/studierende/",descripcion:"Guías de estudio en alemán para los 46 cantos."},
+      ...Object.entries(leitfaedenIda).map(([n,g])=>({titulo:`Deutsch — Ida, canto ${romano(Number(n))}: ${g.titel}`,url:`/de/studierende/ida/${n}/`,descripcion:'Guía de estudio en alemán.'})),
+      ...Object.entries(leitfaedenVuelta).map(([n,g])=>({titulo:`Deutsch — Vuelta, canto ${romano(Number(n))}: ${g.titel}`,url:`/de/studierende/vuelta/${n}/`,descripcion:'Guía de estudio en alemán.'})),
+      {titulo:"Deutsch — Glossar",url:"/de/studierende/glossar/",descripcion:"Glosario gauchesco en alemán."},
+      {titulo:"Deutsch — José Hernández",url:"/de/jose-hernandez/",descripcion:"Biografía del autor en alemán."},
+      {titulo:"Deutsch — Figuren",url:"/de/figuren/",descripcion:"Guía de personajes en alemán."},
+      {titulo:"Deutsch — Quellen und Rechte",url:"/de/quellen-und-rechte/",descripcion:"Fuentes, créditos y derechos de la edición alemana."},
+      {titulo:"Deutsch — Die Ratschläge von Martín Fierro",url:"/de/ratschlaege-von-martin-fierro/",descripcion:"Canto XXXII completo con traducción de estudio en alemán."},
+      {titulo:"Deutsch — Magazin",url:"/de/magazin/",descripcion:"Revista cultural de la edición alemana."},
+      {titulo:"Deutsch — Mate",url:"/de/magazin/mate/",descripcion:"El mate, de los guaraníes a Martín Fierro, en alemán."},
       {
         "titulo": "Italiano",
         "url": "/it/",

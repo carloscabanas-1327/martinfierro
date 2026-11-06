@@ -1,9 +1,9 @@
 ---
 // Ruta de navegación única para todas las ediciones. La raíz de cada edición se agrega sola.
-interface Props {items:{label:string; href?:string}[]; edicion:'es'|'en'|'it'|'pt'|'fr'}
+interface Props {items:{label:string; href?:string}[]; edicion:'es'|'en'|'it'|'pt'|'fr'|'de'}
 const {items,edicion}=Astro.props;
-const raiz={es:{label:'Inicio',href:'/'},en:{label:'English edition',href:'/en/'},it:{label:'Edizione italiana',href:'/it/'},pt:{label:'Edição brasileira',href:'/pt/'},fr:{label:'Édition française',href:'/fr/'}}[edicion];
-const etiqueta={es:'Ruta de navegación',en:'Breadcrumb',it:'Percorso',pt:'Você está em',fr:'Fil d’Ariane'}[edicion];
+const raiz={es:{label:'Inicio',href:'/'},en:{label:'English edition',href:'/en/'},it:{label:'Edizione italiana',href:'/it/'},pt:{label:'Edição brasileira',href:'/pt/'},fr:{label:'Édition française',href:'/fr/'},de:{label:'Deutsche Ausgabe',href:'/de/'}}[edicion];
+const etiqueta={es:'Ruta de navegación',en:'Breadcrumb',it:'Percorso',pt:'Você está em',fr:'Fil d’Ariane',de:'Sie sind hier'}[edicion];
 const todos=[raiz,...items];
 ---
 <nav class="mf-migas" aria-label={etiqueta}>

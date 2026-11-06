@@ -1,0 +1,52 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ArticleDe from '../../../components/ArticleDe.astro';
+const chronik=[
+ ['1834','Geboren am 10. November in Perdriel, im heutigen Partido General San Martín (Provinz Buenos Aires).'],
+ ['1840er Jahre','Lebt und arbeitet auf dem Land in der Provinz Buenos Aires und lernt die Viehwirtschaft aus der Nähe kennen.'],
+ ['1850er–60er Jahre','Nimmt an den politischen und militärischen Konflikten teil und beginnt seine Laufbahn als Journalist.'],
+ ['1863','Veröffentlicht die Vida del Chacho über den föderalistischen Caudillo Ángel Vicente Peñaloza.'],
+ ['1869','Gründet die Zeitung El Río de la Plata.'],
+ ['1871','Geht nach der Niederlage des Aufstands von López Jordán bei Ñaembé ins Exil nach Santana do Livramento (Rio Grande do Sul, Brasilien).'],
+ ['1872','Kehrt nach Buenos Aires zurück und veröffentlicht El gaucho Martín Fierro.'],
+ ['1879','Veröffentlicht La vuelta de Martín Fierro.'],
+ ['1882','Veröffentlicht Instrucción del estanciero, ein praktisches Handbuch zur Führung von Estancias.'],
+ ['1886','Stirbt am 21. Oktober in Belgrano, Buenos Aires.']
+];
+---
+<Base migas={[{label:'José Hernández'}]} lingue={{es:'/jose-hernandez/',en:'/en/jose-hernandez/',it:'/it/jose-hernandez/',pt:'/pt/jose-hernandez/',fr:'/fr/jose-hernandez/'}} lang="de-DE" pageType="Article" noindex={true} title="José Hernández: Biografie des Autors von Martín Fierro" description="Wer war José Hernández (1834–1886): sein Leben, sein Journalismus, sein politisches Engagement und die Entstehung von Martín Fierro, mit Zeittafel und dokumentarischen Quellen.">
+<ArticleDe dachzeile="Argentinische Literatur · Belegte Biografie" titel="José Hernández, <em>der Autor von Martín Fierro</em>"
+ vorspann="Hernández schrieb nicht aus der Ferne über das argentinische Land. Als Landwirt, Soldat, Journalist und Politiker kannte er die Spannungen von innen, die sein berühmtestes Gedicht prägen sollten."
+ bild="https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg" alt="Historisches Porträtfoto von José Hernández" legende="Historisches Porträt von José Hernández, Wikimedia Commons (Fotograf unbekannt). Anders als die Illustrationen der Website ist dies eine zeitgenössische Fotografie."
+ quellen={[
+  {name:'Biblioteca Virtual Miguel de Cervantes: Zeittafel zu José Hernández (auf Spanisch)',url:'https://www.cervantesvirtual.com/portales/jose_hernandez/autor_cronologia/',sprache:'es'},
+  {name:'Biblioteca Nacional Mariano Moreno: »10 de noviembre de 1834: nace José Hernández« (auf Spanisch)',url:'https://www.bn.gob.ar/noticias/10-de-noviembre-de-1834-nace-jose-hernandez',sprache:'es'},
+  {name:'Biografie in der spanischen Ausgabe der Website',url:'/jose-hernandez/',sprache:'es'}
+ ]}
+ quellenHinweis="Für diese Ausgabe auf Deutsch verfasste Biografie; Daten und bibliografische Angaben anhand der genannten Zeittafeln geprüft.">
+ <section class="it-scheda" aria-labelledby="de-steckbrief"><h2 id="de-steckbrief">Kurz gefasst</h2><dl>
+  <div><dt>Vollständiger Name</dt><dd>José Rafael Hernández y Pueyrredón</dd></div>
+  <div><dt>Geburt</dt><dd>10. November 1834, Perdriel (Provinz Buenos Aires)</dd></div>
+  <div><dt>Tod</dt><dd>21. Oktober 1886, Belgrano (Buenos Aires)</dd></div>
+  <div><dt>Hauptwerke</dt><dd><em lang="es">El gaucho Martín Fierro</em> (1872), <em lang="es">La vuelta de Martín Fierro</em> (1879)</dd></div>
+  <div><dt>Weitere Schriften</dt><dd>Journalismus, <em lang="es">Vida del Chacho</em>, <em lang="es">Instrucción del estanciero</em></dd></div>
+ </dl></section>
+ <section><h2>Von Perdriel aufs Land</h2>
+  <p>José Hernández wird am 10. November 1834 in Perdriel bei Buenos Aires geboren, als Sohn von Rafael Hernández und Isabel Pueyrredón. Die politischen Spaltungen des damaligen Argentinien sind nichts Abstraktes: Sie prägen Familien, Institutionen und den Alltag. Er geht in Buenos Aires zur Schule, doch die Jahre auf dem Land, in den Gegenden von Camarones und Laguna de los Padres, bringen ihn in Kontakt mit den Landarbeitern und dem Handwerk der Viehzucht.</p>
+  <p>Es wäre jedoch irreführend, ihn als einen Gaucho zu beschreiben, der sein eigenes Leben zu Papier gebracht hätte. Hernández war ein gebildeter Mann, ein engagierter Politiker und ein erfahrener Journalist. Die Stimme Martín Fierros ist eine literarische Schöpfung aus Beobachtung und einer These über die Gesellschaft.</p>
+ </section>
+ <section><h2>Ein Journalist in den politischen Kämpfen</h2>
+  <p>Er erlebt die Konflikte zwischen Buenos Aires und den Provinzen. Föderalistische Ideen, Machtkämpfe und die Folgen der Kriege bestimmen seinen Werdegang. Er beteiligt sich am militärischen und politischen Leben, bevor er sich als Journalist durchsetzt, oft zur Verteidigung derer, die fern der Machtzentren lebten. 1869 gründet er die Zeitung <em lang="es">El Río de la Plata</em>, in der er das Unrecht anprangert, das die Landbevölkerung erleidet. Später wird er Abgeordneter und Senator der Provinz Buenos Aires.</p>
+  <p>Nach der Niederlage des Aufstands von Ricardo López Jordán in der Schlacht von Ñaembé (1871) geht er ins Exil nach Santana do Livramento im Süden Brasiliens, an der Grenze zu Uruguay, wo er bis Anfang 1872 bleibt. Zurück in Buenos Aires, im Hotel Argentino wohnend, schreibt er <em lang="es">El gaucho Martín Fierro</em>.</p>
+ </section>
+ <section><h2>Die Entstehung von Martín Fierro</h2>
+  <p>1872 veröffentlicht er <em lang="es">El gaucho Martín Fierro</em>, ein erzählendes Gedicht in der Stimme eines Reiters vom Land. 1879 erscheint die Fortsetzung, <em lang="es">La vuelta de Martín Fierro</em>, mit neuen Zeugnissen und mehr Raum für Wiedersehen und Rat. Beide Teile sollte man zusammen lesen, ohne sie auf eine einzige Botschaft zu verkürzen: Protest, Ausschluss, Gewalt, Verantwortung und Anpassung stehen darin nebeneinander.</p>
+  <p><a href="/de/das-gedicht-lesen/">Wie man das Gedicht liest →</a> · <a href="/de/studierende/">Die 46 Gesänge für Studierende →</a></p>
+ </section>
+ <section><h2>Warum er bis heute zählt</h2>
+  <p>Hernández stirbt am 21. Oktober 1886 in Belgrano. Die folgenden Generationen haben sein Gedicht zu einem zentralen Bezugspunkt der argentinischen Identität gemacht, und sein Geburtstag, der 10. November, ist heute in Argentinien der Tag der Tradition. Die beste Ehrung besteht nicht darin, seinen Ruhm zu wiederholen, sondern seine Verse genau zu lesen und sie mit den historischen Quellen zu vergleichen.</p>
+ </section>
+ <section><h2>Zeittafel</h2><ol class="de-chronik">{chronik.map(([a,t])=><li><strong>{a}</strong><span>{t}</span></li>)}</ol></section>
+</ArticleDe>
+<style>.de-chronik{list-style:none;padding:0}.de-chronik li{display:grid;grid-template-columns:140px 1fr;gap:16px;border-top:1px solid #c8baab;padding:12px 0}.de-chronik strong{color:#8d4b36;font-family:system-ui,sans-serif}@media(max-width:520px){.de-chronik li{grid-template-columns:1fr;gap:2px}}</style>
+</Base>
