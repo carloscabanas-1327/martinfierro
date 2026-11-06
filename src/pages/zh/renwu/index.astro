@@ -17,7 +17,7 @@ const kapian:Record<string,{ming:string;juese:string;jieshao:string;dufa:string}
 const tu=(id:string)=>({'martin-fierro':'martin-fierro','sargento-cruz':'sargento-cruz','esposa-fierro':'esposa-de-fierro','primer-hijo':'hijo-mayor-de-fierro','segundo-hijo':'hijo-segundo-de-fierro','don-vizcacha':'viejo-vizcacha','picardia':'picardia','la-cautiva':'la-cautiva','el-moreno':'el-moreno','moreno-muerto':'negro-del-baile','juez-paz':'juez-de-paz'} as Record<string,string>)[id];
 const lianjie=(r:{parte:'ida'|'vuelta';canto:number})=>`/zh/xuesheng/${r.parte}/${r.canto}/`;
 ---
-<Base noindex migas={[{label:'人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/'}} lang="zh-CN" pageType="CollectionPage" title="《马丁·菲耶罗》人物导读" description="马丁·菲耶罗、克鲁斯中士、老比斯卡查、皮卡迪亚、儿子们、女俘和莫雷诺：何塞·埃尔南德斯诗中的人物介绍，以及如何批判地阅读他们。">
+<Base migas={[{label:'人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/'}} lang="zh-CN" pageType="CollectionPage" title="《马丁·菲耶罗》人物导读" description="马丁·菲耶罗、克鲁斯中士、老比斯卡查、皮卡迪亚、儿子们、女俘和莫雷诺：何塞·埃尔南德斯诗中的人物介绍，以及如何批判地阅读他们。">
 <article class="renwu-zh">
 <header><p class="eyebrow">阅读指南 · 人物</p><h1><em>《马丁·菲耶罗》</em>中的人物</h1><p class="lid">一个亡命的高乔人、一位忠实的朋友、两个努力理解自己所失去的东西的儿子、一个厚颜无耻的监护人，以及被推到边缘的声音。认识这些赋予全诗道德复杂性的人物。</p></header>
 <nav class="tiaozhuan" aria-label="跳到某个人物">{personajes.map(p=><a href={`#${p.id}`}>{kapian[p.id].ming}</a>)}</nav>

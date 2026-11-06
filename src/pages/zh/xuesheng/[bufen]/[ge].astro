@@ -20,7 +20,7 @@ const xia=n<zongshu?`/zh/xuesheng/${parte}/${n+1}/`:(parte==='ida'?'/zh/xuesheng
 const qita={en:`/en/students/${parte==='ida'?'canto':'vuelta-canto'}-${n}/`,pt:`/pt/estudantes/${parte==='ida'?'ida':'volta'}/${n}/`,fr:`/fr/etudiants/${parte==='ida'?'aller':'retour'}/${n}/`,de:`/de/studierende/${parte}/${n}/`,ru:`/ru/studentam/${parte}/${n}/`};
 const bu=parte==='ida'?'第一部':'第二部';
 ---
-<Base noindex migas={[{label:'学生园地',href:'/zh/xuesheng/'},{label:`${bu}，${ge}`}]} lingue={qita} lang="zh-CN" pageType="Article" title={`《马丁·菲耶罗》${bu}${ge}：${k.biaoti}`} description={`《${mingcheng}》${ge}的中文内容概要与解析：原文诗节、人物、主题、高乔词语和课堂讨论题。`}>
+<Base migas={[{label:'学生园地',href:'/zh/xuesheng/'},{label:`${bu}，${ge}`}]} lingue={qita} lang="zh-CN" pageType="Article" title={`《马丁·菲耶罗》${bu}${ge}：${k.biaoti}`} description={`《${mingcheng}》${ge}的中文内容概要与解析：原文诗节、人物、主题、高乔词语和课堂讨论题。`}>
 <article class="kapian">
 <header><p class="eyebrow">《马丁·菲耶罗》学生园地 · {mingcheng.toUpperCase()} · {nian}</p><h1><span>{ge}</span> {k.biaoti}</h1><p class="lid">中文学习卡片；请始终与何塞·埃尔南德斯的原诗对照阅读。</p></header>
 <section><h2>{ge}讲了什么？</h2><p>{k.gaiyao}</p><p><a href={`/leer/${parte}/${n}/`} lang="es">阅读{ge}原文全文 ↗</a></p></section>
