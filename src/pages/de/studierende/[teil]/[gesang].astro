@@ -19,7 +19,7 @@ const nachher=n<gesamt?`/de/studierende/${parte}/${n+1}/`:(parte==='ida'?'/de/st
 const andere={en:`/en/students/${parte==='ida'?'canto':'vuelta-canto'}-${n}/`,pt:`/pt/estudantes/${parte==='ida'?'ida':'volta'}/${n}/`,fr:`/fr/etudiants/${parte==='ida'?'aller':'retour'}/${n}/`};
 const rang=parte==='ida'?'Erster':'Zweiter';
 ---
-<Base migas={[{label:'Für Studierende',href:'/de/studierende/'},{label:`${rang} Teil, Gesang ${roemisch}`}]} lingue={andere} lang="de-DE" pageType="Article" noindex={true} title={`Martín Fierro, ${rang} Teil, Gesang ${roemisch}: ${l.titel}`} description={`Zusammenfassung und Analyse auf Deutsch zu Gesang ${roemisch} von ${teilName}: Originalstrophen, Figuren, Themen, gauchesker Wortschatz und Studienfragen.`}>
+<Base migas={[{label:'Für Studierende',href:'/de/studierende/'},{label:`${rang} Teil, Gesang ${roemisch}`}]} lingue={andere} lang="de-DE" pageType="Article" title={`Martín Fierro, ${rang} Teil, Gesang ${roemisch}: ${l.titel}`} description={`Zusammenfassung und Analyse auf Deutsch zu Gesang ${roemisch} von ${teilName}: Originalstrophen, Figuren, Themen, gauchesker Wortschatz und Studienfragen.`}>
 <article class="blatt">
 <header><p class="eyebrow">MARTÍN FIERRO FÜR STUDIERENDE · {teilName.toUpperCase()} · {jahr}</p><h1><span>Gesang {roemisch}</span> {l.titel}</h1><p class="vorspann">Studienblatt auf Deutsch, immer neben dem Originalgedicht von José Hernández zu lesen.</p></header>
 <section><h2>Was geschieht in Gesang {roemisch}?</h2><p>{l.zusammenfassung}</p><p><a href={`/leer/${parte}/${n}/`} lang="es">Gesang {roemisch} vollständig im Original lesen ↗</a></p></section>
