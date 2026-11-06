@@ -20,7 +20,7 @@ const drugie={en:`/en/students/${parte==='ida'?'canto':'vuelta-canto'}-${n}/`,pt
 const chast=parte==='ida'?'Первая':'Вторая';
 const mesta=(m:number)=>{const d=m%10,s=m%100;return d===1&&s!==11?'место':d>=2&&d<=4&&(s<12||s>14)?'места':'мест';};
 ---
-<Base noindex migas={[{label:'Студентам',href:'/ru/studentam/'},{label:`${chast} часть, песнь ${rimskij}`}]} lingue={drugie} lang="ru-RU" pageType="Article" title={`«Мартин Фьерро», ${chast.toLowerCase()} часть, песнь ${rimskij}: ${k.zagolovok}`} description={`Краткое содержание и разбор на русском песни ${rimskij} поэмы «${nazvanie}»: строфы оригинала, персонажи, темы, слова языка гаучо и вопросы для занятий.`}>
+<Base migas={[{label:'Студентам',href:'/ru/studentam/'},{label:`${chast} часть, песнь ${rimskij}`}]} lingue={drugie} lang="ru-RU" pageType="Article" title={`«Мартин Фьерро», ${chast.toLowerCase()} часть, песнь ${rimskij}: ${k.zagolovok}`} description={`Краткое содержание и разбор на русском песни ${rimskij} поэмы «${nazvanie}»: строфы оригинала, персонажи, темы, слова языка гаучо и вопросы для занятий.`}>
 <article class="kartochka">
 <header><p class="eyebrow">«МАРТИН ФЬЕРРО» ДЛЯ СТУДЕНТОВ · {nazvanie.toUpperCase()} · {god}</p><h1><span>Песнь {rimskij}</span> {k.zagolovok}</h1><p class="lid">Учебная карточка на русском; читать всегда рядом с оригинальной поэмой Хосе Эрнандеса.</p></header>
 <section><h2>Что происходит в песни {rimskij}?</h2><p>{k.soderzhanie}</p><p><a href={`/leer/${parte}/${n}/`} lang="es">Читать песнь {rimskij} целиком в оригинале ↗</a></p></section>

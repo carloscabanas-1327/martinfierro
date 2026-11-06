@@ -4,7 +4,7 @@ const stati=[
  {url:'/ru/zhurnal/mate/',nadzagolovok:'Мир гаучо · Ла-Плата',zagolovok:'Мате, напиток пампы',tekst:'От травы гуарани к иезуитским миссиям, от круга мате к костру: история сосуда, который передают из рук в руки, и горький мате в стихах «Мартина Фьерро».',kartinka:'/media/fotografias-v3/mate-pava-yerba.webp',alt:'Цифровая реконструкция: чайник и мате у огня'},
 ];
 ---
-<Base noindex migas={[{label:'Журнал'}]} lingue={{es:'/revista/',en:'/en/magazine/',it:'/it/rivista/',pt:'/pt/revista/',fr:'/fr/revue/',de:'/de/magazin/'}} lang="ru-RU" pageType="CollectionPage" title="Культурный журнал: мир гаучо и пампы" description="Культурный журнал русского издания MARTINFIERRO.ORG: мате, традиции пампы и сельский мир в поэме Хосе Эрнандеса.">
+<Base migas={[{label:'Журнал'}]} lingue={{es:'/revista/',en:'/en/magazine/',it:'/it/rivista/',pt:'/pt/revista/',fr:'/fr/revue/',de:'/de/magazin/'}} lang="ru-RU" pageType="CollectionPage" title="Культурный журнал: мир гаучо и пампы" description="Культурный журнал русского издания MARTINFIERRO.ORG: мате, традиции пампы и сельский мир в поэме Хосе Эрнандеса.">
 <div class="zhurnal-ru">
  <header><p class="eyebrow">КУЛЬТУРНЫЙ ЖУРНАЛ · НА РУССКОМ</p><h1>Мир гаучо, рассказанный для русскоязычного читателя</h1><p class="lid">Статьи о сельской культуре пампы между Аргентиной, Уругваем и югом Бразилии, написанные для русскоязычного читателя и всегда со ссылками на источники.</p></header>
  <div class="spisok">{stati.map(a=><article><a href={a.url}><img src={a.kartinka} alt={a.alt} loading="lazy" decoding="async"/><div><p class="nadzagolovok">{a.nadzagolovok}</p><h2>{a.zagolovok}</h2><p>{a.tekst}</p><strong>Читать статью →</strong></div></a></article>)}</div>
