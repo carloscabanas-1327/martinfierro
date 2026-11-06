@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import {numeroDeVersos} from '../../lib/corpus';
+import {resumenIda,resumenVuelta} from '../../data/es-resumen';
+const versosIda=numeroDeVersos('ida'), versosVuelta=numeroDeVersos('vuelta');
+const fmt=(n:number)=>n.toLocaleString('es-AR');
+const preguntas:[string,string][]=[
+ ['¿De qué trata Martín Fierro?','Es la historia de un gaucho al que mandan por la fuerza a la frontera, pierde su familia y su rancho, se vuelve matrero, se hace amigo del sargento Cruz y se va a vivir entre los indios. En la segunda parte vuelve, encuentra a sus hijos y les da sus consejos.'],
+ ['¿Quién escribió Martín Fierro?','José Hernández (1834–1886), periodista y político argentino. Publicó El gaucho Martín Fierro en 1872 y La vuelta de Martín Fierro en 1879.'],
+ ['¿Cuántas partes y cantos tiene?',`Dos partes: La ida, con 13 cantos y ${fmt(versosIda)} versos, y La vuelta, con 33 cantos y ${fmt(versosVuelta)} versos. En total, 46 cantos y ${fmt(versosIda+versosVuelta)} versos.`],
+ ['¿Quiénes son los personajes principales?','Martín Fierro, el sargento Cruz, los dos hijos de Fierro, el viejo Vizcacha, Picardía (hijo de Cruz), la cautiva y el Moreno.'],
+ ['¿Cuál es el tema principal?','La injusticia que sufre el gaucho: la leva, los abusos de la autoridad y la pérdida del hogar. También la amistad, la violencia y sus consecuencias, y en la Vuelta, la familia y la integración a la sociedad.'],
+ ['¿Cuál es la estrofa más famosa?','La de los consejos del canto XXXII de La vuelta: «Los hermanos sean unidos / porque ésa es la ley primera / tengan unión verdadera / en cualquier tiempo que sea, / porque, si entre ellos pelean, / los devoran los de ajuera».'],
+];
+const canonical=new URL('/martin-fierro-resumen/',Astro.site).toString();
+const faq={'@context':'https://schema.org','@type':'FAQPage',mainEntity:preguntas.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}})),url:canonical,inLanguage:'es-AR'};
+const bloques=[
+ {parte:'ida' as const,nombre:'El gaucho Martín Fierro',anio:1872,items:resumenIda},
+ {parte:'vuelta' as const,nombre:'La vuelta de Martín Fierro',anio:1879,items:resumenVuelta},
+];
+const romano=(n:number)=>{const r:[number,string][]=[[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];let s='';for(const [v,l] of [[30,'XXX'],[20,'XX'],...r] as [number,string][]){while(n>=v){s+=l;n-=v;}}return s;};
+---
+<Base migas={[{label:'Para estudiantes',href:'/estudiantes/'},{label:'Resumen'}]} pageType="Article" adKind="article" title="Martín Fierro: resumen de la Ida y la Vuelta, canto por canto" description="Resumen de Martín Fierro de José Hernández: de qué trata, resumen de El gaucho Martín Fierro (1872) y La vuelta (1879), los 46 cantos uno por uno, personajes y temas.">
+<article class="mf-resumen">
+<script type="application/ld+json" set:html={JSON.stringify(faq).replace(/</g,'\\u003c')}/>
+<header><p class="eyebrow">PARA ESTUDIANTES · JOSÉ HERNÁNDEZ · 1872 / 1879</p><h1>Martín Fierro: resumen de la Ida y la Vuelta</h1><p class="lead">De qué trata el poema de José Hernández, qué pasa en cada una de sus dos partes y un resumen breve de los 46 cantos, para repasar antes de leer o de un trabajo práctico.</p></header>
+<figure class="mf-resumen-foto"><img src="/media/fotografias-v3/la-ida.webp" width="1200" height="720" alt="Recreación digital de un gaucho recorriendo la pampa" fetchpriority="high"/><figcaption>Recreación digital; no es una fotografía histórica.</figcaption></figure>
+<div class="mf-resumen-cuerpo">
+<nav class="mf-resumen-indice" aria-label="En esta página"><strong>En esta página</strong><a href="#breve">Resumen breve</a><a href="#ida">Resumen de la Ida</a><a href="#vuelta">Resumen de la Vuelta</a><a href="#cantos">Canto por canto</a><a href="#personajes">Personajes</a><a href="#temas">Temas</a><a href="#preguntas">Preguntas frecuentes</a></nav>
+
+<section id="breve"><h2>Resumen breve</h2><p>Martín Fierro es un gaucho que vive feliz en su rancho con su mujer y sus hijos hasta que el juez de paz lo manda por la fuerza a servir en un fortín de la frontera. Allí sufre hambre, castigos y abusos, y nunca le pagan. Deserta, vuelve y encuentra su rancho en ruinas y a su familia dispersa. Se convierte en gaucho matrero, mata a dos hombres y lo persigue una partida policial, hasta que el sargento Cruz se pasa a su lado. Juntos cruzan la frontera para vivir entre los indios.</p><p>En la segunda parte, Fierro cuenta el cautiverio entre los indios, la muerte de Cruz y el rescate de una cautiva. Vuelve, encuentra a sus dos hijos y conoce a Picardía, el hijo de Cruz. Cada uno cuenta su historia; aparece el viejo Vizcacha y un moreno lo desafía a una payada. Antes de separarse, Fierro les da sus famosos consejos.</p></section>
+<AdSlot id="article-02-after-introduction" kind="article"/>
+
+<section id="ida"><h2>Resumen de El gaucho Martín Fierro (1872)</h2><p>La primera parte, conocida como <em>La ida</em>, tiene 13 cantos y {fmt(versosIda)} versos. Empieza con Fierro presentándose como cantor y recordando la vida en el pago antes de la desgracia (cantos I y II). La leva lo lleva a la frontera, donde describe la miseria del fortín y los abusos de los jefes (III a V). Cuando deserta y vuelve, encuentra la tapera (VI). Ya matrero, mata a un moreno en un baile y a un gaucho guapo en una pulpería (VII y VIII).</p><p>Rodeado por una partida, pelea solo hasta que el sargento Cruz se pone de su lado (IX). Cruz cuenta su propia historia de amor, injusticia y persecución (X a XII). En el último canto, Fierro rompe la guitarra y los dos amigos cruzan la frontera hacia el desierto (XIII).</p><p><a href="/leer/ida/">Leer La ida completa →</a></p></section>
+
+<section id="vuelta"><h2>Resumen de La vuelta de Martín Fierro (1879)</h2><p>La segunda parte tiene 33 cantos y {fmt(versosVuelta)} versos. Fierro vuelve a cantar y cuenta su vida entre los indios: la desconfianza, el cautiverio, la viruela, la muerte de Cruz y la pelea para salvar a una cautiva (cantos I a X). De regreso, encuentra a sus dos hijos (XI).</p><p>El hijo mayor cuenta su paso por la Penitenciaría (XII). El segundo cuenta cómo perdió su herencia bajo la tutela del viejo Vizcacha, sus consejos cínicos y su muerte (XIII a XIX). Aparece Picardía, que narra su vida de tahúr, la injusticia en las elecciones y en la frontera, y descubre que es hijo de Cruz (XX a XXVIII). Un moreno desafía a Fierro a una payada y revela que es hermano del hombre que Fierro mató (XXIX y XXX). La pelea se evita, Fierro da sus consejos y los cuatro se separan cambiando de nombre (XXXI a XXXIII).</p><p><a href="/leer/vuelta/">Leer La vuelta completa →</a> · <a href="/consejos-martin-fierro/">Los consejos de Martín Fierro →</a></p></section>
+<AdSlot id="article-03-middle" kind="article"/>
+
+<section id="cantos"><h2>Resumen canto por canto</h2><p>Un párrafo por canto. Cada uno enlaza al texto original y a la ficha de estudio con preguntas.</p>
+{bloques.map(b=><div class="mf-resumen-parte"><h3>{b.nombre} ({b.anio})</h3><ol>{Object.entries(b.items).map(([n,c])=><li id={`${b.parte}-${n}`}><p class="mf-resumen-num">Canto {romano(Number(n))}</p><h4>{c.titulo}</h4><p>{c.resumen}</p><p class="mf-resumen-links"><a href={`/leer/${b.parte}/${n}/`}>Leer el canto</a> · <a href={`/estudiantes/${b.parte}/${n}/`}>Ficha de estudio</a></p></li>)}</ol></div>)}</section>
+
+<section id="personajes"><h2>Personajes principales</h2><ul>
+ <li><strong>Martín Fierro:</strong> gaucho, cantor y narrador. Víctima de la injusticia, pero también autor de violencia: sus palabras no son siempre la opinión de Hernández.</li>
+ <li><strong>El sargento Cruz:</strong> integra la partida que persigue a Fierro y se pasa a su lado. Encarna la amistad.</li>
+ <li><strong>Los hijos de Fierro:</strong> el mayor pasa por la Penitenciaría; el segundo crece bajo la tutela de Vizcacha.</li>
+ <li><strong>El viejo Vizcacha:</strong> tutor ladino cuyos consejos egoístas son el reverso de los de Fierro.</li>
+ <li><strong>Picardía:</strong> hijo de Cruz, tahúr arrepentido que denuncia los abusos en las elecciones y en la frontera.</li>
+ <li><strong>La cautiva y el Moreno:</strong> ella, salvada por Fierro en los toldos; él, el payador que es hermano del moreno muerto en la Ida.</li>
+</ul><p><a href="/personajes/">Guía ilustrada de personajes →</a></p></section>
+
+<section id="temas"><h2>Temas</h2><p>La <strong>injusticia</strong> contra el gaucho (la leva, el juez, el comandante, el fortín) mueve la primera parte. La <strong>pérdida del hogar</strong> transforma al protagonista; la <strong>amistad</strong> con Cruz es el vínculo más fuerte del poema. La <strong>violencia</strong> aparece como algo que Fierro sufre y también comete. En la Vuelta pesan la <strong>familia</strong>, el <strong>trabajo</strong>, la <strong>experiencia</strong> que se transmite de padres a hijos y el pedido de integración: casa, escuela y derechos para el gaucho.</p><p>El poema contiene lenguaje racista y una visión hostil de los indios, propios de su época y de su narrador. Reconocer su valor literario no impide leer esos pasajes con sentido crítico.</p><p><a href="/temas/">Temas de lectura →</a> · <a href="/exegesis/">Análisis literario →</a></p></section>
+
+<section id="preguntas"><h2>Preguntas frecuentes</h2><dl class="mf-resumen-faq">{preguntas.map(([q,a])=><div><dt>{q}</dt><dd>{a}</dd></div>)}</dl></section>
+
+<section class="mf-resumen-fuente"><h2>Sobre este resumen</h2><p>Texto propio de MARTINFIERRO.ORG, escrito a partir del poema original. Resume lo que cuenta cada canto; no reemplaza la lectura. Las citas de versos provienen del mismo corpus que usa el lector del sitio. Las ilustraciones son recreaciones digitales.</p><p><a href="/leer/">La obra completa</a> · <a href="/estudiantes/">Para estudiantes</a> · <a href="/jose-hernandez/">José Hernández</a></p></section>
+<AdSlot id="article-05-after-article" kind="article"/>
+</div></article>
+<style>.mf-resumen{max-width:1040px;margin:24px auto 80px;color:#302820}.mf-resumen a{color:#843e2b;text-underline-offset:4px}.eyebrow{font:750 .71rem system-ui,sans-serif;letter-spacing:.14em;color:#954c35}.mf-resumen h1{font:600 clamp(2.4rem,5vw,4.5rem)/1.1 Georgia,serif;letter-spacing:-.03em;max-width:920px;margin:15px 0;text-wrap:balance}.lead{font:1.2rem/1.7 Georgia,serif;max-width:72ch}.mf-resumen-foto{margin:30px 0 38px}.mf-resumen-foto img{width:100%;height:auto;max-height:440px;object-fit:cover;border-radius:5px}.mf-resumen-foto figcaption{font:.75rem system-ui,sans-serif;color:#6b594b;margin-top:7px}.mf-resumen-cuerpo{max-width:790px;margin:auto}.mf-resumen-indice{border-block:1px solid #c9b9a7;display:flex;flex-wrap:wrap;gap:12px 18px;padding:20px 0;font:.86rem system-ui,sans-serif}.mf-resumen-indice strong{width:100%}.mf-resumen-cuerpo section{margin:44px 0}.mf-resumen-cuerpo h2{font:600 clamp(1.8rem,3vw,2.5rem)/1.2 Georgia,serif}.mf-resumen-cuerpo h3{font:600 1.6rem/1.25 Georgia,serif;margin:30px 0 8px}.mf-resumen-cuerpo p,.mf-resumen-cuerpo li,.mf-resumen-cuerpo dd{font:1.06rem/1.8 Georgia,serif}.mf-resumen-parte ol{list-style:none;padding:0;margin:0}.mf-resumen-parte li{border-top:1px solid #d3c3b0;padding:16px 0;scroll-margin-top:70px}.mf-resumen-parte h4{font:600 1.2rem/1.35 Georgia,serif;margin:2px 0 6px}.mf-resumen-parte li p{margin:0 0 6px}.mf-resumen-num{font:700 .74rem system-ui,sans-serif!important;letter-spacing:.1em;color:#8b4731;text-transform:uppercase}.mf-resumen-links{font:.88rem system-ui,sans-serif!important}#personajes li{margin:10px 0}.mf-resumen-faq{margin:0}.mf-resumen-faq div{border-top:1px solid #d3c3b0;padding:14px 0}.mf-resumen-faq dt{font:700 1.05rem system-ui,sans-serif;margin-bottom:6px}.mf-resumen-faq dd{margin:0}.mf-resumen-fuente{background:#eee3d7;padding:22px 26px}@media(max-width:600px){.mf-resumen-fuente{padding:18px}}</style>
+</Base>

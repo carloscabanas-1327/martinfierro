@@ -6,6 +6,7 @@ export const documentosES:DocumentoES[]=[
 {titulo:'La obra completa',url:'/leer/',descripcion:'El gaucho Martín Fierro y La vuelta: los 46 cantos originales.',categoria:'Lectura'},
 {titulo:'El gaucho Martín Fierro (1872)',url:'/leer/ida/',descripcion:'Primera parte del poema, trece cantos.',categoria:'Lectura'},
 {titulo:'La vuelta de Martín Fierro (1879)',url:'/leer/vuelta/',descripcion:'Segunda parte del poema, treinta y tres cantos.',categoria:'Lectura'},
+{titulo:'Martín Fierro: resumen',url:'/martin-fierro-resumen/',descripcion:'Resumen de la Ida y la Vuelta y de los 46 cantos, personajes y temas.',categoria:'Lectura'},
 {titulo:'Consejos de Martín Fierro a sus hijos',url:'/consejos-martin-fierro/',descripcion:'Pasajes, contexto y lectura de los consejos.',categoria:'Lectura'},
 {titulo:'José Hernández',url:'/jose-hernandez/',descripcion:'Vida, obra y contexto del autor.',categoria:'Autor'},
 {titulo:'Personajes principales',url:'/personajes/',descripcion:'Personajes, vínculos y episodios de Martín Fierro.',categoria:'Personajes'},
