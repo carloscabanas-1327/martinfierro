@@ -1,0 +1,36 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import {estrofasDeCanto,partes,type Parte} from '../../../../lib/corpus';
+import {kartochkiIda,type KartochkaRu} from '../../../../data/ru-kartochki-ida';
+import {kartochkiVuelta} from '../../../../data/ru-kartochki-vuelta';
+export function getStaticPaths(){
+ const p=(parte:Parte,k:Record<number,KartochkaRu>)=>Object.keys(k).map(n=>({params:{chast:parte,pesn:n},props:{parte,n:Number(n)}}));
+ return [...p('ida',kartochkiIda),...p('vuelta',kartochkiVuelta)];
+}
+const {parte,n}=Astro.props as {parte:Parte;n:number};
+const k=(parte==='ida'?kartochkiIda:kartochkiVuelta)[n];
+const rimskij=partes[parte].cantos.find(c=>c.numero===n)!.titulo;
+const vsego=partes[parte].cantos.length;
+const nazvanie=parte==='ida'?'El gaucho Martín Fierro':'La vuelta de Martín Fierro';
+const god=partes[parte].anio;
+const otryvki=estrofasDeCanto(parte,n).filter(e=>k.strofy.includes(e.numero));
+const pred=n>1?`/ru/studentam/${parte}/${n-1}/`:(parte==='vuelta'?'/ru/studentam/ida/13/':undefined);
+const sled=n<vsego?`/ru/studentam/${parte}/${n+1}/`:(parte==='ida'?'/ru/studentam/vuelta/1/':undefined);
+const drugie={en:`/en/students/${parte==='ida'?'canto':'vuelta-canto'}-${n}/`,pt:`/pt/estudantes/${parte==='ida'?'ida':'volta'}/${n}/`,fr:`/fr/etudiants/${parte==='ida'?'aller':'retour'}/${n}/`,de:`/de/studierende/${parte}/${n}/`};
+const chast=parte==='ida'?'Первая':'Вторая';
+const mesta=(m:number)=>{const d=m%10,s=m%100;return d===1&&s!==11?'место':d>=2&&d<=4&&(s<12||s>14)?'места':'мест';};
+---
+<Base noindex migas={[{label:'Студентам',href:'/ru/studentam/'},{label:`${chast} часть, песнь ${rimskij}`}]} lingue={drugie} lang="ru-RU" pageType="Article" title={`«Мартин Фьерро», ${chast.toLowerCase()} часть, песнь ${rimskij}: ${k.zagolovok}`} description={`Краткое содержание и разбор на русском песни ${rimskij} поэмы «${nazvanie}»: строфы оригинала, персонажи, темы, слова языка гаучо и вопросы для занятий.`}>
+<article class="kartochka">
+<header><p class="eyebrow">«МАРТИН ФЬЕРРО» ДЛЯ СТУДЕНТОВ · {nazvanie.toUpperCase()} · {god}</p><h1><span>Песнь {rimskij}</span> {k.zagolovok}</h1><p class="lid">Учебная карточка на русском; читать всегда рядом с оригинальной поэмой Хосе Эрнандеса.</p></header>
+<section><h2>Что происходит в песни {rimskij}?</h2><p>{k.soderzhanie}</p><p><a href={`/leer/${parte}/${n}/`} lang="es">Читать песнь {rimskij} целиком в оригинале ↗</a></p></section>
+<section><h2>Стихи оригинала: {otryvki.length===1?'одно место':`${otryvki.length} ${mesta(otryvki.length)}`} для изучения</h2><p>Строфы взяты из оригинального текста, без осовременивания. Пояснения на этой странице — толкование, а не перевод.</p>{otryvki.map(e=><figure class="strofa" lang="es"><figcaption lang="ru">Строфа {e.numero}</figcaption><blockquote>{e.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>)}</section>
+<section class="bloki"><div><h2>Персонажи и голоса</h2><p>{k.personazhi}</p></div><div><h2>Темы</h2><p>{k.temy}</p></div></section>
+<section><h2>Слова песни</h2><dl class="slova">{k.slova.map(([w,s])=><div><dt lang="es">{w}</dt><dd>{s}</dd></div>)}</dl></section>
+{k.analiz&&<section><h2>Для внимательного чтения</h2><p>{k.analiz}</p>{parte==='vuelta'&&n===32&&<p><a href="/ru/sovety-martina-fierro/">Советы строфа за строфой, с учебным переводом ↗</a></p>}</section>}
+<section><h2>Вопросы для занятий и обсуждения</h2><ol>{k.voprosy.map(q=><li>{q}</li>)}</ol><p>Опирайте ответы на места из оригинальной песни. Верными могут быть несколько толкований, если они основаны на тексте и контексте.</p></section>
+<nav class="navigaciya" aria-label="Другие песни">{pred?<a href={pred}>← Предыдущая песнь</a>:<span></span>}<a href="/ru/studentam/">Все песни</a>{sled?<a href={sled}>Следующая песнь →</a>:<span></span>}</nav>
+<section class="istochnik"><h2>Источник</h2><p>Хосе Эрнандес, <em lang="es">{nazvanie}</em> ({god}), песнь {rimskij}, по структурированному оригинальному тексту сайта. Краткое содержание, разбор и вопросы: учебный комментарий редакции MARTINFIERRO.ORG, а не пояснения автора.</p></section>
+</article>
+<style>.kartochka{max-width:850px;margin:25px auto 85px;color:#302820}.kartochka a{color:#80402f;text-underline-offset:4px}.eyebrow{font:750 .72rem system-ui,sans-serif;letter-spacing:.13em;color:#945138}.kartochka h1{font:600 clamp(2.2rem,5vw,3.9rem)/1.1 Georgia,serif;letter-spacing:-.03em;margin:15px 0;text-wrap:balance;hyphens:auto}.kartochka h1 span{display:block;font:700 .9rem system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#8b4731;margin-bottom:10px}.lid{font:1.2rem/1.6 Georgia,serif}.kartochka section{margin:36px 0}.kartochka h2{font:600 clamp(1.6rem,3vw,2.2rem) Georgia,serif;hyphens:auto}.kartochka p,.kartochka li,.kartochka dd{font:1.05rem/1.8 Georgia,serif;hyphens:auto}.kartochka li{margin:12px 0}.strofa{border-top:1px solid #cab7a2;margin:22px 0;padding:20px;background:#f3ecdf}.strofa figcaption{font:.78rem system-ui,sans-serif;color:#74604e}.strofa blockquote{margin:12px 0;border-left:3px solid #ac937b;padding-left:17px}.strofa span{display:block;font:1.11rem/1.65 Georgia,serif}.bloki{display:grid;grid-template-columns:1fr 1fr;gap:28px}.bloki h2{font-size:1.5rem!important}.slova{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 26px}.slova div{border-top:1px solid #d7c7b4;padding-top:8px}.slova dt{font:600 1.05rem Georgia,serif;font-style:italic}.slova dd{margin:0;font-size:.98rem!important;line-height:1.6!important}.navigaciya{display:flex;justify-content:space-between;gap:12px;border-block:1px solid #c8b9a7;padding:16px 0;font:.88rem system-ui,sans-serif}.istochnik{background:#eee4d7;padding:22px 25px}@media(max-width:650px){.bloki,.slova{grid-template-columns:1fr;gap:12px}.strofa{padding:16px}.istochnik{padding:18px}}</style>
+</Base>

@@ -1,0 +1,19 @@
+---
+// Шаблон статьи русского издания (та же типографика, что и в итальянском издании).
+import '../styles/edizione-italiana.css';
+interface Props {nadzagolovok:string; zagolovok:string; lid:string; izobrazhenie?:string; alt?:string; podpis?:string; istochniki?:{name:string; url:string; yazyk?:string}[]; primechanie?:string}
+const {nadzagolovok,zagolovok,lid,izobrazhenie,alt='',podpis,istochniki=[],primechanie}=Astro.props;
+---
+<article class="it-articolo" lang="ru-RU">
+ <header class="it-testata">
+  <p class="it-occhiello">{nadzagolovok}</p>
+  <h1 set:html={zagolovok}/>
+  <p class="it-sommario">{lid}</p>
+ </header>
+ {izobrazhenie && <figure class="it-figura"><img src={izobrazhenie} alt={alt} loading="eager" decoding="async"/>{podpis && <figcaption>{podpis}</figcaption>}</figure>}
+ <div class="it-corpo">
+  <slot/>
+  {istochniki.length>0 && <section class="it-fonti" aria-labelledby="ru-istochniki"><h2 id="ru-istochniki">Источники и литература</h2>{primechanie && <p>{primechanie}</p>}<ul>{istochniki.map(f=><li><a href={f.url} lang={f.yazyk} {...(f.url.startsWith('http')?{target:'_blank',rel:'noopener noreferrer'}:{})}>{f.name}</a></li>)}</ul></section>}
+  <p class="it-ritorno"><a href="/ru/">← Вернуться к русскому изданию</a> · <a href="/ru/studentam/">Учебные карточки</a></p>
+ </div>
+</article>

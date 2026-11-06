@@ -1,0 +1,51 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {estrofasDeCanto,partes,numeroDeVersos} from '../../../lib/corpus';
+import {nachaloRu,nachaloSlova} from '../../../data/ru-izuchenie';
+const nachalo=estrofasDeCanto('ida',1).slice(0,3);
+const vsegoStihov=numeroDeVersos('ida')+numeroDeVersos('vuelta');
+const primety=[
+ ['güeno, güen, gúenas','bueno, buenas','хороший, хорошие. Деревенское «bu» произносится как «gü».'],
+ ['juí, juego, ajuera','fui, fuego, afuera','я был (пошёл), огонь, снаружи. «F» превращается в придыхательное «j».'],
+ ['naides, ansí, ansina','nadie, así','никто, так.'],
+ ['dende, pa, ande','desde, para, donde','с (от), для, где.'],
+ ['sentao, desgraciao','sentado, desgraciado','сидящий, несчастный. «D» между гласными выпадает, как в живой речи.'],
+ ['estraño, esperencia','extraño, experiencia','странный, опыт. Книжное «x» становится простым «s».'],
+];
+const lozhnyeDruzya=[
+ ['rato','недолгое время, минутка (с «ратью» ничего общего)'],
+ ['pelear','драться, сражаться'],
+ ['china','подруга, жена гаучо (а не Китай)'],
+ ['pago','родные места, край, откуда ты родом (а не платёж)'],
+ ['flete, pingo','хороший конь, любимый конь (а не фрахт)'],
+ ['facón','большой нож гаучо'],
+ ['pulpería','деревенская лавка с распивочной, место встреч и драк'],
+ ['picardía','плутовство, лукавство'],
+];
+const chasti=[
+ {parte:'ida' as const,zagolovok:'Первая часть · El gaucho Martín Fierro (1872)',tekst:'Фьерро поёт о счастливой жизни в своей хижине, о принудительном наборе на границу, о дезертирстве, о жизни в бегах и о дружбе с сержантом Крусом. В конце двое мужчин переходят границу, чтобы жить среди индейцев.'},
+ {parte:'vuelta' as const,zagolovok:'Вторая часть · La vuelta de Martín Fierro (1879)',tekst:'Фьерро возвращается, находит своих сыновей и встречает сына Круса. Каждый рассказывает свою историю; здесь есть старик Вискача, пайяда с Морено и, в песни XXXII, советы сыновьям.'},
+];
+---
+<Base noindex migas={[{label:'Читать поэму'}]} lingue={{es:'/leer/',en:'/en/reader/',it:'/it/lettore/',pt:'/pt/ler-o-poema/',fr:'/fr/lire-le-poeme/',de:'/de/das-gedicht-lesen/'}} lang="ru-RU" pageType="CollectionPage" title="Как читать «Мартина Фьерро» в оригинале: путеводитель на русском" description="Путеводитель на русском для чтения «Мартина Фьерро» в испанском оригинале: начало поэмы с учебным переводом, орфография языка гаучо, «ложные друзья» и 46 песен.">
+<article class="putevoditel-ru">
+<header><p class="eyebrow">ЧИТАТЬ ПОЭМУ · ПУТЕВОДИТЕЛЬ НА РУССКОМ</p><h1>Как читать «Мартина Фьерро» в оригинале</h1><p class="lead">Тот, кто немного выучил испанский, уже понимает значительную часть поэмы. Этот путеводитель показывает, что меняется в орфографии Эрнандеса, какие слова сбивают с толку и как добраться до каждой из 46 песен.</p></header>
+<div class="primechanie"><strong>О тексте:</strong> ссылки «Читать в оригинале» ведут к испанской поэме из {vsegoStihov.toLocaleString('ru-RU')} стихов Хосе Эрнандеса. Это издание не публикует полного перевода: существующий русский перевод охраняется авторским правом. Русские фрагменты на этой странице — учебные переводы нашей редакции.</div>
+
+<section class="nachalo" aria-labelledby="ru-nachalo"><p class="eyebrow">ТАК НАЧИНАЕТСЯ ПОЭМА</p><h2 id="ru-nachalo" lang="es">«Aquí me pongo a cantar»</h2><p>Три первые строфы песни I. Певец просит помощи у святых, прежде чем рассказать свою историю, как это делали пайадоры, открывая выступление.</p>
+{nachalo.map(e=><div class="para"><blockquote lang="es"><span class="num">Строфа {e.numero}</span>{e.versos.map(v=><span class="stih">{v.texto}</span>)}</blockquote><div class="perevod"><span class="num">Учебный перевод</span><p>{nachaloRu[e.numero]}</p>{nachaloSlova[e.numero]&&<dl>{nachaloSlova[e.numero].map(([w,s])=><><dt lang="es">{w}</dt><dd>{s}</dd></>)}</dl>}</div></div>)}
+<p class="dalee"><a href="/leer/ida/1/" lang="es">Читать песнь I в оригинале дальше →</a></p></section>
+
+<section aria-labelledby="ru-orfografiya"><h2 id="ru-orfografiya">Деревенский испанский: шесть ориентиров</h2><p>Эрнандес пишет так, как говорит гаучо провинции Буэнос-Айрес. Орфография кажется странной, но подчиняется простым правилам. Читайте вслух: почти всегда звучание подсказывает слово.</p>
+<table><thead><tr><th scope="col">В поэме</th><th scope="col">Литературный испанский</th><th scope="col">По-русски</th></tr></thead><tbody>{primety.map(([a,b,c])=><tr><td lang="es"><em>{a}</em></td><td lang="es">{b}</td><td>{c}</td></tr>)}</tbody></table></section>
+
+<section aria-labelledby="ru-druzya"><h2 id="ru-druzya">«Ложные друзья»</h2><p>Некоторые слова напоминают русские слова или испанский из учебника, а в поэме значат совсем другое.</p><dl class="druzya">{lozhnyeDruzya.map(([w,s])=><div><dt lang="es">{w}</dt><dd>{s}</dd></div>)}</dl><p>Подробнее в <a href="/ru/studentam/glossarij/">словаре гаучо</a>.</p></section>
+
+{chasti.map(p=><section aria-label={p.zagolovok}><h2>{p.zagolovok}</h2><p>{p.tekst}</p><div class="pesni">{partes[p.parte].cantos.map(c=><div><strong>Песнь {c.titulo}</strong><a href={`/ru/studentam/${p.parte}/${c.numero}/`}>Карточка</a><a href={`/leer/${p.parte}/${c.numero}/`} lang="es">Читать в оригинале</a></div>)}</div>{p.parte==='vuelta'&&<p class="vrezka">Начните с песни XXXII: <a href="/ru/sovety-martina-fierro/">советы сыновьям, с учебным переводом строфа за строфой</a>.</p>}</section>)}
+
+<section class="perevody" aria-labelledby="ru-perevody"><h2 id="ru-perevody">«Мартин Фьерро» по-русски</h2><p>Единственный известный нам полный русский перевод выполнил Михаил Александрович Донской (настоящая фамилия Явец; Санкт-Петербург, 1913–1996), переводчик испанской, французской и английской поэзии и драмы: Хосе Эрнандес, «Мартин Фьерро», Москва, «Художественная литература», 1972. В работе над переводом ему помогали лингвист С. Главко, уроженец Аргентины, и переводчик А. Гелескул.</p><p>Перевод охраняется авторским правом (по правилу семидесяти лет после смерти автора до 1 января 2067 года), поэтому мы его не воспроизводим. Если у вас есть это издание, читайте его рядом с оригиналом: наше издание задумано именно для этого.</p><p class="istochnik">Источник: статья «Донской Михаил Александрович» в энциклопедии «Писатели Ленинграда» (lavkapisateley.spb.ru), биография и библиография переводчика.</p></section>
+
+<section aria-labelledby="ru-citirovanie"><h2 id="ru-citirovanie">Как цитировать отрывок</h2><p>Укажите автора, оригинальное название части, год, песнь и строфу, например: Hernández, <em lang="es">La vuelta de Martín Fierro</em> (1879), песнь XXXII, строфа 1160. У каждой строфы в разделе для чтения есть собственный адрес, который можно скопировать. Учебные переводы этого издания можно цитировать как «учебный перевод, MARTINFIERRO.ORG».</p></section>
+</article>
+<style>.putevoditel-ru{max-width:1050px;margin:28px auto 85px;color:#30271f}.putevoditel-ru a{color:#83402d;text-underline-offset:4px}.eyebrow{font:750 .73rem system-ui,sans-serif;letter-spacing:.12em;color:#95503a}.putevoditel-ru h1{font:600 clamp(2.4rem,5vw,4.5rem)/1.1 Georgia,serif;text-wrap:balance;hyphens:auto}.putevoditel-ru h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.2 Georgia,serif;hyphens:auto}.putevoditel-ru p,.putevoditel-ru td,.putevoditel-ru dd{font:1.06rem/1.7 Georgia,serif;hyphens:auto}.lead{font-size:1.24rem!important;max-width:70ch}.primechanie{background:#eee3d5;border-left:4px solid #904b36;padding:22px;font:1rem/1.65 Georgia,serif}.putevoditel-ru section{margin:44px 0}.nachalo{border-block:1px solid #bba995;padding:30px 0}.para{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:18px 0}.para blockquote{margin:0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.stih{display:block;font:1.13rem/1.65 Georgia,serif}.num{display:block;font:700 .7rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8b4731;margin-bottom:8px}.perevod{padding:20px 4px}.perevod p{margin:0}.perevod dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:12px 0 0;font:.85rem/1.5 system-ui,sans-serif;color:#56483b}.perevod dt{font-style:italic;font-weight:600}.perevod dd{margin:0;font:inherit}.dalee{font:.95rem system-ui,sans-serif!important}table{width:100%;border-collapse:collapse;margin-top:14px}th{font:700 .78rem system-ui,sans-serif;letter-spacing:.06em;text-align:left;border-bottom:2px solid #382d25;padding:8px}td{border-bottom:1px solid #d7c7b4;padding:10px 8px;vertical-align:top}.druzya{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}.druzya div{border-top:1px solid #d7c7b4;padding-top:8px}.druzya dt{font:600 1.05rem Georgia,serif;font-style:italic}.druzya dd{margin:2px 0 0}.pesni{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.pesni div{background:#efe5d8;padding:14px 16px;display:grid;gap:6px}.pesni strong{font:700 .93rem system-ui,sans-serif;color:#30271f}.pesni a{font:.84rem system-ui,sans-serif}.vrezka{background:#f0e6d7;border-top:3px solid #aa533c;padding:16px 20px}.perevody{background:#f6efe5;padding:10px 25px 22px}.istochnik{font:.85rem/1.5 system-ui,sans-serif!important;color:#6c5b4a}@media(max-width:750px){.para{grid-template-columns:1fr;gap:6px}.pesni{grid-template-columns:repeat(2,minmax(0,1fr))}.druzya{grid-template-columns:1fr}td,th{padding:8px 4px}.putevoditel-ru td{font-size:.95rem}}</style>
+</Base>
