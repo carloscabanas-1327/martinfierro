@@ -4,7 +4,7 @@ const wenzhang=[
  {url:'/zh/zazhi/mate/',yinti:'高乔人的世界 · 拉普拉塔河',biaoti:'马黛茶，潘帕斯的饮品',neirong:'从瓜拉尼人的草叶到耶稣会传教区，从围坐传茶到篝火：一只在众人手中传递的茶具的历史，以及《马丁·菲耶罗》诗句中的苦马黛茶。',tu:'/media/fotografias-v3/mate-pava-yerba.webp',alt:'数字重现：火边的水壶和马黛茶'},
 ];
 ---
-<Base noindex migas={[{label:'文化杂志'}]} lingue={{es:'/revista/',en:'/en/magazine/',it:'/it/rivista/',pt:'/pt/revista/',fr:'/fr/revue/',de:'/de/magazin/',ru:'/ru/zhurnal/'}} lang="zh-CN" pageType="CollectionPage" title="文化杂志：高乔人与潘帕斯的世界" description="MARTINFIERRO.ORG 中文版文化杂志：马黛茶、潘帕斯的传统，以及何塞·埃尔南德斯诗中的乡村世界。">
+<Base migas={[{label:'文化杂志'}]} lingue={{es:'/revista/',en:'/en/magazine/',it:'/it/rivista/',pt:'/pt/revista/',fr:'/fr/revue/',de:'/de/magazin/',ru:'/ru/zhurnal/'}} lang="zh-CN" pageType="CollectionPage" title="文化杂志：高乔人与潘帕斯的世界" description="MARTINFIERRO.ORG 中文版文化杂志：马黛茶、潘帕斯的传统，以及何塞·埃尔南德斯诗中的乡村世界。">
 <div class="zazhi-zh">
  <header><p class="eyebrow">文化杂志 · 中文</p><h1>为中文读者讲述的高乔人世界</h1><p class="lid">关于阿根廷、乌拉圭和巴西南部之间潘帕斯乡村文化的文章，为中文读者撰写，每篇都注明来源。</p></header>
  <div class="liebiao">{wenzhang.map(a=><article><a href={a.url}><img src={a.tu} alt={a.alt} loading="lazy" decoding="async"/><div><p class="yinti">{a.yinti}</p><h2>{a.biaoti}</h2><p>{a.neirong}</p><strong>阅读文章 →</strong></div></a></article>)}</div>
