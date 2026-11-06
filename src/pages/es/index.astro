@@ -10,7 +10,7 @@ const ficha=idiomas.find(i=>i.codigo==='es')!;
     <p class="lead">{ficha.intro}</p>
   </section>
   <nav class="language-picker" aria-label="Idiomas · Languages">
-    {idiomas.map(i=><a href={`/${i.codigo}/`} lang={i.codigo} aria-current={i.codigo === ficha.codigo ? 'page' : undefined}>{i.nombre}</a>)}
+    {idiomas.filter(i=>!['la','pms'].includes(i.codigo)).map(i=><a href={`/${i.codigo}/`} lang={i.codigo} aria-current={i.codigo === ficha.codigo ? 'page' : undefined}>{i.nombre}</a>)}
   </nav>
   <section class="editorial-paper" aria-labelledby="traduccion-documentada">
     <p class="eyebrow">{ficha.estado==='original'?'Texto original · 1872 y 1879':'Catálogo documental · Verificación pendiente'}</p>
