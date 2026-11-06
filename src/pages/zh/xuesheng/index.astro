@@ -1,0 +1,20 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {partes} from '../../../lib/corpus';
+import {kapianIda} from '../../../data/zh-kapian-ida';
+import {kapianVuelta} from '../../../data/zh-kapian-vuelta';
+import {zhShu} from '../../../data/zh-xuexi';
+const kuai=[
+ {bufen:'ida',biaoti:'第一部 · El gaucho Martín Fierro（1872）',neirong:'从失去的茅屋到边境：征兵、开小差、杀人、与克鲁斯的友谊，以及走进荒原。',ge:partes.ida.cantos.map(c=>({...c,k:kapianIda[c.numero]}))},
+ {bufen:'vuelta',biaoti:'第二部 · La vuelta de Martín Fierro（1879）',neirong:'囚禁、女俘、与儿子们重逢、老比斯卡查、皮卡迪亚、与莫雷诺的对歌，以及父亲的教诲。',ge:partes.vuelta.cantos.map(c=>({...c,k:kapianVuelta[c.numero]}))},
+];
+---
+<Base noindex migas={[{label:'学生园地'}]} lingue={{es:'/estudiantes/',en:'/en/students/',it:'/it/studenti/',pt:'/pt/estudantes/',fr:'/fr/etudiants/',de:'/de/studierende/',ru:'/ru/studentam/'}} lang="zh-CN" pageType="CollectionPage" title="《马丁·菲耶罗》各歌内容概要：学生学习卡片" description="《马丁·菲耶罗》46 歌的中文学习卡片：内容概要、原文诗节、人物、主题、高乔词语和讨论题。">
+<div class="xuesheng-zh">
+ <header><p class="eyebrow">学生园地 · 46 张中文学习卡片</p><h1>《马丁·菲耶罗》，一歌一歌读</h1><p class="lid">每一歌一张卡片：内容概要、原文重点诗节、人物、主题、高乔词语，以及适合西班牙语课、读书报告和读书会的讨论题。</p></header>
+ <div class="shuoming"><strong>使用方法：</strong>先读卡片，再读这一歌的原文（每页都有链接）。如果你有中文译本，可以把它放在原文旁边对照。卡片提供的是评注，不是诗句的翻译；完整的学习译文请看<a href="/zh/jiaohui/">“父亲的教诲”</a>。</div>
+ {kuai.map(b=><section><h2>{b.biaoti}</h2><p>{b.neirong}</p><ol class="liebiao">{b.ge.map(c=><li><a href={`/zh/xuesheng/${b.bufen}/${c.numero}/`}><span>第{zhShu(c.numero)}歌</span><strong>{c.k.biaoti}</strong></a></li>)}</ol></section>)}
+ <section class="gengduo"><h2>继续阅读</h2><p><a href="/zh/yuedu/">中文读者如何阅读原文</a> · <a href="/zh/zazhi/mate/">马黛茶，潘帕斯的饮品</a> · <a href="/zh/xuesheng/cihui/">高乔词汇</a> · <a href="/zh/renwu/">人物</a></p></section>
+</div>
+<style>.xuesheng-zh{max-width:1000px;margin:25px auto 85px;color:#302820}.xuesheng-zh a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .76rem system-ui,sans-serif;letter-spacing:.12em;color:#934e35}.xuesheng-zh h1{font:600 clamp(2.1rem,5vw,3.8rem)/1.2 Georgia,serif;margin:16px 0}.lid{font:1.2rem/1.85 Georgia,serif;max-width:42em}.shuoming{background:#eee3d5;border-left:4px solid #904b36;padding:20px 22px;font:1rem/1.8 Georgia,serif;margin:28px 0}.xuesheng-zh section{margin:40px 0}.xuesheng-zh h2{font:600 clamp(1.6rem,3vw,2.2rem)/1.3 Georgia,serif}.xuesheng-zh section>p{font:1.05rem/1.85 Georgia,serif}.liebiao{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.liebiao a{display:grid;gap:4px;background:#efe5d8;padding:14px 16px;text-decoration:none;color:#30271f;height:100%}.liebiao span{font:700 .78rem system-ui,sans-serif;letter-spacing:.08em;color:#8b4731}.liebiao strong{font:600 1.04rem/1.5 Georgia,serif}.liebiao a:hover strong{text-decoration:underline}.gengduo{background:#f3ecdf;padding:20px 24px}@media(max-width:650px){.liebiao{grid-template-columns:1fr}.gengduo{padding:16px}}</style>
+</Base>

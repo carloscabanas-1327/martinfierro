@@ -1,0 +1,36 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import {estrofasDeCanto,partes,type Parte} from '../../../../lib/corpus';
+import {kapianIda,type KapianZh} from '../../../../data/zh-kapian-ida';
+import {kapianVuelta} from '../../../../data/zh-kapian-vuelta';
+import {zhShu} from '../../../../data/zh-xuexi';
+export function getStaticPaths(){
+ const p=(parte:Parte,k:Record<number,KapianZh>)=>Object.keys(k).map(n=>({params:{bufen:parte,ge:n},props:{parte,n:Number(n)}}));
+ return [...p('ida',kapianIda),...p('vuelta',kapianVuelta)];
+}
+const {parte,n}=Astro.props as {parte:Parte;n:number};
+const k=(parte==='ida'?kapianIda:kapianVuelta)[n];
+const ge=`第${zhShu(n)}歌`;
+const zongshu=partes[parte].cantos.length;
+const mingcheng=parte==='ida'?'El gaucho Martín Fierro':'La vuelta de Martín Fierro';
+const nian=partes[parte].anio;
+const pianduan=estrofasDeCanto(parte,n).filter(e=>k.jie.includes(e.numero));
+const shang=n>1?`/zh/xuesheng/${parte}/${n-1}/`:(parte==='vuelta'?'/zh/xuesheng/ida/13/':undefined);
+const xia=n<zongshu?`/zh/xuesheng/${parte}/${n+1}/`:(parte==='ida'?'/zh/xuesheng/vuelta/1/':undefined);
+const qita={en:`/en/students/${parte==='ida'?'canto':'vuelta-canto'}-${n}/`,pt:`/pt/estudantes/${parte==='ida'?'ida':'volta'}/${n}/`,fr:`/fr/etudiants/${parte==='ida'?'aller':'retour'}/${n}/`,de:`/de/studierende/${parte}/${n}/`,ru:`/ru/studentam/${parte}/${n}/`};
+const bu=parte==='ida'?'第一部':'第二部';
+---
+<Base noindex migas={[{label:'学生园地',href:'/zh/xuesheng/'},{label:`${bu}，${ge}`}]} lingue={qita} lang="zh-CN" pageType="Article" title={`《马丁·菲耶罗》${bu}${ge}：${k.biaoti}`} description={`《${mingcheng}》${ge}的中文内容概要与解析：原文诗节、人物、主题、高乔词语和课堂讨论题。`}>
+<article class="kapian">
+<header><p class="eyebrow">《马丁·菲耶罗》学生园地 · {mingcheng.toUpperCase()} · {nian}</p><h1><span>{ge}</span> {k.biaoti}</h1><p class="lid">中文学习卡片；请始终与何塞·埃尔南德斯的原诗对照阅读。</p></header>
+<section><h2>{ge}讲了什么？</h2><p>{k.gaiyao}</p><p><a href={`/leer/${parte}/${n}/`} lang="es">阅读{ge}原文全文 ↗</a></p></section>
+<section><h2>原文诗句：{pianduan.length} 处重点段落</h2><p>诗节取自原文，未作现代化处理。本页的说明是解读，不是翻译。</p>{pianduan.map(e=><figure class="shijie" lang="es"><figcaption lang="zh-CN">第 {e.numero} 节</figcaption><blockquote>{e.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>)}</section>
+<section class="liangkuai"><div><h2>人物与声音</h2><p>{k.renwu}</p></div><div><h2>主题</h2><p>{k.zhuti}</p></div></section>
+<section><h2>本歌词语</h2><dl class="ciyu">{k.ci.map(([w,s])=><div><dt lang="es">{w}</dt><dd>{s}</dd></div>)}</dl></section>
+{k.jiexi&&<section><h2>细读</h2><p>{k.jiexi}</p>{parte==='vuelta'&&n===32&&<p><a href="/zh/jiaohui/">逐节阅读教诲，附学习译文 ↗</a></p>}</section>}
+<section><h2>课堂与讨论题</h2><ol>{k.wenti.map(q=><li>{q}</li>)}</ol><p>回答时请以这一歌原文中的段落为依据。只要建立在文本和背景之上，几种不同的解读都可能是对的。</p></section>
+<nav class="daohang" aria-label="其他各歌">{shang?<a href={shang}>← 上一歌</a>:<span></span>}<a href="/zh/xuesheng/">全部各歌</a>{xia?<a href={xia}>下一歌 →</a>:<span></span>}</nav>
+<section class="laiyuan"><h2>来源</h2><p>何塞·埃尔南德斯，<em lang="es">{mingcheng}</em>（{nian}），{ge}，依据本站的结构化原文。内容概要、解析和讨论题：MARTINFIERRO.ORG 编辑部的学习评注，并非作者本人的说明。</p></section>
+</article>
+<style>.kapian{max-width:850px;margin:25px auto 85px;color:#302820}.kapian a{color:#80402f;text-underline-offset:4px}.eyebrow{font:750 .74rem system-ui,sans-serif;letter-spacing:.1em;color:#945138}.kapian h1{font:600 clamp(2rem,5vw,3.4rem)/1.25 Georgia,serif;margin:15px 0;text-wrap:balance}.kapian h1 span{display:block;font:700 .95rem system-ui,sans-serif;letter-spacing:.12em;color:#8b4731;margin-bottom:10px}.lid{font:1.15rem/1.8 Georgia,serif}.kapian section{margin:36px 0}.kapian h2{font:600 clamp(1.5rem,3vw,2rem)/1.35 Georgia,serif}.kapian p,.kapian li,.kapian dd{font:1.05rem/1.9 Georgia,serif}.kapian li{margin:12px 0}.shijie{border-top:1px solid #cab7a2;margin:22px 0;padding:20px;background:#f3ecdf}.shijie figcaption{font:.82rem system-ui,sans-serif;color:#74604e}.shijie blockquote{margin:12px 0;border-left:3px solid #ac937b;padding-left:17px}.shijie span{display:block;font:1.11rem/1.65 Georgia,serif}.liangkuai{display:grid;grid-template-columns:1fr 1fr;gap:28px}.liangkuai h2{font-size:1.45rem!important}.ciyu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 26px}.ciyu div{border-top:1px solid #d7c7b4;padding-top:8px}.ciyu dt{font:600 1.05rem Georgia,serif;font-style:italic}.ciyu dd{margin:0;font-size:.98rem!important;line-height:1.7!important}.daohang{display:flex;justify-content:space-between;gap:12px;border-block:1px solid #c8b9a7;padding:16px 0;font:.92rem system-ui,sans-serif}.laiyuan{background:#eee4d7;padding:22px 25px}@media(max-width:650px){.liangkuai,.ciyu{grid-template-columns:1fr;gap:12px}.shijie{padding:16px}.laiyuan{padding:18px}}</style>
+</Base>

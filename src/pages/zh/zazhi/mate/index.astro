@@ -1,0 +1,47 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import {estrofasDeCanto} from '../../../../lib/corpus';
+// 诗中出现马黛茶和 “cimarrón”（苦马黛茶）的诗节。
+const shijie=(parte:'ida'|'vuelta',canto:number,n:number)=>estrofasDeCanto(parte,canto).find(e=>e.numero===n)!;
+const shiju=[
+ {e:shijie('ida',2,25),chuchu:'El gaucho Martín Fierro，第二歌',href:'/leer/ida/2/',pingzhu:'这是对征兵之前幸福时光的回忆：高乔人天不亮就起身，坐到火边，喝苦马黛茶喝个够，他的女伴则裹着斗篷睡觉。Cimarrón 就是不加糖的苦马黛茶。'},
+ {e:shijie('vuelta',12,703),chuchu:'La vuelta de Martín Fierro，第十二歌',href:'/leer/vuelta/12/',pingzhu:'菲耶罗的长子讲述感化监狱里的生活。在种种剥夺之中，排在第一位的是不许喝马黛茶：对乡下人来说，失去马黛茶，就是失去一切交往。'},
+ {e:shijie('vuelta',30,1090),chuchu:'La vuelta de Martín Fierro，第三十歌',href:'/leer/vuelta/30/',pingzhu:'在对歌中，一位歌手把自己比作马黛茶：只有别人给他“开口”，他才有用。这个比喻之所以成立，是因为每个听众都知道马黛茶怎么泡。'},
+];
+const bufen=[
+ {id:'yizhong',biaoti:'一种饮品，几个国家',duan:[
+  '在布宜诺斯艾利斯和蒙得维的亚，人们叫它 mate；在巴西南部叫 chimarrão；在巴拉圭，用冷水冲泡时叫 tereré。名字在变，动作不变：茶具里放上马黛茶叶，冲入热水，插上一根金属吸管，在众人手中传递。',
+  '在中国，马黛茶常被当作一种来自南美的保健饮品，或者因为球星而为人所知。可是在十九世纪的潘帕斯，马黛茶一点也不稀奇：它是高乔人的日常饮品，是醒来、围火和待客时喝的茶。']},
+ {id:'gualani',biaoti:'早在一切国界之前：瓜拉尼人的草叶',duan:[
+  '巴拉圭冬青（Ilex paraguariensis）是南美洲南部森林里的一种树，分布在巴拉圭东部、巴西南部和阿根廷的米西奥内斯省。它和红茶、绿茶并非亲缘植物：茶叶来自另一种植物，也就是中国人熟悉的茶树。',
+  '早在阿根廷、乌拉圭或巴拉圭出现之前，瓜拉尼诸民族就已经采集和饮用它的叶子，称之为 ka’a（草，植物）。也就是说，这个习俗源于原住民。它不是高乔人或民族国家发明的：他们继承了它。']},
+ {id:'chuanjiaoqu',biaoti:'耶稣会传教区',duan:[
+  '十七、十八世纪，耶稣会士与瓜拉尼人一起，在今天分属阿根廷、巴拉圭和巴西的土地上建立了传教村落（reducciones）。马黛茶不再只是从林中采集，而是开始在种植园里栽培，成为在整个拉普拉塔河流域交易的商品。',
+  '这些传教区的遗址，例如阿根廷的圣伊格纳西奥米尼和巴西的圣米格尔-达斯-米松伊斯，已被列入联合国教科文组织的世界遗产名录。马丁·菲耶罗喝的马黛茶，根植于瓜拉尼植物与殖民地生活的这次相遇。']},
+ {id:'chuancha',biaoti:'围坐传茶',duan:[
+  '泡茶的人（cebador）用热而不沸的水冲泡茶叶，常常自己先喝第一泡，也是最苦的一泡。然后他把茶具重新加满，依次递给每一个人；每人都要把茶喝完再递回去。金属吸管（bombilla）不要乱动，而说一声 “gracias”（谢谢），意思是不想再喝了。',
+  '这些是礼节，不是法律，每家都有自己的规矩。它们的意思很清楚：马黛茶是大家共享的。所以无论在诗里还是在生活中，它都是交往的象征。中国读者也许会想到功夫茶：主人一杯杯斟茶，茶在宾主之间传递，喝茶本身就是待客之道。']},
+ {id:'cimarron',biaoti:'为什么叫 “cimarrón”？',duan:[
+  '在西班牙语里，cimarrón 的意思是野生的、无主的：人们用它称呼在草原上自由生活的牛和马。用在马黛茶上，这个词就指不加糖、“原汁原味”的苦马黛茶。在拉普拉塔河地区，“cimarrón” 至今仍指苦马黛茶。',
+  '在《马丁·菲耶罗》中，这个词两种意思都出现过：有 “perro cimarrón”，即野狗；也有高乔人在火边喝的 cimarrón。这是诗从乡村语言中汲取养分的一个好例子。']},
+];
+const laiyuan=[
+ {name:'UNESCO：Jesuit Missions of the Guaranis（圣伊格纳西奥米尼、圣米格尔-达斯-米松伊斯等），英语',url:'https://whc.unesco.org/en/list/275'},
+ {name:'Royal Botanic Gardens, Kew：Ilex paraguariensis（自然分布范围），英语',url:'https://powo.science.kew.org/taxon/315555-2'},
+ {name:'Argentina.gob.ar：马黛茶、它的植物史与瓜拉尼人（西班牙语）',url:'https://www.argentina.gob.ar/node/213295'},
+];
+---
+<Base noindex migas={[{label:'文化杂志',href:'/zh/zazhi/'},{label:'马黛茶'}]} lingue={{en:'/en/magazine/yerba-mate/',pt:'/pt/revista/chimarrao/',fr:'/fr/revue/mate/',de:'/de/magazin/mate/',ru:'/ru/zhurnal/mate/'}} lang="zh-CN" pageType="Article" title="马黛茶，潘帕斯的饮品：从瓜拉尼人到马丁·菲耶罗" description="马黛茶的历史：瓜拉尼人的起源、耶稣会传教区、围坐传茶的礼节，以及《马丁·菲耶罗》诗句中的苦马黛茶（cimarrón）。">
+<article class="wenzhang-zh">
+<header><p class="eyebrow">文化杂志 · 高乔人的世界</p><h1>马黛茶，潘帕斯的饮品</h1><p class="lid">从布宜诺斯艾利斯到巴西南部，同一只茶具在众人手中传递。马黛茶的历史始于瓜拉尼人，经过耶稣会传教区，一直延伸到《马丁·菲耶罗》的诗句中，在那里，苦马黛茶仍然叫作 cimarrón。</p></header>
+<figure><img src="/media/cultura-gauchesca/mate-tradicional-con-bombilla-rio-de-la-plata.webp" alt="编辑部插图：拉普拉塔河地区带吸管的马黛茶" fetchpriority="high"/><figcaption>当代编辑部插图，并非那个时代的照片。</figcaption></figure>
+<div class="zhengwen"><nav class="mulu" aria-label="本文目录"><strong>本文目录</strong>{bufen.map(s=><a href={`#${s.id}`}>{s.biaoti}</a>)}<a href="#shizhong">诗中的马黛茶</a><a href="#laiyuan">来源</a></nav>
+{bufen.map(s=><section id={s.id}><h2>{s.biaoti}</h2>{s.duan.map(p=><p>{p}</p>)}</section>)}
+<section id="shizhong"><h2>《马丁·菲耶罗》诗句中的马黛茶</h2><p>何塞·埃尔南德斯的诗没有专门为马黛茶写一场戏，但凡是出现日常生活的地方，就有这只茶具。原文中的三处：</p>
+{shiju.map(v=><figure class="yinwen"><figcaption><a href={v.href} lang="es">{v.chuchu}</a> · 第 {v.e.numero} 节</figcaption><blockquote lang="es">{v.e.versos.map(l=><span>{l.texto}</span>)}</blockquote><p>{v.pingzhu}</p></figure>)}
+<p>继续阅读：<a href="/zh/jiaohui/">《马丁·菲耶罗对儿子们的教诲》</a>，第三十二歌全文，附中文学习译文。</p></section>
+<section id="laiyuan"><h2>来源与方法</h2><p>本文为中文版撰写，依据西班牙语版的文化导读，以及巴西、法语、德语和俄语版的文章。我们始终区分历史事实、文学描写和当代插图。诗句取自全站共用的埃尔南德斯原文。</p><ul>{laiyuan.map(f=><li><a href={f.url} target="_blank" rel="noopener noreferrer">{f.name}</a></li>)}</ul>
+<p><a href="/zh/zazhi/">← 返回文化杂志</a> · <a href="/zh/">中文版首页</a></p></section>
+</div></article>
+<style>.wenzhang-zh{max-width:1040px;margin:24px auto 85px;color:#302820}.wenzhang-zh a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .76rem system-ui,sans-serif;letter-spacing:.12em;color:#934e35}.wenzhang-zh h1{font:600 clamp(2.2rem,5vw,4.2rem)/1.2 Georgia,serif;max-width:930px;margin:17px 0;text-wrap:balance}.lid{font:1.22rem/1.85 Georgia,serif;max-width:44em}.wenzhang-zh>figure{margin:32px 0 38px}.wenzhang-zh>figure img{width:100%;max-height:470px;object-fit:cover;border-radius:6px}.wenzhang-zh>figure figcaption{font:.8rem system-ui,sans-serif;color:#6c5b4a;margin-top:9px}.zhengwen{max-width:770px;margin:auto}.mulu{display:flex;flex-wrap:wrap;gap:11px 19px;border-block:1px solid #c8b9a7;padding:21px 0;font:.88rem system-ui,sans-serif}.mulu strong{width:100%}.zhengwen section{margin:44px 0}.zhengwen h2{font:600 clamp(1.6rem,3vw,2.3rem)/1.3 Georgia,serif;margin:0 0 19px}.zhengwen p,.zhengwen li{font:1.08rem/1.95 Georgia,serif}.zhengwen li{margin:12px 0}.yinwen{margin:26px 0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.yinwen figcaption{font:700 .78rem system-ui,sans-serif;letter-spacing:.06em;color:#8b4731}.yinwen blockquote{margin:12px 0;border-left:3px solid #ac937b;padding-left:16px}.yinwen blockquote span{display:block;font:1.1rem/1.65 Georgia,serif}.yinwen p{font-size:1rem!important;margin:0}#laiyuan{background:#eee3d7;padding:25px 30px}@media(max-width:600px){#laiyuan,.yinwen{padding:18px}}</style>
+</Base>

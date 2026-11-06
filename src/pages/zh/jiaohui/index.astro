@@ -1,0 +1,40 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {estrofasDeCanto} from '../../../lib/corpus';
+import {jiaohuiZh,jiaohuiCi,jiaohuiPingzhu} from '../../../data/zh-xuexi';
+const jie=estrofasDeCanto('vuelta',32);
+const zongHang=jie.reduce((n,e)=>n+e.versos.length,0);
+const zhuti=[
+ {name:'像朋友一样说话的父亲',n:1144},{name:'学好比学多更要紧',n:1146},
+ {name:'友谊与正直',n:1150},{name:'劳动',n:1153},
+ {name:'趁热打铁',n:1158},{name:'兄弟团结',n:1160},
+ {name:'反对暴力',n:1167},{name:'告别',n:1174}
+];
+const canonical=new URL('/zh/jiaohui/',Astro.site).toString();
+const shuju={'@context':'https://schema.org','@type':'Article',headline:'马丁·菲耶罗对儿子们的教诲：原文诗句与中文评注',inLanguage:'zh-CN',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
+---
+<Base noindex migas={[{label:'父亲的教诲'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/',pt:'/pt/conselhos-de-martin-fierro/',fr:'/fr/conseils-de-martin-fierro/',de:'/de/ratschlaege-von-martin-fierro/',ru:'/ru/sovety-martina-fierro/'}} lang="zh-CN" pageType="Article" title="马丁·菲耶罗对儿子们的教诲：原文、译文与解读" description="逐节阅读马丁·菲耶罗对儿子们的教诲（《归来》第三十二歌）：西班牙语原文、中文学习译文，以及关于友谊、劳动和兄弟团结的阅读说明。">
+<article class="jiaohui-zh">
+<script type="application/ld+json" set:html={JSON.stringify(shuju).replace(/</g,'\\u003c')}/>
+<header class="yinyan"><p class="eyebrow">LA VUELTA DE MARTÍN FIERRO · 第三十二歌 · 1879</p><h1>马丁·菲耶罗对儿子们的教诲：<em>全歌逐节阅读</em></h1><p class="lid">历经失去、逃亡和重逢之后，马丁·菲耶罗把两个儿子和克鲁斯的儿子叫到身边，把自己学到的东西传给他们。这些诗节是阿根廷文学中被引用最多的，而只有记住说话人自己犯过的错，它们的意思才会完整。</p></header>
+<figure class="toutu"><img src="/media/fotografias-v3/consejos-fogon-hijos.webp" width="1280" height="853" alt="数字重现：马丁·菲耶罗在火边给三个年轻人忠告，手边有马黛茶" fetchpriority="high"/><figcaption>当代数字插图，并非那个时代的图像。</figcaption></figure>
+<div class="zhengwen">
+<section class="beijing"><h2>如何使用本页</h2><p>我们按照何塞·埃尔南德斯的西班牙语原文，列出第三十二歌的全部 {jie.length} 节、{zongHang} 行，拼写不作现代化处理。每一节下面是本站编辑部撰写的<strong>散文体学习译文</strong>，用来帮助理解意思。它不是文学翻译，也不追求押韵：诗句永远是埃尔南德斯的诗句。</p><p>最容易让人困惑的词，例如 “naides”（没有人）、“güeno”（好的）或 “juego”（火），在每一节旁边都有解释。</p><p>这一歌也可以在<a href="/leer/vuelta/32/" lang="es">原文阅读区</a>阅读。</p></section>
+<nav class="mulu" aria-label="跳到某条教诲"><strong>最著名的教诲</strong>{zhuti.map(t=><a href={`#${jie.find(e=>e.numero===t.n)?.id}`}>{t.name}</a>)}</nav>
+<section class="dufa"><h2>怎样理解这些教诲？</h2><p>这些诗句不是脱离故事的格言汇编。说话的人被强行送往边境，失去了家庭，得到了一位忠实的朋友，也不止一次杀过人。这段经历让父亲的道德权威变得复杂，也让这部诗更加丰富。</p><p><strong>团结</strong>回应的是破碎的家庭。<strong>劳动</strong>的意义来自强制兵役和失去的茅屋。拒绝<strong>暴力</strong>，要求读者记住叙述者做过的事，而不是把它忘掉。埃尔南德斯塑造了一个既在教导别人、又可以被质疑的声音。</p></section>
+<h2 id="quange">第三十二歌全文</h2>
+<p class="zhu">先列西班牙语原文，再列学习译文。注释放在个别诗节之后，从不插进诗行之中。</p>
+<div class="jiezu">
+{jie.map(e=><section class="yijie" id={e.id} aria-label={`第 ${e.numero} 节`}>
+<p class="hao">第 {e.numero} 节</p>
+<div class="duizhao">
+<blockquote lang="es">{e.versos.map(v=><span class="hang">{v.texto}</span>)}</blockquote>
+<div class="yiwen"><p class="biaoqian">学习译文</p><p>{jiaohuiZh[e.numero]}</p>{jiaohuiCi[e.numero]&&<dl>{jiaohuiCi[e.numero].map(([w,s])=><><dt lang="es">{w}</dt><dd>{s}</dd></>)}</dl>}</div>
+</div>
+{jiaohuiPingzhu[e.numero]&&<aside class="pingzhu"><p class="pingzhu-biaoti">阅读说明 · {jiaohuiPingzhu[e.numero].biaoti}</p><p>{jiaohuiPingzhu[e.numero].neirong}</p><small>编辑部的解读，不属于诗的原文。</small></aside>}
+</section>)}
+</div>
+<section class="jieyu"><h2>这些教诲为什么至今仍有生命力</h2><p>许多读者能背诵这些诗节，因为它们可以在家里一代代传下去。但细心的阅读不会停在现成的格言上：它会问，为什么菲耶罗在离散之后珍视团结，在失去自己的生计之后赞美劳动，又在暴力贯穿一生之后谴责暴力。</p><p>中文读者会在这里认出一种熟悉的文体：父亲写给子女的家训，从《颜氏家训》到《曾国藩家书》，只是被搬到了潘帕斯草原，搬到了篝火和马黛茶旁边。想走进这个世界，可以读一读<a href="/zh/zazhi/mate/">《马黛茶，潘帕斯的饮品》</a>。</p><h2>来源与参考</h2><ul><li><a href="/leer/vuelta/32/" lang="es">原文阅读区中的第三十二歌</a></li><li><a href="/consejos-martin-fierro/" lang="es">西班牙语版的教诲评注</a></li><li><a href="/zh/yuedu/">中文读者如何阅读《马丁·菲耶罗》西班牙语原文</a></li></ul><p><strong>文本完整性：</strong>以上诗句直接取自全站共用的诗歌语料，本页没有改写任何一行。学习译文和注释属于 MARTINFIERRO.ORG 编辑部。</p></section>
+</div></article>
+<style>.jiaohui-zh{max-width:1050px;margin:25px auto 85px;color:#302820}.jiaohui-zh a{color:#813b28;text-underline-offset:4px}.eyebrow{font:750 .76rem system-ui,sans-serif;letter-spacing:.12em;color:#974f35}.jiaohui-zh h1{font:600 clamp(2.1rem,5vw,4rem)/1.2 Georgia,serif;margin:18px 0;text-wrap:balance}.jiaohui-zh h1 em{font-weight:400}.lid{font:1.2rem/1.85 Georgia,serif;max-width:42em}.toutu{margin:28px 0 38px}.toutu img{width:100%;height:auto;max-height:560px;object-fit:cover;border-radius:5px}.toutu figcaption{font:.78rem/1.5 system-ui,sans-serif;color:#74614d;margin-top:8px}.zhengwen{max-width:860px;margin:auto}.zhengwen h2{font:600 clamp(1.6rem,3vw,2.3rem)/1.3 Georgia,serif;margin:38px 0 17px}.zhengwen p,.zhengwen li{font:1.06rem/1.9 Georgia,serif}.zhengwen li{margin:9px 0}.beijing{background:#f6efe5;padding:10px 25px 25px}.mulu{display:flex;flex-wrap:wrap;gap:10px 18px;border-block:1px solid #c5b5a2;padding:22px 0;margin:34px 0;font:.9rem system-ui,sans-serif}.mulu strong{width:100%}.zhu{color:#655546}.yijie{border-top:1px solid #cfbeaa;padding:24px 0;scroll-margin-top:70px}.hao{font:700 .8rem system-ui,sans-serif!important;color:#82654d;margin:0 0 12px!important;letter-spacing:.06em}.duizhao{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:28px;align-items:start}.duizhao blockquote{margin:0;padding-left:16px;border-left:3px solid #b9a38c}.hang{display:block;font:1.12rem/1.65 Georgia,serif}.yiwen .biaoqian{font:700 .74rem system-ui,sans-serif!important;letter-spacing:.1em;color:#8b4731;margin:0 0 6px!important}.yiwen p{margin:0 0 10px;font-size:1.02rem!important;line-height:1.85!important}.yiwen dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:10px 0 0;font:.86rem/1.6 system-ui,sans-serif;color:#56483b}.yiwen dt{font-style:italic;font-weight:600}.yiwen dd{margin:0}.pingzhu{background:#eee2d3;padding:17px 21px;margin-top:20px}.pingzhu-biaoti{font:700 .95rem/1.5 system-ui,sans-serif!important;color:#773f2e;margin:0!important}.pingzhu p{font-size:.98rem}.pingzhu small{font:.76rem system-ui,sans-serif;color:#746254}.jieyu{background:#f0e6d9;padding:24px 28px;margin:28px 0}.jieyu h2{font-size:1.8rem}@media(max-width:700px){.duizhao{grid-template-columns:1fr;gap:14px}.hang{font-size:1.02rem}.jieyu,.beijing{padding:18px}}</style>
+</Base>

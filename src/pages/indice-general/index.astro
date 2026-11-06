@@ -14,6 +14,8 @@ import { leitfaedenIda } from '../../data/de-leitfaeden-ida';
 import { leitfaedenVuelta } from '../../data/de-leitfaeden-vuelta';
 import { kartochkiIda } from '../../data/ru-kartochki-ida';
 import { kartochkiVuelta } from '../../data/ru-kartochki-vuelta';
+import { kapianIda } from '../../data/zh-kapian-ida';
+import { kapianVuelta } from '../../data/zh-kapian-vuelta';
 const grupos=[
   {
     "id": "lectura",
@@ -339,6 +341,18 @@ const grupos=[
       {titulo:"Русский — Советы Мартина Фьерро",url:"/ru/sovety-martina-fierro/",descripcion:"Canto XXXII completo con traducción de estudio en ruso."},
       {titulo:"Русский — Журнал",url:"/ru/zhurnal/",descripcion:"Revista cultural de la edición rusa."},
       {titulo:"Русский — Мате",url:"/ru/zhurnal/mate/",descripcion:"El mate, de los guaraníes a Martín Fierro, en ruso."},
+      {titulo:"中文",url:"/zh/",descripcion:"Edición china (en preparación): versos originales con traducción de estudio y comentario en chino."},
+      {titulo:"中文 — 阅读史诗",url:"/zh/yuedu/",descripcion:"Guía para leer el original en español desde el chino."},
+      {titulo:"中文 — 学生园地",url:"/zh/xuesheng/",descripcion:"Guías de estudio en chino para los 46 cantos."},
+      ...Object.entries(kapianIda).map(([n,g])=>({titulo:`中文 — Ida, canto ${romano(Number(n))}: ${g.biaoti}`,url:`/zh/xuesheng/ida/${n}/`,descripcion:'Guía de estudio en chino.'})),
+      ...Object.entries(kapianVuelta).map(([n,g])=>({titulo:`中文 — Vuelta, canto ${romano(Number(n))}: ${g.biaoti}`,url:`/zh/xuesheng/vuelta/${n}/`,descripcion:'Guía de estudio en chino.'})),
+      {titulo:"中文 — 高乔词汇",url:"/zh/xuesheng/cihui/",descripcion:"Glosario gauchesco en chino."},
+      {titulo:"中文 — 何塞·埃尔南德斯",url:"/zh/jose-hernandez/",descripcion:"Biografía del autor en chino."},
+      {titulo:"中文 — 人物",url:"/zh/renwu/",descripcion:"Guía de personajes en chino."},
+      {titulo:"中文 — 来源与版权",url:"/zh/laiyuan-yu-banquan/",descripcion:"Fuentes, créditos y derechos de la edición china."},
+      {titulo:"中文 — 父亲的教诲",url:"/zh/jiaohui/",descripcion:"Canto XXXII completo con traducción de estudio en chino."},
+      {titulo:"中文 — 文化杂志",url:"/zh/zazhi/",descripcion:"Revista cultural de la edición china."},
+      {titulo:"中文 — 马黛茶",url:"/zh/zazhi/mate/",descripcion:"El mate, de los guaraníes a Martín Fierro, en chino."},
       {
         "titulo": "Italiano",
         "url": "/it/",

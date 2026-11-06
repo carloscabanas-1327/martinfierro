@@ -10,13 +10,14 @@ const portuguese=lang.toLowerCase().startsWith('pt');
 const french=lang.toLowerCase().startsWith('fr');
 const german=lang.toLowerCase().startsWith('de');
 const russian=lang.toLowerCase().startsWith('ru');
+const chinese=lang.toLowerCase().startsWith('zh');
 // hreflang recíproco: solo para páginas indexables registradas en src/data/equivalencias.ts.
 const grupo=robotsBlocked?undefined:equivalenti(Astro.url.pathname);
 const alternates=grupo?(Object.entries(grupo) as [keyof typeof hreflang,string][]).map(([l,href])=>({hreflang:hreflang[l],href:new URL(href,Astro.site).toString()})):[];
 const xDefault=grupo?.es??grupo?.en;
-const nomiLingua={es:'Español',en:'English',it:'Italiano',pt:'Português',fr:'Français',de:'Deutsch',ru:'Русский'} as const;
+const nomiLingua={es:'Español',en:'English',it:'Italiano',pt:'Português',fr:'Français',de:'Deutsch',ru:'Русский',zh:'中文'} as const;
 type Lingua=keyof typeof nomiLingua;
-const linguaCorrente:Lingua=english?'en':italian?'it':portuguese?'pt':french?'fr':german?'de':russian?'ru':'es';
+const linguaCorrente:Lingua=english?'en':italian?'it':portuguese?'pt':french?'fr':german?'de':russian?'ru':chinese?'zh':'es';
 // Edición brasileña (/pt/): abierta a buscadores desde el 2026-11-04. Con false,
 // «Português» solo aparecería en el selector dentro de /pt/.
 const PT_PUBLICADA=true;
@@ -29,12 +30,15 @@ const DE_PUBLICADA=true;
 // Edición rusa (/ru/): abierta a buscadores desde el 2026-11-06. Con false,
 // «Русский» solo aparecería en el selector dentro de /ru/.
 const RU_PUBLICADA=true;
-const lingueSelettore:Lingua[]=['es','en','it',...(PT_PUBLICADA||portuguese?['pt' as const]:[]),...(FR_PUBLICADA||french?['fr' as const]:[]),...(DE_PUBLICADA||german?['de' as const]:[]),...(RU_PUBLICADA||russian?['ru' as const]:[])];
+// Edición china (/zh/): en noindex hasta su lanzamiento. Con false,
+// «中文» solo aparece en el selector dentro de /zh/.
+const ZH_PUBLICADA=false;
+const lingueSelettore:Lingua[]=['es','en','it',...(PT_PUBLICADA||portuguese?['pt' as const]:[]),...(FR_PUBLICADA||french?['fr' as const]:[]),...(DE_PUBLICADA||german?['de' as const]:[]),...(RU_PUBLICADA||russian?['ru' as const]:[]),...(ZH_PUBLICADA||chinese?['zh' as const]:[])];
 // Selector visible de idioma: los mismos idiomas en todas las ediciones.
 // Usa la página equivalente si está registrada; si no, la portada de cada edición.
 // Las fichas en otras lenguas (/de/, /fr/…) no marcan ningún idioma como actual.
-const edicionPropia=english||italian||portuguese||french||german||russian||lang.toLowerCase().startsWith('es');
-const selettore:Partial<Record<Lingua,string>>={es:'/',en:'/en/',it:'/it/',pt:'/pt/',fr:'/fr/',de:'/de/',ru:'/ru/',...(edicionPropia?{[linguaCorrente]:Astro.url.pathname}:{}),...(grupo??{}),...(lingue??{})};
+const edicionPropia=english||italian||portuguese||french||german||russian||chinese||lang.toLowerCase().startsWith('es');
+const selettore:Partial<Record<Lingua,string>>={es:'/',en:'/en/',it:'/it/',pt:'/pt/',fr:'/fr/',de:'/de/',ru:'/ru/',zh:'/zh/',...(edicionPropia?{[linguaCorrente]:Astro.url.pathname}:{}),...(grupo??{}),...(lingue??{})};
 // Textos fijos de la cabecera, uno por edición.
 const testata={
  es:{salto:'Saltar al contenido',franja:'ARGENTINA · LITERATURA · CULTURA',idioma:'Idioma',inicio:'/',marca:'Martín Fierro — inicio',lema:'Biblioteca documental & revista cultural',leerHref:'/leer/ida/1/',leer:'LEER LA OBRA',nav:'Navegación principal'},
@@ -43,6 +47,7 @@ const testata={
  pt:{salto:'Pular para o conteúdo',franja:'ARGENTINA · LITERATURA · CULTURA',idioma:'Idioma',inicio:'/pt/',marca:'Martín Fierro — edição brasileira',lema:'Biblioteca documental & revista cultural',leerHref:'/pt/estudantes/',leer:'ESTUDAR O POEMA',nav:'Navegação principal'},
  de:{salto:'Zum Inhalt springen',franja:'ARGENTINIEN · LITERATUR · KULTUR',idioma:'Sprache',inicio:'/de/',marca:'Martín Fierro — deutsche Ausgabe',lema:'Dokumentarische Bibliothek & Kulturmagazin',leerHref:'/de/studierende/',leer:'STUDIENBLÄTTER',nav:'Hauptnavigation'},
  ru:{salto:'Перейти к содержанию',franja:'АРГЕНТИНА · ЛИТЕРАТУРА · КУЛЬТУРА',idioma:'Язык',inicio:'/ru/',marca:'Martín Fierro — русское издание',lema:'Документальная библиотека и культурный журнал',leerHref:'/ru/studentam/',leer:'СТУДЕНТАМ',nav:'Главное меню'},
+ zh:{salto:'跳到正文',franja:'阿根廷 · 文学 · 文化',idioma:'语言',inicio:'/zh/',marca:'Martín Fierro — 中文版',lema:'文献图书馆与文化杂志',leerHref:'/zh/xuesheng/',leer:'学习史诗',nav:'主导航'},
  fr:{salto:'Aller au contenu',franja:'ARGENTINE · LITTÉRATURE · CULTURE',idioma:'Langue',inicio:'/fr/',marca:'Martín Fierro — édition française',lema:'Bibliothèque documentaire & revue culturelle',leerHref:'/fr/etudiants/',leer:'ÉTUDIER LE POÈME',nav:'Navigation principale'},
 }[linguaCorrente];
 // Menú principal: mismos destinos en todas las ediciones (la brasileña crece por etapas).
@@ -53,6 +58,7 @@ const menu={
  pt:[['/pt/','Início'],['/pt/ler-o-poema/','Ler o poema'],['/pt/revista/','Revista'],['/pt/estudantes/','Para estudantes'],['/pt/jose-hernandez/','José Hernández'],['/pt/personagens/','Personagens'],['/pt/conselhos-de-martin-fierro/','Os conselhos']],
  de:[['/de/','Start'],['/de/das-gedicht-lesen/','Das Gedicht lesen'],['/de/magazin/','Magazin'],['/de/studierende/','Für Studierende'],['/de/jose-hernandez/','José Hernández'],['/de/figuren/','Figuren'],['/de/ratschlaege-von-martin-fierro/','Die Ratschläge']],
  ru:[['/ru/','Главная'],['/ru/chitat-poemu/','Читать поэму'],['/ru/zhurnal/','Журнал'],['/ru/studentam/','Студентам'],['/ru/jose-hernandez/','Хосе Эрнандес'],['/ru/personazhi/','Персонажи'],['/ru/sovety-martina-fierro/','Советы']],
+ zh:[['/zh/','首页'],['/zh/yuedu/','阅读史诗'],['/zh/zazhi/','文化杂志'],['/zh/xuesheng/','学生园地'],['/zh/jose-hernandez/','埃尔南德斯'],['/zh/renwu/','人物'],['/zh/jiaohui/','父亲的教诲']],
  fr:[['/fr/','Accueil'],['/fr/lire-le-poeme/','Lire le poème'],['/fr/revue/','Revue'],['/fr/etudiants/','Pour les étudiants'],['/fr/jose-hernandez/','José Hernández'],['/fr/personnages/','Personnages'],['/fr/conseils-de-martin-fierro/','Les conseils']],
 }[linguaCorrente];
 const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
@@ -110,7 +116,47 @@ import AvisoRecreacion from '../components/AvisoRecreacion.astro';
   
  </header>
  <main id="contenido" class="container">{migas && <Migas items={migas} edicion={linguaCorrente}/>}<slot/></main>
- {russian ? <footer class="site-footer editorial-footer" aria-label="Информация о сайте">
+ {chinese ? <footer class="site-footer editorial-footer" aria-label="网站信息">
+  <div class="container editorial-footer-grid">
+   <div class="editorial-footer-identity">
+    <a href="/zh/" class="editorial-footer-brand">Martín Fierro</a>
+    <p>文献图书馆 · 拉普拉塔河地区的文学、历史与文化。</p>
+    <p>何塞·埃尔南德斯 · <em lang="es">El gaucho Martín Fierro</em>（1872）· <em lang="es">La vuelta de Martín Fierro</em>（1879）。诗句一律引用西班牙语原文。</p>
+   </div>
+   <nav class="editorial-footer-links" aria-label="本版内容">
+    <strong>本版内容</strong>
+    <a href="/zh/">中文版首页</a>
+    <a href="/zh/yuedu/">如何阅读原诗</a>
+    <a href="/zh/xuesheng/">学习卡片</a>
+    <a href="/zh/jiaohui/">父亲的教诲</a>
+    <a href="/zh/zazhi/">文化杂志</a>
+    <a href="/leer/" lang="es">西班牙语原文</a>
+   </nav>
+   <nav class="editorial-footer-links" aria-label="关于本项目">
+    <strong>关于本项目</strong>
+    <a href="/zh/jose-hernandez/">何塞·埃尔南德斯</a>
+    <a href="/zh/renwu/">人物</a>
+    <a href="/zh/xuesheng/cihui/">高乔词汇</a>
+    <a href="/zh/laiyuan-yu-banquan/">来源与版权</a>
+    <a href="/contacto/" lang="es">联系我们（西班牙语页面）</a>
+   </nav>
+   <nav class="editorial-footer-links" aria-label="其他语言">
+    <strong>其他语言</strong>
+    <a href="/" lang="es">Español</a>
+    <a href="/en/" lang="en">English</a>
+    <a href="/it/" lang="it">Italiano</a>
+    <a href="/pt/" lang="pt-BR">Português</a>
+    <a href="/fr/" lang="fr">Français</a>
+    <a href="/de/" lang="de">Deutsch</a>
+    <a href="/ru/" lang="ru">Русский</a>
+    <a href="/traducciones/" lang="es">本诗的各种译本（西班牙语页面）</a>
+   </nav>
+  </div>
+  <div class="container editorial-footer-credits">
+   <p>© {new Date().getFullYear()} MARTINFIERRO.ORG · 独立数字版 · 感谢罗贝蒂诺·费罗教授。</p>
+   <p>何塞·埃尔南德斯的原文属于公有领域 · 中文评注与学习译文：MARTINFIERRO.ORG · <a href="/zh/laiyuan-yu-banquan/">来源</a></p>
+  </div>
+ </footer> : russian ? <footer class="site-footer editorial-footer" aria-label="Информация о сайте">
   <div class="container editorial-footer-grid">
    <div class="editorial-footer-identity">
     <a href="/ru/" class="editorial-footer-brand">Martín Fierro</a>

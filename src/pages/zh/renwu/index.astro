@@ -1,0 +1,28 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {personajes} from '../../../data/personajes';
+const kapian:Record<string,{ming:string;juese:string;jieshao:string;dufa:string}>={
+ 'martin-fierro':{ming:'马丁·菲耶罗',juese:'歌手、主人公和叙述者',jieshao:'一个高乔人，被强制送往边境服役之后，家庭生活随之崩塌。他的歌讲的是不公、暴力、逃亡、友谊和重逢。',dufa:'菲耶罗并不是何塞·埃尔南德斯本人在直接说话。他的控诉很有分量，但他为暴力辩解的企图也需要审视。'},
+ 'sargento-cruz':{ming:'克鲁斯中士',juese:'选择了友谊的中士',jieshao:'他是奉命捉拿菲耶罗的小队成员，却倒戈站到菲耶罗一边，与他并肩作战。两个男人之间的团结，是全诗最重要的纽带之一。',dufa:'克鲁斯的决定提出了忠诚的问题：如果接到的命令与自己的正义感相冲突，应该怎么做？'},
+ 'esposa-fierro':{ming:'菲耶罗的妻子',juese:'妻子与失去的家',jieshao:'菲耶罗因征兵而失去的家庭生活的中心人物。后来，他从儿子们那里得知她去世的消息。',dufa:'诗既没有给她自己的声音，也没有给她一个固定的名字，这个空白值得注意。'},
+ 'primer-hijo':{ming:'长子',juese:'坐过牢的儿子',jieshao:'在第二部中找到父亲的两个儿子之一。他的讲述扩展了这个家庭的故事：无人照管、冤枉的指控、感化监狱。',dufa:'不要把他的经历和声音与弟弟的混为一谈。'},
+ 'segundo-hijo':{ming:'次子',juese:'由比斯卡查抚养的儿子',jieshao:'他的故事包括失去的遗产，以及在老比斯卡查监护下的生活；比斯卡查那些犬儒的忠告，把苦涩的幽默和痛苦结合在一起。',dufa:'比斯卡查的格言与菲耶罗最后的教诲之间的对照，具有决定性的意义。'},
+ 'don-vizcacha':{ming:'老比斯卡查',juese:'监护人和讽刺性的“导师”',jieshao:'一个贫穷而狡猾的老人，被指定为菲耶罗次子的监护人。他荒诞的怪癖和自私的格言，是第二部最著名的段落之一。',dufa:'不能把比斯卡查的俗语自动当作这部诗的道德。'},
+ 'picardia':{ming:'皮卡迪亚',juese:'克鲁斯的儿子，叙述者之一',jieshao:'一个年轻人，讲述自己的孤儿童年、赌博、权力的滥用和边境兵役，直到他得知自己是克鲁斯中士的儿子。',dufa:'他的名字暗示狡黠，但他的故事一再显示出求生的代价。'},
+ 'la-cautiva':{ming:'女俘',juese:'在突袭中被掳走的女人',jieshao:'她在囚禁中的苦难和菲耶罗的介入，在第二部中从菲耶罗的视角讲述。',dufa:'她没有名字；关于女性以及当时对印第安人的描写，这段插曲需要批判地阅读。'},
+ 'el-moreno':{ming:'莫雷诺',juese:'参加对歌的黑人歌手',jieshao:'一位非洲裔歌手向菲耶罗发起一问一答的诗歌比赛，唤起了一桩旧日命案的记忆。',dufa:'他不是菲耶罗在第一部里杀死的那个人，而是那人的兄弟；而且，一个文学声音并不代表整个民族。'},
+ 'moreno-muerto':{ming:'舞会上的死者',juese:'第七歌中的受害者',jieshao:'一个黑人男子在与菲耶罗的打斗中丧命。叙述者的讲述中包含种族主义的侮辱、挑衅和暴力。',dufa:'叙述者的说法不是开脱的理由，也不要把这位受害者与对歌中的歌手混淆。'},
+ 'juez-paz':{ming:'治安法官',juese:'地方权力',jieshao:'在征兵和追捕的叙述中出现的地方权力人物。这个职位对应真实存在的制度，但人物本身是虚构的。',dufa:'没有任何依据可以把诗中的法官对应到某个具体的历史人物。'},
+};
+const tu=(id:string)=>({'martin-fierro':'martin-fierro','sargento-cruz':'sargento-cruz','esposa-fierro':'esposa-de-fierro','primer-hijo':'hijo-mayor-de-fierro','segundo-hijo':'hijo-segundo-de-fierro','don-vizcacha':'viejo-vizcacha','picardia':'picardia','la-cautiva':'la-cautiva','el-moreno':'el-moreno','moreno-muerto':'negro-del-baile','juez-paz':'juez-de-paz'} as Record<string,string>)[id];
+const lianjie=(r:{parte:'ida'|'vuelta';canto:number})=>`/zh/xuesheng/${r.parte}/${r.canto}/`;
+---
+<Base noindex migas={[{label:'人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/'}} lang="zh-CN" pageType="CollectionPage" title="《马丁·菲耶罗》人物导读" description="马丁·菲耶罗、克鲁斯中士、老比斯卡查、皮卡迪亚、儿子们、女俘和莫雷诺：何塞·埃尔南德斯诗中的人物介绍，以及如何批判地阅读他们。">
+<article class="renwu-zh">
+<header><p class="eyebrow">阅读指南 · 人物</p><h1><em>《马丁·菲耶罗》</em>中的人物</h1><p class="lid">一个亡命的高乔人、一位忠实的朋友、两个努力理解自己所失去的东西的儿子、一个厚颜无耻的监护人，以及被推到边缘的声音。认识这些赋予全诗道德复杂性的人物。</p></header>
+<nav class="tiaozhuan" aria-label="跳到某个人物">{personajes.map(p=><a href={`#${p.id}`}>{kapian[p.id].ming}</a>)}</nav>
+<div class="kapianzu">{personajes.map(p=><section class="kapian" id={p.id} aria-labelledby={`t-${p.id}`}><figure><img src={`/media/fotografias-v3/${tu(p.id)}.webp`} alt={`编辑部的数字诠释：${kapian[p.id].ming}；并非历史肖像`} loading="lazy"/><figcaption>当代数字重现</figcaption></figure><div><p class="eyebrow">{kapian[p.id].juese}</p><h2 id={`t-${p.id}`}>{kapian[p.id].ming}</h2><p>{kapian[p.id].jieshao}</p><p><strong>批判性阅读：</strong>{kapian[p.id].dufa}</p><p class="lianjie"><strong>见学习卡片：</strong>{p.referencias.map(r=><a href={lianjie(r)}>{r.parte==='ida'?'第一部':'第二部'} · 第 {r.canto} 歌</a>)}</p></div></section>)}</div>
+<section class="fangfa"><h2>如何使用本指南</h2><p>这些卡片说明十一个人物的作用，并链接到各歌的学习卡片，那里列有原文诗节。它们是解读性的复述，不是对埃尔南德斯诗句的引用或翻译。插图是当代的重现，不是历史文献。</p></section>
+</article>
+<style>.renwu-zh{max-width:1100px;margin:25px auto 80px;color:#31291f}.renwu-zh a{color:#843e2c;text-underline-offset:4px}.eyebrow{font:750 .76rem system-ui,sans-serif;letter-spacing:.1em;color:#955138}.renwu-zh h1{font:600 clamp(2.3rem,5vw,4.2rem)/1.2 Georgia,serif;margin:18px 0}.renwu-zh h1 em{font-weight:400}.lid{font:1.2rem/1.85 Georgia,serif;max-width:44em}.tiaozhuan{border-block:1px solid #cbb9a5;display:flex;flex-wrap:wrap;gap:10px 17px;padding:19px 0;margin:35px 0;font:.92rem system-ui,sans-serif}.kapianzu{display:grid;gap:30px}.kapian{display:grid;grid-template-columns:300px 1fr;gap:30px;border-top:2px solid #382d25;padding-top:24px;scroll-margin-top:70px}.kapian figure{margin:0}.kapian img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}.kapian figcaption{font:.76rem system-ui,sans-serif;color:#74614d;margin-top:6px}.kapian h2{font:600 2rem Georgia,serif;margin:6px 0 12px}.kapian p{font:1.04rem/1.85 Georgia,serif}.lianjie{display:flex;flex-wrap:wrap;gap:6px 14px;font:.9rem system-ui,sans-serif!important}.fangfa{background:#efe3d5;padding:22px 26px;margin-top:40px}.fangfa h2{font:600 1.7rem Georgia,serif;margin:0 0 10px}.fangfa p{font:1.03rem/1.85 Georgia,serif}@media(max-width:720px){.kapian{grid-template-columns:1fr;gap:14px}.kapian img{aspect-ratio:3/2}.fangfa{padding:18px}}</style>
+</Base>

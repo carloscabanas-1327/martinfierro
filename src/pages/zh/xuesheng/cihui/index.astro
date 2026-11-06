@@ -1,0 +1,35 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import ArticleZh from '../../../../components/ArticleZh.astro';
+// 如果有相近的中文说法，就列在“中文”一项。
+const tiaomu:{ci:string;lei:string;yisi:string;shizhong:string;zhongwen?:string;url:string}[]=[
+ {ci:'Gaucho',lei:'历史与文化概念',yisi:'阿根廷、乌拉圭和巴西南部平原上的骑手。',shizhong:'这个词关系到劳动、技能、社会地位和一种有争议的文学身份。菲耶罗是以一个高乔人的身份说话，而不是代表所有高乔人说话。',zhongwen:'高乔人',url:'/zh/yuedu/'},
+ {ci:'Payada',lei:'口头诗歌与音乐',yisi:'拉普拉塔河地区的即兴歌诗，常是两位歌手伴着吉他进行的比赛。',shizhong:'莫雷诺和菲耶罗进行了一场对歌，触动了一段悬而未决的暴力往事。',zhongwen:'对歌，赛歌',url:'/zh/xuesheng/vuelta/30/'},
+ {ci:'Pulpería',lei:'乡村场所',yisi:'乡下的杂货店兼酒馆，人们在这里买东西、喝酒，有时也唱歌。',shizhong:'诗中好几场打斗都发生在这样的地方。',zhongwen:'杂货酒铺',url:'/zh/xuesheng/ida/8/'},
+ {ci:'Fortín',lei:'边境工事',yisi:'与印第安人土地交界处的小型军事据点。',shizhong:'菲耶罗在那里服役，描述了那里的贫困和盘剥。',zhongwen:'边堡，哨所',url:'/zh/xuesheng/ida/4/'},
+ {ci:'Leva',lei:'军事与政治概念',yisi:'强制男子服兵役。',shizhong:'它解释了边境为什么毁掉了菲耶罗的家庭生活。',zhongwen:'抓壮丁，强制征兵',url:'/zh/xuesheng/ida/3/'},
+ {ci:'Partida',lei:'武装队伍',yisi:'为某项任务组成的小队；在诗中几乎总是指追捕某人的小队。',shizhong:'克鲁斯原是追捕菲耶罗的小队成员，后来却站出来保护他。',zhongwen:'小队，巡逻队',url:'/zh/xuesheng/ida/9/'},
+ {ci:'Facón',lei:'物质文化',yisi:'与历史上的高乔人密切相关的大刀。',shizhong:'诗中的持刀决斗不应被读成对暴力的赞美。',url:'/zh/xuesheng/ida/7/'},
+ {ci:'Mate, cimarrón',lei:'饮品',yisi:'用马黛茶叶冲泡的饮料；喝茶用的容器也叫 mate。Cimarrón 是不加糖的苦马黛茶。',shizhong:'菲耶罗回忆起自己在火边喝苦马黛茶直到天亮。',zhongwen:'马黛茶',url:'/zh/zazhi/mate/'},
+ {ci:'Pago',lei:'地方',yisi:'故乡，一个人出生的地方。',shizhong:'回到自己的故乡却发现它已成废墟，是第一部中最沉重的打击之一。',zhongwen:'故乡，老家',url:'/zh/xuesheng/ida/6/'},
+ {ci:'Tapera',lei:'地方',yisi:'废弃或倒塌的房屋（来自瓜拉尼语）。',shizhong:'菲耶罗从边境回来时，他的茅屋已经变成了 tapera。',zhongwen:'废墟，荒屋',url:'/zh/xuesheng/ida/6/'},
+ {ci:'Matrero',lei:'社会处境',yisi:'为躲避官府而藏身的亡命高乔人。',shizhong:'开小差之后，菲耶罗成了 matrero。',zhongwen:'亡命者，逃犯',url:'/zh/xuesheng/ida/6/'},
+ {ci:'Pingo, flete',lei:'马',yisi:'好马，心爱的马。',shizhong:'马是伙伴，是逃亡的工具，也是尊严的象征。',url:'/zh/xuesheng/ida/5/'},
+ {ci:'China',lei:'称呼',yisi:'乡下人的女伴、妻子。和“中国”毫无关系。',shizhong:'这个词出现在家庭生活和舞会的场景中。',url:'/zh/xuesheng/ida/2/'},
+ {ci:'Malón',lei:'边境概念',yisi:'印第安人对边境庄园和村落的突袭。',shizhong:'菲耶罗和克鲁斯到达印第安营地时，那里正在准备一次突袭。',zhongwen:'突袭',url:'/zh/xuesheng/vuelta/2/'},
+ {ci:'Moreno',lei:'历史称呼',yisi:'当时对深色皮肤的人的称呼；在诗中指一位非洲裔阿根廷歌手。',shizhong:'对歌中的莫雷诺不是第一部里被杀的那个人，而是他的兄弟。',url:'/zh/xuesheng/vuelta/30/'},
+ {ci:'Viejo Vizcacha',lei:'人物名字',yisi:'Viejo 意为“老”；vizcacha（兔鼠）是潘帕斯一种住在地洞里的啮齿动物。',shizhong:'这个绰号让人想起那种把各种零碎东西拖进洞里的小动物；这种比较只是一种可能的读法，不是定论。',zhongwen:'老比斯卡查',url:'/zh/xuesheng/vuelta/15/'},
+ {ci:'Picardía',lei:'人物名字和普通词语',yisi:'狡黠、机灵、诡计：视情况而定，可以是机智，也可以是欺骗。',shizhong:'克鲁斯的儿子在努力改变生活之后，仍然保留着这个绰号。',zhongwen:'皮卡迪亚；狡黠',url:'/zh/xuesheng/vuelta/26/'},
+ {ci:'Naides',lei:'高乔语言',yisi:'“nadie”（没有人）的口语形式。',shizhong:'高乔诗歌用这样的形式营造一个可辨认的乡下人声音。',url:'/zh/yuedu/'},
+ {ci:'Canto, estrofa, verso',lei:'文学结构',yisi:'Canto 是编了号的段落，相当于一章；estrofa 是一组诗行；verso 是诗的一行。',shizhong:'两部分别有 13 歌和 33 歌，几乎都是八音节的六行诗节。',zhongwen:'歌，诗节，诗行',url:'/zh/xuesheng/'},
+];
+---
+<Base noindex migas={[{label:'学生园地',href:'/zh/xuesheng/'},{label:'高乔词汇'}]} lingue={{en:'/en/students/glossary/',it:'/it/studenti/glossario/',pt:'/pt/estudantes/glossario/',fr:'/fr/etudiants/glossaire/',de:'/de/studierende/glossar/',ru:'/ru/studentam/glossarij/'}} lang="zh-CN" pageType="Article" title="《马丁·菲耶罗》词汇表：高乔词语中文解释" description="《马丁·菲耶罗》学习词汇表：payada、pulpería、fortín、facón、leva、pago、tapera、比斯卡查、皮卡迪亚等诗中词语的中文解释。">
+<ArticleZh yinti="学生园地 · 语境中的词语" biaoti="高乔词汇"
+ daoyu="诗中的词语，放在语境中比查词典更容易理解。每个条目解释词义、它在《马丁·菲耶罗》中的作用，以及最接近的中文说法（如果有的话）。"
+ laiyuan={[{name:'Diccionario de americanismos（ASALE），西班牙语',url:'https://www.asale.org/damer/',yuyan:'es'},{name:'Gaucho glossary，英语版',url:'/en/students/glossary/',yuyan:'en'}]}
+ shuoming="释义是写给读者的说明，不能取代埃尔南德斯的诗句。">
+ <dl class="zh-cihui">{tiaomu.map(v=><div><dt lang="es">{v.ci}</dt><dd><p class="zh-lei">{v.lei}</p><p><strong>词义：</strong>{v.yisi}</p><p><strong>在诗中：</strong>{v.shizhong}</p>{v.zhongwen&&<p><strong>中文：</strong>{v.zhongwen}</p>}<p><a href={v.url}>了解更多 →</a></p></dd></div>)}</dl>
+</ArticleZh>
+<style>.zh-cihui{display:grid;gap:0;margin:0}.zh-cihui>div{display:grid;grid-template-columns:200px 1fr;gap:20px;border-top:1px solid #c8baab;padding:18px 0}.zh-cihui dt{font:600 1.3rem Georgia,serif;font-style:italic}.zh-cihui dd{margin:0}.zh-cihui dd p{margin:0 0 6px}.zh-lei{font:700 .76rem system-ui,sans-serif!important;letter-spacing:.08em;color:#8b4731}@media(max-width:600px){.zh-cihui>div{grid-template-columns:1fr;gap:6px}}</style>
+</Base>
