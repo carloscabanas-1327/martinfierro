@@ -1,0 +1,19 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {partes} from '../../../lib/corpus';
+import {leitfaedenIda} from '../../../data/de-leitfaeden-ida';
+import {leitfaedenVuelta} from '../../../data/de-leitfaeden-vuelta';
+const bloecke=[
+ {teil:'ida',titel:'Erster Teil · El gaucho Martín Fierro (1872)',text:'Von der verlorenen Hütte zur Grenze: Rekrutierung, Fahnenflucht, die Morde, die Freundschaft mit Cruz und der Aufbruch in die Wüste.',gesaenge:partes.ida.cantos.map(c=>({...c,l:leitfaedenIda[c.numero]}))},
+ {teil:'vuelta',titel:'Zweiter Teil · La vuelta de Martín Fierro (1879)',text:'Die Gefangenschaft, die Gefangene, das Wiedersehen mit den Söhnen, der alte Vizcacha, Picardía, die payada mit dem Moreno und die Ratschläge.',gesaenge:partes.vuelta.cantos.map(c=>({...c,l:leitfaedenVuelta[c.numero]}))},
+];
+---
+<Base migas={[{label:'Für Studierende'}]} lingue={{es:'/estudiantes/',en:'/en/students/',it:'/it/studenti/',pt:'/pt/estudantes/',fr:'/fr/etudiants/'}} lang="de-DE" pageType="CollectionPage" noindex={true} title="Martín Fierro für Studierende: die 46 Gesänge auf Deutsch" description="Studienblätter auf Deutsch zu den 46 Gesängen von Martín Fierro: Zusammenfassung, Originalstrophen, Figuren, Themen, gauchesker Wortschatz und Fragen zur Diskussion.">
+<div class="studierende-de">
+ <header><p class="eyebrow">FÜR STUDIERENDE · 46 STUDIENBLÄTTER AUF DEUTSCH</p><h1>Martín Fierro, Gesang für Gesang</h1><p class="vorspann">Ein Blatt für jeden Gesang, mit Zusammenfassung, den wichtigsten Originalstrophen, den Figuren, den Themen, den Wörtern des gauchesken Spanisch und Fragen für den Spanischunterricht, das Referat oder den Lesekreis.</p></header>
+ <div class="hinweis"><strong>Gebrauchsanweisung:</strong> Lesen Sie das Blatt und dann den Gesang im Original (der Link steht auf jeder Seite). Wenn Sie eine der deutschen Übersetzungen besitzen, legen Sie sie zum Vergleich neben das Original. Die Blätter bieten einen Kommentar, keine Übersetzung der Verse; eine vollständige Studienübersetzung finden Sie bei den <a href="/de/ratschlaege-von-martin-fierro/">Ratschlägen an die Söhne</a>.</div>
+ {bloecke.map(b=><section><h2>{b.titel}</h2><p>{b.text}</p><ol class="liste">{b.gesaenge.map(c=><li><a href={`/de/studierende/${b.teil}/${c.numero}/`}><span>Gesang {c.titulo}</span><strong>{c.l.titel}</strong></a></li>)}</ol></section>)}
+ <section class="extra"><h2>Weiterlesen</h2><p><a href="/de/das-gedicht-lesen/">Das Original als deutschsprachiger Leser lesen</a> · <a href="/de/magazin/mate/">Mate, das Getränk der Pampa</a> · <a href="/de/studierende/glossar/">Gauchesker Glossar</a> · <a href="/de/figuren/">Figuren</a></p></section>
+</div>
+<style>.studierende-de{max-width:1000px;margin:25px auto 85px;color:#302820}.studierende-de a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .72rem system-ui,sans-serif;letter-spacing:.13em;color:#934e35}.studierende-de h1{font:600 clamp(2.3rem,5vw,4.2rem)/1.1 Georgia,serif;letter-spacing:-.03em;margin:16px 0;hyphens:auto}.vorspann{font:1.2rem/1.65 Georgia,serif;max-width:70ch}.hinweis{background:#eee3d5;border-left:4px solid #904b36;padding:20px 22px;font:1rem/1.65 Georgia,serif;margin:28px 0}.studierende-de section{margin:40px 0}.studierende-de h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.2 Georgia,serif;hyphens:auto}.studierende-de section>p{font:1.05rem/1.7 Georgia,serif}.liste{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.liste a{display:grid;gap:4px;background:#efe5d8;padding:14px 16px;text-decoration:none;color:#30271f;height:100%}.liste span{font:700 .72rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8b4731}.liste strong{font:600 1.04rem/1.35 Georgia,serif;hyphens:auto}.liste a:hover strong{text-decoration:underline}.extra{background:#f3ecdf;padding:20px 24px}@media(max-width:650px){.liste{grid-template-columns:1fr}.extra{padding:16px}}</style>
+</Base>

@@ -1,0 +1,51 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {estrofasDeCanto,partes,numeroDeVersos} from '../../../lib/corpus';
+import {eroeffnungDe,eroeffnungWoerter} from '../../../data/de-studie';
+const eroeffnung=estrofasDeCanto('ida',1).slice(0,3);
+const versGesamt=numeroDeVersos('ida')+numeroDeVersos('vuelta');
+const hinweise=[
+ ['güeno, güen, gúenas','bueno, buenas','gut, gute. Das ländliche »bu« wird wie »gü« gesprochen.'],
+ ['juí, juego, ajuera','fui, fuego, afuera','ich war/ging, Feuer, draußen. Das »f« wird zu einem gehauchten »j«.'],
+ ['naides, ansí, ansina','nadie, así','niemand, so.'],
+ ['dende, pa, ande','desde, para, donde','seit, für, wo.'],
+ ['sentao, desgraciao','sentado, desgraciado','sitzend, unglücklich. Das »d« zwischen Vokalen fällt weg, wie in der gesprochenen Sprache.'],
+ ['estraño, esperencia','extraño, experiencia','seltsam, Erfahrung. Das gelehrte »x« wird zu einem einfachen »s«.'],
+];
+const falscheFreunde=[
+ ['rato','ein Weilchen, ein Moment (nichts mit »Rat« oder »Ratte«)'],
+ ['pelear','kämpfen, sich raufen'],
+ ['china','die Gefährtin, die Frau des Gaucho (nicht China)'],
+ ['pago','die Heimat, die Gegend, aus der man stammt (keine Zahlung)'],
+ ['flete, pingo','das gute Pferd, das Lieblingspferd (keine Fracht)'],
+ ['facón','das große Messer des Gaucho'],
+ ['pulpería','der ländliche Kramladen mit Ausschank, Ort der Begegnung und der Raufereien'],
+ ['picardía','Gaunerei, Schlitzohrigkeit (keine »Pikanterie«)'],
+];
+const teile=[
+ {parte:'ida' as const,titel:'Erster Teil · El gaucho Martín Fierro (1872)',text:'Fierro besingt das glückliche Leben in seiner Hütte, die Zwangsrekrutierung an die Grenze, die Fahnenflucht, das Leben auf der Flucht und die Freundschaft mit Sergeant Cruz. Am Ende überqueren die beiden Männer die Grenze, um bei den Indigenen zu leben.'},
+ {parte:'vuelta' as const,titel:'Zweiter Teil · La vuelta de Martín Fierro (1879)',text:'Fierro kehrt zurück, findet seine Söhne wieder und trifft den Sohn von Cruz. Jeder erzählt seine Geschichte; es gibt den alten Vizcacha, die payada mit dem Moreno und in Gesang XXXII die Ratschläge an die Söhne.'},
+];
+---
+<Base migas={[{label:'Das Gedicht lesen'}]} lingue={{es:'/leer/',en:'/en/reader/',it:'/it/lettore/',pt:'/pt/ler-o-poema/',fr:'/fr/lire-le-poeme/'}} lang="de-DE" pageType="CollectionPage" noindex={true} title="Martín Fierro im Original lesen: ein Leitfaden auf Deutsch" description="Leitfaden auf Deutsch, um Martín Fierro im spanischen Original zu lesen: der Anfang des Gedichts mit Studienübersetzung, die Schreibweise des gauchesken Spanisch, falsche Freunde und die 46 Gesänge.">
+<article class="leitfaden-de">
+<header><p class="eyebrow">DAS GEDICHT LESEN · LEITFADEN AUF DEUTSCH</p><h1>Wie man Martín Fierro im Original liest</h1><p class="lead">Wer ein wenig Spanisch gelernt hat, versteht schon einen guten Teil des Gedichts. Dieser Leitfaden zeigt, was sich in der Schreibweise von Hernández ändert, welche Wörter in die Irre führen und wie man zu jedem der 46 Gesänge gelangt.</p></header>
+<div class="hinweis"><strong>Zum Text:</strong> Die Links »Im Original lesen« führen zum spanischen Gedicht mit den {versGesamt.toLocaleString('de-DE')} Versen von José Hernández. Diese Ausgabe veröffentlicht keine vollständige Übersetzung: Die vorhandenen deutschen Übersetzungen sind urheberrechtlich geschützt. Die deutschen Passagen dieser Seite sind Studienübersetzungen unserer Redaktion.</div>
+
+<section class="eroeffnung" aria-labelledby="de-eroeffnung"><p class="eyebrow">SO BEGINNT DAS GEDICHT</p><h2 id="de-eroeffnung">»Aquí me pongo a cantar«</h2><p>Die ersten drei Strophen von Gesang I. Der Sänger bittet die Heiligen um Hilfe, bevor er seine Geschichte erzählt, so wie die payadores ihren Vortrag eröffneten.</p>
+{eroeffnung.map(e=><div class="paar"><blockquote lang="es"><span class="num">Strophe {e.numero}</span>{e.versos.map(v=><span class="vers">{v.texto}</span>)}</blockquote><div class="studie"><span class="num">Studienübersetzung</span><p>{eroeffnungDe[e.numero]}</p>{eroeffnungWoerter[e.numero]&&<dl>{eroeffnungWoerter[e.numero].map(([w,s])=><><dt lang="es">{w}</dt><dd>{s}</dd></>)}</dl>}</div></div>)}
+<p class="weiter"><a href="/leer/ida/1/" lang="es">Gesang I im Original weiterlesen →</a></p></section>
+
+<section aria-labelledby="de-schreibung"><h2 id="de-schreibung">Das Spanisch vom Land: sechs Anhaltspunkte</h2><p>Hernández schreibt, wie der Gaucho der Provinz Buenos Aires spricht. Die Schreibweise wirkt fremd, folgt aber einfachen Regeln. Lesen Sie laut: Fast immer verrät der Klang das Wort.</p>
+<table><thead><tr><th scope="col">Im Gedicht</th><th scope="col">Standardspanisch</th><th scope="col">Auf Deutsch</th></tr></thead><tbody>{hinweise.map(([a,b,c])=><tr><td lang="es"><em>{a}</em></td><td lang="es">{b}</td><td>{c}</td></tr>)}</tbody></table></section>
+
+<section aria-labelledby="de-freunde"><h2 id="de-freunde">Falsche Freunde</h2><p>Manche Wörter erinnern an deutsche Wörter oder an das Spanisch aus dem Unterricht und bedeuten im Gedicht etwas ganz anderes.</p><dl class="freunde">{falscheFreunde.map(([w,s])=><div><dt lang="es">{w}</dt><dd>{s}</dd></div>)}</dl><p>Mehr dazu im <a href="/de/studierende/glossar/">gauchesken Glossar</a>.</p></section>
+
+{teile.map(p=><section aria-label={p.titel}><h2>{p.titel}</h2><p>{p.text}</p><div class="gesaenge">{partes[p.parte].cantos.map(c=><div><strong>Gesang {c.titulo}</strong><a href={`/de/studierende/${p.parte}/${c.numero}/`}>Studienblatt</a><a href={`/leer/${p.parte}/${c.numero}/`} lang="es">Im Original lesen</a></div>)}</div>{p.parte==='vuelta'&&<p class="kasten">Beginnen Sie mit Gesang XXXII: <a href="/de/ratschlaege-von-martin-fierro/">die Ratschläge an die Söhne, mit einer Studienübersetzung Strophe für Strophe</a>.</p>}</section>)}
+
+<section class="uebersetzungen" aria-labelledby="de-uebersetzungen"><h2 id="de-uebersetzungen">Martín Fierro auf Deutsch</h2><p>Es gibt mehrere deutsche Übersetzungen. Die erste stammt von Adolf Borstendörfer (1893–1957), einem Exilschriftsteller aus Prag, der in Buenos Aires lebte: <em>Der Gaucho Martín Fierro</em>, Buenos Aires, Editorial Cosmopolita, 1945. Später folgten die Nachdichtung von Alfredo Bauer (1924–2016), Stuttgart, Hans-Dieter Heinz Akademischer Verlag, 1995, mit Kommentar von Gerhard Giesa, und die zweisprachige Ausgabe von Pedro Pluhar, Köln, 2. verbesserte Auflage 1999.</p><p>Alle drei sind noch urheberrechtlich geschützt, deshalb geben wir sie nicht wieder. Borstendörfers Übersetzung wird am 1. Januar 2028 gemeinfrei, siebzig Jahre nach seinem Tod; dann können wir sie neben das Original stellen, wie es die italienische Ausgabe mit der Übersetzung von Folco Testena tut. Bis dahin: Wenn Sie eine dieser Ausgaben besitzen, lesen Sie sie neben dem Original, denn diese Ausgabe ist dafür gedacht.</p><p class="quelle">Quellen: Artikel »Martín Fierro« der deutschsprachigen Wikipedia (Übersetzungen); Konstantin Kaiser, »Zwischen Heimweh und neuer Erkenntnis«, literaturepochen.at (Lebensdaten Borstendörfers).</p></section>
+
+<section aria-labelledby="de-zitieren"><h2 id="de-zitieren">Wie man eine Stelle zitiert</h2><p>Geben Sie Autor, Originaltitel des Teils, Jahr, Gesang und Strophe an, zum Beispiel: Hernández, <em>La vuelta de Martín Fierro</em> (1879), Gesang XXXII, Strophe 1160. Jede Strophe im Lesebereich hat eine eigene Adresse, die man kopieren kann. Die Studienübersetzungen dieser Ausgabe lassen sich als »Studienübersetzung, MARTINFIERRO.ORG« zitieren.</p></section>
+</article>
+<style>.leitfaden-de{max-width:1050px;margin:28px auto 85px;color:#30271f}.leitfaden-de a{color:#83402d;text-underline-offset:4px}.eyebrow{font:750 .73rem system-ui,sans-serif;letter-spacing:.12em;color:#95503a}.leitfaden-de h1{font:600 clamp(2.4rem,5vw,4.5rem)/1.1 Georgia,serif;text-wrap:balance;hyphens:auto}.leitfaden-de h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.2 Georgia,serif;hyphens:auto}.leitfaden-de p,.leitfaden-de td,.leitfaden-de dd{font:1.06rem/1.7 Georgia,serif;hyphens:auto}.lead{font-size:1.24rem!important;max-width:70ch}.hinweis{background:#eee3d5;border-left:4px solid #904b36;padding:22px;font:1rem/1.65 Georgia,serif}.leitfaden-de section{margin:44px 0}.eroeffnung{border-block:1px solid #bba995;padding:30px 0}.paar{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:18px 0}.paar blockquote{margin:0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.vers{display:block;font:1.13rem/1.65 Georgia,serif}.num{display:block;font:700 .7rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8b4731;margin-bottom:8px}.studie{padding:20px 4px}.studie p{margin:0}.studie dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:12px 0 0;font:.85rem/1.5 system-ui,sans-serif;color:#56483b}.studie dt{font-style:italic;font-weight:600}.studie dd{margin:0;font:inherit}.weiter{font:.95rem system-ui,sans-serif!important}table{width:100%;border-collapse:collapse;margin-top:14px}th{font:700 .78rem system-ui,sans-serif;letter-spacing:.06em;text-align:left;border-bottom:2px solid #382d25;padding:8px}td{border-bottom:1px solid #d7c7b4;padding:10px 8px;vertical-align:top}.freunde{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}.freunde div{border-top:1px solid #d7c7b4;padding-top:8px}.freunde dt{font:600 1.05rem Georgia,serif;font-style:italic}.freunde dd{margin:2px 0 0}.gesaenge{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.gesaenge div{background:#efe5d8;padding:14px 16px;display:grid;gap:6px}.gesaenge strong{font:700 .93rem system-ui,sans-serif;color:#30271f}.gesaenge a{font:.84rem system-ui,sans-serif}.kasten{background:#f0e6d7;border-top:3px solid #aa533c;padding:16px 20px}.uebersetzungen{background:#f6efe5;padding:10px 25px 22px}.quelle{font:.85rem/1.5 system-ui,sans-serif!important;color:#6c5b4a}@media(max-width:750px){.paar{grid-template-columns:1fr;gap:6px}.gesaenge{grid-template-columns:repeat(2,minmax(0,1fr))}.freunde{grid-template-columns:1fr}td,th{padding:8px 4px}.leitfaden-de td{font-size:.95rem}}</style>
+</Base>
