@@ -1,0 +1,40 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {estrofasDeCanto} from '../../../lib/corpus';
+import {oshieJa,oshieGoi,oshieKaisetsu} from '../../../data/ja-gakushu';
+const ren=estrofasDeCanto('vuelta',32);
+const zengyou=ren.reduce((n,e)=>n+e.versos.length,0);
+const shudai=[
+ {name:'友として語る父',n:1144},{name:'たくさんより、よく学べ',n:1146},
+ {name:'友情と正しさ',n:1150},{name:'労働',n:1153},
+ {name:'鉄は熱いうちに打て',n:1158},{name:'兄弟の団結',n:1160},
+ {name:'暴力を戒める',n:1167},{name:'別れ',n:1174}
+];
+const canonical=new URL('/ja/oshie/',Astro.site).toString();
+const deeta={'@context':'https://schema.org','@type':'Article',headline:'マルティン・フィエロの息子たちへの教え：原文の詩句と日本語の解説',inLanguage:'ja',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
+---
+<Base noindex migas={[{label:'父の教え'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/',pt:'/pt/conselhos-de-martin-fierro/',fr:'/fr/conseils-de-martin-fierro/',de:'/de/ratschlaege-von-martin-fierro/',ru:'/ru/sovety-martina-fierro/',zh:'/zh/jiaohui/'}} lang="ja" pageType="Article" title="マルティン・フィエロの息子たちへの教え：原文、学習訳、読み方" description="マルティン・フィエロが息子たちに与える教え（『帰還』第三十二歌）を一連ずつ読む。スペイン語の原文、日本語の学習訳、友情・労働・兄弟の団結についての読みのポイント。">
+<article class="oshie-ja">
+<script type="application/ld+json" set:html={JSON.stringify(deeta).replace(/</g,'\\u003c')}/>
+<header class="hajime"><p class="eyebrow">LA VUELTA DE MARTÍN FIERRO · 第三十二歌 · 1879</p><h1>マルティン・フィエロの息子たちへの教え：<em>一連ずつ全文を読む</em></h1><p class="lid">喪失と逃亡と再会を経て、マルティン・フィエロは二人の息子とクルスの息子をそばに呼び、自分が学んだことを伝えます。アルゼンチン文学でもっとも多く引用される連ですが、語り手自身の過ちを覚えていてこそ、その意味は完全になります。</p></header>
+<figure class="topzu"><img src="/media/fotografias-v3/consejos-fogon-hijos.webp" width="1280" height="853" alt="デジタル再現：マテ茶を手元に、火のそばで三人の若者に助言するマルティン・フィエロ" fetchpriority="high"/><figcaption>現代のデジタル挿絵で、当時の画像ではありません。</figcaption></figure>
+<div class="honbun">
+<section class="haikei"><h2>このページの使い方</h2><p>ホセ・エルナンデスのスペイン語の原文どおりに、第三十二歌の全{ren.length}連、{zengyou}行を、つづりを現代風に直さずに載せています。各連の下にあるのは、意味をつかむためにこのサイトの編集部が書いた<strong>散文の学習訳</strong>です。文学的な翻訳ではなく、韻も踏んでいません。詩句はあくまでエルナンデスの詩句です。</p><p>「naides」（誰も…ない）、「güeno」（よい）、「juego」（火）のようにいちばんまぎらわしい言葉には、それぞれの連のそばに説明をつけました。</p><p>この歌は<a href="/leer/vuelta/32/" lang="es">原文を読むページ</a>でも読めます。</p></section>
+<nav class="mokuji" aria-label="教えへ移動"><strong>よく知られた教え</strong>{shudai.map(t=><a href={`#${ren.find(e=>e.numero===t.n)?.id}`}>{t.name}</a>)}</nav>
+<section class="yomikata"><h2>この教えをどう読むか</h2><p>これらの詩句は物語から切り離された格言集ではありません。語っているのは、辺境へ力ずくで送られ、家族を失い、忠実な友を得て、一度ならず人を殺した男です。その経験が父親の道徳的な権威を複雑にし、同時にこの詩を豊かにしています。</p><p><strong>団結</strong>の教えは壊れた家族への答えです。<strong>労働</strong>の意味は、強制的な兵役と失われた小屋から来ています。<strong>暴力</strong>を拒む言葉は、語り手がしてきたことを忘れるのではなく、思い出すよう読者に求めています。エルナンデスは、人を教え導きながらも、問い返されうる声を作り出したのです。</p></section>
+<h2 id="zenbun">第三十二歌の全文</h2>
+<p class="chu">先にスペイン語の原文、次に学習訳を載せています。注はいくつかの連のあとに置き、詩行の中には決して入れていません。</p>
+<div class="rengun">
+{ren.map(e=><section class="ichiren" id={e.id} aria-label={`第${e.numero}連`}>
+<p class="bangou">第{e.numero}連</p>
+<div class="taishou">
+<blockquote lang="es">{e.versos.map(v=><span class="gyou">{v.texto}</span>)}</blockquote>
+<div class="yaku"><p class="label">学習訳</p><p>{oshieJa[e.numero]}</p>{oshieGoi[e.numero]&&<dl>{oshieGoi[e.numero].map(([w,s])=><><dt lang="es">{w}</dt><dd>{s}</dd></>)}</dl>}</div>
+</div>
+{oshieKaisetsu[e.numero]&&<aside class="kaisetsu"><p class="kaisetsu-midashi">読みのポイント · {oshieKaisetsu[e.numero].midashi}</p><p>{oshieKaisetsu[e.numero].honbun}</p><small>編集部の解釈で、詩の原文ではありません。</small></aside>}
+</section>)}
+</div>
+<section class="musubi"><h2>この教えがいまも生きている理由</h2><p>多くの読者がこれらの連をそらんじているのは、家の中で世代から世代へと受け渡せるからです。けれども注意深い読み方は、できあいの格言で立ち止まりません。フィエロはなぜ離散のあとで団結を大切にし、自分の暮らしの糧を失ったあとで労働をたたえ、暴力に貫かれた人生のあとで暴力を戒めるのか、と問いかけるのです。</p><p>日本の読者は、ここに見覚えのある形式を見つけるでしょう。親が子に残す家訓や遺訓です。それがパンパの草原に、たき火とマテ茶のそばに移されたと考えてみてください。その世界に入っていくには、<a href="/ja/zasshi/mate/">「マテ茶、パンパの飲み物」</a>を読んでみてください。</p><h2>出典と参考資料</h2><ul><li><a href="/leer/vuelta/32/" lang="es">原文を読むページの第三十二歌</a></li><li><a href="/consejos-martin-fierro/" lang="es">スペイン語版の教えの解説</a></li><li><a href="/ja/yomu/">日本語の読者のための『マルティン・フィエロ』原文の読み方</a></li></ul><p><strong>本文の正確さ：</strong>上の詩句はサイト全体で共有している詩のコーパスから直接取っており、このページでは一行も書き換えていません。学習訳と注は MARTINFIERRO.ORG 編集部によるものです。</p></section>
+</div></article>
+<style>.oshie-ja{max-width:1050px;margin:25px auto 85px;color:#302820}.oshie-ja a{color:#813b28;text-underline-offset:4px}.eyebrow{font:750 .76rem system-ui,sans-serif;letter-spacing:.12em;color:#974f35}.oshie-ja h1{font:600 clamp(2.1rem,5vw,4rem)/1.25 Georgia,serif;margin:18px 0;text-wrap:balance}.oshie-ja h1 em{font-weight:400}.lid{font:1.2rem/1.85 Georgia,serif;max-width:42em}.topzu{margin:28px 0 38px}.topzu img{width:100%;height:auto;max-height:560px;object-fit:cover;border-radius:5px}.topzu figcaption{font:.78rem/1.5 system-ui,sans-serif;color:#74614d;margin-top:8px}.honbun{max-width:860px;margin:auto}.honbun h2{font:600 clamp(1.6rem,3vw,2.3rem)/1.3 Georgia,serif;margin:38px 0 17px}.honbun p,.honbun li{font:1.06rem/1.9 Georgia,serif}.honbun li{margin:9px 0}.haikei{background:#f6efe5;padding:10px 25px 25px}.mokuji{display:flex;flex-wrap:wrap;gap:10px 18px;border-block:1px solid #c5b5a2;padding:22px 0;margin:34px 0;font:.9rem system-ui,sans-serif}.mokuji strong{width:100%}.chu{color:#655546}.ichiren{border-top:1px solid #cfbeaa;padding:24px 0;scroll-margin-top:70px}.bangou{font:700 .8rem system-ui,sans-serif!important;color:#82654d;margin:0 0 12px!important;letter-spacing:.06em}.taishou{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:28px;align-items:start}.taishou blockquote{margin:0;padding-left:16px;border-left:3px solid #b9a38c}.gyou{display:block;font:1.12rem/1.65 Georgia,serif}.yaku .label{font:700 .74rem system-ui,sans-serif!important;letter-spacing:.1em;color:#8b4731;margin:0 0 6px!important}.yaku p{margin:0 0 10px;font-size:1.02rem!important;line-height:1.85!important}.yaku dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:10px 0 0;font:.86rem/1.6 system-ui,sans-serif;color:#56483b}.yaku dt{font-style:italic;font-weight:600}.yaku dd{margin:0}.kaisetsu{background:#eee2d3;padding:17px 21px;margin-top:20px}.kaisetsu-midashi{font:700 .95rem/1.5 system-ui,sans-serif!important;color:#773f2e;margin:0!important}.kaisetsu p{font-size:.98rem}.kaisetsu small{font:.76rem system-ui,sans-serif;color:#746254}.musubi{background:#f0e6d9;padding:24px 28px;margin:28px 0}.musubi h2{font-size:1.8rem}@media(max-width:700px){.taishou{grid-template-columns:1fr;gap:14px}.gyou{font-size:1.02rem}.musubi,.haikei{padding:18px}}</style>
+</Base>

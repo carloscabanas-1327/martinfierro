@@ -1,0 +1,28 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {personajes} from '../../../data/personajes';
+const kaado:Record<string,{namae:string;yakuwari:string;shoukai:string;yomikata:string}>={
+ 'martin-fierro':{namae:'マルティン・フィエロ',yakuwari:'歌い手、主人公、語り手',shoukai:'辺境への強制的な兵役に送られたあと、家庭生活が崩れてしまったガウチョ。彼の歌は不正、暴力、逃亡、友情、再会を語ります。',yomikata:'フィエロはホセ・エルナンデス本人がじかに語っているのではありません。彼の告発には重みがありますが、暴力を正当化しようとするところは吟味が必要です。'},
+ 'sargento-cruz':{namae:'クルス軍曹',yakuwari:'友情を選んだ軍曹',shoukai:'フィエロを捕らえるよう命じられた隊の一員でしたが、寝返ってフィエロの側につき、ともに戦います。二人の男の連帯は、詩の中でもっとも大切な絆の一つです。',yomikata:'クルスの決断は忠誠の問いを投げかけます。受けた命令が自分の正義感とぶつかったら、どうすべきなのでしょうか。'},
+ 'esposa-fierro':{namae:'フィエロの妻',yakuwari:'妻と失われた家',shoukai:'徴兵によってフィエロが失った家庭生活の中心にいる人物。のちに彼は息子たちから彼女の死を知らされます。',yomikata:'詩は彼女に自分の声も、決まった名前も与えていません。この空白は注目に値します。'},
+ 'primer-hijo':{namae:'長男',yakuwari:'監獄にいた息子',shoukai:'第二部で父と再会する二人の息子の一人。彼の語りは家族の物語を広げます。放っておかれた子ども時代、いわれのない嫌疑、そして監獄。',yomikata:'彼の経験と声を、弟のものと混同しないようにしましょう。'},
+ 'segundo-hijo':{namae:'次男',yakuwari:'ビスカーチャに育てられた息子',shoukai:'彼の物語には、失われた遺産と、老ビスカーチャの後見のもとでの暮らしが含まれます。ビスカーチャのシニカルな助言は、苦いユーモアと苦しみを結びつけています。',yomikata:'ビスカーチャの格言とフィエロの最後の教えとの対比が、決定的な意味をもちます。'},
+ 'don-vizcacha':{namae:'老ビスカーチャ',yakuwari:'後見人、皮肉な「師」',shoukai:'貧しくずる賢い老人で、フィエロの次男の後見人に指名されます。そのばかげた癖と自分本位の格言は、第二部でもっとも有名な部分の一つです。',yomikata:'ビスカーチャのことわざを、そのままこの詩の道徳だと受け取ってはいけません。'},
+ 'picardia':{namae:'ピカルディア',yakuwari:'クルスの息子、語り手の一人',shoukai:'孤児としての子ども時代、賭け事、権力の乱用、辺境の兵役を語る若者。やがて自分がクルス軍曹の息子であることを知ります。',yomikata:'名前はずる賢さを思わせますが、彼の物語は生き延びることの代価を何度も示しています。'},
+ 'la-cautiva':{namae:'捕らわれの女性',yakuwari:'襲撃でさらわれた女性',shoukai:'囚われの中での彼女の苦しみとフィエロの介入が、第二部でフィエロの視点から語られます。',yomikata:'彼女には名前がありません。女性の描き方についても、当時の先住民の描き方についても、この挿話は批判的に読む必要があります。'},
+ 'el-moreno':{namae:'モレーノ',yakuwari:'歌比べをする黒人の歌い手',shoukai:'アフリカ系の歌い手がフィエロに問答形式の歌比べを挑み、昔の殺人の記憶を呼び覚まします。',yomikata:'彼は第一部でフィエロが殺した男ではなく、その兄弟です。そして一つの文学的な声が、一つの民族全体を代表するわけではありません。'},
+ 'moreno-muerto':{namae:'踊りの場で殺された男',yakuwari:'第七歌の犠牲者',shoukai:'フィエロとのけんかで命を落とす黒人の男性。語り手の話には、人種差別的な侮辱、挑発、暴力が含まれています。',yomikata:'語り手の言い分は言い訳になりません。またこの犠牲者を、歌比べの歌い手と混同しないでください。'},
+ 'juez-paz':{namae:'治安判事',yakuwari:'地方の権力',shoukai:'徴兵や追跡の語りに登場する地方の権力者。この役職は実在した制度にあたりますが、人物そのものは架空です。',yomikata:'詩の中の判事を特定の歴史上の人物に当てはめる根拠はありません。'},
+};
+const gazou=(id:string)=>({'martin-fierro':'martin-fierro','sargento-cruz':'sargento-cruz','esposa-fierro':'esposa-de-fierro','primer-hijo':'hijo-mayor-de-fierro','segundo-hijo':'hijo-segundo-de-fierro','don-vizcacha':'viejo-vizcacha','picardia':'picardia','la-cautiva':'la-cautiva','el-moreno':'el-moreno','moreno-muerto':'negro-del-baile','juez-paz':'juez-de-paz'} as Record<string,string>)[id];
+const link=(r:{parte:'ida'|'vuelta';canto:number})=>`/ja/gakusei/${r.parte}/${r.canto}/`;
+---
+<Base noindex migas={[{label:'登場人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/',zh:'/zh/renwu/'}} lang="ja" pageType="CollectionPage" title="『マルティン・フィエロ』登場人物ガイド" description="マルティン・フィエロ、クルス軍曹、老ビスカーチャ、ピカルディア、息子たち、捕らわれの女性、モレーノ。ホセ・エルナンデスの詩の登場人物と、その批判的な読み方を紹介します。">
+<article class="jinbutsu-ja">
+<header><p class="eyebrow">読書ガイド · 登場人物</p><h1><em>『マルティン・フィエロ』</em>の登場人物</h1><p class="lid">お尋ね者のガウチョ、忠実な友、失ったものを理解しようとする二人の息子、厚かましい後見人、そして片隅に追いやられた声たち。この詩に道徳的な複雑さを与えている人物たちを紹介します。</p></header>
+<nav class="tobu" aria-label="人物へ移動">{personajes.map(p=><a href={`#${p.id}`}>{kaado[p.id].namae}</a>)}</nav>
+<div class="kaadogun">{personajes.map(p=><section class="kaado" id={p.id} aria-labelledby={`t-${p.id}`}><figure><img src={`/media/fotografias-v3/${gazou(p.id)}.webp`} alt={`編集部によるデジタルの解釈：${kaado[p.id].namae}。歴史的な肖像ではありません`} loading="lazy"/><figcaption>現代のデジタル再現</figcaption></figure><div><p class="eyebrow">{kaado[p.id].yakuwari}</p><h2 id={`t-${p.id}`}>{kaado[p.id].namae}</h2><p>{kaado[p.id].shoukai}</p><p><strong>批判的に読む：</strong>{kaado[p.id].yomikata}</p><p class="link"><strong>学習カード：</strong>{p.referencias.map(r=><a href={link(r)}>{r.parte==='ida'?'第一部':'第二部'} · 第{r.canto}歌</a>)}</p></div></section>)}</div>
+<section class="tsukaikata"><h2>このガイドの使い方</h2><p>これらのカードは十一人の人物の役割を説明し、原文の連を載せた各歌の学習カードにつながっています。解釈をまじえた要約であって、エルナンデスの詩句の引用や翻訳ではありません。挿絵は現代の再現であり、歴史資料ではありません。</p></section>
+</article>
+<style>.jinbutsu-ja{max-width:1100px;margin:25px auto 80px;color:#31291f}.jinbutsu-ja a{color:#843e2c;text-underline-offset:4px}.eyebrow{font:750 .76rem system-ui,sans-serif;letter-spacing:.1em;color:#955138}.jinbutsu-ja h1{font:600 clamp(2.3rem,5vw,4.2rem)/1.2 Georgia,serif;margin:18px 0}.jinbutsu-ja h1 em{font-weight:400}.lid{font:1.2rem/1.85 Georgia,serif;max-width:44em}.tobu{border-block:1px solid #cbb9a5;display:flex;flex-wrap:wrap;gap:10px 17px;padding:19px 0;margin:35px 0;font:.92rem system-ui,sans-serif}.kaadogun{display:grid;gap:30px}.kaado{display:grid;grid-template-columns:300px 1fr;gap:30px;border-top:2px solid #382d25;padding-top:24px;scroll-margin-top:70px}.kaado figure{margin:0}.kaado img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}.kaado figcaption{font:.76rem system-ui,sans-serif;color:#74614d;margin-top:6px}.kaado h2{font:600 2rem Georgia,serif;margin:6px 0 12px}.kaado p{font:1.04rem/1.85 Georgia,serif}.link{display:flex;flex-wrap:wrap;gap:6px 14px;font:.9rem system-ui,sans-serif!important}.tsukaikata{background:#efe3d5;padding:22px 26px;margin-top:40px}.tsukaikata h2{font:600 1.7rem Georgia,serif;margin:0 0 10px}.tsukaikata p{font:1.03rem/1.85 Georgia,serif}@media(max-width:720px){.kaado{grid-template-columns:1fr;gap:14px}.kaado img{aspect-ratio:3/2}.tsukaikata{padding:18px}}</style>
+</Base>

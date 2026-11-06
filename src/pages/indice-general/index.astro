@@ -16,6 +16,8 @@ import { kartochkiIda } from '../../data/ru-kartochki-ida';
 import { kartochkiVuelta } from '../../data/ru-kartochki-vuelta';
 import { kapianIda } from '../../data/zh-kapian-ida';
 import { kapianVuelta } from '../../data/zh-kapian-vuelta';
+import { kaadoIda } from '../../data/ja-kaado-ida';
+import { kaadoVuelta } from '../../data/ja-kaado-vuelta';
 const grupos=[
   {
     "id": "lectura",
@@ -353,6 +355,18 @@ const grupos=[
       {titulo:"中文 — 父亲的教诲",url:"/zh/jiaohui/",descripcion:"Canto XXXII completo con traducción de estudio en chino."},
       {titulo:"中文 — 文化杂志",url:"/zh/zazhi/",descripcion:"Revista cultural de la edición china."},
       {titulo:"中文 — 马黛茶",url:"/zh/zazhi/mate/",descripcion:"El mate, de los guaraníes a Martín Fierro, en chino."},
+      {titulo:"日本語",url:"/ja/",descripcion:"Edición japonesa (en preparación): versos originales con traducción de estudio y comentario en japonés."},
+      {titulo:"日本語 — 原詩を読む",url:"/ja/yomu/",descripcion:"Guía para leer el original en español desde el japonés."},
+      {titulo:"日本語 — 学生のために",url:"/ja/gakusei/",descripcion:"Guías de estudio en japonés para los 46 cantos."},
+      ...Object.entries(kaadoIda).map(([n,g])=>({titulo:`日本語 — Ida, canto ${romano(Number(n))}: ${g.midashi}`,url:`/ja/gakusei/ida/${n}/`,descripcion:'Guía de estudio en japonés.'})),
+      ...Object.entries(kaadoVuelta).map(([n,g])=>({titulo:`日本語 — Vuelta, canto ${romano(Number(n))}: ${g.midashi}`,url:`/ja/gakusei/vuelta/${n}/`,descripcion:'Guía de estudio en japonés.'})),
+      {titulo:"日本語 — ガウチョ用語集",url:"/ja/gakusei/yogo/",descripcion:"Glosario gauchesco en japonés."},
+      {titulo:"日本語 — ホセ・エルナンデス",url:"/ja/jose-hernandez/",descripcion:"Biografía del autor en japonés."},
+      {titulo:"日本語 — 登場人物",url:"/ja/jinbutsu/",descripcion:"Guía de personajes en japonés."},
+      {titulo:"日本語 — 出典と著作権",url:"/ja/shutten-to-chosakuken/",descripcion:"Fuentes, créditos y derechos de la edición japonesa."},
+      {titulo:"日本語 — 父の教え",url:"/ja/oshie/",descripcion:"Canto XXXII completo con traducción de estudio en japonés."},
+      {titulo:"日本語 — 文化マガジン",url:"/ja/zasshi/",descripcion:"Revista cultural de la edición japonesa."},
+      {titulo:"日本語 — マテ茶",url:"/ja/zasshi/mate/",descripcion:"El mate, de los guaraníes a Martín Fierro, en japonés."},
       {
         "titulo": "Italiano",
         "url": "/it/",

@@ -351,3 +351,5 @@ body main#contenido .mf-revista>.mf-lead .mf-kicker{display:block;color:#8b4731;
 .site-header .editorial-nav-wrap>.container{border-bottom:3px double #40342c}
 /* Edición china: el chino no usa cursiva; el énfasis queda en redonda. */
 em:lang(zh),i:lang(zh){font-style:normal}
+/* Edición japonesa: tampoco usa cursiva. */
+em:lang(ja),i:lang(ja){font-style:normal}

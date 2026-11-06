@@ -1,0 +1,19 @@
+---
+// 日本語版の記事テンプレート（イタリア語版と同じレイアウト）。
+import '../styles/edizione-italiana.css';
+interface Props {kicker:string; midashi:string; ridobun:string; gazou?:string; alt?:string; caption?:string; shutten?:{name:string; url:string; gengo?:string}[]; chuki?:string}
+const {kicker,midashi,ridobun,gazou,alt='',caption,shutten=[],chuki}=Astro.props;
+---
+<article class="it-articolo" lang="ja">
+ <header class="it-testata">
+  <p class="it-occhiello">{kicker}</p>
+  <h1 set:html={midashi}/>
+  <p class="it-sommario">{ridobun}</p>
+ </header>
+ {gazou && <figure class="it-figura"><img src={gazou} alt={alt} loading="eager" decoding="async"/>{caption && <figcaption>{caption}</figcaption>}</figure>}
+ <div class="it-corpo">
+  <slot/>
+  {shutten.length>0 && <section class="it-fonti" aria-labelledby="ja-shutten"><h2 id="ja-shutten">出典と参考資料</h2>{chuki && <p>{chuki}</p>}<ul>{shutten.map(f=><li><a href={f.url} lang={f.gengo} {...(f.url.startsWith('http')?{target:'_blank',rel:'noopener noreferrer'}:{})}>{f.name}</a></li>)}</ul></section>}
+  <p class="it-ritorno"><a href="/ja/">← 日本語版トップへ</a> · <a href="/ja/gakusei/">学習カード</a></p>
+ </div>
+</article>

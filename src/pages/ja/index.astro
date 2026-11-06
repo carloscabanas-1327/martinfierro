@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import ConsejosPortada from '../../components/ConsejosPortada.astro';
+import '../../styles/portale-edizione.css';
+import {estrofasDeCanto} from '../../lib/corpus';
+import {boutouJa} from '../../data/ja-gakushu';
+const saisho=estrofasDeCanto('ida',1)[0];
+const kyoudai=estrofasDeCanto('vuelta',32).find(e=>e.numero===1160)!;
+const kouna=[
+ {n:'01',midashi:'スペイン語の原詩を読む',naiyou:'日本語の読者のための読書ガイド。ガウチョ方言のつづりの規則、まぎらわしい言葉、そして全46歌への入り口。',href:'/ja/yomu/',gazou:'/media/fotografias-v3/la-ida.webp',alt:'デジタル再現：アルゼンチンの草原のガウチョ'},
+ {n:'02',midashi:'父の教え',naiyou:'第三十二歌の全文を、一連ごとに日本語の学習訳と読みのポイントつきで。',href:'/ja/oshie/',gazou:'/media/fotografias-v3/consejos-fogon-hijos.webp',alt:'デジタル再現：火のそばで息子たちに助言するマルティン・フィエロ'},
+ {n:'03',midashi:'マテ茶、パンパの飲み物',naiyou:'グアラニーの人々からイエズス会の伝道村へ、器からたき火のそばへ。マテ茶の歴史と、詩の中での役割。',href:'/ja/zasshi/mate/',gazou:'/media/fotografias-v3/mate-pava-yerba.webp',alt:'デジタル再現：火のそばのやかんとマテ茶'},
+ {n:'04',midashi:'文化マガジン',naiyou:'日本の読者に向けて語るパンパの伝統。すべての記事に出典を記しています。',href:'/ja/zasshi/',gazou:'/media/fotografias-v3/revista-cultural.webp',alt:'デジタル再現：十九世紀のパンパの田園の暮らし'},
+];
+---
+<Base noindex lang="ja" pageType="CollectionPage" title="『マルティン・フィエロ』日本語版：アルゼンチンのガウチョ叙事詩を読む" description="ホセ・エルナンデス『マルティン・フィエロ』の日本語ガイド：スペイン語の原文の詩句と日本語の学習訳、息子たちへの教え、46枚の学習カード、そしてガウチョの世界。">
+<div class="en-portal ja-portal" lang="ja">
+ <div class="mf-editionline"><span>文化版 · アルゼンチンと日本の読者</span><span>ホセ・エルナンデス · 1872 / 1879</span><a href="/ja/yomu/">この版の読み方 ↗</a></div>
+ <section class="en-hero" aria-labelledby="ja-midashi">
+  <div class="en-visual">
+   <img src="/media/fotografias-v3/hero-gaucho-pampa.webp" width="1440" height="850" fetchpriority="high" alt="デジタル再現：夕暮れのパンパの草原を馬で行くガウチョ"/>
+   <p>編集部による再現画像 · 歴史的な写真ではありません</p>
+  </div>
+  <div class="en-hero-copy">
+   <p class="en-kicker">ホセ・エルナンデス · 1872 / 1879</p>
+   <h1 id="ja-midashi">『マルティン・フィエロ』：<em>日本の読者に贈るガウチョの叙事詩。</em></h1>
+   <p class="en-lead">歌い手、脱走兵、帰ってきた父。アルゼンチンの国民的な叙事詩は十九世紀のパンパの草原を語ります。馬、たき火、手から手へと回されるマテ茶、そして草原に生きる人々が受けた不正。</p>
+   <div class="en-actions"><a class="en-button" href="/ja/yomu/">読み始める <span aria-hidden="true">↗</span></a><a class="en-outline" href="#kono-ban">この版を見る ↓</a></div>
+   <p class="en-language-note">詩句はすべてホセ・エルナンデスのスペイン語の原文（46歌、全7210行）から引用し、このサイトの編集部が書いた日本語の学習訳と解説を添えています。</p>
+  </div>
+ </section>
+
+ <ConsejosPortada id="ja-oshie" lang="ja" kicker="LA VUELTA · 第三十二歌 · 1879 · 信仰 · 労働 · 友情" titulo="マルティン・フィエロの息子たちへの教え" texto="年老いたガウチョは、人生が教えてくれたすべてをまとめます。信仰、自制、まっとうな労働、友情、そして兄弟の団結。この歌を原文で、一連ごとに日本語の学習訳つきで読んでみてください。" llamado="教えを読む" href="/ja/oshie/" alt="デジタル再現：マテ茶を手元に、火のそばでマルティン・フィエロの教えに耳を傾ける二人の息子とクルスの息子"/>
+
+ <section class="ja-boutou" aria-labelledby="ja-boutou-midashi">
+  <p class="en-kicker">詩はこう始まる</p>
+  <h2 id="ja-boutou-midashi">第一連：原文と日本語</h2>
+  <div class="ja-boutou-grid">
+   <figure lang="es"><figcaption>José Hernández, 1872</figcaption><blockquote>{saisho.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+   <figure><figcaption>散文の学習訳</figcaption><p>{boutouJa[saisho.numero]}</p></figure>
+  </div>
+  <p><a href="/ja/yomu/">冒頭の連と言葉の説明を読む →</a> · <a href="/leer/ida/1/" lang="es">Leer el canto I en español →</a></p>
+ </section>
+
+ <section class="en-first-feature" aria-labelledby="ja-kakehashi"><div><p class="en-kicker">エスコバルの花と、ブエノスアイレスの日系社会</p><h2 id="ja-kakehashi">マルティン・フィエロの世界は、日本の読者から遠くありません</h2><p>日本からアルゼンチンへの移民は1908年、沖縄や鹿児島の出身者がブラジルを経てやって来たことに始まるとされています。日系の人々はブエノスアイレスのクリーニング店（ティントレリア）や、ブエノスアイレス州エスコバルの花の栽培で知られるようになり、エスコバルはいまアルゼンチン全国花祭りの開催地です。日系人は現在およそ11万人。アルゼンチンの学校で子どもたちが暗唱する詩句を、日系の家庭の子どもたちもまた暗唱しています。日本では、スペイン語を学ぶ学生がラテンアメリカ文学の授業でこの詩に出会い、1962年と1981年には日本語訳も出版されました。詩の中でもっとも多く引用される連は、日本の読者にもなじみ深い教えを語っています。兄弟の団結です。</p>
+ <figure class="ja-inyou" lang="es"><figcaption lang="ja">La vuelta de Martín Fierro、第三十二歌 · 第{kyoudai.numero}連</figcaption><blockquote>{kyoudai.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+ <a href="/ja/oshie/">教えをすべて読む ↗</a> · <a href="/ja/jose-hernandez/">ホセ・エルナンデス ↗</a> · <a href="/ja/gakusei/yogo/">ガウチョ用語集 ↗</a></div></section>
+
+ <section class="en-first-feature" aria-labelledby="ja-gakusei"><div><p class="en-kicker">学生のために</p><h2 id="ja-gakusei">46の歌に、46枚のカード</h2><p>どの歌にも日本語の学習カードがあります。あらすじ、原文の重要な連、登場人物、テーマ、ガウチョの言葉、そしてスペイン語の授業やレポート、読書会で使える問い。</p><a href="/ja/gakusei/">学習カードを開く ↗</a> · <a href="/ja/jinbutsu/">登場人物 ↗</a> · <a href="/ja/gakusei/ida/1/">第一歌から始める ↗</a></div></section>
+
+ <section id="kono-ban" class="en-section" aria-labelledby="ja-kouna">
+  <div class="en-section-heading"><p class="en-kicker">この版を見る</p><h2 id="ja-kouna">叙事詩、教え、ガウチョの世界。</h2></div>
+  <div class="en-grid">{kouna.map(s=><article class="en-card"><a href={s.href}><div class="en-image"><img src={s.gazou} alt={s.alt} loading="lazy" decoding="async"/></div><div class="en-card-copy"><span>{s.n} / この版</span><h3>{s.midashi}</h3><p>{s.naiyou}</p><strong>コーナーへ <span aria-hidden="true">↗</span></strong></div></a></article>)}</div>
+ </section>
+
+ <section class="en-translation" aria-labelledby="ja-honyaku"><div><p class="en-kicker">『マルティン・フィエロ』の日本語訳</p><h2 id="ja-honyaku">二つの日本語訳があり、どちらも著作権で保護されています。</h2><p>興村禎吉訳『マルティンフィエロ』（協同組合通信社、1962年）と、大林文彦・玉井礼一郎訳『マルティン・フィエロ：パンパスの吟遊ガウチョ』（たまいらぼ、1981年）です。どちらも著作権で保護されているため、本版では転載しません。私たちが提供するのは、原文、散文の学習訳、そして解説です。図書館にある翻訳と並べて読むことができます。</p><div class="en-actions"><a class="en-button" href="/ja/yomu/#ja-honyaku-shousai">くわしく見る ↗</a><a class="en-outline" href="/traducciones/" lang="es">翻訳の一覧（スペイン語）↗</a></div></div><img src="/media/archivo/ejemplar-corregido-martin-fierro-1872-portada.webp" alt="『El gaucho Martín Fierro』1872年初版の扉" loading="lazy"/></section>
+
+ <section class="en-final" aria-labelledby="ja-owari"><p class="en-kicker">文献ライブラリー</p><h2 id="ja-owari">九つの言語で、ひとつの叙事詩。</h2><p>MARTINFIERRO.ORG は独立したデジタル版です。スペイン語、英語、イタリア語、ポルトガル語、フランス語、ドイツ語、ロシア語、中国語の版があり、いま日本語版が加わりました。どの版も同じ原文を使い、歴史資料と現代の解釈をいつも区別しています。</p><p><a href="/" lang="es">Edición en español</a> · <a href="/en/" lang="en">English edition</a> · <a href="/it/" lang="it">Edizione italiana</a> · <a href="/pt/" lang="pt-BR">Edição brasileira</a> · <a href="/fr/" lang="fr">Édition française</a> · <a href="/de/" lang="de">Deutsche Ausgabe</a> · <a href="/ru/" lang="ru">Русское издание</a> · <a href="/zh/" lang="zh-CN">中文版</a></p></section>
+</div>
+<style>
+.ja-portal{margin-top:0}
+.ja-portal h1,.ja-portal h2{line-break:strict}
+.ja-boutou{margin:45px 0;padding:36px 0;border-block:1px solid #bba995}
+.ja-boutou h2{font:600 clamp(1.9rem,3.4vw,3rem)/1.3 Georgia,serif;margin:0 0 22px}
+.ja-boutou-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ja-boutou figure,.ja-inyou{margin:0;background:#f3ecdf;padding:22px 26px;border-top:2px solid #382d25}
+.ja-boutou figcaption,.ja-inyou figcaption{font:700 .72rem system-ui,sans-serif;letter-spacing:.1em;color:#8b4731;text-transform:uppercase}
+.ja-boutou blockquote,.ja-inyou blockquote{margin:12px 0 0}.ja-boutou blockquote span,.ja-inyou blockquote span{display:block;font:1.15rem/1.7 Georgia,serif}
+.ja-inyou{margin:20px 0}
+.ja-boutou figure p{font:1.08rem/1.9 Georgia,serif;margin:12px 0 0}
+.ja-boutou>p{font:.92rem system-ui,sans-serif;margin-top:18px}
+@media(max-width:700px){.ja-boutou-grid{grid-template-columns:1fr}}
+</style>
+</Base>

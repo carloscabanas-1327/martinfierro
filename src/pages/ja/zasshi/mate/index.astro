@@ -1,0 +1,47 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import {estrofasDeCanto} from '../../../../lib/corpus';
+// 詩の中でマテ茶と「cimarrón」（苦いマテ茶）が出てくる連。
+const ren=(parte:'ida'|'vuelta',canto:number,n:number)=>estrofasDeCanto(parte,canto).find(e=>e.numero===n)!;
+const shiku=[
+ {e:ren('ida',2,25),shutten:'El gaucho Martín Fierro、第二歌',href:'/leer/ida/2/',kaisetsu:'徴兵される前の幸せな日々の思い出です。ガウチョは夜明け前に起きて火のそばに座り、苦いマテ茶を心ゆくまで飲みます。連れ合いはポンチョにくるまって眠っています。シマロン（cimarrón）とは砂糖を入れない苦いマテ茶のことです。'},
+ {e:ren('vuelta',12,703),shutten:'La vuelta de Martín Fierro、第十二歌',href:'/leer/vuelta/12/',kaisetsu:'フィエロの長男が監獄での暮らしを語ります。数々の取り上げられたもののうち、真っ先に挙げられるのがマテ茶を禁じられたことです。田舎の人にとって、マテ茶を失うことは人とのつながりをすべて失うことでした。'},
+ {e:ren('vuelta',30,1090),shutten:'La vuelta de Martín Fierro、第三十歌',href:'/leer/vuelta/30/',kaisetsu:'歌比べの中で、一人の歌い手が自分をマテ茶にたとえます。ほかの人が「口を開けて」くれてはじめて役に立つ、と。このたとえが通じるのは、聴衆の誰もがマテ茶の淹れ方を知っているからです。'},
+];
+const bubun=[
+ {id:'hitotsu',midashi:'ひとつの飲み物、いくつもの国',dan:[
+  'ブエノスアイレスやモンテビデオでは mate（マテ）、ブラジル南部では chimarrão（シマハン）、パラグアイで冷たい水で淹れるときは tereré（テレレ）と呼ばれます。名前は変わっても、しぐさは同じです。器にマテの葉を入れ、湯を注ぎ、金属のストローを差して、人の手から手へと回していきます。',
+  '日本ではマテ茶は「飲むサラダ」とも呼ばれ、南米から来た健康茶としてペットボトルで売られていることが多いでしょう。けれども十九世紀のパンパでは、マテ茶はめずらしいものではありませんでした。目覚めたとき、火を囲むとき、客をもてなすときに飲む、ガウチョの毎日の飲み物だったのです。']},
+ {id:'guarani',midashi:'国境ができるずっと前から：グアラニーの人々の葉',dan:[
+  'マテ（Ilex paraguariensis）は南米南部の森に育つモチノキ科の木で、パラグアイ東部、ブラジル南部、アルゼンチンのミシオネス州に分布しています。紅茶や緑茶の仲間ではありません。お茶の葉は、日本でおなじみの茶の木という別の植物から取れるものです。',
+  'アルゼンチンやウルグアイやパラグアイができるずっと前から、グアラニー系の諸民族はこの葉を摘んで飲み、ka’a（草、植物）と呼んでいました。つまりこの習慣は先住民に由来するものです。ガウチョや国家が発明したのではなく、受け継いだのです。']},
+ {id:'densou',midashi:'イエズス会の伝道村',dan:[
+  '十七世紀と十八世紀、イエズス会士たちはグアラニーの人々とともに、いまのアルゼンチン、パラグアイ、ブラジルにまたがる土地に伝道村（レドゥクシオン）を築きました。マテはもう森で摘むだけのものではなくなり、農園で栽培されて、ラ・プラタ川流域全体で取引される商品になりました。',
+  'サン・イグナシオ・ミニ（アルゼンチン）やサン・ミゲル・ダス・ミソンイス（ブラジル）などの伝道村の遺跡は、ユネスコの世界遺産に登録されています。マルティン・フィエロが飲んだマテ茶は、グアラニーの植物と植民地の暮らしとのこの出会いに根ざしているのです。']},
+ {id:'mawashi',midashi:'回し飲みの輪',dan:[
+  '淹れ手（セバドール）は、沸騰させない熱い湯で葉を淹れ、いちばん苦い最初の一杯を自分で飲むことがよくあります。それから器に湯を足して、一人ひとりに順に手渡します。受け取った人は飲み干してから返します。金属のストロー（ボンビージャ）はかき回さないこと。「gracias」（ありがとう）と言うのは、もう十分です、という意味です。',
+  'これは作法であって法律ではなく、家ごとに決まりがあります。けれども意味ははっきりしています。マテ茶はみんなで分かち合うものなのです。だからこそ、詩の中でも暮らしの中でも、人のつながりの象徴になっています。日本の読者は、茶の湯の濃茶を思い出すかもしれません。一つの茶碗を客から客へと回していただく、あの飲み方です。']},
+ {id:'cimarron',midashi:'なぜ「シマロン」と呼ぶのか',dan:[
+  'スペイン語の cimarrón は、野生の、持ち主のいない、という意味で、草原で自由に暮らす牛や馬を指して使われました。マテ茶について言うときは、砂糖を入れない「そのまま」の苦いマテ茶を意味します。ラ・プラタ地方ではいまも「シマロン」といえば苦いマテ茶のことです。',
+  '『マルティン・フィエロ』にはこの言葉の両方の意味が出てきます。「perro cimarrón」（野良犬）もあれば、ガウチョが火のそばで飲むシマロンもあります。詩が田舎の言葉から養分を得ていることを示す、よい例です。']},
+];
+const shutten=[
+ {name:'UNESCO：Jesuit Missions of the Guaranis（サン・イグナシオ・ミニ、サン・ミゲル・ダス・ミソンイスなど）、英語',url:'https://whc.unesco.org/en/list/275'},
+ {name:'Royal Botanic Gardens, Kew：Ilex paraguariensis（自生地）、英語',url:'https://powo.science.kew.org/taxon/315555-2'},
+ {name:'Argentina.gob.ar：マテ、その植物としての歴史とグアラニーの人々（スペイン語）',url:'https://www.argentina.gob.ar/node/213295'},
+];
+---
+<Base noindex migas={[{label:'文化マガジン',href:'/ja/zasshi/'},{label:'マテ茶'}]} lingue={{en:'/en/magazine/yerba-mate/',pt:'/pt/revista/chimarrao/',fr:'/fr/revue/mate/',de:'/de/magazin/mate/',ru:'/ru/zhurnal/mate/',zh:'/zh/zazhi/mate/'}} lang="ja" pageType="Article" title="マテ茶、パンパの飲み物：グアラニーの人々からマルティン・フィエロまで" description="マテ茶の歴史：グアラニーの起源、イエズス会の伝道村、回し飲みの作法、そして『マルティン・フィエロ』の詩句に出てくる苦いマテ茶（シマロン）。">
+<article class="kiji-ja">
+<header><p class="eyebrow">文化マガジン · ガウチョの世界</p><h1>マテ茶、パンパの飲み物</h1><p class="lid">ブエノスアイレスからブラジル南部まで、ひとつの器が人の手から手へと渡されていきます。マテ茶の歴史はグアラニーの人々に始まり、イエズス会の伝道村を経て、『マルティン・フィエロ』の詩句にまで続いています。そこでは苦いマテ茶が、いまもシマロンと呼ばれています。</p></header>
+<figure><img src="/media/cultura-gauchesca/mate-tradicional-con-bombilla-rio-de-la-plata.webp" alt="編集部の挿絵：ラ・プラタ地方の、ストローを差したマテ茶" fetchpriority="high"/><figcaption>現代の編集部による挿絵で、当時の写真ではありません。</figcaption></figure>
+<div class="honbun"><nav class="mokuji" aria-label="この記事の目次"><strong>目次</strong>{bubun.map(s=><a href={`#${s.id}`}>{s.midashi}</a>)}<a href="#shinonaka">詩の中のマテ茶</a><a href="#shutten">出典</a></nav>
+{bubun.map(s=><section id={s.id}><h2>{s.midashi}</h2>{s.dan.map(p=><p>{p}</p>)}</section>)}
+<section id="shinonaka"><h2>『マルティン・フィエロ』の詩句の中のマテ茶</h2><p>ホセ・エルナンデスの詩には、マテ茶だけを描いた場面はありません。けれども日々の暮らしが出てくるところには、いつもこの器があります。原文から三か所を紹介します。</p>
+{shiku.map(v=><figure class="inyou"><figcaption><a href={v.href} lang="es">{v.shutten}</a> · 第{v.e.numero}連</figcaption><blockquote lang="es">{v.e.versos.map(l=><span>{l.texto}</span>)}</blockquote><p>{v.kaisetsu}</p></figure>)}
+<p>続けて読む：<a href="/ja/oshie/">『マルティン・フィエロの息子たちへの教え』</a>、第三十二歌の全文と日本語の学習訳。</p></section>
+<section id="shutten"><h2>出典と方法</h2><p>この記事は日本語版のために、スペイン語版の文化ガイドと、ブラジル、フランス語、ドイツ語、ロシア語、中国語の各版の記事をもとに書きました。歴史的な事実、文学的な描写、現代の挿絵をいつも区別しています。詩句はサイト全体で共有しているエルナンデスの原文から取っています。</p><ul>{shutten.map(f=><li><a href={f.url} target="_blank" rel="noopener noreferrer">{f.name}</a></li>)}</ul>
+<p><a href="/ja/zasshi/">← 文化マガジンに戻る</a> · <a href="/ja/">日本語版トップ</a></p></section>
+</div></article>
+<style>.kiji-ja{max-width:1040px;margin:24px auto 85px;color:#302820}.kiji-ja a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .76rem system-ui,sans-serif;letter-spacing:.12em;color:#934e35}.kiji-ja h1{font:600 clamp(2.2rem,5vw,4.2rem)/1.25 Georgia,serif;max-width:930px;margin:17px 0;text-wrap:balance}.lid{font:1.22rem/1.85 Georgia,serif;max-width:44em}.kiji-ja>figure{margin:32px 0 38px}.kiji-ja>figure img{width:100%;max-height:470px;object-fit:cover;border-radius:6px}.kiji-ja>figure figcaption{font:.8rem system-ui,sans-serif;color:#6c5b4a;margin-top:9px}.honbun{max-width:770px;margin:auto}.mokuji{display:flex;flex-wrap:wrap;gap:11px 19px;border-block:1px solid #c8b9a7;padding:21px 0;font:.88rem system-ui,sans-serif}.mokuji strong{width:100%}.honbun section{margin:44px 0}.honbun h2{font:600 clamp(1.6rem,3vw,2.3rem)/1.3 Georgia,serif;margin:0 0 19px}.honbun p,.honbun li{font:1.08rem/1.95 Georgia,serif}.honbun li{margin:12px 0}.inyou{margin:26px 0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.inyou figcaption{font:700 .78rem system-ui,sans-serif;letter-spacing:.06em;color:#8b4731}.inyou blockquote{margin:12px 0;border-left:3px solid #ac937b;padding-left:16px}.inyou blockquote span{display:block;font:1.1rem/1.65 Georgia,serif}.inyou p{font-size:1rem!important;margin:0}#shutten{background:#eee3d7;padding:25px 30px}@media(max-width:600px){#shutten,.inyou{padding:18px}}</style>
+</Base>
