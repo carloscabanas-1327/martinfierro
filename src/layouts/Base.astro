@@ -26,9 +26,9 @@ const FR_PUBLICADA=true;
 // Edición alemana (/de/): abierta a buscadores desde el 2026-11-06. Con false,
 // «Deutsch» solo aparecería en el selector dentro de /de/.
 const DE_PUBLICADA=true;
-// Edición rusa (/ru/): en noindex hasta su lanzamiento. Con false,
-// «Русский» solo aparece en el selector dentro de /ru/.
-const RU_PUBLICADA=false;
+// Edición rusa (/ru/): abierta a buscadores desde el 2026-11-06. Con false,
+// «Русский» solo aparecería en el selector dentro de /ru/.
+const RU_PUBLICADA=true;
 const lingueSelettore:Lingua[]=['es','en','it',...(PT_PUBLICADA||portuguese?['pt' as const]:[]),...(FR_PUBLICADA||french?['fr' as const]:[]),...(DE_PUBLICADA||german?['de' as const]:[]),...(RU_PUBLICADA||russian?['ru' as const]:[])];
 // Selector visible de idioma: los mismos idiomas en todas las ediciones.
 // Usa la página equivalente si está registrada; si no, la portada de cada edición.
