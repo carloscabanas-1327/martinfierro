@@ -12,6 +12,8 @@ import { guidesAller } from '../../data/fr-guides-aller';
 import { guidesRetour } from '../../data/fr-guides-retour';
 import { leitfaedenIda } from '../../data/de-leitfaeden-ida';
 import { leitfaedenVuelta } from '../../data/de-leitfaeden-vuelta';
+import { kartochkiIda } from '../../data/ru-kartochki-ida';
+import { kartochkiVuelta } from '../../data/ru-kartochki-vuelta';
 const grupos=[
   {
     "id": "lectura",
@@ -325,6 +327,18 @@ const grupos=[
       {titulo:"Deutsch — Die Ratschläge von Martín Fierro",url:"/de/ratschlaege-von-martin-fierro/",descripcion:"Canto XXXII completo con traducción de estudio en alemán."},
       {titulo:"Deutsch — Magazin",url:"/de/magazin/",descripcion:"Revista cultural de la edición alemana."},
       {titulo:"Deutsch — Mate",url:"/de/magazin/mate/",descripcion:"El mate, de los guaraníes a Martín Fierro, en alemán."},
+      {titulo:"Русский",url:"/ru/",descripcion:"Edición rusa (en preparación): versos originales con traducción de estudio y comentario en ruso."},
+      {titulo:"Русский — Читать поэму",url:"/ru/chitat-poemu/",descripcion:"Guía para leer el original en español desde el ruso."},
+      {titulo:"Русский — Студентам",url:"/ru/studentam/",descripcion:"Guías de estudio en ruso para los 46 cantos."},
+      ...Object.entries(kartochkiIda).map(([n,g])=>({titulo:`Русский — Ida, canto ${romano(Number(n))}: ${g.zagolovok}`,url:`/ru/studentam/ida/${n}/`,descripcion:'Guía de estudio en ruso.'})),
+      ...Object.entries(kartochkiVuelta).map(([n,g])=>({titulo:`Русский — Vuelta, canto ${romano(Number(n))}: ${g.zagolovok}`,url:`/ru/studentam/vuelta/${n}/`,descripcion:'Guía de estudio en ruso.'})),
+      {titulo:"Русский — Словарь",url:"/ru/studentam/glossarij/",descripcion:"Glosario gauchesco en ruso."},
+      {titulo:"Русский — Хосе Эрнандес",url:"/ru/jose-hernandez/",descripcion:"Biografía del autor en ruso."},
+      {titulo:"Русский — Персонажи",url:"/ru/personazhi/",descripcion:"Guía de personajes en ruso."},
+      {titulo:"Русский — Источники и права",url:"/ru/istochniki-i-prava/",descripcion:"Fuentes, créditos y derechos de la edición rusa."},
+      {titulo:"Русский — Советы Мартина Фьерро",url:"/ru/sovety-martina-fierro/",descripcion:"Canto XXXII completo con traducción de estudio en ruso."},
+      {titulo:"Русский — Журнал",url:"/ru/zhurnal/",descripcion:"Revista cultural de la edición rusa."},
+      {titulo:"Русский — Мате",url:"/ru/zhurnal/mate/",descripcion:"El mate, de los guaraníes a Martín Fierro, en ruso."},
       {
         "titulo": "Italiano",
         "url": "/it/",

@@ -1,0 +1,19 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {partes} from '../../../lib/corpus';
+import {kartochkiIda} from '../../../data/ru-kartochki-ida';
+import {kartochkiVuelta} from '../../../data/ru-kartochki-vuelta';
+const bloki=[
+ {chast:'ida',zagolovok:'Первая часть · El gaucho Martín Fierro (1872)',tekst:'От потерянной хижины до границы: набор, дезертирство, убийства, дружба с Крусом и уход в пустыню.',pesni:partes.ida.cantos.map(c=>({...c,k:kartochkiIda[c.numero]}))},
+ {chast:'vuelta',zagolovok:'Вторая часть · La vuelta de Martín Fierro (1879)',tekst:'Плен, пленница, встреча с сыновьями, старик Вискача, Пикардия, пайяда с Морено и советы.',pesni:partes.vuelta.cantos.map(c=>({...c,k:kartochkiVuelta[c.numero]}))},
+];
+---
+<Base noindex migas={[{label:'Студентам'}]} lingue={{es:'/estudiantes/',en:'/en/students/',it:'/it/studenti/',pt:'/pt/estudantes/',fr:'/fr/etudiants/',de:'/de/studierende/'}} lang="ru-RU" pageType="CollectionPage" title="«Мартин Фьерро» для студентов: 46 песен на русском" description="Учебные карточки на русском к 46 песням «Мартина Фьерро»: краткое содержание, строфы оригинала, персонажи, темы, слова языка гаучо и вопросы для обсуждения.">
+<div class="studentam-ru">
+ <header><p class="eyebrow">СТУДЕНТАМ · 46 УЧЕБНЫХ КАРТОЧЕК НА РУССКОМ</p><h1>«Мартин Фьерро», песнь за песнью</h1><p class="lid">Карточка к каждой песни: краткое содержание, главные строфы оригинала, персонажи, темы, слова языка гаучо и вопросы для занятий испанским, доклада или читательского кружка.</p></header>
+ <div class="primechanie"><strong>Как пользоваться:</strong> прочитайте карточку, а затем песнь в оригинале (ссылка есть на каждой странице). Если у вас есть русский перевод, положите его рядом с оригиналом для сравнения. Карточки дают комментарий, а не перевод стихов; полный учебный перевод есть в разделе <a href="/ru/sovety-martina-fierro/">«Советы сыновьям»</a>.</div>
+ {bloki.map(b=><section><h2>{b.zagolovok}</h2><p>{b.tekst}</p><ol class="spisok">{b.pesni.map(c=><li><a href={`/ru/studentam/${b.chast}/${c.numero}/`}><span>Песнь {c.titulo}</span><strong>{c.k.zagolovok}</strong></a></li>)}</ol></section>)}
+ <section class="dalee"><h2>Читать дальше</h2><p><a href="/ru/chitat-poemu/">Читать оригинал русскоязычному читателю</a> · <a href="/ru/zhurnal/mate/">Мате, напиток пампы</a> · <a href="/ru/studentam/glossarij/">Словарь гаучо</a> · <a href="/ru/personazhi/">Персонажи</a></p></section>
+</div>
+<style>.studentam-ru{max-width:1000px;margin:25px auto 85px;color:#302820}.studentam-ru a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .72rem system-ui,sans-serif;letter-spacing:.13em;color:#934e35}.studentam-ru h1{font:600 clamp(2.3rem,5vw,4.2rem)/1.1 Georgia,serif;letter-spacing:-.03em;margin:16px 0;hyphens:auto}.lid{font:1.2rem/1.65 Georgia,serif;max-width:70ch}.primechanie{background:#eee3d5;border-left:4px solid #904b36;padding:20px 22px;font:1rem/1.65 Georgia,serif;margin:28px 0}.studentam-ru section{margin:40px 0}.studentam-ru h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.2 Georgia,serif;hyphens:auto}.studentam-ru section>p{font:1.05rem/1.7 Georgia,serif}.spisok{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.spisok a{display:grid;gap:4px;background:#efe5d8;padding:14px 16px;text-decoration:none;color:#30271f;height:100%}.spisok span{font:700 .72rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8b4731}.spisok strong{font:600 1.04rem/1.35 Georgia,serif;hyphens:auto}.spisok a:hover strong{text-decoration:underline}.dalee{background:#f3ecdf;padding:20px 24px}@media(max-width:650px){.spisok{grid-template-columns:1fr}.dalee{padding:16px}}</style>
+</Base>

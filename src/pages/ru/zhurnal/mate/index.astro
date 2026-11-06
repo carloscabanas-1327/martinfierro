@@ -1,0 +1,47 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import {estrofasDeCanto} from '../../../../lib/corpus';
+// Стихи поэмы, в которых встречаются мате и «cimarrón» (горький мате).
+const strofa=(parte:'ida'|'vuelta',canto:number,n:number)=>estrofasDeCanto(parte,canto).find(e=>e.numero===n)!;
+const stihi=[
+ {e:strofa('ida',2,25),ref:'El gaucho Martín Fierro, песнь II',href:'/leer/ida/2/',kommentarij:'Это воспоминание о счастливом времени до набора: гаучо встаёт до рассвета, садится у огня и пьёт cimarrón, пока не напьётся вдоволь, а его подруга спит, закутавшись в пончо. Cimarrón — горький мате без сахара.'},
+ {e:strofa('vuelta',12,703),ref:'La vuelta de Martín Fierro, песнь XII',href:'/leer/vuelta/12/',kommentarij:'Старший сын Фьерро рассказывает о жизни в исправительной тюрьме. Среди лишений на первом месте стоит запрет на мате: для сельского человека потерять мате значит потерять всякое общение.'},
+ {e:strofa('vuelta',30,1090),ref:'La vuelta de Martín Fierro, песнь XXX',href:'/leer/vuelta/30/',kommentarij:'В пайяде, песенном состязании, один из певцов сравнивает себя с мате: он годится, только если ему откроют рот. Образ работает лишь потому, что каждый слушатель знал, как заваривают мате.'},
+];
+const razdely=[
+ {id:'odin-napitok',zagolovok:'Один напиток, несколько стран',abzacy:[
+  'В Буэнос-Айресе и Монтевидео говорят mate; на юге Бразилии — chimarrão; в Парагвае, когда вода холодная, — tereré. Названия меняются, а жест остаётся: йерба в сосуде, горячая вода, металлическая трубочка, которая переходит из рук в руки.',
+  'В России мате знают как «чай мате» из магазина или как бодрящий напиток. Но в пампе XIX века мате не был экзотикой: это был повседневный напиток гаучо, напиток пробуждения, костра и гостеприимства.']},
+ {id:'guarani',zagolovok:'До всяких границ: трава гуарани',abzacy:[
+  'Падуб парагвайский (Ilex paraguariensis) — дерево из лесов юга Южной Америки: восточного Парагвая, юга Бразилии и аргентинской провинции Мисьонес. С чёрным или зелёным чаем он не родствен: те получают из другого растения.',
+  'Задолго до того, как появились Аргентина, Уругвай или Парагвай, народы гуарани уже собирали и употребляли его листья, которые называли ka’a (трава, растение). Значит, обычай индейского происхождения. Его не изобрели ни гаучо, ни национальные государства: они его унаследовали.']},
+ {id:'missii',zagolovok:'Иезуитские миссии',abzacy:[
+  'В XVII и XVIII веках иезуиты вместе с гуарани основывали редукции на землях, которые сегодня поделены между Аргентиной, Парагваем и Бразилией. Йербу стали не только собирать в лесу, но и выращивать на плантациях, и она превратилась в товар, которым торговали по всему бассейну Ла-Платы.',
+  'Руины этих миссий, например Сан-Игнасио-Мини в Аргентине или Сан-Мигел-дас-Миссойнс в Бразилии, внесены в список Всемирного наследия ЮНЕСКО. Мате, который пьёт Мартин Фьерро, уходит корнями в эту встречу растения гуарани и колониальной жизни.']},
+ {id:'krug',zagolovok:'Круг мате',abzacy:[
+  'Тот, кто заваривает мате, cebador, заливает йербу горячей, но не кипящей водой и часто сам выпивает первую, самую горькую порцию. Затем он доливает сосуд и подаёт его по очереди каждому; мате выпивают до конца, прежде чем вернуть. Bombilla, металлическую трубочку, не трогают, а сказать «gracias» значит, что больше не хочешь.',
+  'Это правила вежливости, а не законы, и в каждом доме они свои. Смысл их ясен: мате делят на всех. Поэтому и в поэме, и в жизни он знак общения.']},
+ {id:'cimarron',zagolovok:'Почему «cimarrón»?',abzacy:[
+  'По-испански cimarrón значит дикий, бесхозный: так называли скот и лошадей, которые свободно жили в степи. Перенесённое на мате, слово стало означать горький мате без сахара, выпитый «как есть». На Ла-Плате «cimarrón» и сегодня значит горький мате.',
+  'В «Мартине Фьерро» слово встречается в обоих значениях: есть «perro cimarrón», бездомная собака, и есть cimarrón, который гаучо пьёт у огня. Это хороший пример того, как поэма черпает из языка деревни.']},
+];
+const istochniki=[
+ {name:'UNESCO: Jesuit Missions of the Guaranis (Сан-Игнасио-Мини, Сан-Мигел-дас-Миссойнс …), на английском',url:'https://whc.unesco.org/en/list/275'},
+ {name:'Royal Botanic Gardens, Kew: Ilex paraguariensis (естественный ареал), на английском',url:'https://powo.science.kew.org/taxon/315555-2'},
+ {name:'Argentina.gob.ar: мате, его ботаническая история и гуарани (на испанском)',url:'https://www.argentina.gob.ar/node/213295'},
+];
+---
+<Base noindex migas={[{label:'Журнал',href:'/ru/zhurnal/'},{label:'Мате'}]} lingue={{en:'/en/magazine/yerba-mate/',pt:'/pt/revista/chimarrao/',fr:'/fr/revue/mate/',de:'/de/magazin/mate/'}} lang="ru-RU" pageType="Article" title="Мате, напиток пампы: от гуарани до Мартина Фьерро" description="История мате и йербы: происхождение у гуарани, иезуитские миссии, круг мате и cimarrón в стихах «Мартина Фьерро».">
+<article class="ocherk-ru">
+<header><p class="eyebrow">КУЛЬТУРНЫЙ ЖУРНАЛ · МИР ГАУЧО</p><h1>Мате, напиток пампы</h1><p class="lid">От Буэнос-Айреса до юга Бразилии один и тот же сосуд переходит из рук в руки. История мате начинается у гуарани, проходит через иезуитские миссии и доходит до стихов «Мартина Фьерро», где горький мате ещё называется cimarrón.</p></header>
+<figure><img src="/media/cultura-gauchesca/mate-tradicional-con-bombilla-rio-de-la-plata.webp" alt="Редакционная иллюстрация: мате с бомбильей, как на Ла-Плате" fetchpriority="high"/><figcaption>Современная редакционная иллюстрация, а не фотография той эпохи.</figcaption></figure>
+<div class="chtenie"><nav class="soderzhanie" aria-label="В этой статье"><strong>В этой статье</strong>{razdely.map(s=><a href={`#${s.id}`}>{s.zagolovok}</a>)}<a href="#v-stihah">Мате в стихах</a><a href="#istochniki">Источники</a></nav>
+{razdely.map(s=><section id={s.id}><h2>{s.zagolovok}</h2>{s.abzacy.map(p=><p>{p}</p>)}</section>)}
+<section id="v-stihah"><h2>Мате в стихах «Мартина Фьерро»</h2><p>Поэма Хосе Эрнандеса не посвящает мате отдельной сцены, но сосуд появляется всюду, где появляется повседневная жизнь. Три места в оригинале:</p>
+{stihi.map(v=><figure class="citata"><figcaption><a href={v.href} lang="es">{v.ref}</a> · строфа {v.e.numero}</figcaption><blockquote lang="es">{v.e.versos.map(l=><span>{l.texto}</span>)}</blockquote><p>{v.kommentarij}</p></figure>)}
+<p>Читайте дальше: <a href="/ru/sovety-martina-fierro/">«Советы Мартина Фьерро сыновьям»</a> — песнь XXXII целиком, с учебным переводом на русский.</p></section>
+<section id="istochniki"><h2>Источники и метод</h2><p>Эта статья написана для русского издания на основе культурного путеводителя испанского издания и статей бразильского, французского и немецкого изданий. Мы всегда различаем исторические факты, литературные изображения и современные иллюстрации. Стихи взяты из оригинального текста Эрнандеса, которым пользуется весь сайт.</p><ul>{istochniki.map(f=><li><a href={f.url} target="_blank" rel="noopener noreferrer">{f.name}</a></li>)}</ul>
+<p><a href="/ru/zhurnal/">← Вернуться в журнал</a> · <a href="/ru/">Русское издание</a></p></section>
+</div></article>
+<style>.ocherk-ru{max-width:1040px;margin:24px auto 85px;color:#302820}.ocherk-ru a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .71rem system-ui,sans-serif;letter-spacing:.14em;color:#934e35}.ocherk-ru h1{font:600 clamp(2.4rem,5vw,4.75rem)/1.09 Georgia,serif;letter-spacing:-.035em;max-width:930px;margin:17px 0;text-wrap:balance}.lid{font:1.25rem/1.65 Georgia,serif;max-width:78ch}.ocherk-ru>figure{margin:32px 0 38px}.ocherk-ru>figure img{width:100%;max-height:470px;object-fit:cover;border-radius:6px}.ocherk-ru>figure figcaption{font:.77rem system-ui,sans-serif;color:#6c5b4a;margin-top:9px}.chtenie{max-width:770px;margin:auto}.soderzhanie{display:flex;flex-wrap:wrap;gap:11px 19px;border-block:1px solid #c8b9a7;padding:21px 0;font:.83rem system-ui,sans-serif}.soderzhanie strong{width:100%}.chtenie section{margin:44px 0}.chtenie h2{font:600 clamp(1.75rem,3vw,2.5rem)/1.17 Georgia,serif;margin:0 0 19px;hyphens:auto}.chtenie p,.chtenie li{font:1.08rem/1.83 Georgia,serif;hyphens:auto}.chtenie li{margin:12px 0}.citata{margin:26px 0;background:#f3ecdf;padding:20px 24px;border-top:2px solid #382d25}.citata figcaption{font:700 .74rem system-ui,sans-serif;letter-spacing:.06em;color:#8b4731}.citata blockquote{margin:12px 0;border-left:3px solid #ac937b;padding-left:16px}.citata blockquote span{display:block;font:1.1rem/1.65 Georgia,serif}.citata p{font-size:1rem!important;margin:0}#istochniki{background:#eee3d7;padding:25px 30px}@media(max-width:600px){#istochniki,.citata{padding:18px}}</style>
+</Base>

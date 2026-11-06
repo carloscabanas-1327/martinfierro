@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import ConsejosPortada from '../../components/ConsejosPortada.astro';
+import '../../styles/portale-edizione.css';
+import {estrofasDeCanto} from '../../lib/corpus';
+import {nachaloRu} from '../../data/ru-izuchenie';
+const pervaya=estrofasDeCanto('ida',1)[0];
+const kolonii=estrofasDeCanto('ida',12).find(e=>e.numero===362)!;
+const rubriki=[
+ {n:'01',zagolovok:'Читать поэму в оригинале',tekst:'Путеводитель для русскоязычного читателя: орфография деревенского испанского, «ложные друзья» и путь к каждой из 46 песен.',href:'/ru/chitat-poemu/',kartinka:'/media/fotografias-v3/la-ida.webp',alt:'Цифровая реконструкция: гаучо в аргентинской степи'},
+ {n:'02',zagolovok:'Советы сыновьям',tekst:'Песнь XXXII целиком, строфа за строфой, с учебным переводом на русский и пояснениями к чтению.',href:'/ru/sovety-martina-fierro/',kartinka:'/media/fotografias-v3/consejos-fogon-hijos.webp',alt:'Цифровая реконструкция: Мартин Фьерро даёт советы сыновьям у огня'},
+ {n:'03',zagolovok:'Мате, напиток пампы',tekst:'От гуарани к иезуитским миссиям, от сосуда к костру: история мате и его место в стихах поэмы.',href:'/ru/zhurnal/mate/',kartinka:'/media/fotografias-v3/mate-pava-yerba.webp',alt:'Цифровая реконструкция: чайник и мате у огня'},
+ {n:'04',zagolovok:'Культурный журнал',tekst:'Традиции пампы, рассказанные для русскоязычного читателя, всегда со ссылками на источники.',href:'/ru/zhurnal/',kartinka:'/media/fotografias-v3/revista-cultural.webp',alt:'Цифровая реконструкция сельской жизни в пампе XIX века'},
+];
+---
+<Base noindex lang="ru-RU" pageType="CollectionPage" title="«Мартин Фьерро» на русском: поэма об аргентинском гаучо" description="«Мартин Фьерро» Хосе Эрнандеса для русскоязычного читателя: стихи в испанском оригинале с учебными переводами, советы сыновьям, 46 учебных карточек и мир гаучо.">
+<div class="en-portal ru-portal" lang="ru-RU">
+ <div class="mf-editionline"><span>КУЛЬТУРНОЕ ИЗДАНИЕ · АРГЕНТИНА И РУССКОЯЗЫЧНЫЙ ЧИТАТЕЛЬ</span><span>ХОСЕ ЭРНАНДЕС · 1872 / 1879</span><a href="/ru/chitat-poemu/">КАК ЧИТАТЬ ЭТО ИЗДАНИЕ ↗</a></div>
+ <section class="en-hero" aria-labelledby="ru-zagolovok">
+  <div class="en-visual">
+   <img src="/media/fotografias-v3/hero-gaucho-pampa.webp" width="1440" height="850" fetchpriority="high" alt="Цифровая реконструкция: гаучо верхом в пампе на закате"/>
+   <p>РЕДАКЦИОННАЯ РЕКОНСТРУКЦИЯ · НЕ ИСТОРИЧЕСКАЯ ФОТОГРАФИЯ</p>
+  </div>
+  <div class="en-hero-copy">
+   <p class="en-kicker">ХОСЕ ЭРНАНДЕС · 1872 / 1879</p>
+   <h1 id="ru-zagolovok">«Мартин Фьерро»: <em>великая поэма о гаучо для русскоязычного читателя.</em></h1>
+   <p class="en-lead">Певец, дезертир, отец, который возвращается домой. Национальный эпос Аргентины рассказывает о пампе XIX века: о коне, о костре, о мате, который передают из рук в руки, и о несправедливости к людям степи.</p>
+   <div class="en-actions"><a class="en-button" href="/ru/chitat-poemu/">Начать читать <span aria-hidden="true">↗</span></a><a class="en-outline" href="#izdanie">Открыть издание ↓</a></div>
+   <p class="en-language-note">Стихи всегда цитируются в испанском оригинале Хосе Эрнандеса (7210 стихов в 46 песнях) вместе с учебными переводами и комментариями на русском, написанными нашей редакцией.</p>
+  </div>
+ </section>
+
+ <ConsejosPortada id="ru-sovety" lang="ru-RU" kicker="LA VUELTA · ПЕСНЬ XXXII · 1879 · ВЕРА · ТРУД · ДРУЖБА" titulo="Советы Мартина Фьерро сыновьям" texto="Старый гаучо подводит итог тому, чему его научила жизнь: вера, умение владеть собой, честный труд, дружба и единство братьев. Прочитайте всю песнь в оригинале, с учебным переводом каждой строфы." llamado="Читать советы" href="/ru/sovety-martina-fierro/" alt="Цифровая реконструкция: Мартин Фьерро, двое его сыновей и сын Круса слушают его советы у огня, с мате"/>
+
+ <section class="ru-nachalo" aria-labelledby="ru-nachalo-zagolovok">
+  <p class="en-kicker">ТАК НАЧИНАЕТСЯ ПОЭМА</p>
+  <h2 id="ru-nachalo-zagolovok">Первая строфа в оригинале и по-русски</h2>
+  <div class="ru-nachalo-setka">
+   <figure lang="es"><figcaption>José Hernández, 1872</figcaption><blockquote>{pervaya.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+   <figure><figcaption>Учебный перевод в прозе</figcaption><p>{nachaloRu[pervaya.numero]}</p></figure>
+  </div>
+  <p><a href="/ru/chitat-poemu/">Читать первые строфы с объяснением слов →</a> · <a href="/leer/ida/1/" lang="es">Leer el canto I en español →</a></p>
+ </section>
+
+ <section class="en-first-feature" aria-labelledby="ru-most"><div><p class="en-kicker">ИЗ РОССИЙСКОЙ ИМПЕРИИ В ПАМПУ</p><h2 id="ru-most">Мир Мартина Фьерро ближе русскому читателю, чем кажется</h2><p>Когда Эрнандес писал поэму, Аргентина звала европейских переселенцев в земледельческие колонии. С 1878 года, пока он работал над <em lang="es">Vuelta</em>, в провинциях Буэнос-Айрес и Энтре-Риос селились поволжские немцы, приехавшие из России. В 1889 году еврейские семьи из Подолии основали в провинции Санта-Фе колонию Мойсес-Виль, а с 1891 года Еврейское колонизационное общество барона Гирша основало целый ряд таких колоний в Энтре-Риос, Санта-Фе и Буэнос-Айресе. Уроженец Проскурова Альберто Герчунофф в 1910 году назвал свою книгу о них «Еврейские гаучо». Поэма замечает эту политику, хотя и с обидой: в песни XII Крус жалуется, что всё уходит в «проекты колоний и железных дорог» и тысячи тратятся на завербованных иностранцев, а бедного солдата обирают до нитки.</p>
+ <figure class="ru-citata" lang="es"><figcaption>El gaucho Martín Fierro, песнь XII · строфа {kolonii.numero}</figcaption><blockquote>{kolonii.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>
+ <a href="/ru/studentam/ida/12/">Карточка к песни XII ↗</a> · <a href="/ru/jose-hernandez/">Хосе Эрнандес ↗</a> · <a href="/ru/studentam/glossarij/">Словарь гаучо ↗</a></div></section>
+
+ <section class="en-first-feature" aria-labelledby="ru-studentam"><div><p class="en-kicker">СТУДЕНТАМ</p><h2 id="ru-studentam">46 песен, одна за другой</h2><p>К каждой песни карточка на русском: краткое содержание, главные строфы оригинала, персонажи, темы, слова языка гаучо и вопросы для занятий испанским, доклада или читательского кружка.</p><a href="/ru/studentam/">Открыть карточки ↗</a> · <a href="/ru/personazhi/">Персонажи ↗</a> · <a href="/ru/studentam/ida/1/">Начать с песни I ↗</a></div></section>
+
+ <section id="izdanie" class="en-section" aria-labelledby="ru-razdely">
+  <div class="en-section-heading"><p class="en-kicker">ОТКРЫТЬ ИЗДАНИЕ</p><h2 id="ru-razdely">Поэма, советы, мир гаучо.</h2></div>
+  <div class="en-grid">{rubriki.map(s=><article class="en-card"><a href={s.href}><div class="en-image"><img src={s.kartinka} alt={s.alt} loading="lazy" decoding="async"/></div><div class="en-card-copy"><span>{s.n} / ИЗДАНИЕ</span><h3>{s.zagolovok}</h3><p>{s.tekst}</p><strong>Перейти к разделу <span aria-hidden="true">↗</span></strong></div></a></article>)}</div>
+ </section>
+
+ <section class="en-translation" aria-labelledby="ru-perevod"><div><p class="en-kicker">«МАРТИН ФЬЕРРО» ПО-РУССКИ</p><h2 id="ru-perevod">Один русский перевод, ещё не в общественном достоянии.</h2><p>Поэму перевёл на русский поэт-переводчик Михаил Донской (1913–1996); перевод вышел в Москве в издательстве «Художественная литература» в 1972 году. Он охраняется авторским правом, поэтому это издание его не воспроизводит. Мы предлагаем оригинал, учебные переводы в прозе и комментарий, которые можно читать рядом с библиотечным экземпляром.</p><div class="en-actions"><a class="en-button" href="/ru/chitat-poemu/#ru-perevody">Подробнее ↗</a><a class="en-outline" href="/traducciones/" lang="es">Каталог переводов (на испанском) ↗</a></div></div><img src="/media/archivo/ejemplar-corregido-martin-fierro-1872-portada.webp" alt="Титульный лист первого издания «El gaucho Martín Fierro», 1872" loading="lazy"/></section>
+
+ <section class="en-final" aria-labelledby="ru-final"><p class="en-kicker">ДОКУМЕНТАЛЬНАЯ БИБЛИОТЕКА</p><h2 id="ru-final">Семь языков, одна поэма.</h2><p>MARTINFIERRO.ORG — независимое цифровое издание на испанском, английском, итальянском, португальском, французском, немецком, а теперь и на русском. Все издания используют один и тот же оригинальный текст и всегда отделяют исторические источники от современных толкований.</p><p><a href="/" lang="es">Edición en español</a> · <a href="/en/" lang="en">English edition</a> · <a href="/it/" lang="it">Edizione italiana</a> · <a href="/pt/" lang="pt-BR">Edição brasileira</a> · <a href="/fr/" lang="fr">Édition française</a> · <a href="/de/" lang="de">Deutsche Ausgabe</a></p></section>
+</div>
+<style>
+.ru-portal{margin-top:0}
+.ru-portal h1,.ru-portal h2{hyphens:auto}
+.ru-nachalo{margin:45px 0;padding:36px 0;border-block:1px solid #bba995}
+.ru-nachalo h2{font:600 clamp(1.9rem,3.4vw,3rem)/1.15 Georgia,serif;margin:0 0 22px}
+.ru-nachalo-setka{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ru-nachalo figure,.ru-citata{margin:0;background:#f3ecdf;padding:22px 26px;border-top:2px solid #382d25}
+.ru-nachalo figcaption,.ru-citata figcaption{font:700 .72rem system-ui,sans-serif;letter-spacing:.1em;color:#8b4731;text-transform:uppercase}
+.ru-nachalo blockquote,.ru-citata blockquote{margin:12px 0 0}.ru-nachalo blockquote span,.ru-citata blockquote span{display:block;font:1.15rem/1.7 Georgia,serif}
+.ru-citata{margin:20px 0}
+.ru-nachalo figure p{font:1.08rem/1.7 Georgia,serif;margin:12px 0 0}
+.ru-nachalo>p{font:.92rem system-ui,sans-serif;margin-top:18px}
+@media(max-width:700px){.ru-nachalo-setka{grid-template-columns:1fr}}
+</style>
+</Base>

@@ -311,6 +311,8 @@ main#contenido>.mf-migas a{color:inherit;text-decoration:underline;text-underlin
  .site-header .editorial-topline>.container{letter-spacing:.06em;gap:10px}
  .site-header .editorial-topline .mf-lingue a,.site-header .editorial-topline .mf-lingue b{letter-spacing:.04em}
 }
+/* Siete idiomas en el selector: en pantallas anchas el selector toma más espacio de la franja para no partirse en tres líneas. */
+@media(min-width:761px){.site-header .editorial-topline .mf-lingue:has(>:nth-child(7)){flex-grow:1.5;flex-wrap:wrap;row-gap:4px}.site-header .editorial-topline>.container:has(.mf-lingue>:nth-child(7))>span{min-width:0;overflow:hidden;text-overflow:ellipsis}}
 /* Seis idiomas en el selector: en móviles angostos se acorta el espacio y, si las fuentes son más anchas, pasan a dos líneas. */
 @media(max-width:420px){.site-header .editorial-topline>.container>span:first-child{flex-basis:0}.site-header .editorial-topline .mf-lingue{flex:0 1 auto;min-width:0;flex-wrap:wrap;justify-content:flex-end;gap:4px 7px}.site-header .editorial-topline .mf-lingue a,.site-header .editorial-topline .mf-lingue b{letter-spacing:.02em}}
 /* Línea de texto bajo las migas (antetítulo): mismo estilo y misma distancia en todas las páginas.
