@@ -95,7 +95,7 @@ import AvisoRecreacion from '../components/AvisoRecreacion.astro';
  {adKind !== 'none' && <AdSlot id={`${adKind}-01-body`} kind={adKind} />}
  <a class="skip" href="#contenido">{testata.salto}</a>
  <header class="site-header">
-  <div class="editorial-topline"><div class="container"><span>{testata.franja}</span><span>JOSÉ HERNÁNDEZ · 1872—1879</span><nav class="mf-lingue" aria-label={testata.idioma}>{lingueSelettore.filter(l=>selettore[l]).map(l=>edicionPropia && l===linguaCorrente ? <b aria-current="page" lang={l}>{nomiLingua[l]}</b> : <a href={selettore[l]} hreflang={hreflang[l]} lang={l}>{nomiLingua[l]}</a>)}</nav></div></div>
+  <div class="editorial-topline"><div class="container"><span>{testata.franja}</span><nav class="mf-lingue" aria-label={testata.idioma}>{lingueSelettore.filter(l=>selettore[l]).map(l=>edicionPropia && l===linguaCorrente ? <b aria-current="page" lang={l}>{nomiLingua[l]}</b> : <a href={selettore[l]} hreflang={hreflang[l]} lang={l}>{nomiLingua[l]}</a>)}</nav></div></div>
   <div class="container editorial-masthead">
    <a class="brand" href={testata.inicio} aria-label={testata.marca}><span>Martín Fierro<small>{testata.lema}</small></span></a>
    <a class="editorial-read" href={testata.leerHref}>{testata.leer} <span aria-hidden="true">↗</span></a>
