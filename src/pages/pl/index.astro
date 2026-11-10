@@ -1,12 +1,14 @@
 ---
-import Base from '../../layouts/Base.astro';
-const code = 'pl';
+import IdiomaEnPreparacion from '../../components/IdiomaEnPreparacion.astro';
+const textos = {
+  "titulo": "Martín Fierro po polsku: przekłady i źródła",
+  "aviso": "Wersja językowa w przygotowaniu. Żaden przekład nie zostanie opublikowany przed sprawdzeniem jego źródła, kompletności i praw do reprodukcji.",
+  "original": "Czytaj oryginał poematu po hiszpańsku",
+  "traducciones": "Udokumentowane przekłady",
+  "sinTraducciones": "Dla tego języka nie udokumentowano jeszcze żadnego przekładu.",
+  "biblioteca": "Biblioteka i archiwum",
+  "bibliotecaTexto": "Źródła historyczne, wydania i dokumenty są wspólne dla wszystkich języków i dostępne po hiszpańsku.",
+  "derechos": "Katalog przekładów i praw"
+};
 ---
-<Base lang={code} title={'Martín Fierro — '+code.toUpperCase()+' · edición en preparación'} description={'Espacio documental de Martín Fierro para el idioma '+code+'. Traducciones y fuentes sujetas a verificación editorial.'} noindex={true} pageType="CollectionPage">
-  <main id="contenido" class="container" style="padding:3rem 1rem;max-width:60rem">
-    <p><a href="/">Martín Fierro</a> · <a href="/en/">English</a></p>
-    <h1>Martín Fierro · {code.toUpperCase()}</h1>
-    <p>Edición lingüística en preparación. No se publica ninguna traducción hasta verificar su fuente, integridad y derechos de reproducción.</p>
-    <p><a href="/leer/">Consultar el poema original en español</a></p>
-  </main>
-</Base>
+<IdiomaEnPreparacion codigo="pl" nombre="Polski" textos={textos} />

@@ -1,12 +1,14 @@
 ---
-import Base from '../../layouts/Base.astro';
-const code = 'el';
+import IdiomaEnPreparacion from '../../components/IdiomaEnPreparacion.astro';
+const textos = {
+  "titulo": "Μαρτίν Φιέρο στα ελληνικά: μεταφράσεις και πηγές",
+  "aviso": "Η γλωσσική έκδοση βρίσκεται σε προετοιμασία. Καμία μετάφραση δεν δημοσιεύεται πριν ελεγχθούν η πηγή, η πληρότητα και τα δικαιώματα αναπαραγωγής της.",
+  "original": "Διαβάστε το πρωτότυπο ποίημα στα ισπανικά",
+  "traducciones": "Τεκμηριωμένες μεταφράσεις",
+  "sinTraducciones": "Δεν υπάρχει ακόμη τεκμηριωμένη μετάφραση σε αυτή τη γλώσσα.",
+  "biblioteca": "Βιβλιοθήκη και αρχείο",
+  "bibliotecaTexto": "Οι ιστορικές πηγές, οι εκδόσεις και τα έγγραφα είναι κοινά για όλες τις γλώσσες και διατίθενται στα ισπανικά.",
+  "derechos": "Κατάλογος μεταφράσεων και δικαιωμάτων"
+};
 ---
-<Base lang={code} title={'Martín Fierro — '+code.toUpperCase()+' · edición en preparación'} description={'Espacio documental de Martín Fierro para el idioma '+code+'. Traducciones y fuentes sujetas a verificación editorial.'} noindex={true} pageType="CollectionPage">
-  <main id="contenido" class="container" style="padding:3rem 1rem;max-width:60rem">
-    <p><a href="/">Martín Fierro</a> · <a href="/en/">English</a></p>
-    <h1>Martín Fierro · {code.toUpperCase()}</h1>
-    <p>Edición lingüística en preparación. No se publica ninguna traducción hasta verificar su fuente, integridad y derechos de reproducción.</p>
-    <p><a href="/leer/">Consultar el poema original en español</a></p>
-  </main>
-</Base>
+<IdiomaEnPreparacion codigo="el" nombre="Ελληνικά" textos={textos} />
