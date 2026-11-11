@@ -1,6 +1,8 @@
 // Índice documental de rutas españolas existentes. No incluye versos ni traducciones.
 // Mantener únicamente rutas verificadas en src/pages y las seis rutas de temas.
 import {temas} from './temas';
+import {personajes} from './personajes';
+import {enlacePersonaje,personajeSeo} from './personajes-seo';
 export type DocumentoES={titulo:string;url:string;descripcion:string;categoria:string};
 export const documentosES:DocumentoES[]=[
 {titulo:'La obra completa',url:'/leer/',descripcion:'El gaucho Martín Fierro y La vuelta: los 46 cantos originales.',categoria:'Lectura'},
@@ -26,5 +28,6 @@ export const documentosES:DocumentoES[]=[
 {titulo:'Índice general',url:'/indice-general/',descripcion:'Directorio de páginas, temas y cantos.',categoria:'Herramientas'},
 {titulo:'Buscar en los versos',url:'/buscar/',descripcion:'Buscar palabras y frases del poema original.',categoria:'Herramientas'},
 {titulo:'Traducciones y otros idiomas',url:'/traducciones/',descripcion:'Traducciones documentadas e investigación bibliográfica.',categoria:'Herramientas'},
+...personajes.map(p=>({titulo:personajeSeo[p.id].titulo,url:enlacePersonaje(p.id),descripcion:p.resumen,categoria:'Personajes'})),
 ...temas.map(t=>({titulo:t.titulo,url:`/temas/${t.slug}/`,descripcion:t.descripcion,categoria:'Temas'}))
 ];

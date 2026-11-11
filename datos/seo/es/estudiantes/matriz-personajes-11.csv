@@ -1,0 +1,12 @@
+id_personaje,keyword_principal,volumen_mensual_estimado,keyword_secundaria,volumen_secundario_estimado,intencion_editorial,fuente_registros
+"martin-fierro","martin fierro caracteristicas de los personajes","50","evolucion de martin fierro personaje","sin dato","protagonista, narrador y transformación","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"
+"sargento-cruz","sargento cruz martin fierro","50","sargento cruz caracteristicas","sin dato","por qué Cruz cambia de bando","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"
+"esposa-fierro","esposa de martin fierro","sin verificar","esposa de martin fierro historia","sin dato","pérdida del hogar, sin nombre propio","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"
+"primer-hijo","los hijos de martin fierro","50","hijo mayor de martin fierro resumen","sin dato","relato del hijo mayor distinto del menor","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"
+"segundo-hijo","los hijos de martin fierro","50","hijo menor de martin fierro y vizcacha","sin dato","relato del hijo menor y tutor","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"
+"don-vizcacha","el viejo vizcacha","5000","consejos del viejo vizcacha","500","tutor y consejos oportunistas","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"
+"picardia","picardia martin fierro","50","picardia hijo de cruz","50","filiación y relato","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"
+"la-cautiva","cautiva martin fierro","sin verificar","historia de la cautiva en martin fierro","sin dato","narración mediada de la cautiva","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"
+"el-moreno","el moreno martin fierro","50","payada martin fierro moreno","50","cantor diferente del muerto","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"
+"moreno-muerto","pelea martin fierro con el negro","sin verificar","hombre muerto en la pulperia martin fierro","sin dato","violencia y racismo narrados por Fierro","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"
+"juez-paz","juez de paz martin fierro","sin verificar","autoridad y reclutamiento martin fierro","sin dato","funcionario ficticio, institución histórica","datos/seo/es/03_personajes_episodios_y_consejos.csv y estudiantes/02_personajes.tsv"

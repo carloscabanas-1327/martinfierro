@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import {personajes} from '../../data/personajes';
+import {personajeSeo,enlacePersonaje} from '../../data/personajes-seo';
+import {perfilesProfundos} from '../../data/personajes-estudio-profundo';
+import {auditoriaPersonajes} from '../../data/personajes-auditoria';
+import {estrofasDeCanto,enlaceCanto} from '../../lib/corpus';
+export function getStaticPaths(){return personajes.map(p=>({params:{slug:personajeSeo[p.id].slug},props:{id:p.id}}));}
+const {id}=Astro.props as {id:string};
+const p=personajes.find(x=>x.id===id)!;
+const seo=personajeSeo[p.id];
+const estudio=perfilesProfundos[p.id];
+const auditoria=auditoriaPersonajes[p.id];
+const fuente=estrofasDeCanto(p.estrofa.parte,p.estrofa.canto).find(e=>e.numero===p.estrofa.numero);
+const otros=personajes.filter(x=>x.id!==p.id&&x.referencias.some(r=>p.referencias.some(q=>q.parte===r.parte&&q.canto===r.canto))).slice(0,4);
+---
+<Base pageType="Article" title={seo.titulo} description={`${p.nombre}: quién es, qué papel cumple y cómo interpretar su historia en Martín Fierro. Versos originales y cantos para estudiar.`}>
+<article class="perfil">
+<nav class="migajas" aria-label="Ubicación"><a href="/">Inicio</a> / <a href="/estudiantes/">Para estudiantes</a> / <a href="/personajes/">Personajes</a> / {p.nombre}</nav>
+<header><p class="eyebrow">GUÍA DE ESTUDIO · PERSONAJES DE MARTÍN FIERRO</p><h1>{seo.titulo}</h1><p class="lead">{p.resumen}</p><p class="meta">{p.tipo} · {p.parte}</p></header>
+<figure><img src={`/media/fotografias-v3/${seo.imagen}`} alt={`Ilustración editorial del personaje ${p.nombre} de Martín Fierro`} width="1024" height="680" loading="eager" fetchpriority="high"/><figcaption>Recreación editorial contemporánea del personaje literario; no es una fotografía histórica.</figcaption></figure>
+<section><h2>{estudio.h2}</h2><p>{estudio.historia}</p></section>
+<section><h2>Características e interpretación literaria</h2><p>{p.interpretacion}</p><p>{estudio.lectura}</p><p>La caracterización se basa en el relato literario; las opiniones del personaje o del narrador no deben confundirse automáticamente con las del autor, José Hernández.</p></section>
+<section><h2>Comprobación en el texto original</h2><p>{auditoria.comprobacion}</p><p><strong>Cantos pertinentes:</strong> {auditoria.cantos}.</p></section>
+<section><h2>Estrofa original para estudiar</h2>{fuente?<figure class="estrofa"><figcaption>{p.estrofa.parte==='ida'?'La ida':'La vuelta'} · canto {p.estrofa.canto} · estrofa {fuente.numero}</figcaption><blockquote>{fuente.versos.map(v=><span>{v.texto}</span>)}</blockquote><a href={`${enlaceCanto(p.estrofa.parte,p.estrofa.canto)}#${fuente.id}`}>Comprobar los versos en el lector original →</a></figure>:<p>Consultá el canto correspondiente en el lector documental.</p>}</section>
+<section><h2>¿En qué cantos aparece o se recuerda?</h2><ul class="cantos">{p.referencias.map(r=><li><a href={`/estudiantes/${r.parte}/${r.canto}/`}>{r.parte==='ida'?'La ida':'La vuelta'}, canto {r.canto}: guía para estudiantes</a> · <a href={enlaceCanto(r.parte,r.canto)}>poema original</a></li>)}</ul></section>
+<section><h2>Vocabulario y conceptos para comprender su historia</h2><p>{estudio.vocab}</p><p>Las palabras se explican en su contexto literario. Para revisar su uso exacto, consultá el <a href="/buscar/">buscador de versos</a>.</p></section>
+<section><h2>Preguntas para estudiantes sobre {p.nombre}</h2><ol>{estudio.preguntas.map(q=><li>{q}</li>)}<li>Elegí una estrofa original y justificá tu interpretación con sus versos, sin confundir la voz del personaje con la del autor.</li></ol></section>
+<section><h2>Preguntas frecuentes sobre {p.nombre}</h2>{auditoria.preguntasFrecuentes.map(faq=><div><h3>{faq.pregunta}</h3><p>{faq.respuesta}</p></div>)}</section>
+{otros.length>0&&<section><h2>Otros personajes relacionados</h2><div class="relacionados">{otros.map(q=><a href={enlacePersonaje(q.id)}>{q.nombre} →</a>)}</div></section>}
+<footer><p><a href="/personajes/">Ver los once personajes</a> · <a href="/estudiantes/">Volver a las guías por canto</a> · <a href="/biblioteca/">Biblioteca popular</a></p></footer>
+</article>
+<style>.perfil{max-width:980px;margin:0 auto 80px;padding:0 16px}.perfil a{color:#87462e;text-underline-offset:4px}.perfil .migajas{font:.82rem system-ui,sans-serif;margin-bottom:28px}.perfil h1{max-width:none!important}.perfil figure{margin:25px 0}.perfil figure img{width:100%;max-height:540px;object-fit:cover}.perfil figcaption{font:.79rem system-ui,sans-serif;color:#66594d}.perfil section{margin:38px 0;padding-top:15px;border-top:1px solid #cdbca7}.perfil h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.2 Georgia,serif}.perfil p,.perfil li{line-height:1.75}.perfil .meta{font-weight:700}.perfil .estrofa{background:#efe5d8;padding:24px}.perfil blockquote{border-left:3px solid #a15d40;padding-left:20px;margin:14px 0}.perfil blockquote span{display:block;line-height:1.65}.perfil .relacionados{display:flex;gap:14px 24px;flex-wrap:wrap}.perfil :focus-visible{outline:3px solid #a15d40;outline-offset:4px}@media(max-width:600px){.perfil .estrofa{padding:15px}}</style>
+</Base>
