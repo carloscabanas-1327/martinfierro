@@ -2,17 +2,20 @@
 import Base from '../../../layouts/Base.astro';
 import {partes,estrofasDeCanto,enlaceCanto} from '../../../lib/corpus';
 import {personajes} from '../../../data/personajes';
+import {resumenIda,resumenVuelta} from '../../../data/es-resumen';
 export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).flatMap(parte=>partes[parte].cantos.map(c=>({params:{parte,canto:String(c.numero)},props:{parte,canto:c.numero}})));}
 const {parte,canto}=Astro.props as {parte:'ida'|'vuelta';canto:number};
 const libro=partes[parte];const estrofas=estrofasDeCanto(parte,canto);
 const ejemplos=[estrofas[0],estrofas[Math.floor(estrofas.length/2)]].filter((x,i,a)=>x && a.findIndex(y=>y?.id===x.id)===i);
+const resumen=(parte==='ida'?resumenIda:resumenVuelta)[canto];
+const parteCorta=parte==='ida'?'La ida':'La vuelta';
 const relacionados=personajes.filter(p=>p.referencias.some(r=>r.parte===parte&&r.canto===canto));
 const siguiente=canto<libro.cantos.length? `/estudiantes/${parte}/${canto+1}/`:parte==='ida'?'/estudiantes/vuelta/1/':null;
 const anterior=canto>1? `/estudiantes/${parte}/${canto-1}/`:parte==='vuelta'?'/estudiantes/ida/13/':null;
 ---
-<Base migas={[{label:"Para estudiantes",href:"/estudiantes/"},{label:libro.nombre,href:`/leer/${parte}/`},{label:`Canto ${canto}`}]} pageType="LearningResource" title={`Guía de estudio: ${libro.nombre}, canto ${canto}`} description={`Ficha de lectura del canto ${canto} de ${libro.nombre}: fragmentos originales, personajes, preguntas para analizar y enlace al poema íntegro.`}>
+<Base migas={[{label:"Para estudiantes",href:"/estudiantes/"},{label:libro.nombre,href:`/leer/${parte}/`},{label:`Canto ${canto}`}]} pageType="LearningResource" title={`Martín Fierro canto ${canto} (${parteCorta}): resumen y análisis`} description={`Resumen del canto ${canto} de ${libro.nombre} (${libro.anio}): qué pasa, versos originales, personajes y preguntas para analizar el canto.`}>
 <article class="mf-study">
- <header><p class="eyebrow">GUÍA DE ESTUDIO · {libro.anio}</p><h1>{libro.nombre} — Canto {canto}</h1><p class="lead">{libro.cantos[canto-1]?.titulo}</p><p>Esta ficha proporciona el material de lectura y preguntas para trabajar el canto. No reemplaza la lectura ni ofrece todavía un resumen interpretativo individual verificado.</p><a class="mf-study-primary" href={enlaceCanto(parte,canto)}>Leer el canto íntegro en el poema original →</a></header>
+ <header><p class="eyebrow">GUÍA DE ESTUDIO · {libro.anio}</p><h1>Martín Fierro, canto {canto} ({parteCorta}): resumen y análisis</h1><p class="lead">{resumen?.titulo??libro.cantos[canto-1]?.titulo}</p>{resumen&&<p class="mf-study-resumen"><strong>Resumen:</strong> {resumen.resumen}</p>}<p>Abajo encontrás pasajes del texto original, los personajes del canto y preguntas para analizarlo. El resumen orienta, pero no reemplaza la lectura. ¿Buscás la obra entera? Mirá el <a href="/martin-fierro-resumen/">resumen completo de Martín Fierro</a>.</p><a class="mf-study-primary" href={enlaceCanto(parte,canto)}>Leer el canto íntegro en el poema original →</a></header>
  <section><h2>Pasajes del texto original</h2><p>Estas estrofas se obtienen directamente del corpus documental, sin modificar la redacción. Para interpretarlas es importante leer el canto completo.</p>
  {ejemplos.map(e=><figure class="mf-study-stanza"><figcaption>Estrofa {e.numero} · <a href={`${enlaceCanto(parte,canto)}#${e.id}`}>Consultar en el lector →</a></figcaption><blockquote>{e.versos.map(v=><span>{v.texto}</span>)}</blockquote></figure>)}</section>
  <section><h2>Personajes vinculados a este canto</h2>{relacionados.length?<ul>{relacionados.map(p=><li><a href={`/personajes/#${p.id}`}>{p.nombre}</a> — {p.tipo}</li>)}</ul>:<p>Esta selección de fichas no identifica un protagonista secundario específico para el canto. Consultá las voces del texto y la <a href="/personajes/">guía general de personajes</a>.</p>}<p><a href="/estudiantes/#personajes">Volver a personajes en la biblioteca de estudiantes →</a></p></section>
