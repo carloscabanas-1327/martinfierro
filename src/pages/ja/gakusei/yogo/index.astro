@@ -1,0 +1,35 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import ArticleJa from '../../../../components/ArticleJa.astro';
+// 近い日本語の言い方があれば「日本語」の欄に挙げます。
+const koumoku:{go:string;bunrui:string;imi:string;shinoNaka:string;nihongo?:string;url:string}[]=[
+ {go:'Gaucho',bunrui:'歴史・文化の概念',imi:'アルゼンチン、ウルグアイ、ブラジル南部の平原の騎手。',shinoNaka:'この言葉には労働、技、社会的地位、そして議論の分かれる文学的なイメージが結びついています。フィエロは一人のガウチョとして語っているのであって、すべてのガウチョを代表して語っているのではありません。',nihongo:'ガウチョ',url:'/ja/yomu/'},
+ {go:'Payada',bunrui:'口承の詩と音楽',imi:'ラ・プラタ地方の即興の歌。ギターを伴奏に二人の歌い手が競い合うことが多い。',shinoNaka:'モレーノとフィエロは歌比べをし、決着のついていない暴力の過去に触れます。',nihongo:'歌比べ、歌掛け',url:'/ja/gakusei/vuelta/30/'},
+ {go:'Pulpería',bunrui:'田舎の場所',imi:'田舎の雑貨店兼酒場。人々はここで買い物をし、酒を飲み、ときには歌う。',shinoNaka:'詩の中のいくつものけんかが、こうした場所で起こります。',nihongo:'雑貨酒場',url:'/ja/gakusei/ida/8/'},
+ {go:'Fortín',bunrui:'辺境の防備',imi:'先住民の土地との境にある小さな軍事拠点。',shinoNaka:'フィエロはそこで兵役につき、その貧しさと搾取を語ります。',nihongo:'砦、哨所',url:'/ja/gakusei/ida/4/'},
+ {go:'Leva',bunrui:'軍事・政治の概念',imi:'男たちを力ずくで兵役につかせること。',shinoNaka:'辺境がなぜフィエロの家庭生活を壊したのかを説明する言葉です。',nihongo:'強制徴兵',url:'/ja/gakusei/ida/3/'},
+ {go:'Partida',bunrui:'武装した隊',imi:'ある任務のために組まれた小さな隊。詩の中ではほとんどいつも、誰かを追う隊のこと。',shinoNaka:'クルスはもともとフィエロを追う隊の一員でしたが、やがて彼を守るために立ち上がります。',nihongo:'追跡隊、警察隊',url:'/ja/gakusei/ida/9/'},
+ {go:'Facón',bunrui:'暮らしの道具',imi:'歴史上のガウチョと深く結びついた大型のナイフ。',shinoNaka:'詩の中のナイフの決闘を、暴力の賛美として読んではいけません。',url:'/ja/gakusei/ida/7/'},
+ {go:'Mate, cimarrón',bunrui:'飲み物',imi:'マテの葉（ジェルバ・マテ）を湯で淹れた飲み物。飲むための器もマテと呼ぶ。シマロンは砂糖を入れない苦いマテ。',shinoNaka:'フィエロは火のそばで苦いマテを飲みながら夜明けを待った日々を思い出します。',nihongo:'マテ茶',url:'/ja/zasshi/mate/'},
+ {go:'Pago',bunrui:'土地',imi:'ふるさと、生まれた土地。',shinoNaka:'ふるさとに戻ってそこが廃墟になっているのを見ることは、第一部でもっとも重い打撃の一つです。',nihongo:'ふるさと、郷里',url:'/ja/gakusei/ida/6/'},
+ {go:'Tapera',bunrui:'土地',imi:'見捨てられた家、崩れた家（グアラニー語から）。',shinoNaka:'辺境から戻ったとき、フィエロの小屋はタペラになっていました。',nihongo:'廃屋',url:'/ja/gakusei/ida/6/'},
+ {go:'Matrero',bunrui:'社会的な立場',imi:'官憲を避けて身を隠して暮らすお尋ね者のガウチョ。',shinoNaka:'脱走したあと、フィエロはマトレーロになります。',nihongo:'お尋ね者、逃亡者',url:'/ja/gakusei/ida/6/'},
+ {go:'Pingo, flete',bunrui:'馬',imi:'よい馬、大切な馬。',shinoNaka:'馬は仲間であり、逃げるための道具であり、誇りのしるしでもあります。',url:'/ja/gakusei/ida/5/'},
+ {go:'China',bunrui:'呼び名',imi:'田舎の男の連れ合い、妻。「中国」（China）とはまったく関係ありません。',shinoNaka:'家庭の暮らしや踊りの場面に出てきます。',url:'/ja/gakusei/ida/2/'},
+ {go:'Malón',bunrui:'辺境の概念',imi:'辺境の牧場や村に対する先住民の襲撃。',shinoNaka:'フィエロとクルスが先住民の野営地に着いたとき、そこでは襲撃の準備が進んでいました。',nihongo:'襲撃',url:'/ja/gakusei/vuelta/2/'},
+ {go:'Moreno',bunrui:'歴史的な呼び名',imi:'当時の、肌の色の濃い人の呼び方。詩ではアフリカ系アルゼンチン人の歌い手を指す。',shinoNaka:'歌比べのモレーノは第一部で殺された男ではなく、その兄弟です。',url:'/ja/gakusei/vuelta/30/'},
+ {go:'Viejo Vizcacha',bunrui:'人物の名前',imi:'Viejo は「年老いた」。ビスカーチャはパンパの穴に住むげっ歯類（ヤマビスカーチャの仲間）。',shinoNaka:'このあだ名は、いろいろながらくたを巣穴に引きずりこむ小動物を思わせます。ただしこれは一つの読み方であって、定説ではありません。',nihongo:'老ビスカーチャ',url:'/ja/gakusei/vuelta/15/'},
+ {go:'Picardía',bunrui:'人物の名前、ふつうの言葉',imi:'ずる賢さ、機転、いたずら。場合によって、機知にもなり、だましにもなる。',shinoNaka:'クルスの息子は、生き方を改めようとしたあとも、このあだ名で呼ばれ続けます。',nihongo:'ピカルディア；ずる賢さ',url:'/ja/gakusei/vuelta/26/'},
+ {go:'Naides',bunrui:'ガウチョの言葉',imi:'「nadie」（誰も…ない）の話し言葉の形。',shinoNaka:'ガウチョ文学は、こうした形を使って、それとわかる田舎の人の声を作り出します。',url:'/ja/yomu/'},
+ {go:'Canto, estrofa, verso',bunrui:'文学の構成',imi:'canto は番号のついた区切りで、章にあたる。estrofa は詩行のまとまり（連）。verso は詩の一行。',shinoNaka:'二つの部はそれぞれ13歌と33歌からなり、ほとんどが八音節六行の連で書かれています。',nihongo:'歌、連、行',url:'/ja/gakusei/'},
+];
+---
+<Base noindex migas={[{label:'学生のために',href:'/ja/gakusei/'},{label:'ガウチョ用語集'}]} lingue={{en:'/en/students/glossary/',it:'/it/studenti/glossario/',pt:'/pt/estudantes/glossario/',fr:'/fr/etudiants/glossaire/',de:'/de/studierende/glossar/',ru:'/ru/studentam/glossarij/',zh:'/zh/xuesheng/cihui/'}} lang="ja" pageType="Article" title="『マルティン・フィエロ』用語集：ガウチョの言葉を日本語で解説" description="『マルティン・フィエロ』を読むための用語集：payada、pulpería、fortín、facón、leva、pago、tapera、ビスカーチャ、ピカルディアなど、詩の言葉を日本語で解説します。">
+<ArticleJa kicker="学生のために · 文脈の中の言葉" midashi="ガウチョ用語集"
+ ridobun="詩の言葉は、辞書を引くより文脈の中で見たほうがよくわかります。各項目では、意味、『マルティン・フィエロ』の中での働き、そして近い日本語の言い方（あれば）を説明します。"
+ shutten={[{name:'Diccionario de americanismos（ASALE）、スペイン語',url:'https://www.asale.org/damer/',gengo:'es'},{name:'Gaucho glossary、英語版',url:'/en/students/glossary/',gengo:'en'}]}
+ chuki="説明は読者のための手引きであって、エルナンデスの詩句の代わりにはなりません。">
+ <dl class="ja-yogo">{koumoku.map(v=><div><dt lang="es">{v.go}</dt><dd><p class="ja-bunrui">{v.bunrui}</p><p><strong>意味：</strong>{v.imi}</p><p><strong>詩の中で：</strong>{v.shinoNaka}</p>{v.nihongo&&<p><strong>日本語：</strong>{v.nihongo}</p>}<p><a href={v.url}>くわしく →</a></p></dd></div>)}</dl>
+</ArticleJa>
+<style>.ja-yogo{display:grid;gap:0;margin:0}.ja-yogo>div{display:grid;grid-template-columns:200px 1fr;gap:20px;border-top:1px solid #c8baab;padding:18px 0}.ja-yogo dt{font:600 1.3rem Georgia,serif;font-style:italic}.ja-yogo dd{margin:0}.ja-yogo dd p{margin:0 0 6px}.ja-bunrui{font:700 .76rem system-ui,sans-serif!important;letter-spacing:.08em;color:#8b4731}@media(max-width:600px){.ja-yogo>div{grid-template-columns:1fr;gap:6px}}</style>
+</Base>

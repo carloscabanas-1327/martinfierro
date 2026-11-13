@@ -1,0 +1,14 @@
+---
+import Base from '../../../layouts/Base.astro';
+const kiji=[
+ {url:'/ja/zasshi/mate/',kicker:'ガウチョの世界 · ラ・プラタ地方',midashi:'マテ茶、パンパの飲み物',honbun:'グアラニーの人々の葉からイエズス会の伝道村へ、回し飲みの輪からたき火のそばへ。人の手から手へ渡される器の歴史と、『マルティン・フィエロ』の詩句に出てくる苦いマテ茶。',gazou:'/media/fotografias-v3/mate-pava-yerba.webp',alt:'デジタル再現：火のそばのやかんとマテ茶'},
+];
+---
+<Base noindex migas={[{label:'文化マガジン'}]} lingue={{es:'/revista/',en:'/en/magazine/',it:'/it/rivista/',pt:'/pt/revista/',fr:'/fr/revue/',de:'/de/magazin/',ru:'/ru/zhurnal/',zh:'/zh/zazhi/'}} lang="ja" pageType="CollectionPage" title="文化マガジン：ガウチョとパンパの世界" description="MARTINFIERRO.ORG 日本語版の文化マガジン。マテ茶、パンパの伝統、ホセ・エルナンデスの詩に描かれた田園の世界を紹介します。">
+<div class="zasshi-ja">
+ <header><p class="eyebrow">文化マガジン · 日本語</p><h1>日本の読者に届けるガウチョの世界</h1><p class="lid">アルゼンチン、ウルグアイ、ブラジル南部にまたがるパンパの田園文化についての記事です。日本語の読者のために書き、すべての記事に出典を記しています。</p></header>
+ <div class="ichiran">{kiji.map(a=><article><a href={a.url}><img src={a.gazou} alt={a.alt} loading="lazy" decoding="async"/><div><p class="kicker">{a.kicker}</p><h2>{a.midashi}</h2><p>{a.honbun}</p><strong>記事を読む →</strong></div></a></article>)}</div>
+ <section class="kongo"><h2>記事は準備中です</h2><p>日本語のマガジンには、今後、歌比べ（パジャーダ）、田舎の雑貨酒場、辺境の砦、アルゼンチンの「伝統の日」、そしてアルゼンチンの日系社会についての記事を加えていく予定です。それまでは、スペイン語のマガジンに数十本、英語のマガジンにも何本かの記事があります。</p><p><a href="/revista/" lang="es">スペイン語の文化マガジン</a> · <a href="/en/magazine/" lang="en">Cultural magazine（英語）</a> · <a href="/ja/oshie/">マルティン・フィエロの息子たちへの教え</a></p></section>
+</div>
+<style>.zasshi-ja{max-width:1000px;margin:25px auto 85px;color:#302820}.zasshi-ja a{color:#853d2b;text-underline-offset:4px}.eyebrow{font:750 .76rem system-ui,sans-serif;letter-spacing:.12em;color:#934e35}.zasshi-ja h1{font:600 clamp(2.1rem,5vw,3.8rem)/1.25 Georgia,serif;margin:16px 0;text-wrap:balance}.lid{font:1.2rem/1.85 Georgia,serif;max-width:42em}.ichiran{display:grid;gap:22px;margin:36px 0}.ichiran article{border-top:2px solid #382d25;background:#f3ecdf}.ichiran a{display:grid;grid-template-columns:300px 1fr;gap:24px;text-decoration:none;color:inherit}.ichiran img{width:100%;height:100%;min-height:220px;object-fit:cover}.ichiran div{padding:20px 22px 22px 0}.kicker{font:750 .76rem system-ui,sans-serif;letter-spacing:.08em;color:#8b4731;margin:0}.ichiran h2{font:600 clamp(1.5rem,3vw,2.1rem)/1.3 Georgia,serif;margin:8px 0 10px}.ichiran p:not(.kicker),.kongo p{font:1.04rem/1.85 Georgia,serif}.ichiran strong{font:700 .88rem system-ui,sans-serif;text-decoration:underline}.kongo{background:#eee3d7;padding:22px 28px}.kongo h2{font:600 1.7rem Georgia,serif;margin:0 0 10px}@media(max-width:650px){.ichiran a{grid-template-columns:1fr;gap:0}.ichiran img{height:210px;min-height:0}.ichiran div{padding:16px}.kongo{padding:18px}}</style>
+</Base>

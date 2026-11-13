@@ -1,0 +1,15 @@
+---
+import Base from '../../../layouts/Base.astro';
+const bubun:[string,string][]=[
+ ['原詩','ホセ・エルナンデスの <em lang="es">El gaucho Martín Fierro</em>（1872）と <em lang="es">La vuelta de Martín Fierro</em>（1879）はパブリックドメインです。本版の詩句は、サイト全体で共有している構造化テキストから取っています。方法については <a href="/acerca/" lang="es">Fuentes y método</a> のページ（スペイン語）をご覧ください。'],
+ ['日本語訳','私たちが確認できた日本語訳は二つあります。興村禎吉訳『マルティンフィエロ』（協同組合通信社、1962年）と、大林文彦・玉井礼一郎訳『マルティン・フィエロ：パンパスの吟遊ガウチョ』（たまいらぼ、1981年）です。どちらも著作権で保護されているため、<strong>本版では転載しません</strong>。図書館で探しやすいように、国立国会図書館サーチの元の記録にリンクしています（<a href="https://ndlsearch.ndl.go.jp/books/R100000002-I000001043626" target="_blank" rel="noopener noreferrer">1962年版の記録</a>、<a href="https://ndlsearch.ndl.go.jp/books/R100000002-I000001502392" target="_blank" rel="noopener noreferrer">1981年版の記録</a>）。日本語訳の問題点を論じた吉田秀太郎「「マルティン・フィエロ」の邦訳と若干の問題点」（<span lang="es">Estudios Hispánicos</span> 第2号、1972年）は<a href="https://hdl.handle.net/11094/93567" target="_blank" rel="noopener noreferrer">大阪大学の機関リポジトリ</a>で読めます。'],
+ ['学習訳','詩句のそばにある日本語の文章（たとえば<a href="/ja/oshie/">父の教え</a>の訳）は、MARTINFIERRO.ORG 編集部がスペイン語の原文から書いた散文の学習訳です。理解を助けるためのもので、文学的な翻訳ではなく、原文の代わりにもなりません。「学習訳、MARTINFIERRO.ORG」として引用できます。'],
+ ['解説と学習カード','あらすじ、精読、問い、用語集は本版編集部のオリジナルの文章です。詩そのものが言っていることと解釈にあたることを、いつも区別しています。'],
+ ['写真と挿絵','ホセ・エルナンデスの歴史的な肖像は <a href="https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Hern%C3%A1ndez.jpg">Wikimedia Commons</a> によるもので、撮影者は不明です。ガウチョ、小屋、風景の画像は現代のデジタル再現であって十九世紀の写真ではなく、つねにそのように表示しています。これらの画像は発行者の指示のもとでAIツールを使って制作し、隅に「デジタル再現」と記しています。説明文の執筆や版の照合にもAIを使っていますが、すべての変更は公開前に発行者が確認し、承認しています。詩の本文は記載した版から取り、書き換えていません。'],
+ ['訂正','誤りや、よりよくできる学習訳、あるいは日本での『マルティン・フィエロ』についての資料をご存じでしたら、<a href="/contacto/" lang="es">お問い合わせのページ</a>からお知らせください（ページはスペイン語ですが、日本語でのご連絡も歓迎します）。'],
+];
+---
+<Base noindex migas={[{label:'出典と著作権'}]} lingue={{es:'/fuentes-y-derechos/',en:'/en/sources-and-rights/',it:'/it/fonti-e-diritti/',pt:'/pt/fontes-e-direitos/',fr:'/fr/sources-et-droits/',de:'/de/quellen-und-rechte/',ru:'/ru/istochniki-i-prava/',zh:'/zh/laiyuan-yu-banquan/'}} lang="ja" pageType="WebPage" title="日本語版の出典、引用、著作権" description="MARTINFIERRO.ORG 日本語版のうち、何がパブリックドメインで、何が著作権で保護され、何がこのサイト独自の解説なのかを説明します。">
+<article class="chosaku-ja"><p class="eyebrow">編集部より</p><h1>出典、引用、著作権</h1><p class="lid">何がパブリックドメインで、何が保護されていて、何が本版独自の解説なのか。</p>{bubun.map(([t,c])=><section><h2>{t}</h2><p set:html={c}/></section>)}<footer><p>このページが説明しているプロジェクトはスペイン語版と同じです。食い違いがある場合はプロジェクトの元の文書が優先します。どの版も法的な助言ではありません。</p></footer></article>
+<style>.chosaku-ja{max-width:900px;margin:28px auto 90px;color:#33291f}.chosaku-ja a{color:#86402b;text-underline-offset:4px}.eyebrow{font:750 .8rem/1.55 system-ui,sans-serif;letter-spacing:.12em;color:#95513b}.chosaku-ja h1{font:600 clamp(2.2rem,5vw,3.8rem)/1.25 Georgia,serif}.lid{font:1.2rem/1.85 Georgia,serif}.chosaku-ja section{padding:22px 0;border-bottom:1px solid #c9b69e}.chosaku-ja h2{font:600 1.8rem/1.3 Georgia,serif}.chosaku-ja p{font:1.06rem/1.9 Georgia,serif}.chosaku-ja footer{background:#efe3d5;padding:22px;margin-top:30px}</style>
+</Base>
