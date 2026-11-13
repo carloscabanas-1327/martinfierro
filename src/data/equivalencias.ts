@@ -3,17 +3,17 @@
 // scripts/generar-seo.mjs comprueba en el build que cada destino exista, sea indexable
 // y devuelva el enlace (reciprocidad).
 import {TESTO_COLLAZIONATO} from '../lib/testena';
-export type Grupo = Partial<Record<'es'|'en'|'it'|'pt'|'fr'|'de'|'ru'|'zh', string>>;
-export const hreflang = {es:'es-AR', en:'en-US', it:'it-IT', pt:'pt-BR', fr:'fr-FR', de:'de-DE', ru:'ru-RU', zh:'zh-CN'} as const;
+export type Grupo = Partial<Record<'es'|'en'|'it'|'pt'|'fr'|'de'|'ru'|'zh'|'ja', string>>;
+export const hreflang = {es:'es-AR', en:'en-US', it:'it-IT', pt:'pt-BR', fr:'fr-FR', de:'de-DE', ru:'ru-RU', zh:'zh-CN', ja:'ja-JP'} as const;
 const base: Grupo[] = [
- {es:'/', en:'/en/', it:'/it/', pt:'/pt/', fr:'/fr/', de:'/de/', ru:'/ru/', zh:'/zh/'},
- {es:'/leer/', en:'/en/reader/', it:'/it/lettore/', pt:'/pt/ler-o-poema/', fr:'/fr/lire-le-poeme/', de:'/de/das-gedicht-lesen/', ru:'/ru/chitat-poemu/', zh:'/zh/yuedu/'},
+ {es:'/', en:'/en/', it:'/it/', pt:'/pt/', fr:'/fr/', de:'/de/', ru:'/ru/', zh:'/zh/', ja:'/ja/'},
+ {es:'/leer/', en:'/en/reader/', it:'/it/lettore/', pt:'/pt/ler-o-poema/', fr:'/fr/lire-le-poeme/', de:'/de/das-gedicht-lesen/', ru:'/ru/chitat-poemu/', zh:'/zh/yuedu/', ja:'/ja/yomu/'},
  {es:'/leer/ida/', it:'/it/lettore/andata/'},
  {es:'/leer/vuelta/', it:'/it/lettore/ritorno/'},
- {es:'/jose-hernandez/', en:'/en/jose-hernandez/', it:'/it/jose-hernandez/', pt:'/pt/jose-hernandez/', fr:'/fr/jose-hernandez/', de:'/de/jose-hernandez/', ru:'/ru/jose-hernandez/', zh:'/zh/jose-hernandez/'},
- {es:'/estudiantes/', en:'/en/students/', it:'/it/studenti/', pt:'/pt/estudantes/', fr:'/fr/etudiants/', de:'/de/studierende/', ru:'/ru/studentam/', zh:'/zh/xuesheng/'},
- {en:'/en/students/glossary/', it:'/it/studenti/glossario/', pt:'/pt/estudantes/glossario/', fr:'/fr/etudiants/glossaire/', de:'/de/studierende/glossar/', ru:'/ru/studentam/glossarij/', zh:'/zh/xuesheng/cihui/'},
- {es:'/revista/', en:'/en/magazine/', it:'/it/rivista/', pt:'/pt/revista/', fr:'/fr/revue/', de:'/de/magazin/', ru:'/ru/zhurnal/', zh:'/zh/zazhi/'},
+ {es:'/jose-hernandez/', en:'/en/jose-hernandez/', it:'/it/jose-hernandez/', pt:'/pt/jose-hernandez/', fr:'/fr/jose-hernandez/', de:'/de/jose-hernandez/', ru:'/ru/jose-hernandez/', zh:'/zh/jose-hernandez/', ja:'/ja/jose-hernandez/'},
+ {es:'/estudiantes/', en:'/en/students/', it:'/it/studenti/', pt:'/pt/estudantes/', fr:'/fr/etudiants/', de:'/de/studierende/', ru:'/ru/studentam/', zh:'/zh/xuesheng/', ja:'/ja/gakusei/'},
+ {en:'/en/students/glossary/', it:'/it/studenti/glossario/', pt:'/pt/estudantes/glossario/', fr:'/fr/etudiants/glossaire/', de:'/de/studierende/glossar/', ru:'/ru/studentam/glossarij/', zh:'/zh/xuesheng/cihui/', ja:'/ja/gakusei/yogo/'},
+ {es:'/revista/', en:'/en/magazine/', it:'/it/rivista/', pt:'/pt/revista/', fr:'/fr/revue/', de:'/de/magazin/', ru:'/ru/zhurnal/', zh:'/zh/zazhi/', ja:'/ja/zasshi/'},
  {es:'/revista/dia-de-la-tradicion-10-de-noviembre/', en:'/en/magazine/day-of-tradition/', it:'/it/rivista/giorno-della-tradizione/'},
  {es:'/revista/pulperias-y-sociabilidad/', en:'/en/magazine/pulperias/', it:'/it/rivista/pulperie/'},
  {en:'/en/magazine/payadas/', it:'/it/rivista/payada/'},
@@ -21,15 +21,15 @@ const base: Grupo[] = [
  {es:'/indice-general/', en:'/en/site-index/', it:'/it/indice/'},
  {es:'/buscar-documentos/', en:'/en/search/', it:'/it/cerca/'},
  {es:'/acerca/', en:'/en/editorial-method/', it:'/it/metodo-editoriale/'},
- {es:'/fuentes-y-derechos/', en:'/en/sources-and-rights/', it:'/it/fonti-e-diritti/', pt:'/pt/fontes-e-direitos/', fr:'/fr/sources-et-droits/', de:'/de/quellen-und-rechte/', ru:'/ru/istochniki-i-prava/', zh:'/zh/laiyuan-yu-banquan/'},
+ {es:'/fuentes-y-derechos/', en:'/en/sources-and-rights/', it:'/it/fonti-e-diritti/', pt:'/pt/fontes-e-direitos/', fr:'/fr/sources-et-droits/', de:'/de/quellen-und-rechte/', ru:'/ru/istochniki-i-prava/', zh:'/zh/laiyuan-yu-banquan/', ja:'/ja/shutten-to-chosakuken/'},
  {en:'/en/what-is-martin-fierro/', it:'/it/che-cose-martin-fierro/'},
  {es:'/martin-fierro-resumen/', en:'/en/martin-fierro-summary/', it:'/it/le-due-parti/'},
  {es:'/revista/quienes-eran-los-gauchos/', en:'/en/what-is-a-gaucho/', it:'/it/il-gaucho/'},
- {es:'/consejos-martin-fierro/', en:'/en/martin-fierro-advice-to-his-sons/', pt:'/pt/conselhos-de-martin-fierro/', fr:'/fr/conseils-de-martin-fierro/', de:'/de/ratschlaege-von-martin-fierro/', ru:'/ru/sovety-martina-fierro/', zh:'/zh/jiaohui/'},
- {es:'/personajes/', en:'/en/characters/', pt:'/pt/personagens/', fr:'/fr/personnages/', de:'/de/figuren/', ru:'/ru/personazhi/', zh:'/zh/renwu/'},
- {en:'/en/magazine/yerba-mate/', pt:'/pt/revista/chimarrao/', fr:'/fr/revue/mate/', de:'/de/magazin/mate/', ru:'/ru/zhurnal/mate/', zh:'/zh/zazhi/mate/'},
- ...Array.from({length:13},(_,i)=>({en:`/en/students/canto-${i+1}/`, pt:`/pt/estudantes/ida/${i+1}/`, fr:`/fr/etudiants/aller/${i+1}/`, de:`/de/studierende/ida/${i+1}/`, ru:`/ru/studentam/ida/${i+1}/`, zh:`/zh/xuesheng/ida/${i+1}/`})),
- ...Array.from({length:33},(_,i)=>({en:`/en/students/vuelta-canto-${i+1}/`, pt:`/pt/estudantes/volta/${i+1}/`, fr:`/fr/etudiants/retour/${i+1}/`, de:`/de/studierende/vuelta/${i+1}/`, ru:`/ru/studentam/vuelta/${i+1}/`, zh:`/zh/xuesheng/vuelta/${i+1}/`})),
+ {es:'/consejos-martin-fierro/', en:'/en/martin-fierro-advice-to-his-sons/', pt:'/pt/conselhos-de-martin-fierro/', fr:'/fr/conseils-de-martin-fierro/', de:'/de/ratschlaege-von-martin-fierro/', ru:'/ru/sovety-martina-fierro/', zh:'/zh/jiaohui/', ja:'/ja/oshie/'},
+ {es:'/personajes/', en:'/en/characters/', pt:'/pt/personagens/', fr:'/fr/personnages/', de:'/de/figuren/', ru:'/ru/personazhi/', zh:'/zh/renwu/', ja:'/ja/jinbutsu/'},
+ {en:'/en/magazine/yerba-mate/', pt:'/pt/revista/chimarrao/', fr:'/fr/revue/mate/', de:'/de/magazin/mate/', ru:'/ru/zhurnal/mate/', zh:'/zh/zazhi/mate/', ja:'/ja/zasshi/mate/'},
+ ...Array.from({length:13},(_,i)=>({en:`/en/students/canto-${i+1}/`, pt:`/pt/estudantes/ida/${i+1}/`, fr:`/fr/etudiants/aller/${i+1}/`, de:`/de/studierende/ida/${i+1}/`, ru:`/ru/studentam/ida/${i+1}/`, zh:`/zh/xuesheng/ida/${i+1}/`, ja:`/ja/gakusei/ida/${i+1}/`})),
+ ...Array.from({length:33},(_,i)=>({en:`/en/students/vuelta-canto-${i+1}/`, pt:`/pt/estudantes/volta/${i+1}/`, fr:`/fr/etudiants/retour/${i+1}/`, de:`/de/studierende/vuelta/${i+1}/`, ru:`/ru/studentam/vuelta/${i+1}/`, zh:`/zh/xuesheng/vuelta/${i+1}/`, ja:`/ja/gakusei/vuelta/${i+1}/`})),
 ];
 const canti: Grupo[] = TESTO_COLLAZIONATO ? [
  ...Array.from({length:13},(_,i)=>({es:`/leer/ida/${i+1}/`, it:`/it/lettore/andata/${i+1}/`})),

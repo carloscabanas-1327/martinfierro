@@ -34,9 +34,9 @@ const RU_PUBLICADA=true;
 // Edición china (/zh/): abierta a buscadores desde el 2026-11-06. Con false,
 // «中文» solo aparecería en el selector dentro de /zh/.
 const ZH_PUBLICADA=true;
-// Edición japonesa (/ja/): en preparación, oculta a los buscadores. Con false,
-// «日本語» solo aparece en el selector dentro de /ja/.
-const JA_PUBLICADA=false;
+// Edición japonesa (/ja/): abierta a buscadores desde el 2026-11-13. Con false,
+// «日本語» solo aparecería en el selector dentro de /ja/.
+const JA_PUBLICADA=true;
 const lingueSelettore:Lingua[]=['es','en','it',...(PT_PUBLICADA||portuguese?['pt' as const]:[]),...(FR_PUBLICADA||french?['fr' as const]:[]),...(DE_PUBLICADA||german?['de' as const]:[]),...(RU_PUBLICADA||russian?['ru' as const]:[]),...(ZH_PUBLICADA||chinese?['zh' as const]:[]),...(JA_PUBLICADA||japanese?['ja' as const]:[])];
 // Selector visible de idioma: los mismos idiomas en todas las ediciones.
 // Usa la página equivalente si está registrada; si no, la portada de cada edición.

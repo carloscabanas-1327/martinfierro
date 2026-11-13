@@ -280,7 +280,7 @@ body:has(.mf-revista) main.container{
 .mf-revista .mf-lead-copy>.mf-language-toplink{min-height:36px;width:fit-content;max-width:100%;padding:6px 0;margin:12px 0 20px;border:0;background:transparent;font-size:.83rem;text-decoration:underline;text-underline-offset:4px}
 /* «Otros idiomas» como tercer botón: mismas medidas que los dos de arriba, fondo con banderas
    de los idiomas del sitio y texto negro sobre un velo claro para que se lea. */
-.mf-revista .mf-lead-copy>.mf-language-toplink{width:min(100%,340px);min-height:48px;padding:9px 12px;gap:8px;margin:10px 0 22px;border:1px solid #53372e;border-radius:3px;color:#111!important;background:#fbf5ea url(/media/idiomas/banderas-collage.svg?v=8) center/100% 100% no-repeat;font-size:.9rem;text-decoration:none}
+.mf-revista .mf-lead-copy>.mf-language-toplink{width:min(100%,340px);min-height:48px;padding:9px 12px;gap:8px;margin:10px 0 22px;border:1px solid #53372e;border-radius:3px;color:#111!important;background:#fbf5ea url(/media/idiomas/banderas-collage.svg?v=9) center/100% 100% no-repeat;font-size:.9rem;text-decoration:none}
 .mf-revista .mf-lead-copy>.mf-language-toplink span{margin-left:0;padding:3px 8px;white-space:nowrap;border-radius:3px;background:rgba(255,255,255,.88);color:#111}
 .mf-revista .mf-lead-copy>.mf-language-toplink .mf-language-toplink-arrow{margin-left:auto;padding:3px 7px}
 @media(max-width:360px){.mf-revista .mf-lead-copy>.mf-language-toplink{font-size:.8rem}}

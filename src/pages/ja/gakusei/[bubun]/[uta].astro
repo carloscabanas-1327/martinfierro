@@ -20,7 +20,7 @@ const tsugi=n<sousu?`/ja/gakusei/${parte}/${n+1}/`:(parte==='ida'?'/ja/gakusei/v
 const hoka={en:`/en/students/${parte==='ida'?'canto':'vuelta-canto'}-${n}/`,pt:`/pt/estudantes/${parte==='ida'?'ida':'volta'}/${n}/`,fr:`/fr/etudiants/${parte==='ida'?'aller':'retour'}/${n}/`,de:`/de/studierende/${parte}/${n}/`,ru:`/ru/studentam/${parte}/${n}/`,zh:`/zh/xuesheng/${parte}/${n}/`};
 const bu=parte==='ida'?'第一部':'第二部';
 ---
-<Base noindex migas={[{label:'学生のために',href:'/ja/gakusei/'},{label:`${bu}・${uta}`}]} lingue={hoka} lang="ja" pageType="Article" title={`『マルティン・フィエロ』${bu}${uta}：${k.midashi}`} description={`『${sakuhin}』${uta}の日本語のあらすじと解説：原文の連、登場人物、テーマ、ガウチョの言葉、授業で使える問い。`}>
+<Base migas={[{label:'学生のために',href:'/ja/gakusei/'},{label:`${bu}・${uta}`}]} lingue={hoka} lang="ja-JP" pageType="Article" title={`『マルティン・フィエロ』${bu}${uta}：${k.midashi}`} description={`『${sakuhin}』${uta}の日本語のあらすじと解説：原文の連、登場人物、テーマ、ガウチョの言葉、授業で使える問い。`}>
 <article class="kaado">
 <header><p class="eyebrow">『マルティン・フィエロ』学習カード · {sakuhin.toUpperCase()} · {nen}</p><h1><span>{uta}</span> {k.midashi}</h1><p class="lid">日本語の学習カードです。いつもホセ・エルナンデスの原詩と照らし合わせて読んでください。</p></header>
 <section><h2>{uta}のあらすじ</h2><p>{k.arasuji}</p><p><a href={`/leer/${parte}/${n}/`} lang="es">{uta}の原文を全部読む ↗</a></p></section>

@@ -17,7 +17,7 @@ const kaado:Record<string,{namae:string;yakuwari:string;shoukai:string;yomikata:
 const gazou=(id:string)=>({'martin-fierro':'martin-fierro','sargento-cruz':'sargento-cruz','esposa-fierro':'esposa-de-fierro','primer-hijo':'hijo-mayor-de-fierro','segundo-hijo':'hijo-segundo-de-fierro','don-vizcacha':'viejo-vizcacha','picardia':'picardia','la-cautiva':'la-cautiva','el-moreno':'el-moreno','moreno-muerto':'negro-del-baile','juez-paz':'juez-de-paz'} as Record<string,string>)[id];
 const link=(r:{parte:'ida'|'vuelta';canto:number})=>`/ja/gakusei/${r.parte}/${r.canto}/`;
 ---
-<Base noindex migas={[{label:'登場人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/',zh:'/zh/renwu/'}} lang="ja" pageType="CollectionPage" title="『マルティン・フィエロ』登場人物ガイド" description="マルティン・フィエロ、クルス軍曹、老ビスカーチャ、ピカルディア、息子たち、捕らわれの女性、モレーノ。ホセ・エルナンデスの詩の登場人物と、その批判的な読み方を紹介します。">
+<Base migas={[{label:'登場人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/',zh:'/zh/renwu/'}} lang="ja-JP" pageType="CollectionPage" title="『マルティン・フィエロ』登場人物ガイド" description="マルティン・フィエロ、クルス軍曹、老ビスカーチャ、ピカルディア、息子たち、捕らわれの女性、モレーノ。ホセ・エルナンデスの詩の登場人物と、その批判的な読み方を紹介します。">
 <article class="jinbutsu-ja">
 <header><p class="eyebrow">読書ガイド · 登場人物</p><h1><em>『マルティン・フィエロ』</em>の登場人物</h1><p class="lid">お尋ね者のガウチョ、忠実な友、失ったものを理解しようとする二人の息子、厚かましい後見人、そして片隅に追いやられた声たち。この詩に道徳的な複雑さを与えている人物たちを紹介します。</p></header>
 <nav class="tobu" aria-label="人物へ移動">{personajes.map(p=><a href={`#${p.id}`}>{kaado[p.id].namae}</a>)}</nav>

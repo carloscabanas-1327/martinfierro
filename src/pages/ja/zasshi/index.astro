@@ -4,7 +4,7 @@ const kiji=[
  {url:'/ja/zasshi/mate/',kicker:'ガウチョの世界 · ラ・プラタ地方',midashi:'マテ茶、パンパの飲み物',honbun:'グアラニーの人々の葉からイエズス会の伝道村へ、回し飲みの輪からたき火のそばへ。人の手から手へ渡される器の歴史と、『マルティン・フィエロ』の詩句に出てくる苦いマテ茶。',gazou:'/media/fotografias-v3/mate-pava-yerba.webp',alt:'デジタル再現：火のそばのやかんとマテ茶'},
 ];
 ---
-<Base noindex migas={[{label:'文化マガジン'}]} lingue={{es:'/revista/',en:'/en/magazine/',it:'/it/rivista/',pt:'/pt/revista/',fr:'/fr/revue/',de:'/de/magazin/',ru:'/ru/zhurnal/',zh:'/zh/zazhi/'}} lang="ja" pageType="CollectionPage" title="文化マガジン：ガウチョとパンパの世界" description="MARTINFIERRO.ORG 日本語版の文化マガジン。マテ茶、パンパの伝統、ホセ・エルナンデスの詩に描かれた田園の世界を紹介します。">
+<Base migas={[{label:'文化マガジン'}]} lingue={{es:'/revista/',en:'/en/magazine/',it:'/it/rivista/',pt:'/pt/revista/',fr:'/fr/revue/',de:'/de/magazin/',ru:'/ru/zhurnal/',zh:'/zh/zazhi/'}} lang="ja-JP" pageType="CollectionPage" title="文化マガジン：ガウチョとパンパの世界" description="MARTINFIERRO.ORG 日本語版の文化マガジン。マテ茶、パンパの伝統、ホセ・エルナンデスの詩に描かれた田園の世界を紹介します。">
 <div class="zasshi-ja">
  <header><p class="eyebrow">文化マガジン · 日本語</p><h1>日本の読者に届けるガウチョの世界</h1><p class="lid">アルゼンチン、ウルグアイ、ブラジル南部にまたがるパンパの田園文化についての記事です。日本語の読者のために書き、すべての記事に出典を記しています。</p></header>
  <div class="ichiran">{kiji.map(a=><article><a href={a.url}><img src={a.gazou} alt={a.alt} loading="lazy" decoding="async"/><div><p class="kicker">{a.kicker}</p><h2>{a.midashi}</h2><p>{a.honbun}</p><strong>記事を読む →</strong></div></a></article>)}</div>
