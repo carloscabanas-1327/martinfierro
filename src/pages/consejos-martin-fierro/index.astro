@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import LectorVoz from '../../components/LectorVoz.astro';
 import {estrofasDeCanto} from '../../lib/corpus';
 import '../../styles/consejos-especial.css';
 const estrofas=estrofasDeCanto('vuelta',32);
@@ -71,6 +72,7 @@ const structuredData={
   </nav>
   <h2 class="mf-consejos-text-heading" id="texto-completo-canto-xxxii">Texto completo de los consejos — Canto XXXII</h2>
   <p class="mf-consejos-reading-hint">En algunas estrofas encontrarás una discreta <strong>aclaración de vocabulario</strong> al terminar los versos. Se abre aquí mismo, sin salir de la lectura.</p>
+  <LectorVoz ui="es" unidad=".mf-consejos-stanza" pistas={[{clave:'versos',sel:'.mf-consejos-verse',voz:'es-AR'}]}/>
   <div class="mf-consejos-layout">
    <div class="mf-consejos-verses" aria-label="Consejos completos de Martín Fierro">
     {estrofas.map(e=><section class="mf-consejos-stanza" id={e.id} aria-label={`Estrofa ${e.numero}`}>

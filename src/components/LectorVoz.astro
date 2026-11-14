@@ -1,0 +1,146 @@
+---
+// Lectura en voz alta con la voz que trae el navegador (Web Speech API).
+// Gratis: no usa servidores ni servicios externos. Si el navegador no puede
+// hablar, el bloque queda oculto (atributo hidden) y la página sigue igual.
+// Lee estrofa por estrofa (evita el corte de frases largas en Chrome) y
+// resalta la estrofa que está sonando.
+type Ui = 'es'|'en'|'pt'|'fr'|'de'|'ru'|'zh'|'ja'|'it';
+type Clave = 'original'|'estudio'|'versos';
+interface Pista {clave:Clave; sel:string; voz:string}
+interface Props {
+ ui:Ui;
+ /** Selector de cada estrofa (la unidad que se lee y se resalta). */
+ unidad:string;
+ /** Qué texto leer dentro de cada estrofa y con qué idioma de voz (BCP 47). */
+ pistas:Pista[];
+}
+const {ui,unidad,pistas}=Astro.props;
+const textos:Record<Ui,{original:string;estudio:string;versos:string;pausa:string;seguir:string;detener:string;titulo:string;aviso:string}>={
+ es:{titulo:'Escuchar',original:'Escuchar los versos',estudio:'Escuchar los versos',versos:'Escuchar los versos',pausa:'Pausa',seguir:'Seguir',detener:'Detener',aviso:'Lee la voz automática de tu navegador: puede sonar robótica y pronunciar raro el habla gauchesca («naides», «dende»).'},
+ en:{titulo:'Listen',original:'Listen to the Spanish verses',estudio:'Listen to the study translation',versos:'Listen to the verses',pausa:'Pause',seguir:'Resume',detener:'Stop',aviso:'Read aloud by your browser’s built-in voice. It may sound robotic and mispronounce the gaucho dialect.'},
+ pt:{titulo:'Ouvir',original:'Ouvir os versos em espanhol',estudio:'Ouvir a tradução de estudo',versos:'Ouvir os versos',pausa:'Pausar',seguir:'Continuar',detener:'Parar',aviso:'Leitura com a voz automática do seu navegador. Pode soar robótica e pronunciar mal a fala gauchesca.'},
+ fr:{titulo:'Écouter',original:'Écouter les vers en espagnol',estudio:'Écouter la traduction d’étude',versos:'Écouter les vers',pausa:'Pause',seguir:'Reprendre',detener:'Arrêter',aviso:'Lecture par la voix automatique de votre navigateur. Elle peut sembler robotique et mal prononcer le parler gaucho.'},
+ de:{titulo:'Anhören',original:'Die spanischen Verse anhören',estudio:'Die Studienübersetzung anhören',versos:'Die Verse anhören',pausa:'Pause',seguir:'Weiter',detener:'Stopp',aviso:'Vorgelesen von der eingebauten Stimme Ihres Browsers. Sie kann künstlich klingen und die Gaucho-Sprache falsch aussprechen.'},
+ ru:{titulo:'Слушать',original:'Слушать стихи по-испански',estudio:'Слушать учебный перевод',versos:'Слушать стихи',pausa:'Пауза',seguir:'Продолжить',detener:'Стоп',aviso:'Читает встроенный голос вашего браузера. Он может звучать механически и неточно произносить язык гаучо.'},
+ zh:{titulo:'朗读',original:'收听西班牙语原诗',estudio:'收听学习译文',versos:'收听诗句',pausa:'暂停',seguir:'继续',detener:'停止',aviso:'由浏览器内置的语音朗读，声音可能较为机械，高乔方言的发音也可能不准确。'},
+ ja:{titulo:'読み上げ',original:'スペイン語の原詩を聴く',estudio:'学習用訳を聴く',versos:'詩を聴く',pausa:'一時停止',seguir:'再開',detener:'停止',aviso:'ブラウザー内蔵の音声で読み上げます。機械的に聞こえたり、ガウチョ方言の発音が不正確になったりすることがあります。'},
+ it:{titulo:'Ascolta',original:'Ascolta i versi in spagnolo',estudio:'Ascolta i versi',versos:'Ascolta i versi',pausa:'Pausa',seguir:'Riprendi',detener:'Ferma',aviso:'Lettura con la voce automatica del tuo browser: può suonare meccanica e sbagliare qualche accento.'}
+};
+const t=textos[ui];
+const config=JSON.stringify({unidad,pistas:pistas.map(p=>({sel:p.sel,voz:p.voz})),seguir:t.seguir,pausa:t.pausa});
+---
+<div class="mf-voz" data-lector-voz={config} hidden role="group" aria-label={t.titulo}>
+ <div class="mf-voz-botones">
+  {pistas.map((p,i)=><button type="button" class="mf-voz-play" data-pista={i}><span aria-hidden="true">▶</span> {t[p.clave]}</button>)}
+  <button type="button" class="mf-voz-pausa" data-pausa hidden><span aria-hidden="true">❚❚</span> <span data-pausa-texto>{t.pausa}</span></button>
+  <button type="button" class="mf-voz-detener" data-detener hidden><span aria-hidden="true">■</span> {t.detener}</button>
+  <span class="mf-voz-estado" data-estado aria-live="polite"></span>
+ </div>
+ <p class="mf-voz-aviso">{t.aviso}</p>
+</div>
+<script>
+ type Cfg={unidad:string;pistas:{sel:string;voz:string}[];seguir:string;pausa:string};
+ const caja=document.querySelector<HTMLElement>('[data-lector-voz]');
+ const synth=typeof window!=='undefined'&&'speechSynthesis' in window&&'SpeechSynthesisUtterance' in window?window.speechSynthesis:null;
+ if(caja&&synth){
+  const cfg:Cfg=JSON.parse(caja.dataset.lectorVoz||'{}');
+  const unidades=[...document.querySelectorAll<HTMLElement>(cfg.unidad)];
+  const botones=[...caja.querySelectorAll<HTMLButtonElement>('[data-pista]')];
+  const bPausa=caja.querySelector<HTMLButtonElement>('[data-pausa]')!;
+  const tPausa=caja.querySelector<HTMLElement>('[data-pausa-texto]')!;
+  const bDetener=caja.querySelector<HTMLButtonElement>('[data-detener]')!;
+  const estado=caja.querySelector<HTMLElement>('[data-estado]')!;
+  let pista=-1, indice=0, sonando=false, turno=0;
+
+  // Prioridad de voces: para el castellano, primero las rioplatenses/latinoamericanas.
+  const preferidas:Record<string,string[]>={es:['es-ar','es-uy','es-419','es-us','es-mx','es-co','es-cl','es-es'],pt:['pt-br','pt-pt'],en:['en-us','en-gb'],zh:['zh-cn','zh-tw','zh-hk']};
+  function voz(lang:string){
+   const voces=synth!.getVoices();
+   const norm=(s:string)=>s.replace('_','-').toLowerCase();
+   const base=norm(lang).split('-')[0];
+   const delIdioma=voces.filter(v=>norm(v.lang).split('-')[0]===base);
+   if(!delIdioma.length) return null;
+   for(const p of [norm(lang),...(preferidas[base]||[])]){
+    const v=delIdioma.filter(v=>norm(v.lang)===p);
+    if(v.length) return v.find(x=>x.localService)||v[0];
+   }
+   return delIdioma.find(x=>x.localService)||delIdioma[0];
+  }
+  // Oculta la pista si el dispositivo ya cargó sus voces y ninguna habla ese idioma.
+  function revisarVoces(){
+   const hay=synth!.getVoices().length>0;
+   botones.forEach((b,i)=>{b.hidden=hay&&!voz(cfg.pistas[i].voz);});
+   caja!.hidden=!unidades.length||botones.every(b=>b.hidden);
+  }
+  function texto(u:HTMLElement,sel:string){
+   // Varios elementos (un verso por párrafo), o un blockquote con un verso por hijo, o un párrafo de prosa.
+   const nodos=[...u.querySelectorAll<HTMLElement>(sel)];
+   const partes:Element[]=nodos.length>1?nodos:nodos[0]?.tagName==='BLOCKQUOTE'?[...nodos[0].children]:nodos.length?nodos:[u];
+   const lineas=partes.map(c=>(c.textContent||'').trim());
+   // Una pausa breve al final de cada verso sin puntuación.
+   return lineas.filter(Boolean).map(l=>/[.,;:!?…»”"'’)\-—。！？、]$/.test(l)?l:l+',').join(' ');
+  }
+  function marcar(i:number){
+   unidades.forEach((u,j)=>u.classList.toggle('mf-voz-activa',j===i));
+   const u=unidades[i];
+   if(u){
+    const r=u.getBoundingClientRect();
+    if(r.top<0||r.bottom>window.innerHeight) u.scrollIntoView({block:'center',behavior:'smooth'});
+    estado.textContent=`${u.getAttribute('aria-label')||''} · ${i+1}/${unidades.length}`;
+   }
+  }
+  function decir(){
+   const mio=++turno;
+   if(indice>=unidades.length){terminar();return;}
+   const p=cfg.pistas[pista];
+   const u=new SpeechSynthesisUtterance(texto(unidades[indice],p.sel));
+   u.lang=p.voz; const v=voz(p.voz); if(v) u.voice=v;
+   u.rate=.92;
+   u.onend=()=>{if(mio===turno&&sonando){indice++;decir();}};
+   u.onerror=e=>{if(mio===turno&&sonando&&e.error!=='interrupted'&&e.error!=='canceled'){indice++;decir();}};
+   marcar(indice);
+   synth!.speak(u);
+  }
+  function mostrarControles(activo:boolean){
+   bPausa.hidden=!activo; bDetener.hidden=!activo;
+   caja!.classList.toggle('mf-voz-sonando',activo);
+  }
+  function empezar(i:number){
+   synth!.cancel(); pista=i; indice=0; sonando=true;
+   botones.forEach((b,j)=>b.setAttribute('aria-pressed',String(j===i)));
+   tPausa.textContent=cfg.pausa; mostrarControles(true); decir();
+  }
+  // La pausa cancela y recuerda la estrofa: pause()/resume() fallan en muchos celulares.
+  function pausar(){
+   if(sonando){sonando=false;turno++;synth!.cancel();tPausa.textContent=cfg.seguir;}
+   else{sonando=true;tPausa.textContent=cfg.pausa;decir();}
+  }
+  function terminar(){
+   sonando=false; turno++; synth!.cancel(); pista=-1; indice=0;
+   unidades.forEach(u=>u.classList.remove('mf-voz-activa'));
+   botones.forEach(b=>b.removeAttribute('aria-pressed'));
+   estado.textContent=''; mostrarControles(false);
+  }
+  botones.forEach((b,i)=>b.addEventListener('click',()=>empezar(i)));
+  bPausa.addEventListener('click',pausar);
+  bDetener.addEventListener('click',terminar);
+  window.addEventListener('pagehide',()=>synth!.cancel());
+  synth.addEventListener?.('voiceschanged',revisarVoces);
+  synth.cancel();
+  revisarVoces();
+ }
+</script>
+<style>
+ .mf-voz{margin:22px 0 26px;padding:14px 16px;background:#f3e8d8;border-left:4px solid #9e573e;border-radius:4px;font:.9rem/1.45 system-ui,sans-serif;color:#30251e}
+ .mf-voz[hidden]{display:none}
+ .mf-voz-botones{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+ .mf-voz button{font:600 .9rem/1.2 system-ui,sans-serif;padding:9px 14px;border-radius:999px;border:1px solid #9e573e;background:#fffaf2;color:#6f2f1f;cursor:pointer;min-height:40px}
+ .mf-voz button:hover{background:#fff}
+ .mf-voz button[aria-pressed="true"],.mf-voz .mf-voz-pausa{background:#9e573e;color:#fff}
+ .mf-voz button:focus-visible{outline:3px solid #c98a3d;outline-offset:2px}
+ .mf-voz button[hidden]{display:none}
+ .mf-voz-estado{font-size:.82rem;color:#6a5747}
+ .mf-voz-aviso{margin:9px 0 0!important;font:.76rem/1.45 system-ui,sans-serif!important;color:#6a5747}
+ .mf-voz.mf-voz-sonando{position:sticky;top:8px;z-index:50;box-shadow:0 8px 26px rgba(39,27,18,.22)}
+ :global(.mf-voz-activa){background:#f6e7c9!important;box-shadow:-6px 0 0 #c98a3d;transition:background .3s}
+</style>

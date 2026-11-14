@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import LectorVoz from '../../../components/LectorVoz.astro';
 import {estrofasDeCanto} from '../../../lib/corpus';
 import {sovetyRu,sovetySlova,sovetyZametki} from '../../../data/ru-izuchenie';
 const strofy=estrofasDeCanto('vuelta',32);
@@ -24,6 +25,7 @@ const dannye={'@context':'https://schema.org','@type':'Article',headline:'Сов
 <section class="chtenie"><h2>Как понимать эти советы?</h2><p>Эти стихи — не собрание пословиц, оторванное от истории. Говорит человек, которого забрали на границу силой, который потерял семью, обрёл верного друга и не раз убивал. Этот путь осложняет нравственный авторитет отца и делает поэму богаче.</p><p><strong>Единство</strong> отвечает на распавшуюся семью. <strong>Труд</strong> обретает смысл после принудительного набора и потери хижины. Отказ от <strong>насилия</strong> требует от читателя помнить о том, что сделал рассказчик, а не забывать об этом. Эрнандес создаёт голос, который учит и который в то же время можно ставить под вопрос.</p></section>
 <h2 id="vsya-pesn">Песнь XXXII целиком</h2>
 <p class="zametka">Испанский оригинал, за ним учебный перевод. Примечания стоят после отдельных строф, никогда внутри стихов.</p>
+<LectorVoz ui="ru" unidad=".strofa" pistas={[{clave:'original',sel:'blockquote',voz:'es-AR'},{clave:'estudio',sel:'.perevod > p:nth-child(2)',voz:'ru-RU'}]}/>
 <div class="strofy">
 {strofy.map(e=><section class="strofa" id={e.id} aria-label={`Строфа ${e.numero}`}>
 <p class="num">Строфа {e.numero}</p>

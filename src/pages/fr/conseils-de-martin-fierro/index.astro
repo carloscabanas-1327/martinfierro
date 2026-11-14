@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import LectorVoz from '../../../components/LectorVoz.astro';
 import {estrofasDeCanto} from '../../../lib/corpus';
 import {conseilsFr,conseilsMots,conseilsNotes} from '../../../data/fr-etude';
 const strophes=estrofasDeCanto('vuelta',32);
@@ -24,6 +25,7 @@ const donnees={'@context':'https://schema.org','@type':'Article',headline:'Les c
 <section class="lecture"><h2>Comment comprendre ces conseils ?</h2><p>Ces vers ne sont pas un recueil de proverbes détaché de l’histoire. Celui qui parle a été enrôlé de force, a perdu sa famille, s’est fait un ami loyal et a tué plus d’une fois. Ce parcours complique l’autorité morale du père et rend le poème plus riche.</p><p>L’<strong>union</strong> répond à une famille brisée. Le <strong>travail</strong> prend son sens après l’enrôlement forcé et la perte du rancho. Le refus de la <strong>violence</strong> demande au lecteur de se souvenir de ce qu’a fait le narrateur, et non de l’oublier. Hernández crée une voix qui enseigne et qui, en même temps, peut être mise en question.</p></section>
 <h2 id="chant-complet">Le chant XXXII en entier</h2>
 <p class="avis">Original en espagnol, suivi de la traduction d’étude. Les notes viennent après certaines strophes, jamais à l’intérieur des vers.</p>
+<LectorVoz ui="fr" unidad=".strophe" pistas={[{clave:'original',sel:'blockquote',voz:'es-AR'},{clave:'estudio',sel:'.etude > p:nth-child(2)',voz:'fr-FR'}]}/>
 <div class="strophes">
 {strophes.map(e=><section class="strophe" id={e.id} aria-label={`Strophe ${e.numero}`}>
 <p class="num">Strophe {e.numero}</p>

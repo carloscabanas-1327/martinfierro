@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import LectorVoz from '../../../components/LectorVoz.astro';
 import {estrofasDeCanto} from '../../../lib/corpus';
 import {conselhosPt,conselhosPalavras,conselhosNotas} from '../../../data/pt-estudo';
 const estrofes=estrofasDeCanto('vuelta',32);
@@ -24,6 +25,7 @@ const dados={'@context':'https://schema.org','@type':'Article',headline:'Os cons
 <section class="leitura"><h2>Como entender esses conselhos?</h2><p>Os versos não são um livro de provérbios solto da história. Quem fala foi recrutado à força, perdeu a família, fez um amigo leal e matou mais de uma vez. Essa trajetória complica a autoridade moral do pai e torna o poema mais rico.</p><p>A <strong>união</strong> responde a uma família desfeita. O <strong>trabalho</strong> ganha sentido depois da leva forçada e da perda do rancho. A recusa da <strong>violência</strong> pede ao leitor que se lembre do que o narrador fez, e não que esqueça. Hernández cria uma voz que ensina e, ao mesmo tempo, pode ser questionada.</p></section>
 <h2 id="canto-completo">O canto XXXII completo</h2>
 <p class="aviso">Original em espanhol, seguido da tradução de estudo. As notas aparecem depois de algumas estrofes, nunca dentro dos versos.</p>
+<LectorVoz ui="pt" unidad=".estrofe" pistas={[{clave:'original',sel:'blockquote',voz:'es-AR'},{clave:'estudio',sel:'.estudo > p:nth-child(2)',voz:'pt-BR'}]}/>
 <div class="estrofes">
 {estrofes.map(e=><section class="estrofe" id={e.id} aria-label={`Estrofe ${e.numero}`}>
 <p class="num">Estrofe {e.numero}</p>
