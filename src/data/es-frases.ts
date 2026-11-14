@@ -23,9 +23,9 @@ export const gruposFrases: GrupoFrases[] = [
   {parte:'vuelta',estrofa:773,versos:[1,2],quien:'El Viejo Vizcacha',explicacion:'Andar siempre preparado para pelear: un mundo de desconfianza donde el cuchillo es parte de la vida diaria.'},
  ]},
  {id:'justicia',titulo:'Frases sobre la justicia y el gaucho',intro:'El poema nació como una denuncia de los abusos que sufría el gaucho. Estas frases resumen esa queja.',frases:[
-  {parte:'vuelta',estrofa:1092,versos:[1,1],quien:'Martín Fierro en la payada con el Moreno',explicacion:'La ley atrapa a los débiles y la rompen los poderosos, como el bicho grande rompe la tela de araña. Es la frase sobre la justicia más citada del poema.'},
+  {parte:'vuelta',estrofa:1092,versos:[1,1],quien:'El Moreno, en la payada con Fierro',explicacion:'Fierro le pregunta qué entiende por la ley y el Moreno responde: la ley atrapa a los débiles y la rompen los poderosos, como el bicho grande rompe la tela de araña. Es la frase sobre la justicia más citada del poema, y no la dice Fierro sino su rival en la payada.'},
   {parte:'ida',estrofa:238,versos:[5,6],quien:'Martín Fierro',explicacion:'El gaucho no gana nada en la paz, es el primero en la guerra y solo cuenta en las elecciones. Una crítica directa a la política de su tiempo.'},
-  {parte:'vuelta',estrofa:1182,versos:[5,6],quien:'Martín Fierro, al cerrar el poema',explicacion:'El programa de Hernández en dos versos: el gaucho necesita hogar, educación y derechos, no persecución.'},
+  {parte:'vuelta',estrofa:1182,versos:[5,6],quien:'La voz que cierra el poema',explicacion:'El programa de Hernández en dos versos: el gaucho necesita hogar, educación y derechos, no persecución.'},
   {parte:'ida',estrofa:18,versos:[3,4],quien:'Martín Fierro',explicacion:'Fierro se presenta como alguien empujado a la violencia por el maltrato. El poema después muestra que no siempre es así.'},
  ]},
  {id:'libertad',titulo:'Frases sobre el canto y la libertad',intro:'El poema empieza con un gaucho que se presenta como cantor y celebra su libertad. Son los versos que muchos argentinos saben de memoria.',frases:[
@@ -38,7 +38,7 @@ export const gruposFrases: GrupoFrases[] = [
  {id:'vida',titulo:'Frases sobre la vida gaucha, el mate y la amistad',intro:'Entre la queja y el consejo, el poema guarda imágenes de la vida en el campo y de la amistad con Cruz.',frases:[
   {parte:'ida',estrofa:25,versos:[3,4],quien:'Martín Fierro, recordando su vida en el pago',explicacion:'La frase del mate más conocida del poema: el gaucho tomando mate amargo («cimarrón») junto al fogón, antes del amanecer.'},
   {parte:'ida',estrofa:291,versos:[1,2],quien:'El sargento Cruz',explicacion:'Cruz consuela a Fierro: la vida trae sufrimiento y hay que mostrarse fuerte hasta el final.'},
-  {parte:'vuelta',estrofa:1184,versos:[5,6],quien:'Martín Fierro, al cerrar el poema',explicacion:'Para mejorar las cosas hay que empezar por los de abajo, como el fuego («juego», en la grafía del poema) que calienta desde la base.'},
-  {parte:'vuelta',estrofa:1191,versos:[5,6],quien:'Martín Fierro, en la última estrofa',explicacion:'El final del poema: las desdichas de Fierro son las de todos sus hermanos, y por eso su historia quedará en la memoria.'},
+  {parte:'vuelta',estrofa:1184,versos:[5,6],quien:'La voz que cierra el poema',explicacion:'Para mejorar las cosas hay que empezar por los de abajo, como el fuego («juego», en la grafía del poema) que calienta desde la base.'},
+  {parte:'vuelta',estrofa:1191,versos:[5,6],quien:'La voz que cierra el poema, en la última estrofa',explicacion:'El final del poema: las desdichas del cantor son las de todos sus hermanos, y por eso su historia quedará en la memoria.'},
  ]},
 ];
