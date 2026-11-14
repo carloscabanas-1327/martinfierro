@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import LectorVoz from '../../../components/LectorVoz.astro';
 import {estrofasDeCanto} from '../../../lib/corpus';
 import {oshieJa,oshieGoi,oshieKaisetsu} from '../../../data/ja-gakushu';
 const ren=estrofasDeCanto('vuelta',32);
@@ -24,6 +25,7 @@ const deeta={'@context':'https://schema.org','@type':'Article',headline:'マル�
 <section class="yomikata"><h2>この教えをどう読むか</h2><p>これらの詩句は物語から切り離された格言集ではありません。語っているのは、辺境へ力ずくで送られ、家族を失い、忠実な友を得て、一度ならず人を殺した男です。その経験が父親の道徳的な権威を複雑にし、同時にこの詩を豊かにしています。</p><p><strong>団結</strong>の教えは壊れた家族への答えです。<strong>労働</strong>の意味は、強制的な兵役と失われた小屋から来ています。<strong>暴力</strong>を拒む言葉は、語り手がしてきたことを忘れるのではなく、思い出すよう読者に求めています。エルナンデスは、人を教え導きながらも、問い返されうる声を作り出したのです。</p></section>
 <h2 id="zenbun">第三十二歌の全文</h2>
 <p class="chu">先にスペイン語の原文、次に学習訳を載せています。注はいくつかの連のあとに置き、詩行の中には決して入れていません。</p>
+<LectorVoz ui="ja" unidad=".ichiren" pistas={[{clave:'original',sel:'blockquote',voz:'es-AR'},{clave:'estudio',sel:'.yaku > p:nth-child(2)',voz:'ja-JP'}]}/>
 <div class="rengun">
 {ren.map(e=><section class="ichiren" id={e.id} aria-label={`第${e.numero}連`}>
 <p class="bangou">第{e.numero}連</p>

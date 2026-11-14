@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import LectorVoz from '../../../components/LectorVoz.astro';
 import AdSlot from '../../../components/AdSlot.astro';
 import {estrofasDeCanto} from '../../../lib/corpus';
 const stanzas=estrofasDeCanto('vuelta',32);
@@ -36,6 +37,7 @@ const structuredData={'@context':'https://schema.org','@type':'Article',headline
 <section class="interpretation"><h2>Fierro’s advice versus Old Vizcacha’s</h2><p>Compare the two voices across six themes in our <a href="/en/library/old-vizcacha-vs-martin-fierro/">original-verse study of Vizcacha and Fierro</a>, including notes on the risks of confusing their sayings.</p></section>
 <h2 id="complete-canto">All the verses: Canto XXXII</h2>
 <p class="reading-note">Spanish poem, reproduced without editorial modernization. Notes appear after selected stanzas, never inside the original lines.</p>
+<LectorVoz ui="en" unidad=".stanza" pistas={[{clave:'original',sel:'blockquote',voz:'es-AR'}]}/>
 <div class="verses">
 {stanzas.map((e,i)=><>
 <section class="stanza" id={e.id} aria-label={`Original stanza ${e.numero}`} lang="es">
