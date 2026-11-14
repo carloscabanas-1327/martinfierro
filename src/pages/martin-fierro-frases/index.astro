@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import {partes,enlaceCanto} from '../../lib/corpus';
+import {gruposFrases} from '../../data/es-frases';
+// El texto de cada estrofa sale del corpus documental; si una referencia no existe, la compilación falla.
+const romano=(n:number)=>{let s='';for(const [v,l] of [[30,'XXX'],[20,'XX'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']] as [number,string][]){while(n>=v){s+=l;n-=v;}}return s;};
+const grupos=gruposFrases.map(g=>({...g,frases:g.frases.map(f=>{
+ const e=partes[f.parte].estrofas.find(x=>x.numero===f.estrofa);
+ if(!e) throw new Error(`Frase sin estrofa: ${f.parte} ${f.estrofa}`);
+ const [desde,hasta]=f.versos;
+ return {...f,canto:e.canto,id:e.id,versos:e.versos.map(v=>v.texto),destacados:e.versos.slice(desde-1,hasta).map(v=>v.texto.replace(/^["“]|["”]$/g,'').replace(/[;,.:]$/,'')),obra:f.parte==='ida'?'El gaucho Martín Fierro':'La vuelta de Martín Fierro'};
+})}));
+const total=grupos.reduce((n,g)=>n+g.frases.length,0);
+---
+<Base migas={[{label:'Para estudiantes',href:'/estudiantes/'},{label:'Frases célebres'}]} pageType="Article" adKind="article" image="/media/fotografias-v3/consejos-fogon-hijos.webp" title="Frases de Martín Fierro: las estrofas más célebres y su significado" description={`Las ${total} frases más célebres de Martín Fierro: «Los hermanos sean unidos», «La ley es tela de araña», los consejos de Fierro y de Vizcacha, con la estrofa completa, el canto y su significado.`}>
+<article class="mf-frases">
+<header><p class="eyebrow">PARA ESTUDIANTES · JOSÉ HERNÁNDEZ · 1872 / 1879</p><h1>Frases célebres de Martín Fierro</h1><p class="lead">«Los hermanos sean unidos», «La ley es tela de araña», «El diablo sabe por diablo, pero más sabe por viejo»: muchas frases que se repiten en la Argentina salen de <em>Martín Fierro</em>. Acá están las {total} más famosas, con la estrofa completa, quién la dice, en qué canto aparece y qué significa.</p></header>
+<figure class="mf-frases-foto"><img src="/media/fotografias-v3/consejos-fogon-hijos.webp" width="1275" height="850" alt="Recreación digital de un gaucho que aconseja a sus hijos junto al fogón" fetchpriority="high"/><figcaption>Recreación digital; no es una fotografía histórica.</figcaption></figure>
+<div class="mf-frases-cuerpo">
+<nav class="mf-frases-indice" aria-label="En esta página"><strong>En esta página</strong>{grupos.map(g=><a href={`#${g.id}`}>{g.titulo}</a>)}</nav>
+<p>Los versos se reproducen tal como están en el poema, con la grafía gauchesca de José Hernández («naides», «ajuera», «güeno»). Cada estrofa enlaza al canto completo para leerla en su contexto.</p>
+<AdSlot id="article-02-after-introduction" kind="article"/>
+{grupos.map((g,i)=><section id={g.id}>
+ <h2>{g.titulo}</h2><p>{g.intro}</p>
+ <ol class="mf-frases-lista">{g.frases.map(f=><li id={`frase-${f.id}`}>
+  <h3>«{(t=>t.charAt(0).toUpperCase()+t.slice(1))(f.destacados.join(' / '))}»</h3>
+  <p class="mf-frases-ref">{f.quien} · {f.obra}, canto {romano(f.canto)}</p>
+  <blockquote>{f.versos.map(v=><span>{v}</span>)}</blockquote>
+  <p><strong>Qué significa:</strong> {f.explicacion}</p>
+  <p class="mf-frases-links"><a href={`${enlaceCanto(f.parte,f.canto)}#${f.id}`}>Leer la estrofa en el canto {romano(f.canto)} →</a></p>
+ </li>)}</ol>
+ {i===1 && <AdSlot id="article-03-middle" kind="article"/>}
+</section>)}
+<section id="seguir"><h2>Para seguir leyendo</h2><ul>
+ <li><a href="/consejos-martin-fierro/">Los consejos de Martín Fierro a sus hijos</a>: el canto XXXII completo y su significado.</li>
+ <li><a href="/biblioteca/vizcacha-y-fierro-consejos/">El Viejo Vizcacha y Martín Fierro</a>: dos maneras de aconsejar.</li>
+ <li><a href="/martin-fierro-resumen/">Resumen de Martín Fierro</a>, canto por canto.</li>
+ <li><a href="/buscar/">Buscar versos</a> en todo el poema.</li>
+</ul></section>
+</div>
+<AdSlot id="article-05-after-article" kind="article"/>
+</article>
+<style>.mf-frases{max-width:1040px;margin:24px auto 80px;color:#302820}.mf-frases a{color:#843e2b;text-underline-offset:4px}.eyebrow{font:750 .71rem system-ui,sans-serif;letter-spacing:.14em;color:#954c35}.mf-frases h1{font:600 clamp(2.4rem,5vw,4.5rem)/1.1 Georgia,serif;letter-spacing:-.03em;max-width:920px;margin:15px 0;text-wrap:balance}.lead{font:1.2rem/1.7 Georgia,serif;max-width:72ch}.mf-frases-foto{margin:30px 0 38px}.mf-frases-foto img{width:100%;height:auto;max-height:440px;object-fit:cover;border-radius:5px}.mf-frases-foto figcaption{font:.75rem system-ui,sans-serif;color:#6b594b;margin-top:7px}.mf-frases-cuerpo{max-width:790px;margin:auto}.mf-frases-indice{border-block:1px solid #c9b9a7;display:flex;flex-wrap:wrap;gap:12px 18px;padding:20px 0;font:.86rem system-ui,sans-serif}.mf-frases-indice strong{width:100%}.mf-frases-cuerpo section{margin:44px 0;scroll-margin-top:70px}.mf-frases-cuerpo h2{font:600 clamp(1.8rem,3vw,2.5rem)/1.2 Georgia,serif}.mf-frases-cuerpo p,.mf-frases-cuerpo li{font:1.06rem/1.8 Georgia,serif}.mf-frases-lista{list-style:none;padding:0;margin:0}.mf-frases-lista li{border-top:1px solid #d3c3b0;padding:22px 0;scroll-margin-top:70px}.mf-frases-lista h3{font:600 1.4rem/1.35 Georgia,serif;margin:0 0 4px}.mf-frases-ref{font:700 .74rem system-ui,sans-serif!important;letter-spacing:.08em;color:#8b4731;text-transform:uppercase;margin:0 0 10px}.mf-frases-lista blockquote{margin:0 0 12px;padding:12px 18px;border-left:3px solid #b98a6a;background:#f3ebdf}.mf-frases-lista blockquote span{display:block;font:italic 1.05rem/1.7 Georgia,serif}.mf-frases-links{font:.9rem system-ui,sans-serif!important;margin:0}</style>
+</Base>
