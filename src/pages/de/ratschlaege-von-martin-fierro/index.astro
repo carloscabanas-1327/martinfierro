@@ -12,7 +12,7 @@ const themen=[
  {name:'Gegen die Gewalt',n:1167},{name:'Der Abschied',n:1174}
 ];
 const canonical=new URL('/de/ratschlaege-von-martin-fierro/',Astro.site).toString();
-const daten={'@context':'https://schema.org','@type':'Article',headline:'Die Ratschläge Martín Fierros an seine Söhne: Originalverse und Kommentar auf Deutsch',inLanguage:'de-DE',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
+const daten={'@context':'https://schema.org','@type':'Article','@id':canonical+'#pagina',headline:'Die Ratschläge Martín Fierros an seine Söhne: Originalverse und Kommentar auf Deutsch',inLanguage:'de-DE',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
 ---
 <Base migas={[{label:'Die Ratschläge an die Söhne'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/',pt:'/pt/conselhos-de-martin-fierro/',fr:'/fr/conseils-de-martin-fierro/'}} lang="de-DE" pageType="Article" title="Die Ratschläge Martín Fierros an seine Söhne: Verse und Bedeutung" description="Lesen Sie Strophe für Strophe die Ratschläge Martín Fierros an seine Söhne (La vuelta, Gesang XXXII): das spanische Original, eine deutsche Studienübersetzung und Hinweise zu Freundschaft, Arbeit und Einigkeit.">
 <article class="ratschlaege-de">

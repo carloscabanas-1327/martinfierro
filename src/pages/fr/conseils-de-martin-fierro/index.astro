@@ -12,7 +12,7 @@ const themes=[
  {libelle:'Contre la violence',n:1167},{libelle:'Les adieux',n:1174}
 ];
 const canonical=new URL('/fr/conseils-de-martin-fierro/',Astro.site).toString();
-const donnees={'@context':'https://schema.org','@type':'Article',headline:'Les conseils de Martín Fierro à ses fils : vers originaux et commentaire en français',inLanguage:'fr-FR',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
+const donnees={'@context':'https://schema.org','@type':'Article','@id':canonical+'#pagina',headline:'Les conseils de Martín Fierro à ses fils : vers originaux et commentaire en français',inLanguage:'fr-FR',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
 ---
 <Base migas={[{label:'Les conseils à ses fils'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/',pt:'/pt/conselhos-de-martin-fierro/'}} lang="fr-FR" pageType="Article" title="Les conseils de Martín Fierro à ses fils : vers et signification" description="Lisez, strophe par strophe, les conseils de Martín Fierro à ses fils (La vuelta, chant XXXII) : l’original espagnol, une traduction d’étude en français et des notes sur l’amitié, le travail et l’union.">
 <article class="conseils-fr">

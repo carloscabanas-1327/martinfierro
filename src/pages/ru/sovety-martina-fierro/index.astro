@@ -12,7 +12,7 @@ const temy=[
  {name:'Против насилия',n:1167},{name:'Прощание',n:1174}
 ];
 const canonical=new URL('/ru/sovety-martina-fierro/',Astro.site).toString();
-const dannye={'@context':'https://schema.org','@type':'Article',headline:'Советы Мартина Фьерро сыновьям: стихи оригинала и комментарий на русском',inLanguage:'ru-RU',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
+const dannye={'@context':'https://schema.org','@type':'Article','@id':canonical+'#pagina',headline:'Советы Мартина Фьерро сыновьям: стихи оригинала и комментарий на русском',inLanguage:'ru-RU',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
 ---
 <Base migas={[{label:'Советы сыновьям'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/',pt:'/pt/conselhos-de-martin-fierro/',fr:'/fr/conseils-de-martin-fierro/',de:'/de/ratschlaege-von-martin-fierro/'}} lang="ru-RU" pageType="Article" title="Советы Мартина Фьерро сыновьям: стихи и их смысл" description="Прочитайте строфа за строфой советы Мартина Фьерро сыновьям («Возвращение», песнь XXXII): испанский оригинал, учебный перевод на русский и пояснения о дружбе, труде и единстве.">
 <article class="sovety-ru">

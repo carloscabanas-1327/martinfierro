@@ -12,7 +12,7 @@ const temas=[
  {rotulo:'Contra a violência',n:1167},{rotulo:'A despedida',n:1174}
 ];
 const canonical=new URL('/pt/conselhos-de-martin-fierro/',Astro.site).toString();
-const dados={'@context':'https://schema.org','@type':'Article',headline:'Os conselhos de Martín Fierro aos filhos: versos originais e comentário em português',inLanguage:'pt-BR',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
+const dados={'@context':'https://schema.org','@type':'Article','@id':canonical+'#pagina',headline:'Os conselhos de Martín Fierro aos filhos: versos originais e comentário em português',inLanguage:'pt-BR',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
 ---
 <Base migas={[{label:'Os conselhos aos filhos'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/'}} lang="pt-BR" pageType="Article" title="Os conselhos de Martín Fierro aos filhos: versos e significado" description="Leia, estrofe por estrofe, os conselhos de Martín Fierro aos filhos (La vuelta, canto XXXII): o original espanhol, uma tradução de estudo em português e notas sobre amizade, trabalho e união.">
 <article class="conselhos-pt">
