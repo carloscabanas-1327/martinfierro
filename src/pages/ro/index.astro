@@ -1,12 +1,14 @@
 ---
-import Base from '../../layouts/Base.astro';
-const code = 'ro';
+import IdiomaEnPreparacion from '../../components/IdiomaEnPreparacion.astro';
+const textos = {
+  "titulo": "Martín Fierro în română: traduceri și surse",
+  "aviso": "Versiune lingvistică în pregătire. Nicio traducere nu este publicată înainte de verificarea sursei, integrității și drepturilor de reproducere.",
+  "original": "Citește poemul original în spaniolă",
+  "traducciones": "Traduceri documentate",
+  "sinTraducciones": "Încă nu există o traducere documentată în această limbă.",
+  "biblioteca": "Bibliotecă și arhivă",
+  "bibliotecaTexto": "Sursele istorice, edițiile și documentele sunt comune tuturor limbilor și pot fi consultate în spaniolă.",
+  "derechos": "Catalogul traducerilor și drepturilor"
+};
 ---
-<Base lang={code} title={'Martín Fierro — '+code.toUpperCase()+' · edición en preparación'} description={'Espacio documental de Martín Fierro para el idioma '+code+'. Traducciones y fuentes sujetas a verificación editorial.'} noindex={true} pageType="CollectionPage">
-  <main id="contenido" class="container" style="padding:3rem 1rem;max-width:60rem">
-    <p><a href="/">Martín Fierro</a> · <a href="/en/">English</a></p>
-    <h1>Martín Fierro · {code.toUpperCase()}</h1>
-    <p>Edición lingüística en preparación. No se publica ninguna traducción hasta verificar su fuente, integridad y derechos de reproducción.</p>
-    <p><a href="/leer/">Consultar el poema original en español</a></p>
-  </main>
-</Base>
+<IdiomaEnPreparacion codigo="ro" nombre="Română" textos={textos} />

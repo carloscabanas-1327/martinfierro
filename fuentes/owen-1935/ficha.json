@@ -1,0 +1,50 @@
+{
+  "id": "owen-1935-the-gaucho-martin-fierro",
+  "tipo": "Libro",
+  "titulo": "The Gaucho Martin Fierro",
+  "subtitulo": "Adapted from the Spanish and rendered into English verse by Walter Owen with drawings by Alberto Guiraldez",
+  "autor": "José Hernández (1834–1886)",
+  "traductor": "Walter Owen (1884–1953)",
+  "ilustrador": "Alberto Güiraldes (firma en la portada: «Alberto Guiraldez»)",
+  "prologo": "Mario Molina Pico, por el Ateneo del Club Universitario de Buenos Aires (Preface, p. v)",
+  "editorial": "Basil Blackwell",
+  "imprenta": "Shakespeare Head Press, St Aldates",
+  "lugar": "Oxford",
+  "fecha": "1935",
+  "idioma": "en",
+  "tirada": "Edición limitada de 450 ejemplares, 425 a la venta; el ejemplar digitalizado es el n.º 84 (colofón manuscrito, p. 7 del PDF)",
+  "contenido": [
+    "Preface (Mario Molina Pico)",
+    "The Introduction by the Translator",
+    "Part the First: The Departure of Martin Fierro, 13 cantos",
+    "Part the Second: The Return of Martin Fierro, 33 cantos",
+    "Notes on the Poem"
+  ],
+  "facsimil": {
+    "url": "https://commons.wikimedia.org/wiki/File:The_Gaucho_Martin_Fierro_-_Jose_Hernandez.pdf",
+    "archivo": "https://upload.wikimedia.org/wikipedia/commons/5/58/The_Gaucho_Martin_Fierro_-_Jose_Hernandez.pdf",
+    "paginas_pdf": 351,
+    "bytes": 11000127,
+    "sha1_commons": "b81ea51e112ee0d793f0aabf508f5f028d457531",
+    "sha256": "615ef8d649ef095d801e814ac875051603b7d8467e9a8189869fc26687474dfb",
+    "productor_pdf": "ABBYY FineReader 14 (21 de junio de 2018), con capa de texto",
+    "subido_por": "Mauricio V. Genta, 22 de junio de 2018",
+    "institucion": "Dirección General del Libro, Bibliotecas y Promoción de la Lectura (plantilla de Commons DGLByPL-WMAR, colaboración con Wikimedia Argentina)",
+    "signatura": "http://catalogo.bibliotecas.gob.ar/pergamo/opac/cgi-bin/pgopac.cgi?VDOC=1.96869",
+    "licencia_declarada_en_commons": "PD-old-70-1923"
+  },
+  "derechos": {
+    "resumen": "No distribuir el texto íntegro ni las ilustraciones desde un sitio de acceso internacional hasta completar la verificación.",
+    "hernandez": "Dominio público.",
+    "owen_traduccion": "Owen murió en 1953. Dominio público en Argentina, Reino Unido y la Unión Europea desde el 1 de enero de 2024 (vida + 70). En EE. UU., una obra extranjera de 1935 protegida en su país de origen el 1/1/1996 recuperó derechos (URAA) por 95 años desde su publicación: probablemente protegida hasta el 31 de diciembre de 2030.",
+    "ilustraciones": "Alberto Güiraldes murió en 1961 (dato a confirmar): sus dibujos estarían protegidos en Argentina y el Reino Unido hasta el 31 de diciembre de 2031.",
+    "prologo": "Mario Molina Pico: fecha de muerte sin confirmar.",
+    "plantilla_commons": "PD-old-70-1923 exige publicación anterior a 1923 para EE. UU.; esta edición es de 1935, por lo que la etiqueta no acredita el estado en EE. UU.",
+    "advertencia": "Análisis documental, no dictamen jurídico."
+  },
+  "transcripcion": {
+    "estado": "Borrador automático (OCR), no cotejado. No se publica en este repositorio por ser público.",
+    "ubicacion": "Repositorio privado de ARCHIVO.AR, rama datos/owen-1935"
+  },
+  "verificado_el": "2026-11-02"
+}

@@ -1,12 +1,14 @@
 ---
-import Base from '../../layouts/Base.astro';
-const code = 'nl';
+import IdiomaEnPreparacion from '../../components/IdiomaEnPreparacion.astro';
+const textos = {
+  "titulo": "Martín Fierro in het Nederlands: vertalingen en bronnen",
+  "aviso": "Taalversie in voorbereiding. Er wordt geen vertaling gepubliceerd voordat de bron, de volledigheid en de reproductierechten zijn gecontroleerd.",
+  "original": "Lees het oorspronkelijke gedicht in het Spaans",
+  "traducciones": "Gedocumenteerde vertalingen",
+  "sinTraducciones": "Voor deze taal is nog geen vertaling gedocumenteerd.",
+  "biblioteca": "Bibliotheek en archief",
+  "bibliotecaTexto": "Historische bronnen, edities en documenten zijn voor alle talen gemeenschappelijk en in het Spaans te raadplegen.",
+  "derechos": "Catalogus van vertalingen en rechten"
+};
 ---
-<Base lang={code} title={'Martín Fierro — '+code.toUpperCase()+' · edición en preparación'} description={'Espacio documental de Martín Fierro para el idioma '+code+'. Traducciones y fuentes sujetas a verificación editorial.'} noindex={true} pageType="CollectionPage">
-  <main id="contenido" class="container" style="padding:3rem 1rem;max-width:60rem">
-    <p><a href="/">Martín Fierro</a> · <a href="/en/">English</a></p>
-    <h1>Martín Fierro · {code.toUpperCase()}</h1>
-    <p>Edición lingüística en preparación. No se publica ninguna traducción hasta verificar su fuente, integridad y derechos de reproducción.</p>
-    <p><a href="/leer/">Consultar el poema original en español</a></p>
-  </main>
-</Base>
+<IdiomaEnPreparacion codigo="nl" nombre="Nederlands" textos={textos} />

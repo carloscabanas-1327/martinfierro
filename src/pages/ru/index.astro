@@ -1,12 +1,14 @@
 ---
-import Base from '../../layouts/Base.astro';
-const code = 'ru';
+import IdiomaEnPreparacion from '../../components/IdiomaEnPreparacion.astro';
+const textos = {
+  "titulo": "«Мартин Фьерро» на русском: переводы и источники",
+  "aviso": "Языковая версия готовится. Перевод не публикуется, пока не проверены его источник, полнота и права на воспроизведение.",
+  "original": "Читать оригинал поэмы на испанском",
+  "traducciones": "Задокументированные переводы",
+  "sinTraducciones": "Для этого языка пока нет задокументированного перевода.",
+  "biblioteca": "Библиотека и архив",
+  "bibliotecaTexto": "Исторические источники, издания и документы общие для всех языков и доступны на испанском.",
+  "derechos": "Каталог переводов и прав"
+};
 ---
-<Base lang={code} title={'Martín Fierro — '+code.toUpperCase()+' · edición en preparación'} description={'Espacio documental de Martín Fierro para el idioma '+code+'. Traducciones y fuentes sujetas a verificación editorial.'} noindex={true} pageType="CollectionPage">
-  <main id="contenido" class="container" style="padding:3rem 1rem;max-width:60rem">
-    <p><a href="/">Martín Fierro</a> · <a href="/en/">English</a></p>
-    <h1>Martín Fierro · {code.toUpperCase()}</h1>
-    <p>Edición lingüística en preparación. No se publica ninguna traducción hasta verificar su fuente, integridad y derechos de reproducción.</p>
-    <p><a href="/leer/">Consultar el poema original en español</a></p>
-  </main>
-</Base>
+<IdiomaEnPreparacion codigo="ru" nombre="Русский" textos={textos} />
