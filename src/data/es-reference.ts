@@ -4,6 +4,7 @@ import {temas} from './temas';
 export type DocumentoES={titulo:string;url:string;descripcion:string;categoria:string};
 export const documentosES:DocumentoES[]=[
 {titulo:'La obra completa',url:'/leer/',descripcion:'El gaucho Martín Fierro y La vuelta: los 46 cantos originales.',categoria:'Lectura'},
+{titulo:'Frases célebres de Martín Fierro',url:'/martin-fierro-frases/',descripcion:'Las estrofas más citadas del poema, con el canto, quién las dice y su significado: hermanos sean unidos, la ley es tela de araña, consejos de Vizcacha.',categoria:'Lectura'},
 {titulo:'El gaucho Martín Fierro (1872)',url:'/leer/ida/',descripcion:'Primera parte del poema, trece cantos.',categoria:'Lectura'},
 {titulo:'La vuelta de Martín Fierro (1879)',url:'/leer/vuelta/',descripcion:'Segunda parte del poema, treinta y tres cantos.',categoria:'Lectura'},
 {titulo:'Martín Fierro: resumen',url:'/martin-fierro-resumen/',descripcion:'Resumen de la Ida y la Vuelta y de los 46 cantos, personajes y temas.',categoria:'Lectura'},
