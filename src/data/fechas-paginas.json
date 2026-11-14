@@ -1,0 +1,898 @@
+{
+ "/404/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-01"
+ },
+ "/acerca/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-06"
+ },
+ "/archivo/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/biblioteca-critica/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/biblioteca/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/biblioteca/vizcacha-y-fierro-consejos/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/buscar-documentos/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/buscar/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-06"
+ },
+ "/consejos-martin-fierro/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-14"
+ },
+ "/contacto/": {
+  "publicado": "2026-10-30",
+  "modificado": "2026-11-02"
+ },
+ "/cultura-gauchesca/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-02"
+ },
+ "/de/das-gedicht-lesen/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/de/figuren/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/de/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-06"
+ },
+ "/de/jose-hernandez/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/de/magazin/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/de/magazin/mate/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/de/quellen-und-rechte/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/de/ratschlaege-von-martin-fierro/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-14"
+ },
+ "/de/studierende/[teil]/[gesang]/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/de/studierende/glossar/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/de/studierende/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/en/about/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/advertising-and-affiliates/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/archive/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/argentina-national-poem/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/characters/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/contact/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/editorial-method/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/exegesis/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/exegesis/la-vuelta/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/gaucho-pants-origin/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/en/jose-hernandez/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/library/argentine-literature/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/library/brothers-stay-united/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/library/critical-library/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/library/father-as-a-friend/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/library/gaucho-glossary/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/library/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/library/learning-from-mistakes/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/library/old-vizcacha-vs-martin-fierro/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/library/themes-and-analysis/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/day-of-tradition/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/frontier-forts/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/gaucho-clothing/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/indigenous-peoples-frontier/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/payadas/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/pulperias/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/rural-traditions/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/tradition-day-vs-national-gaucho-day/": {
+  "publicado": "2026-11-02",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/women-of-the-frontier/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/magazine/yerba-mate/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/martin-fierro-advice-to-his-sons/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-14"
+ },
+ "/en/martin-fierro-english-translation/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/martin-fierro-summary/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/privacy/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/reader/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/search/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/site-index/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/sources-and-rights/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-04"
+ },
+ "/en/students/canto-1/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-10/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-11/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-12/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-13/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-2/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-3/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-4/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-5/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-6/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-7/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-8/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/canto-9/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/characters/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/glossary/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-1/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-10/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-11/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-12/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-13/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-14/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-15/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-16/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-17/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-18/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-19/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-2/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-20/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-21/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-22/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-23/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-24/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-25/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-26/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-27/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-28/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-29/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-3/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-30/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-31/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-32/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-33/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-4/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-5/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-6/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-7/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-8/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/students/vuelta-canto-9/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/terms/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/themes/[slug]/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/themes/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/verse-search/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/what-is-a-gaucho/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/en/what-is-martin-fierro/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-02"
+ },
+ "/es/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-06"
+ },
+ "/estudiantes/[parte]/[canto]/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-14"
+ },
+ "/estudiantes/": {
+  "publicado": "2026-11-01",
+  "modificado": "2026-11-11"
+ },
+ "/exegesis/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/exegesis/la-vuelta/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-02"
+ },
+ "/fr/conseils-de-martin-fierro/": {
+  "publicado": "2026-11-04",
+  "modificado": "2026-11-14"
+ },
+ "/fr/etudiants/[partie]/[chant]/": {
+  "publicado": "2026-11-04",
+  "modificado": "2026-11-04"
+ },
+ "/fr/etudiants/glossaire/": {
+  "publicado": "2026-11-04",
+  "modificado": "2026-11-04"
+ },
+ "/fr/etudiants/": {
+  "publicado": "2026-11-04",
+  "modificado": "2026-11-06"
+ },
+ "/fr/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-04"
+ },
+ "/fr/jose-hernandez/": {
+  "publicado": "2026-11-04",
+  "modificado": "2026-11-04"
+ },
+ "/fr/lire-le-poeme/": {
+  "publicado": "2026-11-04",
+  "modificado": "2026-11-04"
+ },
+ "/fr/personnages/": {
+  "publicado": "2026-11-04",
+  "modificado": "2026-11-04"
+ },
+ "/fr/revue/": {
+  "publicado": "2026-11-04",
+  "modificado": "2026-11-04"
+ },
+ "/fr/revue/mate/": {
+  "publicado": "2026-11-04",
+  "modificado": "2026-11-04"
+ },
+ "/fr/sources-et-droits/": {
+  "publicado": "2026-11-04",
+  "modificado": "2026-11-04"
+ },
+ "/fuentes-y-derechos/": {
+  "publicado": "2026-10-30",
+  "modificado": "2026-11-04"
+ },
+ "/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-13"
+ },
+ "/indice-general/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-13"
+ },
+ "/it/biblioteca/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/it/biblioteca/traduzione-testena/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/it/cerca/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/it/che-cose-martin-fierro/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-03"
+ },
+ "/it/contesto-storico/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-03"
+ },
+ "/it/fonti-e-diritti/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/it/il-gaucho/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-03"
+ },
+ "/it/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-04"
+ },
+ "/it/indice/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-03"
+ },
+ "/it/jose-hernandez/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-03"
+ },
+ "/it/le-due-parti/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-06"
+ },
+ "/it/lettore/[parte]/[canto]/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-14"
+ },
+ "/it/lettore/[parte]/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/it/lettore/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/it/metodo-editoriale/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/it/rivista/giorno-della-tradizione/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-03"
+ },
+ "/it/rivista/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-03"
+ },
+ "/it/rivista/payada/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-03"
+ },
+ "/it/rivista/pulperie/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-03"
+ },
+ "/it/studenti/glossario/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-03"
+ },
+ "/it/studenti/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-02"
+ },
+ "/ja/gakusei/[bubun]/[uta]/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-13"
+ },
+ "/ja/gakusei/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-13"
+ },
+ "/ja/gakusei/yogo/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-13"
+ },
+ "/ja/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-13"
+ },
+ "/ja/jinbutsu/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-13"
+ },
+ "/ja/jose-hernandez/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-13"
+ },
+ "/ja/oshie/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-14"
+ },
+ "/ja/shutten-to-chosakuken/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-13"
+ },
+ "/ja/yomu/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-13"
+ },
+ "/ja/zasshi/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-13"
+ },
+ "/ja/zasshi/mate/": {
+  "publicado": "2026-11-13",
+  "modificado": "2026-11-13"
+ },
+ "/jose-hernandez/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/la/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/leer/[parte]/[canto]/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/leer/[parte]/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/leer/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-06"
+ },
+ "/martin-fierro-resumen/": {
+  "publicado": "2026-11-11",
+  "modificado": "2026-11-11"
+ },
+ "/personajes/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-02"
+ },
+ "/pms/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/privacidad/": {
+  "publicado": "2026-10-30",
+  "modificado": "2026-11-02"
+ },
+ "/proyecto/": {
+  "publicado": "2026-10-30",
+  "modificado": "2026-11-02"
+ },
+ "/pt/conselhos-de-martin-fierro/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-14"
+ },
+ "/pt/estudantes/[parte]/[canto]/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/pt/estudantes/glossario/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/pt/estudantes/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-06"
+ },
+ "/pt/fontes-e-direitos/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/pt/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-04"
+ },
+ "/pt/jose-hernandez/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/pt/ler-o-poema/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/pt/personagens/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/pt/revista/chimarrao/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/pt/revista/": {
+  "publicado": "2026-11-03",
+  "modificado": "2026-11-04"
+ },
+ "/publicidad-y-afiliados/": {
+  "publicado": "2026-10-30",
+  "modificado": "2026-11-02"
+ },
+ "/revista/dia-de-la-tradicion-10-de-noviembre/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-02"
+ },
+ "/revista/dia-de-la-tradicion-vs-dia-nacional-del-gaucho/": {
+  "publicado": "2026-11-02",
+  "modificado": "2026-11-02"
+ },
+ "/revista/frontera-pueblos-indigenas/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-02"
+ },
+ "/revista/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/revista/mujeres-fortineras/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-02"
+ },
+ "/revista/pulperias-y-sociabilidad/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-02"
+ },
+ "/revista/quienes-eran-los-gauchos/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-02"
+ },
+ "/revista/vida-en-los-fortines/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-02"
+ },
+ "/ru/chitat-poemu/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/ru/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/ru/istochniki-i-prava/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/ru/jose-hernandez/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/ru/personazhi/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/ru/sovety-martina-fierro/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-14"
+ },
+ "/ru/studentam/[chast]/[pesn]/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/ru/studentam/glossarij/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/ru/studentam/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/ru/zhurnal/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/ru/zhurnal/mate/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/temas/[slug]/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/temas/": {
+  "publicado": "2026-10-29",
+  "modificado": "2026-11-02"
+ },
+ "/terminos/": {
+  "publicado": "2026-10-30",
+  "modificado": "2026-11-02"
+ },
+ "/traducciones/": {
+  "publicado": "2026-10-31",
+  "modificado": "2026-11-02"
+ },
+ "/zh/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/zh/jiaohui/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-14"
+ },
+ "/zh/jose-hernandez/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/zh/laiyuan-yu-banquan/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/zh/renwu/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/zh/xuesheng/[bufen]/[ge]/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/zh/xuesheng/cihui/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/zh/xuesheng/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/zh/yuedu/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/zh/zazhi/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ },
+ "/zh/zazhi/mate/": {
+  "publicado": "2026-11-06",
+  "modificado": "2026-11-06"
+ }
+}

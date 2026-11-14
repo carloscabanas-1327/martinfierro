@@ -1,0 +1,2 @@
+// Primer eslabón de la ruta de navegación de cada edición (lo usan Migas.astro y los datos estructurados de Base.astro).
+export const raizMigas={es:{label:'Inicio',href:'/'},en:{label:'English edition',href:'/en/'},it:{label:'Edizione italiana',href:'/it/'},pt:{label:'Edição brasileira',href:'/pt/'},fr:{label:'Édition française',href:'/fr/'},de:{label:'Deutsche Ausgabe',href:'/de/'},ru:{label:'Русское издание',href:'/ru/'},zh:{label:'中文版',href:'/zh/'},ja:{label:'日本語版',href:'/ja/'}} as const;

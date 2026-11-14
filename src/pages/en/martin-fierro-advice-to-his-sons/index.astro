@@ -22,7 +22,7 @@ const topics=[
  {label:'Rejecting violence',n:1167},{label:'Final counsel',n:1174}
 ];
 const canonical=new URL('/en/martin-fierro-advice-to-his-sons/',Astro.site).toString();
-const structuredData={'@context':'https://schema.org','@type':'Article',headline:'Martín Fierro’s Advice to His Sons: Complete Spanish Verses and English Commentary',inLanguage:'en-US',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG Editorial Library'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, Canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
+const structuredData={'@context':'https://schema.org','@type':'Article','@id':canonical+'#pagina',headline:'Martín Fierro’s Advice to His Sons: Complete Spanish Verses and English Commentary',inLanguage:'en-US',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG Editorial Library'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, Canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
 ---
 <Base migas={[{label:"Popular library",href:"/en/library/"},{label:"Advice to his sons"}]} lang="en-US" adKind="article" pageType="Article" title="Martín Fierro’s Advice to His Sons: Verses and Meaning" description="Read every original Spanish stanza of Martín Fierro’s advice to his sons (Canto XXXII) with clear English commentary on family, honesty, work, friendship and unity.">
 <article class="advice-en">

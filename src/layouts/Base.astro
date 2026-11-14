@@ -1,7 +1,9 @@
 ---
 import {equivalenti,hreflang,type Grupo} from '../data/equivalencias';
-interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'; lingue?:Grupo; migas?:{label:string; href?:string}[]}
-const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none',lingue,migas}=Astro.props;
+import {raizMigas} from '../data/migas-raiz';
+import fechasPaginas from '../data/fechas-paginas.json';
+interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'; lingue?:Grupo; image?:string; migas?:{label:string; href?:string}[]}
+const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none',lingue,migas,image}=Astro.props;
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
 const robotsBlocked=noindex;
 const english=lang.toLowerCase().startsWith('en');
@@ -67,7 +69,25 @@ const menu={
  ja:[['/ja/','トップ'],['/ja/yomu/','原詩を読む'],['/ja/zasshi/','文化マガジン'],['/ja/gakusei/','学生のために'],['/ja/jose-hernandez/','エルナンデス'],['/ja/jinbutsu/','登場人物'],['/ja/oshie/','父の教え']],
  fr:[['/fr/','Accueil'],['/fr/lire-le-poeme/','Lire le poème'],['/fr/revue/','Revue'],['/fr/etudiants/','Pour les étudiants'],['/fr/jose-hernandez/','José Hernández'],['/fr/personnages/','Personnages'],['/fr/conseils-de-martin-fierro/','Les conseils']],
 }[linguaCorrente];
-const jsonLd={ '@context':'https://schema.org','@type':pageType, name:title, description, url:canonical, inLanguage:lang, isPartOf:{'@type':'WebSite',name:'Martín Fierro',url:new URL('/',Astro.site).toString()} };
+// Datos estructurados (schema.org) en un solo @graph: sitio, editor, página y ruta de navegación.
+const inicio=new URL('/',Astro.site).toString();
+const imagenCompartir='https://martinfierro.org/media/compartir/gaucho-a-caballo-1200x630.jpg';
+// Imagen propia de la página (prop image), además de la imagen general para compartir.
+const imagenes=image?[new URL(image,Astro.site).toString(),imagenCompartir]:imagenCompartir;
+// Titular sin el sufijo de sección («… | Revista MARTINFIERRO.ORG»).
+const titular=title.replace(/\s+\|\s+[^|]*$/,'');
+const esArticulo=['Article','ScholarlyArticle','LearningResource'].includes(pageType);
+// Fechas tomadas del historial de git (scripts/generar-fechas.mjs); las rutas con [parámetros] usan las de su plantilla.
+const fechas=(()=>{const tabla=fechasPaginas as Record<string,{publicado:string;modificado:string}>;const ruta=Astro.url.pathname.endsWith('/')?Astro.url.pathname:Astro.url.pathname+'/';if(tabla[ruta]) return tabla[ruta];const partes=ruta.split('/');const clave=Object.keys(tabla).find(k=>{const p=k.split('/');return p.length===partes.length&&p.every((x,i)=>x===partes[i]||/^\[.+\]$/.test(x));});return clave?tabla[clave]:undefined;})();
+const editor={'@type':'Organization','@id':inicio+'#organizacion',name:'MARTINFIERRO.ORG',url:inicio};
+const rutaMigas=migas?[raizMigas[linguaCorrente],...migas]:[];
+const grafo:Record<string,unknown>[]=[
+ {'@type':'WebSite','@id':inicio+'#sitio',name:'Martín Fierro',alternateName:['MARTINFIERRO.ORG','martinfierro.org'],url:inicio,publisher:{'@id':inicio+'#organizacion'}},
+ editor,
+ {'@type':pageType,'@id':canonical+'#pagina',name:title,...(esArticulo?{headline:titular.length>110?titular.slice(0,109)+'…':titular,author:{'@id':inicio+'#organizacion'},publisher:{'@id':inicio+'#organizacion'}}:{}),description,url:canonical,inLanguage:lang,isPartOf:{'@id':inicio+'#sitio'},image:imagenes,...(fechas?{datePublished:fechas.publicado,dateModified:fechas.modificado}:{}),...(rutaMigas.length?{breadcrumb:{'@id':canonical+'#migas'}}:{})},
+ ...(rutaMigas.length?[{'@type':'BreadcrumbList','@id':canonical+'#migas',itemListElement:rutaMigas.map((p,i)=>({'@type':'ListItem',position:i+1,name:p.label,...(p.href?{item:new URL(p.href,Astro.site).toString()}:i===rutaMigas.length-1?{item:canonical}:{})}))}]:[]),
+];
+const jsonLd={'@context':'https://schema.org','@graph':grafo};
 import AdSlot from '../components/AdSlot.astro';
 import Migas from '../components/Migas.astro';
 import '../styles/global.css';
@@ -87,7 +107,9 @@ import AvisoRecreacion from '../components/AvisoRecreacion.astro';
  {alternates.map(a=><link rel="alternate" hreflang={a.hreflang} href={a.href}/>)}
  {xDefault && <link rel="alternate" hreflang="x-default" href={new URL(xDefault,Astro.site).toString()}/>}
  {robotsBlocked && <meta name="robots" content="noindex,nofollow"/>}
- <meta property="og:type" content="website"/>
+ <meta property="og:type" content={esArticulo?"article":"website"}/>
+ {esArticulo && fechas && <meta property="article:published_time" content={fechas.publicado}/>}
+ {esArticulo && fechas && <meta property="article:modified_time" content={fechas.modificado}/>}
  <meta property="og:site_name" content="Martín Fierro"/>
  <meta property="og:title" content={`${title} | Martín Fierro`}/>
  <meta property="og:description" content={description}/>
@@ -99,7 +121,7 @@ import AvisoRecreacion from '../components/AvisoRecreacion.astro';
  <meta property="og:image:alt" content="Recreación digital de un gaucho a caballo en la pampa al atardecer"/>
  <meta name="twitter:card" content="summary_large_image"/>
  <meta name="twitter:image" content="https://martinfierro.org/media/compartir/gaucho-a-caballo-1200x630.jpg"/>
- <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}/>
+ <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g,'\\u003c')}/>
  <title>{title} | Martín Fierro</title>
 </head>
 <body>

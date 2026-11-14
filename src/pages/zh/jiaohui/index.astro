@@ -12,7 +12,7 @@ const zhuti=[
  {name:'反对暴力',n:1167},{name:'告别',n:1174}
 ];
 const canonical=new URL('/zh/jiaohui/',Astro.site).toString();
-const shuju={'@context':'https://schema.org','@type':'Article',headline:'马丁·菲耶罗对儿子们的教诲：原文诗句与中文评注',inLanguage:'zh-CN',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
+const shuju={'@context':'https://schema.org','@type':'Article','@id':canonical+'#pagina',headline:'马丁·菲耶罗对儿子们的教诲：原文诗句与中文评注',inLanguage:'zh-CN',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
 ---
 <Base migas={[{label:'父亲的教诲'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/',pt:'/pt/conselhos-de-martin-fierro/',fr:'/fr/conseils-de-martin-fierro/',de:'/de/ratschlaege-von-martin-fierro/',ru:'/ru/sovety-martina-fierro/'}} lang="zh-CN" pageType="Article" title="马丁·菲耶罗对儿子们的教诲：原文、译文与解读" description="逐节阅读马丁·菲耶罗对儿子们的教诲（《归来》第三十二歌）：西班牙语原文、中文学习译文，以及关于友谊、劳动和兄弟团结的阅读说明。">
 <article class="jiaohui-zh">
