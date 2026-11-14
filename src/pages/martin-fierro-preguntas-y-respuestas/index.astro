@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import {numeroDeVersos} from '../../lib/corpus';
+import {gruposPreguntas} from '../../data/es-preguntas';
+const fmt=(n:number)=>n.toLocaleString('es-AR');
+const cifras:Record<string,string>={versosIda:fmt(numeroDeVersos('ida')),versosVuelta:fmt(numeroDeVersos('vuelta')),versos:fmt(numeroDeVersos('ida')+numeroDeVersos('vuelta'))};
+const completar=(t:string)=>t.replace(/\{(\w+)\}/g,(_,k)=>{if(!(k in cifras)) throw new Error(`Cifra desconocida: ${k}`);return cifras[k];});
+const grupos=gruposPreguntas.map(g=>({...g,preguntas:g.preguntas.map(p=>({...p,respuesta:completar(p.respuesta)}))}));
+const total=grupos.reduce((n,g)=>n+g.preguntas.length,0);
+---
+<Base migas={[{label:'Para estudiantes',href:'/estudiantes/'},{label:'Preguntas y respuestas'}]} pageType="Article" adKind="article" title="Martín Fierro: preguntas y respuestas para estudiantes" description={`${total} preguntas y respuestas sobre Martín Fierro: de qué trata, narrador, estrofa, personajes, por qué Fierro va a la frontera y se hace matrero, cómo termina y por qué es tan importante.`}>
+<article class="mf-pyr">
+<header><p class="eyebrow">PARA ESTUDIANTES · JOSÉ HERNÁNDEZ · 1872 / 1879</p><h1>Martín Fierro: preguntas y respuestas</h1><p class="lead">¿Es una novela o un poema? ¿Por qué Fierro termina como gaucho matrero? ¿Cuántos hijos tiene? ¿Cómo termina? Estas son las {total} preguntas que más se hacen los estudiantes sobre <em>Martín Fierro</em>, respondidas en pocas líneas y con el canto donde podés comprobarlo.</p></header>
+<div class="mf-pyr-cuerpo">
+<nav class="mf-pyr-indice" aria-label="En esta página"><strong>En esta página</strong>{grupos.map(g=><a href={`#${g.id}`}>{g.titulo}</a>)}</nav>
+<AdSlot id="article-02-after-introduction" kind="article"/>
+{grupos.map((g,i)=><section id={g.id}>
+ <h2>{g.titulo}</h2>
+ {g.preguntas.map(p=><div class="mf-pyr-item" id={p.id}>
+  <h3>{p.pregunta}</h3>
+  <p>{p.respuesta}</p>
+  {p.enlace && <p class="mf-pyr-link"><a href={p.enlace.href}>{p.enlace.texto} →</a></p>}
+ </div>)}
+ {i===0 && <AdSlot id="article-03-middle" kind="article"/>}
+</section>)}
+<section id="seguir"><h2>Para seguir estudiando</h2><ul>
+ <li><a href="/martin-fierro-resumen/">Resumen de Martín Fierro</a>, canto por canto.</li>
+ <li><a href="/estudiantes/">Guías de los 46 cantos</a>, con resumen, pasajes y preguntas para analizar.</li>
+ <li><a href="/personajes/">Personajes principales</a>: quién es quién en La ida y La vuelta.</li>
+ <li><a href="/martin-fierro-frases/">Frases célebres</a>, con su estrofa y su significado.</li>
+</ul></section>
+</div>
+<AdSlot id="article-05-after-article" kind="article"/>
+</article>
+<style>.mf-pyr{max-width:1040px;margin:24px auto 80px;color:#302820}.mf-pyr a{color:#843e2b;text-underline-offset:4px}.eyebrow{font:750 .71rem system-ui,sans-serif;letter-spacing:.14em;color:#954c35}.mf-pyr h1{font:600 clamp(2.4rem,5vw,4.5rem)/1.1 Georgia,serif;letter-spacing:-.03em;max-width:920px;margin:15px 0;text-wrap:balance}.lead{font:1.2rem/1.7 Georgia,serif;max-width:72ch}.mf-pyr-cuerpo{max-width:790px;margin:auto}.mf-pyr-indice{border-block:1px solid #c9b9a7;display:flex;flex-wrap:wrap;gap:12px 18px;padding:20px 0;font:.86rem system-ui,sans-serif}.mf-pyr-indice strong{width:100%}.mf-pyr-cuerpo section{margin:44px 0;scroll-margin-top:70px}.mf-pyr-cuerpo h2{font:600 clamp(1.8rem,3vw,2.5rem)/1.2 Georgia,serif}.mf-pyr-cuerpo p,.mf-pyr-cuerpo li{font:1.06rem/1.8 Georgia,serif}.mf-pyr-item{border-top:1px solid #d3c3b0;padding:20px 0;scroll-margin-top:70px}.mf-pyr-item h3{font:600 1.3rem/1.35 Georgia,serif;margin:0 0 6px}.mf-pyr-item p{margin:0 0 6px}.mf-pyr-link{font:.9rem system-ui,sans-serif!important}</style>
+</Base>
