@@ -41,7 +41,7 @@
  },
  "/cultura-gauchesca/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-14"
  },
  "/de/das-gedicht-lesen/": {
   "publicado": "2026-11-06",
@@ -477,15 +477,15 @@
  },
  "/estudiantes/": {
   "publicado": "2026-11-01",
-  "modificado": "2026-11-11"
+  "modificado": "2026-11-14"
  },
  "/exegesis/": {
   "publicado": "2026-10-29",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-14"
  },
  "/exegesis/la-vuelta/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-14"
  },
  "/fr/conseils-de-martin-fierro/": {
   "publicado": "2026-11-04",
@@ -541,7 +541,7 @@
  },
  "/indice-general/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-13"
+  "modificado": "2026-11-14"
  },
  "/it/biblioteca/": {
   "publicado": "2026-11-03",
@@ -673,7 +673,7 @@
  },
  "/jose-hernandez/": {
   "publicado": "2026-10-29",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-14"
  },
  "/la/": {
   "publicado": "2026-10-29",
@@ -689,7 +689,11 @@
  },
  "/leer/": {
   "publicado": "2026-10-29",
-  "modificado": "2026-11-06"
+  "modificado": "2026-11-14"
+ },
+ "/martin-fierro-frases/": {
+  "publicado": "2026-11-14",
+  "modificado": "2026-11-14"
  },
  "/martin-fierro-resumen/": {
   "publicado": "2026-11-11",
@@ -769,7 +773,7 @@
  },
  "/revista/frontera-pueblos-indigenas/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-14"
  },
  "/revista/": {
   "publicado": "2026-10-29",
@@ -777,19 +781,19 @@
  },
  "/revista/mujeres-fortineras/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-14"
  },
  "/revista/pulperias-y-sociabilidad/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-14"
  },
  "/revista/quienes-eran-los-gauchos/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-14"
  },
  "/revista/vida-en-los-fortines/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-14"
  },
  "/ru/chitat-poemu/": {
   "publicado": "2026-11-06",
@@ -837,7 +841,7 @@
  },
  "/temas/[slug]/": {
   "publicado": "2026-10-29",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-14"
  },
  "/temas/": {
   "publicado": "2026-10-29",
