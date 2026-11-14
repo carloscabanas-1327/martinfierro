@@ -1,5 +1,6 @@
 ---
 import Base from '../../../../layouts/Base.astro';
+import LectorVoz from '../../../../components/LectorVoz.astro';
 import '../../../../styles/reader-editorial.css';
 import '../../../../styles/edizione-italiana.css';
 import {partiIt,urlCantoIt,urlCantoOriginale,versiDiCanto,corrispondenzaCanto,romano,TESTO_COLLAZIONATO,type ParteIt} from '../../../../lib/testena';
@@ -30,6 +31,7 @@ const originale=urlCantoOriginale(parte,numero);
    <p class="meta">{canto.estrofe.length} strofe · {versiDiCanto(canto)} versi nella traduzione · originale: {corr.originale.estrofe} strofe, {corr.originale.versi} versi</p>
   </header>
   <p class="mf-it-avviso">Testo trascritto dal facsimile dell’edizione del 1919 e collazionato verso per verso, con la grafia della stampa. Fa fede l’<a href={canto.url_facsimile} target="_blank" rel="noopener noreferrer">immagine della pagina</a>.</p>
+  {parte==='ritorno'&&numero===32&&<LectorVoz ui="it" unidad=".verse-text .stanza" pistas={[{clave:'versos',sel:'.verse',voz:'it-IT'}]}/>}
   <div class="reader-layout">
    <article class="verse-text" aria-label={`Testo del canto ${romano(numero)}`}>
     {canto.estrofe.map(e=><section class="stanza" id={e.id} aria-label={`Strofa ${e.numero}`}>

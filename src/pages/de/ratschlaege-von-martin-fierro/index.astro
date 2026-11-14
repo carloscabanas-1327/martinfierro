@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import LectorVoz from '../../../components/LectorVoz.astro';
 import {estrofasDeCanto} from '../../../lib/corpus';
 import {ratschlaegeDe,ratschlaegeWoerter,ratschlaegeNotizen} from '../../../data/de-studie';
 const strophen=estrofasDeCanto('vuelta',32);
@@ -24,6 +25,7 @@ const daten={'@context':'https://schema.org','@type':'Article',headline:'Die Rat
 <section class="lektuere"><h2>Wie sind diese Ratschläge zu verstehen?</h2><p>Diese Verse sind keine von der Geschichte losgelöste Sprichwortsammlung. Wer hier spricht, wurde zwangsrekrutiert, hat seine Familie verloren, einen treuen Freund gewonnen und mehr als einmal getötet. Dieser Weg erschwert die moralische Autorität des Vaters und macht das Gedicht reicher.</p><p>Die <strong>Einigkeit</strong> antwortet auf eine zerbrochene Familie. Die <strong>Arbeit</strong> bekommt ihren Sinn nach der Zwangsrekrutierung und dem Verlust der Hütte. Die Absage an die <strong>Gewalt</strong> verlangt vom Leser, sich an das zu erinnern, was der Erzähler getan hat, statt es zu vergessen. Hernández schafft eine Stimme, die lehrt und die man zugleich in Frage stellen kann.</p></section>
 <h2 id="ganzer-gesang">Gesang XXXII vollständig</h2>
 <p class="hinweis">Spanisches Original, gefolgt von der Studienübersetzung. Die Anmerkungen stehen nach einzelnen Strophen, nie innerhalb der Verse.</p>
+<LectorVoz ui="de" unidad=".strophe" pistas={[{clave:'original',sel:'blockquote',voz:'es-AR'},{clave:'estudio',sel:'.studie > p:nth-child(2)',voz:'de-DE'}]}/>
 <div class="strophen">
 {strophen.map(e=><section class="strophe" id={e.id} aria-label={`Strophe ${e.numero}`}>
 <p class="num">Strophe {e.numero}</p>

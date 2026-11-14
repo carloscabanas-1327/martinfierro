@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import LectorVoz from '../../../components/LectorVoz.astro';
 import {estrofasDeCanto} from '../../../lib/corpus';
 import {jiaohuiZh,jiaohuiCi,jiaohuiPingzhu} from '../../../data/zh-xuexi';
 const jie=estrofasDeCanto('vuelta',32);
@@ -24,6 +25,7 @@ const shuju={'@context':'https://schema.org','@type':'Article',headline:'马丁�
 <section class="dufa"><h2>怎样理解这些教诲？</h2><p>这些诗句不是脱离故事的格言汇编。说话的人被强行送往边境，失去了家庭，得到了一位忠实的朋友，也不止一次杀过人。这段经历让父亲的道德权威变得复杂，也让这部诗更加丰富。</p><p><strong>团结</strong>回应的是破碎的家庭。<strong>劳动</strong>的意义来自强制兵役和失去的茅屋。拒绝<strong>暴力</strong>，要求读者记住叙述者做过的事，而不是把它忘掉。埃尔南德斯塑造了一个既在教导别人、又可以被质疑的声音。</p></section>
 <h2 id="quange">第三十二歌全文</h2>
 <p class="zhu">先列西班牙语原文，再列学习译文。注释放在个别诗节之后，从不插进诗行之中。</p>
+<LectorVoz ui="zh" unidad=".yijie" pistas={[{clave:'original',sel:'blockquote',voz:'es-AR'},{clave:'estudio',sel:'.yiwen > p:nth-child(2)',voz:'zh-CN'}]}/>
 <div class="jiezu">
 {jie.map(e=><section class="yijie" id={e.id} aria-label={`第 ${e.numero} 节`}>
 <p class="hao">第 {e.numero} 节</p>
