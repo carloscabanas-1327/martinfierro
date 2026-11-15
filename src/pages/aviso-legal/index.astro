@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/StaticEditorial.astro';
+import { correoContacto, fechaLegal, titularNombre, titularDomicilio } from '../../data/legal';
+---
+<Base migas={[{label:"Aviso legal"}]} title="Aviso legal" description="Titular, objeto, propiedad intelectual, publicidad, responsabilidad y ley aplicable de MARTINFIERRO.ORG." sections={[{"title":"Titular del sitio","id":"titular"},{"title":"Objeto","id":"objeto"},{"title":"Propiedad intelectual","id":"propiedad-intelectual"},{"title":"Publicidad","id":"publicidad"},{"title":"Responsabilidad","id":"responsabilidad"},{"title":"Ley aplicable","id":"ley-aplicable"}]}>
+  <article class="mf-legal-page">
+    <p class="eyebrow">Información legal · {fechaLegal}</p>
+    <h1>Aviso legal</h1>
+    <p class="lead">Datos del sitio y reglas generales que se aplican a quien lo visita.</p>
+
+    <h2 id="titular">Titular del sitio</h2>
+    <p>MARTINFIERRO.ORG es una edición digital independiente, publicada en el dominio martinfierro.org por su editor{titularNombre && <>, {titularNombre}</>}{titularDomicilio && <> ({titularDomicilio})</>}. No pertenece a ningún organismo público, universidad ni editorial.{correoContacto ? <> Contacto: <a href={`mailto:${correoContacto}`}>{correoContacto}</a>.</> : <> Los medios de contacto están en <a href="/contacto/">Contacto</a>.</>}</p>
+
+    <h2 id="objeto">Objeto</h2>
+    <p>El sitio ofrece el texto completo de <em>El gaucho Martín Fierro</em> (1872) y <em>La vuelta de Martín Fierro</em> (1879) de José Hernández, con guías de lectura, estudios, documentos y artículos culturales, en varios idiomas. Su lectura es libre y gratuita y se financia con publicidad.</p>
+
+    <h2 id="propiedad-intelectual">Propiedad intelectual</h2>
+    <p>El poema de José Hernández es de dominio público. Los textos de estudio, traducciones propias, diseño, selección y organización del sitio son obra de MARTINFIERRO.ORG. Las imágenes y documentos de terceros conservan sus licencias y se atribuyen en <a href="/fuentes-y-derechos/">Fuentes y derechos de autor</a>. Podés citar breves fragmentos de nuestros textos indicando la fuente y el enlace; para reproducciones más amplias, pedí autorización.</p>
+
+    <h2 id="publicidad">Publicidad</h2>
+    <p>El sitio incluirá anuncios de terceros y de anunciantes directos, siempre rotulados como «Publicidad». Los anunciantes son responsables de sus anuncios y de los productos o servicios que ofrecen. Las reglas están en <a href="/publicidad-y-afiliados/">Publicidad y anunciantes</a> y el uso de cookies en la <a href="/privacidad/#cookies">Política de privacidad y cookies</a>.</p>
+
+    <h2 id="responsabilidad">Responsabilidad</h2>
+    <p>Procuramos que la información sea exacta y corregimos los errores que se nos señalan, pero el contenido se ofrece con fines culturales y educativos, sin garantía de que esté libre de errores. MARTINFIERRO.ORG no responde por el contenido de los sitios externos enlazados ni por interrupciones del servicio ajenas a su control.</p>
+
+    <h2 id="ley-aplicable">Ley aplicable</h2>
+    <p>Este sitio se rige por las leyes de la República Argentina, en especial la Ley 11.723 de Propiedad Intelectual, la Ley 25.326 de Protección de los Datos Personales y la Ley 24.240 de Defensa del Consumidor en lo que corresponda. Esto no limita los derechos imperativos que la ley de tu país te reconozca; a quienes visitan el sitio desde la Unión Europea se les aplica además el Reglamento General de Protección de Datos (ver la <a href="/privacidad/#rgpd">Política de privacidad</a>). Rigen además los <a href="/terminos/">Términos de uso</a>.</p>
+  </article>
+</Base>

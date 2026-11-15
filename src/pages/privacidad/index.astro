@@ -1,23 +1,66 @@
 ---
 import Base from '../../layouts/StaticEditorial.astro';
+import { correoContacto, fechaLegal, titularNombre, titularDomicilio } from '../../data/legal';
+const responsable = titularNombre || 'el editor de MARTINFIERRO.ORG';
 ---
-<Base migas={[{label:"Política de privacidad"}]} title="Política de privacidad" description="Información sobre privacidad, infraestructura, enlaces externos y futuros servicios publicitarios de MARTINFIERRO.ORG." sections={[{"title":"Responsable y alcance","id":"responsable-y-alcance"},{"title":"Infraestructura y datos técnicos","id":"infraestructura-y-datos-tecnicos"},{"title":"Formularios, cookies y publicidad","id":"formularios-cookies-y-publicidad"},{"title":"Enlaces de terceros","id":"enlaces-de-terceros"},{"title":"Derechos de las personas","id":"derechos-de-las-personas"}]}>
+<Base migas={[{label:"Política de privacidad y cookies"}]} title="Política de privacidad y cookies" description="Qué datos se tratan en MARTINFIERRO.ORG, qué cookies usan los anunciantes y cómo podés aceptar, rechazar o desactivar la publicidad personalizada." sections={[{"title":"Responsable y alcance","id":"responsable-y-alcance"},{"title":"Qué datos se tratan","id":"datos"},{"title":"Publicidad","id":"publicidad"},{"title":"Cookies","id":"cookies"},{"title":"Cómo elegir o desactivar","id":"opciones"},{"title":"Enlaces de terceros","id":"enlaces-de-terceros"},{"title":"Menores de edad","id":"menores"},{"title":"Visitantes de la Unión Europea (RGPD)","id":"rgpd"},{"title":"Derechos de las personas","id":"derechos-de-las-personas"},{"title":"Cambios","id":"cambios"}]}>
   <article class="mf-legal-page">
-    <p class="eyebrow">Información legal · 30 de octubre de 2026</p>
-    <h1>Política de privacidad</h1>
-    <p class="lead">Explicamos qué funciones ofrece actualmente el sitio, qué terceros intervienen y qué debe revisarse antes de incorporar nuevas herramientas de análisis, publicidad o contacto.</p>
+    <p class="eyebrow">Información legal · {fechaLegal}</p>
+    <h1>Política de privacidad y cookies</h1>
+    <p class="lead">MARTINFIERRO.ORG es de lectura libre y gratuita. Para sostenerlo, el sitio mostrará publicidad de anunciantes. Aquí explicamos qué datos se tratan, quiénes los reciben y qué opciones tenés.</p>
+
     <h2 id="responsable-y-alcance">Responsable y alcance</h2>
-    <p>MARTINFIERRO.ORG es una publicación digital independiente. La identificación administrativa y un canal privado de ejercicio de derechos deberán completarse antes de habilitar formularios que recojan datos personales. Mientras tanto, el sitio funciona principalmente como biblioteca de consulta pública.</p>
-    <h2 id="infraestructura-y-datos-tecnicos">Infraestructura y datos técnicos</h2>
-    <p>La publicación utiliza infraestructura de Cloudflare para distribuir el sitio y GitHub para gestionar su código y archivos. Estos prestadores pueden tratar información técnica necesaria para prestar y proteger sus servicios, como direcciones IP, solicitudes, registros de seguridad y datos del navegador, conforme a sus propias condiciones y políticas.</p>
-    <p>Información de los proveedores: <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer">Cloudflare</a> y <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">GitHub</a>.</p>
-    <h2 id="formularios-cookies-y-publicidad">Formularios, cookies y publicidad</h2>
-    <p>Esta versión no habilita en sus páginas legales un formulario de contacto ni un registro de usuarios. El proyecto contiene reservas técnicas para espacios publicitarios, pero esas reservas están ocultas y no equivalen a la activación de anuncios o de cookies publicitarias.</p>
-    <p>Antes de incorporar medición de audiencia, redes publicitarias, afiliación con seguimiento o tecnologías similares, se revisará esta política para informar qué datos se utilizan, quiénes los reciben y qué opciones corresponden a los visitantes.</p>
+    <p>El responsable del tratamiento es {responsable}{titularDomicilio && <>, {titularDomicilio}</>}{titularNombre && <>, editor de MARTINFIERRO.ORG</>}, publicación digital independiente{correoContacto && <> (contacto: <a href={`mailto:${correoContacto}`}>{correoContacto}</a>)</>}. Ver el <a href="/aviso-legal/">Aviso legal</a>. Esta política se aplica a todas las páginas del dominio martinfierro.org, en todos sus idiomas.</p>
+
+    <h2 id="datos">Qué datos se tratan</h2>
+    <p><strong>No pedimos registro</strong> ni tenemos formularios que guarden nombres, correos u otros datos personales. Leer el sitio no requiere identificarse.</p>
+    <p>El sitio se distribuye con <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer">Cloudflare</a> y su código se guarda en <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">GitHub</a>. Como cualquier servidor web, estos prestadores reciben datos técnicos de cada visita (dirección IP, página pedida, navegador, fecha y hora) para entregar las páginas, protegerlas de ataques y elaborar estadísticas agregadas.</p>
+    <p>Algunas páginas muestran documentos o imágenes alojados en otros sitios (Internet Archive, Wikimedia Commons, bibliotecas y organismos públicos). Al cargarlos, tu navegador se conecta con esos sitios, que reciben los mismos datos técnicos.</p>
+
+    <h2 id="publicidad">Publicidad</h2>
+    <p>MARTINFIERRO.ORG <strong>mostrará anuncios</strong> de terceros para financiar la publicación. Los anuncios podrán ser servidos por redes publicitarias como <strong>Google AdSense</strong> u otras que se indiquen en esta página, y también por anunciantes directos. Cada espacio llevará el rótulo «Publicidad» y estará separado del contenido editorial. Las condiciones comerciales están en <a href="/publicidad-y-afiliados/">Publicidad y anunciantes</a>.</p>
+    <p>Las redes publicitarias, como Google y sus socios, pueden usar cookies o identificadores similares para mostrar anuncios según tus visitas anteriores a este y a otros sitios, limitar cuántas veces ves un mismo anuncio y medir su rendimiento. Google explica cómo usa esa información en <a href="https://policies.google.com/technologies/partner-sites?hl=es" rel="noopener noreferrer">Cómo usa Google la información de los sitios que usan sus servicios</a>.</p>
+    <p>En el Espacio Económico Europeo, el Reino Unido y Suiza, y donde la ley lo exija, antes de usar cookies publicitarias se mostrará un aviso para que aceptes o rechaces su uso. Si las rechazás, podrás seguir viendo anuncios no personalizados.</p>
+
+    <h2 id="cookies">Cookies</h2>
+    <p>Una cookie es un pequeño archivo que un sitio guarda en tu navegador. MARTINFIERRO.ORG no usa cookies propias para identificarte. Las cookies que pueden aparecer son:</p>
+    <ul>
+      <li><strong>Técnicas y de seguridad</strong> (Cloudflare): necesarias para entregar el sitio y bloquear tráfico malicioso.</li>
+      <li><strong>Publicitarias</strong> (Google y otros anunciantes): para mostrar y medir anuncios, personalizados o no.</li>
+      <li><strong>De contenidos incrustados</strong> (Internet Archive, Wikimedia Commons y otros): según la política de cada sitio.</li>
+      <li><strong>De consentimiento</strong>: guardan tu elección sobre las cookies publicitarias.</li>
+    </ul>
+    <p>Las cookies de terceros se rigen por las políticas de cada proveedor.</p>
+
+    <h2 id="opciones">Cómo elegir o desactivar</h2>
+    <ul>
+      <li>Desactivar la publicidad personalizada de Google: <a href="https://adssettings.google.com/" rel="noopener noreferrer">Mi Centro de Anuncios de Google</a>.</li>
+      <li>Desactivar la publicidad personalizada de otras empresas: <a href="https://optout.aboutads.info/" rel="noopener noreferrer">aboutads.info</a> o <a href="https://www.youronlinechoices.eu/" rel="noopener noreferrer">youronlinechoices.eu</a>.</li>
+      <li>Borrar o bloquear cookies desde la configuración de tu navegador. El sitio se puede leer igual sin cookies.</li>
+    </ul>
+
     <h2 id="enlaces-de-terceros">Enlaces de terceros</h2>
-    <p>Al abrir enlaces a bibliotecas, archivos, Wikimedia Commons, GitHub u otros sitios externos, rigen las políticas del servicio de destino.</p>
+    <p>Al abrir enlaces a bibliotecas, archivos, Wikimedia Commons, GitHub, anunciantes u otros sitios externos, rigen las políticas del sitio de destino.</p>
+
+    <h2 id="menores">Menores de edad</h2>
+    <p>El sitio tiene contenido educativo apto para todo público y no recoge a sabiendas datos personales de menores. Los espacios publicitarios no se usarán para dirigir publicidad personalizada a menores.</p>
+
+    <h2 id="rgpd">Visitantes de la Unión Europea (RGPD)</h2>
+    <p>Si visitás el sitio desde el Espacio Económico Europeo, el Reino Unido o Suiza, se aplica además el Reglamento General de Protección de Datos (RGPD) y la normativa sobre cookies (Directiva ePrivacy).</p>
+    <ul>
+      <li><strong>Bases jurídicas.</strong> Datos técnicos de entrega y seguridad: interés legítimo en ofrecer un sitio seguro y funcional (art. 6.1.f RGPD). Cookies publicitarias y anuncios personalizados: tu consentimiento (art. 6.1.a RGPD), que podés retirar en cualquier momento. Respuesta a tus mensajes: la gestión de tu pedido (art. 6.1.b) o nuestro interés legítimo.</li>
+      <li><strong>Consentimiento antes de las cookies.</strong> Cuando se activen los anuncios, en esos países se mostrará primero un aviso de consentimiento de una plataforma certificada por Google, compatible con el marco TCF de IAB Europe. Ninguna cookie publicitaria se instalará sin tu aceptación. Si rechazás, solo se mostrarán anuncios no personalizados. Podrás cambiar tu elección en cualquier momento desde el enlace «Privacidad y cookies» del pie de página.</li>
+      <li><strong>Destinatarios.</strong> Cloudflare (entrega y seguridad), GitHub (alojamiento del código), Google y sus socios publicitarios (anuncios, solo con tu consentimiento cuando se requiere).</li>
+      <li><strong>Transferencias internacionales.</strong> El responsable está en Argentina, país que la Comisión Europea reconoce con nivel adecuado de protección (Decisión 2003/490/CE). Cloudflare, GitHub y Google pueden tratar datos en Estados Unidos y otros países, con garantías como el Marco de Privacidad de Datos UE-EE. UU. o las cláusulas contractuales tipo.</li>
+      <li><strong>Conservación.</strong> No conservamos datos de lectores. Los registros técnicos de los proveedores se guardan el tiempo que fijan sus políticas; los correos que nos envíes, el tiempo necesario para responder. La duración de cada cookie publicitaria se informa en el aviso de consentimiento.</li>
+      <li><strong>Tus derechos.</strong> Acceso, rectificación, supresión, limitación, portabilidad y oposición, y retirar tu consentimiento sin que afecte lo ya tratado. También podés reclamar ante la autoridad de protección de datos de tu país (por ejemplo, la AEPD en España, la CNIL en Francia o el Garante en Italia).</li>
+      <li><strong>Sin decisiones automatizadas.</strong> No tomamos decisiones con efectos jurídicos basadas solo en tratamiento automatizado. La personalización de anuncios la realizan las redes publicitarias con tu consentimiento.</li>
+    </ul>
+
     <h2 id="derechos-de-las-personas">Derechos de las personas</h2>
-    <p>La protección de datos personales en Argentina se encuentra regulada por la <a href="https://www.argentina.gob.ar/normativa/nacional/ley-25326-64790/actualizacion" rel="noopener noreferrer">Ley 25.326</a>, entre otras normas aplicables. Las personas titulares pueden ejercer los derechos que la ley les reconoce. La ausencia de un canal privado habilitado es una limitación operativa pendiente de resolver antes de ofrecer servicios de recopilación directa de datos.</p>
-    <p>Esta página describe las funciones editoriales conocidas al momento de su redacción; no constituye una auditoría independiente de todas las solicitudes técnicas, cookies o registros del proveedor.</p>
+    <p>La protección de datos personales en Argentina está regulada por la <a href="https://www.argentina.gob.ar/normativa/nacional/ley-25326-64790/actualizacion" rel="noopener noreferrer">Ley 25.326</a>. Podés pedir acceso, rectificación o supresión de datos personales que el sitio tenga sobre vos{correoContacto ? <> escribiendo a <a href={`mailto:${correoContacto}`}>{correoContacto}</a></> : <> por los medios indicados en <a href="/contacto/">Contacto</a></>}. La Agencia de Acceso a la Información Pública, órgano de control de la Ley 25.326, atiende las denuncias por incumplimiento. Para los datos que tratan Google u otros anunciantes, también podés dirigirte directamente a ellos.</p>
+
+    <h2 id="cambios">Cambios</h2>
+    <p>Si se incorpora una nueva red publicitaria, medición de audiencia u otro servicio que trate datos, esta página se actualizará antes de activarlo, con nueva fecha.</p>
   </article>
 </Base>

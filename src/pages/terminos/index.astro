@@ -1,9 +1,10 @@
 ---
 import Base from '../../layouts/StaticEditorial.astro';
+import { fechaLegal } from '../../data/legal';
 ---
-<Base migas={[{label:"Términos de uso"}]} title="Términos de uso" description="Condiciones generales de consulta, cita y enlaces de MARTINFIERRO.ORG." sections={[{"title":"Consulta del contenido","id":"consulta-del-contenido"},{"title":"Exactitud y alcance","id":"exactitud-y-alcance"},{"title":"Derechos sobre los materiales","id":"derechos-sobre-los-materiales"},{"title":"Vínculos externos","id":"vinculos-externos"},{"title":"Actualizaciones","id":"actualizaciones"}]}>
+<Base migas={[{label:"Términos de uso"}]} title="Términos de uso" description="Condiciones generales de consulta, cita y enlaces de MARTINFIERRO.ORG." sections={[{"title":"Consulta del contenido","id":"consulta-del-contenido"},{"title":"Exactitud y alcance","id":"exactitud-y-alcance"},{"title":"Derechos sobre los materiales","id":"derechos-sobre-los-materiales"},{"title":"Vínculos externos","id":"vinculos-externos"},{"title":"Publicidad","id":"publicidad"},{"title":"Uso indebido","id":"uso-indebido"},{"title":"Actualizaciones","id":"actualizaciones"},{"title":"Ley aplicable","id":"ley-aplicable"}]}>
   <article class="mf-legal-page">
-    <p class="eyebrow">Condiciones editoriales · 30 de octubre de 2026</p>
+    <p class="eyebrow">Condiciones editoriales · {fechaLegal}</p>
     <h1>Términos de uso</h1>
     <p class="lead">Este sitio está concebido para la consulta, el estudio, la divulgación y la investigación cultural.</p>
     <h2 id="consulta-del-contenido">Consulta del contenido</h2>
@@ -14,7 +15,13 @@ import Base from '../../layouts/StaticEditorial.astro';
     <p>El poema de José Hernández pertenece al dominio público. Esa condición no implica que cualquier fotografía, reproducción, diseño, comentario, base de datos o material de terceros disponible desde el sitio tenga necesariamente la misma licencia. Antes de reproducir esos materiales, consultá <a href="/fuentes-y-derechos/">Fuentes y derechos de autor</a> y sus atribuciones particulares.</p>
     <h2 id="vinculos-externos">Vínculos externos</h2>
     <p>Los enlaces externos se facilitan como referencias documentales o recursos de consulta. La disponibilidad y las condiciones de esos sitios corresponden a sus respectivos responsables.</p>
+    <h2 id="publicidad">Publicidad</h2>
+    <p>El sitio se financia con publicidad. Los anuncios se identifican como «Publicidad», son responsabilidad de cada anunciante y no forman parte del contenido editorial. Ver <a href="/publicidad-y-afiliados/">Publicidad y anunciantes</a> y la <a href="/privacidad/#cookies">Política de privacidad y cookies</a>.</p>
+    <h2 id="uso-indebido">Uso indebido</h2>
+    <p>No está permitido copiar el sitio de forma masiva o automatizada para republicarlo, generar clics o impresiones falsas en los anuncios, ni intentar dañar o sobrecargar el servicio.</p>
     <h2 id="actualizaciones">Actualizaciones</h2>
     <p>Las condiciones podrán revisarse conforme evolucionen las funciones de la publicación. Los cambios sustanciales se reflejarán en esta página con una fecha actualizada.</p>
+    <h2 id="ley-aplicable">Ley aplicable</h2>
+    <p>Estas condiciones se rigen por las leyes de la República Argentina, sin perjuicio de los derechos imperativos de consumidores y de protección de datos que te reconozca la ley de tu país de residencia, incluida la Unión Europea. Ver también el <a href="/aviso-legal/">Aviso legal</a>.</p>
   </article>
 </Base>
