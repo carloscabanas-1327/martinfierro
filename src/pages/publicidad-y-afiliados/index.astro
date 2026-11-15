@@ -1,19 +1,30 @@
 ---
 import Base from '../../layouts/StaticEditorial.astro';
+import { correoContacto, fechaLegal } from '../../data/legal';
 ---
-<Base migas={[{label:"Publicidad y afiliados"}]} title="Publicidad y afiliados" description="Política editorial sobre publicidad, colaboraciones comerciales y enlaces de afiliados." sections={[{"title":"Estado actual","id":"estado-actual"},{"title":"Publicidad futura","id":"publicidad-futura"},{"title":"Enlaces de afiliados","id":"enlaces-de-afiliados"},{"title":"Separación editorial","id":"separacion-editorial"}]}>
+<Base migas={[{label:"Publicidad y anunciantes"}]} title="Publicidad y anunciantes" description="MARTINFIERRO.ORG se financia con publicidad: cómo se identifican los anuncios, qué no aceptamos y cómo anunciar en el sitio." sections={[{"title":"El sitio tendrá anunciantes","id":"anunciantes"},{"title":"Cómo se identifican los anuncios","id":"identificacion"},{"title":"Separación editorial","id":"separacion-editorial"},{"title":"Qué no aceptamos","id":"no-aceptamos"},{"title":"Enlaces de afiliados y contenido patrocinado","id":"enlaces-de-afiliados"},{"title":"Cómo anunciar","id":"como-anunciar"}]}>
   <article class="mf-legal-page">
-    <p class="eyebrow">Transparencia comercial</p>
-    <h1>Publicidad y afiliados</h1>
-    <p class="lead">La independencia editorial exige distinguir con claridad la información cultural de cualquier comunicación comercial.</p>
-    <h2 id="estado-actual">Estado actual</h2>
-    <p>Actualmente, MARTINFIERRO.ORG no presenta anuncios comerciales ni mantiene campañas publicitarias activas. Si en el futuro incorpora publicidad o colaboraciones comerciales, estas se identificarán claramente y se distinguirán del contenido editorial.</p>
-    <h2 id="publicidad-futura">Publicidad futura</h2>
-    <p>Si se incorpora publicidad, los espacios visibles se identificarán de manera inequívoca, se distinguirán del contenido editorial y se revisarán las obligaciones de privacidad y consentimiento que correspondan a los proveedores usados.</p>
-    <h2 id="enlaces-de-afiliados">Enlaces de afiliados</h2>
-    <p>Si un artículo o una sección comercial incluye enlaces que puedan generar una comisión para la publicación, esa relación será informada en el contexto correspondiente. No se presentarán recomendaciones pagadas como evaluaciones independientes.</p>
+    <p class="eyebrow">Transparencia comercial · {fechaLegal}</p>
+    <h1>Publicidad y anunciantes</h1>
+    <p class="lead">MARTINFIERRO.ORG es gratuito para quien lo lee. Para sostener la edición, el sitio tendrá publicidad y anunciantes.</p>
+
+    <h2 id="anunciantes">El sitio tendrá anunciantes</h2>
+    <p>MARTINFIERRO.ORG mostrará anuncios servidos por redes publicitarias, como Google AdSense, y podrá incluir anunciantes directos: editoriales, librerías, instituciones culturales, turismo rural, artesanos, productores regionales y otras empresas afines al público del sitio. Lo que se recauda se destina a mantener y ampliar la edición.</p>
+
+    <h2 id="identificacion">Cómo se identifican los anuncios</h2>
+    <p>Cada espacio comercial llevará el rótulo «Publicidad» y se distinguirá del contenido. Los anuncios no se colocarán entre los versos del poema ni sobre imágenes o botones de navegación, y no deben confundirse con artículos del sitio.</p>
+
     <h2 id="separacion-editorial">Separación editorial</h2>
-    <p>La obra original, sus versos y las referencias documentales no se modificarán a pedido de anunciantes. Una colaboración comercial nunca acreditará por sí sola la exactitud histórica o literaria de un contenido.</p>
-    <p>Consultá además la <a href="/privacidad/">Política de privacidad</a> y los <a href="/terminos/">Términos de uso</a>.</p>
+    <p>El poema, sus versos y las referencias documentales nunca se modificarán a pedido de anunciantes. Un anunciante no decide qué se publica ni compra opiniones. Que una empresa anuncie en el sitio no significa que MARTINFIERRO.ORG respalde sus productos.</p>
+
+    <h2 id="no-aceptamos">Qué no aceptamos</h2>
+    <p>No se aceptan anuncios de apuestas, contenido para adultos, tabaco, armas, productos milagrosos ni mensajes discriminatorios o engañosos, ni anuncios dirigidos a menores. Nos reservamos el derecho de rechazar o retirar cualquier anuncio.</p>
+
+    <h2 id="enlaces-de-afiliados">Enlaces de afiliados y contenido patrocinado</h2>
+    <p>Si un enlace puede generar una comisión para el sitio (por ejemplo, a una librería), se indicará junto al enlace. Un contenido pagado por una empresa se rotulará «Contenido patrocinado». No se presentarán recomendaciones pagadas como evaluaciones independientes.</p>
+
+    <h2 id="como-anunciar">Cómo anunciar</h2>
+    <p>Si tu empresa o institución quiere anunciar en MARTINFIERRO.ORG, {correoContacto ? <>escribinos a <a href={`mailto:${correoContacto}?subject=Publicidad%20en%20MARTINFIERRO.ORG`}>{correoContacto}</a></> : <>escribinos por los medios indicados en <a href="/contacto/">Contacto</a></>} con el nombre de la empresa, el producto y el período que te interesa. El sitio tiene ediciones en nueve idiomas, con lectores de Argentina, América Latina y el resto del mundo.</p>
+    <p>Consultá además la <a href="/privacidad/">Política de privacidad y cookies</a>, los <a href="/terminos/">Términos de uso</a> y el <a href="/aviso-legal/">Aviso legal</a>.</p>
   </article>
 </Base>
