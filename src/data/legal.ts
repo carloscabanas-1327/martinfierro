@@ -3,7 +3,7 @@
  * publicidad y contacto. Cambiar aquí y se actualizan todas.
  */
 /** Correo público para lectores, anunciantes y derechos de datos. Vacío = todavía no publicado. */
-export const correoContacto = '';
+export const correoContacto = 'info@martinfierro.org';
 /** Nombre del responsable (RGPD art. 13). Vacío = «el editor de MARTINFIERRO.ORG». */
 export const titularNombre = 'Carlos Cabanas';
 /** Ciudad y país del responsable. */
