@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/StaticEditorial.astro';
-import { correoContacto, fechaLegal, titularNombre, titularDomicilio } from '../../data/legal';
+import { correoContacto, fechaLegal, titularNombre, titularDomicilio, titularCuit } from '../../data/legal';
 ---
 <Base migas={[{label:"Aviso legal"}]} title="Aviso legal" description="Titular, objeto, propiedad intelectual, publicidad, responsabilidad y ley aplicable de MARTINFIERRO.ORG." sections={[{"title":"Titular del sitio","id":"titular"},{"title":"Objeto","id":"objeto"},{"title":"Propiedad intelectual","id":"propiedad-intelectual"},{"title":"Publicidad","id":"publicidad"},{"title":"Responsabilidad","id":"responsabilidad"},{"title":"Ley aplicable","id":"ley-aplicable"}]}>
   <article class="mf-legal-page">
@@ -9,7 +9,7 @@ import { correoContacto, fechaLegal, titularNombre, titularDomicilio } from '../
     <p class="lead">Datos del sitio y reglas generales que se aplican a quien lo visita.</p>
 
     <h2 id="titular">Titular del sitio</h2>
-    <p>MARTINFIERRO.ORG es una edición digital independiente, publicada en el dominio martinfierro.org por su editor{titularNombre && <>, {titularNombre}</>}{titularDomicilio && <> ({titularDomicilio})</>}. No pertenece a ningún organismo público, universidad ni editorial.{correoContacto ? <> Contacto: <a href={`mailto:${correoContacto}`}>{correoContacto}</a>.</> : <> Los medios de contacto están en <a href="/contacto/">Contacto</a>.</>}</p>
+    <p>MARTINFIERRO.ORG es una edición digital independiente, publicada en el dominio martinfierro.org por su editor{titularNombre && <>, {titularNombre}</>}{titularDomicilio && <>, con domicilio en {titularDomicilio}</>}{titularCuit && <> (CUIT {titularCuit})</>}. No pertenece a ningún organismo público, universidad ni editorial.{correoContacto ? <> Contacto: <a href={`mailto:${correoContacto}`}>{correoContacto}</a>.</> : <> Los medios de contacto están en <a href="/contacto/">Contacto</a>.</>}</p>
 
     <h2 id="objeto">Objeto</h2>
     <p>El sitio ofrece el texto completo de <em>El gaucho Martín Fierro</em> (1872) y <em>La vuelta de Martín Fierro</em> (1879) de José Hernández, con guías de lectura, estudios, documentos y artículos culturales, en varios idiomas. Su lectura es libre y gratuita y se financia con publicidad.</p>
