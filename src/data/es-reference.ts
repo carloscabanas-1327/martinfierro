@@ -19,6 +19,7 @@ export const documentosES:DocumentoES[]=[
 {titulo:'Vida en los fortines',url:'/revista/vida-en-los-fortines/',descripcion:'Vida cotidiana y condiciones de frontera.',categoria:'Revista'},
 {titulo:'Mujeres fortineras',url:'/revista/mujeres-fortineras/',descripcion:'Experiencias femeninas en los fortines.',categoria:'Revista'},
 {titulo:'Frontera y pueblos indígenas',url:'/revista/frontera-pueblos-indigenas/',descripcion:'Relaciones y conflictos históricos de frontera.',categoria:'Revista'},
+{titulo:'¿Qué es un gaucho?',url:'/que-es-un-gaucho/',descripcion:'Significado de la palabra, historia, trabajo, vestimenta, costumbres y el gaucho en Martín Fierro.',categoria:'Historia'},
 {titulo:'Quiénes eran los gauchos',url:'/revista/quienes-eran-los-gauchos/',descripcion:'Historia y sociedad gauchesca.',categoria:'Revista'},
 {titulo:'Día de la Tradición',url:'/revista/dia-de-la-tradicion-10-de-noviembre/',descripcion:'José Hernández y la conmemoración cultural.',categoria:'Revista'},
 {titulo:'Cultura gauchesca',url:'/cultura-gauchesca/',descripcion:'Costumbres, objetos y tradiciones del mundo rural.',categoria:'Historia'},

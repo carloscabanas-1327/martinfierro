@@ -537,11 +537,11 @@
  },
  "/": {
   "publicado": "2026-10-29",
-  "modificado": "2026-11-13"
+  "modificado": "2026-11-15"
  },
  "/indice-general/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-15"
  },
  "/it/biblioteca/": {
   "publicado": "2026-11-03",
@@ -681,7 +681,7 @@
  },
  "/leer/[parte]/[canto]/": {
   "publicado": "2026-10-29",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/leer/[parte]/": {
   "publicado": "2026-10-29",
@@ -767,17 +767,21 @@
   "publicado": "2026-10-30",
   "modificado": "2026-11-02"
  },
+ "/que-es-un-gaucho/": {
+  "publicado": "2026-11-15",
+  "modificado": "2026-11-15"
+ },
  "/revista/dia-de-la-tradicion-10-de-noviembre/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/revista/dia-de-la-tradicion-vs-dia-nacional-del-gaucho/": {
   "publicado": "2026-11-02",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/revista/frontera-pueblos-indigenas/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-15"
  },
  "/revista/": {
   "publicado": "2026-10-29",
@@ -785,19 +789,19 @@
  },
  "/revista/mujeres-fortineras/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-15"
  },
  "/revista/pulperias-y-sociabilidad/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-15"
  },
  "/revista/quienes-eran-los-gauchos/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-15"
  },
  "/revista/vida-en-los-fortines/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-15"
  },
  "/ru/chitat-poemu/": {
   "publicado": "2026-11-06",

@@ -2,9 +2,13 @@
 import Base from '../../../layouts/Base.astro';
 import '../../../styles/reader-editorial.css';
 import {partes,estrofasDeCanto,enlaceCanto} from '../../../lib/corpus';
+import {resumenIda,resumenVuelta} from '../../../data/es-resumen';
 export function getStaticPaths(){return (Object.keys(partes) as Array<keyof typeof partes>).flatMap(parte=>partes[parte].cantos.map(c=>({params:{parte,canto:String(c.numero)},props:{parte,canto:c.numero}})));}
 const {parte,canto}=Astro.props as {parte:keyof typeof partes;canto:number};
 const libro=partes[parte];const estrofas=estrofasDeCanto(parte,canto);
+const sinopsis=(parte==='ida'?resumenIda:resumenVuelta)[canto];
+if(!sinopsis) throw new Error(`Falta el resumen de ${parte} ${canto}`);
+const nombreParte=parte==='ida'?'La ida':'La vuelta';
 const siguiente=canto<libro.cantos.length?enlaceCanto(parte,canto+1):parte==='ida'?enlaceCanto('vuelta',1):null;
 // Glosario de lectura opcional: la fuente documental jamás se modifica.
 const definiciones: Record<string,string> = {
@@ -26,7 +30,7 @@ function fragmentosGlosario(texto:string){
 }
 const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('ida',partes.ida.cantos.length):null;
 ---
-<Base migas={[{label:"Leer",href:"/leer/"},{label:libro.nombre,href:`/leer/${parte}/`},{label:`Canto ${canto}`}]} title={`Canto ${canto} — ${libro.nombre}`} description={`Leé el canto ${canto} de ${libro.nombre}, de José Hernández, estrofa por estrofa.`}>
+<Base migas={[{label:"Leer",href:"/leer/"},{label:libro.nombre,href:`/leer/${parte}/`},{label:`Canto ${canto}`}]} title={`Canto ${canto} de ${nombreParte}: ${sinopsis.titulo}`} description={`Texto completo del canto ${canto} de ${libro.nombre}, de José Hernández. ${sinopsis.resumen.split('. ')[0].replace(/\.$/,'')}.`}>
 <div class="mf-reader-page">
  <div class="mf-reader-hero">
   <img src={parte==='ida'?'/media/fotografias-v3/la-ida.webp':'/media/fotografias-v3/la-vuelta.webp'} alt="" width="1600" height="1000" decoding="async" fetchpriority="high"/>
@@ -37,6 +41,7 @@ const anterior=canto>1?enlaceCanto(parte,canto-1):parte==='vuelta'?enlaceCanto('
    <p class="eyebrow">{libro.descripcion} · {libro.anio}</p>
    <h1>Canto {canto}</h1>
    <p class="lead">{libro.cantos[canto-1]?.titulo ?? ''}</p>
+   <p class="mf-canto-sinopsis"><strong>{sinopsis.titulo}.</strong> {sinopsis.resumen} <a href={`/estudiantes/${parte}/${canto}/`}>Resumen y análisis del canto →</a></p>
    <p class="meta">{estrofas.length} estrofas · {estrofas.reduce((n,e)=>n+e.versos.length,0)} versos</p>
   </header>
   <div class="reader-layout">

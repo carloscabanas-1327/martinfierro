@@ -24,7 +24,7 @@ const base: Grupo[] = [
  {es:'/fuentes-y-derechos/', en:'/en/sources-and-rights/', it:'/it/fonti-e-diritti/', pt:'/pt/fontes-e-direitos/', fr:'/fr/sources-et-droits/', de:'/de/quellen-und-rechte/', ru:'/ru/istochniki-i-prava/', zh:'/zh/laiyuan-yu-banquan/', ja:'/ja/shutten-to-chosakuken/'},
  {en:'/en/what-is-martin-fierro/', it:'/it/che-cose-martin-fierro/'},
  {es:'/martin-fierro-resumen/', en:'/en/martin-fierro-summary/', it:'/it/le-due-parti/'},
- {es:'/revista/quienes-eran-los-gauchos/', en:'/en/what-is-a-gaucho/', it:'/it/il-gaucho/'},
+ {es:'/que-es-un-gaucho/', en:'/en/what-is-a-gaucho/', it:'/it/il-gaucho/'},
  {es:'/consejos-martin-fierro/', en:'/en/martin-fierro-advice-to-his-sons/', pt:'/pt/conselhos-de-martin-fierro/', fr:'/fr/conseils-de-martin-fierro/', de:'/de/ratschlaege-von-martin-fierro/', ru:'/ru/sovety-martina-fierro/', zh:'/zh/jiaohui/', ja:'/ja/oshie/'},
  {es:'/personajes/', en:'/en/characters/', pt:'/pt/personagens/', fr:'/fr/personnages/', de:'/de/figuren/', ru:'/ru/personazhi/', zh:'/zh/renwu/', ja:'/ja/jinbutsu/'},
  {en:'/en/magazine/yerba-mate/', pt:'/pt/revista/chimarrao/', fr:'/fr/revue/mate/', de:'/de/magazin/mate/', ru:'/ru/zhurnal/mate/', zh:'/zh/zazhi/mate/', ja:'/ja/zasshi/mate/'},
