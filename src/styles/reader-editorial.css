@@ -12,6 +12,7 @@ main.container:has(.mf-reader-page){width:min(1480px,calc(100% - 32px));max-widt
 .mf-reader-page .reader-header h1{font:600 clamp(2.9rem,5.2vw,5rem)/1.06 Georgia,serif;letter-spacing:-.035em;color:#261e19;margin:12px 0 16px;max-width:none}
 .mf-reader-page .reader-header .lead{max-width:100%;font:italic clamp(1.14rem,1.6vw,1.4rem)/1.5 Georgia,serif;color:#675348;margin:0 auto 10px}
 .mf-reader-page .reader-header .meta{font-size:.85rem;color:#756657;letter-spacing:.04em}
+.mf-reader-page .reader-header .mf-canto-sinopsis{max-width:62ch;margin:14px auto 12px;font:1.02rem/1.65 Georgia,serif;color:#3f342b}.mf-reader-page .reader-header .mf-canto-sinopsis a{color:#843e2b;font:600 .88rem system-ui,sans-serif;white-space:nowrap}
 .mf-reader-page .reader-layout{display:grid;grid-template-columns:minmax(0,680px) minmax(190px,225px);justify-content:center;align-items:start;gap:clamp(22px,4.3vw,62px);width:100%;margin:auto}
 .mf-reader-page .reader-layout>*,.mf-reader-page .verse-text{min-width:0}
 .mf-reader-page .verse-text{font:400 clamp(1.09rem,1.26vw,1.23rem)/1.8 Georgia,'Times New Roman',serif;color:#30251f;margin:0 auto;width:100%;max-width:680px}
