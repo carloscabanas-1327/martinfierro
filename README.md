@@ -34,6 +34,10 @@ Las fuentes Gutenberg se preservan sin modificación. La **edición estructurada
 
 Identificador de ejemplo: `mf-ida-e0295-v05` (parte, estrofa y posición del verso).
 
+## Enlaces `/go/` (anunciantes)
+
+Los caminos `/go/...` de martinfierro.org los atiende el Worker del proyecto ANUNCIANTES, no este sitio. No crear nada bajo `/go/` ni pisar esos enlaces. Los auditores de enlaces internos tienen que ignorarlos. Detalles: [documentacion/AVISO-ANUNCIANTES-GO.md](documentacion/AVISO-ANUNCIANTES-GO.md).
+
 ## Reproducir todo sin PC local
 
 En **GitHub Actions → Generar corpus documental**, iniciar `Run workflow` o modificar los scripts. El proceso descarga, genera, audita, verifica de modo estricto y, si todas las pruebas pasan, incorpora automáticamente los archivos a `main`.
