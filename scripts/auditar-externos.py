@@ -7,6 +7,8 @@ class Links(html.parser.HTMLParser):
   a=dict(attrs)
   for k in (("href",) if tag=="a" else ("src",) if tag in ("img","script") else ()):
    v=a.get(k,"")
+   # No visitar /go/ del propio dominio: cada visita contaría como clic de anunciante.
+   if "martinfierro.org/go/" in v: continue
    if v.startswith(("https://","http://")): self.urls.add(v)
 def check(url):
  req=urllib.request.Request(url,headers={"User-Agent":"MartinFierroEditorialLinkAudit/1.0 (+https://martinfierro.org/)"},method="HEAD")

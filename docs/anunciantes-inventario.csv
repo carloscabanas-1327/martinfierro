@@ -1,0 +1,2 @@
+pagina,texto_o_lugar,red_o_programa,anunciante,url_destino_actual,pais_o_idioma_objetivo,tipo,notas
+,,,,,,,"sin enlaces de afiliados. Revisado 16/11/2026 en todo el repositorio (src/, public/, scripts/): no hay enlaces de Tradedoubler, Awin, Amazon, Booking ni con ref/tag/aff, ni banners, ni scripts de AdSense u otras redes. src/data/monetizacion.ts tiene publicidadHabilitada=false y la lista de paneles vacía; src/components/AdSlot.astro no muestra nada. Sitio aprobado en Tradedoubler para España (dato de Carlos)."
