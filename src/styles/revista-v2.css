@@ -319,3 +319,8 @@ body:has(.mf-revista) main.container{
  .mf-revista .mf-advice-story{grid-template-columns:minmax(0,1fr)}
  .mf-revista .mf-advice-photo{aspect-ratio:16/9}
 }
+
+/* Guías rápidas en la portada: enlaces internos a las páginas clave en español. */
+.mf-quicklinks{margin:18px 0 4px;max-width:34rem;font:600 .86rem/1.7 system-ui,sans-serif;color:#6c5a49}
+.mf-quicklinks span{font-weight:750;color:#31261f}
+.mf-quicklinks a{color:#643d2a;text-underline-offset:3px}
