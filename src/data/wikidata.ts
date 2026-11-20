@@ -22,6 +22,11 @@ export const entidades={
  'uruguay':{"qid": "Q77", "tipo": "Country", "nombre": "Uruguay", "wiki": {"es": "Uruguay", "en": "Uruguay", "it": "Uruguay", "pt": "Uruguai", "fr": "Uruguay", "de": "Uruguay", "ru": "Уругвай", "zh": "乌拉圭", "ja": "ウルグアイ"}},
  'brasil':{"qid": "Q155", "tipo": "Country", "nombre": "Brasil", "wiki": {"es": "Brasil", "en": "Brazil", "it": "Brasile", "pt": "Brasil", "fr": "Brésil", "de": "Brasilien", "ru": "Бразилия", "zh": "巴西", "ja": "ブラジル"}},
  'payada':{"qid": "Q5955539", "tipo": "Thing", "nombre": "Payada", "wiki": {"es": "Payada", "en": "Payada", "pt": "Pajada"}},
+ 'dia-de-la-tradicion':{"qid": "Q5815785", "tipo": "Event", "nombre": "Día de la Tradición", "wiki": {"es": "Día de la Tradición", "en": "Día de la Tradición"}},
+ 'dia-nacional-del-gaucho':{"qid": "Q2877833", "tipo": "Event", "nombre": "Día Nacional del Gaucho", "wiki": {"es": "Día Nacional del Gaucho"}},
+ 'bartolome-hidalgo':{"qid": "Q809535", "tipo": "Person", "nombre": "Bartolomé Hidalgo", "wiki": {"es": "Bartolomé Hidalgo", "en": "Bartolomé Hidalgo", "it": "Bartolomé Hidalgo", "pt": "Bartolomé Hidalgo", "fr": "Bartolomé Hidalgo", "de": "Bartolomé Hidalgo", "ru": "Идальго, Бартоломе"}},
+ 'hilario-ascasubi':{"qid": "Q961284", "tipo": "Person", "nombre": "Hilario Ascasubi", "wiki": {"es": "Hilario Ascasubi", "en": "Hilario Ascasubi", "it": "Hilario Ascásubi", "de": "Hilario Ascasubi", "ru": "Аскасуби, Иларио", "zh": "伊拉里奥·阿斯卡苏比"}},
+ 'estanislao-del-campo':{"qid": "Q559964", "tipo": "Person", "nombre": "Estanislao del Campo", "wiki": {"es": "Estanislao del Campo", "en": "Estanislao del Campo", "it": "Estanislao del Campo", "fr": "Estanislao del Campo", "de": "Estanislao del Campo", "zh": "埃斯塔尼斯劳·德尔坎波"}},
 } satisfies Record<string,Entidad>;
 export type ClaveEntidad=keyof typeof entidades;
 // Nombres que se escriben distinto de como titula Wikipedia (orden invertido, chino tradicional).
@@ -32,6 +37,7 @@ const nombresPropios:Partial<Record<ClaveEntidad,Partial<Record<string,string>>>
  'provincia-buenos-aires':{ru:'Провинция Буэнос-Айрес'},
  'gaucho':{zh:'高乔人'},
  'payada':{ja:'パジャーダ'},
+ 'hilario-ascasubi':{ru:'Иларио Аскасуби'},
 };
 // Nodo schema.org de una entidad, con el nombre del artículo de Wikipedia del idioma de la página.
 export function nodoEntidad(clave:ClaveEntidad,idioma:string){
