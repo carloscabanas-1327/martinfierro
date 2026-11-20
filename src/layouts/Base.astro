@@ -85,7 +85,7 @@ const rutaMigas=migas?[raizMigas[linguaCorrente],...migas]:[];
 const grafo:Record<string,unknown>[]=[
  {'@type':'WebSite','@id':inicio+'#sitio',name:'Martín Fierro',alternateName:['MARTINFIERRO.ORG','martinfierro.org'],url:inicio,publisher:{'@id':inicio+'#organizacion'}},
  editor,
- {'@type':pageType,'@id':canonical+'#pagina',name:title,...(esArticulo?{headline:titular.length>110?titular.slice(0,109)+'…':titular,author:{'@id':inicio+'#organizacion'},publisher:{'@id':inicio+'#organizacion'}}:{}),description,url:canonical,inLanguage:lang,isPartOf:{'@id':inicio+'#sitio'},image:imagenes,...(fechas?{datePublished:fechas.publicado,dateModified:fechas.modificado}:{}),...(sobre.length?{about:sobre.map(k=>nodoEntidad(k,lang))}:{}),...(menciona.length?{mentions:menciona.map(k=>nodoEntidad(k,lang))}:{}),...(rutaMigas.length?{breadcrumb:{'@id':canonical+'#migas'}}:{})},
+ {'@type':pageType,'@id':canonical+'#pagina',name:title,...(esArticulo?{headline:titular.length>110?titular.slice(0,109)+'…':titular,author:{'@id':inicio+'#organizacion'},publisher:{'@id':inicio+'#organizacion'}}:{}),description,url:canonical,inLanguage:lang,isPartOf:{'@id':inicio+'#sitio'},image:imagenes,primaryImageOfPage:{'@type':'ImageObject',url:Array.isArray(imagenes)?imagenes[0]:imagenes},...(fechas?{datePublished:fechas.publicado,dateModified:fechas.modificado}:{}),...(sobre.length?{about:sobre.map(k=>nodoEntidad(k,lang))}:{}),...(menciona.length?{mentions:menciona.map(k=>nodoEntidad(k,lang))}:{}),...(rutaMigas.length?{breadcrumb:{'@id':canonical+'#migas'}}:{})},
  // Preguntas frecuentes visibles en la página (componente PreguntasFrecuentes): mismo texto.
  ...(faq?.length?[{'@type':'FAQPage','@id':canonical+'#preguntas',url:canonical,inLanguage:lang,isPartOf:{'@id':inicio+'#sitio'},mainEntity:faq.map(p=>({'@type':'Question',name:p.q,acceptedAnswer:{'@type':'Answer',text:p.a}}))}]:[]),
  ...(rutaMigas.length?[{'@type':'BreadcrumbList','@id':canonical+'#migas',itemListElement:rutaMigas.map((p,i)=>({'@type':'ListItem',position:i+1,name:p.label,...(p.href?{item:new URL(p.href,Astro.site).toString()}:i===rutaMigas.length-1?{item:canonical}:{})}))}]:[]),
@@ -109,7 +109,7 @@ import AvisoRecreacion from '../components/AvisoRecreacion.astro';
  <link rel="canonical" href={canonical}/>
  {alternates.map(a=><link rel="alternate" hreflang={a.hreflang} href={a.href}/>)}
  {xDefault && <link rel="alternate" hreflang="x-default" href={new URL(xDefault,Astro.site).toString()}/>}
- {robotsBlocked && <meta name="robots" content="noindex,nofollow"/>}
+ {robotsBlocked ? <meta name="robots" content="noindex,nofollow"/> : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>}
  <meta property="og:type" content={esArticulo?"article":"website"}/>
  {esArticulo && fechas && <meta property="article:published_time" content={fechas.publicado}/>}
  {esArticulo && fechas && <meta property="article:modified_time" content={fechas.modificado}/>}
@@ -124,20 +124,21 @@ import AvisoRecreacion from '../components/AvisoRecreacion.astro';
  <meta property="og:image:alt" content="Recreación digital de un gaucho a caballo en la pampa al atardecer"/>
  <meta name="twitter:card" content="summary_large_image"/>
  <meta name="twitter:image" content="https://martinfierro.org/media/compartir/gaucho-a-caballo-1200x630.jpg"/>
+ <link rel="image_src" href="https://martinfierro.org/media/compartir/gaucho-a-caballo-1200x630.jpg"/>
  <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g,'\\u003c')}/>
  <title>{title} | Martín Fierro</title>
 </head>
 <body>
  <!-- Reserva n.º 1: inmediatamente después de abrir BODY; permanece oculta. -->
  {adKind !== 'none' && <AdSlot id={`${adKind}-01-body`} kind={adKind} />}
- <a class="skip" href="#contenido">{testata.salto}</a>
+ <a class="skip" href="#contenido"><span data-nosnippet>{testata.salto}</span></a>
  <header class="site-header">
-  <div class="editorial-topline"><div class="container"><span>{testata.franja}</span><nav class="mf-lingue" aria-label={testata.idioma}>{lingueSelettore.filter(l=>selettore[l]).map(l=>edicionPropia && l===linguaCorrente ? <b aria-current="page" lang={l}>{nomiLingua[l]}</b> : <a href={selettore[l]} hreflang={hreflang[l]} lang={l}>{nomiLingua[l]}</a>)}</nav></div></div>
-  <div class="container editorial-masthead">
+  <div class="editorial-topline" data-nosnippet><div class="container"><span>{testata.franja}</span><nav class="mf-lingue" aria-label={testata.idioma}>{lingueSelettore.filter(l=>selettore[l]).map(l=>edicionPropia && l===linguaCorrente ? <b aria-current="page" lang={l}>{nomiLingua[l]}</b> : <a href={selettore[l]} hreflang={hreflang[l]} lang={l}>{nomiLingua[l]}</a>)}</nav></div></div>
+  <div class="container editorial-masthead" data-nosnippet>
    <a class="brand" href={testata.inicio} aria-label={testata.marca}><span>Martín Fierro<small>{testata.lema}</small></span></a>
    <a class="editorial-read" href={testata.leerHref}>{testata.leer} <span aria-hidden="true">↗</span></a>
   </div>
-  <div class="editorial-nav-wrap">
+  <div class="editorial-nav-wrap" data-nosnippet>
    <div class="container">
     <nav class="editorial-nav" aria-label={testata.nav}>
      {menu.map(([href,label])=><a href={href}>{label}</a>)}
