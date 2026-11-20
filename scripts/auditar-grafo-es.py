@@ -43,6 +43,8 @@ def normalize(href,from_route):
             if parts: parts.pop()
         elif item not in ("","."): parts.append(item)
     clean="/"+"/".join(parts)
+    # /go/ lo atiende el Worker de ANUNCIANTES, no el sitio (ver documentacion/AVISO-ANUNCIANTES-GO.md).
+    if clean.startswith("/go/"): return None
     if clean.endswith(".html"): return clean
     if re.search(r"\.[a-z0-9]+$",clean,re.I): return None
     return clean.rstrip("/")+"/"

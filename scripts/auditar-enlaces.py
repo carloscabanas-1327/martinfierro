@@ -41,6 +41,8 @@ for p in pages:
                 if parts: parts.pop()
             elif element and element!=".":parts.append(element)
         local="/" + "/".join(parts)
+        # /go/ lo atiende el Worker de ANUNCIANTES, no el sitio (ver documentacion/AVISO-ANUNCIANTES-GO.md).
+        if local.startswith("/go/"): continue
         candidate=root.joinpath(*parts)
         if candidate.is_dir(): candidate=candidate/"index.html"
         elif not candidate.exists() and candidate.suffix==".html": pass
