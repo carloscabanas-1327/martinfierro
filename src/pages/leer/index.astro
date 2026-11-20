@@ -3,8 +3,18 @@ import AdSlot from '../../components/AdSlot.astro';
 import EditorialSection from '../../components/EditorialSection.astro';
 import Base from '../../layouts/Base.astro';
 import {partes,numeroDeVersos} from '../../lib/corpus';
+import PreguntasFrecuentes from '../../components/PreguntasFrecuentes.astro';
+const totalCantos=partes.ida.cantos.length+partes.vuelta.cantos.length;
+const totalVersos=numeroDeVersos('ida')+numeroDeVersos('vuelta');
+const preguntasFaq=[
+ {q:`¿Se puede leer Martín Fierro completo y gratis?`,a:`Sí. En esta página está la obra completa de José Hernández, sin cortes: El gaucho Martín Fierro (1872) y La vuelta de Martín Fierro (1879), con ${totalCantos} cantos y ${totalVersos.toLocaleString('es-AR')} versos.`},
+ {q:`¿Cuántos cantos tiene Martín Fierro?`,a:`La ida tiene ${partes.ida.cantos.length} cantos y La vuelta, ${partes.vuelta.cantos.length}. En total son ${totalCantos}.`},
+ {q:`¿Qué diferencia hay entre La ida y La vuelta?`,a:`La ida cuenta cómo Fierro es llevado a la frontera, pierde su hogar y se vuelve matrero junto al sargento Cruz. La vuelta narra su regreso, el reencuentro con sus hijos, las historias de otros personajes, la payada con el Moreno y los consejos finales.`},
+ {q:`¿Qué es una sextina?`,a:`Es una estrofa de seis versos de ocho sílabas. Casi todo Martín Fierro está escrito en sextinas, una forma pensada para ser cantada con guitarra.`},
+ {q:`¿Por qué el poema dice «naides», «ansí» o «güeno»?`,a:`Porque José Hernández imitó el habla del gaucho. Acá el texto se reproduce con esa grafía original, sin modernizar las palabras.`},
+];
 ---
-<Base migas={[{label:"Leer la obra"}]} title="Martín Fierro, obra completa: La ida y La vuelta para leer online" description="Martín Fierro de José Hernández, obra completa y gratis: El gaucho Martín Fierro (1872) y La vuelta (1879), sus 46 cantos y 7.210 versos, canto por canto y con buscador." adKind="category">
+<Base faq={preguntasFaq} sobre={["el-gaucho-martin-fierro","la-vuelta-de-martin-fierro"]} menciona={["jose-hernandez"]} migas={[{label:"Leer la obra"}]} title="Martín Fierro, obra completa: La ida y La vuelta para leer online" description="Martín Fierro de José Hernández, obra completa y gratis: El gaucho Martín Fierro (1872) y La vuelta (1879), sus 46 cantos y 7.210 versos, canto por canto y con buscador." adKind="category">
 <EditorialSection kind="category" image="/media/fotografias-v3/la-ida.webp" label="LA OBRA · BIBLIOTECA DOCUMENTAL">
  <p class="eyebrow">Índice general</p><h1>Martín Fierro: la obra completa</h1>
  <p class="lead">Acá podés leer gratis la obra completa de José Hernández, sin cortes. Está dividida en dos libros: <em>El gaucho Martín Fierro</em> (1872), conocido como La ida, con 13 cantos, y <em>La vuelta de Martín Fierro</em> (1879), con 33 cantos. En total son 46 cantos y 7.210 versos, casi todos en sextinas. Cada parte tiene su índice de cantos y navegación entre ellos. ¿Preferís un panorama antes de leer? Mirá el <a href="/martin-fierro-resumen/">resumen canto por canto</a>.</p>
@@ -13,5 +23,6 @@ import {partes,numeroDeVersos} from '../../lib/corpus';
 <AdSlot id="category-02" kind="category"/>
 <AdSlot id="category-03" kind="category"/>
 <AdSlot id="category-04" kind="category"/>
+<PreguntasFrecuentes preguntas={preguntasFaq}/>
 </EditorialSection>
 </Base>
