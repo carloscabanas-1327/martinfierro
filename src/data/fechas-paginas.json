@@ -11,6 +11,10 @@
   "publicado": "2026-10-29",
   "modificado": "2026-11-02"
  },
+ "/aviso-legal/": {
+  "publicado": "2026-11-15",
+  "modificado": "2026-11-15"
+ },
  "/biblioteca-critica/": {
   "publicado": "2026-10-29",
   "modificado": "2026-11-02"
@@ -33,11 +37,11 @@
  },
  "/consejos-martin-fierro/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/contacto/": {
   "publicado": "2026-10-30",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/cultura-gauchesca/": {
   "publicado": "2026-10-31",
@@ -49,7 +53,7 @@
  },
  "/de/figuren/": {
   "publicado": "2026-11-06",
-  "modificado": "2026-11-06"
+  "modificado": "2026-11-20"
  },
  "/de/": {
   "publicado": "2026-10-29",
@@ -57,7 +61,7 @@
  },
  "/de/jose-hernandez/": {
   "publicado": "2026-11-06",
-  "modificado": "2026-11-06"
+  "modificado": "2026-11-20"
  },
  "/de/magazin/": {
   "publicado": "2026-11-06",
@@ -73,7 +77,7 @@
  },
  "/de/ratschlaege-von-martin-fierro/": {
   "publicado": "2026-11-06",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/de/studierende/[teil]/[gesang]/": {
   "publicado": "2026-11-06",
@@ -93,7 +97,7 @@
  },
  "/en/advertising-and-affiliates/": {
   "publicado": "2026-11-01",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/en/archive/": {
   "publicado": "2026-11-01",
@@ -105,11 +109,11 @@
  },
  "/en/characters/": {
   "publicado": "2026-11-01",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-20"
  },
  "/en/contact/": {
   "publicado": "2026-11-01",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/en/editorial-method/": {
   "publicado": "2026-11-01",
@@ -133,7 +137,7 @@
  },
  "/en/jose-hernandez/": {
   "publicado": "2026-11-01",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-20"
  },
  "/en/library/argentine-literature/": {
   "publicado": "2026-11-01",
@@ -217,7 +221,7 @@
  },
  "/en/martin-fierro-advice-to-his-sons/": {
   "publicado": "2026-11-01",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/en/martin-fierro-english-translation/": {
   "publicado": "2026-11-01",
@@ -229,7 +233,7 @@
  },
  "/en/privacy/": {
   "publicado": "2026-11-01",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/en/reader/": {
   "publicado": "2026-11-01",
@@ -445,7 +449,7 @@
  },
  "/en/terms/": {
   "publicado": "2026-11-01",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/en/themes/[slug]/": {
   "publicado": "2026-11-01",
@@ -461,7 +465,7 @@
  },
  "/en/what-is-a-gaucho/": {
   "publicado": "2026-11-01",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-20"
  },
  "/en/what-is-martin-fierro/": {
   "publicado": "2026-11-01",
@@ -477,7 +481,7 @@
  },
  "/estudiantes/": {
   "publicado": "2026-11-01",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/exegesis/": {
   "publicado": "2026-10-29",
@@ -489,7 +493,7 @@
  },
  "/fr/conseils-de-martin-fierro/": {
   "publicado": "2026-11-04",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/fr/etudiants/[partie]/[chant]/": {
   "publicado": "2026-11-04",
@@ -509,7 +513,7 @@
  },
  "/fr/jose-hernandez/": {
   "publicado": "2026-11-04",
-  "modificado": "2026-11-04"
+  "modificado": "2026-11-20"
  },
  "/fr/lire-le-poeme/": {
   "publicado": "2026-11-04",
@@ -517,7 +521,7 @@
  },
  "/fr/personnages/": {
   "publicado": "2026-11-04",
-  "modificado": "2026-11-04"
+  "modificado": "2026-11-20"
  },
  "/fr/revue/": {
   "publicado": "2026-11-04",
@@ -537,7 +541,7 @@
  },
  "/": {
   "publicado": "2026-10-29",
-  "modificado": "2026-11-15"
+  "modificado": "2026-11-19"
  },
  "/indice-general/": {
   "publicado": "2026-10-31",
@@ -569,7 +573,7 @@
  },
  "/it/il-gaucho/": {
   "publicado": "2026-11-03",
-  "modificado": "2026-11-03"
+  "modificado": "2026-11-20"
  },
  "/it/": {
   "publicado": "2026-10-29",
@@ -581,7 +585,7 @@
  },
  "/it/jose-hernandez/": {
   "publicado": "2026-11-03",
-  "modificado": "2026-11-03"
+  "modificado": "2026-11-20"
  },
  "/it/le-due-parti/": {
   "publicado": "2026-11-03",
@@ -645,15 +649,15 @@
  },
  "/ja/jinbutsu/": {
   "publicado": "2026-11-13",
-  "modificado": "2026-11-13"
+  "modificado": "2026-11-20"
  },
  "/ja/jose-hernandez/": {
   "publicado": "2026-11-13",
-  "modificado": "2026-11-13"
+  "modificado": "2026-11-20"
  },
  "/ja/oshie/": {
   "publicado": "2026-11-13",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/ja/shutten-to-chosakuken/": {
   "publicado": "2026-11-13",
@@ -673,7 +677,7 @@
  },
  "/jose-hernandez/": {
   "publicado": "2026-10-29",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/la/": {
   "publicado": "2026-10-29",
@@ -689,11 +693,11 @@
  },
  "/leer/": {
   "publicado": "2026-10-29",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/martin-fierro-frases/": {
   "publicado": "2026-11-14",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/martin-fierro-preguntas-y-respuestas/": {
   "publicado": "2026-11-14",
@@ -705,7 +709,7 @@
  },
  "/personajes/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-20"
  },
  "/pms/": {
   "publicado": "2026-10-29",
@@ -713,7 +717,7 @@
  },
  "/privacidad/": {
   "publicado": "2026-10-30",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/proyecto/": {
   "publicado": "2026-10-30",
@@ -721,7 +725,7 @@
  },
  "/pt/conselhos-de-martin-fierro/": {
   "publicado": "2026-11-03",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/pt/estudantes/[parte]/[canto]/": {
   "publicado": "2026-11-03",
@@ -745,7 +749,7 @@
  },
  "/pt/jose-hernandez/": {
   "publicado": "2026-11-03",
-  "modificado": "2026-11-04"
+  "modificado": "2026-11-20"
  },
  "/pt/ler-o-poema/": {
   "publicado": "2026-11-03",
@@ -753,7 +757,7 @@
  },
  "/pt/personagens/": {
   "publicado": "2026-11-03",
-  "modificado": "2026-11-04"
+  "modificado": "2026-11-20"
  },
  "/pt/revista/chimarrao/": {
   "publicado": "2026-11-03",
@@ -765,19 +769,19 @@
  },
  "/publicidad-y-afiliados/": {
   "publicado": "2026-10-30",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/que-es-un-gaucho/": {
   "publicado": "2026-11-15",
-  "modificado": "2026-11-15"
+  "modificado": "2026-11-20"
  },
  "/revista/dia-de-la-tradicion-10-de-noviembre/": {
   "publicado": "2026-10-31",
-  "modificado": "2026-11-15"
+  "modificado": "2026-11-20"
  },
  "/revista/dia-de-la-tradicion-vs-dia-nacional-del-gaucho/": {
   "publicado": "2026-11-02",
-  "modificado": "2026-11-15"
+  "modificado": "2026-11-20"
  },
  "/revista/frontera-pueblos-indigenas/": {
   "publicado": "2026-10-31",
@@ -817,15 +821,15 @@
  },
  "/ru/jose-hernandez/": {
   "publicado": "2026-11-06",
-  "modificado": "2026-11-06"
+  "modificado": "2026-11-20"
  },
  "/ru/personazhi/": {
   "publicado": "2026-11-06",
-  "modificado": "2026-11-06"
+  "modificado": "2026-11-20"
  },
  "/ru/sovety-martina-fierro/": {
   "publicado": "2026-11-06",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/ru/studentam/[chast]/[pesn]/": {
   "publicado": "2026-11-06",
@@ -857,7 +861,7 @@
  },
  "/terminos/": {
   "publicado": "2026-10-30",
-  "modificado": "2026-11-02"
+  "modificado": "2026-11-15"
  },
  "/traducciones/": {
   "publicado": "2026-10-31",
@@ -869,11 +873,11 @@
  },
  "/zh/jiaohui/": {
   "publicado": "2026-11-06",
-  "modificado": "2026-11-14"
+  "modificado": "2026-11-20"
  },
  "/zh/jose-hernandez/": {
   "publicado": "2026-11-06",
-  "modificado": "2026-11-06"
+  "modificado": "2026-11-20"
  },
  "/zh/laiyuan-yu-banquan/": {
   "publicado": "2026-11-06",
@@ -881,7 +885,7 @@
  },
  "/zh/renwu/": {
   "publicado": "2026-11-06",
-  "modificado": "2026-11-06"
+  "modificado": "2026-11-20"
  },
  "/zh/xuesheng/[bufen]/[ge]/": {
   "publicado": "2026-11-06",
