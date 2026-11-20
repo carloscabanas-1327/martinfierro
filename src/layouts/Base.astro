@@ -2,8 +2,8 @@
 import {equivalenti,hreflang,type Grupo} from '../data/equivalencias';
 import {raizMigas} from '../data/migas-raiz';
 import fechasPaginas from '../data/fechas-paginas.json';
-interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'; lingue?:Grupo; image?:string; migas?:{label:string; href?:string}[]}
-const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none',lingue,migas,image}=Astro.props;
+interface Props {title:string; description?:string; lang?:string; pageType?:string; noindex?:boolean; adKind?:'article'|'category'|'transition'|'none'; lingue?:Grupo; image?:string; migas?:{label:string; href?:string}[]; faq?:{q:string;a:string}[]}
+const {title,description='Leé Martín Fierro completo: las dos partes, sus cantos, versos y un buscador.',lang='es-AR',pageType='WebPage',noindex=false,adKind='none',lingue,migas,image,faq}=Astro.props;
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
 const robotsBlocked=noindex;
 const english=lang.toLowerCase().startsWith('en');
@@ -85,6 +85,8 @@ const grafo:Record<string,unknown>[]=[
  {'@type':'WebSite','@id':inicio+'#sitio',name:'Martín Fierro',alternateName:['MARTINFIERRO.ORG','martinfierro.org'],url:inicio,publisher:{'@id':inicio+'#organizacion'}},
  editor,
  {'@type':pageType,'@id':canonical+'#pagina',name:title,...(esArticulo?{headline:titular.length>110?titular.slice(0,109)+'…':titular,author:{'@id':inicio+'#organizacion'},publisher:{'@id':inicio+'#organizacion'}}:{}),description,url:canonical,inLanguage:lang,isPartOf:{'@id':inicio+'#sitio'},image:imagenes,...(fechas?{datePublished:fechas.publicado,dateModified:fechas.modificado}:{}),...(rutaMigas.length?{breadcrumb:{'@id':canonical+'#migas'}}:{})},
+ // Preguntas frecuentes visibles en la página (componente PreguntasFrecuentes): mismo texto.
+ ...(faq?.length?[{'@type':'FAQPage','@id':canonical+'#preguntas',url:canonical,inLanguage:lang,isPartOf:{'@id':inicio+'#sitio'},mainEntity:faq.map(p=>({'@type':'Question',name:p.q,acceptedAnswer:{'@type':'Answer',text:p.a}}))}]:[]),
  ...(rutaMigas.length?[{'@type':'BreadcrumbList','@id':canonical+'#migas',itemListElement:rutaMigas.map((p,i)=>({'@type':'ListItem',position:i+1,name:p.label,...(p.href?{item:new URL(p.href,Astro.site).toString()}:i===rutaMigas.length-1?{item:canonical}:{})}))}]:[]),
 ];
 const jsonLd={'@context':'https://schema.org','@graph':grafo};
