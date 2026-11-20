@@ -16,13 +16,22 @@ const kaado:Record<string,{namae:string;yakuwari:string;shoukai:string;yomikata:
 };
 const gazou=(id:string)=>({'martin-fierro':'martin-fierro','sargento-cruz':'sargento-cruz','esposa-fierro':'esposa-de-fierro','primer-hijo':'hijo-mayor-de-fierro','segundo-hijo':'hijo-segundo-de-fierro','don-vizcacha':'viejo-vizcacha','picardia':'picardia','la-cautiva':'la-cautiva','el-moreno':'el-moreno','moreno-muerto':'negro-del-baile','juez-paz':'juez-de-paz'} as Record<string,string>)[id];
 const link=(r:{parte:'ida'|'vuelta';canto:number})=>`/ja/gakusei/${r.parte}/${r.canto}/`;
+import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
+const preguntasFaq=[
+ {q:`『マルティン・フィエロ』の主人公は誰ですか？`,a:`マルティン・フィエロ本人です。歌うガウチョで、辺境での兵役を強いられたあと家庭を失います。その歌は、不正、暴力、逃亡、友情、そして第二部での息子たちとの再会を語ります。`},
+ {q:`マルティン・フィエロは実在の人物ですか？`,a:`いいえ。ホセ・エルナンデスが創作した人物で、その声は作者の声と同じではありません。エルナンデスはブエノスアイレス州の田園の暮らしについての知識をもとに書きました。`},
+ {q:`クルス軍曹とはどんな人物ですか？`,a:`フィエロを捕らえるよう命じられた隊の一員でしたが、寝返ってフィエロの側につき、ともに戦います。二人の連帯は、詩の中でもっとも大切な絆の一つです。`},
+ {q:`老ビスカーチャとはどんな人物ですか？`,a:`貧しくずる賢い老人で、フィエロの次男の後見人に指名されます。そのばかげた癖と自分本位の格言は、第二部でもっとも有名な部分の一つです。`},
+ {q:`パジャーダ（歌比べ）とは何ですか？モレーノとは誰ですか？`,a:`パジャーダは即興の詩を交互に歌い合う競い合いで、たいていギターを伴います。第二部でモレーノがフィエロに挑みます。フィエロが踊りの場で殺した男とは別の人物ですが、この歌比べがあの死の記憶をよみがえらせます。`},
+];
 ---
-<Base migas={[{label:'登場人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/',zh:'/zh/renwu/'}} lang="ja-JP" pageType="CollectionPage" title="『マルティン・フィエロ』登場人物ガイド" description="マルティン・フィエロ、クルス軍曹、老ビスカーチャ、ピカルディア、息子たち、捕らわれの女性、モレーノ。ホセ・エルナンデスの詩の登場人物と、その批判的な読み方を紹介します。">
+<Base sobre={["el-gaucho-martin-fierro", "la-vuelta-de-martin-fierro"]} menciona={["jose-hernandez", "payada"]} faq={preguntasFaq} migas={[{label:'登場人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/',zh:'/zh/renwu/'}} lang="ja-JP" pageType="CollectionPage" title="『マルティン・フィエロ』登場人物ガイド" description="マルティン・フィエロ、クルス軍曹、老ビスカーチャ、ピカルディア、息子たち、捕らわれの女性、モレーノ。ホセ・エルナンデスの詩の登場人物と、その批判的な読み方を紹介します。">
 <article class="jinbutsu-ja">
 <header><p class="eyebrow">読書ガイド · 登場人物</p><h1><em>『マルティン・フィエロ』</em>の登場人物</h1><p class="lid">お尋ね者のガウチョ、忠実な友、失ったものを理解しようとする二人の息子、厚かましい後見人、そして片隅に追いやられた声たち。この詩に道徳的な複雑さを与えている人物たちを紹介します。</p></header>
 <nav class="tobu" aria-label="人物へ移動">{personajes.map(p=><a href={`#${p.id}`}>{kaado[p.id].namae}</a>)}</nav>
 <div class="kaadogun">{personajes.map(p=><section class="kaado" id={p.id} aria-labelledby={`t-${p.id}`}><figure><img src={`/media/fotografias-v3/${gazou(p.id)}.webp`} alt={`編集部によるデジタルの解釈：${kaado[p.id].namae}。歴史的な肖像ではありません`} loading="lazy"/><figcaption>現代のデジタル再現</figcaption></figure><div><p class="eyebrow">{kaado[p.id].yakuwari}</p><h2 id={`t-${p.id}`}>{kaado[p.id].namae}</h2><p>{kaado[p.id].shoukai}</p><p><strong>批判的に読む：</strong>{kaado[p.id].yomikata}</p><p class="link"><strong>学習カード：</strong>{p.referencias.map(r=><a href={link(r)}>{r.parte==='ida'?'第一部':'第二部'} · 第{r.canto}歌</a>)}</p></div></section>)}</div>
 <section class="tsukaikata"><h2>このガイドの使い方</h2><p>これらのカードは十一人の人物の役割を説明し、原文の連を載せた各歌の学習カードにつながっています。解釈をまじえた要約であって、エルナンデスの詩句の引用や翻訳ではありません。挿絵は現代の再現であり、歴史資料ではありません。</p></section>
+<PreguntasFrecuentes preguntas={preguntasFaq} titulo="よくある質問"/>
 </article>
 <style>.jinbutsu-ja{max-width:1100px;margin:25px auto 80px;color:#31291f}.jinbutsu-ja a{color:#843e2c;text-underline-offset:4px}.eyebrow{font:750 .76rem system-ui,sans-serif;letter-spacing:.1em;color:#955138}.jinbutsu-ja h1{font:600 clamp(2.3rem,5vw,4.2rem)/1.2 Georgia,serif;margin:18px 0}.jinbutsu-ja h1 em{font-weight:400}.lid{font:1.2rem/1.85 Georgia,serif;max-width:44em}.tobu{border-block:1px solid #cbb9a5;display:flex;flex-wrap:wrap;gap:10px 17px;padding:19px 0;margin:35px 0;font:.92rem system-ui,sans-serif}.kaadogun{display:grid;gap:30px}.kaado{display:grid;grid-template-columns:300px 1fr;gap:30px;border-top:2px solid #382d25;padding-top:24px;scroll-margin-top:70px}.kaado figure{margin:0}.kaado img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}.kaado figcaption{font:.76rem system-ui,sans-serif;color:#74614d;margin-top:6px}.kaado h2{font:600 2rem Georgia,serif;margin:6px 0 12px}.kaado p{font:1.04rem/1.85 Georgia,serif}.link{display:flex;flex-wrap:wrap;gap:6px 14px;font:.9rem system-ui,sans-serif!important}.tsukaikata{background:#efe3d5;padding:22px 26px;margin-top:40px}.tsukaikata h2{font:600 1.7rem Georgia,serif;margin:0 0 10px}.tsukaikata p{font:1.03rem/1.85 Georgia,serif}@media(max-width:720px){.kaado{grid-template-columns:1fr;gap:14px}.kaado img{aspect-ratio:3/2}.tsukaikata{padding:18px}}</style>
 </Base>
