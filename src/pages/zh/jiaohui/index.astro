@@ -15,14 +15,14 @@ const canonical=new URL('/zh/jiaohui/',Astro.site).toString();
 const shuju={'@context':'https://schema.org','@type':'Article','@id':canonical+'#pagina',headline:'马丁·菲耶罗对儿子们的教诲：原文诗句与中文评注',inLanguage:'zh-CN',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
 import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
 const preguntasFaq=[
- {q:`马丁·菲耶罗对儿子们的教诲出自哪一歌？`,a:`出自《La vuelta de Martín Fierro》（1879）第三十二歌。重逢之后、各奔前程之前，菲耶罗对两个儿子和克鲁斯的儿子说了这些话。`},
- {q:`这些教诲共有多少节？`,a:`第三十二歌共 ${jie.length} 节、${zongHang} 行，本页按西班牙语原文全部列出。`},
+ {q:`马丁·菲耶罗给儿子们留下了哪些教诲？`,a:`兄弟要团结，对朋友要忠诚正直，要尊重劳动和长辈，要远离暴力。这些话出自《La vuelta de Martín Fierro》（1879）第三十二歌，是菲耶罗在分别之前对两个儿子和克鲁斯的儿子说的。`},
+ {q:`“Los hermanos sean unidos”怎么翻译？`,a:`本站的学习译文是：“兄弟之间要团结，因为这是第一条法则。要真正团结，任何时候都团结，因为兄弟之间一旦争斗，就会被外人吞掉。”`},
+ {q:`这些教诲为什么在阿根廷家喻户晓？`,a:`这是全诗在阿根廷被引用最多的一节，在学校、演讲和节庆中反复出现。字面上它是对兄弟们说的，但人们也常把它读作对民族团结的呼吁。`},
+ {q:`菲耶罗自己做到了吗？`,a:`并不总是，诗里也承认这一点。如今劝人远离暴力的人，自己曾在打斗中杀过人。他把自己的不幸当作一面镜子：克制自己，才是大智慧。`},
  {q:`诗句有翻译吗？`,a:`诗句保留埃尔南德斯的西班牙语原文。每一节下面有本站编辑部撰写的散文体学习译文，帮助理解意思，但不是文学翻译。`},
- {q:`马丁·菲耶罗教了儿子们什么？`,a:`友谊与正直、劳动的价值、兄弟团结，以及拒绝暴力。他是从自己的经历出发说话，而不是一个没有过错的榜样。`},
- {q:`“Los hermanos sean unidos”是什么意思？`,a:`意思是“兄弟要团结”。这是最著名的一条教诲：兄弟团结是第一条法则，因为兄弟相争，外人就会把他们吞掉。`},
 ];
 ---
-<Base faq={preguntasFaq} migas={[{label:'父亲的教诲'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/',pt:'/pt/conselhos-de-martin-fierro/',fr:'/fr/conseils-de-martin-fierro/',de:'/de/ratschlaege-von-martin-fierro/',ru:'/ru/sovety-martina-fierro/'}} lang="zh-CN" pageType="Article" title="马丁·菲耶罗对儿子们的教诲：原文、译文与解读" description="逐节阅读马丁·菲耶罗对儿子们的教诲（《归来》第三十二歌）：西班牙语原文、中文学习译文，以及关于友谊、劳动和兄弟团结的阅读说明。">
+<Base sobre={["la-vuelta-de-martin-fierro"]} menciona={["jose-hernandez"]} faq={preguntasFaq} migas={[{label:'父亲的教诲'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/',pt:'/pt/conselhos-de-martin-fierro/',fr:'/fr/conseils-de-martin-fierro/',de:'/de/ratschlaege-von-martin-fierro/',ru:'/ru/sovety-martina-fierro/'}} lang="zh-CN" pageType="Article" title="马丁·菲耶罗对儿子们的教诲：原文、译文与解读" description="逐节阅读马丁·菲耶罗对儿子们的教诲（《归来》第三十二歌）：西班牙语原文、中文学习译文，以及关于友谊、劳动和兄弟团结的阅读说明。">
 <article class="jiaohui-zh">
 <script type="application/ld+json" set:html={JSON.stringify(shuju).replace(/</g,'\\u003c')}/>
 <header class="yinyan"><p class="eyebrow">LA VUELTA DE MARTÍN FIERRO · 第三十二歌 · 1879</p><h1>马丁·菲耶罗对儿子们的教诲：<em>全歌逐节阅读</em></h1><p class="lid">历经失去、逃亡和重逢之后，马丁·菲耶罗把两个儿子和克鲁斯的儿子叫到身边，把自己学到的东西传给他们。这些诗节是阿根廷文学中被引用最多的，而只有记住说话人自己犯过的错，它们的意思才会完整。</p></header>

@@ -15,13 +15,14 @@ const cronologia=[
 import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
 const preguntasFaq=[
  {q:`Chi era José Hernández?`,a:`Uno scrittore, giornalista, militare e uomo politico argentino (1834–1886), autore di Martín Fierro.`},
- {q:`Quando e dove nacque José Hernández?`,a:`Nacque il 10 novembre 1834 a Perdriel, nell’attuale partido di General San Martín (provincia di Buenos Aires), da Rafael Hernández e Isabel Pueyrredón.`},
+ {q:`Esiste una traduzione italiana di Martín Fierro?`,a:`Sì. La tradusse in versi Folco Testena, pseudonimo di Comunardo Braccialarghe (Macerata 1875 – Buenos Aires 1951), con il testo spagnolo a fronte: Buenos Aires, edizione della rivista «Nosotros», 1919. In questo sito si può leggere completa.`},
+ {q:`José Hernández era un gaucho?`,a:`No. Conosceva bene la campagna, ma era un uomo colto, un politico e un giornalista. La voce di Martín Fierro è una creazione letteraria, nata dall’osservazione e da una tesi sociale.`},
+ {q:`Perché in Argentina il 10 novembre è il Giorno della Tradizione?`,a:`Perché il 10 novembre 1834 nacque José Hernández, a Perdriel, nell’attuale partido di General San Martín (provincia di Buenos Aires). L’Argentina ricorda la sua nascita con il Día de la Tradición.`},
  {q:`Quando fu pubblicato Martín Fierro?`,a:`La prima parte, El gaucho Martín Fierro, uscì nel 1872. La seconda, La vuelta de Martín Fierro, nel 1879.`},
- {q:`Che cos’altro scrisse José Hernández?`,a:`Fu giornalista e nel 1869 fondò il giornale El Río de la Plata. Pubblicò la Vida del Chacho (1863), sul caudillo federale Ángel Vicente Peñaloza, e Instrucción del estanciero (1882), un manuale pratico di gestione di una tenuta.`},
- {q:`Quando morì José Hernández?`,a:`Morì il 21 ottobre 1886 a Belgrano, Buenos Aires.`},
+ {q:`Dove morì José Hernández?`,a:`Morì il 21 ottobre 1886 a Belgrano, oggi un quartiere di Buenos Aires.`},
 ];
 ---
-<Base faq={preguntasFaq} migas={[{label:'José Hernández'}]} lang="it-IT" pageType="Article" title="José Hernández: biografia dell’autore di Martín Fierro"
+<Base sobre={["jose-hernandez"]} menciona={["el-gaucho-martin-fierro", "la-vuelta-de-martin-fierro", "partido-general-san-martin", "provincia-buenos-aires", "buenos-aires", "belgrano"]} faq={preguntasFaq} migas={[{label:'José Hernández'}]} lang="it-IT" pageType="Article" title="José Hernández: biografia dell’autore di Martín Fierro"
  description="Chi era José Hernández (1834–1886): la vita, il giornalismo, la politica e la scrittura di Martín Fierro, con cronologia e fonti documentarie.">
 <ArticoloIt occhiello="Letteratura argentina · Biografia documentata" titolo="José Hernández, <em>l’autore di Martín Fierro</em>"
  sommario="Hernández non scrisse della campagna argentina da lontano. Lavoratore rurale, militare, giornalista e uomo politico, conobbe da dentro le tensioni che avrebbero dato forma al suo poema più famoso."

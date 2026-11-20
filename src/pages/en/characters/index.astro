@@ -17,14 +17,15 @@ const notes:Record<string,{role:string,description:string,reading:string}> ={
 const image=(id:string)=>({'martin-fierro':'martin-fierro','sargento-cruz':'sargento-cruz','esposa-fierro':'esposa-de-fierro','primer-hijo':'hijo-mayor-de-fierro','segundo-hijo':'hijo-segundo-de-fierro','don-vizcacha':'viejo-vizcacha','picardia':'picardia','la-cautiva':'la-cautiva','el-moreno':'el-moreno','moreno-muerto':'negro-del-baile','juez-paz':'juez-de-paz'} as Record<string,string>)[id];
 import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
 const preguntasFaq=[
- {q:`Who are the main characters in Martín Fierro?`,a:`Martín Fierro, Sergeant Cruz, Fierro’s wife, his elder and younger sons, Old Vizcacha, Picardía, the captive woman, the Moreno of the payada, the man Fierro kills in the first part and the justice of the peace. This guide has a profile for each of them.`},
+ {q:`Who is the main character of Martín Fierro?`,a:`Martín Fierro himself: a gaucho singer whose family life collapses after he is forced into frontier service. He tells his own story of injustice, flight, friendship and, in the second part, reunion with his sons.`},
+ {q:`Was Martín Fierro a real person?`,a:`No. He is a fictional character created by José Hernández, and his voice should not be confused with the author’s. Hernández drew on what he knew of rural life in the province of Buenos Aires.`},
  {q:`Who is Sergeant Cruz?`,a:`He is first part of the group sent after Fierro, then changes sides and joins him. Their friendship becomes one of the pivotal relationships in the poem.`},
- {q:`Who is Picardía?`,a:`Cruz’s son. In the second part he tells his own story of hardship, gambling, abuses of authority and frontier service.`},
  {q:`Who is Old Vizcacha?`,a:`An impoverished older man placed in charge of Fierro’s younger son. His cunning, grotesque habits and self-serving sayings are among the most memorable episodes of the sequel.`},
- {q:`Is the Moreno of the payada the man Fierro killed?`,a:`No. The Moreno who challenges Fierro to a payada in the second part is a different character. The contest revives the memory of the earlier death.`},
+ {q:`What is a payada, and who is the Moreno?`,a:`A payada is a sung duel of improvised verses, usually with a guitar. In the second part an Afro-Argentine singer, the Moreno, challenges Fierro to one. He is not the man Fierro killed in the first part, though the contest brings that death back.`},
+ {q:`Are there women in the poem?`,a:`Yes, though neither has a name: Fierro’s wife, whose death he learns of later, and the captive woman he helps to escape. Both are seen through Fierro’s eyes.`},
 ];
 ---
-<Base faq={preguntasFaq} migas={[{label:"Characters"}]} lang="en-US" pageType="CollectionPage" title="Martín Fierro Characters — An English Guide" description="Meet Martín Fierro, Sergeant Cruz, Don Vizcacha, Picardía, Fierro's sons and the other principal characters. Read their roles, themes, and canto references.">
+<Base sobre={["el-gaucho-martin-fierro", "la-vuelta-de-martin-fierro"]} menciona={["jose-hernandez", "payada"]} faq={preguntasFaq} migas={[{label:"Characters"}]} lang="en-US" pageType="CollectionPage" title="Martín Fierro Characters — An English Guide" description="Meet Martín Fierro, Sergeant Cruz, Don Vizcacha, Picardía, Fierro's sons and the other principal characters. Read their roles, themes, and canto references.">
 <article class="international">
 <header class="head"><p class="eyebrow">READING COMPANION · CHARACTERS</p><h1>The characters of <em>Martín Fierro</em></h1><p class="deck">A fugitive gaucho, a loyal friend, two sons trying to make sense of their losses, an irreverent guardian, and voices often pushed to the margins. Explore the people who give José Hernández’s poem its moral complexity.</p></header>
 <nav class="jump" aria-label="Jump to a character">{personajes.map(p=><a href={`#${p.id}`}>{p.nombre}</a>)}</nav>

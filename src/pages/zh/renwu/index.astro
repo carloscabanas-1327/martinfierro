@@ -18,14 +18,14 @@ const tu=(id:string)=>({'martin-fierro':'martin-fierro','sargento-cruz':'sargent
 const lianjie=(r:{parte:'ida'|'vuelta';canto:number})=>`/zh/xuesheng/${r.parte}/${r.canto}/`;
 import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
 const preguntasFaq=[
- {q:`《马丁·菲耶罗》的主要人物有哪些？`,a:`马丁·菲耶罗、克鲁斯中士、菲耶罗的妻子、长子、次子、老比斯卡查、皮卡迪亚、女俘、莫雷诺、舞会上的死者和治安法官。本页为每个人物都准备了一张卡片。`},
+ {q:`《马丁·菲耶罗》的主人公是谁？`,a:`就是马丁·菲耶罗本人：一个会唱歌的高乔人，被强征到边境服役后家破人亡。他的歌讲的是不公、暴力、逃亡、友谊，以及第二部中与儿子们的重逢。`},
+ {q:`马丁·菲耶罗是真实人物吗？`,a:`不是。他是何塞·埃尔南德斯创造的人物，他的声音也不等于作者的声音。埃尔南德斯取材于他对布宜诺斯艾利斯省乡村生活的了解。`},
  {q:`克鲁斯中士是谁？`,a:`他是奉命捉拿菲耶罗的小队成员，却倒戈站到菲耶罗一边，与他并肩作战。两人之间的团结是全诗最重要的纽带之一。`},
- {q:`皮卡迪亚是谁？`,a:`一个年轻人，讲述自己的孤儿童年、赌博、权力的滥用和边境兵役，直到他得知自己是克鲁斯中士的儿子。`},
- {q:`老比斯卡查是谁？`,a:`一个贫穷而狡猾的老人，被指定为菲耶罗次子的监护人。他荒诞的怪癖和自私的格言，是第二部最著名的片段之一。`},
- {q:`对歌中的莫雷诺就是菲耶罗在舞会上杀死的人吗？`,a:`不是。第二部里向菲耶罗发起对歌的莫雷诺是另一个人物。这场对歌唤起了对那次死亡的记忆。`},
+ {q:`老比斯卡查是谁？`,a:`一个贫穷而狡猾的老人，被指定为菲耶罗次子的监护人。他荒诞的怪癖和自私的格言，是第二部最著名的段落之一。`},
+ {q:`什么是对歌（payada）？莫雷诺是谁？`,a:`对歌是即兴编词、轮流演唱的比赛，通常用吉他伴奏。第二部里，莫雷诺向菲耶罗发起对歌。他不是菲耶罗在舞会上杀死的那个人，但这场对歌唤起了对那次死亡的记忆。`},
 ];
 ---
-<Base faq={preguntasFaq} migas={[{label:'人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/'}} lang="zh-CN" pageType="CollectionPage" title="《马丁·菲耶罗》人物导读" description="马丁·菲耶罗、克鲁斯中士、老比斯卡查、皮卡迪亚、儿子们、女俘和莫雷诺：何塞·埃尔南德斯诗中的人物介绍，以及如何批判地阅读他们。">
+<Base sobre={["el-gaucho-martin-fierro", "la-vuelta-de-martin-fierro"]} menciona={["jose-hernandez", "payada"]} faq={preguntasFaq} migas={[{label:'人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/'}} lang="zh-CN" pageType="CollectionPage" title="《马丁·菲耶罗》人物导读" description="马丁·菲耶罗、克鲁斯中士、老比斯卡查、皮卡迪亚、儿子们、女俘和莫雷诺：何塞·埃尔南德斯诗中的人物介绍，以及如何批判地阅读他们。">
 <article class="renwu-zh">
 <header><p class="eyebrow">阅读指南 · 人物</p><h1><em>《马丁·菲耶罗》</em>中的人物</h1><p class="lid">一个亡命的高乔人、一位忠实的朋友、两个努力理解自己所失去的东西的儿子、一个厚颜无耻的监护人，以及被推到边缘的声音。认识这些赋予全诗道德复杂性的人物。</p></header>
 <nav class="tiaozhuan" aria-label="跳到某个人物">{personajes.map(p=><a href={`#${p.id}`}>{kapian[p.id].ming}</a>)}</nav>

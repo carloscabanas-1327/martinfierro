@@ -18,14 +18,14 @@ const image=(id:string)=>({'martin-fierro':'martin-fierro','sargento-cruz':'sarg
 const fiche=(r:{parte:'ida'|'vuelta';canto:number})=>`/fr/etudiants/${r.parte==='ida'?'aller':'retour'}/${r.canto}/`;
 import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
 const preguntasFaq=[
- {q:`Qui sont les personnages principaux de Martín Fierro ?`,a:`Martín Fierro, le sergent Cruz, la femme de Fierro, le fils aîné, le fils cadet, le Vieux Vizcacha, Picardía, la captive, le Moreno, l’homme tué au bal et le juge de paix. Ce guide consacre une fiche à chacun.`},
+ {q:`Qui est le personnage principal de Martín Fierro ?`,a:`Martín Fierro lui-même : un gaucho chanteur dont la vie de famille s’effondre après le service forcé à la frontière. Son chant parle d’injustice, de violence, de fuite, d’amitié et de retrouvailles.`},
+ {q:`Martín Fierro a-t-il vraiment existé ?`,a:`Non. C’est un personnage créé par José Hernández, et sa voix n’est pas celle de l’auteur. Hernández est parti de ce qu’il connaissait de la vie rurale dans la province de Buenos Aires.`},
  {q:`Qui est le sergent Cruz ?`,a:`Il fait partie de la patrouille envoyée pour arrêter Fierro, change de camp et se bat à ses côtés. La solidarité entre les deux hommes est l’une des relations centrales du poème.`},
- {q:`Qui est Picardía ?`,a:`Un jeune homme qui raconte son enfance d’orphelin, le jeu, les abus d’autorité et le service à la frontière, jusqu’à découvrir qu’il est le fils du sergent Cruz.`},
- {q:`Qui est le Vieux Vizcacha ?`,a:`Un vieillard pauvre et rusé, nommé tuteur du fils cadet de Fierro. Ses manies grotesques et ses maximes intéressées comptent parmi les épisodes les plus connus de la seconde partie.`},
- {q:`Le Moreno de la payada est-il l’homme que Fierro tue au bal ?`,a:`Non. Le Moreno qui défie Fierro dans la payada de la seconde partie est un autre personnage. La joute réveille le souvenir de cette mort.`},
+ {q:`Qui est le Vieux Vizcacha ?`,a:`Un vieillard pauvre et rusé, nommé tuteur du fils cadet de Fierro. Ses manies grotesques et ses maximes intéressées comptent parmi les épisodes les plus célèbres de la seconde partie.`},
+ {q:`Qu’est-ce que la payada du Moreno ?`,a:`Une payada est une joute de vers improvisés et chantés, le plus souvent à la guitare. Dans la seconde partie, le Moreno y défie Fierro. Ce n’est pas l’homme tué au bal, mais la joute réveille le souvenir de cette mort.`},
 ];
 ---
-<Base faq={preguntasFaq} migas={[{label:'Personnages'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/'}} lang="fr-FR" pageType="CollectionPage" title="Les personnages de Martín Fierro : guide en français" description="Martín Fierro, le sergent Cruz, le Vieux Vizcacha, Picardía, les fils, la captive et le Moreno : qui sont les personnages du poème de José Hernández et comment les lire avec esprit critique.">
+<Base sobre={["el-gaucho-martin-fierro", "la-vuelta-de-martin-fierro"]} menciona={["jose-hernandez", "payada"]} faq={preguntasFaq} migas={[{label:'Personnages'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/'}} lang="fr-FR" pageType="CollectionPage" title="Les personnages de Martín Fierro : guide en français" description="Martín Fierro, le sergent Cruz, le Vieux Vizcacha, Picardía, les fils, la captive et le Moreno : qui sont les personnages du poème de José Hernández et comment les lire avec esprit critique.">
 <article class="personnages-fr">
 <header><p class="eyebrow">GUIDE DE LECTURE · PERSONNAGES</p><h1>Les personnages de <em>Martín Fierro</em></h1><p class="chapo">Un gaucho fugitif, un ami loyal, deux fils qui tentent de comprendre leurs pertes, un tuteur sans scrupules et des voix reléguées aux marges. Découvrez les figures qui donnent au poème sa complexité morale.</p></header>
 <nav class="sauts" aria-label="Aller à un personnage">{personajes.map(p=><a href={`#${p.id}`}>{fiches[p.id].nom}</a>)}</nav>

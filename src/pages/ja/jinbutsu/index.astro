@@ -18,14 +18,14 @@ const gazou=(id:string)=>({'martin-fierro':'martin-fierro','sargento-cruz':'sarg
 const link=(r:{parte:'ida'|'vuelta';canto:number})=>`/ja/gakusei/${r.parte}/${r.canto}/`;
 import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
 const preguntasFaq=[
- {q:`『マルティン・フィエロ』の主な登場人物は誰ですか？`,a:`マルティン・フィエロ、クルス軍曹、フィエロの妻、長男、次男、老ビスカーチャ、ピカルディア、捕らわれの女性、モレーノ、踊りの場で殺された男、治安判事です。このページでは一人ずつ紹介しています。`},
+ {q:`『マルティン・フィエロ』の主人公は誰ですか？`,a:`マルティン・フィエロ本人です。歌うガウチョで、辺境での兵役を強いられたあと家庭を失います。その歌は、不正、暴力、逃亡、友情、そして第二部での息子たちとの再会を語ります。`},
+ {q:`マルティン・フィエロは実在の人物ですか？`,a:`いいえ。ホセ・エルナンデスが創作した人物で、その声は作者の声と同じではありません。エルナンデスはブエノスアイレス州の田園の暮らしについての知識をもとに書きました。`},
  {q:`クルス軍曹とはどんな人物ですか？`,a:`フィエロを捕らえるよう命じられた隊の一員でしたが、寝返ってフィエロの側につき、ともに戦います。二人の連帯は、詩の中でもっとも大切な絆の一つです。`},
- {q:`ピカルディアとは誰ですか？`,a:`孤児としての子ども時代、賭け事、権力の乱用、辺境の兵役を語る若者です。やがて自分がクルス軍曹の息子であることを知ります。`},
- {q:`老ビスカーチャとはどんな人物ですか？`,a:`貧しくずる賢い老人で、フィエロの次男の後見人に指名されます。そのばかげた癖と自分本位の格言は、第二部でもっとも知られた場面の一つです。`},
- {q:`歌比べのモレーノは、フィエロが踊りの場で殺した男と同じ人物ですか？`,a:`いいえ。第二部でフィエロに歌比べを挑むモレーノは別の人物です。この歌比べが、あの死の記憶をよみがえらせます。`},
+ {q:`老ビスカーチャとはどんな人物ですか？`,a:`貧しくずる賢い老人で、フィエロの次男の後見人に指名されます。そのばかげた癖と自分本位の格言は、第二部でもっとも有名な部分の一つです。`},
+ {q:`パジャーダ（歌比べ）とは何ですか？モレーノとは誰ですか？`,a:`パジャーダは即興の詩を交互に歌い合う競い合いで、たいていギターを伴います。第二部でモレーノがフィエロに挑みます。フィエロが踊りの場で殺した男とは別の人物ですが、この歌比べがあの死の記憶をよみがえらせます。`},
 ];
 ---
-<Base faq={preguntasFaq} migas={[{label:'登場人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/',zh:'/zh/renwu/'}} lang="ja-JP" pageType="CollectionPage" title="『マルティン・フィエロ』登場人物ガイド" description="マルティン・フィエロ、クルス軍曹、老ビスカーチャ、ピカルディア、息子たち、捕らわれの女性、モレーノ。ホセ・エルナンデスの詩の登場人物と、その批判的な読み方を紹介します。">
+<Base sobre={["el-gaucho-martin-fierro", "la-vuelta-de-martin-fierro"]} menciona={["jose-hernandez", "payada"]} faq={preguntasFaq} migas={[{label:'登場人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/',zh:'/zh/renwu/'}} lang="ja-JP" pageType="CollectionPage" title="『マルティン・フィエロ』登場人物ガイド" description="マルティン・フィエロ、クルス軍曹、老ビスカーチャ、ピカルディア、息子たち、捕らわれの女性、モレーノ。ホセ・エルナンデスの詩の登場人物と、その批判的な読み方を紹介します。">
 <article class="jinbutsu-ja">
 <header><p class="eyebrow">読書ガイド · 登場人物</p><h1><em>『マルティン・フィエロ』</em>の登場人物</h1><p class="lid">お尋ね者のガウチョ、忠実な友、失ったものを理解しようとする二人の息子、厚かましい後見人、そして片隅に追いやられた声たち。この詩に道徳的な複雑さを与えている人物たちを紹介します。</p></header>
 <nav class="tobu" aria-label="人物へ移動">{personajes.map(p=><a href={`#${p.id}`}>{kaado[p.id].namae}</a>)}</nav>

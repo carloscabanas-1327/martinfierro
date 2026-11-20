@@ -15,14 +15,14 @@ const canonical=new URL('/ja/oshie/',Astro.site).toString();
 const deeta={'@context':'https://schema.org','@type':'Article','@id':canonical+'#pagina',headline:'マルティン・フィエロの息子たちへの教え：原文の詩句と日本語の解説',inLanguage:'ja',url:canonical,author:{'@type':'Organization',name:'MARTINFIERRO.ORG'},about:{'@type':'CreativeWork',name:'La vuelta de Martín Fierro, canto XXXII',author:{'@type':'Person',name:'José Hernández'},datePublished:'1879',inLanguage:'es'}};
 import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
 const preguntasFaq=[
- {q:`マルティン・フィエロの息子たちへの教えは第何歌にありますか？`,a:`『La vuelta de Martín Fierro』（1879）の第三十二歌です。再会のあと、それぞれの道へ別れる前に、フィエロは二人の息子とクルスの息子に語りかけます。`},
- {q:`教えは何連ありますか？`,a:`第三十二歌は全${ren.length}連、${zengyou}行で、このページにスペイン語の原文のまま載せています。`},
+ {q:`マルティン・フィエロは息子たちにどんな教えを残しましたか？`,a:`兄弟は団結すること、友には誠実で正直であること、労働と年長者を敬うこと、そして暴力を避けることです。『La vuelta de Martín Fierro』（1879）の第三十二歌で、別れの前に二人の息子とクルスの息子に語ります。`},
+ {q:`「Los hermanos sean unidos」はどういう意味ですか？`,a:`このサイトの学習訳では「兄弟は団結しなければならない。それが第一の掟だからだ。本当に団結していろ、いつのときも。兄弟どうしが争えば、外の者に食い尽くされてしまうのだから。」です。`},
+ {q:`この教えはなぜアルゼンチンでよく知られているのですか？`,a:`アルゼンチンでもっとも多く引用される連で、学校や演説や祝典で繰り返し登場します。兄弟への言葉ですが、国民の団結を呼びかけるものとしても読まれてきました。`},
+ {q:`フィエロ自身はこの教えを守れたのですか？`,a:`いつもではありません。詩もそれを隠しません。いま暴力を戒める男は、かつてけんかで人を殺しています。自分の不幸を鏡として差し出し、自分を抑えることこそ大きな知恵だと語ります。`},
  {q:`詩句は翻訳されていますか？`,a:`詩句はエルナンデスのスペイン語の原文のままです。各連の下に、意味をつかむためにこのサイトの編集部が書いた散文の学習訳があります。文学的な翻訳ではありません。`},
- {q:`フィエロは息子たちに何を教えていますか？`,a:`友情と正しさ、労働の大切さ、兄弟の団結、そして暴力を戒めることです。過ちのない手本としてではなく、自分の経験から語っています。`},
- {q:`「Los hermanos sean unidos」とはどういう意味ですか？`,a:`「兄弟は団結せよ」という意味です。もっともよく知られた教えで、兄弟の団結こそ第一の掟だと説きます。兄弟が争えば、よそ者に食い物にされるからです。`},
 ];
 ---
-<Base faq={preguntasFaq} migas={[{label:'父の教え'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/',pt:'/pt/conselhos-de-martin-fierro/',fr:'/fr/conseils-de-martin-fierro/',de:'/de/ratschlaege-von-martin-fierro/',ru:'/ru/sovety-martina-fierro/',zh:'/zh/jiaohui/'}} lang="ja-JP" pageType="Article" title="マルティン・フィエロの息子たちへの教え：原文、学習訳、読み方" description="マルティン・フィエロが息子たちに与える教え（『帰還』第三十二歌）を一連ずつ読む。スペイン語の原文、日本語の学習訳、友情・労働・兄弟の団結についての読みのポイント。">
+<Base sobre={["la-vuelta-de-martin-fierro"]} menciona={["jose-hernandez"]} faq={preguntasFaq} migas={[{label:'父の教え'}]} lingue={{es:'/consejos-martin-fierro/',en:'/en/martin-fierro-advice-to-his-sons/',pt:'/pt/conselhos-de-martin-fierro/',fr:'/fr/conseils-de-martin-fierro/',de:'/de/ratschlaege-von-martin-fierro/',ru:'/ru/sovety-martina-fierro/',zh:'/zh/jiaohui/'}} lang="ja-JP" pageType="Article" title="マルティン・フィエロの息子たちへの教え：原文、学習訳、読み方" description="マルティン・フィエロが息子たちに与える教え（『帰還』第三十二歌）を一連ずつ読む。スペイン語の原文、日本語の学習訳、友情・労働・兄弟の団結についての読みのポイント。">
 <article class="oshie-ja">
 <script type="application/ld+json" set:html={JSON.stringify(deeta).replace(/</g,'\\u003c')}/>
 <header class="hajime"><p class="eyebrow">LA VUELTA DE MARTÍN FIERRO · 第三十二歌 · 1879</p><h1>マルティン・フィエロの息子たちへの教え：<em>一連ずつ全文を読む</em></h1><p class="lid">喪失と逃亡と再会を経て、マルティン・フィエロは二人の息子とクルスの息子をそばに呼び、自分が学んだことを伝えます。アルゼンチン文学でもっとも多く引用される連ですが、語り手自身の過ちを覚えていてこそ、その意味は完全になります。</p></header>
