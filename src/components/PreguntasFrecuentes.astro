@@ -1,0 +1,10 @@
+---
+// Sección visible de preguntas frecuentes. Las mismas preguntas se pasan a Base (prop faq)
+// para el marcado FAQPage: texto plano, idéntico a lo que se ve.
+interface Props {preguntas:{q:string;a:string}[]; titulo?:string; id?:string}
+const {preguntas,titulo='Preguntas frecuentes',id='preguntas-frecuentes'}=Astro.props;
+---
+<section class="mf-faq" id={id}><h2>{titulo}</h2>
+<dl>{preguntas.map(p=><div><dt>{p.q}</dt><dd>{p.a}</dd></div>)}</dl>
+</section>
+<style>.mf-faq{max-width:790px;margin:44px auto}.mf-faq h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.2 Georgia,serif}.mf-faq dl{margin:0}.mf-faq div{border-top:1px solid #d3c3b0;padding:14px 0}.mf-faq dt{font:700 1.05rem/1.4 system-ui,sans-serif;margin-bottom:6px}.mf-faq dd{margin:0;font:1.06rem/1.8 Georgia,serif}</style>

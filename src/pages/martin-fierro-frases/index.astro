@@ -12,8 +12,16 @@ const grupos=gruposFrases.map(g=>({...g,frases:g.frases.map(f=>{
  return {...f,canto:e.canto,id:e.id,versos:e.versos.map(v=>v.texto),destacados:e.versos.slice(desde-1,hasta).map(v=>v.texto.replace(/^["“]|["”]$/g,'').replace(/[;,.:]$/,'')),obra:f.parte==='ida'?'El gaucho Martín Fierro':'La vuelta de Martín Fierro'};
 })}));
 const total=grupos.reduce((n,g)=>n+g.frases.length,0);
+import PreguntasFrecuentes from '../../components/PreguntasFrecuentes.astro';
+const preguntas=[
+ {q:'¿Cuál es la frase más famosa de Martín Fierro?',a:'«Los hermanos sean unidos, porque ésa es la ley primera». Está en el canto XXXII de La vuelta de Martín Fierro, entre los consejos que Fierro les da a sus hijos.'},
+ {q:'¿Quién dice «La ley es tela de araña»?',a:'No la dice Fierro sino el Moreno, su rival en la payada de La vuelta. Fierro le pregunta qué entiende por la ley y el Moreno responde que atrapa a los débiles y la rompen los poderosos.'},
+ {q:'¿Quién dice «El diablo sabe por diablo, pero más sabe por viejo»?',a:'Es uno de los consejos del Viejo Vizcacha, el tutor del hijo menor de Fierro, en el canto XV de La vuelta. Quiere decir que la experiencia enseña más que la astucia.'},
+ {q:'¿Cuál es la frase del mate en Martín Fierro?',a:'Está en el canto II de La ida, cuando Fierro recuerda su vida en el pago: el gaucho toma mate amargo, «cimarrón», junto al fogón antes de que amanezca.'},
+ {q:'¿Por qué las frases aparecen con palabras como «naides» o «ajuera»?',a:'Porque se copian tal como las escribió José Hernández, que imitó el habla del gaucho. «Naides» es «nadie» y «ajuera» es «afuera».'},
+];
 ---
-<Base migas={[{label:'Para estudiantes',href:'/estudiantes/'},{label:'Frases célebres'}]} pageType="Article" adKind="article" image="/media/fotografias-v3/consejos-fogon-hijos.webp" title="Frases de Martín Fierro: las estrofas más célebres y su significado" description={`Las ${total} frases más célebres de Martín Fierro: «Los hermanos sean unidos», «La ley es tela de araña», los consejos de Fierro y de Vizcacha, con la estrofa completa, el canto y su significado.`}>
+<Base faq={preguntas} migas={[{label:'Para estudiantes',href:'/estudiantes/'},{label:'Frases célebres'}]} pageType="Article" adKind="article" image="/media/fotografias-v3/consejos-fogon-hijos.webp" title="Frases de Martín Fierro: las estrofas más célebres y su significado" description={`Las ${total} frases más célebres de Martín Fierro: «Los hermanos sean unidos», «La ley es tela de araña», los consejos de Fierro y de Vizcacha, con la estrofa completa, el canto y su significado.`}>
 <article class="mf-frases">
 <header><p class="eyebrow">PARA ESTUDIANTES · JOSÉ HERNÁNDEZ · 1872 / 1879</p><h1>Frases célebres de Martín Fierro</h1><p class="lead">«Los hermanos sean unidos», «La ley es tela de araña», «El diablo sabe por diablo, pero más sabe por viejo»: muchas frases que se repiten en la Argentina salen de <em>Martín Fierro</em>. Acá están las {total} más famosas, con la estrofa completa, quién la dice, en qué canto aparece y qué significa.</p></header>
 <figure class="mf-frases-foto"><img src="/media/fotografias-v3/consejos-fogon-hijos.webp" width="1275" height="850" alt="Recreación digital de un gaucho que aconseja a sus hijos junto al fogón" fetchpriority="high"/><figcaption>Recreación digital; no es una fotografía histórica.</figcaption></figure>
@@ -32,6 +40,7 @@ const total=grupos.reduce((n,g)=>n+g.frases.length,0);
  </li>)}</ol>
  {i===1 && <AdSlot id="article-03-middle" kind="article"/>}
 </section>)}
+<PreguntasFrecuentes preguntas={preguntas}/>
 <section id="seguir"><h2>Para seguir leyendo</h2><ul>
  <li><a href="/consejos-martin-fierro/">Los consejos de Martín Fierro a sus hijos</a>: el canto XXXII completo y su significado.</li>
  <li><a href="/biblioteca/vizcacha-y-fierro-consejos/">El Viejo Vizcacha y Martín Fierro</a>: dos maneras de aconsejar.</li>

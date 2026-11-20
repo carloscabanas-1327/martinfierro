@@ -34,8 +34,17 @@ const structuredData={
  image:new URL('/media/fotografias-v3/consejos-fogon-hijos.webp',Astro.site).toString(),
  description:'Texto íntegro del canto XXXII de La vuelta de Martín Fierro, con 31 estrofas, introducción, comentarios y ayuda de lectura.'
 };
+import PreguntasFrecuentes from '../../components/PreguntasFrecuentes.astro';
+const preguntas=[
+ {q:'¿En qué canto están los consejos de Martín Fierro a sus hijos?',a:`En el canto XXXII de La vuelta de Martín Fierro, publicada por José Hernández en 1879. Fierro se los da a sus dos hijos y al hijo de Cruz, después del reencuentro y antes de que cada uno siga su camino.`},
+ {q:'¿Cuántas estrofas tienen los consejos?',a:`El canto XXXII tiene ${estrofas.length} estrofas y ${nVersos} versos. En esta página están todas, sin modernizar el lenguaje del poema.`},
+ {q:'¿Qué enseñan los consejos de Martín Fierro?',a:'Hablan de la prudencia, la amistad, el trabajo, la honradez, el respeto por los mayores y la unión entre hermanos. También piden evitar la violencia, el robo y los excesos. Fierro no habla como un hombre perfecto: aconseja desde sus propios errores.'},
+ {q:'¿Qué significa «Los hermanos sean unidos»?',a:'Es el consejo más famoso. La unión entre hermanos es la primera ley porque, si se pelean, quedan a merced de «los de ajuera», los que vienen de afuera a aprovecharse. Hoy se usa también para hablar de la unión de un pueblo.'},
+ {q:'¿Los consejos de Fierro son los mismos que los del Viejo Vizcacha?',a:'No. Vizcacha, el tutor del hijo menor, da sus consejos en el canto XV de La vuelta y enseña a sobrevivir con egoísmo y desconfianza. Los de Fierro, en el canto XXXII, van en sentido contrario: honradez, trabajo y lealtad.'},
+ {q:'¿Qué quiere decir «naides» en los consejos?',a:'Es una forma popular de «nadie». Aparece desde la primera estrofa del canto y refleja el habla gauchesca que representa el poema.'},
+];
 ---
-<Base pageType="Article" migas={[{label:"La vuelta",href:"/leer/vuelta/"},{label:"Consejos a sus hijos"}]} title="Consejos de Martín Fierro a sus hijos: texto completo y significado" description="Leé los consejos de Martín Fierro a sus hijos: canto XXXII íntegro, sus 31 estrofas, significado, valores, glosario gauchesco y enlaces a los versos.">
+<Base faq={preguntas} pageType="Article" migas={[{label:"La vuelta",href:"/leer/vuelta/"},{label:"Consejos a sus hijos"}]} title="Consejos de Martín Fierro a sus hijos: texto completo y significado" description="Leé los consejos de Martín Fierro a sus hijos: canto XXXII íntegro, sus 31 estrofas, significado, valores, glosario gauchesco y enlaces a los versos.">
 <article class="mf-consejos">
  <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g,'\\u003c')}/>
  <header class="mf-consejos-hero">
@@ -114,6 +123,7 @@ const structuredData={
    <p>Entre las <strong>enseñanzas más conocidas de Martín Fierro</strong> sobresale su <a href="#mf-vuelta-e1160">llamado a la unión entre hermanos</a>, junto con sus reflexiones sobre <a href="#mf-vuelta-e1153">la dignidad del trabajo</a>, <a href="#mf-vuelta-e1150">la solidaridad con los amigos</a>, <a href="#mf-vuelta-e1161">el cuidado de los ancianos</a> y la necesidad de actuar con juicio. También aconseja <a href="#mf-vuelta-e1167">evitar la violencia</a>, el robo y los excesos. Leídos en conjunto, los versos permiten comprender cómo José Hernández construye una voz que transmite valores familiares y normas de convivencia desde la experiencia del gaucho. Cada consejo conserva, además, las particularidades lingüísticas y expresivas de la poesía gauchesca.</p>
    <p>Quienes buscan <strong>los consejos de Martín Fierro completos</strong>, las frases que dirige a sus hijos o el significado del canto 32 pueden encontrarlos en esta edición íntegra del poema. Las 31 estrofas se reproducen sin modernizar sus palabras y con enlaces al lector documental original. Esta presentación permite leer los consejos en su contexto, distinguir el texto de José Hernández de los comentarios editoriales y descubrir por qué sus reflexiones sobre la familia, la conducta personal y la convivencia siguen despertando interés entre los lectores actuales.</p>
   </section>
+  <PreguntasFrecuentes preguntas={preguntas}/>
   <div class="mf-consejos-outro"><p>La transcripción es la misma que utiliza nuestro lector documental; cada estrofa remite a su ubicación original. La imagen de cabecera es una recreación digital contemporánea, no una fotografía de época.</p><a href="/leer/vuelta/32/">Consultar el texto en el lector original del canto XXXII ↗</a></div>
  </div>
 </article>
