@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/generar-seo.mjs",
+    "build": "astro build && node scripts/fecha-visible.mjs && node scripts/generar-seo.mjs",
     "preview": "astro preview",
     "check": "astro check"
   },
