@@ -16,13 +16,22 @@ const kapian:Record<string,{ming:string;juese:string;jieshao:string;dufa:string}
 };
 const tu=(id:string)=>({'martin-fierro':'martin-fierro','sargento-cruz':'sargento-cruz','esposa-fierro':'esposa-de-fierro','primer-hijo':'hijo-mayor-de-fierro','segundo-hijo':'hijo-segundo-de-fierro','don-vizcacha':'viejo-vizcacha','picardia':'picardia','la-cautiva':'la-cautiva','el-moreno':'el-moreno','moreno-muerto':'negro-del-baile','juez-paz':'juez-de-paz'} as Record<string,string>)[id];
 const lianjie=(r:{parte:'ida'|'vuelta';canto:number})=>`/zh/xuesheng/${r.parte}/${r.canto}/`;
+import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
+const preguntasFaq=[
+ {q:`《马丁·菲耶罗》的主要人物有哪些？`,a:`马丁·菲耶罗、克鲁斯中士、菲耶罗的妻子、长子、次子、老比斯卡查、皮卡迪亚、女俘、莫雷诺、舞会上的死者和治安法官。本页为每个人物都准备了一张卡片。`},
+ {q:`克鲁斯中士是谁？`,a:`他是奉命捉拿菲耶罗的小队成员，却倒戈站到菲耶罗一边，与他并肩作战。两人之间的团结是全诗最重要的纽带之一。`},
+ {q:`皮卡迪亚是谁？`,a:`一个年轻人，讲述自己的孤儿童年、赌博、权力的滥用和边境兵役，直到他得知自己是克鲁斯中士的儿子。`},
+ {q:`老比斯卡查是谁？`,a:`一个贫穷而狡猾的老人，被指定为菲耶罗次子的监护人。他荒诞的怪癖和自私的格言，是第二部最著名的片段之一。`},
+ {q:`对歌中的莫雷诺就是菲耶罗在舞会上杀死的人吗？`,a:`不是。第二部里向菲耶罗发起对歌的莫雷诺是另一个人物。这场对歌唤起了对那次死亡的记忆。`},
+];
 ---
-<Base migas={[{label:'人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/'}} lang="zh-CN" pageType="CollectionPage" title="《马丁·菲耶罗》人物导读" description="马丁·菲耶罗、克鲁斯中士、老比斯卡查、皮卡迪亚、儿子们、女俘和莫雷诺：何塞·埃尔南德斯诗中的人物介绍，以及如何批判地阅读他们。">
+<Base faq={preguntasFaq} migas={[{label:'人物'}]} lingue={{es:'/personajes/',en:'/en/characters/',pt:'/pt/personagens/',fr:'/fr/personnages/',de:'/de/figuren/',ru:'/ru/personazhi/'}} lang="zh-CN" pageType="CollectionPage" title="《马丁·菲耶罗》人物导读" description="马丁·菲耶罗、克鲁斯中士、老比斯卡查、皮卡迪亚、儿子们、女俘和莫雷诺：何塞·埃尔南德斯诗中的人物介绍，以及如何批判地阅读他们。">
 <article class="renwu-zh">
 <header><p class="eyebrow">阅读指南 · 人物</p><h1><em>《马丁·菲耶罗》</em>中的人物</h1><p class="lid">一个亡命的高乔人、一位忠实的朋友、两个努力理解自己所失去的东西的儿子、一个厚颜无耻的监护人，以及被推到边缘的声音。认识这些赋予全诗道德复杂性的人物。</p></header>
 <nav class="tiaozhuan" aria-label="跳到某个人物">{personajes.map(p=><a href={`#${p.id}`}>{kapian[p.id].ming}</a>)}</nav>
 <div class="kapianzu">{personajes.map(p=><section class="kapian" id={p.id} aria-labelledby={`t-${p.id}`}><figure><img src={`/media/fotografias-v3/${tu(p.id)}.webp`} alt={`编辑部的数字诠释：${kapian[p.id].ming}；并非历史肖像`} loading="lazy"/><figcaption>当代数字重现</figcaption></figure><div><p class="eyebrow">{kapian[p.id].juese}</p><h2 id={`t-${p.id}`}>{kapian[p.id].ming}</h2><p>{kapian[p.id].jieshao}</p><p><strong>批判性阅读：</strong>{kapian[p.id].dufa}</p><p class="lianjie"><strong>见学习卡片：</strong>{p.referencias.map(r=><a href={lianjie(r)}>{r.parte==='ida'?'第一部':'第二部'} · 第 {r.canto} 歌</a>)}</p></div></section>)}</div>
 <section class="fangfa"><h2>如何使用本指南</h2><p>这些卡片说明十一个人物的作用，并链接到各歌的学习卡片，那里列有原文诗节。它们是解读性的复述，不是对埃尔南德斯诗句的引用或翻译。插图是当代的重现，不是历史文献。</p></section>
+<PreguntasFrecuentes preguntas={preguntasFaq} titulo="常见问题"/>
 </article>
 <style>.renwu-zh{max-width:1100px;margin:25px auto 80px;color:#31291f}.renwu-zh a{color:#843e2c;text-underline-offset:4px}.eyebrow{font:750 .76rem system-ui,sans-serif;letter-spacing:.1em;color:#955138}.renwu-zh h1{font:600 clamp(2.3rem,5vw,4.2rem)/1.2 Georgia,serif;margin:18px 0}.renwu-zh h1 em{font-weight:400}.lid{font:1.2rem/1.85 Georgia,serif;max-width:44em}.tiaozhuan{border-block:1px solid #cbb9a5;display:flex;flex-wrap:wrap;gap:10px 17px;padding:19px 0;margin:35px 0;font:.92rem system-ui,sans-serif}.kapianzu{display:grid;gap:30px}.kapian{display:grid;grid-template-columns:300px 1fr;gap:30px;border-top:2px solid #382d25;padding-top:24px;scroll-margin-top:70px}.kapian figure{margin:0}.kapian img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}.kapian figcaption{font:.76rem system-ui,sans-serif;color:#74614d;margin-top:6px}.kapian h2{font:600 2rem Georgia,serif;margin:6px 0 12px}.kapian p{font:1.04rem/1.85 Georgia,serif}.lianjie{display:flex;flex-wrap:wrap;gap:6px 14px;font:.9rem system-ui,sans-serif!important}.fangfa{background:#efe3d5;padding:22px 26px;margin-top:40px}.fangfa h2{font:600 1.7rem Georgia,serif;margin:0 0 10px}.fangfa p{font:1.03rem/1.85 Georgia,serif}@media(max-width:720px){.kapian{grid-template-columns:1fr;gap:14px}.kapian img{aspect-ratio:3/2}.fangfa{padding:18px}}</style>
 </Base>

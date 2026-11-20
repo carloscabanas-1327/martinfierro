@@ -13,8 +13,17 @@ const nianbiao=[
  ['1882','发表经营庄园的实用手册《Instrucción del estanciero》。'],
  ['1886','10 月 21 日在布宜诺斯艾利斯的贝尔格拉诺去世。']
 ];
+import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
+const preguntasFaq=[
+ {q:`何塞·埃尔南德斯是谁？`,a:`阿根廷作家、记者、军人和政治家（1834–1886），长诗《马丁·菲耶罗》的作者。`},
+ {q:`埃尔南德斯何时何地出生？`,a:`1834 年 11 月 10 日生于佩尔迪尔（Perdriel），在今布宜诺斯艾利斯省圣马丁将军区境内。`},
+ {q:`《马丁·菲耶罗》是什么时候出版的？`,a:`第一部《El gaucho Martín Fierro》于 1872 年发表，第二部《La vuelta de Martín Fierro》于 1879 年发表。`},
+ {q:`埃尔南德斯为什么流亡巴西？`,a:`1871 年洛佩斯·霍尔丹起义在尼亚恩贝战役中失败后，他流亡到巴西南里奥格兰德州的圣安娜-杜利弗拉门图，1872 年回到布宜诺斯艾利斯。`},
+ {q:`埃尔南德斯还写过什么？`,a:`他是记者，1869 年创办报纸《El Río de la Plata》。他还发表过写联邦派首领佩尼亚洛萨的《Vida del Chacho》（1863）和经营庄园的实用手册《Instrucción del estanciero》（1882）。`},
+ {q:`埃尔南德斯何时去世？`,a:`1886 年 10 月 21 日在布宜诺斯艾利斯的贝尔格拉诺去世。`},
+];
 ---
-<Base migas={[{label:'何塞·埃尔南德斯'}]} lingue={{es:'/jose-hernandez/',en:'/en/jose-hernandez/',it:'/it/jose-hernandez/',pt:'/pt/jose-hernandez/',fr:'/fr/jose-hernandez/',de:'/de/jose-hernandez/',ru:'/ru/jose-hernandez/'}} lang="zh-CN" pageType="Article" title="何塞·埃尔南德斯：《马丁·菲耶罗》作者生平" description="何塞·埃尔南德斯（1834–1886）是谁：他的生平、新闻事业、政治活动和《马丁·菲耶罗》的诞生，附年表和文献来源。">
+<Base faq={preguntasFaq} migas={[{label:'何塞·埃尔南德斯'}]} lingue={{es:'/jose-hernandez/',en:'/en/jose-hernandez/',it:'/it/jose-hernandez/',pt:'/pt/jose-hernandez/',fr:'/fr/jose-hernandez/',de:'/de/jose-hernandez/',ru:'/ru/jose-hernandez/'}} lang="zh-CN" pageType="Article" title="何塞·埃尔南德斯：《马丁·菲耶罗》作者生平" description="何塞·埃尔南德斯（1834–1886）是谁：他的生平、新闻事业、政治活动和《马丁·菲耶罗》的诞生，附年表和文献来源。">
 <ArticleZh yinti="阿根廷文学 · 经过核实的生平" biaoti="何塞·埃尔南德斯，<em>《马丁·菲耶罗》的作者</em>"
  daoyu="埃尔南德斯笔下的阿根廷乡村并不是远远望见的。作为乡间牧场主、军人、记者和政治家，他从内部了解那些后来塑造他最著名诗作的矛盾。"
  tupian="https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg" alt="何塞·埃尔南德斯的历史肖像照片" tuzhu="何塞·埃尔南德斯的历史肖像，Wikimedia Commons（摄影者不详）。与本站的插图不同，这是一张当时的照片。"
@@ -47,6 +56,7 @@ const nianbiao=[
   <p>埃尔南德斯 1886 年 10 月 21 日在贝尔格拉诺去世。后来的几代人把他的诗作视为阿根廷身份认同的重要支柱之一；他的生日 11 月 10 日，如今在阿根廷被定为“传统日”（Día de la Tradición）。纪念他最好的方式不是重复颂词，而是认真阅读他的诗句，并把它们与历史资料相对照。</p>
  </section>
  <section><h2>年表</h2><ol class="zh-nianbiao">{nianbiao.map(([a,t])=><li><strong>{a}</strong><span>{t}</span></li>)}</ol></section>
+<PreguntasFrecuentes preguntas={preguntasFaq} titulo="常见问题"/>
 </ArticleZh>
 <style>.zh-nianbiao{list-style:none;padding:0}.zh-nianbiao li{display:grid;grid-template-columns:140px 1fr;gap:16px;border-top:1px solid #c8baab;padding:12px 0}.zh-nianbiao strong{color:#8d4b36;font-family:system-ui,sans-serif}@media(max-width:520px){.zh-nianbiao li{grid-template-columns:1fr;gap:2px}}</style>
 </Base>

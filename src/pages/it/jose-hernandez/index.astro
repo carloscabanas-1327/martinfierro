@@ -12,8 +12,16 @@ const cronologia=[
  ['1882','Pubblica Instrucción del estanciero, manuale pratico di gestione di una tenuta.'],
  ['1886','Muore il 21 ottobre a Belgrano, Buenos Aires.']
 ];
+import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
+const preguntasFaq=[
+ {q:`Chi era José Hernández?`,a:`Uno scrittore, giornalista, militare e uomo politico argentino (1834–1886), autore di Martín Fierro.`},
+ {q:`Quando e dove nacque José Hernández?`,a:`Nacque il 10 novembre 1834 a Perdriel, nell’attuale partido di General San Martín (provincia di Buenos Aires), da Rafael Hernández e Isabel Pueyrredón.`},
+ {q:`Quando fu pubblicato Martín Fierro?`,a:`La prima parte, El gaucho Martín Fierro, uscì nel 1872. La seconda, La vuelta de Martín Fierro, nel 1879.`},
+ {q:`Che cos’altro scrisse José Hernández?`,a:`Fu giornalista e nel 1869 fondò il giornale El Río de la Plata. Pubblicò la Vida del Chacho (1863), sul caudillo federale Ángel Vicente Peñaloza, e Instrucción del estanciero (1882), un manuale pratico di gestione di una tenuta.`},
+ {q:`Quando morì José Hernández?`,a:`Morì il 21 ottobre 1886 a Belgrano, Buenos Aires.`},
+];
 ---
-<Base migas={[{label:'José Hernández'}]} lang="it-IT" pageType="Article" title="José Hernández: biografia dell’autore di Martín Fierro"
+<Base faq={preguntasFaq} migas={[{label:'José Hernández'}]} lang="it-IT" pageType="Article" title="José Hernández: biografia dell’autore di Martín Fierro"
  description="Chi era José Hernández (1834–1886): la vita, il giornalismo, la politica e la scrittura di Martín Fierro, con cronologia e fonti documentarie.">
 <ArticoloIt occhiello="Letteratura argentina · Biografia documentata" titolo="José Hernández, <em>l’autore di Martín Fierro</em>"
  sommario="Hernández non scrisse della campagna argentina da lontano. Lavoratore rurale, militare, giornalista e uomo politico, conobbe da dentro le tensioni che avrebbero dato forma al suo poema più famoso."
@@ -51,6 +59,7 @@ const cronologia=[
   <p>Hernández morì a Belgrano il 21 ottobre 1886. Le generazioni successive fecero del suo poema un riferimento centrale per pensare l’identità argentina, e il giorno della sua nascita, il 10 novembre, è oggi il <a href="/it/rivista/giorno-della-tradizione/">Giorno della Tradizione</a>. Il modo migliore di onorarlo non è ripeterne la fama, ma leggere i versi da vicino e confrontarli con le fonti storiche.</p>
  </section>
  <section><h2>Cronologia</h2><ol class="it-cronologia">{cronologia.map(([a,t])=><li><strong>{a}</strong><span>{t}</span></li>)}</ol></section>
+<PreguntasFrecuentes preguntas={preguntasFaq} titulo="Domande frequenti"/>
 </ArticoloIt>
 <style>.it-cronologia{list-style:none;padding:0}.it-cronologia li{display:grid;grid-template-columns:110px 1fr;gap:16px;border-top:1px solid #c8baab;padding:12px 0}.it-cronologia strong{color:#8d4b36;font-family:system-ui,sans-serif}@media(max-width:520px){.it-cronologia li{grid-template-columns:1fr;gap:2px}}</style>
 </Base>

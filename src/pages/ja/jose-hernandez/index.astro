@@ -13,8 +13,17 @@ const nenpyo=[
  ['1882','牧場経営の実用書『Instrucción del estanciero』を発表。'],
  ['1886','10月21日、ブエノスアイレスのベルグラーノで死去。']
 ];
+import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
+const preguntasFaq=[
+ {q:`ホセ・エルナンデスとはどんな人ですか？`,a:`アルゼンチンの作家、ジャーナリスト、軍人、政治家（1834〜1886）で、詩『マルティン・フィエロ』の作者です。`},
+ {q:`エルナンデスはいつ、どこで生まれましたか？`,a:`1834年11月10日、ペルディエル（Perdriel）に生まれました。現在のブエノスアイレス州ヘネラル・サン・マルティン郡にあたります。`},
+ {q:`『マルティン・フィエロ』はいつ出版されましたか？`,a:`第一部『El gaucho Martín Fierro』は1872年、第二部『La vuelta de Martín Fierro』は1879年に発表されました。`},
+ {q:`エルナンデスはなぜブラジルに亡命したのですか？`,a:`1871年、ロペス・ホルダンの反乱がニャエンベの戦いで敗れたのち、ブラジルのリオグランデ・ド・スル州サンタナ・ド・リヴラメントに亡命し、1872年にブエノスアイレスへ戻りました。`},
+ {q:`エルナンデスはほかに何を書きましたか？`,a:`ジャーナリストとして1869年に新聞『El Río de la Plata』を創刊しました。連邦派の指導者ペニャロサを描いた『Vida del Chacho』（1863）や、牧場経営の実用書『Instrucción del estanciero』（1882）も発表しています。`},
+ {q:`エルナンデスはいつ亡くなりましたか？`,a:`1886年10月21日、ブエノスアイレスのベルグラーノで亡くなりました。`},
+];
 ---
-<Base migas={[{label:'ホセ・エルナンデス'}]} lingue={{es:'/jose-hernandez/',en:'/en/jose-hernandez/',it:'/it/jose-hernandez/',pt:'/pt/jose-hernandez/',fr:'/fr/jose-hernandez/',de:'/de/jose-hernandez/',ru:'/ru/jose-hernandez/',zh:'/zh/jose-hernandez/'}} lang="ja-JP" pageType="Article" title="ホセ・エルナンデス：『マルティン・フィエロ』の作者の生涯" description="ホセ・エルナンデス（1834〜1886）とはどんな人か。生涯、ジャーナリズム、政治活動、『マルティン・フィエロ』の誕生を、年表と出典つきで紹介します。">
+<Base faq={preguntasFaq} migas={[{label:'ホセ・エルナンデス'}]} lingue={{es:'/jose-hernandez/',en:'/en/jose-hernandez/',it:'/it/jose-hernandez/',pt:'/pt/jose-hernandez/',fr:'/fr/jose-hernandez/',de:'/de/jose-hernandez/',ru:'/ru/jose-hernandez/',zh:'/zh/jose-hernandez/'}} lang="ja-JP" pageType="Article" title="ホセ・エルナンデス：『マルティン・フィエロ』の作者の生涯" description="ホセ・エルナンデス（1834〜1886）とはどんな人か。生涯、ジャーナリズム、政治活動、『マルティン・フィエロ』の誕生を、年表と出典つきで紹介します。">
 <ArticleJa kicker="アルゼンチン文学 · 確かめた生涯" midashi="ホセ・エルナンデス、<em>『マルティン・フィエロ』の作者</em>"
  ridobun="エルナンデスが描いたアルゼンチンの田園は、遠くから眺めたものではありません。田舎の牧場主、軍人、ジャーナリスト、政治家として、彼はのちに代表作を形づくることになる矛盾を内側から知っていました。"
  gazou="https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg" alt="ホセ・エルナンデスの歴史的な肖像写真" caption="ホセ・エルナンデスの歴史的な肖像、Wikimedia Commons（撮影者不明）。このサイトの挿絵と違い、これは当時の写真です。"
@@ -47,6 +56,7 @@ const nenpyo=[
   <p>エルナンデスは1886年10月21日にベルグラーノで亡くなりました。のちの世代は彼の詩をアルゼンチンのアイデンティティを支える柱の一つと見なすようになり、彼の誕生日である11月10日は、いまアルゼンチンで「伝統の日」（Día de la Tradición）とされています。彼をしのぶいちばんよい方法は、賛辞を繰り返すことではなく、彼の詩句を注意深く読み、歴史資料と突き合わせることです。</p>
  </section>
  <section><h2>年表</h2><ol class="ja-nenpyo">{nenpyo.map(([a,t])=><li><strong>{a}</strong><span>{t}</span></li>)}</ol></section>
+<PreguntasFrecuentes preguntas={preguntasFaq} titulo="よくある質問"/>
 </ArticleJa>
 <style>.ja-nenpyo{list-style:none;padding:0}.ja-nenpyo li{display:grid;grid-template-columns:140px 1fr;gap:16px;border-top:1px solid #c8baab;padding:12px 0}.ja-nenpyo strong{color:#8d4b36;font-family:system-ui,sans-serif}@media(max-width:520px){.ja-nenpyo li{grid-template-columns:1fr;gap:2px}}</style>
 </Base>

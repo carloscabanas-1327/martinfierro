@@ -13,8 +13,17 @@ const chronologie=[
  ['1882','Publie Instrucción del estanciero, manuel pratique de gestion des estancias.'],
  ['1886','Meurt le 21 octobre à Belgrano, Buenos Aires.']
 ];
+import PreguntasFrecuentes from '../../../components/PreguntasFrecuentes.astro';
+const preguntasFaq=[
+ {q:`Qui était José Hernández ?`,a:`Un écrivain, journaliste, militaire et homme politique argentin (1834–1886), auteur de Martín Fierro.`},
+ {q:`Quand et où est né José Hernández ?`,a:`Il est né le 10 novembre 1834 à Perdriel, dans l’actuel partido de General San Martín (province de Buenos Aires), fils de Rafael Hernández et d’Isabel Pueyrredón.`},
+ {q:`Quand Martín Fierro a-t-il été publié ?`,a:`La première partie, El gaucho Martín Fierro, paraît en 1872. La seconde, La vuelta de Martín Fierro, en 1879.`},
+ {q:`Pourquoi José Hernández s’est-il exilé au Brésil ?`,a:`Après la défaite du soulèvement de Ricardo López Jordán à Ñaembé (1871), il se réfugie à Santana do Livramento, dans le sud du Brésil, jusqu’au début de 1872.`},
+ {q:`Qu’a écrit José Hernández en dehors de Martín Fierro ?`,a:`Il a été journaliste et a fondé en 1869 le journal El Río de la Plata. Il a publié la Vida del Chacho (1863), sur le caudillo fédéral Ángel Vicente Peñaloza, et Instrucción del estanciero (1882), un manuel pratique de gestion des estancias.`},
+ {q:`Quand est mort José Hernández ?`,a:`Il est mort le 21 octobre 1886 à Belgrano, Buenos Aires.`},
+];
 ---
-<Base migas={[{label:'José Hernández'}]} lingue={{es:'/jose-hernandez/',en:'/en/jose-hernandez/',it:'/it/jose-hernandez/',pt:'/pt/jose-hernandez/'}} lang="fr-FR" pageType="Article" title="José Hernández : biographie de l’auteur de Martín Fierro" description="Qui était José Hernández (1834-1886) : sa vie, son journalisme, son engagement politique et l’écriture de Martín Fierro, avec une chronologie et des sources documentaires.">
+<Base faq={preguntasFaq} migas={[{label:'José Hernández'}]} lingue={{es:'/jose-hernandez/',en:'/en/jose-hernandez/',it:'/it/jose-hernandez/',pt:'/pt/jose-hernandez/'}} lang="fr-FR" pageType="Article" title="José Hernández : biographie de l’auteur de Martín Fierro" description="Qui était José Hernández (1834-1886) : sa vie, son journalisme, son engagement politique et l’écriture de Martín Fierro, avec une chronologie et des sources documentaires.">
 <ArticleFr surtitre="Littérature argentine · Biographie documentée" titre="José Hernández, <em>l’auteur de Martín Fierro</em>"
  chapo="Hernández n’a pas écrit sur la campagne argentine de loin. Homme de la terre, militaire, journaliste et homme politique, il a connu de l’intérieur les tensions qui allaient façonner son poème le plus célèbre."
  image="https://upload.wikimedia.org/wikipedia/commons/d/de/Jos%C3%A9_Hern%C3%A1ndez.jpg" alt="Portrait photographique historique de José Hernández" legende="Portrait historique de José Hernández, Wikimedia Commons (photographe inconnu). Contrairement aux illustrations du site, c’est une photographie d’époque."
@@ -47,6 +56,7 @@ const chronologie=[
   <p>Hernández meurt à Belgrano le 21 octobre 1886. Les générations suivantes ont fait de son poème une référence centrale de l’identité argentine, et le jour de sa naissance, le 10 novembre, est aujourd’hui le Jour de la Tradition en Argentine. Le meilleur hommage n’est pas de répéter sa célébrité, mais de lire ses vers de près et de les confronter aux sources historiques.</p>
  </section>
  <section><h2>Chronologie</h2><ol class="fr-chronologie">{chronologie.map(([a,t])=><li><strong>{a}</strong><span>{t}</span></li>)}</ol></section>
+<PreguntasFrecuentes preguntas={preguntasFaq} titulo="Questions fréquentes"/>
 </ArticleFr>
 <style>.fr-chronologie{list-style:none;padding:0}.fr-chronologie li{display:grid;grid-template-columns:120px 1fr;gap:16px;border-top:1px solid #c8baab;padding:12px 0}.fr-chronologie strong{color:#8d4b36;font-family:system-ui,sans-serif}@media(max-width:520px){.fr-chronologie li{grid-template-columns:1fr;gap:2px}}</style>
 </Base>
