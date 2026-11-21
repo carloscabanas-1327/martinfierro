@@ -6,3 +6,5 @@ node_modules/
 dist/
 .env
 .env.*
+auditoria-*.json
+auditoria-responsive/
