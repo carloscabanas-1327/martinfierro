@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+import PreguntasFrecuentes from '../../components/PreguntasFrecuentes.astro';
+// Sección «Novedades» (pedido de Carlos, 21/11/2026).
+// Noticias: notas propias escritas a partir de fuentes de prensa o estudios; cada una cita el medio con su enlace.
+// Hoy no hay ninguna publicada: se agregan en `noticias` (más nueva primero) con fecha, título, resumen propio y fuente.
+const noticias:{fecha:string;titulo:string;resumen:string;href:string;fuente:string;fuenteHref:string}[]=[];
+// Lo nuevo en el sitio: fechas tomadas del historial del repositorio (día en que se publicó cada página).
+const sitio=[
+ {fecha:'2026-11-15',titulo:'¿Qué es un gaucho? Significado e historia',href:'/que-es-un-gaucho/',texto:'Qué significa la palabra, dónde vivía el gaucho, cómo trabajaba, qué vestía y comía, y por qué Martín Fierro lo convirtió en símbolo.'},
+ {fecha:'2026-11-14',titulo:'Martín Fierro: preguntas y respuestas',href:'/martin-fierro-preguntas-y-respuestas/',texto:'Las dudas más comunes de estudiantes, desde de qué trata el poema hasta cómo termina, con el canto donde se puede comprobar cada respuesta.'},
+ {fecha:'2026-11-14',titulo:'Frases célebres de Martín Fierro',href:'/martin-fierro-frases/',texto:'Las estrofas más citadas del poema, con el canto de donde salen y qué quieren decir.'},
+ {fecha:'2026-11-14',titulo:'Los consejos, para escuchar',href:'/consejos-martin-fierro/',texto:'Los consejos de Martín Fierro a sus hijos ahora se pueden escuchar en voz alta desde el navegador.'},
+ {fecha:'2026-11-13',titulo:'Edición en japonés',href:'/ja/',texto:'Una guía de lectura del poema en japonés, con los versos originales en español.'},
+ {fecha:'2026-11-11',titulo:'Martín Fierro: resumen',href:'/martin-fierro-resumen/',texto:'El argumento de La ida y La vuelta, canto por canto, para leer antes o después del poema.'},
+];
+const fechaLarga=(f:string)=>new Date(f+'T12:00:00Z').toLocaleDateString('es-AR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+const preguntas=[
+ {q:'¿Qué se publica en Novedades?',a:'Noticias sobre Martín Fierro, José Hernández, la literatura gauchesca y las tradiciones del Río de la Plata, y también las páginas nuevas de este sitio.'},
+ {q:'¿De dónde salen las noticias?',a:'De medios de prensa y de publicaciones académicas. Leemos cada nota original completa, la contamos con nuestras palabras y citamos siempre el medio con un enlace a la fuente.'},
+ {q:'¿Por qué hay pocas noticias?',a:'Porque solo publicamos lo que tiene que ver con el poema y su mundo. Preferimos pocas notas bien hechas a muchas que no aporten nada al lector.'},
+ {q:'¿Cuándo es el Día Nacional del Gaucho?',a:'El 6 de diciembre, por la publicación de El gaucho Martín Fierro en 1872. El Día de la Tradición es el 10 de noviembre, por el nacimiento de José Hernández.'},
+];
+---
+<Base sobre={["el-gaucho-martin-fierro"]} menciona={["jose-hernandez","gaucho"]} faq={preguntas} migas={[{label:'Novedades'}]} pageType="CollectionPage" adKind="category" title="Novedades de Martín Fierro" description="Novedades sobre Martín Fierro, José Hernández y la cultura gauchesca: noticias con sus fuentes y las páginas nuevas del sitio.">
+<div class="mf-novedades">
+<section class="section-intro">
+ <p class="eyebrow">Noticias y páginas nuevas</p>
+ <h1>Novedades de Martín Fierro</h1>
+ <p class="lead">Lo que pasa alrededor del poema de José Hernández, de la literatura gauchesca y de las tradiciones rioplatenses, contado con nuestras palabras y con un enlace a cada fuente. Abajo están también las páginas que sumamos al sitio.</p>
+</section>
+
+<section aria-labelledby="mf-nov-noticias">
+ <h2 id="mf-nov-noticias">Noticias</h2>
+ {noticias.length ? <ul class="mf-nov-lista">{noticias.map(n=><li>
+  <time datetime={n.fecha}>{fechaLarga(n.fecha)}</time>
+  <h3><a href={n.href}>{n.titulo}</a></h3>
+  <p>{n.resumen}</p>
+  <p class="mf-nov-fuente">Fuente: <a href={n.fuenteHref} rel="noopener">{n.fuente}</a></p>
+ </li>)}</ul>
+ : <p>Todavía no publicamos noticias. Mientras tanto, se acerca el 6 de diciembre, <a href="/revista/dia-de-la-tradicion-vs-dia-nacional-del-gaucho/">Día Nacional del Gaucho</a>: la fecha recuerda la aparición de <i>El gaucho Martín Fierro</i> en 1872.</p>}
+</section>
+
+<section aria-labelledby="mf-nov-sitio">
+ <h2 id="mf-nov-sitio">Lo nuevo en el sitio</h2>
+ <ul class="mf-nov-lista">{sitio.map(s=><li>
+  <time datetime={s.fecha}>{fechaLarga(s.fecha)}</time>
+  <h3><a href={s.href}>{s.titulo}</a></h3>
+  <p>{s.texto}</p>
+ </li>)}</ul>
+</section>
+
+<PreguntasFrecuentes preguntas={preguntas} />
+</div>
+</Base>
+<style>
+.mf-novedades{max-width:790px;margin:0 auto;padding:0 16px 40px}
+.mf-novedades h2{font:600 clamp(1.5rem,2.6vw,2rem)/1.2 Georgia,serif;margin:40px 0 12px}
+.mf-nov-lista{list-style:none;margin:0;padding:0}
+.mf-nov-lista li{border-top:1px solid #d3c3b0;padding:16px 0}
+.mf-nov-lista time{font:600 .85rem/1.4 system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#6b5a48}
+.mf-nov-lista h3{font:600 1.2rem/1.35 Georgia,serif;margin:4px 0 6px}
+.mf-nov-lista p{margin:0;font:1.04rem/1.7 Georgia,serif}
+.mf-nov-fuente{margin-top:6px!important;font-size:.95rem!important}
+</style>
