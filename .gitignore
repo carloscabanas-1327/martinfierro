@@ -8,3 +8,6 @@ dist/
 .env.*
 auditoria-*.json
 auditoria-responsive/
+
+# Clave privada D-43 de ANUNCIANTES: nunca al repo (es público)
+.anunciantes/
