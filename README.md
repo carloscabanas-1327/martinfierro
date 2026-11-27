@@ -38,9 +38,9 @@ Identificador de ejemplo: `mf-ida-e0295-v05` (parte, estrofa y posición del ver
 
 Los caminos `/go/...` de martinfierro.org los atiende el Worker del proyecto ANUNCIANTES, no este sitio. No crear nada bajo `/go/` ni pisar esos enlaces. Los auditores de enlaces internos tienen que ignorarlos. Detalles: [documentacion/AVISO-ANUNCIANTES-GO.md](documentacion/AVISO-ANUNCIANTES-GO.md).
 
-## Reproducir todo sin PC local
+## Reproducir el corpus
 
-En **GitHub Actions → Generar corpus documental**, iniciar `Run workflow` o modificar los scripts. El proceso descarga, genera, audita, verifica de modo estricto y, si todas las pruebas pasan, incorpora automáticamente los archivos a `main`.
+El sitio no usa GitHub Actions (exceden la cuota). Los builds y deploys van en Cloudflare Pages, y los controles se corren a mano antes de cada PR con `bash scripts/verificar-antes-de-pr.sh` (agregar `--corpus` si cambian los scripts del corpus). Pasos sueltos:
 
 ```text
 python scripts/construir.py
