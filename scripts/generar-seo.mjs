@@ -39,7 +39,7 @@ for(const file of files){
  if((urlPath==='/ja/'||urlPath.startsWith('/ja/'))&&lang!=='ja-JP')errors.push({urlPath,issue:'Japanese route missing ja-JP language',lang});
  const alternates=[...html.matchAll(/<link\s+rel=["']alternate["']\s+hreflang=["']([^"']+)["']\s+href=["']([^"']+)["']/gi)].map(m=>({hreflang:m[1],href:m[2]}));
  const imagen=(html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)/i)||[])[1];
- pages.set(urlPath,{lang,alternates,imagen:imagen&&imagen.startsWith('https://')?imagen:null});
+ pages.set(urlPath,{lang,alternates,imagen:imagen&&imagen.startsWith('https://')?imagen.replaceAll('&amp;','&'):null});
  locations.push(expected);
 }
 // hreflang: cada destino debe existir, ser indexable, tener ese idioma y devolver el enlace.
