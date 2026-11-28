@@ -38,7 +38,8 @@ for(const file of files){
  if((urlPath==='/zh/'||urlPath.startsWith('/zh/'))&&lang!=='zh-CN')errors.push({urlPath,issue:'Chinese route missing zh-CN language',lang});
  if((urlPath==='/ja/'||urlPath.startsWith('/ja/'))&&lang!=='ja-JP')errors.push({urlPath,issue:'Japanese route missing ja-JP language',lang});
  const alternates=[...html.matchAll(/<link\s+rel=["']alternate["']\s+hreflang=["']([^"']+)["']\s+href=["']([^"']+)["']/gi)].map(m=>({hreflang:m[1],href:m[2]}));
- pages.set(urlPath,{lang,alternates});
+ const imagen=(html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)/i)||[])[1];
+ pages.set(urlPath,{lang,alternates,imagen:imagen&&imagen.startsWith('https://')?imagen.replaceAll('&amp;','&'):null});
  locations.push(expected);
 }
 // hreflang: cada destino debe existir, ser indexable, tener ese idioma y devolver el enlace.
@@ -60,8 +61,8 @@ for(const [urlPath,{alternates}] of pages){
 }
 if(errors.length){console.error('Invalid canonical, page language or hreflang',errors.slice(0,20));process.exit(1)}
 locations.sort((a,b)=>a.localeCompare(b,'en'));
-const entry=u=>{const alts=pages.get(u.slice(origin.length))?.alternates||[];return `  <url><loc>${esc(u)}</loc>${alts.map(a=>`<xhtml:link rel="alternate" hreflang="${esc(a.hreflang)}" href="${esc(a.href)}"/>`).join('')}</url>`};
-const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'+locations.map(entry).join('\n')+'\n</urlset>\n';
+const entry=u=>{const info=pages.get(u.slice(origin.length))||{};const alts=info.alternates||[];const img=info.imagen?`<image:image><image:loc>${esc(info.imagen)}</image:loc></image:image>`:'';return `  <url><loc>${esc(u)}</loc>${alts.map(a=>`<xhtml:link rel="alternate" hreflang="${esc(a.hreflang)}" href="${esc(a.href)}"/>`).join('')}${img}</url>`};
+const sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'+locations.map(entry).join('\n')+'\n</urlset>\n';
 await writeFile(path.join(root,'sitemap.xml'),sitemap,'utf8');
 await writeFile(path.join(root,'robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`,'utf8');
 console.log(`SEO OK: ${locations.length} indexable URLs, canonical and language verified; ${hreflangLinks} hreflang links reciprocal; sitemap.xml and robots.txt generated.`);

@@ -25,6 +25,7 @@ async function walk(dir){
 }
 const existe=async f=>{try{await access(f);return true;}catch{return false;}};
 const decodificar=s=>s.replaceAll('&amp;','&').replaceAll('&quot;','"').replaceAll('&#39;',"'").replaceAll('&lt;','<').replaceAll('&gt;','>');
+const tipo=u=>/\.png(\?|$)/i.test(u)?'image/png':/\.webp(\?|$)/i.test(u)?'image/webp':'image/jpeg';
 const attr=v=>v.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 // Ancho real de cada imagen local (caché por archivo).
 const anchos=new Map();
@@ -108,6 +109,9 @@ for(let {file,ruta,html,foto,equivalentes} of paginas){
  html=html
   .replace(/<meta property="og:image" content="[^"]*"\s*\/?>/,`<meta property="og:image" content="${url}"/>`)
   .replace(/<meta name="twitter:image" content="[^"]*"\s*\/?>/,`<meta name="twitter:image" content="${url}"/>`)
+  .replace(/<meta property="og:image:secure_url" content="[^"]*"\s*\/?>/,`<meta property="og:image:secure_url" content="${url}"/>`)
+  .replace(/<meta property="og:image:type" content="[^"]*"\s*\/?>/,`<meta property="og:image:type" content="${tipo(compartir.url)}"/>`)
+  .replace(/<meta name="twitter:image:alt" content="[^"]*"\s*\/?>/,alt?`<meta name="twitter:image:alt" content="${attr(alt)}"/>`:'')
   .replace(/<link rel="image_src" href="[^"]*"\s*\/?>/,`<link rel="image_src" href="${url}"/>`)
   .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/,alt?`<meta property="og:image:alt" content="${attr(alt)}"/>`:'');
  if(compartir.width){
